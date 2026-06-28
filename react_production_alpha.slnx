@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="react_production_alpha.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>
