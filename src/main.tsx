@@ -11,10 +11,10 @@ const queryClient = new QueryClient();
 // Bootstrap auth before rendering
 const { setSession, setLoading } = useAuthStore.getState();
 
-supabase.auth.getSession().then(({ data: { session } }) => {
-  setSession(session);
-  setLoading(false);
-});
+supabase.auth.getSession()
+  .then(({ data: { session } }) => setSession(session))
+  .catch(() => { /* no session; continue anonymous */ })
+  .finally(() => setLoading(false));
 
 supabase.auth.onAuthStateChange((_event, session) => {
   setSession(session);
