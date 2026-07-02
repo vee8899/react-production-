@@ -1,11 +1,9 @@
 import { useClient } from '@/hooks/useClient';
 import { useAnalytics } from '@/hooks/useAnalytics';
-import { useRuns } from '@/hooks/useRuns';
 
 export const StatsRow = () => {
   const { data: client } = useClient();
   const { data: snapshots } = useAnalytics(client?.id);
-  const { data: runs } = useRuns(client?.id);
 
   // Compute stats from real data
   const totalRuns = snapshots?.reduce((sum, s) => sum + s.total_runs, 0) ?? 0;
