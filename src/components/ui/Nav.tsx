@@ -38,10 +38,11 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close mobile menu on route change (safe, idempotent)
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMenuOpen(false);
   }, [location.pathname]);
-
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.replace("#", "");

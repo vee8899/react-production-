@@ -8,7 +8,7 @@ import WorkflowsPage from "@/pages/WorkflowsPage";
 import PageTransition from "@/components/motion/PageTransition";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 
-const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
+export const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { isAuthenticated, isLoading } = useAuth();
   
   if (isLoading) return null; // wait for auth to resolve

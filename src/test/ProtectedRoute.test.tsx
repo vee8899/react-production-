@@ -1,24 +1,13 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
-import { useAuthStore } from "@/store/authStore";
+import { ProtectedRoute } from "@/App";
+import { useAuth } from "@/hooks/useAuth";
 
-// We need to mock the auth store to control auth state
-vi.mock("@/store/authStore", () => ({
-  useAuthStore: vi.fn(),
+// Mock the useAuth hook to control auth state
+vi.mock("@/hooks/useAuth", () => ({
+  useAuth: vi.fn(),
 }));
-
-// The ProtectedRoute component is defined inline in App.tsx, so we recreate it here for testing
-const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-  const { session, isLoading } = useAuthStore() as {
-    session: unknown;
-    isLoading: boolean;
-  };
-
-  if (isLoading) return null;
-
-  return session ? <>{children}</> : <div>Redirected to login</div>;
-};
 
 describe("ProtectedRoute", () => {
   beforeEach(() => {
@@ -26,9 +15,10 @@ describe("ProtectedRoute", () => {
   });
 
   it("renders children when authenticated", () => {
-    (useAuthStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+    (useAuth as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
       session: { user: { id: "test" } },
       isLoading: false,
+      isAuthenticated: true,
     });
 
     render(
@@ -46,14 +36,16 @@ describe("ProtectedRoute", () => {
   });
 
   it("redirects to login when not authenticated", () => {
-    (useAuthStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+    (useAuth as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
       session: null,
       isLoading: false,
+      isAuthenticated: false,
     });
 
     render(
       <MemoryRouter initialEntries={["/dashboard"]}>
         <Routes>
+          <Route path="/login" element={<div>Login Page</div>} />
           <Route
             path="/dashboard"
             element={<ProtectedRoute><div>Dashboard Content</div></ProtectedRoute>}
@@ -62,13 +54,14 @@ describe("ProtectedRoute", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText("Redirected to login")).toBeInTheDocument();
+    expect(screen.getByText("Login Page")).toBeInTheDocument();
   });
 
   it("renders nothing while loading", () => {
-    (useAuthStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+    (useAuth as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
       session: null,
       isLoading: true,
+      isAuthenticated: false,
     });
 
     const { container } = render(
