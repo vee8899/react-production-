@@ -6,7 +6,11 @@ import { useAuthStore } from "@/store/authStore";
 import App from "@/App";
 import "./index.css";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: { staleTime: 60_000, refetchOnWindowFocus: false, retry: 1 },
+  },
+});
 
 // Bootstrap auth before rendering
 const { setSession, setLoading } = useAuthStore.getState();
