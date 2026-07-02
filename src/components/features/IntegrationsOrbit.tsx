@@ -6,7 +6,7 @@ import { SiGooglesheets } from "react-icons/si";
 import { SiGoogledocs } from "react-icons/si";
 import { SiWhatsapp } from "react-icons/si";
 import { SiTelegram } from "react-icons/si";
-import { SiSlack } from "react-icons/si";
+import { FaSlack } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import SectionHeader from "@/components/ui/SectionHeader";
 
@@ -27,7 +27,7 @@ const integrations: Integration[] = [
   { name: "Docs", label: "Docs", angle: 135, icon: <SiGoogledocs size={iconSize} color={iconColor} /> },
   { name: "WhatsApp", label: "WhatsApp", angle: 180, icon: <SiWhatsapp size={iconSize} color={iconColor} /> },
   { name: "Telegram", label: "Telegram", angle: 225, icon: <SiTelegram size={iconSize} color={iconColor} /> },
-  { name: "Slack", label: "Slack", angle: 270, icon: <SiSlack size={iconSize} color={iconColor} /> },
+  { name: "Slack", label: "Slack", angle: 270, icon: <FaSlack size={iconSize} color={iconColor} /> },
   { name: "Outlook", label: "Outlook", angle: 315, icon: <FaEnvelope size={iconSize} color={iconColor} /> },
 ];
 
