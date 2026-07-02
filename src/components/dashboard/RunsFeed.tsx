@@ -1,15 +1,6 @@
 import { useClient } from '@/hooks/useClient';
 import { useRuns } from '@/hooks/useRuns';
-
-const formatRelativeTime = (dateStr: string) => {
-  const diff = Date.now() - new Date(dateStr).getTime();
-  const mins = Math.floor(diff / 60000);
-  const hours = Math.floor(diff / 3600000);
-  const days = Math.floor(diff / 86400000);
-  if (mins < 60) return `${mins} min ago`;
-  if (hours < 24) return `${hours} hr ago`;
-  return `${days} day ago`;
-};
+import { formatRelativeTime } from '@/utils/time';
 
 export const RunsFeed = () => {
   const { data: client } = useClient();
