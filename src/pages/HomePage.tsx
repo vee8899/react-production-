@@ -2,8 +2,10 @@ import { motion } from "framer-motion";
 import Nav from "@/components/ui/Nav";
 import Footer from "@/components/ui/Footer";
 import SectionHeader from "@/components/ui/SectionHeader";
-import ProjectCard from "@/components/ui/ProjectCard";
 import FadeUp from "@/components/motion/FadeUp";
+import IntegrationsOrbit from "@/components/features/IntegrationsOrbit";
+import ROICalculator from "@/components/features/ROICalculator";
+import FAQ from "@/components/features/FAQ";
 
 const heroWords = ["Automating", "Real Estate.", "End to End."];
 
@@ -48,7 +50,7 @@ const services = [
     number: "07",
     name: "Data Pipelines",
     description:
-      "Move data between your tools — portals, spreadsheets, databases — on a schedule or trigger.",
+      "Move data between your tools, portals, spreadsheets, databases, on a schedule or trigger.",
   },
   {
     number: "08",
@@ -76,18 +78,11 @@ const processSteps = [
   },
 ];
 
-const projects = [
-  { name: "Lead Engine", category: "Brokerage Automation", year: "2026" },
-  { name: "Tenant Portal Sync", category: "Property Management", year: "2025" },
-  { name: "Listing Alert System", category: "Agent Automation", year: "2025" },
-  { name: "Contract Autopilot", category: "Document Automation", year: "2024" },
-];
-
 const stats = [
-  { value: "10,000+", label: "Records automated monthly" },
-  { value: "98%", label: "Workflow success rate" },
-  { value: "40hrs", label: "Saved per client per month" },
-  { value: "< 1s", label: "Average workflow response time" },
+  { value: "10,000+", label: "RECORDS AUTOMATED MONTHLY" },
+  { value: "98%", label: "WORKFLOW SUCCESS RATE" },
+  { value: "40hrs", label: "SAVED PER CLIENT PER MONTH" },
+  { value: "< 1s", label: "AVERAGE WORKFLOW RESPONSE TIME" },
 ];
 
 export default function HomePage() {
@@ -95,8 +90,16 @@ export default function HomePage() {
     <>
       <Nav />
 
-      {/* Hero */}
-      <section className="min-h-[100svh] flex flex-col px-[clamp(24px,5vw,80px)] pt-[50vh] pb-[clamp(64px,10vw,128px)]">
+      <section className="relative min-h-[100svh] flex flex-col justify-end px-[clamp(24px,5vw,80px)] pb-[clamp(64px,10vw,128px)]">
+        <motion.span
+          className="mb-4 text-label font-mono uppercase tracking-[0.08em] text-muted"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+        >
+          Private client automation studio
+        </motion.span>
+
         <h1 className="text-hero font-display font-normal text-primary leading-[0.95] tracking-[-0.03em]">
           {heroWords.map((word, i) => (
             <motion.span
@@ -115,19 +118,8 @@ export default function HomePage() {
           ))}
         </h1>
 
-        {/* Sub-label */}
-        <motion.span
-          className="mt-6 text-label font-mono uppercase tracking-[0.08em] text-muted"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-        >
-          Private client automation studio
-        </motion.span>
-
-        {/* Scroll indicator */}
         <motion.div
-          className="self-end mt-16 flex items-center gap-2"
+          className="absolute bottom-[clamp(48px,8vh,96px)] right-[clamp(24px,5vw,80px)] flex flex-col items-center gap-3"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.6 }}
@@ -136,42 +128,46 @@ export default function HomePage() {
             Scroll
           </span>
           <motion.span
-            className="block w-px h-6 bg-muted"
+            className="block w-px h-12 bg-border"
             animate={{ y: [0, 6, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           />
         </motion.div>
       </section>
 
-      {/* Section 01 — What We Do */}
-      <section id="work" className="px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,192px)]">
-        <SectionHeader label="01 — What We Do" />
+      <section
+        id="work"
+        className="px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,192px)]"
+      >
+        <SectionHeader label="01 - WHAT WE DO" />
         <FadeUp>
-          <p className="text-h1 font-display text-primary max-w-3xl mt-12 leading-[1.05] tracking-[-0.02em]">
-            We build automation systems for real estate professionals — agents,
-            brokerages, and property managers — that eliminate manual work from
+          <p className="font-sans text-primary max-w-[800px] mt-12 leading-[1.5] font-light text-[clamp(1.25rem,2.5vw,1.75rem)]">
+            We build automation systems for real estate professionals, agents,
+            brokerages, and property managers, that eliminate manual work from
             their operations. Every workflow is custom built, connected to their
             existing tools, and monitored in real time.
           </p>
         </FadeUp>
       </section>
 
-      {/* Section 02 — Services */}
-      <section id="services" className="px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,192px)]">
-        <SectionHeader label="02 — Services" />
-        <div className="mt-12 space-y-0">
+      <section
+        id="services"
+        className="px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,192px)]"
+      >
+        <SectionHeader label="02 - SERVICES" />
+        <div className="mt-12 border-t border-border">
           {services.map((service, i) => (
             <FadeUp key={service.number} delay={i * 0.05}>
-              <div className="py-5 border-b border-border">
-                <div className="flex items-baseline gap-4">
+              <div className="min-h-20 py-5 border-b border-border flex items-center">
+                <div className="flex items-baseline gap-8">
                   <span className="text-label font-mono uppercase tracking-[0.05em] text-muted w-8 shrink-0">
                     {service.number}
                   </span>
                   <div>
-                    <span className="text-h2 font-display text-primary">
+                    <span className="font-display font-normal text-primary text-[clamp(1.5rem,3vw,2.5rem)]">
                       {service.name}
                     </span>
-                    <p className="mt-2 text-base font-sans text-muted font-light max-w-2xl leading-relaxed">
+                    <p className="mt-1 text-sm font-sans text-muted font-light max-w-2xl leading-relaxed">
                       {service.description}
                     </p>
                   </div>
@@ -182,21 +178,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Section 03 — Process */}
       <section className="px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,192px)]">
-        <SectionHeader label="03 — Process" />
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-12">
+        <SectionHeader label="03 - PROCESS" />
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-[clamp(32px,5vw,80px)]">
           {processSteps.map((step, i) => (
             <FadeUp key={step.number} delay={i * 0.08}>
               <div>
                 <span className="text-label font-mono uppercase tracking-[0.05em] text-muted">
                   {step.number}
                 </span>
-                <h3 className="text-h2 font-display text-primary mt-3">
+                <h3 className="font-display font-normal text-primary mt-4 mb-4 text-[clamp(1.5rem,2.5vw,2rem)]">
                   {step.title}
                 </h3>
-                <div className="w-full h-px bg-border my-4" />
-                <p className="text-base font-sans text-muted font-light leading-relaxed">
+                <div className="w-full h-px bg-border" />
+                <p className="mt-4 text-sm font-sans text-muted font-light leading-[1.6]">
                   {step.body}
                 </p>
               </div>
@@ -205,33 +200,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Section 04 — Work */}
       <section className="px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,192px)]">
-        <SectionHeader label="04 — Work" />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-16 mt-12">
-          {projects.map((project, i) => (
-            <ProjectCard
-              key={project.name}
-              name={project.name}
-              category={project.category}
-              year={project.year}
-              index={i}
-            />
-          ))}
-        </div>
-      </section>
-
-      {/* Section 05 — Stats */}
-      <section className="px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,192px)]">
-        <SectionHeader label="05 — By the Numbers" />
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
+        <SectionHeader label="04 - BY THE NUMBERS" />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 mt-12">
           {stats.map((stat, i) => (
             <FadeUp key={stat.label} delay={i * 0.05}>
-              <div>
-                <span className="text-hero font-mono text-primary block leading-none">
+              <div className="flex flex-col gap-3 md:pr-8 md:border-r md:border-border md:last:border-r-0 md:last:pr-0">
+                <span
+                  className="font-mono text-primary block leading-none tracking-[-0.02em]"
+                  style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
+                >
                   {stat.value}
                 </span>
-                <span className="text-label font-sans uppercase tracking-[0.08em] text-muted mt-2 block">
+                <span className="text-label font-sans uppercase tracking-[0.08em] text-muted block">
                   {stat.label}
                 </span>
               </div>
@@ -239,6 +220,10 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      <IntegrationsOrbit />
+      <ROICalculator />
+      <FAQ />
 
       <Footer />
     </>

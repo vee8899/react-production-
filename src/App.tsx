@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { MotionConfig } from "framer-motion";
 import { useAuth } from "@/hooks/useAuth";
 import HomePage from "@/pages/HomePage";
@@ -28,42 +28,36 @@ export default function App() {
   const { isLoading } = useAuth();
 
   if (isLoading) {
-    return (
-      <BrowserRouter>
-        <LoadingScreen />
-      </BrowserRouter>
-    );
+    return <LoadingScreen />;
   }
 
   return (
-    <BrowserRouter>
-      <MotionConfig reducedMotion="user">
-        <PageTransition>
-          <ErrorBoundary>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/login" element={<LoginPage />} />
-              <Route
-                path="/dashboard"
-                element={
-                  <ProtectedRoute>
-                    <DashboardPage />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/workflows"
-                element={
-                  <ProtectedRoute>
-                    <WorkflowsPage />
-                  </ProtectedRoute>
-                }
-              />
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-          </ErrorBoundary>
-        </PageTransition>
-      </MotionConfig>
-    </BrowserRouter>
+    <MotionConfig reducedMotion="user">
+      <PageTransition>
+        <ErrorBoundary>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute>
+                  <DashboardPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/workflows"
+              element={
+                <ProtectedRoute>
+                  <WorkflowsPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </ErrorBoundary>
+      </PageTransition>
+    </MotionConfig>
   );
 }

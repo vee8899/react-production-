@@ -2,6 +2,15 @@
 
 This file instructs the agent on visual design, layout, typography, motion, and component structure. Read this alongside AGENT.md before touching any UI file.
 
+## Application Heuristics
+
+- Use this file as the visual baseline, but check the later UI fix docs before changing any live page.
+- If a later UI doc conflicts with this one, treat the later doc as the active implementation target for that section.
+- Preserve existing motion and layout patterns unless the current task explicitly replaces them.
+- Prefer the established design system over inventing new component styles for a single screen.
+- Keep page structure and content changes separate from style changes when the task can be split cleanly.
+- Verify the actual rendered layout after edits; a section that matches the spec in code but not in the browser still needs adjustment.
+
 ---
 
 ## Visual Reference

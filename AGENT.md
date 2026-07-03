@@ -2,6 +2,16 @@
 
 This file instructs an autonomous coding agent on the architecture, conventions, and implementation expectations for this project. Read this before touching any file.
 
+## Instruction Heuristics
+
+- Treat the markdown files as a ranked set of signals, not as a flat pile of equal instructions.
+- Prefer the newest, most specific doc for the surface you are editing.
+- If two docs conflict, do not guess. Read the surrounding files, identify the latest intent, and preserve the current working state unless the user explicitly asks for a rollback.
+- Do not undo unrelated user changes while following a doc. If a diagnostic doc suggests a fix that would revert newer product work, pause and reconcile the conflict first.
+- Verify against the current codebase before editing; do not assume the document is complete or current.
+- When a doc describes a pattern with an exact code sample, follow the pattern only if it still matches the active app structure.
+- Active guidance lives here, in `UI.md`, `DASHBOARD.md`, and `DEBUG.md`. Older one-off spec notes are intentionally archived or deleted.
+
 ---
 
 ## Product

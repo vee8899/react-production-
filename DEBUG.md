@@ -2,6 +2,14 @@
 
 This file instructs the agent to systematically debug and fix the sign out functionality. Follow every step in order without skipping.
 
+## Heuristics For Future Runs
+
+- Treat this file as a targeted debugging playbook, not a blanket instruction to revert the app to an earlier state.
+- If a step conflicts with newer product or UI docs, keep the newer product intent and adapt the debug fix around it.
+- Confirm the current symptom before applying a fix; this file is useful when the bug is still present, not as a reason to reapply a resolved change.
+- Prefer minimal, scoped edits that preserve the current app surface unless the user explicitly requests a rollback.
+- When a diagnostic file says "rewrite from scratch", verify that the exact code still matches the current architecture before copying it.
+
 ---
 
 ## Problem Summary

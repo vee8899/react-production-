@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 
 const publicNavLinks = [
@@ -12,10 +12,14 @@ const privateNavLinks = [
   { label: "Workflows", to: "/workflows" },
 ];
 
+const contactHref =
+  "mailto:Prime%20State%20Systems%20%3Cprimestatesystems%40gmail.com%3E";
+
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const { isAuthenticated, signOut } = useAuth();
 
   const handleNavClick = useCallback(
@@ -26,10 +30,10 @@ export default function Nav() {
           el.scrollIntoView({ behavior: "smooth" });
         }
       } else {
-        window.location.href = `/#${hash}`;
+        navigate(`/#${hash}`);
       }
     },
-    [location.pathname]
+    [location.pathname, navigate]
   );
 
   useEffect(() => {
@@ -72,16 +76,15 @@ export default function Nav() {
           </Link>
 
           <div className="hidden md:flex items-center gap-10">
-            {!isAuthenticated &&
-              publicNavLinks.map((link) => (
-                <button
-                  key={link.hash}
-                  onClick={() => handleNavClick(link.hash)}
-                  className="text-label font-sans uppercase tracking-[0.08em] text-muted hover:text-primary transition-colors duration-200 bg-transparent border-0 cursor-pointer"
-                >
-                  {link.label}
-                </button>
-              ))}
+            {publicNavLinks.map((link) => (
+              <button
+                key={link.hash}
+                onClick={() => handleNavClick(link.hash)}
+                className="text-label font-sans uppercase tracking-[0.08em] text-muted hover:text-primary transition-colors duration-200 bg-transparent border-0 cursor-pointer"
+              >
+                {link.label}
+              </button>
+            ))}
             {isAuthenticated &&
               privateNavLinks.map((link) => (
                 <Link
@@ -91,9 +94,9 @@ export default function Nav() {
                 >
                   {link.label}
                 </Link>
-              ))}
+            ))}
             <a
-              href="mailto:your@email.com"
+              href={contactHref}
               className="text-label font-sans uppercase tracking-[0.08em] text-muted hover:text-primary transition-colors duration-200"
             >
               Contact &rarr;
@@ -137,6 +140,7 @@ export default function Nav() {
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden flex flex-col gap-1.5 py-2"
             aria-label="Toggle menu"
+            aria-expanded={menuOpen}
           >
             <span
               className={`block w-6 h-px bg-primary transition-transform duration-300 ${
@@ -159,19 +163,18 @@ export default function Nav() {
 
         {menuOpen && (
         <div className="fixed inset-0 z-40 bg-background flex flex-col items-center justify-center gap-8 md:hidden">
-          {!isAuthenticated &&
-            publicNavLinks.map((link) => (
-              <button
-                key={link.hash}
-                onClick={() => {
-                  handleNavClick(link.hash);
-                  setMenuOpen(false);
-                }}
-                className="text-h1 font-display text-muted bg-transparent border-0 cursor-pointer"
-              >
-                {link.label}
-              </button>
-            ))}
+          {publicNavLinks.map((link) => (
+            <button
+              key={link.hash}
+              onClick={() => {
+                handleNavClick(link.hash);
+                setMenuOpen(false);
+              }}
+              className="text-h1 font-display text-muted bg-transparent border-0 cursor-pointer"
+            >
+              {link.label}
+            </button>
+          ))}
           {isAuthenticated &&
             privateNavLinks.map((link) => (
               <Link
@@ -182,9 +185,9 @@ export default function Nav() {
               >
                 {link.label}
               </Link>
-            ))}
+          ))}
           <a
-            href="mailto:your@email.com"
+            href={contactHref}
             className="text-h1 font-display text-muted"
           >
             Contact &rarr;
