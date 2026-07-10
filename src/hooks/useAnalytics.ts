@@ -5,6 +5,7 @@ export const useAnalytics = (clientId: string | undefined) => {
   return useQuery({
     queryKey: ['analytics', clientId],
     enabled: !!clientId,
+    refetchInterval: 30_000,
     queryFn: async () => {
       const { data, error } = await supabase
         .from('analytics_snapshots')

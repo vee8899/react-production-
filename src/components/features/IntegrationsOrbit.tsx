@@ -60,7 +60,7 @@ export default function IntegrationsOrbit() {
           className="font-display font-normal text-primary mt-12 mb-16 text-center mx-auto max-w-[700px] leading-[1.15] tracking-[-0.02em]"
           style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)" }}
         >
-          Works with the tools your business already uses.
+          Built around the tools your business already uses.
         </h2>
 
         <div className="flex justify-center items-center w-full">

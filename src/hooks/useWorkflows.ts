@@ -5,6 +5,7 @@ export const useWorkflows = (clientId: string | undefined) => {
   return useQuery({
     queryKey: ['workflows', clientId],
     enabled: !!clientId,
+    refetchInterval: 30_000,
     queryFn: async () => {
       const { data, error } = await supabase
         .from('workflows')

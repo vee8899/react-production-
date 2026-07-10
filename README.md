@@ -1,75 +1,101 @@
-# React + TypeScript + Vite
+# Prime State Systems
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React and TypeScript client portal for a real-estate automation studio. Public visitors can view the studio site; authenticated clients can view workflow activity and automation metrics.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. Create `.env.local` with:
 
-## React Compiler
+   ```env
+   VITE_SUPABASE_URL=https://your-project.supabase.co
+   VITE_SUPABASE_ANON_KEY=your-anon-key
+   ```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. Install and start the app:
 
-## Expanding the ESLint configuration
+   ```powershell
+   npm.cmd install
+   npm.cmd run dev
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The local dev server runs on `http://localhost:52124`.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Validate
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```powershell
+npm.cmd run lint
+npm.cmd run test -- --run
+npm.cmd run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Automation ingestion
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+The `ingest-run` Supabase Edge Function records n8n workflow outcomes. Each payload must include a stable `event_id`, `client_id`, `feature_type`, `workflow_name`, and `status`. Reusing an `event_id` updates the existing run instead of creating a duplicate.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Set `WEBHOOK_SECRET` as an Edge Function secret and send it in the `X-Webhook-Secret` header from n8n. Do not expose n8n API keys in browser environment variables.
 
+## Client provisioning
+
+The `invite-client` Edge Function creates the Supabase Auth invite and the matching `clients` row. It is an operator-only endpoint protected by `ADMIN_INVITE_SECRET`, not a browser flow.
+
+Required request:
+
+```http
+POST /functions/v1/invite-client
+X-Admin-Invite-Secret: <ADMIN_INVITE_SECRET>
+Content-Type: application/json
 ```
+
+```json
+{
+  "company_name": "Client Company",
+  "email": "client@example.com",
+  "plan": "starter"
+}
+```
+
+The response includes the created `client_id` and `user_id`. Store those IDs when configuring a workflow for that client.
+
+## Production setup
+
+1. Run the Supabase CLI through `npx`, then authenticate and link the project:
+
+   ```powershell
+   npx supabase login
+   npx supabase link --project-ref iutycpnqlzxovffctjyz
+   ```
+
+2. Review the migration plan before applying it:
+
+   ```powershell
+   npx supabase db push --dry-run
+   ```
+
+   The repository now includes a baseline schema migration for `clients`, `workflows`, `automation_runs`, and `analytics_snapshots`. If the linked remote project already has these tables, confirm the dry run before applying migrations.
+
+3. Generate long random values for `WEBHOOK_SECRET` and `ADMIN_INVITE_SECRET`, then deploy the database, function config, and functions:
+
+   ```powershell
+   npx supabase secrets set WEBHOOK_SECRET="replace-with-a-long-random-secret"
+   npx supabase secrets set ADMIN_INVITE_SECRET="replace-with-a-long-random-secret"
+   npx supabase secrets set SITE_URL="https://your-production-domain.example"
+   npx supabase config push
+   npx supabase db push
+   npx supabase functions deploy ingest-run
+   npx supabase functions deploy invite-client
+   ```
+
+   `ingest-run` is configured to bypass Supabase JWT verification because n8n is an external service. It rejects every request unless the shared secret is present and correct.
+   `invite-client` also bypasses Supabase JWT verification and rejects every request unless the admin invite secret is present and correct.
+
+4. In Supabase Auth settings, set the production Site URL, allow only production and staging redirect URLs, configure the sender email/SMTP, and test password reset with a regular client account.
+
+5. Verify tenant isolation with two test accounts: each account must see its own client row, runs, workflows, and analytics, but never the other account's data. The `20260711000001_client_data_rls.sql` migration enables this policy enforcement.
+
+6. GitHub Actions runs lint, tests, and production builds for pushes and pull requests. Configure your deployment provider to deploy only after this workflow is green.
+
+## n8n infrastructure
+
+Use `infra/n8n/` only if you are delivering the private-infrastructure offer. It contains a Docker Compose stack for n8n, Postgres, and Caddy, plus backup and restore scripts. Copy `infra/n8n/.env.example` to `.env` on the host and keep the real values out of Git.
+
+Use `n8n/workflows/` for exported workflow JSON after a workflow passes acceptance testing. Do not export credentials, webhook secrets, API keys, or client data.

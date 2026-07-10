@@ -1,0 +1,7 @@
+project_id = "iutycpnqlzxovffctjyz"
+
+[functions.ingest-run]
+verify_jwt = false
+
+[functions.invite-client]
+verify_jwt = false

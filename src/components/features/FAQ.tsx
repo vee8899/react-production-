@@ -1,23 +1,23 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 const faqItems = [
   {
     q: "Is my client data secure?",
-    a: "Yes. All data is stored in an isolated database with row-level security — meaning each client can only ever access their own data. Workflows run on private infrastructure and no client data is shared across accounts or stored in third-party automation platforms.",
+    a: "Each client workspace is designed with database access controls so users only see their own records. We configure credentials and hosting for the workflow you approve, and document where your data is processed before launch.",
   },
   {
     q: "Do I need to change the tools I already use?",
-    a: "No. We connect to the tools you already have — Gmail, WhatsApp, Google Sheets, Outlook, Slack, Telegram, and more. There is no migration, no new software to learn, and no disruption to your existing workflow. We build around how you already work.",
+    a: "Usually not. We assess the tools and permissions you already have, then build around the integrations that fit your workflow. Supported connections depend on the systems and access available for your project.",
   },
   {
     q: "How much time can I realistically save per month?",
-    a: "Most real estate clients save between 40 and 120 hours per month depending on lead volume and how many manual tasks are automated. Follow-up sequences, message sending, and data entry are typically the highest-impact areas. Use the calculator above to estimate your specific savings.",
+    a: "The result depends on lead volume, approval steps, and the tools involved. We estimate the manual work in discovery, then measure the workflow after launch so you can judge the impact from your own data.",
   },
   {
     q: "What real estate tasks can actually be automated?",
-    a: "Lead follow-up sequences, listing alerts to buyers, WhatsApp and email communication, appointment reminders, CRM data entry, document generation, and daily reporting. If it happens more than once and follows a pattern, it can be automated.",
+    a: "Lead follow-up sequences, listing alerts, client communication, appointment reminders, CRM updates, document generation, and reporting can all be scoped into a workflow. We start with the repeatable task that will make the clearest difference.",
   },
 ];
 
@@ -26,36 +26,29 @@ export default function FAQ() {
   const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    setReducedMotion(mq.matches);
-    const handler = (e: MediaQueryListEvent) => {
-      setReducedMotion(e.matches);
-    };
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
+    setReducedMotion(mediaQuery.matches);
+    const handleChange = (event: MediaQueryListEvent) => setReducedMotion(event.matches);
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
-
-  const toggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
 
   return (
     <section className="px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,192px)] bg-[#FEFDFC]">
       <div className="max-w-[800px] mx-auto">
-        <SectionHeader label="09 — FAQ" />
+        <SectionHeader label="09 - FAQ" />
 
         <div className="mt-12">
-          {faqItems.map((item, i) => {
-            const isOpen = openIndex === i;
+          {faqItems.map((item, index) => {
+            const isOpen = openIndex === index;
 
             return (
-              <div key={i}>
-                {/* Hairline divider */}
+              <div key={item.q}>
                 <div className="w-full h-px bg-[#E0DDDA]" />
-
                 <button
-                  onClick={() => toggle(i)}
+                  type="button"
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="w-full flex items-start justify-between py-6 text-left cursor-pointer"
                   style={{ WebkitTapHighlightColor: "transparent" }}
                 >
@@ -68,18 +61,18 @@ export default function FAQ() {
                   <span
                     className="font-mono text-lg leading-none flex-shrink-0 mt-0.5"
                     style={{ color: "#6B6762" }}
+                    aria-hidden="true"
                   >
-                    {isOpen ? "−" : "+"}
+                    {isOpen ? "-" : "+"}
                   </span>
                 </button>
 
                 <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
-                      key="answer"
                       initial={reducedMotion ? false : { height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
-                      exit={reducedMotion ? { height: 0, opacity: 0 } : { height: 0, opacity: 0 }}
+                      exit={{ height: 0, opacity: 0 }}
                       transition={reducedMotion ? { duration: 0 } : { duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
@@ -95,8 +88,6 @@ export default function FAQ() {
               </div>
             );
           })}
-
-          {/* Final hairline divider */}
           <div className="w-full h-px bg-[#E0DDDA]" />
         </div>
       </div>

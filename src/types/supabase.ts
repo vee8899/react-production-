@@ -61,6 +61,16 @@ export type Database = {
       automation_runs: {
         Row: {
           client_id: string
+          event_id: string | null
+          feature_type:
+            | "lead_follow_up"
+            | "listing_notifications"
+            | "client_communication"
+            | "crm_sync"
+            | "document_generation"
+            | "appointment_scheduling"
+            | "data_pipeline"
+            | "custom_workflow"
           duration_ms: number | null
           error_message: string | null
           id: string
@@ -69,12 +79,22 @@ export type Database = {
           ran_at: string
           records_failed: number
           records_processed: number
-          status: string
+          status: "success" | "error" | "partial"
           workflow_id: string | null
           workflow_name: string
         }
         Insert: {
           client_id: string
+          event_id?: string | null
+          feature_type:
+            | "lead_follow_up"
+            | "listing_notifications"
+            | "client_communication"
+            | "crm_sync"
+            | "document_generation"
+            | "appointment_scheduling"
+            | "data_pipeline"
+            | "custom_workflow"
           duration_ms?: number | null
           error_message?: string | null
           id?: string
@@ -83,12 +103,22 @@ export type Database = {
           ran_at?: string
           records_failed?: number
           records_processed?: number
-          status: string
+          status?: "success" | "error" | "partial"
           workflow_id?: string | null
           workflow_name: string
         }
         Update: {
           client_id?: string
+          event_id?: string | null
+          feature_type?:
+            | "lead_follow_up"
+            | "listing_notifications"
+            | "client_communication"
+            | "crm_sync"
+            | "document_generation"
+            | "appointment_scheduling"
+            | "data_pipeline"
+            | "custom_workflow"
           duration_ms?: number | null
           error_message?: string | null
           id?: string
@@ -97,7 +127,7 @@ export type Database = {
           ran_at?: string
           records_failed?: number
           records_processed?: number
-          status?: string
+          status?: "success" | "error" | "partial"
           workflow_id?: string | null
           workflow_name?: string
         }
@@ -197,7 +227,16 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      feature_type:
+        | "lead_follow_up"
+        | "listing_notifications"
+        | "client_communication"
+        | "crm_sync"
+        | "document_generation"
+        | "appointment_scheduling"
+        | "data_pipeline"
+        | "custom_workflow"
+      run_status: "success" | "error" | "partial"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -324,6 +363,18 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      feature_type: [
+        "lead_follow_up",
+        "listing_notifications",
+        "client_communication",
+        "crm_sync",
+        "document_generation",
+        "appointment_scheduling",
+        "data_pipeline",
+        "custom_workflow",
+      ],
+      run_status: ["success", "error", "partial"],
+    },
   },
 } as const

@@ -14,13 +14,13 @@ const services = [
     number: "01",
     name: "Lead Follow-Up",
     description:
-      "Automated email and SMS sequences triggered the moment a lead comes in. No manual outreach.",
+      "We build email and SMS sequences that respond when a new lead arrives.",
   },
   {
     number: "02",
     name: "Listing Notifications",
     description:
-      "Instant alerts to buyers and tenants when a matching property hits the market.",
+      "Matching-property alerts tailored to your listing source and audience.",
   },
   {
     number: "03",
@@ -32,31 +32,31 @@ const services = [
     number: "04",
     name: "CRM Sync",
     description:
-      "Keep your CRM, inbox, and calendar in sync without touching a single field manually.",
+      "Connect your CRM, inbox, and calendar around the way your team already works.",
   },
   {
     number: "05",
     name: "Document Generation",
     description:
-      "Auto-generate contracts, proposals, and reports from your existing data.",
+      "Generate documents and reports from the data sources you approve.",
   },
   {
     number: "06",
     name: "Appointment Scheduling",
     description:
-      "Automated booking flows that confirm, remind, and follow up without back-and-forth.",
+      "Booking flows that confirm, remind, and follow up around your availability rules.",
   },
   {
     number: "07",
     name: "Data Pipelines",
     description:
-      "Move data between your tools, portals, spreadsheets, databases, on a schedule or trigger.",
+      "Move approved data between tools, portals, spreadsheets, and databases on a schedule or trigger.",
   },
   {
     number: "08",
     name: "Custom Workflows",
     description:
-      "Anything that happens more than once in your business can be automated. We build it.",
+      "For repeatable work that does not fit a template, we design a dedicated workflow.",
   },
 ];
 
@@ -74,15 +74,15 @@ const processSteps = [
   {
     number: "03",
     title: "Monitor",
-    body: "Every automation runs through our dashboard. You see what ran, when, and how many records were processed.",
+    body: "Supported workflows report their activity to a client dashboard, so you can see what ran and when.",
   },
 ];
 
 const stats = [
-  { value: "10,000+", label: "RECORDS AUTOMATED MONTHLY" },
-  { value: "98%", label: "WORKFLOW SUCCESS RATE" },
-  { value: "40hrs", label: "SAVED PER CLIENT PER MONTH" },
-  { value: "< 1s", label: "AVERAGE WORKFLOW RESPONSE TIME" },
+  { value: "Custom", label: "BUILT AROUND YOUR TOOLS" },
+  { value: "Scoped", label: "TO YOUR WORKFLOW" },
+  { value: "Visible", label: "ACTIVITY IN CLIENT DASHBOARD" },
+  { value: "Supported", label: "FROM DISCOVERY TO HANDOFF" },
 ];
 
 export default function HomePage() {
@@ -145,7 +145,7 @@ export default function HomePage() {
             We build automation systems for real estate professionals, agents,
             brokerages, and property managers, that eliminate manual work from
             their operations. Every workflow is custom built, connected to their
-            existing tools, and monitored in real time.
+            existing tools, and monitored through a client dashboard.
           </p>
         </FadeUp>
       </section>
