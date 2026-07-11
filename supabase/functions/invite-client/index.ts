@@ -13,6 +13,18 @@ const inviteSchema = z.object({
   plan: z.string().trim().min(1).max(80).default("starter"),
 });
 
+const getInviteRedirectUrl = (rawSiteUrl: string) => {
+  try {
+    const url = new URL(rawSiteUrl);
+    url.pathname = "/accept-invite";
+    url.search = "";
+    url.hash = "";
+    return url.toString();
+  } catch {
+    return null;
+  }
+};
+
 Deno.serve(async (req) => {
   if (req.method !== "POST") {
     return json({ error: "Method not allowed" }, 405, { Allow: "POST" });
@@ -48,12 +60,18 @@ Deno.serve(async (req) => {
     return json({ error: "Invite service is not configured" }, 500);
   }
 
+  const redirectTo = getInviteRedirectUrl(siteUrl);
+  if (!redirectTo) {
+    console.error("SITE_URL is not a valid URL");
+    return json({ error: "Invite service is not configured" }, 500);
+  }
+
   const supabase = createClient(supabaseUrl, serviceRoleKey);
   const { data: invite, error: inviteError } = await supabase.auth.admin.inviteUserByEmail(
     parsed.data.email,
     {
       data: { company_name: parsed.data.company_name, plan: parsed.data.plan },
-      redirectTo: `${siteUrl}/login`,
+      redirectTo,
     }
   );
 

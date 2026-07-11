@@ -78,7 +78,7 @@ The response includes the created `client_id` and `user_id`. Store those IDs whe
    ```powershell
    npx supabase secrets set WEBHOOK_SECRET="replace-with-a-long-random-secret"
    npx supabase secrets set ADMIN_INVITE_SECRET="replace-with-a-long-random-secret"
-   npx supabase secrets set SITE_URL="https://your-production-domain.example"
+   npx supabase secrets set SITE_URL="https://react-production.pages.dev/"
    npx supabase config push
    npx supabase db push
    npx supabase functions deploy ingest-run
@@ -88,7 +88,7 @@ The response includes the created `client_id` and `user_id`. Store those IDs whe
    `ingest-run` is configured to bypass Supabase JWT verification because n8n is an external service. It rejects every request unless the shared secret is present and correct.
    `invite-client` also bypasses Supabase JWT verification and rejects every request unless the admin invite secret is present and correct.
 
-4. In Supabase Auth settings, set the production Site URL, allow only production and staging redirect URLs, configure the sender email/SMTP, and test password reset with a regular client account.
+4. In Supabase Auth settings, set the production Site URL to `https://react-production.pages.dev/`, allow `https://react-production.pages.dev/accept-invite` as an auth redirect URL, configure the sender email/SMTP, and test a new client invite. Invited users land on `/accept-invite`, consent to portal access, set their password, and then continue to the dashboard.
 
 5. Verify tenant isolation with two test accounts: each account must see its own client row, runs, workflows, and analytics, but never the other account's data. The `20260711000001_client_data_rls.sql` migration enables this policy enforcement.
 

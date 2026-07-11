@@ -3,6 +3,7 @@ import { MotionConfig } from "framer-motion";
 import { useAuth } from "@/hooks/useAuth";
 import HomePage from "@/pages/HomePage";
 import LoginPage from "@/pages/LoginPage";
+import AcceptInvitePage from "@/pages/AcceptInvitePage";
 import DashboardPage from "@/pages/DashboardPage";
 import WorkflowsPage from "@/pages/WorkflowsPage";
 import PageTransition from "@/components/motion/PageTransition";
@@ -38,6 +39,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/accept-invite" element={<AcceptInvitePage />} />
             <Route
               path="/dashboard"
               element={
