@@ -4,6 +4,7 @@ import Footer from "@/components/ui/Footer";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { StatsRow } from "@/components/dashboard/StatsRow";
 import { RunsFeed } from "@/components/dashboard/RunsFeed";
+import { ClientServices } from "@/components/dashboard/ClientServices";
 
 export default function DashboardPage() {
   const {
@@ -68,7 +69,14 @@ export default function DashboardPage() {
         </div>
 
         <div className="mt-24">
-          <SectionHeader label="02 - Recent Activity" />
+          <SectionHeader label="02 - Your Services" />
+          <div className="mt-8">
+            <ClientServices clientId={client.id} />
+          </div>
+        </div>
+
+        <div className="mt-24">
+          <SectionHeader label="03 - Recent Activity" />
           <div className="mt-8">
             <RunsFeed />
           </div>

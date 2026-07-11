@@ -178,6 +178,65 @@ export type Database = {
         }
         Relationships: []
       }
+      client_services: {
+        Row: {
+          client_id: string
+          created_at: string
+          feature_type:
+            | "lead_follow_up"
+            | "listing_notifications"
+            | "client_communication"
+            | "crm_sync"
+            | "document_generation"
+            | "appointment_scheduling"
+            | "data_pipeline"
+            | "custom_workflow"
+          id: string
+          status: "onboarding" | "active" | "paused" | "cancelled"
+          updated_at: string
+        }
+        Insert: {
+          client_id: string
+          created_at?: string
+          feature_type:
+            | "lead_follow_up"
+            | "listing_notifications"
+            | "client_communication"
+            | "crm_sync"
+            | "document_generation"
+            | "appointment_scheduling"
+            | "data_pipeline"
+            | "custom_workflow"
+          id?: string
+          status?: "onboarding" | "active" | "paused" | "cancelled"
+          updated_at?: string
+        }
+        Update: {
+          client_id?: string
+          created_at?: string
+          feature_type?:
+            | "lead_follow_up"
+            | "listing_notifications"
+            | "client_communication"
+            | "crm_sync"
+            | "document_generation"
+            | "appointment_scheduling"
+            | "data_pipeline"
+            | "custom_workflow"
+          id?: string
+          status?: "onboarding" | "active" | "paused" | "cancelled"
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "client_services_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "clients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       workflows: {
         Row: {
           client_id: string
@@ -227,6 +286,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
+      client_service_status: "onboarding" | "active" | "paused" | "cancelled"
       feature_type:
         | "lead_follow_up"
         | "listing_notifications"
@@ -364,6 +424,7 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
+      client_service_status: ["onboarding", "active", "paused", "cancelled"],
       feature_type: [
         "lead_follow_up",
         "listing_notifications",

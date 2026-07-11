@@ -11,6 +11,17 @@ const inviteSchema = z.object({
   company_name: z.string().trim().min(1).max(120),
   email: z.string().trim().email(),
   plan: z.string().trim().min(1).max(80).default("starter"),
+  services: z.array(z.object({
+    feature_type: z.enum([
+      "lead_follow_up",
+      "listing_notifications",
+      "client_communication",
+      "crm_sync",
+      "appointment_scheduling",
+      "data_pipeline",
+    ]),
+    status: z.enum(["onboarding", "active", "paused", "cancelled"]).default("onboarding"),
+  })).max(6).optional().default([]),
 });
 
 const getInviteRedirectUrl = (rawSiteUrl: string) => {
@@ -94,6 +105,18 @@ Deno.serve(async (req) => {
     await supabase.auth.admin.deleteUser(invite.user.id);
     console.error("Unable to create client record", clientError);
     return json({ error: "Unable to create client record" }, 500);
+  }
+
+  if (parsed.data.services.length > 0) {
+    const { error: servicesError } = await supabase
+      .from("client_services")
+      .insert(parsed.data.services.map((service) => ({ ...service, client_id: client.id })));
+
+    if (servicesError) {
+      await supabase.auth.admin.deleteUser(invite.user.id);
+      console.error("Unable to create client services", servicesError);
+      return json({ error: "Unable to create client services" }, 500);
+    }
   }
 
   return json({ client_id: client.id, user_id: invite.user.id, invited: true }, 201);

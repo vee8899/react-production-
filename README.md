@@ -50,11 +50,15 @@ Content-Type: application/json
 {
   "company_name": "Client Company",
   "email": "client@example.com",
-  "plan": "starter"
+  "plan": "starter",
+  "services": [
+    { "feature_type": "lead_follow_up", "status": "onboarding" },
+    { "feature_type": "crm_sync", "status": "active" }
+  ]
 }
 ```
 
-The response includes the created `client_id` and `user_id`. Store those IDs when configuring a workflow for that client.
+`services` is optional. It controls the client-facing service visibility and accepts `onboarding`, `active`, `paused`, or `cancelled`. The response includes the created `client_id` and `user_id`. Store those IDs when configuring a workflow for that client.
 
 ## Production setup
 
