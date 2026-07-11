@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
+import { contactHref } from "@/utils/contact";
 
 const publicNavLinks = [
   { label: "Work", hash: "work" },
@@ -11,9 +12,6 @@ const privateNavLinks = [
   { label: "Dashboard", to: "/dashboard" },
   { label: "Workflows", to: "/workflows" },
 ];
-
-const contactHref =
-  "mailto:Prime%20State%20Systems%20%3Cprimestatesystems%40gmail.com%3E";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
+import { contactHref } from "@/utils/contact";
 
 const footerLinks = [
   { label: "Work", path: "/" },
   { label: "Services", path: "/#services" },
-  { label: "Contact", path: "/contact" },
 ];
 
 export default function Footer() {
@@ -25,6 +25,12 @@ export default function Footer() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href={contactHref}
+              className="text-label font-sans uppercase tracking-[0.08em] text-inverse-text/70 hover:text-inverse-text transition-colors duration-200"
+            >
+              Contact
+            </a>
           </div>
         </div>
 
