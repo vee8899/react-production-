@@ -24,10 +24,12 @@ const inviteSchema = z.object({
   })).max(6).optional().default([]),
 });
 
-const getInviteRedirectUrl = (rawSiteUrl: string) => {
+const getInviteRedirectUrl = (rawSiteUrl: string, rawInviteRedirectUrl?: string) => {
   try {
-    const url = new URL(rawSiteUrl);
-    url.pathname = "/accept-invite";
+    const url = new URL(rawInviteRedirectUrl || rawSiteUrl);
+    if (!rawInviteRedirectUrl) {
+      url.pathname = "/accept-invite";
+    }
     url.search = "";
     url.hash = "";
     return url.toString();
@@ -66,14 +68,15 @@ Deno.serve(async (req) => {
   const supabaseUrl = Deno.env.get("SUPABASE_URL");
   const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
   const siteUrl = Deno.env.get("SITE_URL");
+  const inviteRedirectUrl = Deno.env.get("INVITE_REDIRECT_URL");
   if (!supabaseUrl || !serviceRoleKey || !siteUrl) {
     console.error("Supabase invite configuration is incomplete");
     return json({ error: "Invite service is not configured" }, 500);
   }
 
-  const redirectTo = getInviteRedirectUrl(siteUrl);
+  const redirectTo = getInviteRedirectUrl(siteUrl, inviteRedirectUrl);
   if (!redirectTo) {
-    console.error("SITE_URL is not a valid URL");
+    console.error("Invite redirect URL is not valid");
     return json({ error: "Invite service is not configured" }, 500);
   }
 

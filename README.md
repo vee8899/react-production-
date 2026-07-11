@@ -83,6 +83,7 @@ Content-Type: application/json
    npx supabase secrets set WEBHOOK_SECRET="replace-with-a-long-random-secret"
    npx supabase secrets set ADMIN_INVITE_SECRET="replace-with-a-long-random-secret"
    npx supabase secrets set SITE_URL="https://react-production.pages.dev/"
+   npx supabase secrets set INVITE_REDIRECT_URL="https://react-production.pages.dev/accept-invite"
    npx supabase config push
    npx supabase db push
    npx supabase functions deploy ingest-run
