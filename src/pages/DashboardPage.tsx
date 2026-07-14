@@ -72,15 +72,15 @@ export default function DashboardPage() {
     <>
       <Nav />
       <main className="pt-16 px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,128px)]">
-        <SectionHeader label="01 - Dashboard" />
-
-        <div className="mt-8">
-          <StackingNavbar />
-        </div>
-
-        <div className="mt-12">
-          <StatsRow />
-        </div>
+        <section className="relative min-h-[clamp(240px,32vw,420px)]">
+          <div className="absolute right-0 top-0">
+            <StackingNavbar className="" />
+          </div>
+          <SectionHeader label="01 - Dashboard" />
+          <div className="mt-12 pr-0 lg:pr-16">
+            <StatsRow />
+          </div>
+        </section>
 
         <div className="mt-24">
           <SectionHeader label="02 - Your Services" />

@@ -6,13 +6,13 @@ const items = [
   { href: "#recent-activity", label: "Recent Activity" },
 ];
 
-export const StackingNavbar = () => {
+export const StackingNavbar = ({ className = "sticky top-20 z-30" }: { className?: string }) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
     <nav
       aria-label="Dashboard sections"
-      className="sticky top-20 z-30 flex justify-end"
+      className={`${className} flex justify-end`}
       onMouseEnter={() => setExpanded(true)}
       onMouseLeave={() => setExpanded(false)}
       onFocus={() => setExpanded(true)}
