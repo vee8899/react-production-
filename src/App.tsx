@@ -6,6 +6,7 @@ import LoginPage from "@/pages/LoginPage";
 import AcceptInvitePage from "@/pages/AcceptInvitePage";
 import DashboardPage from "@/pages/DashboardPage";
 import WorkflowsPage from "@/pages/WorkflowsPage";
+import RecentActivityPage from "@/pages/RecentActivityPage";
 import PageTransition from "@/components/motion/PageTransition";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 
@@ -53,6 +54,14 @@ export default function App() {
               element={
                 <ProtectedRoute>
                   <WorkflowsPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/activity"
+              element={
+                <ProtectedRoute>
+                  <RecentActivityPage />
                 </ProtectedRoute>
               }
             />

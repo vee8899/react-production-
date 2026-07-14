@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { contactHref } from "@/utils/contact";
-import { StackingNavbar } from "@/components/dashboard/StackingNavbar";
+import { OperationsMenu } from "@/components/dashboard/OperationsMenu";
 
 const publicNavLinks = [
   { label: "Work", hash: "work" },
@@ -11,7 +11,6 @@ const publicNavLinks = [
 
 const privateNavLinks = [
   { label: "Dashboard", to: "/dashboard" },
-  { label: "Workflows", to: "/workflows" },
 ];
 
 export default function Nav() {
@@ -84,10 +83,7 @@ export default function Nav() {
                 {link.label}
               </button>
             ))}
-            {isAuthenticated &&
-              privateNavLinks
-                .filter((link) => !(location.pathname === "/dashboard" && link.to === "/workflows"))
-                .map((link) => (
+            {isAuthenticated && privateNavLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
@@ -95,10 +91,8 @@ export default function Nav() {
                 >
                   {link.label}
                 </Link>
-                ))}
-            {isAuthenticated && location.pathname === "/dashboard" && (
-              <StackingNavbar className="" />
-            )}
+            ))}
+            {isAuthenticated && <OperationsMenu />}
             <a
               href={contactHref}
               className="text-label font-sans uppercase tracking-[0.08em] text-muted hover:text-primary transition-colors duration-200"
@@ -179,10 +173,7 @@ export default function Nav() {
               {link.label}
             </button>
           ))}
-          {isAuthenticated &&
-            privateNavLinks
-              .filter((link) => !(location.pathname === "/dashboard" && link.to === "/workflows"))
-              .map((link) => (
+          {isAuthenticated && privateNavLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
@@ -191,10 +182,8 @@ export default function Nav() {
               >
                 {link.label}
               </Link>
-              ))}
-          {isAuthenticated && location.pathname === "/dashboard" && (
-            <StackingNavbar className="" />
-          )}
+          ))}
+          {isAuthenticated && <OperationsMenu mobile />}
           <a
             href={contactHref}
             className="text-h1 font-display text-muted"

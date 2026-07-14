@@ -1,169 +1,150 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
+import {
+  MAX_AUTOMATION_COVERAGE,
+  automationModules,
+  calculateTeamLaborRoi,
+  companySizeMultipliers,
+  currencies,
+  formatCurrency,
+  laborRateConfigs,
+  type CompanySize,
+  type Currency,
+} from "@/lib/roiCalculator";
 
-type SliderConfig = {
+type SliderProps = {
   label: string;
+  helper: string;
   min: number;
   max: number;
   step: number;
-  default: number;
-  unit: string;
-  suffix?: string;
-};
-
-const sliders: SliderConfig[] = [
-  { label: "Leads per month", min: 10, max: 500, step: 10, default: 80, unit: "leads" },
-  { label: "Minutes per follow-up", min: 5, max: 60, step: 5, default: 20, unit: "min" },
-  { label: "Staff hourly cost", min: 90, max: 500, step: 10, default: 150, unit: "₹/hr", suffix: "₹" },
-  { label: "Messages per day", min: 10, max: 200, step: 10, default: 50, unit: "msgs" },
-];
-
-type Output = {
   value: number;
-  label: string;
-  format: (n: number) => string;
+  displayValue: string;
+  onChange: (value: number) => void;
 };
 
-function formatHours(n: number) {
-  return `${Math.round(n)} hrs`;
-}
-
-function formatCurrency(n: number) {
-  return `₹${n.toLocaleString("en-IN")}`;
-}
-
-function formatLeads(n: number) {
-  return `${n} leads`;
-}
-
-function formatMessages(n: number) {
-  return `${n.toLocaleString("en-IN")} msgs`;
-}
-
-export default function ROICalculator() {
-  const [leadsPerMonth, setLeadsPerMonth] = useState(80);
-  const [followUpMins, setFollowUpMins] = useState(20);
-  const [staffCost, setStaffCost] = useState(150);
-  const [messagesPerDay, setMessagesPerDay] = useState(50);
-  const [reducedMotion, setReducedMotion] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setReducedMotion(mq.matches);
-    const handler = (e: MediaQueryListEvent) => {
-      setReducedMotion(e.matches);
-    };
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
-
-  const hoursPerMonth = (leadsPerMonth * followUpMins) / 60;
-  const costSavedPerYear = hoursPerMonth * 12 * staffCost;
-  const leadsNotDropped = Math.round(leadsPerMonth * 0.35);
-  const messagesAutomated = messagesPerDay * 30;
-
-  const outputs: Output[] = [
-    { value: hoursPerMonth, label: "HOURS PER MONTH", format: formatHours },
-    { value: costSavedPerYear, label: "COST SAVED PER YEAR", format: formatCurrency },
-    { value: leadsNotDropped, label: "NOT DROPPED", format: formatLeads },
-    { value: messagesAutomated, label: "AUTOMATED MONTHLY", format: formatMessages },
-  ];
-
-  const sliderValues = [leadsPerMonth, followUpMins, staffCost, messagesPerDay];
-  const setters = [setLeadsPerMonth, setFollowUpMins, setStaffCost, setMessagesPerDay];
+const Slider = ({ label, helper, min, max, step, value, displayValue, onChange }: SliderProps) => {
+  const percentage = ((value - min) / (max - min)) * 100;
 
   return (
-    <section className="px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,192px)] bg-[#F2F0ED]">
-      <div className="max-w-[1280px] mx-auto">
-        <SectionHeader label="06 — ROI CALCULATOR" />
+    <div>
+      <div className="mb-2 flex items-baseline justify-between gap-4">
+        <label className="font-sans font-light text-primary" style={{ fontSize: "clamp(0.875rem, 1.2vw, 1rem)" }}>{label}</label>
+        <span className="font-mono text-primary tabular-nums" style={{ fontSize: "clamp(1rem, 1.5vw, 1.25rem)" }}>{displayValue}</span>
+      </div>
+      <p className="mb-3 max-w-md text-xs leading-relaxed text-muted">{helper}</p>
+      <div className="relative flex h-6 items-center">
+        <input aria-label={label} type="range" min={min} max={max} step={step} value={value} onChange={(event) => onChange(Number(event.target.value))} className="absolute inset-0 z-10 h-full w-full cursor-pointer opacity-0" />
+        <div className="relative h-1 w-full rounded-full" style={{ backgroundColor: "#E0DDDA" }}>
+          <div className="absolute left-0 top-0 h-full rounded-full" style={{ width: `${percentage}%`, backgroundColor: "#0F0E0D" }} />
+        </div>
+      </div>
+    </div>
+  );
+};
 
-        <h2
-          className="font-display font-normal text-primary mt-12 mb-16 text-center mx-auto max-w-[700px] leading-[1.15] tracking-[-0.02em]"
-          style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)" }}
-        >
-          See how much you save.
-        </h2>
+export default function ROICalculator() {
+  const [teamSize, setTeamSize] = useState(5);
+  const [monthlyVolume, setMonthlyVolume] = useState(200);
+  const [minutesPerItem, setMinutesPerItem] = useState(15);
+  const [selectedModuleKeys, setSelectedModuleKeys] = useState<string[]>(["lead_follow_up", "crm_sync", "ai_assistant"]);
+  const [companySize, setCompanySize] = useState<CompanySize>("26-100");
+  const [currency, setCurrency] = useState<Currency>("USD");
+  const [laborRatePerHour, setLaborRatePerHour] = useState(laborRateConfigs.USD.default);
+  const [reducedMotion, setReducedMotion] = useState(false);
+  const laborRate = laborRateConfigs[currency];
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-[clamp(48px,6vw,96px)] gap-y-12">
-          {/* Inputs column */}
-          <div className="space-y-10">
-            {sliders.map((slider, i) => {
-              const val = sliderValues[i];
-              const setter = setters[i];
-              const pct = ((val - slider.min) / (slider.max - slider.min)) * 100;
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setReducedMotion(mediaQuery.matches);
+    const handleChange = (event: MediaQueryListEvent) => setReducedMotion(event.matches);
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
 
-              return (
-                <div key={slider.label}>
-                  <div className="flex items-baseline justify-between mb-3">
-                    <span
-                      className="font-sans font-light text-primary"
-                      style={{ fontSize: "clamp(0.875rem, 1.2vw, 1rem)" }}
-                    >
-                      {slider.label}
-                    </span>
-                    <span
-                      className="font-mono text-primary tabular-nums"
-                      style={{ fontSize: "clamp(1rem, 1.5vw, 1.25rem)" }}
-                    >
-                      {slider.suffix || ""}{val}
-                    </span>
-                  </div>
-                  <div className="relative h-6 flex items-center">
-                    <input
-                      type="range"
-                      min={slider.min}
-                      max={slider.max}
-                      step={slider.step}
-                      value={val}
-                      onChange={(e) => setter(Number(e.target.value))}
-                      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
-                    />
-                    {/* Custom track */}
-                    <div className="w-full h-1 rounded-full relative" style={{ backgroundColor: "#E0DDDA" }}>
-                      <div
-                        className="h-full rounded-full absolute left-0 top-0"
-                        style={{
-                          width: `${pct}%`,
-                          backgroundColor: "#0F0E0D",
-                        }}
-                      />
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+  const outputs = calculateTeamLaborRoi({ teamSize, monthlyVolume, minutesPerItem, selectedModuleKeys, companySize, currency, laborRatePerHour });
+
+  const handleCurrencyChange = (nextCurrency: Currency) => {
+    setCurrency(nextCurrency);
+    setLaborRatePerHour(laborRateConfigs[nextCurrency].default);
+  };
+
+  const toggleModule = (moduleKey: string) => {
+    setSelectedModuleKeys((current) => current.includes(moduleKey) ? current.filter((key) => key !== moduleKey) : [...current, moduleKey]);
+  };
+
+  return (
+    <section className="bg-[#F2F0ED] px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,192px)]">
+      <div className="mx-auto max-w-[1280px]">
+        <SectionHeader label="06 - BUSINESS VALUE" />
+        <h2 className="mx-auto mb-6 mt-12 max-w-[700px] text-center font-display text-primary" style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)" }}>See what your next workflow could return.</h2>
+        <p className="mx-auto mb-16 max-w-[650px] text-center text-sm font-light leading-relaxed text-muted">Select the work, team, and automation package to estimate the potential business value.</p>
+
+        <div className="grid grid-cols-1 gap-x-[clamp(48px,6vw,96px)] gap-y-12 lg:grid-cols-2">
+          <div className="space-y-8">
+            <Slider label="Team members performing this work" helper="Number of employees currently responsible for completing these work items." min={1} max={50} step={1} value={teamSize} displayValue={`${teamSize}`} onChange={setTeamSize} />
+            <Slider label="Work items processed per month" helper="Total monthly volume of repeatable work such as leads, invoices, tickets, appointments, or records." min={10} max={2000} step={10} value={monthlyVolume} displayValue={monthlyVolume.toLocaleString("en-US")} onChange={setMonthlyVolume} />
+            <Slider label="Average time per work item" helper="Average staff time currently required to complete one work item." min={5} max={120} step={5} value={minutesPerItem} displayValue={`${minutesPerItem} min`} onChange={setMinutesPerItem} />
+
+            <div className="border-t border-border pt-6">
+              <p className="mb-4 font-mono text-xs uppercase tracking-[0.08em] text-muted">Automation modules</p>
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {automationModules.map((module) => (
+                  <label key={module.key} className="flex cursor-pointer items-center gap-3 border border-border bg-background px-3 py-3 text-sm text-primary">
+                    <input type="checkbox" checked={selectedModuleKeys.includes(module.key)} onChange={() => toggleModule(module.key)} />
+                    <span>{module.label}</span>
+                  </label>
+                ))}
+              </div>
+              <p className="mt-3 text-xs leading-relaxed text-muted">Select the capabilities you want included in the estimated automation package.</p>
+            </div>
+
+            <label className="flex items-center justify-between gap-4 border-t border-border pt-6 text-sm text-primary">
+              <span>Company size</span>
+              <select aria-label="Company size" value={companySize} onChange={(event) => setCompanySize(event.target.value as CompanySize)} className="border border-border bg-background px-3 py-2 font-mono text-sm text-primary outline-none focus:border-primary">
+                {Object.keys(companySizeMultipliers).map((size) => <option key={size} value={size}>{size}</option>)}
+              </select>
+            </label>
+
+            <div className="border-t border-border pt-6">
+              <label className="flex items-center justify-between gap-4 text-sm text-primary">
+                <span>Currency</span>
+                <select aria-label="Currency" value={currency} onChange={(event) => handleCurrencyChange(event.target.value as Currency)} className="border border-border bg-background px-3 py-2 font-mono text-sm text-primary outline-none focus:border-primary">
+                  {currencies.map((option) => <option key={option} value={option}>{option}</option>)}
+                </select>
+              </label>
+              <p className="mb-3 mt-3 text-xs leading-relaxed text-muted">Average labor rate assumption: {formatCurrency(laborRatePerHour, currency)} per hour. Adjust the blended local estimate if needed.</p>
+              <Slider label="Average labor rate" helper="Blended hourly labor rate for the team performing this work." min={laborRate.min} max={laborRate.max} step={laborRate.step} value={laborRatePerHour} displayValue={formatCurrency(laborRatePerHour, currency)} onChange={setLaborRatePerHour} />
+            </div>
           </div>
 
-          {/* Outputs column */}
-          <div className="space-y-10">
-            {outputs.map((output) => (
-              <div key={output.label}>
-                <motion.div
-                  key={output.value}
-                  initial={reducedMotion ? false : { opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                >
-                  <span
-                    className="font-mono text-primary tabular-nums block leading-none mb-2"
-                    style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
-                  >
-                    {output.format(output.value)}
-                  </span>
-                </motion.div>
-                <span
-                  className="font-mono uppercase tracking-[0.08em] block"
-                  style={{ fontSize: "0.75rem", color: "#6B6762" }}
-                >
-                  {output.label}
-                </span>
-              </div>
-            ))}
+          <div className="space-y-8">
+            <Output value={formatCurrency(outputs.netAnnualSavings, currency)} label="ESTIMATED ANNUAL NET SAVINGS" reducedMotion={reducedMotion} prominent />
+            <Output value={outputs.roiPercentage === null ? "—" : `${outputs.roiPercentage.toFixed(0)}%`} label="ESTIMATED ROI" reducedMotion={reducedMotion} />
+            <Output value={outputs.paybackMonths === null ? "—" : `${outputs.paybackMonths.toFixed(1)} months`} label="ESTIMATED PAYBACK" reducedMotion={reducedMotion} />
+            <Output value={`${outputs.hoursSavedPerMonth.toFixed(0)} hours`} label="SAVED PER MONTH" reducedMotion={reducedMotion} />
+            <Output value={`${outputs.workItemsAssisted.toLocaleString("en-US")} work items`} label="AUTOMATED MONTHLY" reducedMotion={reducedMotion} />
+
+            <div className="border-t border-border pt-6 text-xs leading-relaxed text-muted">
+              <p>Automation coverage: <span className="font-mono text-primary">{Math.round(outputs.automationCoverage * 100)}%</span></p>
+              <p className="mt-2">Based on selected automation modules; coverage is capped at {Math.round(MAX_AUTOMATION_COVERAGE * 100)}%.</p>
+              <p className="mt-2">Selected automation investment: <span className="font-mono text-primary">{formatCurrency(outputs.automationInvestment, currency)} / year</span></p>
+              <p className="mt-2">Illustrative estimate based on configurable platform assumptions and selected modules. Actual results, pricing, adoption, and savings will vary.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
 }
+
+const Output = ({ value, label, reducedMotion, prominent = false }: { value: string; label: string; reducedMotion: boolean; prominent?: boolean }) => (
+  <div>
+    <motion.div key={value} initial={reducedMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, ease: "easeOut" }}>
+      <span className={`mb-2 block font-mono text-primary tabular-nums ${prominent ? "text-[clamp(2.75rem,6vw,5rem)]" : "text-[clamp(2rem,4vw,3.5rem)]"}`} style={{ lineHeight: 1 }}>{value}</span>
+    </motion.div>
+    <span className="block font-mono text-xs uppercase tracking-[0.08em] text-muted">{label}</span>
+  </div>
+);

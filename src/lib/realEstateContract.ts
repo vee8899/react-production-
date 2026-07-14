@@ -43,3 +43,5 @@ export const serviceFeatureTypes = [
   "appointment_scheduling",
   "data_pipeline",
 ] as const;
+
+export const moduleFeatureKeys = ["module.real_estate"] as const;

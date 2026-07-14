@@ -1,9 +1,25 @@
 import { useRealEstateMetrics } from "@/hooks/useRealEstateMetrics";
 
-export const RealEstateMetrics = ({ organizationId }: { organizationId: string }) => {
-  const { data, isLoading, error } = useRealEstateMetrics(organizationId, true);
-  if (isLoading) return <p className="text-label uppercase tracking-[0.08em]" style={{ color: "#6B6762" }}>Loading real-estate operations...</p>;
-  if (error) return <p style={{ color: "#6B6762" }}>Real-estate operational metrics are unavailable.</p>;
+type RealEstateMetricsProps = {
+  organizationId: string;
+  status: string;
+};
+
+export const RealEstateMetrics = ({ organizationId, status }: RealEstateMetricsProps) => {
+  const metricsEnabled = status === "active" || status === "onboarding";
+  const { data, isLoading, error } = useRealEstateMetrics(organizationId, metricsEnabled);
+
+  if (status === "paused") {
+    return <p style={{ color: "#6B6762" }}>Real-estate metrics are paused until this module is reactivated.</p>;
+  }
+
+  if (isLoading) {
+    return <p className="text-label uppercase tracking-[0.08em]" style={{ color: "#6B6762" }}>Loading module metrics...</p>;
+  }
+
+  if (error) {
+    return <p style={{ color: "#6B6762" }}>Real-estate operational metrics are unavailable.</p>;
+  }
 
   const metrics = [
     [data?.activeLeads ?? 0, "Active Leads"],
