@@ -16,8 +16,8 @@ const faqItems = [
     a: "The result depends on lead volume, approval steps, and the tools involved. We estimate the manual work in discovery, then measure the workflow after launch so you can judge the impact from your own data.",
   },
   {
-    q: "What real estate tasks can actually be automated?",
-    a: "Lead follow-up sequences, listing alerts, client communication, appointment reminders, CRM updates, document generation, and reporting can all be scoped into a workflow. We start with the repeatable task that will make the clearest difference.",
+    q: "What industry-specific work can actually be automated?",
+    a: "The platform handles reusable workflow patterns such as follow-up, system sync, notifications, document generation, reporting, and AI-assisted operations. Vertical modules add industry records and rules—for example, leads, listings, and appointments in real estate.",
   },
 ];
 

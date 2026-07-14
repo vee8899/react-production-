@@ -7,7 +7,7 @@ import { WorkflowRow } from "@/components/dashboard/WorkflowRow";
 
 export default function WorkflowsPage() {
   const { data: client, isLoading: clientLoading, error: clientError } = useClient();
-  const { data: workflows, isLoading: workflowsLoading, error: workflowsError } = useWorkflows(client?.id);
+  const { data: workflows, isLoading: workflowsLoading, error: workflowsError } = useWorkflows(client?.id, client?.organization_id);
 
   const isLoading = clientLoading || workflowsLoading;
 
@@ -84,23 +84,14 @@ export default function WorkflowsPage() {
 
         <div className="mt-12 space-y-0">
           {workflows.map((wf) => {
-            const latestRun = wf.automation_runs?.[0] ?? null;
             return (
               <WorkflowRow
                 key={wf.id}
                 name={wf.name}
                 description={wf.description}
+                featureType={wf.feature_type}
                 isActive={wf.is_active}
-                lastRun={
-                  latestRun
-                    ? {
-                        status: latestRun.status,
-                        ran_at: latestRun.ran_at,
-                        records_processed: latestRun.records_processed,
-                        duration_ms: latestRun.duration_ms,
-                      }
-                    : null
-                }
+                lastRun={wf.latestRun}
               />
             );
           })}

@@ -1,0 +1,252 @@
+{
+  "generatedAt": "deterministic",
+  "records": [
+    {
+      "name": "@eslint/js",
+      "version": "^10.0.1",
+      "usedBy": [
+        "eslint.config.js"
+      ]
+    },
+    {
+      "name": "@hookform/resolvers",
+      "version": "^5.4.0",
+      "usedBy": [
+        "src/pages/AcceptInvitePage.tsx",
+        "src/pages/LoginPage.tsx"
+      ]
+    },
+    {
+      "name": "@supabase/supabase-js",
+      "version": "^2.108.2",
+      "usedBy": [
+        "src/api/supabase/client.ts",
+        "src/store/authStore.ts"
+      ]
+    },
+    {
+      "name": "@tailwindcss/vite",
+      "version": "^4.3.1",
+      "usedBy": [
+        "vite.config.ts"
+      ]
+    },
+    {
+      "name": "@tanstack/react-query",
+      "version": "^5.101.2",
+      "usedBy": [
+        "src/hooks/useAnalytics.ts",
+        "src/hooks/useClient.ts",
+        "src/hooks/useClientServices.ts",
+        "src/hooks/useRuns.ts",
+        "src/hooks/useWorkflows.ts",
+        "src/main.tsx",
+        "src/test/useRuns.test.tsx"
+      ]
+    },
+    {
+      "name": "@testing-library/jest-dom",
+      "version": "^6.9.1",
+      "usedBy": [
+        "src/test/setup.ts"
+      ]
+    },
+    {
+      "name": "@testing-library/react",
+      "version": "^16.3.2",
+      "usedBy": [
+        "src/test/AcceptInvitePage.test.tsx",
+        "src/test/ProtectedRoute.test.tsx",
+        "src/test/useRuns.test.tsx"
+      ]
+    },
+    {
+      "name": "@testing-library/user-event",
+      "version": "^14.6.1",
+      "usedBy": [
+        "src/test/AcceptInvitePage.test.tsx"
+      ]
+    },
+    {
+      "name": "@types/node",
+      "version": "^24.13.2",
+      "usedBy": []
+    },
+    {
+      "name": "@types/react",
+      "version": "^19.2.17",
+      "usedBy": []
+    },
+    {
+      "name": "@types/react-dom",
+      "version": "^19.2.3",
+      "usedBy": []
+    },
+    {
+      "name": "@vitejs/plugin-react",
+      "version": "^6.0.2",
+      "usedBy": [
+        "vite.config.ts"
+      ]
+    },
+    {
+      "name": "eslint",
+      "version": "^10.5.0",
+      "usedBy": [
+        "eslint.config.js"
+      ]
+    },
+    {
+      "name": "eslint-plugin-react-hooks",
+      "version": "^7.1.1",
+      "usedBy": [
+        "eslint.config.js"
+      ]
+    },
+    {
+      "name": "eslint-plugin-react-refresh",
+      "version": "^0.5.3",
+      "usedBy": [
+        "eslint.config.js"
+      ]
+    },
+    {
+      "name": "framer-motion",
+      "version": "^12.42.0",
+      "usedBy": [
+        "src/App.tsx",
+        "src/components/features/FAQ.tsx",
+        "src/components/features/IntegrationsOrbit.tsx",
+        "src/components/features/ROICalculator.tsx",
+        "src/components/motion/FadeUp.tsx",
+        "src/components/motion/PageTransition.tsx",
+        "src/components/ui/ProjectCard.tsx",
+        "src/pages/HomePage.tsx"
+      ]
+    },
+    {
+      "name": "globals",
+      "version": "^17.6.0",
+      "usedBy": [
+        "eslint.config.js"
+      ]
+    },
+    {
+      "name": "jsdom",
+      "version": "^29.1.1",
+      "usedBy": []
+    },
+    {
+      "name": "react",
+      "version": "^19.2.7",
+      "usedBy": [
+        "src/components/ErrorBoundary.tsx",
+        "src/components/features/FAQ.tsx",
+        "src/components/features/IntegrationsOrbit.tsx",
+        "src/components/features/ROICalculator.tsx",
+        "src/components/motion/FadeUp.tsx",
+        "src/components/motion/PageTransition.tsx",
+        "src/components/ui/Nav.tsx",
+        "src/main.tsx",
+        "src/pages/AcceptInvitePage.tsx",
+        "src/pages/LoginPage.tsx",
+        "src/test/useRuns.test.tsx"
+      ]
+    },
+    {
+      "name": "react-dom",
+      "version": "^19.2.7",
+      "usedBy": [
+        "src/main.tsx"
+      ]
+    },
+    {
+      "name": "react-hook-form",
+      "version": "^7.80.0",
+      "usedBy": [
+        "src/pages/AcceptInvitePage.tsx",
+        "src/pages/LoginPage.tsx"
+      ]
+    },
+    {
+      "name": "react-icons",
+      "version": "^5.5.0",
+      "usedBy": [
+        "src/components/features/IntegrationsOrbit.tsx"
+      ]
+    },
+    {
+      "name": "react-router-dom",
+      "version": "^7.18.0",
+      "usedBy": [
+        "src/App.tsx",
+        "src/components/motion/PageTransition.tsx",
+        "src/components/ui/Footer.tsx",
+        "src/components/ui/Nav.tsx",
+        "src/hooks/useAuth.ts",
+        "src/main.tsx",
+        "src/pages/AcceptInvitePage.tsx",
+        "src/pages/LoginPage.tsx",
+        "src/test/AcceptInvitePage.test.tsx",
+        "src/test/ProtectedRoute.test.tsx"
+      ]
+    },
+    {
+      "name": "tailwindcss",
+      "version": "^4.3.1",
+      "usedBy": [
+        "src/styles/globals.css"
+      ]
+    },
+    {
+      "name": "tsx",
+      "version": "^4.23.1",
+      "usedBy": []
+    },
+    {
+      "name": "typescript",
+      "version": "~6.0.2",
+      "usedBy": []
+    },
+    {
+      "name": "typescript-eslint",
+      "version": "^8.61.0",
+      "usedBy": [
+        "eslint.config.js"
+      ]
+    },
+    {
+      "name": "vite",
+      "version": "^8.1.0",
+      "usedBy": [
+        "vite.config.ts"
+      ]
+    },
+    {
+      "name": "vitest",
+      "version": "^4.1.9",
+      "usedBy": [
+        "src/test/AcceptInvitePage.test.tsx",
+        "src/test/ProtectedRoute.test.tsx",
+        "src/test/time.test.ts",
+        "src/test/useRuns.test.tsx",
+        "vitest.config.ts"
+      ]
+    },
+    {
+      "name": "zod",
+      "version": "^4.4.3",
+      "usedBy": [
+        "src/pages/AcceptInvitePage.tsx",
+        "src/pages/LoginPage.tsx"
+      ]
+    },
+    {
+      "name": "zustand",
+      "version": "^5.0.14",
+      "usedBy": [
+        "src/store/authStore.ts"
+      ]
+    }
+  ]
+}

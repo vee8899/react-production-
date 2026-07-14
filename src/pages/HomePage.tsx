@@ -7,44 +7,44 @@ import IntegrationsOrbit from "@/components/features/IntegrationsOrbit";
 import ROICalculator from "@/components/features/ROICalculator";
 import FAQ from "@/components/features/FAQ";
 
-const heroWords = ["Automating", "Real Estate.", "End to End."];
+const heroWords = ["Automating", "Operations.", "End to End."];
 
 const services = [
   {
     number: "01",
-    name: "Lead Follow-Up",
+    name: "Workflow Automation",
     description:
-      "We build email and SMS sequences that respond when a new lead arrives.",
+      "Turn repeatable operational work into reliable workflows that run on triggers, schedules, and approvals.",
   },
   {
     number: "02",
-    name: "Listing Notifications",
+    name: "System Integrations",
     description:
-      "Matching-property alerts tailored to your listing source and audience.",
+      "Connect the systems your team already uses and move approved data between them safely.",
   },
   {
     number: "03",
-    name: "Client Communication",
+    name: "AI-Assisted Operations",
     description:
-      "Scheduled updates, check-ins, and document requests sent automatically at the right time.",
+      "Add AI steps where classification, drafting, enrichment, or decision support can remove manual effort.",
   },
   {
     number: "04",
-    name: "CRM Sync",
+    name: "Notifications",
     description:
-      "Connect your CRM, inbox, and calendar around the way your team already works.",
+      "Coordinate email, SMS, webhook, and internal notifications around business events.",
   },
   {
     number: "05",
-    name: "Document Generation",
+    name: "Reporting & Observability",
     description:
-      "Generate documents and reports from the data sources you approve.",
+      "See what ran, what changed, and where a workflow needs attention from one operational view.",
   },
   {
     number: "06",
-    name: "Appointment Scheduling",
+    name: "Modular Industry Workflows",
     description:
-      "Booking flows that confirm, remind, and follow up around your availability rules.",
+      "Add vertical modules for the records and processes that make your industry unique.",
   },
   {
     number: "07",
@@ -54,7 +54,7 @@ const services = [
   },
   {
     number: "08",
-    name: "Custom Workflows",
+    name: "Custom Modules",
     description:
       "For repeatable work that does not fit a template, we design a dedicated workflow.",
   },
@@ -142,10 +142,11 @@ export default function HomePage() {
         <SectionHeader label="01 - WHAT WE DO" />
         <FadeUp>
           <p className="font-sans text-primary max-w-[800px] mt-12 leading-[1.5] font-light text-[clamp(1.25rem,2.5vw,1.75rem)]">
-            We build automation systems for real estate professionals, agents,
-            brokerages, and property managers, that eliminate manual work from
-            their operations. Every workflow is custom built, connected to their
-            existing tools, and monitored through a client dashboard.
+            We build reusable automation systems for teams that want less manual
+            work and more operational visibility. Every workflow connects to your
+            existing tools, stores the records it affects, and reports its activity
+            through a client dashboard. Real estate is one of the vertical modules
+            we support today.
           </p>
         </FadeUp>
       </section>

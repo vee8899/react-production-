@@ -1,0 +1,286 @@
+{
+  "generatedAt": "deterministic",
+  "records": [
+    {
+      "file": "src/components/ErrorBoundary.tsx",
+      "exportedSymbols": [
+        "ErrorBoundary"
+      ],
+      "importedSymbols": [
+        "react"
+      ],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/dashboard/ClientServices.tsx",
+      "exportedSymbols": [
+        "ClientServices"
+      ],
+      "importedSymbols": [
+        "@/hooks/useClientServices"
+      ],
+      "dependencies": [
+        "@/hooks/useClientServices"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useClientServices"
+      ],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/dashboard/RunsFeed.tsx",
+      "exportedSymbols": [
+        "RunsFeed"
+      ],
+      "importedSymbols": [
+        "@/hooks/useClient",
+        "@/hooks/useRuns",
+        "@/utils/time"
+      ],
+      "dependencies": [
+        "@/hooks/useClient",
+        "@/hooks/useRuns",
+        "@/utils/time"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useClient",
+        "useRuns"
+      ],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/dashboard/StatsRow.tsx",
+      "exportedSymbols": [
+        "StatsRow"
+      ],
+      "importedSymbols": [
+        "@/hooks/useClient",
+        "@/hooks/useRuns"
+      ],
+      "dependencies": [
+        "@/hooks/useClient",
+        "@/hooks/useRuns"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useClient",
+        "useRuns"
+      ],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/dashboard/WorkflowRow.tsx",
+      "exportedSymbols": [
+        "WorkflowRow"
+      ],
+      "importedSymbols": [
+        "@/utils/time"
+      ],
+      "dependencies": [
+        "@/utils/time"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/features/FAQ.tsx",
+      "exportedSymbols": [
+        "FAQ"
+      ],
+      "importedSymbols": [
+        "@/components/ui/SectionHeader",
+        "framer-motion",
+        "react"
+      ],
+      "dependencies": [
+        "@/components/ui/SectionHeader"
+      ],
+      "referencedComponents": [
+        "AnimatePresence",
+        "SectionHeader"
+      ],
+      "referencedHooks": [
+        "useEffect",
+        "useState"
+      ],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/features/IntegrationsOrbit.tsx",
+      "exportedSymbols": [
+        "IntegrationsOrbit"
+      ],
+      "importedSymbols": [
+        "@/components/ui/SectionHeader",
+        "framer-motion",
+        "react",
+        "react-icons/fa",
+        "react-icons/si"
+      ],
+      "dependencies": [
+        "@/components/ui/SectionHeader"
+      ],
+      "referencedComponents": [
+        "FaEnvelope",
+        "FaSlack",
+        "SectionHeader",
+        "SiGmail",
+        "SiGooglecalendar",
+        "SiGoogledocs",
+        "SiGooglesheets",
+        "SiTelegram",
+        "SiWhatsapp"
+      ],
+      "referencedHooks": [
+        "useEffect",
+        "useState"
+      ],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/features/ROICalculator.tsx",
+      "exportedSymbols": [
+        "ROICalculator"
+      ],
+      "importedSymbols": [
+        "@/components/ui/SectionHeader",
+        "framer-motion",
+        "react"
+      ],
+      "dependencies": [
+        "@/components/ui/SectionHeader"
+      ],
+      "referencedComponents": [
+        "SectionHeader"
+      ],
+      "referencedHooks": [
+        "useEffect",
+        "useState"
+      ],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/motion/FadeUp.tsx",
+      "exportedSymbols": [
+        "FadeUp"
+      ],
+      "importedSymbols": [
+        "framer-motion",
+        "react"
+      ],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/motion/PageTransition.tsx",
+      "exportedSymbols": [
+        "PageTransition"
+      ],
+      "importedSymbols": [
+        "framer-motion",
+        "react",
+        "react-router-dom"
+      ],
+      "dependencies": [],
+      "referencedComponents": [
+        "AnimatePresence"
+      ],
+      "referencedHooks": [
+        "useLocation"
+      ],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/ui/Footer.tsx",
+      "exportedSymbols": [
+        "Footer"
+      ],
+      "importedSymbols": [
+        "@/utils/contact",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "@/utils/contact"
+      ],
+      "referencedComponents": [
+        "Link"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/ui/Nav.tsx",
+      "exportedSymbols": [
+        "Nav"
+      ],
+      "importedSymbols": [
+        "@/hooks/useAuth",
+        "@/utils/contact",
+        "react",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "@/hooks/useAuth",
+        "@/utils/contact"
+      ],
+      "referencedComponents": [
+        "Link"
+      ],
+      "referencedHooks": [
+        "useAuth",
+        "useCallback",
+        "useEffect",
+        "useLocation",
+        "useNavigate",
+        "useState"
+      ],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/ui/ProjectCard.tsx",
+      "exportedSymbols": [
+        "ProjectCard"
+      ],
+      "importedSymbols": [
+        "framer-motion"
+      ],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/ui/SectionHeader.tsx",
+      "exportedSymbols": [
+        "SectionHeader"
+      ],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": []
+    }
+  ]
+}

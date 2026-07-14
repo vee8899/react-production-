@@ -1,0 +1,66 @@
+{
+  "generatedAt": "deterministic",
+  "records": [
+    {
+      "file": "src/api/supabase/auth.ts",
+      "exportedSymbols": [
+        "getSession",
+        "signInWithEmail",
+        "signOut"
+      ],
+      "importedSymbols": [
+        "./client"
+      ],
+      "dependencies": [
+        "./client"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.auth.getSession",
+        "supabase.auth.signInWithPassword",
+        "supabase.auth.signOut"
+      ],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/api/supabase/client.ts",
+      "exportedSymbols": [
+        "supabase"
+      ],
+      "importedSymbols": [
+        "@/types/supabase",
+        "@/utils/env",
+        "@supabase/supabase-js"
+      ],
+      "dependencies": [
+        "@/types/supabase",
+        "@/utils/env"
+      ],
+      "referencedComponents": [
+        "Database"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.anonKey",
+        "supabase.url"
+      ],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/api/supabase/storage.ts",
+      "exportedSymbols": [
+        "storage",
+        "uploadFile"
+      ],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.storage.from"
+      ],
+      "databaseUsage": []
+    }
+  ]
+}

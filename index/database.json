@@ -1,0 +1,241 @@
+{
+  "generatedAt": "deterministic",
+  "records": [
+    {
+      "file": "scripts/repo-map.ts",
+      "exportedSymbols": [
+        "FileRecord",
+        "RepositoryMap",
+        "readSource",
+        "scanRepository",
+        "stableJson",
+        "writeIfChanged"
+      ],
+      "importedSymbols": [
+        "node:crypto",
+        "node:fs",
+        "node:path"
+      ],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "alter table",
+        "create table",
+        "insert into",
+        "select .* from|update .* set|delete from"
+      ]
+    },
+    {
+      "file": "scripts/verify-supabase.ts",
+      "exportedSymbols": [],
+      "importedSymbols": [
+        "node:fs",
+        "node:path"
+      ],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "create table"
+      ]
+    },
+    {
+      "file": "src/hooks/useAnalytics.ts",
+      "exportedSymbols": [
+        "useAnalytics"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [
+        "analytics_snapshots"
+      ]
+    },
+    {
+      "file": "src/hooks/useClient.ts",
+      "exportedSymbols": [
+        "useClient"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/hooks/useAuth",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/hooks/useAuth"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useAuth",
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [
+        "clients"
+      ]
+    },
+    {
+      "file": "src/hooks/useClientServices.ts",
+      "exportedSymbols": [
+        "useClientServices"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [
+        "client_services"
+      ]
+    },
+    {
+      "file": "src/hooks/useRuns.ts",
+      "exportedSymbols": [
+        "useRuns"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [
+        "automation_runs"
+      ]
+    },
+    {
+      "file": "src/hooks/useWorkflows.ts",
+      "exportedSymbols": [
+        "useWorkflows"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [
+        "workflows"
+      ]
+    },
+    {
+      "file": "supabase/functions/ingest-run/index.ts",
+      "exportedSymbols": [],
+      "importedSymbols": [
+        "https://deno.land/std/http/server.ts",
+        "https://deno.land/x/zod@v3.23.8/mod.ts",
+        "https://esm.sh/@supabase/supabase-js@2"
+      ],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "automation_runs"
+      ]
+    },
+    {
+      "file": "supabase/functions/invite-client/index.ts",
+      "exportedSymbols": [],
+      "importedSymbols": [
+        "https://deno.land/x/zod@v3.23.8/mod.ts",
+        "https://esm.sh/@supabase/supabase-js@2"
+      ],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.auth.admin.deleteUser",
+        "supabase.auth.admin.inviteUserByEmail"
+      ],
+      "databaseUsage": [
+        "client_services",
+        "clients"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260701000000_base_schema.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "create table",
+        "select 1 from"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260703000001_automation_runs_contract.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "alter table",
+        "select 1 from"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260711000001_client_data_rls.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "alter table"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260711000002_client_services.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "alter table",
+        "create table",
+        "select 1 from"
+      ]
+    }
+  ]
+}

@@ -14,6 +14,7 @@ const featureTypes = [
 ] as const;
 
 const runStatuses = ["success", "error", "partial"] as const;
+const auditActions = ["created", "updated", "synced", "status_changed", "deleted"] as const;
 
 const json = (body: unknown, status: number, headers?: HeadersInit) =>
   new Response(JSON.stringify(body), {
@@ -35,6 +36,28 @@ const ingestRunSchema = z.object({
   error_message: z.string().nullable().optional(),
   workflow_id: z.string().uuid().optional(),
   metadata: z.record(z.unknown()).nullable().optional(),
+  entity_refs: z.array(z.object({
+    vertical_key: z.string().trim().min(1).max(80).optional(),
+    entity_type: z.string().trim().min(1).max(120),
+    entity_id: z.string().uuid(),
+    action: z.enum(auditActions).default("updated"),
+    source_system: z.string().trim().min(1).max(80).optional(),
+    external_id: z.string().trim().min(1).max(255).optional(),
+    changed_fields: z.record(z.unknown()).optional(),
+    metadata: z.record(z.unknown()).optional(),
+  })).max(100).default([]),
+  workflow_steps: z.array(z.object({
+    step_key: z.string().trim().min(1).max(120),
+    step_name: z.string().trim().min(1).max(200).optional(),
+    status: z.enum(["pending", "running", "success", "error", "skipped"]).default("success"),
+    attempt: z.number().int().positive().default(1),
+    started_at: z.string().datetime().optional(),
+    finished_at: z.string().datetime().optional(),
+    duration_ms: z.number().int().nonnegative().optional(),
+    outputs: z.record(z.unknown()).optional(),
+    error_message: z.string().nullable().optional(),
+  })).max(200).default([]),
+  organization_id: z.string().uuid().optional(),
 });
 
 serve(async (req) => {
@@ -86,32 +109,32 @@ serve(async (req) => {
 
   const supabase = createClient(supabaseUrl, serviceRoleKey);
 
-  // Insert with an explicit column list.
-  const { error } = await supabase
-    .from("automation_runs")
-    .upsert({
-      event_id: parsed.data.event_id,
-      client_id: parsed.data.client_id,
-      feature_type: parsed.data.feature_type,
-      workflow_name: parsed.data.workflow_name,
-      n8n_workflow_id: parsed.data.n8n_workflow_id ?? parsed.data.workflow_name,
-      status: parsed.data.status,
-      ran_at: parsed.data.ran_at ?? new Date().toISOString(),
-      duration_ms: parsed.data.duration_ms ?? null,
-      records_processed: parsed.data.records_processed,
-      records_failed: parsed.data.records_failed,
-      error_message: parsed.data.error_message ?? null,
-      workflow_id: parsed.data.workflow_id ?? null,
-      metadata: parsed.data.metadata ?? null,
-    }, {
-      onConflict: "event_id",
-      ignoreDuplicates: false,
-    });
+  const { data, error } = await supabase.rpc("ingest_workflow_run", {
+    p_event_id: parsed.data.event_id,
+    p_client_id: parsed.data.client_id,
+    p_organization_id: parsed.data.organization_id ?? null,
+    p_feature_key: parsed.data.feature_type,
+    p_workflow_name: parsed.data.workflow_name,
+    p_n8n_workflow_id: parsed.data.n8n_workflow_id ?? parsed.data.workflow_name,
+    p_status: parsed.data.status,
+    p_workflow_id: parsed.data.workflow_id ?? null,
+    p_started_at: parsed.data.ran_at ?? new Date().toISOString(),
+    p_finished_at: new Date().toISOString(),
+    p_duration_ms: parsed.data.duration_ms ?? null,
+    p_retries: 0,
+    p_records_processed: parsed.data.records_processed,
+    p_records_failed: parsed.data.records_failed,
+    p_error_message: parsed.data.error_message ?? null,
+    p_outputs: {},
+    p_steps: parsed.data.workflow_steps,
+    p_entity_refs: parsed.data.entity_refs,
+    p_metadata: parsed.data.metadata ?? {},
+  });
 
   if (error) {
     console.error("Failed to ingest automation run", error);
     return json({ error: "Failed to ingest automation run" }, 500);
   }
 
-  return json({ ok: true }, 200);
+  return json({ ok: true, run_id: data }, 200);
 });

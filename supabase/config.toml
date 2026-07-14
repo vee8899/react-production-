@@ -1,5 +1,8 @@
 project_id = "iutycpnqlzxovffctjyz"
 
+[api]
+schemas = ["public", "storage", "graphql_public", "real_estate"]
+
 [functions.ingest-run]
 verify_jwt = false
 

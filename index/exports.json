@@ -1,0 +1,320 @@
+{
+  "generatedAt": "deterministic",
+  "records": [
+    {
+      "file": "eslint.config.js",
+      "exportedSymbols": []
+    },
+    {
+      "file": "scripts/index.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "scripts/ingest.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "scripts/repo-map.ts",
+      "exportedSymbols": [
+        "FileRecord",
+        "RepositoryMap",
+        "readSource",
+        "scanRepository",
+        "stableJson",
+        "writeIfChanged"
+      ]
+    },
+    {
+      "file": "scripts/verify-supabase.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/App.tsx",
+      "exportedSymbols": [
+        "App",
+        "ProtectedRoute"
+      ]
+    },
+    {
+      "file": "src/api/supabase/auth.ts",
+      "exportedSymbols": [
+        "getSession",
+        "signInWithEmail",
+        "signOut"
+      ]
+    },
+    {
+      "file": "src/api/supabase/client.ts",
+      "exportedSymbols": [
+        "supabase"
+      ]
+    },
+    {
+      "file": "src/api/supabase/storage.ts",
+      "exportedSymbols": [
+        "storage",
+        "uploadFile"
+      ]
+    },
+    {
+      "file": "src/components/ErrorBoundary.tsx",
+      "exportedSymbols": [
+        "ErrorBoundary"
+      ]
+    },
+    {
+      "file": "src/components/dashboard/ClientServices.tsx",
+      "exportedSymbols": [
+        "ClientServices"
+      ]
+    },
+    {
+      "file": "src/components/dashboard/RunsFeed.tsx",
+      "exportedSymbols": [
+        "RunsFeed"
+      ]
+    },
+    {
+      "file": "src/components/dashboard/StatsRow.tsx",
+      "exportedSymbols": [
+        "StatsRow"
+      ]
+    },
+    {
+      "file": "src/components/dashboard/WorkflowRow.tsx",
+      "exportedSymbols": [
+        "WorkflowRow"
+      ]
+    },
+    {
+      "file": "src/components/features/FAQ.tsx",
+      "exportedSymbols": [
+        "FAQ"
+      ]
+    },
+    {
+      "file": "src/components/features/IntegrationsOrbit.tsx",
+      "exportedSymbols": [
+        "IntegrationsOrbit"
+      ]
+    },
+    {
+      "file": "src/components/features/ROICalculator.tsx",
+      "exportedSymbols": [
+        "ROICalculator"
+      ]
+    },
+    {
+      "file": "src/components/motion/FadeUp.tsx",
+      "exportedSymbols": [
+        "FadeUp"
+      ]
+    },
+    {
+      "file": "src/components/motion/PageTransition.tsx",
+      "exportedSymbols": [
+        "PageTransition"
+      ]
+    },
+    {
+      "file": "src/components/ui/Footer.tsx",
+      "exportedSymbols": [
+        "Footer"
+      ]
+    },
+    {
+      "file": "src/components/ui/Nav.tsx",
+      "exportedSymbols": [
+        "Nav"
+      ]
+    },
+    {
+      "file": "src/components/ui/ProjectCard.tsx",
+      "exportedSymbols": [
+        "ProjectCard"
+      ]
+    },
+    {
+      "file": "src/components/ui/SectionHeader.tsx",
+      "exportedSymbols": [
+        "SectionHeader"
+      ]
+    },
+    {
+      "file": "src/hooks/useAnalytics.ts",
+      "exportedSymbols": [
+        "useAnalytics"
+      ]
+    },
+    {
+      "file": "src/hooks/useAuth.ts",
+      "exportedSymbols": [
+        "useAuth"
+      ]
+    },
+    {
+      "file": "src/hooks/useClient.ts",
+      "exportedSymbols": [
+        "useClient"
+      ]
+    },
+    {
+      "file": "src/hooks/useClientServices.ts",
+      "exportedSymbols": [
+        "useClientServices"
+      ]
+    },
+    {
+      "file": "src/hooks/useRuns.ts",
+      "exportedSymbols": [
+        "useRuns"
+      ]
+    },
+    {
+      "file": "src/hooks/useWorkflows.ts",
+      "exportedSymbols": [
+        "useWorkflows"
+      ]
+    },
+    {
+      "file": "src/main.tsx",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/pages/AcceptInvitePage.tsx",
+      "exportedSymbols": [
+        "AcceptInvitePage"
+      ]
+    },
+    {
+      "file": "src/pages/DashboardPage.tsx",
+      "exportedSymbols": [
+        "DashboardPage"
+      ]
+    },
+    {
+      "file": "src/pages/HomePage.tsx",
+      "exportedSymbols": [
+        "HomePage"
+      ]
+    },
+    {
+      "file": "src/pages/LoginPage.tsx",
+      "exportedSymbols": [
+        "LoginPage"
+      ]
+    },
+    {
+      "file": "src/pages/WorkflowsPage.tsx",
+      "exportedSymbols": [
+        "WorkflowsPage"
+      ]
+    },
+    {
+      "file": "src/store/authStore.ts",
+      "exportedSymbols": [
+        "useAuthStore"
+      ]
+    },
+    {
+      "file": "src/styles/tokens.ts",
+      "exportedSymbols": [
+        "colors"
+      ]
+    },
+    {
+      "file": "src/test/AcceptInvitePage.test.tsx",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/test/ProtectedRoute.test.tsx",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/test/setup.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/test/time.test.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/test/useRuns.test.tsx",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/types/supabase.ts",
+      "exportedSymbols": [
+        "CompositeTypes",
+        "Constants",
+        "Database",
+        "Enums",
+        "Json",
+        "Tables",
+        "TablesInsert",
+        "TablesUpdate"
+      ]
+    },
+    {
+      "file": "src/utils/contact.ts",
+      "exportedSymbols": [
+        "contactEmail",
+        "contactHref"
+      ]
+    },
+    {
+      "file": "src/utils/env.ts",
+      "exportedSymbols": [
+        "env"
+      ]
+    },
+    {
+      "file": "src/utils/motion.ts",
+      "exportedSymbols": [
+        "fadeUp",
+        "fadeUpTransition",
+        "fadeUpVariants",
+        "respectReducedMotion",
+        "staggerContainer"
+      ]
+    },
+    {
+      "file": "src/utils/time.ts",
+      "exportedSymbols": [
+        "formatRelativeTime"
+      ]
+    },
+    {
+      "file": "supabase/functions/ingest-run/index.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/functions/invite-client/index.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260701000000_base_schema.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260703000001_automation_runs_contract.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260711000001_client_data_rls.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260711000002_client_services.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "vite.config.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "vitest.config.ts",
+      "exportedSymbols": []
+    }
+  ]
+}

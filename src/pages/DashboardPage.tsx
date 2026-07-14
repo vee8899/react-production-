@@ -5,6 +5,8 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import { StatsRow } from "@/components/dashboard/StatsRow";
 import { RunsFeed } from "@/components/dashboard/RunsFeed";
 import { ClientServices } from "@/components/dashboard/ClientServices";
+import { RealEstateMetrics } from "@/components/dashboard/RealEstateMetrics";
+import { useOrganization } from "@/hooks/useOrganization";
 
 export default function DashboardPage() {
   const {
@@ -12,6 +14,7 @@ export default function DashboardPage() {
     isLoading: clientLoading,
     error: clientError,
   } = useClient();
+  const { data: organization } = useOrganization(client?.organization_id);
 
   if (clientLoading) {
     return (
@@ -71,12 +74,21 @@ export default function DashboardPage() {
         <div className="mt-24">
           <SectionHeader label="02 - Your Services" />
           <div className="mt-8">
-            <ClientServices clientId={client.id} />
+            <ClientServices clientId={client.id} organizationId={client.organization_id} />
           </div>
         </div>
 
+        {organization?.vertical_key === "real_estate" && (
+          <div className="mt-24">
+            <SectionHeader label="03 - Real Estate Operations" />
+            <div className="mt-8">
+              <RealEstateMetrics organizationId={organization.id} />
+            </div>
+          </div>
+        )}
+
         <div className="mt-24">
-          <SectionHeader label="03 - Recent Activity" />
+          <SectionHeader label={`${organization?.vertical_key === "real_estate" ? "04" : "03"} - Recent Activity`} />
           <div className="mt-8">
             <RunsFeed />
           </div>

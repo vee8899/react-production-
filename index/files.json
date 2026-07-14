@@ -1,0 +1,3410 @@
+{
+  "generatedAt": "deterministic",
+  "records": [
+    {
+      "path": ".env.local",
+      "kind": "other",
+      "extension": ".local",
+      "hash": "ea74511dbde6244f8191a91da37fa07a58e25177f233f4e5f61b10fb7703ba2d",
+      "lines": 5,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.co"
+      ],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".env.mcp.example",
+      "kind": "other",
+      "extension": ".example",
+      "hash": "e723b84bcd9dc7f18e4ff7631dde809c7f5360c3e76d0ba1b140cb79cd42b1ed",
+      "lines": 14,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".gitignore",
+      "kind": "other",
+      "extension": ".gitignore",
+      "hash": "03c17ba91f8e79ad532b1d7c52ef7d00a59152cd8681cdd7d2b18de5023bc47e",
+      "lines": 34,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/01/4c/fafb7765921591ba1ac085e7f0df5dda01552e85ac2df80e5dd4da829b26cad0b9bce2b0c721c7339be108fe0a78ce62396e27a2e3cc98b2e0acfd9f9f5f",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/01/4c/fafb7765921591ba1ac085e7f0df5dda01552e85ac2df80e5dd4da829b26cad0b9bce2b0c721c7339be108fe0a78ce62396e27a2e3cc98b2e0acfd9f9f5f",
+      "hash": "6a45ae700550e763f6921aabcc8bff3045ed8eac5e3e7b69508cf4cb7a2b5a15",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/0d/95/01ad161a6e735cd7449c7cd522f3b8ed84688010cf69aac9ede5439b0de3d6691bfb38f47f34914eaf23b22bee5249942b153f281bf1decd79d1c2bcdadc",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/0d/95/01ad161a6e735cd7449c7cd522f3b8ed84688010cf69aac9ede5439b0de3d6691bfb38f47f34914eaf23b22bee5249942b153f281bf1decd79d1c2bcdadc",
+      "hash": "2913c2a08498add0ba0a0f1822c60a652a92d80c6209d9c5c8b2bb2799685dc4",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/12/43/2e6bec52a36b1f733147395a2a7f3a381c1bfbd8ee80b192b57a0942b1aa335c8b7a57bab08905bed711840c60139d1810fc3c1b38e10eadc84eafb6ed89",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/12/43/2e6bec52a36b1f733147395a2a7f3a381c1bfbd8ee80b192b57a0942b1aa335c8b7a57bab08905bed711840c60139d1810fc3c1b38e10eadc84eafb6ed89",
+      "hash": "c776c5bdba71ebd841d86ae9ea42bcfa1d11d1921438b1e85f1cdb93c4e18584",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/13/44/5e9739c83854aaa1f609b4f6122cd59c7ac1cebc2fd0795cfbc023d5f3634fcb1a691e8ff6530205c30d89efd5b8ee99665a1650c7caf1caea6169e13e31",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/13/44/5e9739c83854aaa1f609b4f6122cd59c7ac1cebc2fd0795cfbc023d5f3634fcb1a691e8ff6530205c30d89efd5b8ee99665a1650c7caf1caea6169e13e31",
+      "hash": "cb10fae7d4f179fc03760eba4830824496a7c0a545cb074573e97dd83c28621c",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/19/01/e79087f1cb1d70602392ff0a278a4e4c551654f618b54c4666cc6652089075cbd620a19f07ea2b4d13fbb8b2e13ec8b98ecee1381394b84d9fd95f6c1c59",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/19/01/e79087f1cb1d70602392ff0a278a4e4c551654f618b54c4666cc6652089075cbd620a19f07ea2b4d13fbb8b2e13ec8b98ecee1381394b84d9fd95f6c1c59",
+      "hash": "2312accb93b5f91247e0772dc41964049848610fa00cdd856795bf6eabb56e8b",
+      "lines": 656,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [
+        "I",
+        "Mz",
+        "N",
+        "OC"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/1e/b2/6bbd9bf96b2c41ccf7f0a613a837393338822589fce4d0a26b18ad9cf11e3e2caa4cb6960b41e51d8e7c235affcb665907da569993ee30efca62f7d0f857",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/1e/b2/6bbd9bf96b2c41ccf7f0a613a837393338822589fce4d0a26b18ad9cf11e3e2caa4cb6960b41e51d8e7c235affcb665907da569993ee30efca62f7d0f857",
+      "hash": "f456b319874091baa61b0a7126cd9d2eab9fd16a541a3306f17a17c76da0636b",
+      "lines": 104,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [
+        "E5"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/1f/b2/c333bb74439e040bca9476834cc95bb99bd6be5a01c22a2ca203c1e22e63b13b66b7e8c8fe1a10bc233ee7ff788b9ca9b4e5676b3e2eb7bcb25fb422e410",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/1f/b2/c333bb74439e040bca9476834cc95bb99bd6be5a01c22a2ca203c1e22e63b13b66b7e8c8fe1a10bc233ee7ff788b9ca9b4e5676b3e2eb7bcb25fb422e410",
+      "hash": "c8444feb481a555a0437597f051608c6b5cfdf1dea94867c7613ea8f8514f296",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/2b/f0/3d3f2c312866889efd430e544197e05229fdc81c37c4cd75d25d372734ffa66c864e3370510f06555ac7b6c701f5ebeccc1f2ab711fece090129dd53b00b",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/2b/f0/3d3f2c312866889efd430e544197e05229fdc81c37c4cd75d25d372734ffa66c864e3370510f06555ac7b6c701f5ebeccc1f2ab711fece090129dd53b00b",
+      "hash": "c7fb5af768e71a67c46cccdb5209555416d0c23681b226e309fa224c7298dc23",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/2e/10/fe986eab70021d0183d768129dfec21c783286cde4d392da4043a948c927819af99eb55f5f7aba26b7343434263de5a0330b17e680500760413fbbf394ee",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/2e/10/fe986eab70021d0183d768129dfec21c783286cde4d392da4043a948c927819af99eb55f5f7aba26b7343434263de5a0330b17e680500760413fbbf394ee",
+      "hash": "21e2967d5eb98865ef5e93a3bb1786b6e73db063998d34bf6bd9272161875b6a",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/2e/5f/a7245a0be312ed54db2b669b83197eb3d143bc623a5b5d24e68082706a8094799111aaade2cf98917874508415451f7796b322fb7b33f162a519c08afa57",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/2e/5f/a7245a0be312ed54db2b669b83197eb3d143bc623a5b5d24e68082706a8094799111aaade2cf98917874508415451f7796b322fb7b33f162a519c08afa57",
+      "hash": "cbf81b31e050bfcae8f709fd74767046c24542b01b725d732713dcb67dc4b1a9",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/3f/b2/ed653a65d695820ed43c1b4b18c30dab373402e4f969ee85e5239bde2405fbb38c3216a6cc0a75e7b7174deb7e9ad2dd8aae2c53aa94048f0d1f7ae69614",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/3f/b2/ed653a65d695820ed43c1b4b18c30dab373402e4f969ee85e5239bde2405fbb38c3216a6cc0a75e7b7174deb7e9ad2dd8aae2c53aa94048f0d1f7ae69614",
+      "hash": "8421310a1507519f18f3a9e05ccec69610cb82450e628526f20a90cd7f29b5d3",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/4b/16/a1228e11b4874823c7e4b99b84076f98f90b5f6f864d5953fb3dd551fb76cacc492a84e4f9932e268cd6d41fabefb6b083bf4aa1621cacdb746b5cac4c4b",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/4b/16/a1228e11b4874823c7e4b99b84076f98f90b5f6f864d5953fb3dd551fb76cacc492a84e4f9932e268cd6d41fabefb6b083bf4aa1621cacdb746b5cac4c4b",
+      "hash": "e2a3721c142503d4f76a73d3f3eb555fbc209ed1eba1976eb220fba9ecb5fdaf",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/53/1b/1a0f1b6bab143d62b05bb40e6b4bd2cd231dd924dadfa322ca82a2bb0504fdd44c4ea5f08ba85615f77d0c5402d0cdcc4ffa18b310ac24547af3a730f2ab",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/53/1b/1a0f1b6bab143d62b05bb40e6b4bd2cd231dd924dadfa322ca82a2bb0504fdd44c4ea5f08ba85615f77d0c5402d0cdcc4ffa18b310ac24547af3a730f2ab",
+      "hash": "9526a7303737664d21764fb21e30dff7664f3334ba7e61fe6152486792b1f591",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/62/fa/ffb366cc7ee7b292f6e7c205c06b10a36f86663c9a27ae23f1aadc3ca0c707b89fe46fee3622db98f11a47e8f9be5ff83cff9a74542dd5bcb3218b2646bf",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/62/fa/ffb366cc7ee7b292f6e7c205c06b10a36f86663c9a27ae23f1aadc3ca0c707b89fe46fee3622db98f11a47e8f9be5ff83cff9a74542dd5bcb3218b2646bf",
+      "hash": "4f96a3c285ee641ab84c2199fe4d963ed659943f88132f941d235e3b4d2384fe",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/69/b5/c9b4979f7d7031d7efc953547c162871a019d554a9da9de97cae32a12a8fce82b2588c5d94b58f2b3c383a5365dddd257fa02f58143495355be055ba2661",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/69/b5/c9b4979f7d7031d7efc953547c162871a019d554a9da9de97cae32a12a8fce82b2588c5d94b58f2b3c383a5365dddd257fa02f58143495355be055ba2661",
+      "hash": "02d495ed6f35b48d2167f68266a5c25df46b39b4a35c2a480eea7f91693909b4",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/6a/0a/bcd0bc9fc342b2fe2f94260d82ad727777786c37bca31967b84c6df26a23399221f05d9d07fcbb5a8803e7eeabdd84944c82c21f6d24980fa3d80108d933",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/6a/0a/bcd0bc9fc342b2fe2f94260d82ad727777786c37bca31967b84c6df26a23399221f05d9d07fcbb5a8803e7eeabdd84944c82c21f6d24980fa3d80108d933",
+      "hash": "1975775a8879a14b5592a51a1d3cd6cb25719683ec53553f977a2b92230ff451",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/6e/6e/0ca30aeff865cc969597fbe11c5f0fe22f2775a37f9b2640b60e4597615be0642a83fdb4a3f5cb59780302ddc2318234554760ee7da8aee183f1af9816d4",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/6e/6e/0ca30aeff865cc969597fbe11c5f0fe22f2775a37f9b2640b60e4597615be0642a83fdb4a3f5cb59780302ddc2318234554760ee7da8aee183f1af9816d4",
+      "hash": "4aeb17189b87ce56ee55bafc34843367d212fb00dc76c75237a9655a600c00c6",
+      "lines": 17154,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [
+        "A",
+        "C",
+        "Cp",
+        "Cr",
+        "D",
+        "E",
+        "F",
+        "FNQ",
+        "G",
+        "GC",
+        "Gs",
+        "H",
+        "HK",
+        "Hb",
+        "I",
+        "J",
+        "J0",
+        "JF0",
+        "K",
+        "L",
+        "M",
+        "M4",
+        "Ml",
+        "N",
+        "NO",
+        "Na",
+        "Nw",
+        "O",
+        "P",
+        "PN",
+        "Q",
+        "QG",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "X2V",
+        "XK",
+        "Y",
+        "Z",
+        "ZD",
+        "ZU"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/72/8e/67fcbcd93b1c4a6f6c298fc86d04569ccabb95d740aeb7469f42035537c3198911e5f37e3b15944b2b148e4e859c4a7956bf096eb3f3ca831c9d589f93cd",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/72/8e/67fcbcd93b1c4a6f6c298fc86d04569ccabb95d740aeb7469f42035537c3198911e5f37e3b15944b2b148e4e859c4a7956bf096eb3f3ca831c9d589f93cd",
+      "hash": "140e8b871c56fd191b535efd9a1e3214e2451a77d0accd92be63f83d134e2355",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/92/84/041be9b87d981f1b33bee109996bb691f9f36a186f8dcff0b07bd4bff1525ab3097539835a8f865fffac9306f8372acecb8409097d63307de820b2267008",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/92/84/041be9b87d981f1b33bee109996bb691f9f36a186f8dcff0b07bd4bff1525ab3097539835a8f865fffac9306f8372acecb8409097d63307de820b2267008",
+      "hash": "4fb3aeab1560cba0da1052b4a379e58d0b5a3867fcbfef2f5c04cdefe374ed49",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/a1/32/55022b64e952450689d63cd114420939a3e74bf9d0c00c99e911a226f252833f48b4ae821fc88c586a4bbdd2f594d8a715aa98e94351180aae2d897012a8",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/a1/32/55022b64e952450689d63cd114420939a3e74bf9d0c00c99e911a226f252833f48b4ae821fc88c586a4bbdd2f594d8a715aa98e94351180aae2d897012a8",
+      "hash": "a9cd37ea2a0671536e48f00d32ab3418e9aaad8d1afc0998edbe7700fc939d7f",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/ab/90/8e23cbebae5b7a2ff5c49c72ca78ca22a2fd421d37f43a1cee503324f4bfb88eb83c68c4a18de827a1040b463e768b2e64068746b1aa143e33c29a66a8be",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/ab/90/8e23cbebae5b7a2ff5c49c72ca78ca22a2fd421d37f43a1cee503324f4bfb88eb83c68c4a18de827a1040b463e768b2e64068746b1aa143e33c29a66a8be",
+      "hash": "7467d4fba8559b3e93748b8a11771a922c31cd137e2a601085c215617c2d67a2",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/b3/d9/27caf8d711bcac58b8a2efeb6c83c3f8e9c444c196cb3636fcff06b60ccd4ffa598c45060cb45ac95c903b1dc2a191bc9f6272c214799d9af8a2578bc335",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/b3/d9/27caf8d711bcac58b8a2efeb6c83c3f8e9c444c196cb3636fcff06b60ccd4ffa598c45060cb45ac95c903b1dc2a191bc9f6272c214799d9af8a2578bc335",
+      "hash": "756ff56a4957bdf4bcfa60b2fb5e39dcabb39e19a162a76cec3f3c526e2916e1",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/b5/bc/d72a7645bcdcb3ddac9909bef5af36303cccf796f8d37e6596c0004fccf11e7a7c6265885cd9b3523fbf44b8a228b75eadc6ae590260daca141b7b73bbf9",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/b5/bc/d72a7645bcdcb3ddac9909bef5af36303cccf796f8d37e6596c0004fccf11e7a7c6265885cd9b3523fbf44b8a228b75eadc6ae590260daca141b7b73bbf9",
+      "hash": "b6d27072f2b027eb6091728723929ec92cc846e14ac907d20eb36e5c9f2c19c2",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/bd/bc/11cf0c60b1ba21739049e481e08126d455ade284f6011d2f61d5c3b6c9cb20dccb90ae6182c835b1d1c42541e979e7be76597096a019cd914b0f4437f7db",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/bd/bc/11cf0c60b1ba21739049e481e08126d455ade284f6011d2f61d5c3b6c9cb20dccb90ae6182c835b1d1c42541e979e7be76597096a019cd914b0f4437f7db",
+      "hash": "3d009add279c4945ed78d05154fe6bd614931283c1ab9ae7796ba90bbbc6ee17",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/c3/4a/6c697dbcae30630a628926d0a8d416f663e9e670db1b1ad8acea326691f099f624e2417255ef999a6bc5435ad049d50d571c2153c168db3f24f02a37f924",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/c3/4a/6c697dbcae30630a628926d0a8d416f663e9e670db1b1ad8acea326691f099f624e2417255ef999a6bc5435ad049d50d571c2153c168db3f24f02a37f924",
+      "hash": "46a0ba32514374621b3e7305d0cc84e61601ac418c863c69fc0743a1335c0013",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/c5/c8/df6f38f9dbffbcb512e159d74f16a7a91940a681b1096a4ddc7938198a21bbb39a09db9af8dc1c525d77e331b1b7132a4305f77c9797624d595d2c067cd1",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/c5/c8/df6f38f9dbffbcb512e159d74f16a7a91940a681b1096a4ddc7938198a21bbb39a09db9af8dc1c525d77e331b1b7132a4305f77c9797624d595d2c067cd1",
+      "hash": "69638d80d082bece0745fce900fa1c6d21349b9c99db2e0501ebb1214e120907",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/da/e3/6d4fceab998e45230a1f952de6b14a4c102e76186db1fa81797b93d28079ec5c64679348f73d45a0067f6ec0f84348a68363ad5219f5db51b561adf2c234",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/da/e3/6d4fceab998e45230a1f952de6b14a4c102e76186db1fa81797b93d28079ec5c64679348f73d45a0067f6ec0f84348a68363ad5219f5db51b561adf2c234",
+      "hash": "c32d692d1ca8886896b35d7912b4406896dace681e8deaae3c35d7da6b76321c",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/e3/6b/536c29f1f5ec9a55d52f215c7a78c74a5d84ce5a84ddfff6b8e25804dbbaa3125a24733446ed65903e833b0bc46a7f672c27b72917946dcb95913924a908",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/e3/6b/536c29f1f5ec9a55d52f215c7a78c74a5d84ce5a84ddfff6b8e25804dbbaa3125a24733446ed65903e833b0bc46a7f672c27b72917946dcb95913924a908",
+      "hash": "f4ef15639cd356868526195c4a4c7edc99de79356ea39489e54d7e70f72e65d9",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/e5/37/388082546145bb2f833b3d4708e38e548f6eb9876e3591f8146625ef83aa24cfd8c645dd371afd8f48e3bf72150dba5f3d3600c6f27e86243f9a3cc062ed",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/e5/37/388082546145bb2f833b3d4708e38e548f6eb9876e3591f8146625ef83aa24cfd8c645dd371afd8f48e3bf72150dba5f3d3600c6f27e86243f9a3cc062ed",
+      "hash": "95b8aba1c4c672913778eff3dc01880746b60e32a7bf2cd88125b82c1f298c46",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/e6/c1/83c6413566cda309d76bf99f0b4f2a59dd1cd846525694a59e2b63aa006713afff75cd9e92118e4403a9b026ce7961aed12c6613d5afd08d4499d818a8e5",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/e6/c1/83c6413566cda309d76bf99f0b4f2a59dd1cd846525694a59e2b63aa006713afff75cd9e92118e4403a9b026ce7961aed12c6613d5afd08d4499d818a8e5",
+      "hash": "b785278d494d549704eea89f009567b4cf0ecf6873c32ed2ff9985586c4b804d",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/ef/9c/2d345ef4c5bff64a4f9c4b76324468e341f0436bcf472e9b76be1111b3bbe6ac4ee75dd3150e68c2ad037dd099c6c7d337f1452dc760f6622fcbcf88d1b3",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/ef/9c/2d345ef4c5bff64a4f9c4b76324468e341f0436bcf472e9b76be1111b3bbe6ac4ee75dd3150e68c2ad037dd099c6c7d337f1452dc760f6622fcbcf88d1b3",
+      "hash": "00d884b0b89ca5f06acf151e5badeb7fbf77f5c32d4c891e6e8a9a3ee4871dff",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/02/f5/edc1bbb9c74c3776beb4a96bd21991b46bb40507edd7be8d7c966577dcb5",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/02/f5/edc1bbb9c74c3776beb4a96bd21991b46bb40507edd7be8d7c966577dcb5",
+      "hash": "d29507e41cdacea7f05d71d138d6a299eac041cb5f3e3363c21462d317d5f81c",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/0c/1e/a5d64f78dab70fc5126321fc020afa025727825de15a8ab182dbf59fea0f",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/0c/1e/a5d64f78dab70fc5126321fc020afa025727825de15a8ab182dbf59fea0f",
+      "hash": "bf5be44db158361566ac9e8f98894acf1ce43236bf4a73af7158df97cf140684",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/0d/52/6b8ad44ca9bb6c975c8622b00d4efaa28c4737e42debb1d3197be9a82fe7",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/0d/52/6b8ad44ca9bb6c975c8622b00d4efaa28c4737e42debb1d3197be9a82fe7",
+      "hash": "6c7f4c610563592f9e27c2c3123b21831ec00338b814d66d8182fce6a0772a24",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/16/f8/afc88d2ed6b122863f94ceee7dcf2c558d4c7ae8f63cee2c33d3dd30b1ed",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/16/f8/afc88d2ed6b122863f94ceee7dcf2c558d4c7ae8f63cee2c33d3dd30b1ed",
+      "hash": "3201de7896d82541621fc3828c053c7c75713d28de5ae7d2ffbdbf63a90f6abb",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/18/93/800def84bea3b566e0d6f0ef4e39bf15173131faff0848838aa6265c79e5",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/18/93/800def84bea3b566e0d6f0ef4e39bf15173131faff0848838aa6265c79e5",
+      "hash": "007c7bdca6f0a3bb6d29634121a926bdbc870bbb8fdc248cbbd95c4fe62aeb85",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/22/c5/6556db83229020f545974c0a96daa105f2aa03edd95f7f8e2235cbeecf9e",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/22/c5/6556db83229020f545974c0a96daa105f2aa03edd95f7f8e2235cbeecf9e",
+      "hash": "fa494c22e195f8dc493f531a5c491faa0f23680ff8684fa026d32a279634543a",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/2c/e7/6ebf7d8800a5b86530fd09b2f6e26da674d138a7f0e94f42b9be2ecc547a",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/2c/e7/6ebf7d8800a5b86530fd09b2f6e26da674d138a7f0e94f42b9be2ecc547a",
+      "hash": "14d74b046ed6f9b002213a52500e91094290897a0555ca6b62df7941697a27c9",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/34/5d/80555de0d11e7ccc8b4c21fd66c91628d4b81b88cf7a2e7caf0397581e5b",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/34/5d/80555de0d11e7ccc8b4c21fd66c91628d4b81b88cf7a2e7caf0397581e5b",
+      "hash": "8103cfa46d493601df046ecffe87bdf5609f94d48683914ad3dc095e08a7a147",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/3c/a3/a4bb9281e5e4a2be3a38bfc40bce8b301bbc4d3e29e737ef36cd6b57063e",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/3c/a3/a4bb9281e5e4a2be3a38bfc40bce8b301bbc4d3e29e737ef36cd6b57063e",
+      "hash": "a7bbd56c846124067fb2da742d09199c88ab2f6e3d24f0eb883455bc942646ca",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/41/83/49ee6c7a6d198c50ce7ba21c273b9f77e4dd1d412e56ffcd49e76245a031",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/41/83/49ee6c7a6d198c50ce7ba21c273b9f77e4dd1d412e56ffcd49e76245a031",
+      "hash": "099e67f420532e31d81600f97dc0dee391a54ee0b88a4af12db505a0469e0cdd",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/46/74/75e64158f92ce447941c0491cd0c337ccf20e22eec98ff35e5c58278de5c",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/46/74/75e64158f92ce447941c0491cd0c337ccf20e22eec98ff35e5c58278de5c",
+      "hash": "14e8ec64d729d37bc06b8a49100b2b1759ca0b0c240863719c3dc5021071f71b",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/5e/0d/e01ce7f2ad332a34b72c8840f7d6be25a566057fa85f3905633071f13a02",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/5e/0d/e01ce7f2ad332a34b72c8840f7d6be25a566057fa85f3905633071f13a02",
+      "hash": "dfe192d8e8465d836f9257aacd8aa2ee73342cd47784467877097a6c1ff212e0",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/66/9e/3fe5a62771a246e375fa3aaae4670ea3306e28f5fa088503bc8160dff83d",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/66/9e/3fe5a62771a246e375fa3aaae4670ea3306e28f5fa088503bc8160dff83d",
+      "hash": "7eee4c32e47d8a71a5b702ec0770bb7bdc5d140b7ba3af4f9edf878d488064b1",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/69/bf/80809f1dc7cd900d7f5deebaed4aab7a2f788123f16fcfa841e03dcd420a",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/69/bf/80809f1dc7cd900d7f5deebaed4aab7a2f788123f16fcfa841e03dcd420a",
+      "hash": "17b29431fcabacbe5f945c562d186d5c04081ea568bd8d6bd1b99e20fffc1c44",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/73/21/1d875da2f746d474580cb0f196b311adcc3ff2bf1ee627b53bb0a433be96",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/73/21/1d875da2f746d474580cb0f196b311adcc3ff2bf1ee627b53bb0a433be96",
+      "hash": "fea88f189231129771743f014fb5b114ad165a75be60367ffbf470203365f44a",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/7d/9d/a787cb5fb8517d8f722961c5bfa0a1e43deee21881693fe21b525c063f64",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/7d/9d/a787cb5fb8517d8f722961c5bfa0a1e43deee21881693fe21b525c063f64",
+      "hash": "6141556066e6fff7960ca8fa1913694a634cd423910d233987badd05f2a6ca47",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/7e/9f/dfa3e415b0b79f7647f544e46b110b6a5570206d9ca2b7a646db02e61ee4",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/7e/9f/dfa3e415b0b79f7647f544e46b110b6a5570206d9ca2b7a646db02e61ee4",
+      "hash": "56de733b579d09d798658c9470c1016ab6cb3c60dfc81c4baf6c66d51dd3e8a1",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/80/3a/4a5732c282b178c7db04d066e1bf72f3e188eb895364b06eb795a5f7e87b",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/80/3a/4a5732c282b178c7db04d066e1bf72f3e188eb895364b06eb795a5f7e87b",
+      "hash": "3bf87b5213b8478b571ceb21cf96f2291b1afcdc2e13e05cde79b35fd3aa3977",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/84/42/78099c1f1419e99651e632f8161d708e8545b101052a116cf8a4ed588ea7",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/84/42/78099c1f1419e99651e632f8161d708e8545b101052a116cf8a4ed588ea7",
+      "hash": "16995d0c27cb33413ae2f4af70f1561281d6532480b95887a4c0fa409565388f",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/87/7a/6bff65d2ea046d0cbcb8b9c7a56dfc499fce22f35dcf898d6732fd0f99d4",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/87/7a/6bff65d2ea046d0cbcb8b9c7a56dfc499fce22f35dcf898d6732fd0f99d4",
+      "hash": "0b4075f3e931d1454fd9e2a67f7d89eb0bda009e9748af4aecc55cd61f3a3e96",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/9a/6d/7a0210a804c9f2e2af1c400afe42fe0d4ce4efc1fbaf21669744dc539077",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/9a/6d/7a0210a804c9f2e2af1c400afe42fe0d4ce4efc1fbaf21669744dc539077",
+      "hash": "398dbddd0cf741340aec3e19bf67c255fe6a0844dddb0248b54aa1f10a318a2c",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/9c/0a/6e5481d628cb86348f28ca72f2fdc159c4cff1ccc58e16c81e8e80d1a5fd",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/9c/0a/6e5481d628cb86348f28ca72f2fdc159c4cff1ccc58e16c81e8e80d1a5fd",
+      "hash": "4470148400edc89548b28b2d74e84c730fddb39453e054d71475c92ce6c73349",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/9f/80/5095f1e4a4f144a1b7c5af323372bb7f512b212ebf4de91c8d3ade240d0e",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/9f/80/5095f1e4a4f144a1b7c5af323372bb7f512b212ebf4de91c8d3ade240d0e",
+      "hash": "1c982a25082e2e050a0ad6ed2ffca72c6b1f618da1abbe7afc3da4f018254cb2",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/a3/7a/cc45d47b4d1152a677d98126d48387ebc8959de01678a99b39663fe082f8",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/a3/7a/cc45d47b4d1152a677d98126d48387ebc8959de01678a99b39663fe082f8",
+      "hash": "b3025c53cd6b32405218f9aec8ce443a5eb5f2f10dde3d76f0c2480467d7bec7",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/c7/12/102bb07d3c5cf86819fc13e6524871176ba5f8fc8238351433c746c98db4",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/c7/12/102bb07d3c5cf86819fc13e6524871176ba5f8fc8238351433c746c98db4",
+      "hash": "7e6c9f0b28a47a9e457f85a31cb4fe53133ad9391e10aca26539e95c6437126c",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/d7/54/dfd4ba3457b30b28c37b6722ca211cdd138b1ef6664e54f90bfd923a7143",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/d7/54/dfd4ba3457b30b28c37b6722ca211cdd138b1ef6664e54f90bfd923a7143",
+      "hash": "40bde3f0a257a80525f50b29e0f83f1ea84d328725b14234b0d38b7d4dddad76",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/dc/a5/b134aa08160183bd0b203e522dce5467fb9491ab59411c1c1b6d32b7d39a",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/dc/a5/b134aa08160183bd0b203e522dce5467fb9491ab59411c1c1b6d32b7d39a",
+      "hash": "1524a8d6c23a20022d5a32d53d2eceefc21ce60f40af4f3f77f0d5a8dfddcfa3",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/e6/c0/ff384093f49efb49f01942f4930980f806184b0f69492a275a1bd9859f6d",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/e6/c0/ff384093f49efb49f01942f4930980f806184b0f69492a275a1bd9859f6d",
+      "hash": "8c6152a1c5db20ca6c6cb434a303ac18250e111459f8c66656486d3655267a40",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/ec/ef/ccf9aef86dfb3881688e87eab760ddc9eeecb229c496217e6d7c587a408a",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/ec/ef/ccf9aef86dfb3881688e87eab760ddc9eeecb229c496217e6d7c587a408a",
+      "hash": "76a0dd755fa9d02d8f430009e1b62c817e43ccc4b5bd1eb829a3acccc30a13a4",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/ec/f8/dedd27024eb08dd582a1cbda3c4e67b4daa330433ce610779e2c6ed7ec85",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/ec/f8/dedd27024eb08dd582a1cbda3c4e67b4daa330433ce610779e2c6ed7ec85",
+      "hash": "4e6979b29957971731fef4b56f0a8c99b633cf0b80fec6e2db488f54b43f51d2",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/f7/53/0b0cdb1490c3d5fb51e1939201c88e1611296d3c19790599d35af7d70bd8",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/f7/53/0b0cdb1490c3d5fb51e1939201c88e1611296d3c19790599d35af7d70bd8",
+      "hash": "d2608007a07881c72473d362afd6c817cc52af734aa5775b503eaccaff5fc532",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_logs/2026-07-13T23_00_19_212Z-debug-0.log",
+      "kind": "other",
+      "extension": ".log",
+      "hash": "3087f4292bada8855fe77add431ba5f10963c18c0b18308504fdd0b0492c60e7",
+      "lines": 518,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_update-notifier-last-checked",
+      "kind": "other",
+      "extension": ".npm-cache/_update-notifier-last-checked",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "lines": 0,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".vs/react_production_alpha.slnx/FileContentIndex/239887b1-ea9e-4be9-a6d6-5cae76ad0270.vsidx",
+      "kind": "other",
+      "extension": ".vsidx",
+      "hash": "ed1c9e66ba21005f07a20b358e1e9e3d44d4347de365453ea332063e146d8261",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".vs/react_production_alpha.slnx/FileContentIndex/7abed5a4-4d55-4daa-8b30-b5a84980e988.vsidx",
+      "kind": "other",
+      "extension": ".vsidx",
+      "hash": "46c7d7a1139c3da9df5bd942ba97d7ec1bdea744ca45d857b76a1446b0388fc8",
+      "lines": 734,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [
+        "C",
+        "D",
+        "E",
+        "EDBEDEEDGEDIEDLEDPEDTEE",
+        "F",
+        "G",
+        "K",
+        "M",
+        "P",
+        "S",
+        "SE",
+        "T"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".vs/react_production_alpha.slnx/FileContentIndex/bc71efa3-a09d-4953-b7b3-05fd4e321c1e.vsidx",
+      "kind": "other",
+      "extension": ".vsidx",
+      "hash": "f683197c75a87e3d7cef7b85b4812061974bf5104b0bdf1e5f6447eb940542a5",
+      "lines": 39,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [
+        "ER",
+        "SE",
+        "T",
+        "TE",
+        "TRACRAGRAMRAPRARRATRC",
+        "VE"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".vs/react_production_alpha.slnx/FileContentIndex/fafb2af4-487a-42b7-8bc6-12f87f878977.vsidx",
+      "kind": "other",
+      "extension": ".vsidx",
+      "hash": "5678d53644a99c6e50d352bf95b4bec70cd957e4dfbf69058228cfee4d9a9675",
+      "lines": 1408,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [
+        "C",
+        "D",
+        "E",
+        "EDBEDEEDIEDLEDPEDTEE",
+        "F",
+        "G",
+        "M",
+        "P",
+        "S",
+        "T"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".vs/react_production_alpha.slnx/FileContentIndex/fe7e5ed5-9129-4d42-84b0-5ed39dd2c143.vsidx",
+      "kind": "other",
+      "extension": ".vsidx",
+      "hash": "467c5617fde14009374e5a9c3b70ddbf5a0bea48387fabd195b8f82d87741815",
+      "lines": 436,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".vs/react_production_alpha.slnx/config/applicationhost.config",
+      "kind": "other",
+      "extension": ".config",
+      "hash": "f0c465e27bdd843f46452768dffa796cedbb8f7c9faaa1b465236fdb0c38afea",
+      "lines": 1027,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".vs/react_production_alpha.slnx/v18/.suo",
+      "kind": "other",
+      "extension": ".suo",
+      "hash": "71b997125608e6d25359bd88c6a644f829664787e4e2a0654700213a80d512aa",
+      "lines": 15,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".vs/react_production_alpha.slnx/v18/DocumentLayout.backup.json",
+      "kind": "config",
+      "extension": ".json",
+      "hash": "b5963b5b710f3d9d1af07c0bcd803056290c04ad0303f5003058246ae53bbfc1",
+      "lines": 37,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".vs/react_production_alpha.slnx/v18/DocumentLayout.json",
+      "kind": "config",
+      "extension": ".json",
+      "hash": "b5963b5b710f3d9d1af07c0bcd803056290c04ad0303f5003058246ae53bbfc1",
+      "lines": 37,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "AGENT.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "4982fad3daf7230d8af54e4a879f04f237d76fd36e9004f4bc8cf9eb294fc9d3",
+      "lines": 39,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "CHANGELOG.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "0d65335a76228e38751327299127e7f2fb78e6519d81bafdb815130622fb2550",
+      "lines": 13,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "DASHBOARD.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "9cc9a1f726c319027e026789447f2f513fda8d680da594d420a924defe9df916",
+      "lines": 38,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "DEBUG.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "7c2fec9b1910d9a7bb9784c974cd6052a7f77aee843e1bfea9fe9e81c9c07235",
+      "lines": 32,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": [
+        "/"
+      ]
+    },
+    {
+      "path": "README.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "bce76f073d48cd0e3e9b1ee06f75eaa5c777f1f70c2d7337ad287874dcbbcc23",
+      "lines": 107,
+      "imports": [],
+      "exports": [],
+      "symbols": [
+        "config"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.co"
+      ],
+      "databaseUsage": [],
+      "routes": [
+        "https://react-production.pages.dev/"
+      ]
+    },
+    {
+      "path": "TEMPORARY_PRODUCTION_IMPLEMENTATION.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "729d4cf4fd35bf21a837d78598190c14740cb2e2cda44ffc9c804b7fa303e650",
+      "lines": 153,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "create table"
+      ],
+      "routes": []
+    },
+    {
+      "path": "UI.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "9d1ba18358b925b978065141a7b4fd2a452712711e4d72338354dee0acc80209",
+      "lines": 43,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "docs/mcp-operations.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "bb4c52a05c5d0312573cb42ac785dec7d6abeffde7d6514ab9e50cfd4bca76a4",
+      "lines": 43,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "eslint.config.js",
+      "kind": "source",
+      "extension": ".js",
+      "hash": "f19395caf80173ffbd41ab74f8eef4fc26c042f84a937de4a6286ec5c13ad401",
+      "lines": 23,
+      "imports": [
+        "@eslint/js",
+        "eslint-plugin-react-hooks",
+        "eslint-plugin-react-refresh",
+        "eslint/config",
+        "globals",
+        "typescript-eslint"
+      ],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "index.html",
+      "kind": "config",
+      "extension": ".html",
+      "hash": "079509b3a9395bafaecea37211f4c097fea3316bc0d0521e90e1d4e3ac3ea719",
+      "lines": 15,
+      "imports": [],
+      "exports": [],
+      "symbols": [
+        "html"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": [
+        "/favicon.svg",
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap"
+      ]
+    },
+    {
+      "path": "infra/n8n/.env.example",
+      "kind": "other",
+      "extension": ".example",
+      "hash": "4613147d55c33a77a53dc0923627348ec2e0af373ffdede506843696bfd0806b",
+      "lines": 15,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "/functions/v1/ingest-run",
+        "supabase.co"
+      ],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "infra/n8n/Caddyfile",
+      "kind": "other",
+      "extension": "",
+      "hash": "e828c82671c29aa91d77fae2f1ffd7b6806d9f4764e3c054175331b5d8d88caf",
+      "lines": 10,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "infra/n8n/README.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "d4eba76141eb4c14dd7720e56944df7004443a8281a3c41f75f3da9296712840",
+      "lines": 25,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "infra/n8n/compose.yml",
+      "kind": "config",
+      "extension": ".yml",
+      "hash": "7de61acd981ae559308232b99cddd1c6779e839b1c139960a526967cf28cc565",
+      "lines": 71,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "infra/n8n/scripts/backup.sh",
+      "kind": "other",
+      "extension": ".sh",
+      "hash": "7a530bdb0051e1aa4e28f699717e840f4b50573a5a517500feffc02555d75938",
+      "lines": 12,
+      "imports": [],
+      "exports": [],
+      "symbols": [
+        "f"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "infra/n8n/scripts/restore.sh",
+      "kind": "other",
+      "extension": ".sh",
+      "hash": "9f436a5140447d76d1245da72daea4991b2c809f67962deca7ff50e916bdcef9",
+      "lines": 15,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "n8n/workflows/README.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "b61f1dd27d32bed3b6c43efef9b4c85e679bd4a5f483ad23df95ce881422e337",
+      "lines": 16,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "package.json",
+      "kind": "config",
+      "extension": ".json",
+      "hash": "52aecb19dda27ff4b717c3ccacf680b617dd13ff6e7b835b0298d6bdad0109f0",
+      "lines": 54,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.ts"
+      ],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "preview.err.log",
+      "kind": "other",
+      "extension": ".log",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "lines": 0,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "preview.out.log",
+      "kind": "other",
+      "extension": ".log",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "lines": 0,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "public/_redirects",
+      "kind": "other",
+      "extension": "",
+      "hash": "6036983e5fc00f0169c9e939b1816ed771eee00e27f2fcc517b819041460b9ef",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "public/favicon.svg",
+      "kind": "asset",
+      "extension": ".svg",
+      "hash": "61bc9a161de58248288e6905425d7180f0624c2865007b97d763fdac12043a66",
+      "lines": 0,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "public/icons.svg",
+      "kind": "asset",
+      "extension": ".svg",
+      "hash": "7ca2d67c9c3aebf50cdc8709ee8aacf8cdb8cc7ea6325ea94939caef5da1c53d",
+      "lines": 0,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "react_production_alpha.esproj",
+      "kind": "other",
+      "extension": ".esproj",
+      "hash": "ee4aa480bca4eabbc940bcbd7b6456720b46662236696dbc2d4b421f607c7fbf",
+      "lines": 11,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [
+        "BuildOutputFolder",
+        "JavaScriptTestFramework",
+        "JavaScriptTestRoot",
+        "Project",
+        "PropertyGroup",
+        "ShouldRunBuildScript",
+        "StartupCommand"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "react_production_alpha.slnx",
+      "kind": "other",
+      "extension": ".slnx",
+      "hash": "91c6566dd3418510daca80bb9ec678fc8e68ea719c9f1f13a573385315cd38b9",
+      "lines": 7,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [
+        "Build",
+        "Deploy",
+        "Project",
+        "Solution"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "scripts/index.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "b7dabb4a1297864a10c46a8903c2f33ec5d22f8bd7d8668be5ebc8c85742f7f3",
+      "lines": 33,
+      "imports": [
+        "./repo-map.ts",
+        "node:fs",
+        "node:path"
+      ],
+      "exports": [],
+      "symbols": [
+        "by",
+        "indexes",
+        "map",
+        "output",
+        "records",
+        "sourceFiles"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "scripts/ingest.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "debb30dd0d3b72ab6a8166d61e082815704d83827db71ff197e8c451f2fe9541",
+      "lines": 55,
+      "imports": [
+        "./repo-map.ts",
+        "node:fs",
+        "node:path"
+      ],
+      "exports": [],
+      "symbols": [
+        "RepositoryMap",
+        "adrs",
+        "api",
+        "apiContent",
+        "bullets",
+        "changed",
+        "components",
+        "constraints",
+        "current",
+        "db",
+        "deleted",
+        "document",
+        "featureNames",
+        "hooks",
+        "links",
+        "map",
+        "pages",
+        "previous",
+        "runbooks",
+        "section",
+        "source",
+        "statePath",
+        "used",
+        "writeDocumentation",
+        "writeKnowledge"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": [
+        "/login"
+      ]
+    },
+    {
+      "path": "scripts/repo-map.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "8fdf9757ceaab994880274f9daa99cf69997388878747ac4a7a4011d02688652",
+      "lines": 120,
+      "imports": [
+        "node:crypto",
+        "node:fs",
+        "node:path"
+      ],
+      "exports": [
+        "FileRecord",
+        "RepositoryMap",
+        "readSource",
+        "scanRepository",
+        "stableJson",
+        "writeIfChanged"
+      ],
+      "symbols": [
+        "FileRecord",
+        "RepositoryMap",
+        "absolute",
+        "apiUsage",
+        "binary",
+        "classify",
+        "current",
+        "databaseUsage",
+        "directoryPath",
+        "exports",
+        "files",
+        "generatedDocs",
+        "ignoredDirectories",
+        "ignoredFiles",
+        "imports",
+        "matches",
+        "packageJson",
+        "packagePath",
+        "parseFile",
+        "readSource",
+        "referencedComponents",
+        "referencedHooks",
+        "resolvedRoot",
+        "routes",
+        "scanRepository",
+        "sourceExtensions",
+        "stableJson",
+        "symbols",
+        "text",
+        "unique",
+        "walk",
+        "writeIfChanged"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "alter table",
+        "create table",
+        "insert into",
+        "select .* from|update .* set|delete from"
+      ],
+      "routes": []
+    },
+    {
+      "path": "scripts/verify-supabase.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "bf6c867da8da53eb961813909e5909e576749aaed2419f2fac129b13dd5c455c",
+      "lines": 40,
+      "imports": [
+        "node:fs",
+        "node:path"
+      ],
+      "exports": [],
+      "symbols": [
+        "Environment",
+        "environment",
+        "forbidden",
+        "migrationDirectory",
+        "migrations",
+        "missingTables",
+        "missingTypes",
+        "projectRef",
+        "public",
+        "requiredTables",
+        "requiredTypes",
+        "root",
+        "sql",
+        "url"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "create table"
+      ],
+      "routes": []
+    },
+    {
+      "path": "src/App.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "e193e96a89689a0af5dd4d3924ca0c69057c827568d6bfbeb0cb2e9de42fb0c2",
+      "lines": 66,
+      "imports": [
+        "@/components/ErrorBoundary",
+        "@/components/motion/PageTransition",
+        "@/hooks/useAuth",
+        "@/pages/AcceptInvitePage",
+        "@/pages/DashboardPage",
+        "@/pages/HomePage",
+        "@/pages/LoginPage",
+        "@/pages/WorkflowsPage",
+        "framer-motion",
+        "react-router-dom"
+      ],
+      "exports": [
+        "App",
+        "ProtectedRoute"
+      ],
+      "symbols": [
+        "App",
+        "LoadingScreen",
+        "ProtectedRoute"
+      ],
+      "referencedComponents": [
+        "AcceptInvitePage",
+        "DashboardPage",
+        "ErrorBoundary",
+        "HomePage",
+        "LoadingScreen",
+        "LoginPage",
+        "MotionConfig",
+        "Navigate",
+        "PageTransition",
+        "ProtectedRoute",
+        "Route",
+        "Routes",
+        "WorkflowsPage"
+      ],
+      "referencedHooks": [
+        "useAuth"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": [
+        "*",
+        "/",
+        "/accept-invite",
+        "/dashboard",
+        "/login",
+        "/workflows"
+      ]
+    },
+    {
+      "path": "src/api/supabase/auth.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "8c02eb281adb747464266dc2e346ff3e5c23cb49edbad5f4a0f02d7714737ffd",
+      "lines": 8,
+      "imports": [
+        "./client"
+      ],
+      "exports": [
+        "getSession",
+        "signInWithEmail",
+        "signOut"
+      ],
+      "symbols": [
+        "getSession",
+        "signInWithEmail",
+        "signOut"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.auth.getSession",
+        "supabase.auth.signInWithPassword",
+        "supabase.auth.signOut"
+      ],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/api/supabase/client.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "5639037b4e9ab60e4a19d1ea1c019214bfca91fb043450220c7966a1fdd30425",
+      "lines": 8,
+      "imports": [
+        "@/types/supabase",
+        "@/utils/env",
+        "@supabase/supabase-js"
+      ],
+      "exports": [
+        "supabase"
+      ],
+      "symbols": [
+        "supabase"
+      ],
+      "referencedComponents": [
+        "Database"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.anonKey",
+        "supabase.url"
+      ],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/api/supabase/storage.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "5962060bbe67b509f1f6cff3d0510eeaff4392e7866421a653746eb1a28af335",
+      "lines": 8,
+      "imports": [],
+      "exports": [
+        "storage",
+        "uploadFile"
+      ],
+      "symbols": [
+        "storage",
+        "uploadFile"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.storage.from"
+      ],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/components/ErrorBoundary.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "cdcfc0bfc4a62c867590abc75d3a5c72cf3f13e4ab7913d003239c5319b9928a",
+      "lines": 59,
+      "imports": [
+        "react"
+      ],
+      "exports": [
+        "ErrorBoundary"
+      ],
+      "symbols": [
+        "ErrorBoundary",
+        "ErrorInfo",
+        "Props",
+        "ReactNode",
+        "State"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/components/dashboard/ClientServices.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "c96c81c789ce66f0a1cb60f7e2d38f39bc2f2a1ad1322cbf62f61d818cb439d7",
+      "lines": 60,
+      "imports": [
+        "@/hooks/useClientServices"
+      ],
+      "exports": [
+        "ClientServices"
+      ],
+      "symbols": [
+        "ClientServices",
+        "as",
+        "name",
+        "serviceNames",
+        "status",
+        "statusColors",
+        "statusLabels"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useClientServices"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/components/dashboard/RunsFeed.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "0a48e0a6604c5eb5726d79c911f8393294550101fa53e312b56c9bfcf25478bd",
+      "lines": 72,
+      "imports": [
+        "@/hooks/useClient",
+        "@/hooks/useRuns",
+        "@/utils/time"
+      ],
+      "exports": [
+        "RunsFeed"
+      ],
+      "symbols": [
+        "RunsFeed",
+        "fallbackFeature",
+        "featureLabels"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useClient",
+        "useRuns"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/components/dashboard/StatsRow.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "a4d5a48207dca85228f437425401148ca74735a72f26ffbda722a181d77cf2ff",
+      "lines": 51,
+      "imports": [
+        "@/hooks/useClient",
+        "@/hooks/useRuns"
+      ],
+      "exports": [
+        "StatsRow"
+      ],
+      "symbols": [
+        "StatsRow",
+        "avgDuration",
+        "snapshotsWithDuration",
+        "stats",
+        "successRate",
+        "successfulRuns",
+        "totalRecords",
+        "totalRuns"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useClient",
+        "useRuns"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/components/dashboard/WorkflowRow.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "5a86840a2f563381a5f4c7fa67d3fd44c9f5b2098b318b0ca7e0729ef8ae1aaa",
+      "lines": 48,
+      "imports": [
+        "@/utils/time"
+      ],
+      "exports": [
+        "WorkflowRow"
+      ],
+      "symbols": [
+        "WorkflowRow",
+        "WorkflowRowProps",
+        "lastRunTime",
+        "recordsInfo"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/components/features/FAQ.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "338f6847bef11da9aef9d692e900da81543b44941b6896c4400841f394b0c5ed",
+      "lines": 97,
+      "imports": [
+        "@/components/ui/SectionHeader",
+        "framer-motion",
+        "react"
+      ],
+      "exports": [
+        "FAQ"
+      ],
+      "symbols": [
+        "FAQ",
+        "faqItems",
+        "handleChange",
+        "isOpen",
+        "mediaQuery"
+      ],
+      "referencedComponents": [
+        "AnimatePresence",
+        "SectionHeader"
+      ],
+      "referencedHooks": [
+        "useEffect",
+        "useState"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/components/features/IntegrationsOrbit.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "e7eb74e5c51b58efcd67fc902675a1ea360c8f6d9f8c57f34f87b24970ddafdc",
+      "lines": 174,
+      "imports": [
+        "@/components/ui/SectionHeader",
+        "framer-motion",
+        "react",
+        "react-icons/fa",
+        "react-icons/si"
+      ],
+      "exports": [
+        "IntegrationsOrbit"
+      ],
+      "symbols": [
+        "CENTER",
+        "CONTAINER_SIZE",
+        "Integration",
+        "IntegrationsOrbit",
+        "RADIUS",
+        "angleRad",
+        "handler",
+        "iconColor",
+        "iconSize",
+        "integrations",
+        "mq",
+        "shouldAnimate",
+        "x",
+        "y"
+      ],
+      "referencedComponents": [
+        "FaEnvelope",
+        "FaSlack",
+        "SectionHeader",
+        "SiGmail",
+        "SiGooglecalendar",
+        "SiGoogledocs",
+        "SiGooglesheets",
+        "SiTelegram",
+        "SiWhatsapp"
+      ],
+      "referencedHooks": [
+        "useEffect",
+        "useState"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/components/features/ROICalculator.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "ea33ceb9e426594bb8a628ec37ad31039f16178e27134545e3c1fdeb929c34f1",
+      "lines": 169,
+      "imports": [
+        "@/components/ui/SectionHeader",
+        "framer-motion",
+        "react"
+      ],
+      "exports": [
+        "ROICalculator"
+      ],
+      "symbols": [
+        "Output",
+        "ROICalculator",
+        "SliderConfig",
+        "costSavedPerYear",
+        "formatCurrency",
+        "formatHours",
+        "formatLeads",
+        "formatMessages",
+        "handler",
+        "hoursPerMonth",
+        "leadsNotDropped",
+        "messagesAutomated",
+        "mq",
+        "outputs",
+        "pct",
+        "setter",
+        "setters",
+        "sliderValues",
+        "sliders",
+        "val"
+      ],
+      "referencedComponents": [
+        "SectionHeader"
+      ],
+      "referencedHooks": [
+        "useEffect",
+        "useState"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/components/motion/FadeUp.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "b83d34974abb5ec416e6b53aed219f5d330085730f1591263453a51ac43f1ba7",
+      "lines": 26,
+      "imports": [
+        "framer-motion",
+        "react"
+      ],
+      "exports": [
+        "FadeUp"
+      ],
+      "symbols": [
+        "FadeUp",
+        "FadeUpProps"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/components/motion/PageTransition.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "1883e133099a685e0a22973846c2de4a0c0a229d4ef383d99b3b9de477de2e1d",
+      "lines": 37,
+      "imports": [
+        "framer-motion",
+        "react",
+        "react-router-dom"
+      ],
+      "exports": [
+        "PageTransition"
+      ],
+      "symbols": [
+        "PageTransition",
+        "PageTransitionProps",
+        "location",
+        "pageTransition",
+        "pageVariants"
+      ],
+      "referencedComponents": [
+        "AnimatePresence"
+      ],
+      "referencedHooks": [
+        "useLocation"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/components/ui/Footer.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "487d37963edea947fd5c79135ffce6057ccb62ed321dbfb089ccee056054bf5d",
+      "lines": 51,
+      "imports": [
+        "@/utils/contact",
+        "react-router-dom"
+      ],
+      "exports": [
+        "Footer"
+      ],
+      "symbols": [
+        "Footer",
+        "footerLinks"
+      ],
+      "referencedComponents": [
+        "Link"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/components/ui/Nav.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "19d43afab2e503dbb9a12c74d4c982a2ea89e61989ca620234d733c31fb195b0",
+      "lines": 228,
+      "imports": [
+        "@/hooks/useAuth",
+        "@/utils/contact",
+        "react",
+        "react-router-dom"
+      ],
+      "exports": [
+        "Nav"
+      ],
+      "symbols": [
+        "Nav",
+        "el",
+        "handleNavClick",
+        "id",
+        "location",
+        "navigate",
+        "onScroll",
+        "privateNavLinks",
+        "publicNavLinks"
+      ],
+      "referencedComponents": [
+        "Link"
+      ],
+      "referencedHooks": [
+        "useAuth",
+        "useCallback",
+        "useEffect",
+        "useLocation",
+        "useNavigate",
+        "useState"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": [
+        "/",
+        "/#${hash}",
+        "/login"
+      ]
+    },
+    {
+      "path": "src/components/ui/ProjectCard.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "6c5a37b1e2053f129663e4a1f60c42e7493113f542816c8b77e4ebcecd8e8934",
+      "lines": 33,
+      "imports": [
+        "framer-motion"
+      ],
+      "exports": [
+        "ProjectCard"
+      ],
+      "symbols": [
+        "ProjectCard",
+        "ProjectCardProps"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/components/ui/SectionHeader.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "3241337b4fd632dfc2a55fb2a771d03db75aef33ab8af6dca3c8d710175b730c",
+      "lines": 14,
+      "imports": [],
+      "exports": [
+        "SectionHeader"
+      ],
+      "symbols": [
+        "SectionHeader",
+        "SectionHeaderProps"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/hooks/useAnalytics.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "8615ab5c4850188ce1900b22f87314594fb8bf3b8b8f9a790873b8a9dbb8df34",
+      "lines": 22,
+      "imports": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "exports": [
+        "useAnalytics"
+      ],
+      "symbols": [
+        "useAnalytics"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [
+        "analytics_snapshots"
+      ],
+      "routes": []
+    },
+    {
+      "path": "src/hooks/useAuth.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "fe51efe5188c0a1cbe1b0d724fca50270944182fa3b28ff6f5abe7091c7edc17",
+      "lines": 24,
+      "imports": [
+        "@/api/supabase/client",
+        "@/store/authStore",
+        "react-router-dom"
+      ],
+      "exports": [
+        "useAuth"
+      ],
+      "symbols": [
+        "navigate",
+        "signOut",
+        "useAuth"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useAuthStore",
+        "useNavigate"
+      ],
+      "apiUsage": [
+        "supabase.auth.signOut"
+      ],
+      "databaseUsage": [],
+      "routes": [
+        "/"
+      ]
+    },
+    {
+      "path": "src/hooks/useClient.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "1f0f2b6c9808cabae705ceeb519b975c017fed30c3eb5b1eee2fbb9c177cb9e6",
+      "lines": 22,
+      "imports": [
+        "@/api/supabase/client",
+        "@/hooks/useAuth",
+        "@tanstack/react-query"
+      ],
+      "exports": [
+        "useClient"
+      ],
+      "symbols": [
+        "useClient"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useAuth",
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [
+        "clients"
+      ],
+      "routes": []
+    },
+    {
+      "path": "src/hooks/useClientServices.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "659fe148e22119896fa5ad8e6f58be314fde1621887c1e19cec221abc3ecf65e",
+      "lines": 19,
+      "imports": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "exports": [
+        "useClientServices"
+      ],
+      "symbols": [
+        "useClientServices"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [
+        "client_services"
+      ],
+      "routes": []
+    },
+    {
+      "path": "src/hooks/useRuns.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "1c97aaa07ab60093aad3876dd423d69965eaadba9b014d2d1a74b60a6478fa03",
+      "lines": 22,
+      "imports": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "exports": [
+        "useRuns"
+      ],
+      "symbols": [
+        "useRuns"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [
+        "automation_runs"
+      ],
+      "routes": []
+    },
+    {
+      "path": "src/hooks/useWorkflows.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "0497c829e33491a85dad593eac8e59f9552615b21eb10786e49e0e94f06db42e",
+      "lines": 29,
+      "imports": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "exports": [
+        "useWorkflows"
+      ],
+      "symbols": [
+        "useWorkflows"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [
+        "workflows"
+      ],
+      "routes": []
+    },
+    {
+      "path": "src/index.css",
+      "kind": "config",
+      "extension": ".css",
+      "hash": "3a9ff2999be30618c1bfba15e631ee9f7224855c1778d2695d0b2564633a6854",
+      "lines": 1,
+      "imports": [
+        "./styles/globals.css"
+      ],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/main.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "2c456e246045e7fe751ee9b07085cb5482ef7e9f877c33ffdbe14a13154c7710",
+      "lines": 38,
+      "imports": [
+        "./index.css",
+        "@/App",
+        "@/api/supabase/client",
+        "@/store/authStore",
+        "@tanstack/react-query",
+        "react",
+        "react-dom/client",
+        "react-router-dom"
+      ],
+      "exports": [],
+      "symbols": [
+        "queryClient"
+      ],
+      "referencedComponents": [
+        "App",
+        "BrowserRouter",
+        "QueryClientProvider",
+        "StrictMode"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.auth.getSession",
+        "supabase.auth.onAuthStateChange"
+      ],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/pages/AcceptInvitePage.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "626351896d98b85a51011004eb7ef1a6c23a9cfb062f9bb5dbcfef493cd59469",
+      "lines": 195,
+      "imports": [
+        "@/api/supabase/client",
+        "@/hooks/useAuth",
+        "@hookform/resolvers/zod",
+        "react",
+        "react-hook-form",
+        "react-router-dom",
+        "zod"
+      ],
+      "exports": [
+        "AcceptInvitePage"
+      ],
+      "symbols": [
+        "AcceptInvitePage",
+        "InviteForm",
+        "getInviteLinkError",
+        "hashParams",
+        "inviteLinkError",
+        "inviteSchema",
+        "location",
+        "navigate",
+        "onSubmit",
+        "searchParams"
+      ],
+      "referencedComponents": [
+        "InviteForm",
+        "Link"
+      ],
+      "referencedHooks": [
+        "useAuth",
+        "useLocation",
+        "useMemo",
+        "useNavigate"
+      ],
+      "apiUsage": [
+        "supabase.auth.updateUser"
+      ],
+      "databaseUsage": [],
+      "routes": [
+        "/dashboard",
+        "/login"
+      ]
+    },
+    {
+      "path": "src/pages/DashboardPage.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "5764b33c260e3df7416ed9f22b65b1d91ab0178d7d010ff17040843f4e49f043",
+      "lines": 89,
+      "imports": [
+        "@/components/dashboard/ClientServices",
+        "@/components/dashboard/RunsFeed",
+        "@/components/dashboard/StatsRow",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient"
+      ],
+      "exports": [
+        "DashboardPage"
+      ],
+      "symbols": [
+        "DashboardPage"
+      ],
+      "referencedComponents": [
+        "ClientServices",
+        "Footer",
+        "Nav",
+        "RunsFeed",
+        "SectionHeader",
+        "StatsRow"
+      ],
+      "referencedHooks": [
+        "useClient"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/pages/HomePage.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "d37fb377e3e57223ffb4e0970d1dc41a1c878f1fca11a99e3a1723fb7672692a",
+      "lines": 232,
+      "imports": [
+        "@/components/features/FAQ",
+        "@/components/features/IntegrationsOrbit",
+        "@/components/features/ROICalculator",
+        "@/components/motion/FadeUp",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "framer-motion"
+      ],
+      "exports": [
+        "HomePage"
+      ],
+      "symbols": [
+        "HomePage",
+        "heroWords",
+        "processSteps",
+        "services",
+        "stats"
+      ],
+      "referencedComponents": [
+        "FAQ",
+        "FadeUp",
+        "Footer",
+        "IntegrationsOrbit",
+        "Nav",
+        "ROICalculator",
+        "SectionHeader"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/pages/LoginPage.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "90d9b14165d04ca68e1290f06540b7c25afb66e7e2369ed707d94a7fb5d770c9",
+      "lines": 111,
+      "imports": [
+        "@/api/supabase/client",
+        "@hookform/resolvers/zod",
+        "react",
+        "react-hook-form",
+        "react-router-dom",
+        "zod"
+      ],
+      "exports": [
+        "LoginPage"
+      ],
+      "symbols": [
+        "LoginForm",
+        "LoginPage",
+        "loginSchema",
+        "navigate",
+        "onSubmit"
+      ],
+      "referencedComponents": [
+        "LoginForm"
+      ],
+      "referencedHooks": [
+        "useNavigate"
+      ],
+      "apiUsage": [
+        "supabase.auth.signInWithPassword"
+      ],
+      "databaseUsage": [],
+      "routes": [
+        "/dashboard"
+      ]
+    },
+    {
+      "path": "src/pages/WorkflowsPage.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "49acfd01c2396d314a352ce9c089120969fe210e72157b56626e0ad6448808d5",
+      "lines": 112,
+      "imports": [
+        "@/components/dashboard/WorkflowRow",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient",
+        "@/hooks/useWorkflows"
+      ],
+      "exports": [
+        "WorkflowsPage"
+      ],
+      "symbols": [
+        "WorkflowsPage",
+        "isLoading",
+        "latestRun"
+      ],
+      "referencedComponents": [
+        "Footer",
+        "Nav",
+        "SectionHeader",
+        "WorkflowRow"
+      ],
+      "referencedHooks": [
+        "useClient",
+        "useWorkflows"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/store/authStore.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "48a82422f0efe4c7a8977ac0c18d71e76bfe1ca10280458658295e7c3d347c75",
+      "lines": 17,
+      "imports": [
+        "@supabase/supabase-js",
+        "zustand"
+      ],
+      "exports": [
+        "useAuthStore"
+      ],
+      "symbols": [
+        "AuthState",
+        "useAuthStore"
+      ],
+      "referencedComponents": [
+        "AuthState"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/styles/globals.css",
+      "kind": "config",
+      "extension": ".css",
+      "hash": "f521357575fa116e1d578db6dc48a50e50ac4ac638c6b06eae60570382596dbb",
+      "lines": 68,
+      "imports": [
+        "tailwindcss"
+      ],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/styles/tokens.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "a876f88be25db134b58ef80909fbce29c6740483a24ba59b020bc0f52629b799",
+      "lines": 10,
+      "imports": [],
+      "exports": [
+        "colors"
+      ],
+      "symbols": [
+        "colors"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/test/AcceptInvitePage.test.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "eb70178bd1b1b53be2f3ae546524fdee763106d3fe9346751b300b039e52f83d",
+      "lines": 82,
+      "imports": [
+        "@/api/supabase/client",
+        "@/hooks/useAuth",
+        "@/pages/AcceptInvitePage",
+        "@testing-library/react",
+        "@testing-library/user-event",
+        "react-router-dom",
+        "vitest"
+      ],
+      "exports": [],
+      "symbols": [
+        "renderPage",
+        "successfulUpdate",
+        "updateUser",
+        "user"
+      ],
+      "referencedComponents": [
+        "AcceptInvitePage",
+        "MemoryRouter",
+        "Route",
+        "Routes"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.auth.updateUser"
+      ],
+      "databaseUsage": [],
+      "routes": [
+        "/accept-invite",
+        "/dashboard",
+        "/login"
+      ]
+    },
+    {
+      "path": "src/test/ProtectedRoute.test.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "5e34f6a5736b2a265ce83932da87d3c87cacd6ddc4f7ef22a575e85bd622d504",
+      "lines": 80,
+      "imports": [
+        "@/App",
+        "@/hooks/useAuth",
+        "@testing-library/react",
+        "react-router-dom",
+        "vitest"
+      ],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [
+        "MemoryRouter",
+        "ProtectedRoute",
+        "Route",
+        "Routes"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": [
+        "/dashboard",
+        "/login"
+      ]
+    },
+    {
+      "path": "src/test/setup.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "93ab7fc1199ffe7035f53c9fc520ecf54bf444254ad3bb8918e2baeb93360165",
+      "lines": 1,
+      "imports": [
+        "@testing-library/jest-dom"
+      ],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/test/time.test.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "ea582886753cf98d1b805ba339997873bdaefe9b0d58480d0aed59ab687d2606",
+      "lines": 42,
+      "imports": [
+        "@/utils/time",
+        "vitest"
+      ],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useFakeTimers",
+        "useRealTimers"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/test/useRuns.test.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "b16ddafccc5bd8f20f63b70ef6b9d0d52d70a8537388b1fcd74e1d94e438d74f",
+      "lines": 45,
+      "imports": [
+        "@/hooks/useRuns",
+        "@tanstack/react-query",
+        "@testing-library/react",
+        "react",
+        "vitest"
+      ],
+      "exports": [],
+      "symbols": [
+        "eq",
+        "first",
+        "limit",
+        "order",
+        "queryClient",
+        "second",
+        "select",
+        "wrapper"
+      ],
+      "referencedComponents": [
+        "QueryClientProvider"
+      ],
+      "referencedHooks": [
+        "useRuns"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/types/supabase.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "b3faf1ead44b1ff8873945108f9723e3998c1e44e38fb180434e14c87444c546",
+      "lines": 442,
+      "imports": [],
+      "exports": [
+        "CompositeTypes",
+        "Constants",
+        "Database",
+        "Enums",
+        "Json",
+        "Tables",
+        "TablesInsert",
+        "TablesUpdate"
+      ],
+      "symbols": [
+        "CompositeTypes",
+        "Constants",
+        "Database",
+        "DatabaseWithoutInternals",
+        "DefaultSchema",
+        "Enums",
+        "Json",
+        "Tables",
+        "TablesInsert",
+        "TablesUpdate"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/utils/contact.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "9a0fe0ebfb9f229256dda00aa609a446ad1b9fccc5e9d2e4a1cf78aff95b0219",
+      "lines": 3,
+      "imports": [],
+      "exports": [
+        "contactEmail",
+        "contactHref"
+      ],
+      "symbols": [
+        "contactEmail",
+        "contactHref"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/utils/env.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "e96044c92f8d889270af888463afc552edcbec30948b9c9e885d4770a188784f",
+      "lines": 12,
+      "imports": [],
+      "exports": [
+        "env"
+      ],
+      "symbols": [
+        "env",
+        "optional",
+        "val"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.co"
+      ],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/utils/motion.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "b7c4ba7dade2ff890d4a23e1c756610fed6aaa84aa737d9b50ed594fcd95591f",
+      "lines": 28,
+      "imports": [],
+      "exports": [
+        "fadeUp",
+        "fadeUpTransition",
+        "fadeUpVariants",
+        "respectReducedMotion",
+        "staggerContainer"
+      ],
+      "symbols": [
+        "fadeUp",
+        "fadeUpTransition",
+        "fadeUpVariants",
+        "respectReducedMotion",
+        "staggerContainer"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/utils/time.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "8e01b355922d9debbe2cc9e27a4712db5e4470ea5394dea59dac499858d83598",
+      "lines": 9,
+      "imports": [],
+      "exports": [
+        "formatRelativeTime"
+      ],
+      "symbols": [
+        "days",
+        "diff",
+        "formatRelativeTime",
+        "hours",
+        "mins"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "supabase/.temp/linked-project.json",
+      "kind": "config",
+      "extension": ".json",
+      "hash": "7a82199e49f40eb36498a05f66499f7c69c67cdc991adc392cccc1cf03955fe4",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "supabase/config.toml",
+      "kind": "config",
+      "extension": ".toml",
+      "hash": "904f129837798a74e7b8f9b0c528fe007d9ebf37f93141ae63e5516a5d5ecbf5",
+      "lines": 8,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "supabase/functions/ingest-run/index.ts",
+      "kind": "function",
+      "extension": ".ts",
+      "hash": "58ff33124bf68ba5b7469e4f94216ea30d3f924a0836851f677b08af6f8b292b",
+      "lines": 118,
+      "imports": [
+        "https://deno.land/std/http/server.ts",
+        "https://deno.land/x/zod@v3.23.8/mod.ts",
+        "https://esm.sh/@supabase/supabase-js@2"
+      ],
+      "exports": [],
+      "symbols": [
+        "featureTypes",
+        "headerSecret",
+        "ingestRunSchema",
+        "json",
+        "parsed",
+        "raw",
+        "runStatuses",
+        "serviceRoleKey",
+        "supabase",
+        "supabaseUrl",
+        "webhookSecret"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "automation_runs"
+      ],
+      "routes": []
+    },
+    {
+      "path": "supabase/functions/invite-client/index.ts",
+      "kind": "function",
+      "extension": ".ts",
+      "hash": "77059e98f17a2fd965b753143ad6863ef46ddd7cb049af8c5ccd218be509cf61",
+      "lines": 127,
+      "imports": [
+        "https://deno.land/x/zod@v3.23.8/mod.ts",
+        "https://esm.sh/@supabase/supabase-js@2"
+      ],
+      "exports": [],
+      "symbols": [
+        "getInviteRedirectUrl",
+        "inviteRedirectUrl",
+        "inviteSchema",
+        "inviteSecret",
+        "json",
+        "parsed",
+        "raw",
+        "redirectTo",
+        "serviceRoleKey",
+        "siteUrl",
+        "supabase",
+        "supabaseUrl",
+        "url"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.auth.admin.deleteUser",
+        "supabase.auth.admin.inviteUserByEmail"
+      ],
+      "databaseUsage": [
+        "client_services",
+        "clients"
+      ],
+      "routes": []
+    },
+    {
+      "path": "supabase/migrations/20260701000000_base_schema.sql",
+      "kind": "migration",
+      "extension": ".sql",
+      "hash": "9c5bc64ab6b3884c9a7abb7c81407c9f06b0cdbaf0533a25dbe1f44f00352a6d",
+      "lines": 96,
+      "imports": [],
+      "exports": [],
+      "symbols": [
+        "as",
+        "not",
+        "public",
+        "where"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "create table",
+        "select 1 from"
+      ],
+      "routes": []
+    },
+    {
+      "path": "supabase/migrations/20260703000001_automation_runs_contract.sql",
+      "kind": "migration",
+      "extension": ".sql",
+      "hash": "750e61f394028c2cd97d9bbe5779b901517af115a535d1883d79f99271e16bef",
+      "lines": 72,
+      "imports": [],
+      "exports": [],
+      "symbols": [
+        "as",
+        "is",
+        "not",
+        "public",
+        "where"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "alter table",
+        "select 1 from"
+      ],
+      "routes": []
+    },
+    {
+      "path": "supabase/migrations/20260711000001_client_data_rls.sql",
+      "kind": "migration",
+      "extension": ".sql",
+      "hash": "13d7c013857b75571b3891c8041b4209d4b01819e722a15360fce9383a6d2ff9",
+      "lines": 54,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "alter table"
+      ],
+      "routes": []
+    },
+    {
+      "path": "supabase/migrations/20260711000002_client_services.sql",
+      "kind": "migration",
+      "extension": ".sql",
+      "hash": "f2b60d29538dcbc014f42ec941d2c4f9e797a5b125d055b4ce2146f4fa8dbabf",
+      "lines": 63,
+      "imports": [],
+      "exports": [],
+      "symbols": [
+        "in",
+        "not",
+        "public",
+        "where"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "alter table",
+        "create table",
+        "select 1 from"
+      ],
+      "routes": []
+    },
+    {
+      "path": "tsconfig.app.json",
+      "kind": "config",
+      "extension": ".json",
+      "hash": "3197f30db441e0efd69da2a7aaa875d906a09965de1194a44e6a916977ab1395",
+      "lines": 29,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "tsconfig.json",
+      "kind": "config",
+      "extension": ".json",
+      "hash": "ad28d132ee48d6e23917cf5827cace785d0fc01a44ca68b0dda51cc8c3fd3f52",
+      "lines": 8,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "tsconfig.node.json",
+      "kind": "config",
+      "extension": ".json",
+      "hash": "a9e6c7f6fd3ec455a6fe1d4fbb83091e774b62fe116008ab6d8c5e1e88af4629",
+      "lines": 24,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "vite.config.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "c2e67ef1c729a0917dafab550fbcbdd206b109f7bd3963ca12381591993d7d93",
+      "lines": 22,
+      "imports": [
+        "@tailwindcss/vite",
+        "@vitejs/plugin-react",
+        "path",
+        "url",
+        "vite"
+      ],
+      "exports": [],
+      "symbols": [
+        "__dirname"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "vitest.config.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "b6917251a1bd19d3ee9648a58eb5e5c39617702caf83ad6c47b4e53ed7d27ce9",
+      "lines": 15,
+      "imports": [
+        "path",
+        "vitest/config"
+      ],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    }
+  ]
+}

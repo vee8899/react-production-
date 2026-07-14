@@ -3,6 +3,7 @@ import { formatRelativeTime } from '@/utils/time';
 type WorkflowRowProps = {
   name: string;
   description: string | null;
+  featureType: string;
   isActive: boolean;
   lastRun: {
     status: string;
@@ -12,7 +13,18 @@ type WorkflowRowProps = {
   } | null;
 };
 
-export const WorkflowRow = ({ name, description, isActive, lastRun }: WorkflowRowProps) => {
+const featureLabels: Record<string, string> = {
+  lead_follow_up: 'Lead Follow-Up',
+  listing_notifications: 'Listing Notifications',
+  client_communication: 'Client Communication',
+  crm_sync: 'CRM Sync',
+  document_generation: 'Document Generation',
+  appointment_scheduling: 'Appointment Scheduling',
+  data_pipeline: 'Data Pipelines',
+  custom_workflow: 'Custom Workflows',
+};
+
+export const WorkflowRow = ({ name, description, featureType, isActive, lastRun }: WorkflowRowProps) => {
   const lastRunTime = lastRun
     ? formatRelativeTime(lastRun.ran_at)
     : 'Never run';
@@ -39,6 +51,9 @@ export const WorkflowRow = ({ name, description, isActive, lastRun }: WorkflowRo
           {description && (
             <span className="workflow-desc" style={{ color: '#6B6762' }}>{description}</span>
           )}
+          <span className="workflow-meta" style={{ color: '#6B6762' }}>
+            {featureLabels[featureType] ?? featureType}
+          </span>
           <span className="workflow-meta" style={{ color: '#6B6762' }}>{recordsInfo}</span>
         </div>
       </div>

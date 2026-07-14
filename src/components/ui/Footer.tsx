@@ -36,7 +36,7 @@ export default function Footer() {
 
         {/* Middle copy */}
         <p className="mt-16 max-w-md text-base font-sans text-inverse-text/60 font-light leading-relaxed">
-          Automating real estate operations for private clients worldwide.
+          Reusable automation infrastructure for the workflows that keep modern teams moving.
         </p>
 
         {/* Bottom row */}

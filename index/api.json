@@ -1,0 +1,244 @@
+{
+  "generatedAt": "deterministic",
+  "records": [
+    {
+      "file": "src/api/supabase/auth.ts",
+      "exportedSymbols": [
+        "getSession",
+        "signInWithEmail",
+        "signOut"
+      ],
+      "importedSymbols": [
+        "./client"
+      ],
+      "dependencies": [
+        "./client"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.auth.getSession",
+        "supabase.auth.signInWithPassword",
+        "supabase.auth.signOut"
+      ],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/api/supabase/client.ts",
+      "exportedSymbols": [
+        "supabase"
+      ],
+      "importedSymbols": [
+        "@/types/supabase",
+        "@/utils/env",
+        "@supabase/supabase-js"
+      ],
+      "dependencies": [
+        "@/types/supabase",
+        "@/utils/env"
+      ],
+      "referencedComponents": [
+        "Database"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.anonKey",
+        "supabase.url"
+      ],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/api/supabase/storage.ts",
+      "exportedSymbols": [
+        "storage",
+        "uploadFile"
+      ],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.storage.from"
+      ],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/hooks/useAuth.ts",
+      "exportedSymbols": [
+        "useAuth"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/store/authStore",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/store/authStore"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useAuthStore",
+        "useNavigate"
+      ],
+      "apiUsage": [
+        "supabase.auth.signOut"
+      ],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/main.tsx",
+      "exportedSymbols": [],
+      "importedSymbols": [
+        "./index.css",
+        "@/App",
+        "@/api/supabase/client",
+        "@/store/authStore",
+        "@tanstack/react-query",
+        "react",
+        "react-dom/client",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "./index.css",
+        "@/App",
+        "@/api/supabase/client",
+        "@/store/authStore"
+      ],
+      "referencedComponents": [
+        "App",
+        "BrowserRouter",
+        "QueryClientProvider",
+        "StrictMode"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.auth.getSession",
+        "supabase.auth.onAuthStateChange"
+      ],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/pages/AcceptInvitePage.tsx",
+      "exportedSymbols": [
+        "AcceptInvitePage"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/hooks/useAuth",
+        "@hookform/resolvers/zod",
+        "react",
+        "react-hook-form",
+        "react-router-dom",
+        "zod"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/hooks/useAuth"
+      ],
+      "referencedComponents": [
+        "InviteForm",
+        "Link"
+      ],
+      "referencedHooks": [
+        "useAuth",
+        "useLocation",
+        "useMemo",
+        "useNavigate"
+      ],
+      "apiUsage": [
+        "supabase.auth.updateUser"
+      ],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/pages/LoginPage.tsx",
+      "exportedSymbols": [
+        "LoginPage"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@hookform/resolvers/zod",
+        "react",
+        "react-hook-form",
+        "react-router-dom",
+        "zod"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ],
+      "referencedComponents": [
+        "LoginForm"
+      ],
+      "referencedHooks": [
+        "useNavigate"
+      ],
+      "apiUsage": [
+        "supabase.auth.signInWithPassword"
+      ],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/test/AcceptInvitePage.test.tsx",
+      "exportedSymbols": [],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/hooks/useAuth",
+        "@/pages/AcceptInvitePage",
+        "@testing-library/react",
+        "@testing-library/user-event",
+        "react-router-dom",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/hooks/useAuth",
+        "@/pages/AcceptInvitePage"
+      ],
+      "referencedComponents": [
+        "AcceptInvitePage",
+        "MemoryRouter",
+        "Route",
+        "Routes"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.auth.updateUser"
+      ],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/utils/env.ts",
+      "exportedSymbols": [
+        "env"
+      ],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.co"
+      ],
+      "databaseUsage": []
+    },
+    {
+      "file": "supabase/functions/invite-client/index.ts",
+      "exportedSymbols": [],
+      "importedSymbols": [
+        "https://deno.land/x/zod@v3.23.8/mod.ts",
+        "https://esm.sh/@supabase/supabase-js@2"
+      ],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.auth.admin.deleteUser",
+        "supabase.auth.admin.inviteUserByEmail"
+      ],
+      "databaseUsage": [
+        "client_services",
+        "clients"
+      ]
+    }
+  ]
+}

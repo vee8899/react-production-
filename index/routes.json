@@ -1,0 +1,120 @@
+{
+  "generatedAt": "deterministic",
+  "records": [
+    {
+      "route": "/",
+      "file": "DEBUG.md",
+      "protected": false
+    },
+    {
+      "route": "https://react-production.pages.dev/",
+      "file": "README.md",
+      "protected": false
+    },
+    {
+      "route": "/favicon.svg",
+      "file": "index.html",
+      "protected": false
+    },
+    {
+      "route": "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap",
+      "file": "index.html",
+      "protected": false
+    },
+    {
+      "route": "/login",
+      "file": "scripts/ingest.ts",
+      "protected": false
+    },
+    {
+      "route": "*",
+      "file": "src/App.tsx",
+      "protected": true
+    },
+    {
+      "route": "/",
+      "file": "src/App.tsx",
+      "protected": false
+    },
+    {
+      "route": "/accept-invite",
+      "file": "src/App.tsx",
+      "protected": false
+    },
+    {
+      "route": "/dashboard",
+      "file": "src/App.tsx",
+      "protected": true
+    },
+    {
+      "route": "/login",
+      "file": "src/App.tsx",
+      "protected": false
+    },
+    {
+      "route": "/workflows",
+      "file": "src/App.tsx",
+      "protected": true
+    },
+    {
+      "route": "/",
+      "file": "src/components/ui/Nav.tsx",
+      "protected": false
+    },
+    {
+      "route": "/#${hash}",
+      "file": "src/components/ui/Nav.tsx",
+      "protected": false
+    },
+    {
+      "route": "/login",
+      "file": "src/components/ui/Nav.tsx",
+      "protected": false
+    },
+    {
+      "route": "/",
+      "file": "src/hooks/useAuth.ts",
+      "protected": false
+    },
+    {
+      "route": "/dashboard",
+      "file": "src/pages/AcceptInvitePage.tsx",
+      "protected": false
+    },
+    {
+      "route": "/login",
+      "file": "src/pages/AcceptInvitePage.tsx",
+      "protected": false
+    },
+    {
+      "route": "/dashboard",
+      "file": "src/pages/LoginPage.tsx",
+      "protected": false
+    },
+    {
+      "route": "/accept-invite",
+      "file": "src/test/AcceptInvitePage.test.tsx",
+      "protected": false
+    },
+    {
+      "route": "/dashboard",
+      "file": "src/test/AcceptInvitePage.test.tsx",
+      "protected": false
+    },
+    {
+      "route": "/login",
+      "file": "src/test/AcceptInvitePage.test.tsx",
+      "protected": false
+    },
+    {
+      "route": "/dashboard",
+      "file": "src/test/ProtectedRoute.test.tsx",
+      "protected": false
+    },
+    {
+      "route": "/login",
+      "file": "src/test/ProtectedRoute.test.tsx",
+      "protected": false
+    }
+  ]
+}

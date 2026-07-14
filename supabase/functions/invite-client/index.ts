@@ -7,19 +7,21 @@ const json = (body: unknown, status: number, headers?: HeadersInit) =>
     headers: { "Content-Type": "application/json", ...headers },
   });
 
+const serviceFeatureTypes = [
+  "lead_follow_up",
+  "listing_notifications",
+  "client_communication",
+  "crm_sync",
+  "appointment_scheduling",
+  "data_pipeline",
+] as const;
+
 const inviteSchema = z.object({
   company_name: z.string().trim().min(1).max(120),
   email: z.string().trim().email(),
   plan: z.string().trim().min(1).max(80).default("starter"),
   services: z.array(z.object({
-    feature_type: z.enum([
-      "lead_follow_up",
-      "listing_notifications",
-      "client_communication",
-      "crm_sync",
-      "appointment_scheduling",
-      "data_pipeline",
-    ]),
+    feature_type: z.enum(serviceFeatureTypes),
     status: z.enum(["onboarding", "active", "paused", "cancelled"]).default("onboarding"),
   })).max(6).optional().default([]),
 });
@@ -93,6 +95,34 @@ Deno.serve(async (req) => {
     return json({ error: "Unable to invite this client" }, 400);
   }
 
+  const organizationSlug = `${parsed.data.company_name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")
+    .slice(0, 70) || "organization"}-${invite.user.id.slice(0, 8)}`;
+  const { data: organization, error: organizationError } = await supabase
+    .from("organizations")
+    .insert({ name: parsed.data.company_name, slug: organizationSlug, vertical_key: "real_estate" })
+    .select("id")
+    .single();
+
+  if (organizationError || !organization) {
+    await supabase.auth.admin.deleteUser(invite.user.id);
+    console.error("Unable to create organization", organizationError);
+    return json({ error: "Unable to create organization" }, 500);
+  }
+
+  const { error: memberError } = await supabase
+    .from("organization_members")
+    .insert({ organization_id: organization.id, user_id: invite.user.id, role: "owner" });
+
+  if (memberError) {
+    await supabase.from("organizations").delete().eq("id", organization.id);
+    await supabase.auth.admin.deleteUser(invite.user.id);
+    console.error("Unable to create organization membership", memberError);
+    return json({ error: "Unable to create organization membership" }, 500);
+  }
+
   const { data: client, error: clientError } = await supabase
     .from("clients")
     .insert({
@@ -100,11 +130,13 @@ Deno.serve(async (req) => {
       email: parsed.data.email,
       plan: parsed.data.plan,
       user_id: invite.user.id,
+      organization_id: organization.id,
     })
     .select("id")
     .single();
 
   if (clientError || !client) {
+    await supabase.from("organizations").delete().eq("id", organization.id);
     await supabase.auth.admin.deleteUser(invite.user.id);
     console.error("Unable to create client record", clientError);
     return json({ error: "Unable to create client record" }, 500);

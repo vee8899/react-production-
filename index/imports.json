@@ -1,0 +1,573 @@
+{
+  "generatedAt": "deterministic",
+  "records": [
+    {
+      "file": "eslint.config.js",
+      "importedSymbols": [
+        "@eslint/js",
+        "eslint-plugin-react-hooks",
+        "eslint-plugin-react-refresh",
+        "eslint/config",
+        "globals",
+        "typescript-eslint"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": "scripts/index.ts",
+      "importedSymbols": [
+        "./repo-map.ts",
+        "node:fs",
+        "node:path"
+      ],
+      "dependencies": [
+        "./repo-map.ts"
+      ]
+    },
+    {
+      "file": "scripts/ingest.ts",
+      "importedSymbols": [
+        "./repo-map.ts",
+        "node:fs",
+        "node:path"
+      ],
+      "dependencies": [
+        "./repo-map.ts"
+      ]
+    },
+    {
+      "file": "scripts/repo-map.ts",
+      "importedSymbols": [
+        "node:crypto",
+        "node:fs",
+        "node:path"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": "scripts/verify-supabase.ts",
+      "importedSymbols": [
+        "node:fs",
+        "node:path"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": "src/App.tsx",
+      "importedSymbols": [
+        "@/components/ErrorBoundary",
+        "@/components/motion/PageTransition",
+        "@/hooks/useAuth",
+        "@/pages/AcceptInvitePage",
+        "@/pages/DashboardPage",
+        "@/pages/HomePage",
+        "@/pages/LoginPage",
+        "@/pages/WorkflowsPage",
+        "framer-motion",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "@/components/ErrorBoundary",
+        "@/components/motion/PageTransition",
+        "@/hooks/useAuth",
+        "@/pages/AcceptInvitePage",
+        "@/pages/DashboardPage",
+        "@/pages/HomePage",
+        "@/pages/LoginPage",
+        "@/pages/WorkflowsPage"
+      ]
+    },
+    {
+      "file": "src/api/supabase/auth.ts",
+      "importedSymbols": [
+        "./client"
+      ],
+      "dependencies": [
+        "./client"
+      ]
+    },
+    {
+      "file": "src/api/supabase/client.ts",
+      "importedSymbols": [
+        "@/types/supabase",
+        "@/utils/env",
+        "@supabase/supabase-js"
+      ],
+      "dependencies": [
+        "@/types/supabase",
+        "@/utils/env"
+      ]
+    },
+    {
+      "file": "src/api/supabase/storage.ts",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "src/components/ErrorBoundary.tsx",
+      "importedSymbols": [
+        "react"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": "src/components/dashboard/ClientServices.tsx",
+      "importedSymbols": [
+        "@/hooks/useClientServices"
+      ],
+      "dependencies": [
+        "@/hooks/useClientServices"
+      ]
+    },
+    {
+      "file": "src/components/dashboard/RunsFeed.tsx",
+      "importedSymbols": [
+        "@/hooks/useClient",
+        "@/hooks/useRuns",
+        "@/utils/time"
+      ],
+      "dependencies": [
+        "@/hooks/useClient",
+        "@/hooks/useRuns",
+        "@/utils/time"
+      ]
+    },
+    {
+      "file": "src/components/dashboard/StatsRow.tsx",
+      "importedSymbols": [
+        "@/hooks/useClient",
+        "@/hooks/useRuns"
+      ],
+      "dependencies": [
+        "@/hooks/useClient",
+        "@/hooks/useRuns"
+      ]
+    },
+    {
+      "file": "src/components/dashboard/WorkflowRow.tsx",
+      "importedSymbols": [
+        "@/utils/time"
+      ],
+      "dependencies": [
+        "@/utils/time"
+      ]
+    },
+    {
+      "file": "src/components/features/FAQ.tsx",
+      "importedSymbols": [
+        "@/components/ui/SectionHeader",
+        "framer-motion",
+        "react"
+      ],
+      "dependencies": [
+        "@/components/ui/SectionHeader"
+      ]
+    },
+    {
+      "file": "src/components/features/IntegrationsOrbit.tsx",
+      "importedSymbols": [
+        "@/components/ui/SectionHeader",
+        "framer-motion",
+        "react",
+        "react-icons/fa",
+        "react-icons/si"
+      ],
+      "dependencies": [
+        "@/components/ui/SectionHeader"
+      ]
+    },
+    {
+      "file": "src/components/features/ROICalculator.tsx",
+      "importedSymbols": [
+        "@/components/ui/SectionHeader",
+        "framer-motion",
+        "react"
+      ],
+      "dependencies": [
+        "@/components/ui/SectionHeader"
+      ]
+    },
+    {
+      "file": "src/components/motion/FadeUp.tsx",
+      "importedSymbols": [
+        "framer-motion",
+        "react"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": "src/components/motion/PageTransition.tsx",
+      "importedSymbols": [
+        "framer-motion",
+        "react",
+        "react-router-dom"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": "src/components/ui/Footer.tsx",
+      "importedSymbols": [
+        "@/utils/contact",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "@/utils/contact"
+      ]
+    },
+    {
+      "file": "src/components/ui/Nav.tsx",
+      "importedSymbols": [
+        "@/hooks/useAuth",
+        "@/utils/contact",
+        "react",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "@/hooks/useAuth",
+        "@/utils/contact"
+      ]
+    },
+    {
+      "file": "src/components/ui/ProjectCard.tsx",
+      "importedSymbols": [
+        "framer-motion"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": "src/components/ui/SectionHeader.tsx",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "src/hooks/useAnalytics.ts",
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ]
+    },
+    {
+      "file": "src/hooks/useAuth.ts",
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/store/authStore",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/store/authStore"
+      ]
+    },
+    {
+      "file": "src/hooks/useClient.ts",
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/hooks/useAuth",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/hooks/useAuth"
+      ]
+    },
+    {
+      "file": "src/hooks/useClientServices.ts",
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ]
+    },
+    {
+      "file": "src/hooks/useRuns.ts",
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ]
+    },
+    {
+      "file": "src/hooks/useWorkflows.ts",
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ]
+    },
+    {
+      "file": "src/main.tsx",
+      "importedSymbols": [
+        "./index.css",
+        "@/App",
+        "@/api/supabase/client",
+        "@/store/authStore",
+        "@tanstack/react-query",
+        "react",
+        "react-dom/client",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "./index.css",
+        "@/App",
+        "@/api/supabase/client",
+        "@/store/authStore"
+      ]
+    },
+    {
+      "file": "src/pages/AcceptInvitePage.tsx",
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/hooks/useAuth",
+        "@hookform/resolvers/zod",
+        "react",
+        "react-hook-form",
+        "react-router-dom",
+        "zod"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/hooks/useAuth"
+      ]
+    },
+    {
+      "file": "src/pages/DashboardPage.tsx",
+      "importedSymbols": [
+        "@/components/dashboard/ClientServices",
+        "@/components/dashboard/RunsFeed",
+        "@/components/dashboard/StatsRow",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient"
+      ],
+      "dependencies": [
+        "@/components/dashboard/ClientServices",
+        "@/components/dashboard/RunsFeed",
+        "@/components/dashboard/StatsRow",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient"
+      ]
+    },
+    {
+      "file": "src/pages/HomePage.tsx",
+      "importedSymbols": [
+        "@/components/features/FAQ",
+        "@/components/features/IntegrationsOrbit",
+        "@/components/features/ROICalculator",
+        "@/components/motion/FadeUp",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "framer-motion"
+      ],
+      "dependencies": [
+        "@/components/features/FAQ",
+        "@/components/features/IntegrationsOrbit",
+        "@/components/features/ROICalculator",
+        "@/components/motion/FadeUp",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader"
+      ]
+    },
+    {
+      "file": "src/pages/LoginPage.tsx",
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@hookform/resolvers/zod",
+        "react",
+        "react-hook-form",
+        "react-router-dom",
+        "zod"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ]
+    },
+    {
+      "file": "src/pages/WorkflowsPage.tsx",
+      "importedSymbols": [
+        "@/components/dashboard/WorkflowRow",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient",
+        "@/hooks/useWorkflows"
+      ],
+      "dependencies": [
+        "@/components/dashboard/WorkflowRow",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient",
+        "@/hooks/useWorkflows"
+      ]
+    },
+    {
+      "file": "src/store/authStore.ts",
+      "importedSymbols": [
+        "@supabase/supabase-js",
+        "zustand"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": "src/styles/tokens.ts",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "src/test/AcceptInvitePage.test.tsx",
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/hooks/useAuth",
+        "@/pages/AcceptInvitePage",
+        "@testing-library/react",
+        "@testing-library/user-event",
+        "react-router-dom",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/hooks/useAuth",
+        "@/pages/AcceptInvitePage"
+      ]
+    },
+    {
+      "file": "src/test/ProtectedRoute.test.tsx",
+      "importedSymbols": [
+        "@/App",
+        "@/hooks/useAuth",
+        "@testing-library/react",
+        "react-router-dom",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/App",
+        "@/hooks/useAuth"
+      ]
+    },
+    {
+      "file": "src/test/setup.ts",
+      "importedSymbols": [
+        "@testing-library/jest-dom"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": "src/test/time.test.ts",
+      "importedSymbols": [
+        "@/utils/time",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/utils/time"
+      ]
+    },
+    {
+      "file": "src/test/useRuns.test.tsx",
+      "importedSymbols": [
+        "@/hooks/useRuns",
+        "@tanstack/react-query",
+        "@testing-library/react",
+        "react",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/hooks/useRuns"
+      ]
+    },
+    {
+      "file": "src/types/supabase.ts",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "src/utils/contact.ts",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "src/utils/env.ts",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "src/utils/motion.ts",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "src/utils/time.ts",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/functions/ingest-run/index.ts",
+      "importedSymbols": [
+        "https://deno.land/std/http/server.ts",
+        "https://deno.land/x/zod@v3.23.8/mod.ts",
+        "https://esm.sh/@supabase/supabase-js@2"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/functions/invite-client/index.ts",
+      "importedSymbols": [
+        "https://deno.land/x/zod@v3.23.8/mod.ts",
+        "https://esm.sh/@supabase/supabase-js@2"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260701000000_base_schema.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260703000001_automation_runs_contract.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260711000001_client_data_rls.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260711000002_client_services.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "vite.config.ts",
+      "importedSymbols": [
+        "@tailwindcss/vite",
+        "@vitejs/plugin-react",
+        "path",
+        "url",
+        "vite"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": "vitest.config.ts",
+      "importedSymbols": [
+        "path",
+        "vitest/config"
+      ],
+      "dependencies": []
+    }
+  ]
+}
