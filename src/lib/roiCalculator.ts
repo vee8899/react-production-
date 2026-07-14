@@ -17,6 +17,7 @@ export const laborRateConfigs: Record<Currency, LaborRateConfig> = {
 
 export const currencies: Currency[] = ["USD", "INR", "EUR", "GBP"];
 export const MAX_AUTOMATION_COVERAGE = 0.9;
+export const PRODUCTIVE_HOURS_PER_FTE_MONTH = 173;
 
 export const automationModules = [
   { key: "lead_follow_up", label: "Lead Follow-up", coverageContribution: 0.18, monthlyPrice: { USD: 149, INR: 12000, EUR: 139, GBP: 119 } },
@@ -38,7 +39,6 @@ export const companySizeMultipliers: Record<CompanySize, number> = {
 };
 
 export type TeamLaborRoiInputs = {
-  teamSize: number;
   monthlyVolume: number;
   minutesPerItem: number;
   selectedModuleKeys: string[];
@@ -56,13 +56,15 @@ export type TeamLaborRoiOutputs = {
   netAnnualSavings: number;
   roiPercentage: number | null;
   paybackMonths: number | null;
+  additionalWorkItemsPerMonth: number;
+  capacityIncreasePercentage: number;
+  equivalentFteCapacity: number;
   workItemsAssisted: number;
   laborRatePerHour: number;
   selectedModulesPrice: number;
 };
 
 export const calculateTeamLaborRoi = (inputs: TeamLaborRoiInputs): TeamLaborRoiOutputs => {
-  const teamSize = Math.max(0, inputs.teamSize);
   const monthlyVolume = Math.max(0, inputs.monthlyVolume);
   const minutesPerItem = Math.max(0, inputs.minutesPerItem);
   const laborRatePerHour = inputs.laborRatePerHour ?? laborRateConfigs[inputs.currency].default;
@@ -76,10 +78,13 @@ export const calculateTeamLaborRoi = (inputs: TeamLaborRoiInputs): TeamLaborRoiO
       .reduce((total, module) => total + module.coverageContribution, 0),
   );
   const automationInvestment = selectedModulesPrice * companySizeMultipliers[inputs.companySize] * 12;
-  const manualHoursPerMonth = (teamSize * monthlyVolume * minutesPerItem) / 60;
+  const manualHoursPerMonth = (monthlyVolume * minutesPerItem) / 60;
   const hoursSavedPerMonth = manualHoursPerMonth * automationCoverage;
   const annualLaborSavings = hoursSavedPerMonth * laborRatePerHour * 12;
   const netAnnualSavings = annualLaborSavings - automationInvestment;
+  const additionalWorkItemsPerMonth = minutesPerItem > 0 ? (hoursSavedPerMonth * 60) / minutesPerItem : 0;
+  const capacityIncreasePercentage = monthlyVolume > 0 ? (additionalWorkItemsPerMonth / monthlyVolume) * 100 : 0;
+  const equivalentFteCapacity = hoursSavedPerMonth / PRODUCTIVE_HOURS_PER_FTE_MONTH;
 
   return {
     manualHoursPerMonth,
@@ -90,7 +95,10 @@ export const calculateTeamLaborRoi = (inputs: TeamLaborRoiInputs): TeamLaborRoiO
     netAnnualSavings,
     roiPercentage: automationInvestment > 0 ? (netAnnualSavings / automationInvestment) * 100 : null,
     paybackMonths: annualLaborSavings > 0 ? automationInvestment / (annualLaborSavings / 12) : null,
-    workItemsAssisted: Math.round(monthlyVolume * automationCoverage),
+    additionalWorkItemsPerMonth,
+    capacityIncreasePercentage,
+    equivalentFteCapacity,
+    workItemsAssisted: Math.round(additionalWorkItemsPerMonth),
     laborRatePerHour,
     selectedModulesPrice,
   };

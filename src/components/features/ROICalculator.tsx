@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { motion } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
 import {
@@ -45,7 +45,6 @@ const Slider = ({ label, helper, min, max, step, value, displayValue, onChange }
 };
 
 export default function ROICalculator() {
-  const [teamSize, setTeamSize] = useState(5);
   const [monthlyVolume, setMonthlyVolume] = useState(200);
   const [minutesPerItem, setMinutesPerItem] = useState(15);
   const [selectedModuleKeys, setSelectedModuleKeys] = useState<string[]>(["lead_follow_up", "crm_sync", "ai_assistant"]);
@@ -64,7 +63,7 @@ export default function ROICalculator() {
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
-  const outputs = calculateTeamLaborRoi({ teamSize, monthlyVolume, minutesPerItem, selectedModuleKeys, companySize, currency, laborRatePerHour });
+  const outputs = calculateTeamLaborRoi({ monthlyVolume, minutesPerItem, selectedModuleKeys, companySize, currency, laborRatePerHour });
 
   const handleCurrencyChange = (nextCurrency: Currency) => {
     setCurrency(nextCurrency);
@@ -80,16 +79,16 @@ export default function ROICalculator() {
       <div className="mx-auto max-w-[1280px]">
         <SectionHeader label="06 - BUSINESS VALUE" />
         <h2 className="mx-auto mb-6 mt-12 max-w-[700px] text-center font-display text-primary" style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)" }}>See what your next workflow could return.</h2>
-        <p className="mx-auto mb-16 max-w-[650px] text-center text-sm font-light leading-relaxed text-muted">Select the work, team, and automation package to estimate the potential business value.</p>
+        <p className="mx-auto mb-16 max-w-[650px] text-center text-sm font-light leading-relaxed text-muted">Select your total workload, handling time, and automation package to estimate potential business value.</p>
 
         <div className="grid grid-cols-1 gap-x-[clamp(48px,6vw,96px)] gap-y-12 lg:grid-cols-2">
-          <div className="space-y-8">
-            <Slider label="Team members performing this work" helper="Number of employees currently responsible for completing these work items." min={1} max={50} step={1} value={teamSize} displayValue={`${teamSize}`} onChange={setTeamSize} />
-            <Slider label="Work items processed per month" helper="Total monthly volume of repeatable work such as leads, invoices, tickets, appointments, or records." min={10} max={2000} step={10} value={monthlyVolume} displayValue={monthlyVolume.toLocaleString("en-US")} onChange={setMonthlyVolume} />
-            <Slider label="Average time per work item" helper="Average staff time currently required to complete one work item." min={5} max={120} step={5} value={minutesPerItem} displayValue={`${minutesPerItem} min`} onChange={setMinutesPerItem} />
+          <div className="space-y-10">
+            <ControlGroup label="Workload">
+              <Slider label="Monthly work items (entire team)" helper="Total repeatable work processed by the entire team each month, such as leads, invoices, tickets, appointments, or records." min={10} max={2000} step={10} value={monthlyVolume} displayValue={monthlyVolume.toLocaleString("en-US")} onChange={setMonthlyVolume} />
+              <Slider label="Average time per work item" helper="Average staff time currently required to complete one work item." min={5} max={120} step={5} value={minutesPerItem} displayValue={`${minutesPerItem} min`} onChange={setMinutesPerItem} />
+            </ControlGroup>
 
-            <div className="border-t border-border pt-6">
-              <p className="mb-4 font-mono text-xs uppercase tracking-[0.08em] text-muted">Automation modules</p>
+            <ControlGroup label="Automation package">
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {automationModules.map((module) => (
                   <label key={module.key} className="flex cursor-pointer items-center gap-3 border border-border bg-background px-3 py-3 text-sm text-primary">
@@ -99,16 +98,16 @@ export default function ROICalculator() {
                 ))}
               </div>
               <p className="mt-3 text-xs leading-relaxed text-muted">Select the capabilities you want included in the estimated automation package.</p>
-            </div>
+              <p className="mt-2 text-xs leading-relaxed text-muted">Coverage from selected modules: <span className="font-mono text-primary">{Math.round(outputs.automationCoverage * 100)}%</span></p>
+            </ControlGroup>
 
-            <label className="flex items-center justify-between gap-4 border-t border-border pt-6 text-sm text-primary">
-              <span>Company size</span>
-              <select aria-label="Company size" value={companySize} onChange={(event) => setCompanySize(event.target.value as CompanySize)} className="border border-border bg-background px-3 py-2 font-mono text-sm text-primary outline-none focus:border-primary">
-                {Object.keys(companySizeMultipliers).map((size) => <option key={size} value={size}>{size}</option>)}
-              </select>
-            </label>
-
-            <div className="border-t border-border pt-6">
+            <ControlGroup label="Pricing assumptions">
+              <label className="flex items-center justify-between gap-4 text-sm text-primary">
+                <span>Enterprise pricing tier</span>
+                <select aria-label="Enterprise pricing tier" value={companySize} onChange={(event) => setCompanySize(event.target.value as CompanySize)} className="border border-border bg-background px-3 py-2 font-mono text-sm text-primary outline-none focus:border-primary">
+                  {Object.keys(companySizeMultipliers).map((size) => <option key={size} value={size}>{size}</option>)}
+                </select>
+              </label>
               <label className="flex items-center justify-between gap-4 text-sm text-primary">
                 <span>Currency</span>
                 <select aria-label="Currency" value={currency} onChange={(event) => handleCurrencyChange(event.target.value as Currency)} className="border border-border bg-background px-3 py-2 font-mono text-sm text-primary outline-none focus:border-primary">
@@ -117,21 +116,28 @@ export default function ROICalculator() {
               </label>
               <p className="mb-3 mt-3 text-xs leading-relaxed text-muted">Average labor rate assumption: {formatCurrency(laborRatePerHour, currency)} per hour. Adjust the blended local estimate if needed.</p>
               <Slider label="Average labor rate" helper="Blended hourly labor rate for the team performing this work." min={laborRate.min} max={laborRate.max} step={laborRate.step} value={laborRatePerHour} displayValue={formatCurrency(laborRatePerHour, currency)} onChange={setLaborRatePerHour} />
-            </div>
+            </ControlGroup>
           </div>
 
           <div className="space-y-8">
             <Output value={formatCurrency(outputs.netAnnualSavings, currency)} label="ESTIMATED ANNUAL NET SAVINGS" reducedMotion={reducedMotion} prominent />
-            <Output value={outputs.roiPercentage === null ? "—" : `${outputs.roiPercentage.toFixed(0)}%`} label="ESTIMATED ROI" reducedMotion={reducedMotion} />
-            <Output value={outputs.paybackMonths === null ? "—" : `${outputs.paybackMonths.toFixed(1)} months`} label="ESTIMATED PAYBACK" reducedMotion={reducedMotion} />
+            <Output value={outputs.roiPercentage === null ? "-" : `${outputs.roiPercentage.toFixed(0)}%`} label="ESTIMATED ROI" reducedMotion={reducedMotion} />
+            <Output value={outputs.paybackMonths === null ? "-" : `${outputs.paybackMonths.toFixed(1)} months`} label="ESTIMATED PAYBACK" reducedMotion={reducedMotion} />
+            <Output value={`+${outputs.workItemsAssisted.toLocaleString("en-US")}`} label="ADDITIONAL WORK ITEMS / MONTH" reducedMotion={reducedMotion} />
+            <Output value={`+${outputs.capacityIncreasePercentage.toFixed(0)}%`} label="OPERATIONAL CAPACITY" reducedMotion={reducedMotion} />
+            <Output value={`+${outputs.equivalentFteCapacity.toFixed(1)} FTE`} label="EQUIVALENT TEAM CAPACITY" reducedMotion={reducedMotion} />
             <Output value={`${outputs.hoursSavedPerMonth.toFixed(0)} hours`} label="SAVED PER MONTH" reducedMotion={reducedMotion} />
-            <Output value={`${outputs.workItemsAssisted.toLocaleString("en-US")} work items`} label="AUTOMATED MONTHLY" reducedMotion={reducedMotion} />
 
             <div className="border-t border-border pt-6 text-xs leading-relaxed text-muted">
               <p>Automation coverage: <span className="font-mono text-primary">{Math.round(outputs.automationCoverage * 100)}%</span></p>
               <p className="mt-2">Based on selected automation modules; coverage is capped at {Math.round(MAX_AUTOMATION_COVERAGE * 100)}%.</p>
               <p className="mt-2">Selected automation investment: <span className="font-mono text-primary">{formatCurrency(outputs.automationInvestment, currency)} / year</span></p>
+              <p className="mt-2">Equivalent team capacity uses 173 productive hours per month and represents additional productive capacity, not workforce reduction.</p>
               <p className="mt-2">Illustrative estimate based on configurable platform assumptions and selected modules. Actual results, pricing, adoption, and savings will vary.</p>
+            </div>
+
+            <div className="border border-border bg-background px-4 py-4 text-xs leading-relaxed text-muted">
+              Most organizations reinvest reclaimed capacity into growth rather than reducing headcount. These estimates represent the additional work your existing team could complete using the selected automation.
             </div>
           </div>
         </div>
@@ -139,6 +145,13 @@ export default function ROICalculator() {
     </section>
   );
 }
+
+const ControlGroup = ({ label, children }: { label: string; children: ReactNode }) => (
+  <div className="border-t border-border pt-6 first:border-t-0 first:pt-0">
+    <p className="mb-5 font-mono text-xs uppercase tracking-[0.08em] text-muted">{label}</p>
+    <div className="space-y-6">{children}</div>
+  </div>
+);
 
 const Output = ({ value, label, reducedMotion, prominent = false }: { value: string; label: string; reducedMotion: boolean; prominent?: boolean }) => (
   <div>

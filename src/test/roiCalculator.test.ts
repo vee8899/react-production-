@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   MAX_AUTOMATION_COVERAGE,
+  PRODUCTIVE_HOURS_PER_FTE_MONTH,
   automationModules,
   calculateTeamLaborRoi,
   companySizeMultipliers,
@@ -10,7 +11,6 @@ import {
 } from "@/lib/roiCalculator";
 
 const inputs = {
-  teamSize: 4,
   monthlyVolume: 100,
   minutesPerItem: 30,
   selectedModuleKeys: ["lead_follow_up", "crm_sync"],
@@ -21,7 +21,7 @@ const inputs = {
 describe("team labor ROI model", () => {
   it("calculates manual hours and annual labor savings", () => {
     const result = calculateTeamLaborRoi(inputs);
-    const manualHours = (4 * 100 * 30) / 60;
+    const manualHours = (100 * 30) / 60;
     const coverage = 0.18 + 0.15;
     const annualSavings = manualHours * coverage * 45 * 12;
 
@@ -29,6 +29,22 @@ describe("team labor ROI model", () => {
     expect(result.automationCoverage).toBe(coverage);
     expect(result.hoursSavedPerMonth).toBe(manualHours * coverage);
     expect(result.annualLaborSavings).toBe(annualSavings);
+  });
+
+  it("calculates additional monthly capacity from reclaimed hours", () => {
+    const result = calculateTeamLaborRoi(inputs);
+    const expectedAdditionalWorkItems = (result.hoursSavedPerMonth * 60) / inputs.minutesPerItem;
+
+    expect(result.additionalWorkItemsPerMonth).toBeCloseTo(expectedAdditionalWorkItems);
+    expect(result.workItemsAssisted).toBe(Math.round(expectedAdditionalWorkItems));
+    expect(result.capacityIncreasePercentage).toBeCloseTo((expectedAdditionalWorkItems / inputs.monthlyVolume) * 100);
+  });
+
+  it("translates reclaimed hours into equivalent team capacity", () => {
+    const result = calculateTeamLaborRoi(inputs);
+
+    expect(PRODUCTIVE_HOURS_PER_FTE_MONTH).toBe(173);
+    expect(result.equivalentFteCapacity).toBeCloseTo(result.hoursSavedPerMonth / PRODUCTIVE_HOURS_PER_FTE_MONTH);
   });
 
   it("calculates internal investment, net savings, ROI, and payback", () => {
@@ -58,6 +74,21 @@ describe("team labor ROI model", () => {
     expect(inr.annualLaborSavings).not.toBe(usd.annualLaborSavings);
   });
 
+  it("treats monthly volume as the entire team's workload", () => {
+    const result = calculateTeamLaborRoi(inputs);
+
+    expect(result.manualHoursPerMonth).toBe((100 * 30) / 60);
+    expect(result.hoursSavedPerMonth).toBeCloseTo(result.manualHoursPerMonth * 0.33);
+  });
+
+  it("scales labor savings with total monthly workload", () => {
+    const smallerVolume = calculateTeamLaborRoi({ ...inputs, monthlyVolume: 50 });
+    const largerVolume = calculateTeamLaborRoi({ ...inputs, monthlyVolume: 200 });
+
+    expect(largerVolume.manualHoursPerMonth).toBe(smallerVolume.manualHoursPerMonth * 4);
+    expect(largerVolume.annualLaborSavings).toBe(smallerVolume.annualLaborSavings * 4);
+  });
+
   it("adds module coverage incrementally and caps it at 90 percent", () => {
     const selectedModuleKeys = automationModules.map((module) => module.key);
     const result = calculateTeamLaborRoi({ ...inputs, selectedModuleKeys });
@@ -76,6 +107,19 @@ describe("team labor ROI model", () => {
     expect(result.netAnnualSavings).toBe(0);
     expect(result.roiPercentage).toBeNull();
     expect(result.paybackMonths).toBeNull();
+    expect(result.additionalWorkItemsPerMonth).toBe(0);
+    expect(result.capacityIncreasePercentage).toBe(0);
+    expect(result.equivalentFteCapacity).toBe(0);
+  });
+
+  it("handles zero handling time safely for capacity calculations", () => {
+    const result = calculateTeamLaborRoi({ ...inputs, minutesPerItem: 0 });
+
+    expect(result.manualHoursPerMonth).toBe(0);
+    expect(result.hoursSavedPerMonth).toBe(0);
+    expect(result.additionalWorkItemsPerMonth).toBe(0);
+    expect(result.capacityIncreasePercentage).toBe(0);
+    expect(result.equivalentFteCapacity).toBe(0);
   });
 
   it("formats supported currencies directly", () => {
