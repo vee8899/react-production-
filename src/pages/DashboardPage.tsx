@@ -7,6 +7,9 @@ import { RunsFeed } from "@/components/dashboard/RunsFeed";
 import { ClientServices } from "@/components/dashboard/ClientServices";
 import { RealEstateMetrics } from "@/components/dashboard/RealEstateMetrics";
 import { useOrganization } from "@/hooks/useOrganization";
+import { useWorkflows } from "@/hooks/useWorkflows";
+import { WorkflowRow } from "@/components/dashboard/WorkflowRow";
+import { StackingNavbar } from "@/components/dashboard/StackingNavbar";
 
 export default function DashboardPage() {
   const {
@@ -15,6 +18,10 @@ export default function DashboardPage() {
     error: clientError,
   } = useClient();
   const { data: organization } = useOrganization(client?.organization_id);
+  const { data: workflows, isLoading: workflowsLoading, error: workflowsError } = useWorkflows(
+    client?.id,
+    client?.organization_id,
+  );
 
   if (clientLoading) {
     return (
@@ -67,6 +74,10 @@ export default function DashboardPage() {
       <main className="pt-16 px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,128px)]">
         <SectionHeader label="01 - Dashboard" />
 
+        <div className="mt-8">
+          <StackingNavbar />
+        </div>
+
         <div className="mt-12">
           <StatsRow />
         </div>
@@ -87,8 +98,39 @@ export default function DashboardPage() {
           </div>
         )}
 
-        <div className="mt-24">
-          <SectionHeader label={`${organization?.vertical_key === "real_estate" ? "04" : "03"} - Recent Activity`} />
+        <div id="workflows" className="mt-24 scroll-mt-28">
+          <SectionHeader label="03 - Workflows" />
+          <div className="mt-8">
+            {workflowsLoading && (
+              <p className="text-label uppercase tracking-[0.08em]" style={{ color: "#6B6762" }}>
+                Loading workflows...
+              </p>
+            )}
+            {workflowsError && (
+              <p style={{ color: "#A13A32" }}>Unable to load workflows.</p>
+            )}
+            {!workflowsLoading && !workflowsError && !workflows?.length && (
+              <p style={{ color: "#6B6762" }}>Your workflows will appear here once they are configured.</p>
+            )}
+            {!workflowsLoading && !workflowsError && workflows?.length ? (
+              <div className="space-y-0">
+                {workflows.map((workflow) => (
+                  <WorkflowRow
+                    key={workflow.id}
+                    name={workflow.name}
+                    description={workflow.description}
+                    featureType={workflow.feature_type}
+                    isActive={workflow.is_active}
+                    lastRun={workflow.latestRun}
+                  />
+                ))}
+              </div>
+            ) : null}
+          </div>
+        </div>
+
+        <div id="recent-activity" className="mt-24 scroll-mt-28">
+          <SectionHeader label={`${organization?.vertical_key === "real_estate" ? "05" : "04"} - Recent Activity`} />
           <div className="mt-8">
             <RunsFeed />
           </div>
