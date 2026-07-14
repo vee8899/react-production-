@@ -3,7 +3,7 @@ import Nav from "@/components/ui/Nav";
 import Footer from "@/components/ui/Footer";
 import SectionHeader from "@/components/ui/SectionHeader";
 import FadeUp from "@/components/motion/FadeUp";
-import IntegrationsOrbit from "@/components/features/IntegrationsOrbit";
+import IntegrationsShowcase from "@/components/features/IntegrationsShowcase";
 import ROICalculator from "@/components/features/ROICalculator";
 import FAQ from "@/components/features/FAQ";
 
@@ -222,7 +222,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <IntegrationsOrbit />
+      <IntegrationsShowcase />
       <ROICalculator />
       <FAQ />
 
