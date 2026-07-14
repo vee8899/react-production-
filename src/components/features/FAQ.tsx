@@ -37,7 +37,7 @@ export default function FAQ() {
   return (
     <section className="px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,192px)] bg-[#FEFDFC]">
       <div className="max-w-[800px] mx-auto">
-        <SectionHeader label="07 - FAQ" />
+        <SectionHeader label="05 - FAQ" />
 
         <div className="mt-12">
           {faqItems.map((item, index) => {
