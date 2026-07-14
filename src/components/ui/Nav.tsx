@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { contactHref } from "@/utils/contact";
+import { StackingNavbar } from "@/components/dashboard/StackingNavbar";
 
 const publicNavLinks = [
   { label: "Work", hash: "work" },
@@ -84,7 +85,9 @@ export default function Nav() {
               </button>
             ))}
             {isAuthenticated &&
-              privateNavLinks.map((link) => (
+              privateNavLinks
+                .filter((link) => !(location.pathname === "/dashboard" && link.to === "/workflows"))
+                .map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
@@ -92,7 +95,10 @@ export default function Nav() {
                 >
                   {link.label}
                 </Link>
-            ))}
+                ))}
+            {isAuthenticated && location.pathname === "/dashboard" && (
+              <StackingNavbar className="" />
+            )}
             <a
               href={contactHref}
               className="text-label font-sans uppercase tracking-[0.08em] text-muted hover:text-primary transition-colors duration-200"
@@ -174,7 +180,9 @@ export default function Nav() {
             </button>
           ))}
           {isAuthenticated &&
-            privateNavLinks.map((link) => (
+            privateNavLinks
+              .filter((link) => !(location.pathname === "/dashboard" && link.to === "/workflows"))
+              .map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
@@ -183,7 +191,10 @@ export default function Nav() {
               >
                 {link.label}
               </Link>
-          ))}
+              ))}
+          {isAuthenticated && location.pathname === "/dashboard" && (
+            <StackingNavbar className="" />
+          )}
           <a
             href={contactHref}
             className="text-h1 font-display text-muted"

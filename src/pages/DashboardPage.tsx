@@ -9,7 +9,6 @@ import { RealEstateMetrics } from "@/components/dashboard/RealEstateMetrics";
 import { useOrganization } from "@/hooks/useOrganization";
 import { useWorkflows } from "@/hooks/useWorkflows";
 import { WorkflowRow } from "@/components/dashboard/WorkflowRow";
-import { StackingNavbar } from "@/components/dashboard/StackingNavbar";
 
 export default function DashboardPage() {
   const {
@@ -73,9 +72,6 @@ export default function DashboardPage() {
       <Nav />
       <main className="pt-16 px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,128px)]">
         <section className="relative min-h-[clamp(240px,32vw,420px)]">
-          <div className="absolute right-0 top-0">
-            <StackingNavbar className="" />
-          </div>
           <SectionHeader label="01 - Dashboard" />
           <div className="mt-12 pr-0 lg:pr-16">
             <StatsRow />
