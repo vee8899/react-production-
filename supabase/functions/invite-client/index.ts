@@ -20,6 +20,8 @@ const inviteSchema = z.object({
   company_name: z.string().trim().min(1).max(120),
   email: z.string().trim().email(),
   plan: z.string().trim().min(1).max(80).default("starter"),
+  vertical_key: z.string().trim().min(1).max(60).default("general"),
+  feature_keys: z.array(z.string().trim().regex(/^[a-z0-9_]+(?:\.[a-z0-9_]+)*$/)).max(30).optional().default([]),
   services: z.array(z.object({
     feature_type: z.enum(serviceFeatureTypes),
     status: z.enum(["onboarding", "active", "paused", "cancelled"]).default("onboarding"),
@@ -95,64 +97,33 @@ Deno.serve(async (req) => {
     return json({ error: "Unable to invite this client" }, 400);
   }
 
-  const organizationSlug = `${parsed.data.company_name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "")
-    .slice(0, 70) || "organization"}-${invite.user.id.slice(0, 8)}`;
-  const { data: organization, error: organizationError } = await supabase
-    .from("organizations")
-    .insert({ name: parsed.data.company_name, slug: organizationSlug, vertical_key: "real_estate" })
-    .select("id")
-    .single();
+  const legacyFeatureKeys = parsed.data.services.map((service) => service.feature_type);
+  const featureKeys = [...new Set([...parsed.data.feature_keys, ...legacyFeatureKeys])];
+  const { data: provisioned, error: provisionError } = await supabase.rpc("provision_client_workspace", {
+    p_company_name: parsed.data.company_name,
+    p_email: parsed.data.email,
+    p_plan: parsed.data.plan,
+    p_user_id: invite.user.id,
+    p_vertical_key: parsed.data.vertical_key,
+    p_feature_keys: featureKeys,
+  }).single();
 
-  if (organizationError || !organization) {
+  if (provisionError || !provisioned) {
     await supabase.auth.admin.deleteUser(invite.user.id);
-    console.error("Unable to create organization", organizationError);
-    return json({ error: "Unable to create organization" }, 500);
-  }
-
-  const { error: memberError } = await supabase
-    .from("organization_members")
-    .insert({ organization_id: organization.id, user_id: invite.user.id, role: "owner" });
-
-  if (memberError) {
-    await supabase.from("organizations").delete().eq("id", organization.id);
-    await supabase.auth.admin.deleteUser(invite.user.id);
-    console.error("Unable to create organization membership", memberError);
-    return json({ error: "Unable to create organization membership" }, 500);
-  }
-
-  const { data: client, error: clientError } = await supabase
-    .from("clients")
-    .insert({
-      company_name: parsed.data.company_name,
-      email: parsed.data.email,
-      plan: parsed.data.plan,
-      user_id: invite.user.id,
-      organization_id: organization.id,
-    })
-    .select("id")
-    .single();
-
-  if (clientError || !client) {
-    await supabase.from("organizations").delete().eq("id", organization.id);
-    await supabase.auth.admin.deleteUser(invite.user.id);
-    console.error("Unable to create client record", clientError);
-    return json({ error: "Unable to create client record" }, 500);
+    console.error("Unable to provision client workspace", provisionError);
+    return json({ error: "Unable to provision client workspace" }, 500);
   }
 
   if (parsed.data.services.length > 0) {
     const { error: servicesError } = await supabase
       .from("client_services")
-      .insert(parsed.data.services.map((service) => ({ ...service, client_id: client.id })));
+      .insert(parsed.data.services.map((service) => ({ ...service, client_id: provisioned.client_id, organization_id: provisioned.organization_id })));
 
     if (servicesError) {
-      await supabase.auth.admin.deleteUser(invite.user.id);
-      console.error("Unable to create client services", servicesError);
-      return json({ error: "Unable to create client services" }, 500);
+      console.error("Unable to create compatibility client services", servicesError);
+      return json({ error: "Unable to create compatibility client services" }, 500);
     }
   }
 
-  return json({ client_id: client.id, user_id: invite.user.id, invited: true }, 201);
+  return json({ ...provisioned, user_id: invite.user.id, invited: true }, 201);
 });

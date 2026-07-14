@@ -276,6 +276,18 @@ export type Database = {
         Update: { id?: string; organization_id?: string; feature_key?: string; status?: string; configuration?: Json; created_at?: string; updated_at?: string }
         Relationships: [{ foreignKeyName: "feature_subscriptions_organization_id_fkey"; columns: ["organization_id"]; isOneToOne: false; referencedRelation: "organizations"; referencedColumns: ["id"] }]
       }
+      organization_onboarding: {
+        Row: { id: string; organization_id: string; status: Database["public"]["Enums"]["organization_onboarding_status"]; owner_user_id: string | null; owner_metadata: Json; started_at: string | null; submitted_at: string | null; launched_at: string | null; answers: Json; metadata: Json; created_at: string; updated_at: string }
+        Insert: { id?: string; organization_id: string; status?: Database["public"]["Enums"]["organization_onboarding_status"]; owner_user_id?: string | null; owner_metadata?: Json; started_at?: string | null; submitted_at?: string | null; launched_at?: string | null; answers?: Json; metadata?: Json; created_at?: string; updated_at?: string }
+        Update: { id?: string; organization_id?: string; status?: Database["public"]["Enums"]["organization_onboarding_status"]; owner_user_id?: string | null; owner_metadata?: Json; started_at?: string | null; submitted_at?: string | null; launched_at?: string | null; answers?: Json; metadata?: Json; created_at?: string; updated_at?: string }
+        Relationships: [{ foreignKeyName: "organization_onboarding_organization_id_fkey"; columns: ["organization_id"]; isOneToOne: true; referencedRelation: "organizations"; referencedColumns: ["id"] }]
+      }
+      organization_onboarding_steps: {
+        Row: { id: string; organization_id: string; onboarding_id: string; step_key: string; status: Database["public"]["Enums"]["organization_onboarding_step_status"]; assigned_to: string | null; completed_at: string | null; data: Json; created_at: string; updated_at: string }
+        Insert: { id?: string; organization_id: string; onboarding_id: string; step_key: string; status?: Database["public"]["Enums"]["organization_onboarding_step_status"]; assigned_to?: string | null; completed_at?: string | null; data?: Json; created_at?: string; updated_at?: string }
+        Update: { id?: string; organization_id?: string; onboarding_id?: string; step_key?: string; status?: Database["public"]["Enums"]["organization_onboarding_step_status"]; assigned_to?: string | null; completed_at?: string | null; data?: Json; created_at?: string; updated_at?: string }
+        Relationships: [{ foreignKeyName: "organization_onboarding_steps_organization_id_fkey"; columns: ["organization_id"]; isOneToOne: false; referencedRelation: "organizations"; referencedColumns: ["id"] }, { foreignKeyName: "organization_onboarding_steps_onboarding_id_fkey"; columns: ["onboarding_id"]; isOneToOne: false; referencedRelation: "organization_onboarding"; referencedColumns: ["id"] }]
+      }
       workflow_runs: {
         Row: { id: string; organization_id: string; workflow_id: string | null; event_id: string; feature_key: string; status: "success" | "error" | "partial"; started_at: string; finished_at: string | null; duration_ms: number | null; retries: number; records_processed: number; records_failed: number; outputs: Json; error_message: string | null; correlation_id: string | null; created_at: string }
         Insert: { id?: string; organization_id: string; workflow_id?: string | null; event_id: string; feature_key?: string; status?: "success" | "error" | "partial"; started_at?: string; finished_at?: string | null; duration_ms?: number | null; retries?: number; records_processed?: number; records_failed?: number; outputs?: Json; error_message?: string | null; correlation_id?: string | null; created_at?: string }
@@ -620,6 +632,18 @@ export type Database = {
         }
         Returns: string
       }
+      provision_client_workspace: {
+        Args: { p_company_name: string; p_email: string; p_plan: string; p_user_id: string; p_vertical_key?: string; p_feature_keys?: Json }
+        Returns: { organization_id: string; client_id: string; onboarding_id: string }[]
+      }
+      submit_organization_onboarding: {
+        Args: { p_onboarding_id: string }
+        Returns: Database["public"]["Tables"]["organization_onboarding"]["Row"]
+      }
+      admin_update_organization_onboarding: {
+        Args: { p_onboarding_id: string; p_status: Database["public"]["Enums"]["organization_onboarding_status"]; p_owner_user_id?: string | null }
+        Returns: Database["public"]["Tables"]["organization_onboarding"]["Row"]
+      }
     }
     Enums: {
       client_service_status: "onboarding" | "active" | "paused" | "cancelled"
@@ -633,6 +657,8 @@ export type Database = {
         | "data_pipeline"
         | "custom_workflow"
       run_status: "success" | "error" | "partial"
+      organization_onboarding_status: "draft" | "in_progress" | "submitted" | "in_review" | "ready" | "launched" | "paused"
+      organization_onboarding_step_status: "not_started" | "in_progress" | "complete" | "blocked" | "skipped"
     }
     CompositeTypes: {
       [_ in never]: never
