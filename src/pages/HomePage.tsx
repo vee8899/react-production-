@@ -62,14 +62,17 @@ const services = [
 
 const processSteps = [
   {
+    number: "01",
     title: "Discovery",
     body: "We map your current operations and identify every manual task that can be automated.",
   },
   {
+    number: "02",
     title: "Build",
     body: "We connect your tools and build workflows tailored to how you work. No templates.",
   },
   {
+    number: "03",
     title: "Monitor",
     body: "Supported workflows report their activity to a client dashboard, so you can see what ran and when.",
   },
