@@ -54,7 +54,7 @@ export default function IntegrationsOrbit() {
   return (
     <section className="px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,192px)] bg-[#FEFDFC]">
       <div className="max-w-[1280px] mx-auto">
-        <SectionHeader label="07 — INTEGRATIONS" />
+        <SectionHeader label="05 — INTEGRATIONS" />
 
         <h2
           className="font-display font-normal text-primary mt-12 mb-16 text-center mx-auto max-w-[700px] leading-[1.15] tracking-[-0.02em]"

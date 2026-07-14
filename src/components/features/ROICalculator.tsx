@@ -77,7 +77,7 @@ export default function ROICalculator() {
   return (
     <section className="px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,192px)] bg-[#F2F0ED]">
       <div className="max-w-[1280px] mx-auto">
-        <SectionHeader label="08 — ROI CALCULATOR" />
+        <SectionHeader label="06 — ROI CALCULATOR" />
 
         <h2
           className="font-display font-normal text-primary mt-12 mb-16 text-center mx-auto max-w-[700px] leading-[1.15] tracking-[-0.02em]"
