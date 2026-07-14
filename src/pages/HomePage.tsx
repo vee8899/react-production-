@@ -24,9 +24,9 @@ const services = [
   },
   {
     number: "03",
-    name: "AI-Assisted Operations",
+    name: "Agentic Operations",
     description:
-      "Add AI steps where classification, drafting, enrichment, or decision support can remove manual effort.",
+      "Add agentic capabilities where classification, drafting, enrichment, or decision support can remove manual effort.",
   },
   {
     number: "04",
@@ -36,7 +36,7 @@ const services = [
   },
   {
     number: "05",
-    name: "Reporting & Observability",
+    name: "Business Insights",
     description:
       "See what ran, what changed, and where a workflow needs attention from one operational view.",
   },
@@ -48,13 +48,13 @@ const services = [
   },
   {
     number: "07",
-    name: "Data Pipelines",
+    name: "System Data synchronization",
     description:
       "Move approved data between tools, portals, spreadsheets, and databases on a schedule or trigger.",
   },
   {
     number: "08",
-    name: "Custom Modules",
+    name: "Custom Business Solutions",
     description:
       "For repeatable work that does not fit a template, we design a dedicated workflow.",
   },
@@ -142,7 +142,7 @@ export default function HomePage() {
         <SectionHeader label="01 - WHAT WE DO" />
         <FadeUp>
           <p className="font-sans text-primary max-w-[800px] mt-12 leading-[1.5] font-light text-[clamp(1.25rem,2.5vw,1.75rem)]">
-            We build reusable automation systems for teams that want less manual
+            We build automation systems for teams that want less manual
             work and more operational visibility. Every workflow connects to your
             existing tools, stores the records it affects, and reports its activity
             through a client dashboard. Real estate is one of the vertical modules
