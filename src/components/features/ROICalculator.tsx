@@ -77,7 +77,7 @@ export default function ROICalculator() {
   return (
     <section className="bg-[#F2F0ED] px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,192px)]">
       <div className="mx-auto max-w-[1280px]">
-        <SectionHeader label="06 - BUSINESS VALUE" />
+        <SectionHeader label="04 - BUSINESS VALUE" />
         <h2 className="mx-auto mb-6 mt-12 max-w-[700px] text-center font-display text-primary" style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)" }}>See what your next workflow could return.</h2>
         <p className="mx-auto mb-16 max-w-[650px] text-center text-sm font-light leading-relaxed text-muted">Select your total workload, handling time, and automation package to estimate potential business value.</p>
 

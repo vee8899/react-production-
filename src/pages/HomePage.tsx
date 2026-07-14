@@ -139,16 +139,58 @@ export default function HomePage() {
         id="work"
         className="px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,192px)]"
       >
-        <SectionHeader label="01 - WHAT WE DO" />
-        <FadeUp>
-          <p className="font-sans text-primary max-w-[800px] mt-12 leading-[1.5] font-light text-[clamp(1.25rem,2.5vw,1.75rem)]">
-            We build automation systems for teams that want less manual
-            work and more operational visibility. Every workflow connects to your
-            existing tools, stores the records it affects, and reports its activity
-            through a client dashboard. Real estate is one of the vertical modules
-            we support today.
-          </p>
-        </FadeUp>
+        <SectionHeader label="01 - OPERATING MODEL" />
+        <div className="mt-12 grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.3fr)] lg:gap-[clamp(48px,6vw,96px)]">
+          <FadeUp>
+            <div>
+              <h2 className="font-display font-normal text-primary leading-[1.15] text-[clamp(1.5rem,3vw,2.5rem)]">
+                Automation infrastructure for the way your team already works.
+              </h2>
+              <p className="mt-6 max-w-[680px] font-sans text-primary leading-[1.5] font-light text-[clamp(1.25rem,2.5vw,1.75rem)]">
+                We build automation systems for teams that want less manual work, more throughput, and better operational visibility.
+              </p>
+              <p className="mt-5 max-w-[560px] text-sm font-light leading-relaxed text-muted">
+                Every workflow connects to your existing tools, stores the records it affects, and reports its activity through a client dashboard.
+              </p>
+            </div>
+          </FadeUp>
+
+          <div className="space-y-10">
+            <div className="grid gap-px bg-border md:grid-cols-3">
+              {processSteps.map((step, i) => (
+                <FadeUp key={step.number} delay={i * 0.08}>
+                  <div className="h-full bg-background p-5 sm:p-6">
+                    <span className="text-label font-mono uppercase tracking-[0.05em] text-muted">
+                      {step.number}
+                    </span>
+                    <h3 className="font-display font-normal text-primary mt-4 mb-4 text-[clamp(1.35rem,2vw,1.75rem)]">
+                      {step.title}
+                    </h3>
+                    <div className="w-full h-px bg-border" />
+                    <p className="mt-4 text-sm font-sans text-muted font-light leading-[1.6]">
+                      {step.body}
+                    </p>
+                  </div>
+                </FadeUp>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-2 gap-6 border-t border-border pt-8 md:grid-cols-4 md:gap-0">
+              {stats.map((stat, i) => (
+                <FadeUp key={stat.label} delay={i * 0.05}>
+                  <div className="flex h-full flex-col gap-3 md:pr-6 md:border-r md:border-border md:last:border-r-0 md:last:pr-0">
+                    <span className="font-mono text-primary block leading-none text-[clamp(1.5rem,3vw,2.5rem)]">
+                      {stat.value}
+                    </span>
+                    <span className="text-label font-sans uppercase tracking-[0.08em] text-muted block">
+                      {stat.label}
+                    </span>
+                  </div>
+                </FadeUp>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       <section
@@ -173,49 +215,6 @@ export default function HomePage() {
                     </p>
                   </div>
                 </div>
-              </div>
-            </FadeUp>
-          ))}
-        </div>
-      </section>
-
-      <section className="px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,192px)]">
-        <SectionHeader label="03 - PROCESS" />
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-[clamp(32px,5vw,80px)]">
-          {processSteps.map((step, i) => (
-            <FadeUp key={step.number} delay={i * 0.08}>
-              <div>
-                <span className="text-label font-mono uppercase tracking-[0.05em] text-muted">
-                  {step.number}
-                </span>
-                <h3 className="font-display font-normal text-primary mt-4 mb-4 text-[clamp(1.5rem,2.5vw,2rem)]">
-                  {step.title}
-                </h3>
-                <div className="w-full h-px bg-border" />
-                <p className="mt-4 text-sm font-sans text-muted font-light leading-[1.6]">
-                  {step.body}
-                </p>
-              </div>
-            </FadeUp>
-          ))}
-        </div>
-      </section>
-
-      <section className="px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,192px)]">
-        <SectionHeader label="04 - BY THE NUMBERS" />
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 mt-12">
-          {stats.map((stat, i) => (
-            <FadeUp key={stat.label} delay={i * 0.05}>
-              <div className="flex flex-col gap-3 md:pr-8 md:border-r md:border-border md:last:border-r-0 md:last:pr-0">
-                <span
-                  className="font-mono text-primary block leading-none tracking-[-0.02em]"
-                  style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
-                >
-                  {stat.value}
-                </span>
-                <span className="text-label font-sans uppercase tracking-[0.08em] text-muted block">
-                  {stat.label}
-                </span>
               </div>
             </FadeUp>
           ))}

@@ -51,7 +51,7 @@ export default function IntegrationsShowcase() {
   return (
     <section className="bg-[#FEFDFC] px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,192px)]">
       <div className="mx-auto max-w-[1280px]">
-        <SectionHeader label="05 - INTEGRATIONS" />
+        <SectionHeader label="03 - INTEGRATIONS" />
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)] lg:gap-[clamp(48px,6vw,96px)]">
           <div>
