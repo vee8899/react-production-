@@ -5,7 +5,7 @@ import {
   type LegalDocumentKey,
 } from "@/lib/legalConsent";
 
-export type ConsentStatus = Record<LegalDocumentKey, boolean>;
+export type ConsentStatus = Partial<Record<LegalDocumentKey, boolean>>;
 
 export const useLegalConsent = () => {
   const { data: client } = useClient();

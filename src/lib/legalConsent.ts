@@ -5,7 +5,6 @@ export type LegalDocumentKey = "terms_of_service" | "privacy_policy" | "ai_usage
 export const REQUIRED_DOCUMENTS: LegalDocumentKey[] = [
   "terms_of_service",
   "privacy_policy",
-  "ai_usage_disclosure",
 ];
 
 export const DOCUMENT_LABELS: Record<LegalDocumentKey, string> = {
@@ -86,11 +85,7 @@ export const checkConsentStatus = async (
     ...REQUIRED_DOCUMENTS.map(fetchLatestDocument),
   ]);
 
-  const result: Record<LegalDocumentKey, boolean> = {
-    terms_of_service: false,
-    privacy_policy: false,
-    ai_usage_disclosure: false,
-  };
+  const result = {} as Record<LegalDocumentKey, boolean>;
 
   for (let i = 0; i < REQUIRED_DOCUMENTS.length; i++) {
     const doc = documents[i];

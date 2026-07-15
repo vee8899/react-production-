@@ -185,6 +185,8 @@
   },
   "active": "f99846e2455b95ea",
   "lastOpenFiles": [
+    "dist/assets/index-DY2U38kR.js",
+    "supabase/migrations/20260716000004_legal_compliance_rls.sql",
     "dist/assets/index-DECtQS9K.css",
     "dist/assets/index-Dx8YPLZU.js",
     "src/pages/LegalSettingsPage.tsx",
@@ -194,8 +196,6 @@
     "src/components/legal/CookiePreferenceToggle.tsx",
     "src/components/legal/ConsentCheckbox.tsx",
     "src/components/legal/LegalDocument.tsx",
-    "src/hooks/useCookiePreferences.ts",
-    "src/hooks/useLegalDocument.ts",
     "Legal & Compliance Module Specification.md",
     "docs/runbooks/testing.md",
     "docs/runbooks/running.md",

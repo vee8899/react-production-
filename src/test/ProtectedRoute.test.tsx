@@ -9,6 +9,11 @@ vi.mock("@/hooks/useAuth", () => ({
   useAuth: vi.fn(),
 }));
 
+// Mock LegalGate to simply render children in tests
+vi.mock("@/components/legal/LegalGate", () => ({
+  default: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+}));
+
 describe("ProtectedRoute", () => {
   beforeEach(() => {
     vi.clearAllMocks();

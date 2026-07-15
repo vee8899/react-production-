@@ -13,13 +13,24 @@ import LegalConsentPage from "@/pages/LegalConsentPage";
 import LegalSettingsPage from "@/pages/LegalSettingsPage";
 import PageTransition from "@/components/motion/PageTransition";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import LegalGate from "@/components/legal/LegalGate";
 
-export const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
+export const ProtectedRoute = ({
+  children,
+  checkLegal = true,
+}: {
+  children: React.ReactNode;
+  checkLegal?: boolean;
+}) => {
   const { isAuthenticated, isLoading } = useAuth();
   
   if (isLoading) return null; // wait for auth to resolve
   
-  return isAuthenticated ? <>{children}</> : <Navigate to="/login" replace />;
+  if (!isAuthenticated) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return checkLegal ? <LegalGate>{children}</LegalGate> : <>{children}</>;
 };
 
 const LoadingScreen = () => (
@@ -83,7 +94,7 @@ export default function App() {
             <Route
               path="/legal/consent"
               element={
-                <ProtectedRoute>
+                <ProtectedRoute checkLegal={false}>
                   <LegalConsentPage />
                 </ProtectedRoute>
               }
@@ -91,7 +102,7 @@ export default function App() {
             <Route
               path="/legal/settings"
               element={
-                <ProtectedRoute>
+                <ProtectedRoute checkLegal={false}>
                   <LegalSettingsPage />
                 </ProtectedRoute>
               }

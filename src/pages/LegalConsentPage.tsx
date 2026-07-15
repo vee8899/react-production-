@@ -22,7 +22,6 @@ import { fetchLatestDocument } from "@/lib/legalConsent";
 const consentSchema = z.object({
   terms_of_service: z.boolean().refine((v) => v, "You must accept the Terms of Service"),
   privacy_policy: z.boolean().refine((v) => v, "You must accept the Privacy Policy"),
-  ai_usage_disclosure: z.boolean().refine((v) => v, "You must accept the AI Usage Disclosure"),
 });
 
 type ConsentForm = z.infer<typeof consentSchema>;
@@ -52,7 +51,6 @@ export default function LegalConsentPage() {
     defaultValues: {
       terms_of_service: false,
       privacy_policy: false,
-      ai_usage_disclosure: false,
     },
   });
 
@@ -60,7 +58,7 @@ export default function LegalConsentPage() {
     if (!client) return;
     setSubmitError(null);
 
-    const acceptedKeys = REQUIRED_DOCUMENTS.filter((key) => data[key]);
+    const acceptedKeys = REQUIRED_DOCUMENTS.filter((key) => data[key as keyof ConsentForm]);
 
     try {
       await submitConsents(client.id, client.organization_id, acceptedKeys);
@@ -127,7 +125,7 @@ export default function LegalConsentPage() {
                           <ConsentCheckbox
                             documentKey={docKey}
                             register={register}
-                            error={errors[docKey]?.message}
+                            error={errors[docKey as keyof ConsentForm]?.message}
                           />
                         </div>
                       )}

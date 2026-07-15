@@ -4,7 +4,7 @@ import type { UseFormRegister } from "react-hook-form";
 
 type ConsentCheckboxProps = {
   documentKey: LegalDocumentKey;
-  register: UseFormRegister<Record<LegalDocumentKey, boolean>>;
+  register: UseFormRegister<any>;
   error?: string;
 };
 
