@@ -146,10 +146,12 @@ $$;
 alter table public.organization_onboarding enable row level security;
 alter table public.organization_onboarding_steps enable row level security;
 
+drop policy if exists organization_onboarding_select_member on public.organization_onboarding;
 create policy organization_onboarding_select_member
   on public.organization_onboarding for select to authenticated
   using (public.is_organization_member(organization_id));
 
+drop policy if exists organization_onboarding_update_member on public.organization_onboarding;
 create policy organization_onboarding_update_member
   on public.organization_onboarding for update to authenticated
   using (public.is_organization_member(organization_id))
@@ -158,10 +160,12 @@ create policy organization_onboarding_update_member
     and status in ('draft', 'in_progress')
   );
 
+drop policy if exists organization_onboarding_steps_select_member on public.organization_onboarding_steps;
 create policy organization_onboarding_steps_select_member
   on public.organization_onboarding_steps for select to authenticated
   using (public.is_organization_member(organization_id));
 
+drop policy if exists organization_onboarding_steps_update_member on public.organization_onboarding_steps;
 create policy organization_onboarding_steps_update_member
   on public.organization_onboarding_steps for update to authenticated
   using (public.is_organization_member(organization_id))

@@ -1,26 +1,49 @@
 # Feature spec: Automation run ingestion
 
 ## Purpose
-Document the expected behavior of automation run ingestion.
 
-## Requirements
-- The implementation remains accessible through the documented route or Edge Function.
-- Loading, empty, error, and authenticated states are handled.
+Record n8n workflow outcomes in Supabase through one trusted ingestion boundary.
 
-## UI flow
-1. User enters the relevant route.
-2. The page loads data through existing hooks or submits through the existing API boundary.
-3. Success and failure states are rendered without leaking secrets.
+## Boundary
 
-## Business rules
-- Tenant data is scoped to the authenticated client.
-- Automation runs use the canonical feature and status contract.
+`POST /functions/v1/ingest-run` is public at the HTTP layer but protected by `X-Webhook-Secret`. The function validates the payload and calls the service-role-only `ingest_workflow_run` RPC.
 
-## Validation and edge cases
-- Missing environment configuration.
-- Expired session or unauthorized request.
-- Empty data, duplicate event, malformed payload, and network failure.
+## Required payload
+
+```json
+{
+  "event_id": "stable-source-event-id",
+  "client_id": "uuid",
+  "feature_type": "lead_follow_up",
+  "workflow_name": "Lead follow-up",
+  "status": "success"
+}
+```
+
+Optional fields include `workflow_id`, `n8n_workflow_id`, `ran_at`, `duration_ms`, record counts, error details, metadata, workflow steps, and entity references.
+
+## Data contract
+
+- `workflow_runs` is canonical.
+- `event_id` is the idempotency key.
+- `workflow_steps` stores step detail.
+- `workflow_run_entities` and `audit_log` store affected objects.
+- `automation_runs` is updated only as a temporary compatibility projection.
+- `organization_id` is derived from `client_id`; mismatches are rejected.
+
+## Failure behavior
+
+- Non-POST requests return `405`.
+- Missing or invalid secrets return `401`.
+- Invalid JSON or schema returns `400`.
+- Missing server configuration returns `500` without exposing secrets.
+- Database/RPC failure returns `500` and the transaction rolls back.
+- Reusing an `event_id` updates the existing run and replaces its child details.
 
 ## Acceptance criteria
-- Behavior matches the current implementation and tests.
-- Relevant lint, test, and build commands pass.
+
+- Valid events create one canonical workflow run.
+- Duplicate events do not create duplicates.
+- Cross-organization client/workflow combinations are rejected.
+- Malformed payloads are rejected before database writes.
+- Lint, tests, build, and staging tenant-isolation checks pass.

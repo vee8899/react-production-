@@ -48,6 +48,7 @@ for each row execute function public.set_updated_at();
 
 alter table public.client_services enable row level security;
 
+drop policy if exists client_services_select_own on public.client_services;
 create policy client_services_select_own
   on public.client_services
   for select

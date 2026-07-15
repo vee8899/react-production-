@@ -41,9 +41,18 @@ from public.clients c
 where c.organization_id is not null
 on conflict (organization_id, user_id) do nothing;
 
-alter table public.clients
-  add constraint clients_organization_id_fkey
-  foreign key (organization_id) references public.organizations(id) on delete cascade;
+do $$
+begin
+  if not exists (
+    select 1 from pg_constraint
+    where conname = 'clients_organization_id_fkey'
+      and conrelid = 'public.clients'::regclass
+  ) then
+    alter table public.clients
+      add constraint clients_organization_id_fkey
+      foreign key (organization_id) references public.organizations(id) on delete cascade;
+  end if;
+end $$;
 alter table public.clients alter column organization_id set not null;
 
 alter table public.workflows add column if not exists organization_id uuid;
@@ -65,18 +74,54 @@ alter table public.automation_runs alter column organization_id set not null;
 alter table public.analytics_snapshots alter column organization_id set not null;
 alter table public.client_services alter column organization_id set not null;
 
-alter table public.workflows
-  add constraint workflows_organization_id_fkey
-  foreign key (organization_id) references public.organizations(id) on delete cascade;
-alter table public.automation_runs
-  add constraint automation_runs_organization_id_fkey
-  foreign key (organization_id) references public.organizations(id) on delete cascade;
-alter table public.analytics_snapshots
-  add constraint analytics_snapshots_organization_id_fkey
-  foreign key (organization_id) references public.organizations(id) on delete cascade;
-alter table public.client_services
-  add constraint client_services_organization_id_fkey
-  foreign key (organization_id) references public.organizations(id) on delete cascade;
+do $$
+begin
+  if not exists (
+    select 1 from pg_constraint
+    where conname = 'workflows_organization_id_fkey'
+      and conrelid = 'public.workflows'::regclass
+  ) then
+    alter table public.workflows
+      add constraint workflows_organization_id_fkey
+      foreign key (organization_id) references public.organizations(id) on delete cascade;
+  end if;
+end $$;
+do $$
+begin
+  if not exists (
+    select 1 from pg_constraint
+    where conname = 'automation_runs_organization_id_fkey'
+      and conrelid = 'public.automation_runs'::regclass
+  ) then
+    alter table public.automation_runs
+      add constraint automation_runs_organization_id_fkey
+      foreign key (organization_id) references public.organizations(id) on delete cascade;
+  end if;
+end $$;
+do $$
+begin
+  if not exists (
+    select 1 from pg_constraint
+    where conname = 'analytics_snapshots_organization_id_fkey'
+      and conrelid = 'public.analytics_snapshots'::regclass
+  ) then
+    alter table public.analytics_snapshots
+      add constraint analytics_snapshots_organization_id_fkey
+      foreign key (organization_id) references public.organizations(id) on delete cascade;
+  end if;
+end $$;
+do $$
+begin
+  if not exists (
+    select 1 from pg_constraint
+    where conname = 'client_services_organization_id_fkey'
+      and conrelid = 'public.client_services'::regclass
+  ) then
+    alter table public.client_services
+      add constraint client_services_organization_id_fkey
+      foreign key (organization_id) references public.organizations(id) on delete cascade;
+  end if;
+end $$;
 
 create or replace function public.is_organization_member(p_organization_id uuid)
 returns boolean

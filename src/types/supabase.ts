@@ -603,6 +603,141 @@ export type Database = {
           },
         ]
       }
+      legal_documents: {
+        Row: {
+          id: string
+          document_key: string
+          version: string
+          title: string
+          content_md: string
+          effective_at: string
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          document_key: string
+          version: string
+          title: string
+          content_md: string
+          effective_at: string
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          document_key?: string
+          version?: string
+          title?: string
+          content_md?: string
+          effective_at?: string
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      legal_consents: {
+        Row: {
+          id: string
+          organization_id: string
+          client_id: string
+          document_key: string
+          document_version: string
+          consented_at: string
+          ip_address: string | null
+          user_agent: string | null
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          organization_id: string
+          client_id: string
+          document_key: string
+          document_version: string
+          consented_at?: string
+          ip_address?: string | null
+          user_agent?: string | null
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          organization_id?: string
+          client_id?: string
+          document_key?: string
+          document_version?: string
+          consented_at?: string
+          ip_address?: string | null
+          user_agent?: string | null
+          created_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "legal_consents_organization_id_fkey"
+            columns: ["organization_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "legal_consents_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "clients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      cookie_preferences: {
+        Row: {
+          id: string
+          organization_id: string
+          client_id: string
+          essential: boolean
+          functional: boolean
+          analytics: boolean
+          marketing: boolean
+          consented_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          organization_id: string
+          client_id: string
+          essential?: boolean
+          functional?: boolean
+          analytics?: boolean
+          marketing?: boolean
+          consented_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          organization_id?: string
+          client_id?: string
+          essential?: boolean
+          functional?: boolean
+          analytics?: boolean
+          marketing?: boolean
+          consented_at?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "cookie_preferences_organization_id_fkey"
+            columns: ["organization_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "cookie_preferences_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "clients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never

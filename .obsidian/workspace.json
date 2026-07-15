@@ -1,0 +1,225 @@
+{
+  "main": {
+    "id": "dbc5d3c6a9d5a822",
+    "type": "split",
+    "children": [
+      {
+        "id": "ef220194c6749850",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f99846e2455b95ea",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/runbooks/type-checking.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "type-checking"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "618a18399f76b37b",
+    "type": "split",
+    "children": [
+      {
+        "id": "79b667f499511f0f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5282cfb7ec044571",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "621e347bcecb4fe2",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "2e40989a9012cae0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "7da56b1caae28f91",
+    "type": "split",
+    "children": [
+      {
+        "id": "8198d68b2895d4b4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7ce09efa28fd2c4a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "docs/runbooks/running.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for running"
+            }
+          },
+          {
+            "id": "ec428de412a7aef0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "docs/runbooks/running.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from running"
+            }
+          },
+          {
+            "id": "3723265719f97b2e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "15628a121cde32d5",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "e2e32f1aeaa6f357",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "docs/runbooks/running.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of running"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "f99846e2455b95ea",
+  "lastOpenFiles": [
+    "dist/assets/index-DECtQS9K.css",
+    "dist/assets/index-Dx8YPLZU.js",
+    "src/pages/LegalSettingsPage.tsx",
+    "src/pages/LegalConsentPage.tsx",
+    "src/pages/LegalDocumentPage.tsx",
+    "src/components/legal/LegalGate.tsx",
+    "src/components/legal/CookiePreferenceToggle.tsx",
+    "src/components/legal/ConsentCheckbox.tsx",
+    "src/components/legal/LegalDocument.tsx",
+    "src/hooks/useCookiePreferences.ts",
+    "src/hooks/useLegalDocument.ts",
+    "Legal & Compliance Module Specification.md",
+    "docs/runbooks/testing.md",
+    "docs/runbooks/running.md",
+    "docs/runbooks/mcp-operations.md",
+    "docs/runbooks/production-build.md",
+    "docs/runbooks/local-development.md",
+    "docs/runbooks/installing-dependencies.md",
+    "docs/runbooks/linting.md",
+    "docs/runbooks/feature-development.md",
+    "docs/runbooks/deployment.md",
+    "docs/runbooks/database-migrations.md",
+    "docs/runbooks/debugging.md",
+    "docs/architecture/platform-core-and-vertical-modules.md",
+    "docs/architecture/canonical-workflow-runs.md",
+    "docs/mcp-operations.md",
+    "docs/future-product-roadmap.md",
+    "AGENT.md",
+    "CHANGELOG.md",
+    "DEBUG.md",
+    "DASHBOARD.md",
+    "UI.md",
+    "README.md",
+    "knowledge/database.md",
+    "docs/specs/client-invitation.md",
+    "docs/specs/authenticated-client-dashboard.md"
+  ]
+}

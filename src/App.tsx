@@ -8,6 +8,9 @@ import DashboardPage from "@/pages/DashboardPage";
 import WorkflowsPage from "@/pages/WorkflowsPage";
 import RecentActivityPage from "@/pages/RecentActivityPage";
 import OnboardingPage from "@/pages/OnboardingPage";
+import LegalDocumentPage from "@/pages/LegalDocumentPage";
+import LegalConsentPage from "@/pages/LegalConsentPage";
+import LegalSettingsPage from "@/pages/LegalSettingsPage";
 import PageTransition from "@/components/motion/PageTransition";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 
@@ -71,6 +74,25 @@ export default function App() {
               element={
                 <ProtectedRoute>
                   <OnboardingPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="/legal/terms" element={<LegalDocumentPage documentKey="terms_of_service" />} />
+            <Route path="/legal/privacy" element={<LegalDocumentPage documentKey="privacy_policy" />} />
+            <Route path="/legal/ai-disclosure" element={<LegalDocumentPage documentKey="ai_usage_disclosure" />} />
+            <Route
+              path="/legal/consent"
+              element={
+                <ProtectedRoute>
+                  <LegalConsentPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/legal/settings"
+              element={
+                <ProtectedRoute>
+                  <LegalSettingsPage />
                 </ProtectedRoute>
               }
             />

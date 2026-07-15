@@ -6,6 +6,12 @@ const footerLinks = [
   { label: "Services", path: "/#services" },
 ];
 
+const legalLinks = [
+  { label: "Terms", path: "/legal/terms" },
+  { label: "Privacy", path: "/legal/privacy" },
+  { label: "AI Disclosure", path: "/legal/ai-disclosure" },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-inverse text-inverse-text">
@@ -31,6 +37,15 @@ export default function Footer() {
             >
               Contact
             </a>
+            {legalLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className="text-label font-sans uppercase tracking-[0.08em] text-inverse-text/70 hover:text-inverse-text transition-colors duration-200"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
 
