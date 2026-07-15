@@ -30,6 +30,8 @@ erDiagram
 2. `20260714000001_real_estate_workflow_operations.sql` is the historical real-estate implementation.
 3. `20260714000002_platform_core_and_vertical_modules.sql` backfills organizations, adds organization ownership, creates reusable platform tables, moves real-estate records into `real_estate`, and installs the generic ingestion RPC.
 4. `20260714000003_fix_generic_ingest_legacy_bridge.sql` repairs the compatibility write into the legacy `automation_runs` table, whose existing event index is partial.
+5. `20260716000001_canonical_workflow_runs.sql` backfills legacy runs into `workflow_runs`, hardens client-to-organization validation, and makes `workflow_runs` the only frontend read path.
+6. `20260716000002_atomic_client_provisioning.sql` makes client service rows part of the transactional workspace-provisioning RPC.
 
 The repository migrations remain the source of truth. The Supabase MCP may execute a migration in bounded chunks when its large-DDL request timeout is triggered; the SQL chunks must still be taken directly from the migration file.
 
@@ -39,7 +41,7 @@ The repository migrations remain the source of truth. The Supabase MCP may execu
 - The existing client user becomes the organization owner.
 - Existing tenant tables receive and backfill `organization_id`.
 - Existing real-estate rows are copied to `real_estate.leads`, `real_estate.listings`, and `real_estate.appointments` before the old public tables are removed.
-- Existing `automation_runs` rows remain available to the dashboard and gain a link to canonical `workflow_runs` for new ingested executions.
+- Existing `automation_runs` rows are backfilled into `workflow_runs` and gain a `workflow_run_id`; the table remains only as a temporary compatibility projection.
 - No operational rows are invented for empty staging tables.
 
 ## Security and performance

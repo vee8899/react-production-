@@ -633,7 +633,7 @@ export type Database = {
         Returns: string
       }
       provision_client_workspace: {
-        Args: { p_company_name: string; p_email: string; p_plan: string; p_user_id: string; p_vertical_key?: string; p_feature_keys?: Json }
+        Args: { p_company_name: string; p_email: string; p_plan: string; p_user_id: string; p_vertical_key?: string; p_feature_keys?: Json; p_services?: Json }
         Returns: { organization_id: string; client_id: string; onboarding_id: string }[]
       }
       submit_organization_onboarding: {

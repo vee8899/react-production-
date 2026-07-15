@@ -8,7 +8,7 @@ export type DashboardMetrics = {
   totalRecords: number;
   avgDurationMs: number;
   retries: number;
-  source: "workflow_runs" | "analytics_snapshots" | "compatibility";
+  source: "workflow_runs" | "analytics_snapshots";
 };
 
 const emptyMetrics: DashboardMetrics = {
@@ -27,10 +27,10 @@ const startOfWindow = () => {
   return date.toISOString();
 };
 
-export const useDashboardMetrics = (organizationId: string | undefined, clientId: string | undefined) =>
+export const useDashboardMetrics = (organizationId: string | undefined, _clientId: string | undefined) =>
   useQuery({
-    queryKey: ["dashboard-metrics", organizationId, clientId, "30d"],
-    enabled: !!organizationId || !!clientId,
+    queryKey: ["dashboard-metrics", organizationId, _clientId, "30d"],
+    enabled: !!organizationId,
     refetchInterval: 30_000,
     queryFn: async (): Promise<DashboardMetrics> => {
       if (organizationId) {
@@ -71,29 +71,6 @@ export const useDashboardMetrics = (organizationId: string | undefined, clientId
               snapshots.reduce((sum, item) => sum + (item.avg_duration_ms ?? 0), 0) / snapshots.length,
             retries: 0,
             source: "analytics_snapshots",
-          };
-        }
-      }
-
-      if (clientId) {
-        const { data: legacyRuns, error } = await supabase
-          .from("automation_runs")
-          .select("status, duration_ms, records_processed")
-          .eq("client_id", clientId)
-          .gte("ran_at", startOfWindow());
-
-        if (!error && legacyRuns) {
-          const completed = legacyRuns.filter((run) => run.duration_ms !== null);
-          return {
-            totalRuns: legacyRuns.length,
-            successfulRuns: legacyRuns.filter((run) => run.status === "success").length,
-            failedRuns: legacyRuns.filter((run) => run.status !== "success").length,
-            totalRecords: legacyRuns.reduce((sum, run) => sum + run.records_processed, 0),
-            avgDurationMs: completed.length
-              ? completed.reduce((sum, run) => sum + (run.duration_ms ?? 0), 0) / completed.length
-              : 0,
-            retries: 0,
-            source: "compatibility",
           };
         }
       }

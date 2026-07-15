@@ -107,23 +107,13 @@ Deno.serve(async (req) => {
     p_user_id: invite.user.id,
     p_vertical_key: parsed.data.vertical_key,
     p_feature_keys: featureKeys,
+    p_services: parsed.data.services,
   }).single();
 
   if (provisionError || !provisioned) {
     await supabase.auth.admin.deleteUser(invite.user.id);
     console.error("Unable to provision client workspace", provisionError);
     return json({ error: "Unable to provision client workspace" }, 500);
-  }
-
-  if (parsed.data.services.length > 0) {
-    const { error: servicesError } = await supabase
-      .from("client_services")
-      .insert(parsed.data.services.map((service) => ({ ...service, client_id: provisioned.client_id, organization_id: provisioned.organization_id })));
-
-    if (servicesError) {
-      console.error("Unable to create compatibility client services", servicesError);
-      return json({ error: "Unable to create compatibility client services" }, 500);
-    }
   }
 
   return json({ ...provisioned, user_id: invite.user.id, invited: true }, 201);

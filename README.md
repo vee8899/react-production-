@@ -75,7 +75,7 @@ Content-Type: application/json
    npx supabase db push --dry-run
    ```
 
-   The repository now includes a baseline schema migration for `clients`, `workflows`, `automation_runs`, and `analytics_snapshots`. If the linked remote project already has these tables, confirm the dry run before applying migrations.
+   The repository includes the baseline client tables plus the canonical organization-scoped `workflow_runs` model. Review the backfill and compatibility migrations before applying them to a linked remote project.
 
 3. Generate long random values for `WEBHOOK_SECRET` and `ADMIN_INVITE_SECRET`, then deploy the database, function config, and functions:
 

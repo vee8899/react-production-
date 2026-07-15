@@ -18,7 +18,7 @@ export type WorkflowWithLatestRun = {
 export const useWorkflows = (clientId: string | undefined, organizationId?: string) =>
   useQuery({
     queryKey: ['workflows', clientId, organizationId],
-    enabled: !!clientId || !!organizationId,
+    enabled: !!clientId && !!organizationId,
     refetchInterval: 30_000,
     queryFn: async (): Promise<WorkflowWithLatestRun[]> => {
       const { data: workflows, error: workflowError } = await supabase
@@ -30,40 +30,16 @@ export const useWorkflows = (clientId: string | undefined, organizationId?: stri
       if (workflowError) throw workflowError;
       if (!workflows?.length) return [];
 
-      if (organizationId) {
-        const { data: runs, error: runError } = await supabase
-          .from('workflow_runs')
-          .select('workflow_id, status, started_at, records_processed, duration_ms')
-          .eq('organization_id', organizationId)
-          .in('workflow_id', workflows.map((workflow) => workflow.id))
-          .order('started_at', { ascending: false });
+      const { data: runs, error: runError } = await supabase
+        .from('workflow_runs')
+        .select('workflow_id, status, started_at, records_processed, duration_ms')
+        .eq('organization_id', organizationId!)
+        .in('workflow_id', workflows.map((workflow) => workflow.id))
+        .order('started_at', { ascending: false });
 
-        if (!runError && runs) {
-          const latest = new Map<string, (typeof runs)[number]>();
-          runs.forEach((run) => {
-            if (run.workflow_id && !latest.has(run.workflow_id)) latest.set(run.workflow_id, run);
-          });
-          return workflows.map((workflow) => {
-            const run = latest.get(workflow.id);
-            return {
-              ...workflow,
-              latestRun: run
-                ? { status: run.status, ran_at: run.started_at, records_processed: run.records_processed, duration_ms: run.duration_ms }
-                : null,
-            };
-          });
-        }
-      }
-
-      const { data: legacyRuns, error: legacyError } = await supabase
-        .from('automation_runs')
-        .select('workflow_id, status, ran_at, records_processed, duration_ms')
-        .eq('client_id', clientId!)
-        .order('ran_at', { ascending: false });
-
-      if (legacyError) throw legacyError;
-      const latest = new Map<string, (typeof legacyRuns)[number]>();
-      (legacyRuns ?? []).forEach((run) => {
+      if (runError) throw runError;
+      const latest = new Map<string, (typeof runs)[number]>();
+      (runs ?? []).forEach((run) => {
         if (run.workflow_id && !latest.has(run.workflow_id)) latest.set(run.workflow_id, run);
       });
       return workflows.map((workflow) => {
@@ -71,7 +47,7 @@ export const useWorkflows = (clientId: string | undefined, organizationId?: stri
         return {
           ...workflow,
           latestRun: run
-            ? { status: run.status, ran_at: run.ran_at, records_processed: run.records_processed, duration_ms: run.duration_ms }
+            ? { status: run.status, ran_at: run.started_at, records_processed: run.records_processed, duration_ms: run.duration_ms }
             : null,
         };
       });

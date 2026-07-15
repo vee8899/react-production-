@@ -31,14 +31,14 @@ describe("useRuns", () => {
       <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
     );
 
-    const first = renderHook(() => useRuns("client-id", 10), { wrapper });
+    const first = renderHook(() => useRuns("client-id", 10, "organization-id"), { wrapper });
     await waitFor(() => expect(first.result.current.isSuccess).toBe(true));
 
-    const second = renderHook(() => useRuns("client-id", 50), { wrapper });
+    const second = renderHook(() => useRuns("client-id", 50, "organization-id"), { wrapper });
     await waitFor(() => expect(second.result.current.isSuccess).toBe(true));
 
-    expect(queryClient.getQueryData(["runs", "client-id", 10])).toEqual([]);
-    expect(queryClient.getQueryData(["runs", "client-id", 50])).toEqual([]);
+    expect(queryClient.getQueryData(["runs", "client-id", "organization-id", 10])).toEqual([]);
+    expect(queryClient.getQueryData(["runs", "client-id", "organization-id", 50])).toEqual([]);
     expect(from).toHaveBeenCalledTimes(2);
   });
 });
