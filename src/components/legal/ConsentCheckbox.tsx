@@ -1,18 +1,18 @@
 import type { LegalDocumentKey } from "@/lib/legalConsent";
 import { DOCUMENT_LABELS, DOCUMENT_ROUTES } from "@/lib/legalConsent";
-import type { UseFormRegister } from "react-hook-form";
+import type { UseFormRegister, FieldValues, Path } from "react-hook-form";
 
-type ConsentCheckboxProps = {
-  documentKey: LegalDocumentKey;
-  register: UseFormRegister<any>;
+type ConsentCheckboxProps<TFieldValues extends FieldValues> = {
+  documentKey: LegalDocumentKey & Path<TFieldValues>;
+  register: UseFormRegister<TFieldValues>;
   error?: string;
 };
 
-export default function ConsentCheckbox({
+export default function ConsentCheckbox<TFieldValues extends FieldValues>({
   documentKey,
   register,
   error,
-}: ConsentCheckboxProps) {
+}: ConsentCheckboxProps<TFieldValues>) {
   const label = DOCUMENT_LABELS[documentKey];
   const route = DOCUMENT_ROUTES[documentKey];
 
