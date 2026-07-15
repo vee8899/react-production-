@@ -150,7 +150,7 @@ export default function LegalConsentPage() {
                 </button>
 
                 {submitError && (
-                  <p className="text-label font-sans uppercase tracking-[0.08em] text-muted text-center">
+                  <p className="text-label font-sans uppercase tracking-[0.08em] text-red-600 text-center">
                     {submitError}
                   </p>
                 )}
