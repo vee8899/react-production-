@@ -94,6 +94,7 @@ Deno.serve(async (req) => {
   );
 
   if (inviteError || !invite.user) {
+    console.error("inviteError");
     return json({ error: "Unable to invite this client" }, 400);
   }
 
