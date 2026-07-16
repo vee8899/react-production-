@@ -57,7 +57,14 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/accept-invite" element={<AcceptInvitePage />} />
-            <Route path="/demo" element={<DemoPage />} />
+            <Route
+              path="/demo"
+              element={
+                <ProtectedRoute>
+                  <DemoPage />
+                </ProtectedRoute>
+              }
+            />
             <Route
               path="/dashboard"
               element={
