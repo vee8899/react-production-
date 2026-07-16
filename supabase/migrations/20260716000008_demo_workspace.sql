@@ -1,11 +1,13 @@
 -- Idempotently seed a production-shaped Northstar Realty demo workspace for
 -- an existing Supabase Auth user. The function is service-role only; it does
 -- not create Auth users or expose demo data to anonymous clients.
+drop function if exists public.seed_demo_workspace(uuid, text);
+
 create or replace function public.seed_demo_workspace(
   p_user_id uuid,
   p_email text default 'demo@northstar.example'
 )
-returns table (organization_id uuid, client_id uuid)
+returns table (demo_organization_id uuid, demo_client_id uuid)
 language plpgsql
 security definer
 set search_path = public, real_estate
@@ -16,6 +18,7 @@ declare
   v_workflow_id uuid;
   v_lead_id uuid;
   v_listing_id uuid;
+  v_slug text;
 begin
   if p_user_id is null or not exists (select 1 from auth.users where id = p_user_id) then
     raise exception 'A valid Auth user is required' using errcode = '22023';
@@ -29,22 +32,36 @@ begin
      and o.name = 'Northstar Realty Demo';
 
   if v_client_id is null then
-    select p.organization_id, p.client_id
-      into v_org_id, v_client_id
-      from public.provision_client_workspace(
-        'Northstar Realty Demo',
-        lower(trim(p_email)),
-        'demo',
-        p_user_id,
-        'real_estate',
-        '["module.real_estate"]'::jsonb,
-        '[
-          {"feature_type":"lead_follow_up","status":"active"},
-          {"feature_type":"listing_notifications","status":"active"},
-          {"feature_type":"appointment_scheduling","status":"active"},
-          {"feature_type":"crm_sync","status":"active"}
-        ]'::jsonb
-      ) p;
+    v_slug := left(regexp_replace('northstar-realty-demo', '[^a-z0-9]+', '-', 'g'), 70)
+      || '-' || left(p_user_id::text, 8);
+
+    insert into public.organizations (name, slug, vertical_key)
+    values ('Northstar Realty Demo', v_slug, 'real_estate')
+    returning id into v_org_id;
+
+    insert into public.organization_members (organization_id, user_id, role)
+    values (v_org_id, p_user_id, 'owner');
+
+    insert into public.clients (company_name, email, plan, user_id, organization_id)
+    values ('Northstar Realty Demo', lower(trim(p_email)), 'demo', p_user_id, v_org_id)
+    returning id into v_client_id;
+
+    insert into public.feature_subscriptions (organization_id, feature_key, status)
+    values (v_org_id, 'module.real_estate', 'active')
+    on conflict (organization_id, feature_key) do update
+      set status = excluded.status,
+          updated_at = now();
+
+    insert into public.client_services (client_id, organization_id, feature_type, status)
+    values
+      (v_client_id, v_org_id, 'lead_follow_up', 'active'),
+      (v_client_id, v_org_id, 'listing_notifications', 'active'),
+      (v_client_id, v_org_id, 'appointment_scheduling', 'active'),
+      (v_client_id, v_org_id, 'crm_sync', 'active')
+    on conflict (client_id, feature_type) do update
+      set organization_id = excluded.organization_id,
+          status = excluded.status,
+          updated_at = now();
   end if;
 
   insert into public.workflows (client_id, organization_id, n8n_workflow_id, name, description, feature_type, is_active)
