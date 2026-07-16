@@ -71,60 +71,6 @@ export const DEMO_RUNS: DemoRun[] = [
   },
 ];
 
-export const SAMPLE_LEADS_CSV = `first_name,last_name,email,phone,source
-Alex, Morgan,alex.morgan@example.test,555-0101,Open house
-Priya, Shah,priya.shah@example.test,555-0102,Website
-Sam, Rivera,sam.rivera@example.test,555-0103,Referral`;
-
-const normalizeHeader = (header: string) =>
-  header.trim().toLowerCase().replace(/\s+/g, "_");
-
-const splitCsvLine = (line: string) => {
-  const values: string[] = [];
-  let value = "";
-  let quoted = false;
-
-  for (let index = 0; index < line.length; index += 1) {
-    const character = line[index];
-    if (character === '"') {
-      quoted = !quoted;
-    } else if (character === "," && !quoted) {
-      values.push(value.trim());
-      value = "";
-    } else {
-      value += character;
-    }
-  }
-
-  values.push(value.trim());
-  return values;
-};
-
-export const parseDemoLeadsCsv = (csv: string): DemoLead[] => {
-  const lines = csv.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
-  if (lines.length < 2) throw new Error("Add at least one lead row.");
-
-  const headers = splitCsvLine(lines[0]).map(normalizeHeader);
-  if (!headers.includes("email")) throw new Error("The CSV must include an email column.");
-
-  return lines.slice(1).map((line, index) => {
-    const values = splitCsvLine(line);
-    const row = Object.fromEntries(headers.map((header, column) => [header, values[column] ?? ""]));
-    if (!row.email || !row.email.includes("@")) {
-      throw new Error(`Lead row ${index + 2} needs a valid email.`);
-    }
-
-    const name = [row.first_name, row.last_name].filter(Boolean).join(" ") || row.name || row.email;
-    return {
-      id: `demo-upload-${Date.now()}-${index}`,
-      name,
-      email: row.email,
-      source: row.source || "Demo upload",
-      status: "new",
-    };
-  });
-};
-
 export const summarizeRuns = (runs: DemoRun[]) => ({
   total: runs.length,
   successful: runs.filter((run) => run.status === "success").length,
