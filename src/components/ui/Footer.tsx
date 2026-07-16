@@ -15,7 +15,7 @@ Studio
 {/* Navigation */}
 <nav
 aria-label="Footer navigation"
-className="grid grid-cols-2 gap-x-8 gap-y-4 sm:grid-cols-5 md:gap-x-10 md:gap-y-3"
+className="flex w-fit flex-wrap justify-end gap-x-8 gap-y-4 self-end sm:gap-x-10 md:justify-self-end"
 >
 <Link
 to="/"
