@@ -9,7 +9,7 @@ return (
 <div className="flex flex-col gap-8 md:grid md:grid-cols-[160px_1fr] md:gap-0">
 {/* Logo */}
 <span className="text-label font-mono uppercase tracking-[0.08em]">
-Studio
+PRIMESTATE SYSTEMS
 </span>
 
 {/* Navigation */}
