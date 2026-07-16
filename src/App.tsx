@@ -11,6 +11,7 @@ import OnboardingPage from "@/pages/OnboardingPage";
 import LegalDocumentPage from "@/pages/LegalDocumentPage";
 import LegalConsentPage from "@/pages/LegalConsentPage";
 import LegalSettingsPage from "@/pages/LegalSettingsPage";
+import DemoPage from "@/pages/DemoPage";
 import PageTransition from "@/components/motion/PageTransition";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import LegalGate from "@/components/legal/LegalGate";
@@ -56,6 +57,7 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/accept-invite" element={<AcceptInvitePage />} />
+            <Route path="/demo" element={<DemoPage />} />
             <Route
               path="/dashboard"
               element={
