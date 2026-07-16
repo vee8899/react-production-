@@ -14,6 +14,7 @@ import { useLegalConsent } from "@/hooks/useLegalConsent";
 import {
   submitConsents,
   REQUIRED_DOCUMENTS,
+  hasCompleteRequiredConsent,
   type LegalDocumentKey,
 } from "@/lib/legalConsent";
 import { useQueries } from "@tanstack/react-query";
@@ -22,14 +23,13 @@ import { fetchLatestDocument } from "@/lib/legalConsent";
 const consentSchema = z.object({
   terms_of_service: z.boolean().refine((v) => v, "You must accept the Terms of Service"),
   privacy_policy: z.boolean().refine((v) => v, "You must accept the Privacy Policy"),
-  ai_usage_disclosure: z.boolean().refine((v) => v, "You must accept the AI Usage Disclosure"),
 });
 
 type ConsentForm = z.infer<typeof consentSchema>;
 
 export default function LegalConsentPage() {
   const { data: client } = useClient();
-  const { data: consentStatus, isLoading: consentLoading } = useLegalConsent();
+  const { data: consentStatus, error: consentError, isLoading: consentLoading } = useLegalConsent();
   const navigate = useNavigate();
   const [submitError, setSubmitError] = useState<string | null>(null);
 
@@ -42,6 +42,7 @@ export default function LegalConsentPage() {
 
   const documents = documentResults.map((r) => r.data).filter(Boolean);
   const isLoading = consentLoading || documentResults.some((r) => r.isLoading);
+  const documentError = documentResults.find((result) => result.error)?.error;
 
   const {
     register,
@@ -52,7 +53,6 @@ export default function LegalConsentPage() {
     defaultValues: {
       terms_of_service: false,
       privacy_policy: false,
-      ai_usage_disclosure: false,
     },
   });
 
@@ -87,8 +87,37 @@ export default function LegalConsentPage() {
     );
   }
 
-  const allAlreadyConsented = consentStatus && Object.values(consentStatus).every(Boolean);
-  if (allAlreadyConsented) {
+  if (consentError || documentError) {
+    return (
+      <>
+        <Nav />
+        <main className="pt-16 px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,128px)]">
+          <SectionHeader label="LEGAL CONSENT" />
+          <p className="mt-12 text-label font-sans uppercase tracking-[0.08em] text-red-600">
+            Legal documents could not be loaded. Please refresh or contact support.
+          </p>
+        </main>
+        <Footer />
+      </>
+    );
+  }
+
+  if (documents.length !== REQUIRED_DOCUMENTS.length) {
+    return (
+      <>
+        <Nav />
+        <main className="pt-16 px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,128px)]">
+          <SectionHeader label="LEGAL CONSENT" />
+          <p className="mt-12 text-label font-sans uppercase tracking-[0.08em] text-red-600">
+            Required legal documents are not available. Please contact support.
+          </p>
+        </main>
+        <Footer />
+      </>
+    );
+  }
+
+  if (hasCompleteRequiredConsent(consentStatus)) {
     navigate("/dashboard", { replace: true });
     return null;
   }

@@ -10,9 +10,10 @@ import { upsertCookiePreferences } from "@/lib/legalConsent";
 
 export default function LegalSettingsPage() {
   const { data: client } = useClient();
-  const { data: preferences, isLoading } = useCookiePreferences();
+  const { data: preferences, error: preferencesError, isLoading } = useCookiePreferences();
   const [isSaving, setIsSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [saveError, setSaveError] = useState(false);
 
   const handleSave = async (prefs: {
     functional: boolean;
@@ -22,12 +23,13 @@ export default function LegalSettingsPage() {
     if (!client) return;
     setIsSaving(true);
     setSaved(false);
+    setSaveError(false);
 
     try {
       await upsertCookiePreferences(client.id, client.organization_id, prefs);
       setSaved(true);
     } catch {
-      // Error handled silently; user can retry
+      setSaveError(true);
     } finally {
       setIsSaving(false);
     }
@@ -55,6 +57,10 @@ export default function LegalSettingsPage() {
                 <p className="text-label font-sans uppercase tracking-[0.08em] text-muted">
                   Loading...
                 </p>
+              ) : preferencesError ? (
+                <p className="text-label font-sans uppercase tracking-[0.08em] text-red-600">
+                  Cookie preferences could not be loaded. Please refresh and try again.
+                </p>
               ) : (
                 <div className="flex flex-col gap-16">
                   <div>
@@ -62,6 +68,7 @@ export default function LegalSettingsPage() {
                       Cookie Preferences
                     </h2>
                     <CookiePreferencesForm
+                      key={preferences?.id ?? "no-preferences"}
                       preferences={preferences ?? null}
                       onSave={handleSave}
                       isSaving={isSaving}
@@ -69,6 +76,11 @@ export default function LegalSettingsPage() {
                     {saved && (
                       <p className="mt-4 text-label font-sans uppercase tracking-[0.08em] text-muted">
                         Preferences saved.
+                      </p>
+                    )}
+                    {saveError && (
+                      <p className="mt-4 text-label font-sans uppercase tracking-[0.08em] text-red-600">
+                        Preferences could not be saved. Please try again.
                       </p>
                     )}
                   </div>
@@ -89,12 +101,6 @@ export default function LegalSettingsPage() {
                         className="text-sm font-sans text-muted font-[300] underline hover:text-primary transition-colors duration-200"
                       >
                         Privacy Policy
-                      </a>
-                      <a
-                        href="/legal/ai-disclosure"
-                        className="text-sm font-sans text-muted font-[300] underline hover:text-primary transition-colors duration-200"
-                      >
-                        AI Usage Disclosure
                       </a>
                     </div>
                   </div>

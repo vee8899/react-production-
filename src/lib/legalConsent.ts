@@ -1,22 +1,24 @@
 import { supabase } from "@/api/supabase/client";
 
-export type LegalDocumentKey = "terms_of_service" | "privacy_policy" | "ai_usage_disclosure";
+export type LegalDocumentKey = "terms_of_service" | "privacy_policy";
 
 export const REQUIRED_DOCUMENTS: LegalDocumentKey[] = [
   "terms_of_service",
   "privacy_policy",
 ];
 
+export const hasCompleteRequiredConsent = (
+  consentStatus: Partial<Record<LegalDocumentKey, boolean>> | undefined
+): boolean => REQUIRED_DOCUMENTS.every((key) => consentStatus?.[key] === true);
+
 export const DOCUMENT_LABELS: Record<LegalDocumentKey, string> = {
   terms_of_service: "Terms of Service",
   privacy_policy: "Privacy Policy",
-  ai_usage_disclosure: "AI Usage Disclosure",
 };
 
 export const DOCUMENT_ROUTES: Record<LegalDocumentKey, string> = {
   terms_of_service: "/legal/terms",
   privacy_policy: "/legal/privacy",
-  ai_usage_disclosure: "/legal/ai-disclosure",
 };
 
 export type LegalDocument = {
@@ -90,9 +92,10 @@ export const checkConsentStatus = async (
   for (let i = 0; i < REQUIRED_DOCUMENTS.length; i++) {
     const doc = documents[i];
     const key = REQUIRED_DOCUMENTS[i];
-    if (!doc) continue;
-    result[key] = consents.some(
-      (c) => c.document_key === key && c.document_version === doc.version
+    result[key] = Boolean(
+      doc && consents.some(
+        (c) => c.document_key === key && c.document_version === doc.version
+      )
     );
   }
 
@@ -118,7 +121,9 @@ export const submitConsents = async (
 
   if (rows.length === 0) return;
 
-  const { error } = await supabase.from("legal_consents").insert(rows);
+  const { error } = await supabase.from("legal_consents").upsert(rows, {
+    onConflict: "client_id,document_key,document_version",
+  });
   if (error) throw error;
 };
 

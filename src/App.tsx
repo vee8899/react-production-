@@ -90,7 +90,6 @@ export default function App() {
             />
             <Route path="/legal/terms" element={<LegalDocumentPage documentKey="terms_of_service" />} />
             <Route path="/legal/privacy" element={<LegalDocumentPage documentKey="privacy_policy" />} />
-            <Route path="/legal/ai-disclosure" element={<LegalDocumentPage documentKey="ai_usage_disclosure" />} />
             <Route
               path="/legal/consent"
               element={

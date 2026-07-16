@@ -51,7 +51,6 @@ This specification defines:
 
 - Legal acceptance flow
 - Privacy acknowledgement
-- AI disclosure
 - Cookie preferences
 - Audit logging
 - Version management
@@ -151,11 +150,9 @@ Enter Application
 
 ↓
 
-First AI Feature Access
 
 ↓
 
-AI Usage Acknowledgement
 
 ↓
 
@@ -226,54 +223,6 @@ Content
 Acceptance
 
 ☐ I consent to electronic agreements.
-
-Required
-
-Yes
-
----
-
-# AI Usage Notice
-
-Display only before the user's first AI interaction.
-
-Never show again after acceptance unless updated.
-
----
-
-## AI Disclosure
-
-[AI DISCLOSURE PLACEHOLDER]
-
----
-
-## Accuracy Notice
-
-[AI ACCURACY PLACEHOLDER]
-
----
-
-## Human Review
-
-[HUMAN REVIEW PLACEHOLDER]
-
----
-
-## Confidential Information
-
-[CONFIDENTIAL INFORMATION PLACEHOLDER]
-
----
-
-## Acceptable Use
-
-[ACCEPTABLE USE PLACEHOLDER]
-
----
-
-Acceptance
-
-☐ I understand the AI usage guidelines.
 
 Required
 
@@ -473,8 +422,6 @@ Privacy Accepted
 
 Electronic Consent Accepted
 
-AI Disclosure Accepted
-
 Cookie Preferences Updated
 
 Updated Terms Accepted
@@ -614,8 +561,6 @@ Examples:
 [TERMS OF SERVICE PLACEHOLDER]
 
 [PRIVACY POLICY PLACEHOLDER]
-
-[AI DISCLOSURE PLACEHOLDER]
 
 [COOKIE POLICY PLACEHOLDER]
 

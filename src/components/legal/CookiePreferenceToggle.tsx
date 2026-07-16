@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { CookiePreference } from "@/lib/legalConsent";
 
 type CookiePreferenceToggleProps = {
@@ -91,5 +92,3 @@ export function CookiePreferencesForm({
     </div>
   );
 }
-
-import { useState } from "react";

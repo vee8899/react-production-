@@ -9,7 +9,6 @@ const footerLinks = [
 const legalLinks = [
   { label: "Terms", path: "/legal/terms" },
   { label: "Privacy", path: "/legal/privacy" },
-  { label: "AI Disclosure", path: "/legal/ai-disclosure" },
 ];
 
 export default function Footer() {
