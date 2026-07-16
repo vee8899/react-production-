@@ -36,12 +36,14 @@ export const auditActions = [
 ] as const;
 
 export const serviceFeatureTypes = [
-  "lead_follow_up",
-  "listing_notifications",
-  "client_communication",
-  "crm_sync",
-  "appointment_scheduling",
-  "data_pipeline",
+  "workflow_automation",
+  "system_integrations",
+  "agentic_operations",
+  "notifications",
+  "business_insights",
+  "modular_industry_workflows",
+  "system_data_synchronization",
+  "custom_business_solutions",
 ] as const;
 
 export const moduleFeatureKeys = ["module.real_estate"] as const;

@@ -52,8 +52,8 @@ Content-Type: application/json
   "email": "client@example.com",
   "plan": "starter",
   "services": [
-    { "feature_type": "lead_follow_up", "status": "onboarding" },
-    { "feature_type": "crm_sync", "status": "active" }
+    { "feature_type": "workflow_automation", "status": "onboarding" },
+    { "feature_type": "system_integrations", "status": "active" }
   ]
 }
 ```

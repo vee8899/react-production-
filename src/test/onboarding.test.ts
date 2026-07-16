@@ -8,7 +8,7 @@ describe("onboarding contracts", () => {
   });
 
   it("adds real-estate steps only for the subscribed module", () => {
-    const steps = getOnboardingStepDefinitions(["crm_sync", "module.real_estate"]);
+    const steps = getOnboardingStepDefinitions(["system_integrations", "module.real_estate"]);
     expect(steps.map((step) => step.key)).toContain("real_estate.lead_sources");
     expect(getOnboardingStepDefinitions(["real_estate"]).some((step) => step.namespace === "real_estate")).toBe(false);
   });

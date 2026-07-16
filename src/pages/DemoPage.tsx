@@ -7,6 +7,7 @@ import { supabase } from "@/api/supabase/client";
 import { useClient } from "@/hooks/useClient";
 import { useDashboardMetrics } from "@/hooks/useDashboardMetrics";
 import { useRuns } from "@/hooks/useRuns";
+import { getServiceLabel } from "@/lib/serviceCatalog";
 
 const eventLabels = {
   new_lead: "New lead received",
@@ -16,13 +17,6 @@ const eventLabels = {
 } as const;
 
 type DemoEvent = keyof typeof eventLabels;
-
-const featureLabels: Record<string, string> = {
-  lead_follow_up: "Lead follow-up",
-  appointment_scheduling: "Appointment scheduling",
-  listing_notifications: "Listing notifications",
-  crm_sync: "CRM sync",
-};
 
 export default function DemoPage() {
   const { data: client, isLoading: clientLoading, error: clientError } = useClient();
@@ -155,7 +149,7 @@ export default function DemoPage() {
             {(runs ?? []).map((run) => (
               <div key={run.id} className="flex flex-col gap-2 border-b border-border py-5 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                  <p className="text-label font-mono uppercase tracking-[0.08em] text-muted">{featureLabels[run.featureKey] ?? run.featureKey}</p>
+                  <p className="text-label font-mono uppercase tracking-[0.08em] text-muted">{getServiceLabel(run.featureKey)}</p>
                   <p className="mt-1 text-base font-sans font-[300] text-primary">{run.workflowName}</p>
                 </div>
                 <div className="flex gap-5 text-label font-mono uppercase tracking-[0.05em] text-muted">

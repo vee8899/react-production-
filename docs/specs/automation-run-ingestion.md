@@ -14,7 +14,7 @@ Record n8n workflow outcomes in Supabase through one trusted ingestion boundary.
 {
   "event_id": "stable-source-event-id",
   "client_id": "uuid",
-  "feature_type": "lead_follow_up",
+  "feature_type": "workflow_automation",
   "workflow_name": "Lead follow-up",
   "status": "success"
 }

@@ -47,7 +47,7 @@ const Slider = ({ label, helper, min, max, step, value, displayValue, onChange }
 export default function ROICalculator() {
   const [monthlyVolume, setMonthlyVolume] = useState(200);
   const [minutesPerItem, setMinutesPerItem] = useState(15);
-  const [selectedModuleKeys, setSelectedModuleKeys] = useState<string[]>(["lead_follow_up", "crm_sync", "ai_assistant"]);
+  const [selectedModuleKeys, setSelectedModuleKeys] = useState<string[]>(["workflow_automation", "system_integrations", "agentic_operations"]);
   const [companySize, setCompanySize] = useState<CompanySize>("26-100");
   const [currency, setCurrency] = useState<Currency>("USD");
   const [laborRatePerHour, setLaborRatePerHour] = useState(laborRateConfigs.USD.default);

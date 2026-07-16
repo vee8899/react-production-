@@ -31,7 +31,7 @@ export const DEMO_LEADS: DemoLead[] = [
 export const DEMO_RUNS: DemoRun[] = [
   {
     id: "run-004",
-    featureKey: "lead_follow_up",
+    featureKey: "workflow_automation",
     workflowName: "New lead follow-up",
     status: "success",
     ranAt: "2026-07-16T07:42:00.000Z",
@@ -41,7 +41,7 @@ export const DEMO_RUNS: DemoRun[] = [
   },
   {
     id: "run-003",
-    featureKey: "appointment_scheduling",
+    featureKey: "workflow_automation",
     workflowName: "Appointment confirmation",
     status: "success",
     ranAt: "2026-07-15T13:18:00.000Z",
@@ -51,7 +51,7 @@ export const DEMO_RUNS: DemoRun[] = [
   },
   {
     id: "run-002",
-    featureKey: "listing_notifications",
+    featureKey: "notifications",
     workflowName: "Listing status notification",
     status: "error",
     ranAt: "2026-07-15T09:06:00.000Z",
@@ -61,7 +61,7 @@ export const DEMO_RUNS: DemoRun[] = [
   },
   {
     id: "run-001",
-    featureKey: "crm_sync",
+    featureKey: "system_integrations",
     workflowName: "CRM contact synchronization",
     status: "success",
     ranAt: "2026-07-14T16:30:00.000Z",

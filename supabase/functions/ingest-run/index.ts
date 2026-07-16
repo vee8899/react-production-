@@ -3,6 +3,14 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { z } from "https://deno.land/x/zod@v3.23.8/mod.ts";
 
 const featureTypes = [
+  "workflow_automation",
+  "system_integrations",
+  "agentic_operations",
+  "notifications",
+  "business_insights",
+  "modular_industry_workflows",
+  "system_data_synchronization",
+  "custom_business_solutions",
   "lead_follow_up",
   "listing_notifications",
   "client_communication",

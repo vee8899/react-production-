@@ -1,22 +1,6 @@
 import { useClientServices } from "@/hooks/useClientServices";
 import { RealEstateMetrics } from "@/components/dashboard/RealEstateMetrics";
-
-const serviceNames: Record<string, string> = {
-  lead_follow_up: "Lead follow-up",
-  listing_notifications: "Listing notifications",
-  client_communication: "Client communications",
-  crm_sync: "CRM sync",
-  document_generation: "Document generation",
-  appointment_scheduling: "Appointment scheduling",
-  data_pipeline: "Data pipelines",
-  custom_workflow: "Custom workflows",
-  workflow_automation: "Workflow automation",
-  integrations: "System integrations",
-  notifications: "Notifications",
-  reporting: "Reporting and observability",
-  ai_operations: "AI-assisted operations",
-  custom_modules: "Custom industry modules",
-};
+import { getServiceLabel } from "@/lib/serviceCatalog";
 
 const moduleNames: Record<string, string> = {
   real_estate: "Real Estate Operations",
@@ -57,7 +41,7 @@ export const ClientServices = ({ clientId, organizationId }: { clientId: string;
       {capabilities.length > 0 ? (
         <div className="grid gap-px bg-[#D7D3CC] sm:grid-cols-2 lg:grid-cols-3">
           {capabilities.map((service) => {
-            const name = serviceNames[service.featureKey] ?? service.featureKey.replaceAll("_", " ");
+            const name = getServiceLabel(service.featureKey);
             return (
               <div key={service.featureKey} className="bg-[#F7F5F1] p-6">
                 <p className="text-label uppercase tracking-[0.08em]" style={{ color: "#6B6762" }}>{name}</p>

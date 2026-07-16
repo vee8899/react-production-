@@ -29,7 +29,7 @@ describe("service subscriptions", () => {
     });
 
     expect(normalizeServiceSubscription({
-      featureKey: "crm_sync",
+      featureKey: "system_integrations",
       status: "active",
       source: "client_services",
     })).toMatchObject({
@@ -40,7 +40,7 @@ describe("service subscriptions", () => {
 
   it("does not render real-estate metrics without a module subscription", () => {
     vi.mocked(useClientServices).mockReturnValue({
-      data: [normalizeServiceSubscription({ featureKey: "crm_sync", status: "active", source: "feature_subscriptions" })],
+      data: [normalizeServiceSubscription({ featureKey: "system_integrations", status: "active", source: "feature_subscriptions" })],
       isLoading: false,
       error: null,
     } as ReturnType<typeof useClientServices>);

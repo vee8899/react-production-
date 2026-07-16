@@ -780,10 +780,18 @@ export type Database = {
         Returns: Database["public"]["Tables"]["organization_onboarding"]["Row"]
       }
     }
-    Enums: {
-      client_service_status: "onboarding" | "active" | "paused" | "cancelled"
+      Enums: {
+        client_service_status: "onboarding" | "active" | "paused" | "cancelled"
       feature_type:
-        | "lead_follow_up"
+          | "workflow_automation"
+          | "system_integrations"
+          | "agentic_operations"
+          | "notifications"
+          | "business_insights"
+          | "modular_industry_workflows"
+          | "system_data_synchronization"
+          | "custom_business_solutions"
+          | "lead_follow_up"
         | "listing_notifications"
         | "client_communication"
         | "crm_sync"
@@ -946,10 +954,18 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {
-      client_service_status: ["onboarding", "active", "paused", "cancelled"],
-      feature_type: [
-        "lead_follow_up",
+      Enums: {
+        client_service_status: ["onboarding", "active", "paused", "cancelled"],
+        feature_type: [
+          "workflow_automation",
+          "system_integrations",
+          "agentic_operations",
+          "notifications",
+          "business_insights",
+          "modular_industry_workflows",
+          "system_data_synchronization",
+          "custom_business_solutions",
+          "lead_follow_up",
         "listing_notifications",
         "client_communication",
         "crm_sync",

@@ -13,7 +13,7 @@ import {
 const inputs = {
   monthlyVolume: 100,
   minutesPerItem: 30,
-  selectedModuleKeys: ["lead_follow_up", "crm_sync"],
+  selectedModuleKeys: ["workflow_automation", "system_integrations"],
   companySize: "26-100" as const,
   currency: "USD" as const,
 };
@@ -65,7 +65,7 @@ describe("team labor ROI model", () => {
     expect(laborRateConfigs.INR).toMatchObject({ min: 300, max: 2500, default: 800 });
     expect(laborRateConfigs.EUR).toMatchObject({ min: 18, max: 90, default: 42 });
     expect(laborRateConfigs.GBP).toMatchObject({ min: 15, max: 80, default: 38 });
-    expect(automationModules.map((module) => module.key)).toContain("ai_assistant");
+    expect(automationModules.map((module) => module.key)).toContain("agentic_operations");
 
     const usd = calculateTeamLaborRoi(inputs);
     const inr = calculateTeamLaborRoi({ ...inputs, currency: "INR" });

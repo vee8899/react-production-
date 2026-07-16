@@ -8,6 +8,14 @@ const json = (body: unknown, status: number, headers?: HeadersInit) =>
   });
 
 const serviceFeatureTypes = [
+  "workflow_automation",
+  "system_integrations",
+  "agentic_operations",
+  "notifications",
+  "business_insights",
+  "modular_industry_workflows",
+  "system_data_synchronization",
+  "custom_business_solutions",
   "lead_follow_up",
   "listing_notifications",
   "client_communication",

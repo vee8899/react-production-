@@ -47,7 +47,7 @@ Deno.serve(async (req) => {
 
   const event = parsed.data.event;
   let workflowKey = "demo-lead-follow-up";
-  let featureKey = "lead_follow_up";
+  let featureKey = "workflow_automation";
   let workflowName = "New lead follow-up";
   let status = "success";
   let recordsProcessed = 1;
@@ -78,7 +78,7 @@ Deno.serve(async (req) => {
     entityId = lead.id;
   } else if (event === "listing_change") {
     workflowKey = "demo-listing-notifications";
-    featureKey = "listing_notifications";
+    featureKey = "notifications";
     workflowName = "Listing status notification";
     entityType = "listing";
     const { data: listing, error } = await supabase
@@ -94,7 +94,7 @@ Deno.serve(async (req) => {
     entityId = listing.id;
   } else if (event === "appointment_booked") {
     workflowKey = "demo-appointment-scheduling";
-    featureKey = "appointment_scheduling";
+    featureKey = "workflow_automation";
     workflowName = "Appointment confirmation";
     entityType = "appointment";
     const { data: appointment, error } = await supabase
@@ -118,7 +118,7 @@ Deno.serve(async (req) => {
     entityId = appointment.id;
   } else {
     workflowKey = "demo-listing-notifications";
-    featureKey = "listing_notifications";
+    featureKey = "notifications";
     workflowName = "Listing status notification";
     status = "error";
     recordsProcessed = 0;

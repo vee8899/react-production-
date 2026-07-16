@@ -452,7 +452,7 @@ begin
     raise exception 'An organization is required for workflow ingestion' using errcode = '23503';
   end if;
 
-  if p_feature_key in ('lead_follow_up', 'listing_notifications', 'client_communication', 'crm_sync', 'document_generation', 'appointment_scheduling', 'data_pipeline', 'custom_workflow') then
+  if p_feature_key in ('workflow_automation', 'system_integrations', 'agentic_operations', 'notifications', 'business_insights', 'modular_industry_workflows', 'system_data_synchronization', 'custom_business_solutions', 'lead_follow_up', 'listing_notifications', 'client_communication', 'crm_sync', 'document_generation', 'appointment_scheduling', 'data_pipeline', 'custom_workflow') then
     v_feature_type := p_feature_key::public.feature_type;
   end if;
 

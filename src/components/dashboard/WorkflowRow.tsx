@@ -1,4 +1,5 @@
 import { formatRelativeTime } from '@/utils/time';
+import { getServiceLabel } from '@/lib/serviceCatalog';
 
 type WorkflowRowProps = {
   name: string;
@@ -13,17 +14,6 @@ type WorkflowRowProps = {
   } | null;
 };
 
-const featureLabels: Record<string, string> = {
-  lead_follow_up: 'Lead Follow-Up',
-  listing_notifications: 'Listing Notifications',
-  client_communication: 'Client Communication',
-  crm_sync: 'CRM Sync',
-  document_generation: 'Document Generation',
-  appointment_scheduling: 'Appointment Scheduling',
-  data_pipeline: 'Data Pipelines',
-  custom_workflow: 'Custom Workflows',
-};
-
 export const WorkflowRow = ({ name, description, featureType, isActive, lastRun }: WorkflowRowProps) => {
   const lastRunTime = lastRun
     ? formatRelativeTime(lastRun.ran_at)
@@ -34,8 +24,8 @@ export const WorkflowRow = ({ name, description, featureType, isActive, lastRun 
     : '—';
 
   return (
-    <div className="workflow-row">
-      <div className="workflow-left">
+    <div className="flex flex-col gap-5 border-b border-border py-5 sm:flex-row sm:items-start sm:justify-between">
+      <div className="flex min-w-0 items-start gap-3">
         <div
           className="status-dot"
           style={{
@@ -46,18 +36,18 @@ export const WorkflowRow = ({ name, description, featureType, isActive, lastRun 
             flexShrink: 0,
           }}
         />
-        <div className="workflow-info">
-          <span className="workflow-name" style={{ color: '#0F0E0D' }}>{name}</span>
+        <div className="flex min-w-0 flex-col gap-1">
+          <span className="block text-base font-sans font-light" style={{ color: '#0F0E0D' }}>{name}</span>
           {description && (
-            <span className="workflow-desc" style={{ color: '#6B6762' }}>{description}</span>
+            <span className="block max-w-3xl text-sm font-sans font-light leading-relaxed" style={{ color: '#6B6762' }}>{description}</span>
           )}
-          <span className="workflow-meta" style={{ color: '#6B6762' }}>
-            {featureLabels[featureType] ?? featureType}
+          <span className="mt-1 block text-label font-mono uppercase tracking-[0.05em]" style={{ color: '#6B6762' }}>
+            {getServiceLabel(featureType)}
           </span>
-          <span className="workflow-meta" style={{ color: '#6B6762' }}>{recordsInfo}</span>
+          <span className="block text-label font-mono uppercase tracking-[0.05em]" style={{ color: '#6B6762' }}>{recordsInfo}</span>
         </div>
       </div>
-      <span className="workflow-time" style={{ color: '#6B6762' }}>{lastRunTime}</span>
+      <span className="shrink-0 text-label font-mono uppercase tracking-[0.05em]" style={{ color: '#6B6762' }}>{lastRunTime}</span>
     </div>
   );
 };

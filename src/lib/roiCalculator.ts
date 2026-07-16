@@ -20,13 +20,14 @@ export const MAX_AUTOMATION_COVERAGE = 0.9;
 export const PRODUCTIVE_HOURS_PER_FTE_MONTH = 173;
 
 export const automationModules = [
-  { key: "lead_follow_up", label: "Lead Follow-up", coverageContribution: 0.18, monthlyPrice: { USD: 149, INR: 12000, EUR: 139, GBP: 119 } },
-  { key: "crm_sync", label: "CRM Sync", coverageContribution: 0.15, monthlyPrice: { USD: 199, INR: 16000, EUR: 179, GBP: 159 } },
-  { key: "ai_assistant", label: "AI Assistant", coverageContribution: 0.12, monthlyPrice: { USD: 299, INR: 24000, EUR: 269, GBP: 239 } },
-  { key: "appointment_scheduling", label: "Appointment Scheduling", coverageContribution: 0.10, monthlyPrice: { USD: 149, INR: 12000, EUR: 139, GBP: 119 } },
-  { key: "notifications", label: "Notifications", coverageContribution: 0.08, monthlyPrice: { USD: 99, INR: 8000, EUR: 89, GBP: 79 } },
-  { key: "reporting", label: "Reporting", coverageContribution: 0.05, monthlyPrice: { USD: 129, INR: 10500, EUR: 119, GBP: 99 } },
-  { key: "custom_workflow", label: "Custom Workflow", coverageContribution: 0.22, monthlyPrice: { USD: 249, INR: 20000, EUR: 229, GBP: 199 } },
+  { key: "workflow_automation", label: "Workflow Automation", coverageContribution: 0.18, monthlyPrice: { USD: 149, INR: 12000, EUR: 139, GBP: 119 } },
+  { key: "system_integrations", label: "System Integrations", coverageContribution: 0.15, monthlyPrice: { USD: 199, INR: 16000, EUR: 179, GBP: 159 } },
+  { key: "agentic_operations", label: "Agentic Operations", coverageContribution: 0.12, monthlyPrice: { USD: 299, INR: 24000, EUR: 269, GBP: 239 } },
+  { key: "notifications", label: "Notifications", coverageContribution: 0.10, monthlyPrice: { USD: 149, INR: 12000, EUR: 139, GBP: 119 } },
+  { key: "business_insights", label: "Business Insights", coverageContribution: 0.08, monthlyPrice: { USD: 99, INR: 8000, EUR: 89, GBP: 79 } },
+  { key: "modular_industry_workflows", label: "Modular Industry Workflows", coverageContribution: 0.08, monthlyPrice: { USD: 179, INR: 14500, EUR: 159, GBP: 139 } },
+  { key: "system_data_synchronization", label: "System Data synchronization", coverageContribution: 0.05, monthlyPrice: { USD: 129, INR: 10500, EUR: 119, GBP: 99 } },
+  { key: "custom_business_solutions", label: "Custom Business Solutions", coverageContribution: 0.22, monthlyPrice: { USD: 249, INR: 20000, EUR: 229, GBP: 199 } },
 ] as const;
 
 export type CompanySize = "1-25" | "26-100" | "101-500" | "500+";
