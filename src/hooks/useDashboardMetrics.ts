@@ -21,15 +21,15 @@ const emptyMetrics: DashboardMetrics = {
   source: "workflow_runs",
 };
 
-const startOfWindow = () => {
+const startOfWindow = (days: number) => {
   const date = new Date();
-  date.setDate(date.getDate() - 30);
+  date.setDate(date.getDate() - days);
   return date.toISOString();
 };
 
-export const useDashboardMetrics = (organizationId: string | undefined, _clientId: string | undefined) =>
+export const useDashboardMetrics = (organizationId: string | undefined, _clientId: string | undefined, windowDays = 30) =>
   useQuery({
-    queryKey: ["dashboard-metrics", organizationId, _clientId, "30d"],
+    queryKey: ["dashboard-metrics", organizationId, _clientId, `${windowDays}d`],
     enabled: !!organizationId,
     refetchInterval: 30_000,
     queryFn: async (): Promise<DashboardMetrics> => {
@@ -38,7 +38,7 @@ export const useDashboardMetrics = (organizationId: string | undefined, _clientI
           .from("workflow_runs")
           .select("status, duration_ms, retries, records_processed, records_failed")
           .eq("organization_id", organizationId)
-          .gte("started_at", startOfWindow());
+          .gte("started_at", startOfWindow(windowDays));
 
         if (!error && data && data.length > 0) {
           const completed = data.filter((run) => run.duration_ms !== null);
@@ -59,7 +59,7 @@ export const useDashboardMetrics = (organizationId: string | undefined, _clientI
           .from("analytics_snapshots")
           .select("total_runs, successful_runs, failed_runs, total_records, avg_duration_ms")
           .eq("organization_id", organizationId)
-          .gte("snapshot_date", startOfWindow().slice(0, 10));
+          .gte("snapshot_date", startOfWindow(windowDays).slice(0, 10));
 
         if (!snapshotError && snapshots && snapshots.length > 0) {
           return {

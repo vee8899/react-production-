@@ -4,6 +4,7 @@ import Footer from "@/components/ui/Footer";
 import SectionHeader from "@/components/ui/SectionHeader";
 import FadeUp from "@/components/motion/FadeUp";
 import IntegrationsShowcase from "@/components/features/IntegrationsShowcase";
+import DashboardMock from "@/components/features/DashboardMock";
 import ROICalculator from "@/components/features/ROICalculator";
 import FAQ from "@/components/features/FAQ";
 
@@ -90,9 +91,16 @@ export default function HomePage() {
     <>
       <Nav />
 
-      <section className="relative min-h-[100svh] flex flex-col justify-end px-[clamp(24px,5vw,80px)] pb-[clamp(64px,10vw,128px)]">
+      <section className="relative min-h-[100svh] flex flex-col justify-end px-[clamp(24px,5vw,80px)] pb-[clamp(64px,10vw,128px)] overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute top-[10%] right-[8%] w-[320px] h-[320px] rounded-full border border-border/40" />
+          <div className="absolute top-[20%] right-[18%] w-[200px] h-[200px] rounded-full border border-border/30" />
+          <div className="absolute top-[5%] left-[5%] w-px h-[40%] bg-border/20" />
+          <div className="absolute top-[5%] left-[8%] w-px h-[30%] bg-border/15" />
+        </div>
+
         <motion.span
-          className="mb-4 text-label font-mono uppercase tracking-[0.08em] text-muted"
+          className="relative z-10 mb-4 text-label font-mono uppercase tracking-[0.08em] text-muted"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.6 }}
@@ -100,7 +108,7 @@ export default function HomePage() {
           Private client automation studio
         </motion.span>
 
-        <h1 className="text-hero font-display font-normal text-primary leading-[0.95] tracking-[-0.03em]">
+        <h1 className="relative z-10 text-hero font-display font-normal text-primary leading-[0.95] tracking-[-0.03em]">
           {heroWords.map((word, i) => (
             <motion.span
               key={word}
@@ -221,6 +229,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      <DashboardMock />
       <IntegrationsShowcase />
       <ROICalculator />
       <FAQ />

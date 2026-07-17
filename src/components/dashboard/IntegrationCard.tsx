@@ -9,7 +9,7 @@ type IntegrationCardProps = {
 };
 
 const statusColors: Record<string, string> = {
-  connected: "#22C55E",
+  connected: "#6B8F7A",
   pending: "#A66A00",
   paused: "#6B6762",
   error: "#A13A32",
@@ -17,7 +17,7 @@ const statusColors: Record<string, string> = {
 };
 
 const healthColors: Record<string, string> = {
-  healthy: "#22C55E",
+  healthy: "#6B8F7A",
   degraded: "#A66A00",
   unhealthy: "#A13A32",
   unknown: "#6B6762",

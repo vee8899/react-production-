@@ -22,7 +22,7 @@ type WorkflowRowProps = {
 const dotColor = (isActive: boolean, lastRun: RunSummary | null): string => {
   if (!isActive) return '#6B6762';
   if (!lastRun) return '#6B6762';
-  if (lastRun.status === 'success' || lastRun.status === 'partial') return '#22C55E';
+  if (lastRun.status === 'success' || lastRun.status === 'partial') return '#6B8F7A';
   return '#A13A32';
 };
 
@@ -106,7 +106,7 @@ export const WorkflowRow = ({ name, description, featureType, isActive, lastRun,
                       style={{
                         color:
                           run.status === 'success'
-                            ? '#22C55E'
+                            ? '#6B8F7A'
                             : run.status === 'partial'
                               ? '#A66A00'
                               : run.status === 'error'

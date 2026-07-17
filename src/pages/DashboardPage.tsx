@@ -4,6 +4,7 @@ import Footer from "@/components/ui/Footer";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { StatsRow } from "@/components/dashboard/StatsRow";
 import { ClientServices } from "@/components/dashboard/ClientServices";
+import { Sparkline } from "@/components/dashboard/Sparkline";
 
 export default function DashboardPage() {
   const { data: client, isLoading: clientLoading, error: clientError } = useClient();
@@ -28,6 +29,7 @@ export default function DashboardPage() {
           <SectionHeader label="01 - Dashboard" />
           <div className="mt-12">
             <StatsRow />
+            <Sparkline windowDays={30} />
           </div>
         </section>
 
