@@ -12,6 +12,7 @@ import LegalDocumentPage from "@/pages/LegalDocumentPage";
 import LegalConsentPage from "@/pages/LegalConsentPage";
 import LegalSettingsPage from "@/pages/LegalSettingsPage";
 import DemoPage from "@/pages/DemoPage";
+import IntegrationsPage from "@/pages/IntegrationsPage";
 import PageTransition from "@/components/motion/PageTransition";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import LegalGate from "@/components/legal/LegalGate";
@@ -86,6 +87,14 @@ export default function App() {
               element={
                 <ProtectedRoute>
                   <RecentActivityPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/integrations"
+              element={
+                <ProtectedRoute>
+                  <IntegrationsPage />
                 </ProtectedRoute>
               }
             />

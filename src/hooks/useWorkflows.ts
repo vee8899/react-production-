@@ -1,18 +1,22 @@
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/api/supabase/client';
 
+export type RunSummary = {
+  id: string;
+  status: string;
+  ran_at: string;
+  records_processed: number;
+  duration_ms: number | null;
+};
+
 export type WorkflowWithLatestRun = {
   id: string;
   name: string;
   description: string | null;
   feature_type: string;
   is_active: boolean;
-  latestRun: {
-    status: string;
-    ran_at: string;
-    records_processed: number;
-    duration_ms: number | null;
-  } | null;
+  latestRun: RunSummary | null;
+  recentRuns: RunSummary[];
 };
 
 export const useWorkflows = (clientId: string | undefined, organizationId?: string) =>
@@ -32,23 +36,37 @@ export const useWorkflows = (clientId: string | undefined, organizationId?: stri
 
       const { data: runs, error: runError } = await supabase
         .from('workflow_runs')
-        .select('workflow_id, status, started_at, records_processed, duration_ms')
+        .select('id, workflow_id, status, started_at, records_processed, duration_ms')
         .eq('organization_id', organizationId!)
         .in('workflow_id', workflows.map((workflow) => workflow.id))
         .order('started_at', { ascending: false });
 
       if (runError) throw runError;
       const latest = new Map<string, (typeof runs)[number]>();
+      const recentByWorkflow = new Map<string, (typeof runs)[number][]>();
       (runs ?? []).forEach((run) => {
-        if (run.workflow_id && !latest.has(run.workflow_id)) latest.set(run.workflow_id, run);
+        if (run.workflow_id) {
+          if (!latest.has(run.workflow_id)) latest.set(run.workflow_id, run);
+          const list = recentByWorkflow.get(run.workflow_id) ?? [];
+          if (list.length < 5) list.push(run);
+          recentByWorkflow.set(run.workflow_id, list);
+        }
       });
       return workflows.map((workflow) => {
         const run = latest.get(workflow.id);
+        const recent = recentByWorkflow.get(workflow.id) ?? [];
         return {
           ...workflow,
           latestRun: run
-            ? { status: run.status, ran_at: run.started_at, records_processed: run.records_processed, duration_ms: run.duration_ms }
+            ? { id: run.id, status: run.status, ran_at: run.started_at, records_processed: run.records_processed, duration_ms: run.duration_ms }
             : null,
+          recentRuns: recent.map((r) => ({
+            id: r.id,
+            status: r.status,
+            ran_at: r.started_at,
+            records_processed: r.records_processed,
+            duration_ms: r.duration_ms,
+          })),
         };
       });
     },

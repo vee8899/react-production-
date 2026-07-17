@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 const operations = [
   { label: "Workflows", to: "/workflows" },
   { label: "Recent Activity", to: "/activity" },
+  { label: "Connected Tools", to: "/integrations" },
 ];
 
 export const OperationsMenu = ({ mobile = false }: { mobile?: boolean }) => {

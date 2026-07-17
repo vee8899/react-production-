@@ -5,7 +5,7 @@ export const serviceCatalog = [
   { key: "notifications", label: "Notifications" },
   { key: "business_insights", label: "Business Insights" },
   { key: "modular_industry_workflows", label: "Modular Industry Workflows" },
-  { key: "system_data_synchronization", label: "System Data synchronization" },
+  { key: "system_data_synchronization", label: "System Data Synchronization" },
   { key: "custom_business_solutions", label: "Custom Business Solutions" },
 ] as const;
 

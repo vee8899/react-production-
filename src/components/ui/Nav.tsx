@@ -69,7 +69,7 @@ export default function Nav() {
         <div className="flex items-center justify-between px-[clamp(24px,5vw,80px)] h-16">
           <Link to="/" className="flex items-center gap-2">
             <span className="text-sm font-medium tracking-widest font-mono uppercase">
-              Studio
+              PRIMESTATE SYSTEMS
             </span>
           </Link>
 

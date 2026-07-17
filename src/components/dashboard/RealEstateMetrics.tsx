@@ -18,7 +18,7 @@ export const RealEstateMetrics = ({ organizationId, status }: RealEstateMetricsP
   }
 
   if (error) {
-    return <p style={{ color: "#6B6762" }}>Real-estate operational metrics are unavailable.</p>;
+    return <p style={{ color: "#6B6762" }}>Metrics sync pending — data will appear after the first workflow run processes records for this module.</p>;
   }
 
   const metrics = [

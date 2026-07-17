@@ -48,7 +48,7 @@ const services = [
   },
   {
     number: "07",
-    name: "System Data synchronization",
+    name: "System Data Synchronization",
     description:
       "Move approved data between tools, portals, spreadsheets, and databases on a schedule or trigger.",
   },

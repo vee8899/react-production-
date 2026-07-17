@@ -19,6 +19,10 @@ const faqItems = [
     q: "What industry-specific work can actually be automated?",
     a: "The platform handles reusable workflow patterns such as follow-up, system sync, notifications, document generation, reporting, and AI-assisted operations. Vertical modules add industry records and rules—for example, leads, listings, and appointments in real estate.",
   },
+  {
+    q: "How is your engagement model structured?",
+    a: "Each engagement starts with a discovery phase to map your existing operations and identify the workflows that will deliver the most value. From there we propose a scope, timeline, and pricing model that fits your team — whether that is a single workflow or a full operational platform. You only pay for what is scoped and approved."
+  },
 ];
 
 export default function FAQ() {

@@ -92,6 +92,7 @@ export default function WorkflowsPage() {
                 featureType={wf.feature_type}
                 isActive={wf.is_active}
                 lastRun={wf.latestRun}
+                recentRuns={wf.recentRuns}
               />
             );
           })}
