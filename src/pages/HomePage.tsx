@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Nav from "@/components/ui/Nav";
 import Footer from "@/components/ui/Footer";
 import SectionHeader from "@/components/ui/SectionHeader";
@@ -87,6 +88,21 @@ const stats = [
   { value: "Auditable", label: "EXECUTION HISTORY" },
 ];
 
+const rolloutSteps = [
+  {
+    title: "Discover",
+    body: "Identify repeatable work, systems, records, approvals, and exception paths.",
+  },
+  {
+    title: "Configure",
+    body: "Assemble the right modules and shape workflows around the way your operation runs.",
+  },
+  {
+    title: "Validate & operate",
+    body: "Test real scenarios, launch with visibility, and keep the workflow ready to adapt.",
+  },
+];
+
 export default function HomePage() {
   return (
     <>
@@ -141,7 +157,7 @@ export default function HomePage() {
             href={contactHref}
             className="mt-7 inline-flex items-center border border-primary bg-primary px-5 py-3 text-label font-sans uppercase tracking-[0.08em] text-background transition-colors duration-200 hover:bg-transparent hover:text-primary"
           >
-            Talk to an expert &rarr;
+            Talk to the team &rarr;
           </a>
         </motion.div>
 
@@ -216,6 +232,29 @@ export default function HomePage() {
                 </FadeUp>
               ))}
             </div>
+
+          </div>
+
+          <div className="lg:col-span-2 border-t border-border pt-8">
+            <div className="max-w-2xl">
+              <h3 className="font-display text-[clamp(1.35rem,2vw,1.75rem)] font-normal leading-[1.15] text-primary">
+                A managed rollout around your operation.
+              </h3>
+              <p className="mt-4 text-sm font-light leading-relaxed text-muted">
+                You bring the workflow context, system access, and approval requirements. Prime State configures and tests the agreed automation, then launches it with the visibility needed to operate it.
+              </p>
+            </div>
+            <div className="mt-8 grid gap-px bg-border md:grid-cols-3">
+              {rolloutSteps.map((step) => (
+                <div key={step.title} className="bg-background p-5 sm:p-6">
+                  <h4 className="font-display text-xl font-normal text-primary">{step.title}</h4>
+                  <p className="mt-3 text-sm font-light leading-relaxed text-muted">{step.body}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-4 text-xs leading-relaxed text-muted">
+              Scope is shaped by the workflows, integrations, data volume, and exception complexity involved.
+            </p>
           </div>
         </div>
       </section>
@@ -251,6 +290,46 @@ export default function HomePage() {
       <DashboardMock />
       <IntegrationsShowcase />
       <ROICalculator />
+      <section id="security" className="px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,144px)]">
+        <SectionHeader label="06 - SECURITY & GOVERNANCE" />
+        <div className="mt-12 grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-[clamp(48px,8vw,128px)]">
+          <FadeUp>
+            <div>
+              <h2 className="font-display text-[clamp(1.5rem,3vw,2.5rem)] font-normal leading-[1.15] text-primary">
+                Automation you can review, govern, and trust.
+              </h2>
+              <p className="mt-6 max-w-xl text-base font-light leading-relaxed text-muted">
+                The platform is designed so each organization operates within its own access boundary, while workflow activity and changes remain visible for operational review.
+              </p>
+              <Link
+                to="/security"
+                className="mt-7 inline-flex border border-primary px-5 py-3 text-label font-sans uppercase tracking-[0.08em] text-primary transition-colors duration-200 hover:bg-primary hover:text-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+              >
+                Review security controls &rarr;
+              </Link>
+            </div>
+          </FadeUp>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {[
+              ["01", "Access", "Organization-scoped access"],
+              ["02", "Data", "RLS-protected tenant data"],
+              ["03", "Identity", "Authenticated client portal"],
+              ["04", "Integrations", "Secret-isolated connections"],
+              ["05", "Operations", "Complete execution history"],
+              ["06", "Governance", "Audit logs for changes"],
+            ].map(([number, label, item]) => (
+              <div key={item} className="border border-border bg-background p-5 transition-colors duration-200 hover:border-primary sm:p-6">
+                <div className="flex items-start justify-between gap-4">
+                  <span className="text-label font-mono tracking-[0.08em] text-muted">{number}</span>
+                  <span className="text-label font-sans uppercase tracking-[0.08em] text-muted">{label}</span>
+                </div>
+                <p className="mt-8 max-w-[16rem] font-display text-xl font-normal leading-[1.15] text-primary">{item}</p>
+                <div className="mt-8 h-px w-8 bg-primary" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       <FAQ />
 
       <Footer />

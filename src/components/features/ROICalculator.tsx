@@ -1,6 +1,7 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { motion } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { contactHref } from "@/utils/contact";
 import {
   MAX_AUTOMATION_COVERAGE,
   automationModules,
@@ -79,7 +80,8 @@ export default function ROICalculator() {
       <div className="mx-auto max-w-[1280px]">
         <SectionHeader label="05 - BUSINESS VALUE" />
         <h2 className="mx-auto mb-6 mt-12 max-w-[700px] text-center font-display text-primary" style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)" }}>See what your next workflow could return.</h2>
-        <p className="mx-auto mb-16 max-w-[650px] text-center text-sm font-light leading-relaxed text-muted">Model the value of applying modular automation to repeatable operational work across your team.</p>
+        <p className="mx-auto mb-5 max-w-[650px] text-center text-sm font-light leading-relaxed text-muted">Model the value of applying modular automation to repeatable operational work across your team.</p>
+        <p className="mx-auto mb-16 max-w-[680px] text-center text-xs font-light leading-relaxed text-muted">This is an illustrative estimate, not a contract or fixed quote. Final pricing is scoped around the workflows, systems, record volume, and support model required for your operation.</p>
 
         <div className="grid grid-cols-1 gap-x-[clamp(48px,6vw,96px)] gap-y-12 lg:grid-cols-2">
           <div className="space-y-10">
@@ -138,6 +140,18 @@ export default function ROICalculator() {
 
             <div className="border border-border bg-background px-4 py-4 text-xs leading-relaxed text-muted">
               Most organizations reinvest reclaimed capacity into growth rather than reducing headcount. These estimates represent the additional work your existing team could complete using the selected automation.
+            </div>
+
+            <div className="border-t border-border pt-6">
+              <p className="text-sm font-light leading-relaxed text-muted">
+                A final engagement can include three distinct layers: platform subscription, managed implementation, and ongoing support or operations.
+              </p>
+              <a
+                href={contactHref}
+                className="mt-5 inline-flex border border-primary bg-primary px-5 py-3 text-label font-sans uppercase tracking-[0.08em] text-background transition-colors duration-200 hover:bg-transparent hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+              >
+                Request a scoped estimate &rarr;
+              </a>
             </div>
           </div>
         </div>

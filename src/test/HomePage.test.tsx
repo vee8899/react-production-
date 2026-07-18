@@ -42,7 +42,7 @@ describe("HomePage", () => {
     expect(screen.queryByText("03 - PROCESS")).not.toBeInTheDocument();
     expect(screen.queryByText("04 - BY THE NUMBERS")).not.toBeInTheDocument();
 
-    expect(screen.getByText("Configure")).toBeInTheDocument();
+    expect(screen.getAllByText("Configure").length).toBeGreaterThanOrEqual(2);
     expect(screen.getByText("Orchestrate")).toBeInTheDocument();
     expect(screen.getByText("Operate")).toBeInTheDocument();
 
@@ -53,7 +53,14 @@ describe("HomePage", () => {
     expect(screen.getByText("Auditable")).toBeInTheDocument();
 
     expect(screen.getByText("02 - MODULAR CAPABILITIES")).toBeInTheDocument();
-    expect(screen.getByText("Talk to an expert →")).toBeInTheDocument();
+    expect(screen.getByText("Talk to the team →")).toBeInTheDocument();
+    expect(screen.getByText("A managed rollout around your operation.")).toBeInTheDocument();
+    expect(screen.getByText("Discover")).toBeInTheDocument();
+    expect(screen.getByText("Validate & operate")).toBeInTheDocument();
+    expect(screen.getByText("06 - SECURITY & GOVERNANCE")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /review security controls/i })).toHaveAttribute("href", "/security");
+    expect(screen.queryByRole("button", { name: "Platform" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "Modules" })).not.toBeInTheDocument();
     expect(container.querySelector("#modules")).toBeInTheDocument();
   });
 });

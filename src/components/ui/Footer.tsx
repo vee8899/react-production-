@@ -18,16 +18,10 @@ aria-label="Footer navigation"
 className="grid w-full grid-cols-2 items-start gap-x-8 gap-y-4 sm:flex sm:w-fit sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-10 sm:gap-y-4 md:items-end md:justify-self-end"
 >
 <Link
-to="/#platform"
+to="/security"
 className="text-label font-sans uppercase tracking-[0.08em] text-inverse-text/70 transition-colors duration-200 hover:text-inverse-text"
 >
-Platform
-</Link>
-<Link
-to="/#modules"
-className="text-label font-sans uppercase tracking-[0.08em] text-inverse-text/70 transition-colors duration-200 hover:text-inverse-text"
->
-Modules
+Security
 </Link>
 
 <a

@@ -1,13 +1,8 @@
-import { useState, useEffect, useCallback } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { contactHref } from "@/utils/contact";
 import { OperationsMenu } from "@/components/dashboard/OperationsMenu";
-
-const publicNavLinks = [
-  { label: "Platform", hash: "platform" },
-  { label: "Modules", hash: "modules" },
-];
 
 const privateNavLinks = [
   { label: "Dashboard", to: "/dashboard" },
@@ -17,22 +12,7 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
   const { isAuthenticated, signOut } = useAuth();
-
-  const handleNavClick = useCallback(
-    (hash: string) => {
-      if (location.pathname === "/") {
-        const el = document.getElementById(hash);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth" });
-        }
-      } else {
-        navigate(`/#${hash}`);
-      }
-    },
-    [location.pathname, navigate]
-  );
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -74,15 +54,6 @@ export default function Nav() {
           </Link>
 
           <div className="hidden lg:flex items-center gap-10">
-            {publicNavLinks.map((link) => (
-              <button
-                key={link.hash}
-                onClick={() => handleNavClick(link.hash)}
-                className="text-label font-sans uppercase tracking-[0.08em] text-muted hover:text-primary transition-colors duration-200 bg-transparent border-0 cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
-              >
-                {link.label}
-              </button>
-            ))}
             {isAuthenticated && privateNavLinks.map((link) => (
                 <Link
                   key={link.to}
@@ -161,18 +132,6 @@ export default function Nav() {
 
         {menuOpen && (
         <div className="fixed inset-0 z-40 bg-background flex flex-col items-center justify-center gap-8 lg:hidden">
-          {publicNavLinks.map((link) => (
-            <button
-              key={link.hash}
-              onClick={() => {
-                handleNavClick(link.hash);
-                setMenuOpen(false);
-              }}
-              className="text-h1 font-display text-muted bg-transparent border-0 cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
-            >
-              {link.label}
-            </button>
-          ))}
           {isAuthenticated && privateNavLinks.map((link) => (
               <Link
                 key={link.to}
