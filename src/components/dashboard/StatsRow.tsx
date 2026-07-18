@@ -1,6 +1,7 @@
-import { useState } from 'react';
 import { useClient } from '@/hooks/useClient';
 import { useDashboardMetrics } from '@/hooks/useDashboardMetrics';
+
+export type DashboardWindowDays = 7 | 30 | 90;
 
 const rangeOptions = [
   { label: '7d', days: 7 },
@@ -8,9 +9,14 @@ const rangeOptions = [
   { label: '90d', days: 90 },
 ] as const;
 
-export const StatsRow = () => {
+export const StatsRow = ({
+  windowDays,
+  onWindowDaysChange,
+}: {
+  windowDays: DashboardWindowDays;
+  onWindowDaysChange: (days: DashboardWindowDays) => void;
+}) => {
   const { data: client } = useClient();
-  const [windowDays, setWindowDays] = useState(30);
   const { data: metrics } = useDashboardMetrics(client?.organization_id, client?.id, windowDays);
   const totalRuns = metrics?.totalRuns ?? 0;
   const successRate = totalRuns > 0 ? Math.round(((metrics?.successfulRuns ?? 0) / totalRuns) * 100) : 0;
@@ -29,7 +35,7 @@ export const StatsRow = () => {
           <button
             key={option.label}
             type="button"
-            onClick={() => setWindowDays(option.days)}
+            onClick={() => onWindowDaysChange(option.days)}
             className={`text-label font-mono uppercase tracking-[0.08em] border-0 bg-transparent cursor-pointer transition-colors duration-200 ${
               windowDays === option.days ? 'text-primary' : 'text-muted hover:text-primary'
             }`}

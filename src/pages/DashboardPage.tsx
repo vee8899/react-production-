@@ -1,13 +1,15 @@
+import { useState } from "react";
 import { useClient } from "@/hooks/useClient";
 import Nav from "@/components/ui/Nav";
 import Footer from "@/components/ui/Footer";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { StatsRow } from "@/components/dashboard/StatsRow";
+import { StatsRow, type DashboardWindowDays } from "@/components/dashboard/StatsRow";
 import { ClientServices } from "@/components/dashboard/ClientServices";
 import { Sparkline } from "@/components/dashboard/Sparkline";
 
 export default function DashboardPage() {
   const { data: client, isLoading: clientLoading, error: clientError } = useClient();
+  const [windowDays, setWindowDays] = useState<DashboardWindowDays>(30);
 
   if (clientLoading) {
     return <DashboardState label="LOADING..." />;
@@ -28,8 +30,8 @@ export default function DashboardPage() {
         <section>
           <SectionHeader label="01 - Dashboard" />
           <div className="mt-12">
-            <StatsRow />
-            <Sparkline windowDays={30} />
+            <StatsRow windowDays={windowDays} onWindowDaysChange={setWindowDays} />
+            <Sparkline windowDays={windowDays} />
           </div>
         </section>
 
