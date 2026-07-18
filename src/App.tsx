@@ -17,6 +17,7 @@ import DemoPage from "@/pages/DemoPage";
 import IntegrationsPage from "@/pages/IntegrationsPage";
 import SecurityPage from "@/pages/SecurityPage";
 import PageTransition from "@/components/motion/PageTransition";
+import RouteScrollRestoration from "@/components/motion/RouteScrollRestoration";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import LegalGate from "@/components/legal/LegalGate";
 
@@ -55,6 +56,7 @@ export default function App() {
 
   return (
     <MotionConfig reducedMotion="user">
+      <RouteScrollRestoration />
       <PageTransition>
         <ErrorBoundary>
           <Routes>
