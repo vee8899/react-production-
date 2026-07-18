@@ -3,8 +3,11 @@ import Nav from "@/components/ui/Nav";
 import Footer from "@/components/ui/Footer";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { RunsFeed } from "@/components/dashboard/RunsFeed";
+import { RunDetail } from "@/components/dashboard/RunDetail";
+import { useParams } from "react-router-dom";
 
 export default function RecentActivityPage() {
+  const { runId } = useParams<{ runId: string }>();
   const { data: client, isLoading, error } = useClient();
 
   return (
@@ -15,7 +18,7 @@ export default function RecentActivityPage() {
         {isLoading && <p style={{ color: "#6B6762" }}>Loading activity...</p>}
         {error && <p style={{ color: "#A13A32" }}>Failed to load activity. Please refresh.</p>}
         {!isLoading && !error && !client && <p style={{ color: "#6B6762" }}>No client workspace found.</p>}
-        {!isLoading && !error && client && <RunsFeed />}
+        {!isLoading && !error && client && (runId ? <RunDetail runId={runId} /> : <RunsFeed />)}
       </main>
       <Footer />
     </>

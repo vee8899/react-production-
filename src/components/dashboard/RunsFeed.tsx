@@ -1,5 +1,6 @@
 import { useClient } from '@/hooks/useClient';
 import { useRuns } from '@/hooks/useRuns';
+import { Link } from 'react-router-dom';
 import { formatRelativeTime } from '@/utils/time';
 import { getServiceLabel } from '@/lib/serviceCatalog';
 
@@ -16,7 +17,7 @@ export const RunsFeed = () => {
   return (
     <div className="mt-8 space-y-0">
       {runs.map((run) => (
-        <div key={run.id} className="flex items-center justify-between py-4 border-b border-border">
+        <Link key={run.id} to={`/activity/${run.id}`} className="flex items-center justify-between py-4 border-b border-border hover:bg-surface">
           <div className="flex flex-col">
             <span className="text-label font-mono uppercase tracking-[0.08em]" style={{ color: '#6B6762' }}>
               {getServiceLabel(run.featureKey ?? fallbackFeature)}
@@ -29,7 +30,7 @@ export const RunsFeed = () => {
           <span className="text-label font-mono uppercase tracking-[0.05em] shrink-0 ml-4" style={{ color: '#6B6762' }}>
             {formatRelativeTime(run.ranAt)}
           </span>
-        </div>
+        </Link>
       ))}
     </div>
   );

@@ -91,6 +91,14 @@ export default function App() {
               }
             />
             <Route
+              path="/activity/:runId"
+              element={
+                <ProtectedRoute>
+                  <RecentActivityPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
               path="/integrations"
               element={
                 <ProtectedRoute>
