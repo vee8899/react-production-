@@ -15,7 +15,7 @@ PRIMESTATE SYSTEMS
 {/* Navigation */}
 <nav
 aria-label="Footer navigation"
-className="flex w-fit flex-col items-end gap-4 self-end sm:flex-row sm:flex-wrap sm:gap-x-10 sm:gap-y-4 md:justify-self-end"
+className="grid w-full grid-cols-2 items-start gap-x-8 gap-y-4 sm:flex sm:w-fit sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-10 sm:gap-y-4 md:items-end md:justify-self-end"
 >
 <Link
 to="/"
