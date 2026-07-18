@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 const operations = [
   { label: "Workflows", to: "/workflows" },
   { label: "Recent Activity", to: "/activity" },
+  { label: "Audit Trail", to: "/audit" },
   { label: "Connected Tools", to: "/integrations" },
 ];
 
@@ -11,7 +12,7 @@ export const OperationsMenu = ({ mobile = false }: { mobile?: boolean }) => {
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
-  const active = operations.some((item) => item.to === location.pathname);
+  const active = operations.some((item) => location.pathname === item.to || location.pathname.startsWith(`${item.to}/`));
 
   useEffect(() => {
     if (!open) return;
@@ -39,7 +40,7 @@ export const OperationsMenu = ({ mobile = false }: { mobile?: boolean }) => {
           aria-expanded={open}
           aria-controls="mobile-operations-menu"
           onClick={() => setOpen((value) => !value)}
-          className={`text-h1 font-display bg-transparent border-0 cursor-pointer transition-colors duration-200 ${active ? "text-primary" : "text-muted"}`}
+          className={`text-h1 font-display bg-transparent border-0 cursor-pointer transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary ${active ? "text-primary" : "text-muted"}`}
         >
           Operations {open ? "−" : "+"}
         </button>
@@ -51,7 +52,7 @@ export const OperationsMenu = ({ mobile = false }: { mobile?: boolean }) => {
                 to={item.to}
                 role="menuitem"
                 onClick={() => setOpen(false)}
-                className={`text-lg font-display transition-colors duration-200 ${location.pathname === item.to ? "text-primary" : "text-muted hover:text-primary"}`}
+                className={`text-lg font-display transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary ${location.pathname === item.to ? "text-primary" : "text-muted hover:text-primary"}`}
               >
                 {item.label}
               </Link>
@@ -69,7 +70,7 @@ export const OperationsMenu = ({ mobile = false }: { mobile?: boolean }) => {
         aria-expanded={open}
         aria-controls="desktop-operations-menu"
         onClick={() => setOpen((value) => !value)}
-        className={`text-label font-sans uppercase tracking-[0.08em] transition-colors duration-200 ${active ? "text-primary" : "text-muted hover:text-primary"}`}
+        className={`text-label font-sans uppercase tracking-[0.08em] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary ${active ? "text-primary" : "text-muted hover:text-primary"}`}
       >
         Operations {open ? "−" : "+"}
       </button>
@@ -85,7 +86,7 @@ export const OperationsMenu = ({ mobile = false }: { mobile?: boolean }) => {
               to={item.to}
               role="menuitem"
               onClick={() => setOpen(false)}
-              className={`block px-3 py-3 text-label font-sans uppercase tracking-[0.08em] transition-colors duration-200 ${location.pathname === item.to ? "text-primary bg-surface" : "text-muted hover:text-primary hover:bg-surface"}`}
+              className={`block px-3 py-3 text-label font-sans uppercase tracking-[0.08em] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary ${location.pathname === item.to || location.pathname.startsWith(`${item.to}/`) ? "text-primary bg-surface" : "text-muted hover:text-primary hover:bg-surface"}`}
             >
               {item.label}
             </Link>

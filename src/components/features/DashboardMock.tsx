@@ -23,6 +23,20 @@ const workflowItems = [
 export default function DashboardMock() {
   return (
     <section className="bg-[#F2F0ED] px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,128px)]">
+      <div className="mx-auto mb-12 max-w-[1100px]">
+        <span className="text-label font-mono uppercase tracking-[0.08em] text-muted">
+          03 - OPERATIONAL VISIBILITY
+        </span>
+        <div className="mt-3 h-px bg-border" />
+        <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.3fr)] lg:gap-16">
+          <h2 className="font-display text-[clamp(1.5rem,3vw,2.5rem)] font-normal leading-[1.15] text-primary">
+            Operate every workflow with context, not guesswork.
+          </h2>
+          <p className="max-w-[620px] text-sm font-light leading-relaxed text-muted">
+            The operational dashboard shows what ran, what changed, what failed, and what needs attention. Execution history, workflow health, and audit-ready records stay visible to the organization that owns them.
+          </p>
+        </div>
+      </div>
       <FadeUp>
         <div className="mx-auto max-w-[1100px] border border-border bg-[#FEFDFC] p-[clamp(20px,3vw,40px)]">
           {/* Mock nav bar */}
@@ -84,7 +98,7 @@ export default function DashboardMock() {
           {/* Mock services */}
           <div className="mt-8">
             <span className="text-label font-mono uppercase tracking-[0.08em]" style={{ color: "#6B6762" }}>
-              02 — Your Services
+              02 — Enabled Modules
             </span>
             <div className="mt-4 grid grid-cols-4 gap-px bg-[#D7D3CC]">
               {serviceItems.map((item) => (
@@ -103,7 +117,7 @@ export default function DashboardMock() {
           {/* Mock workflow rows */}
           <div className="mt-8">
             <span className="text-label font-mono uppercase tracking-[0.08em]" style={{ color: "#6B6762" }}>
-              03 — Workflows
+              03 — Workflow Activity
             </span>
             <div className="mt-4 space-y-0">
               {workflowItems.map((item) => (
@@ -121,7 +135,7 @@ export default function DashboardMock() {
           {/* Label */}
           <div className="mt-8 pt-5 border-t border-border text-center">
             <span className="text-label font-mono uppercase tracking-[0.08em]" style={{ color: "#6B6762" }}>
-              Live client dashboard
+              Operational view · execution history · audit trail
             </span>
           </div>
         </div>

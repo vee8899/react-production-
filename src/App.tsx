@@ -7,6 +7,8 @@ import AcceptInvitePage from "@/pages/AcceptInvitePage";
 import DashboardPage from "@/pages/DashboardPage";
 import WorkflowsPage from "@/pages/WorkflowsPage";
 import RecentActivityPage from "@/pages/RecentActivityPage";
+import AuditPage from "@/pages/AuditPage";
+import AuditDetailPage from "@/pages/AuditDetailPage";
 import OnboardingPage from "@/pages/OnboardingPage";
 import LegalDocumentPage from "@/pages/LegalDocumentPage";
 import LegalConsentPage from "@/pages/LegalConsentPage";
@@ -95,6 +97,22 @@ export default function App() {
               element={
                 <ProtectedRoute>
                   <RecentActivityPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/audit"
+              element={
+                <ProtectedRoute>
+                  <AuditPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/audit/:eventId"
+              element={
+                <ProtectedRoute>
+                  <AuditDetailPage />
                 </ProtectedRoute>
               }
             />

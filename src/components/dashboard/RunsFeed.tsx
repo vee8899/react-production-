@@ -6,9 +6,9 @@ import { getServiceLabel } from '@/lib/serviceCatalog';
 
 const fallbackFeature = 'custom_workflow';
 
-export const RunsFeed = () => {
+export const RunsFeed = ({ limit = 10, windowDays }: { limit?: number; windowDays?: number }) => {
   const { data: client } = useClient();
-  const { data: runs, isLoading, error } = useRuns(client?.id, 10, client?.organization_id);
+  const { data: runs, isLoading, error } = useRuns(client?.id, limit, client?.organization_id, windowDays);
 
   if (isLoading) return <div style={{ color: '#6B6762', fontSize: '0.75rem', letterSpacing: '0.08em' }}>LOADING...</div>;
   if (error) return <div style={{ color: '#6B6762', fontSize: '0.75rem' }}>Failed to load data. Please refresh.</div>;

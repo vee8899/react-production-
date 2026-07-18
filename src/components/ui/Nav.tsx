@@ -5,8 +5,8 @@ import { contactHref } from "@/utils/contact";
 import { OperationsMenu } from "@/components/dashboard/OperationsMenu";
 
 const publicNavLinks = [
-  { label: "Work", hash: "work" },
-  { label: "Services", hash: "services" },
+  { label: "Platform", hash: "platform" },
+  { label: "Modules", hash: "modules" },
 ];
 
 const privateNavLinks = [
@@ -73,12 +73,12 @@ export default function Nav() {
             </span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-10">
             {publicNavLinks.map((link) => (
               <button
                 key={link.hash}
                 onClick={() => handleNavClick(link.hash)}
-                className="text-label font-sans uppercase tracking-[0.08em] text-muted hover:text-primary transition-colors duration-200 bg-transparent border-0 cursor-pointer"
+                className="text-label font-sans uppercase tracking-[0.08em] text-muted hover:text-primary transition-colors duration-200 bg-transparent border-0 cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
               >
                 {link.label}
               </button>
@@ -87,7 +87,7 @@ export default function Nav() {
                 <Link
                   key={link.to}
                   to={link.to}
-                  className="text-label font-sans uppercase tracking-[0.08em] text-muted hover:text-primary transition-colors duration-200"
+                  className="text-label font-sans uppercase tracking-[0.08em] text-muted hover:text-primary transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
                 >
                   {link.label}
                 </Link>
@@ -95,7 +95,7 @@ export default function Nav() {
             {isAuthenticated && <OperationsMenu />}
             <a
               href={contactHref}
-              className="text-label font-sans uppercase tracking-[0.08em] text-muted hover:text-primary transition-colors duration-200"
+              className="text-label font-sans uppercase tracking-[0.08em] text-muted hover:text-primary transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
             >
               Contact &rarr;
             </a>
@@ -136,7 +136,7 @@ export default function Nav() {
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden flex flex-col gap-1.5 py-2"
+            className="lg:hidden flex flex-col gap-1.5 py-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
           >
@@ -160,7 +160,7 @@ export default function Nav() {
       </nav>
 
         {menuOpen && (
-        <div className="fixed inset-0 z-40 bg-background flex flex-col items-center justify-center gap-8 md:hidden">
+        <div className="fixed inset-0 z-40 bg-background flex flex-col items-center justify-center gap-8 lg:hidden">
           {publicNavLinks.map((link) => (
             <button
               key={link.hash}
@@ -168,7 +168,7 @@ export default function Nav() {
                 handleNavClick(link.hash);
                 setMenuOpen(false);
               }}
-              className="text-h1 font-display text-muted bg-transparent border-0 cursor-pointer"
+              className="text-h1 font-display text-muted bg-transparent border-0 cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
             >
               {link.label}
             </button>
@@ -177,7 +177,7 @@ export default function Nav() {
               <Link
                 key={link.to}
                 to={link.to}
-                className="text-h1 font-display text-muted"
+                className="text-h1 font-display text-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}
@@ -186,14 +186,14 @@ export default function Nav() {
           {isAuthenticated && <OperationsMenu mobile />}
           <a
             href={contactHref}
-            className="text-h1 font-display text-muted"
+            className="text-h1 font-display text-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
           >
             Contact &rarr;
           </a>
           {!isAuthenticated && (
             <Link
               to="/login"
-              className="text-h1 font-display text-muted"
+              className="text-h1 font-display text-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
               onClick={() => setMenuOpen(false)}
             >
               Client Login

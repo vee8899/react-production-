@@ -8,11 +8,11 @@ vi.mock("@/components/motion/FadeUp", () => ({
 }));
 
 vi.mock("@/components/features/IntegrationsShowcase", () => ({
-  default: () => <section>03 - INTEGRATIONS</section>,
+  default: () => <section>04 - INTEGRATION LAYER</section>,
 }));
 
 vi.mock("@/components/features/ROICalculator", () => ({
-  default: () => <section>04 - BUSINESS VALUE</section>,
+  default: () => <section>05 - BUSINESS VALUE</section>,
 }));
 
 vi.mock("@/components/features/FAQ", () => ({
@@ -30,28 +30,30 @@ vi.mock("@/hooks/useAuth", () => ({
 }));
 
 describe("HomePage", () => {
-  it("combines the intro, process, and proof content into one operating model section", () => {
+  it("communicates the platform foundation, modular capabilities, and operating model", () => {
     const { container } = render(
       <MemoryRouter>
         <HomePage />
       </MemoryRouter>,
     );
 
-    expect(screen.getByText("01 - OPERATING MODEL")).toBeInTheDocument();
+    expect(screen.getByText("01 - PLATFORM FOUNDATION")).toBeInTheDocument();
     expect(screen.queryByText("01 - WHAT WE DO")).not.toBeInTheDocument();
     expect(screen.queryByText("03 - PROCESS")).not.toBeInTheDocument();
     expect(screen.queryByText("04 - BY THE NUMBERS")).not.toBeInTheDocument();
 
-    expect(screen.getByText("Discovery")).toBeInTheDocument();
-    expect(screen.getByText("Build")).toBeInTheDocument();
-    expect(screen.getByText("Monitor")).toBeInTheDocument();
+    expect(screen.getByText("Configure")).toBeInTheDocument();
+    expect(screen.getByText("Orchestrate")).toBeInTheDocument();
+    expect(screen.getByText("Operate")).toBeInTheDocument();
 
-    expect(screen.getByText("Custom")).toBeInTheDocument();
-    expect(screen.getByText("Scoped")).toBeInTheDocument();
-    expect(screen.getByText("Visible")).toBeInTheDocument();
-    expect(screen.getByText("Supported")).toBeInTheDocument();
+    expect(screen.getByText("for operations.")).toBeInTheDocument();
+    expect(screen.getAllByText("Modular").length).toBeGreaterThanOrEqual(2);
+    expect(screen.getByText("Configurable")).toBeInTheDocument();
+    expect(screen.getByText("Multi-tenant")).toBeInTheDocument();
+    expect(screen.getByText("Auditable")).toBeInTheDocument();
 
-    expect(screen.getByText("02 - SERVICES")).toBeInTheDocument();
-    expect(container.querySelector("#services")).toBeInTheDocument();
+    expect(screen.getByText("02 - MODULAR CAPABILITIES")).toBeInTheDocument();
+    expect(screen.getByText("Talk to an expert →")).toBeInTheDocument();
+    expect(container.querySelector("#modules")).toBeInTheDocument();
   });
 });

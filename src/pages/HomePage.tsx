@@ -7,8 +7,9 @@ import IntegrationsShowcase from "@/components/features/IntegrationsShowcase";
 import DashboardMock from "@/components/features/DashboardMock";
 import ROICalculator from "@/components/features/ROICalculator";
 import FAQ from "@/components/features/FAQ";
+import { contactHref } from "@/utils/contact";
 
-const heroWords = ["Automating", "Operations.", "End to End."];
+const heroWords = ["Modular", "automation", "for operations."];
 
 const services = [
   {
@@ -25,9 +26,9 @@ const services = [
   },
   {
     number: "03",
-    name: "Agentic Operations",
+    name: "Intelligent Operations",
     description:
-      "Add agentic capabilities where classification, drafting, enrichment, or decision support can remove manual effort.",
+      "Add classification, drafting, enrichment, and decision support where they remove manual effort without obscuring control.",
   },
   {
     number: "04",
@@ -43,9 +44,9 @@ const services = [
   },
   {
     number: "06",
-    name: "Modular Industry Workflows",
+    name: "Configurable Domain Modules",
     description:
-      "Add vertical modules for the records and processes that make your industry unique.",
+      "Add domain-specific records, rules, and workflows without rebuilding the platform around each new use case.",
   },
   {
     number: "07",
@@ -55,35 +56,35 @@ const services = [
   },
   {
     number: "08",
-    name: "Custom Business Solutions",
+    name: "Granular Workflow Customization",
     description:
-      "For repeatable work that does not fit a template, we design a dedicated workflow.",
+      "Shape triggers, approvals, steps, data movement, and exception paths around the way your team actually operates.",
   },
 ];
 
 const processSteps = [
   {
     number: "01",
-    title: "Discovery",
-    body: "We map your current operations and identify every manual task that can be automated.",
+    title: "Configure",
+    body: "Start with the domain module, systems, rules, and records that define the operation you need to run.",
   },
   {
     number: "02",
-    title: "Build",
-    body: "We connect your tools and build workflows tailored to how you work. No templates.",
+    title: "Orchestrate",
+    body: "Compose granular workflows with triggers, approvals, integrations, notifications, and exception paths.",
   },
   {
     number: "03",
-    title: "Monitor",
-    body: "Supported workflows report their activity to a client dashboard, so you can see what ran and when.",
+    title: "Operate",
+    body: "See every run, record, failure, and change in one operational view with a complete execution history.",
   },
 ];
 
 const stats = [
-  { value: "Custom", label: "BUILT AROUND YOUR TOOLS" },
-  { value: "Scoped", label: "TO YOUR WORKFLOW" },
-  { value: "Visible", label: "ACTIVITY IN CLIENT DASHBOARD" },
-  { value: "Supported", label: "FROM DISCOVERY TO HANDOFF" },
+  { value: "Modular", label: "DOMAIN CAPABILITIES" },
+  { value: "Configurable", label: "WORKFLOW CONTROL" },
+  { value: "Multi-tenant", label: "ORGANIZATION-SCOPED DATA" },
+  { value: "Auditable", label: "EXECUTION HISTORY" },
 ];
 
 export default function HomePage() {
@@ -105,7 +106,7 @@ export default function HomePage() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          Private client automation studio
+          Modular enterprise automation platform
         </motion.span>
 
         <h1 className="relative z-10 text-hero font-display font-normal text-primary leading-[0.95] tracking-[-0.03em]">
@@ -127,6 +128,24 @@ export default function HomePage() {
         </h1>
 
         <motion.div
+          className="relative z-10 mt-8 max-w-[620px]"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35, duration: 0.6 }}
+        >
+          <p className="max-w-[560px] text-base font-light leading-relaxed text-muted sm:text-lg">
+            A configurable platform for building, running, and governing the workflows that keep your business moving.
+            Add domain modules, shape every step, and keep a complete record of what happened.
+          </p>
+          <a
+            href={contactHref}
+            className="mt-7 inline-flex items-center border border-primary bg-primary px-5 py-3 text-label font-sans uppercase tracking-[0.08em] text-background transition-colors duration-200 hover:bg-transparent hover:text-primary"
+          >
+            Talk to an expert &rarr;
+          </a>
+        </motion.div>
+
+        <motion.div
           className="absolute bottom-[clamp(48px,8vh,96px)] right-[clamp(24px,5vw,80px)] flex flex-col items-center gap-3"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -144,21 +163,21 @@ export default function HomePage() {
       </section>
 
       <section
-        id="work"
+        id="platform"
         className="px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,192px)]"
       >
-        <SectionHeader label="01 - OPERATING MODEL" />
+        <SectionHeader label="01 - PLATFORM FOUNDATION" />
         <div className="mt-12 grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.3fr)] lg:gap-[clamp(48px,6vw,96px)]">
           <FadeUp>
             <div>
               <h2 className="font-display font-normal text-primary leading-[1.15] text-[clamp(1.5rem,3vw,2.5rem)]">
-                Automation infrastructure for the way your team already works.
+                One automation foundation. Configured for your operation.
               </h2>
               <p className="mt-6 max-w-[680px] font-sans text-primary leading-[1.5] font-light text-[clamp(1.25rem,2.5vw,1.75rem)]">
-                We build automation systems for teams that want less manual work, more throughput, and better operational visibility.
+                Prime State combines reusable automation infrastructure with configurable domain modules, so enterprise teams can automate specific operations without forcing every process into the same template.
               </p>
               <p className="mt-5 max-w-[560px] text-sm font-light leading-relaxed text-muted">
-                Every workflow connects to your existing tools, stores the records it affects, and reports its activity through a client dashboard.
+                Each organization operates in its own tenant boundary. Every workflow can be shaped around your approvals, data, and exceptions—and every execution is available for review.
               </p>
             </div>
           </FadeUp>
@@ -183,14 +202,14 @@ export default function HomePage() {
               ))}
             </div>
 
-            <div className="grid grid-cols-2 gap-6 border-t border-border pt-8 md:grid-cols-4 md:gap-0">
+            <div className="grid grid-cols-2 gap-x-6 gap-y-8 border-t border-border pt-8 lg:grid-cols-4 lg:gap-y-0 lg:gap-0">
               {stats.map((stat, i) => (
                 <FadeUp key={stat.label} delay={i * 0.05}>
-                  <div className="flex h-full flex-col gap-3 md:pr-6 md:border-r md:border-border md:last:border-r-0 md:last:pr-0">
-                    <span className="font-mono text-primary block leading-none text-[clamp(1.5rem,3vw,2.5rem)]">
+                  <div className="flex min-w-0 h-full flex-col gap-3 lg:pr-6 lg:border-r lg:border-border lg:last:border-r-0 lg:last:pr-0">
+                    <span className="block break-words font-mono text-primary leading-none text-[clamp(1.35rem,2.5vw,2.25rem)]">
                       {stat.value}
                     </span>
-                    <span className="text-label font-sans uppercase tracking-[0.08em] text-muted block">
+                    <span className="block max-w-[14rem] break-words text-label font-sans uppercase tracking-[0.08em] text-muted">
                       {stat.label}
                     </span>
                   </div>
@@ -202,10 +221,10 @@ export default function HomePage() {
       </section>
 
       <section
-        id="services"
+        id="modules"
         className="px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,192px)]"
       >
-        <SectionHeader label="02 - SERVICES" />
+        <SectionHeader label="02 - MODULAR CAPABILITIES" />
         <div className="mt-12 border-t border-border">
           {services.map((service, i) => (
             <FadeUp key={service.number} delay={i * 0.05}>

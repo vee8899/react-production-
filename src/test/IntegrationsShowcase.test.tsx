@@ -26,7 +26,7 @@ describe("IntegrationsShowcase", () => {
   it("describes integrations as examples instead of live tenant data", () => {
     render(<IntegrationsShowcase />);
 
-    expect(screen.getByText(/example integration surfaces/i)).toBeInTheDocument();
+    expect(screen.getByText(/example adapters for your modules/i)).toBeInTheDocument();
     expect(screen.queryByText(/connected to your account/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/live tenant/i)).not.toBeInTheDocument();
   });

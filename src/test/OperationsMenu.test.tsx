@@ -17,6 +17,7 @@ describe("OperationsMenu", () => {
     expect(screen.getByRole("menu")).toBeInTheDocument();
     expect(screen.getByRole("menuitem", { name: "Workflows" })).toHaveAttribute("href", "/workflows");
     expect(screen.getByRole("menuitem", { name: "Recent Activity" })).toHaveAttribute("href", "/activity");
+    expect(screen.getByRole("menuitem", { name: "Audit Trail" })).toHaveAttribute("href", "/audit");
 
     fireEvent.keyDown(document, { key: "Escape" });
     expect(screen.queryByRole("menu")).not.toBeInTheDocument();
@@ -34,5 +35,15 @@ describe("OperationsMenu", () => {
     fireEvent.pointerDown(screen.getByTestId("outside"));
 
     expect(screen.queryByRole("menu")).not.toBeInTheDocument();
+  });
+
+  it("marks nested audit routes as active", () => {
+    render(
+      <MemoryRouter initialEntries={["/audit/event-1"]}>
+        <OperationsMenu />
+      </MemoryRouter>,
+    );
+
+    expect(screen.getByRole("button", { name: /operations/i })).toHaveClass("text-primary");
   });
 });

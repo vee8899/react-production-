@@ -18,16 +18,16 @@ aria-label="Footer navigation"
 className="grid w-full grid-cols-2 items-start gap-x-8 gap-y-4 sm:flex sm:w-fit sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-10 sm:gap-y-4 md:items-end md:justify-self-end"
 >
 <Link
-to="/"
+to="/#platform"
 className="text-label font-sans uppercase tracking-[0.08em] text-inverse-text/70 transition-colors duration-200 hover:text-inverse-text"
 >
-Work
+Platform
 </Link>
 <Link
-to="/#services"
+to="/#modules"
 className="text-label font-sans uppercase tracking-[0.08em] text-inverse-text/70 transition-colors duration-200 hover:text-inverse-text"
 >
-Services
+Modules
 </Link>
 
 <a
@@ -55,8 +55,8 @@ Privacy
 
 {/* Middle copy */}
 <p className="mt-16 max-w-md text-base font-sans font-light leading-relaxed text-inverse-text/60">
-Automation infrastructure for the workflows that keep modern teams
-moving.
+Modular enterprise automation for the workflows that keep modern teams
+moving with operational visibility built in.
 </p>
 
 {/* Bottom row */}

@@ -51,7 +51,7 @@ export default function IntegrationsShowcase() {
   return (
     <section className="bg-[#FEFDFC] px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,192px)]">
       <div className="mx-auto max-w-[1280px]">
-        <SectionHeader label="03 - INTEGRATIONS" />
+        <SectionHeader label="04 - INTEGRATION LAYER" />
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)] lg:gap-[clamp(48px,6vw,96px)]">
           <div>
@@ -59,17 +59,17 @@ export default function IntegrationsShowcase() {
               className="font-display font-normal text-primary leading-[1.15]"
               style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)" }}
             >
-              Built around the tools your business already uses.
+              Connect the systems inside the workflow.
             </h2>
             <p className="mt-5 max-w-[560px] text-sm font-light leading-relaxed text-muted">
-              Connect communication, scheduling, documents, spreadsheets, and internal collaboration tools into reliable workflows.
+              Integrations are the connective layer—not the product itself. Route approved data, triggers, documents, and notifications through workflows shaped for your operation.
             </p>
             <div className="mt-8 border border-border bg-surface px-5 py-5 sm:px-6">
               <p className="font-mono text-xs uppercase tracking-[0.08em] text-muted">
                 Connected through Studio
               </p>
               <p className="mt-3 text-sm font-light leading-relaxed text-muted">
-                These are example integration surfaces we can build around. Availability depends on your systems, permissions, and implementation scope.
+                Example adapters for your modules. Availability depends on your systems, permissions, and implementation scope.
               </p>
             </div>
           </div>
