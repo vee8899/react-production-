@@ -10,6 +10,8 @@ This directory contains the documentation that should be read and maintained by 
 | How is the system structured? | [`architecture/`](architecture/) |
 | What behavior should a feature have? | [`specs/`](specs/) |
 | Why was a technical choice made? | [`adrs/`](adrs/) |
+| Which environment or secret should be used? | [`environments.md`](environments.md) |
+| What should happen before a release? | [`runbooks/release-checklist.md`](runbooks/release-checklist.md) |
 | How should local/staging MCP and browser checks be used? | [`mcp-operations.md`](mcp-operations.md) |
 | What is planned for the product? | [`future-product-roadmap.md`](future-product-roadmap.md) |
 

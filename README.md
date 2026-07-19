@@ -19,6 +19,8 @@ Supabase provides authentication, PostgreSQL data, row-level security, and Edge 
 | Change a user-facing behavior | [`docs/specs/`](docs/specs/) |
 | Work with the database | [`docs/runbooks/database-migrations.md`](docs/runbooks/database-migrations.md) |
 | Deploy the application | [`docs/runbooks/deployment.md`](docs/runbooks/deployment.md) |
+| Prepare or perform a release | [`docs/runbooks/release-checklist.md`](docs/runbooks/release-checklist.md) |
+| Understand environments and secrets | [`docs/environments.md`](docs/environments.md) |
 | Troubleshoot a problem | [`DEBUG.md`](DEBUG.md), [`docs/runbooks/debugging.md`](docs/runbooks/debugging.md) |
 
 ## Technology
@@ -147,7 +149,7 @@ Do not commit real environment files or secrets. Use `.env.mcp.example` as the s
 
 ## CI and container publishing
 
-`.github/workflows/ci.yml` runs lint, tests, and a production build for pull requests and pushes to `main`. `.github/workflows/docker.yml` builds and publishes the container image to GitHub Container Registry when `main` changes.
+`.github/workflows/ci.yml` runs lint, tests, and a production build for pull requests and pushes to `main`. `.github/workflows/docker.yml` builds and publishes the container image to GitHub Container Registry when `main` changes. The image is tagged both `latest` and with the commit SHA so a known release can be selected during rollback.
 
 The container build receives the public Supabase URL and anonymous key as build arguments. Treat all other credentials as runtime secrets and keep them outside the image.
 
