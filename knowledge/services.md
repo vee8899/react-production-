@@ -6,10 +6,15 @@
 - `src/api/supabase/client.ts` — API usage: `supabase.anonKey`, `supabase.url`
 - `src/api/supabase/storage.ts` — API usage: `supabase.storage.from`
 - `src/hooks/useAuth.ts` — API usage: `supabase.auth.signOut`
+- `src/hooks/useOrganizationOnboarding.ts` — API usage: `supabase.from`, `supabase.rpc`
+- `src/hooks/useRealEstateMetrics.ts` — API usage: `supabase.schema`
+- `src/lib/legalConsent.ts` — API usage: `supabase.from`
 - `src/main.tsx` — API usage: `supabase.auth.getSession`, `supabase.auth.onAuthStateChange`
 - `src/pages/AcceptInvitePage.tsx` — API usage: `supabase.auth.updateUser`
+- `src/pages/DemoPage.tsx` — API usage: `supabase.functions.invoke`
 - `src/pages/LoginPage.tsx` — API usage: `supabase.auth.signInWithPassword`
 - `src/test/AcceptInvitePage.test.tsx` — API usage: `supabase.auth.updateUser`
 - `src/utils/env.ts` — API usage: `supabase.co`
-- `supabase/functions/ingest-run/index.ts` — API usage: None
-- `supabase/functions/invite-client/index.ts` — API usage: `supabase.auth.admin.deleteUser`, `supabase.auth.admin.inviteUserByEmail`
+- `supabase/functions/demo-event/index.ts` — API usage: `supabase.from`, `supabase.rpc`, `supabase.schema`
+- `supabase/functions/ingest-run/index.ts` — API usage: `supabase.rpc`
+- `supabase/functions/invite-client/index.ts` — API usage: `supabase.auth.admin.deleteUser`, `supabase.auth.admin.inviteUserByEmail`, `supabase.rpc`

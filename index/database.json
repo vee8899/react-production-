@@ -64,6 +64,35 @@
       ]
     },
     {
+      "file": "src/hooks/useAuditLog.ts",
+      "exportedSymbols": [
+        "AuditEvent",
+        "useAuditEvent",
+        "useAuditLog"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/types/supabase",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/types/supabase"
+      ],
+      "referencedComponents": [
+        "AuditEvent"
+      ],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [
+        "audit_log",
+        "workflow_runs",
+        "workflows"
+      ]
+    },
+    {
       "file": "src/hooks/useClient.ts",
       "exportedSymbols": [
         "useClient"
@@ -94,6 +123,79 @@
       ],
       "importedSymbols": [
         "@/api/supabase/client",
+        "@/lib/serviceSubscriptions",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/lib/serviceSubscriptions"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [
+        "client_services",
+        "feature_subscriptions"
+      ]
+    },
+    {
+      "file": "src/hooks/useDashboardMetrics.ts",
+      "exportedSymbols": [
+        "DashboardMetrics",
+        "useDashboardMetrics"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ],
+      "referencedComponents": [
+        "DashboardMetrics"
+      ],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [
+        "analytics_snapshots",
+        "workflow_runs"
+      ]
+    },
+    {
+      "file": "src/hooks/useIntegrations.ts",
+      "exportedSymbols": [
+        "ConnectedIntegration",
+        "useIntegrations"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/types/supabase",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/types/supabase"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [
+        "integrations"
+      ]
+    },
+    {
+      "file": "src/hooks/useOrganization.ts",
+      "exportedSymbols": [
+        "useOrganization"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
         "@tanstack/react-query"
       ],
       "dependencies": [
@@ -105,12 +207,103 @@
       ],
       "apiUsage": [],
       "databaseUsage": [
-        "client_services"
+        "organizations"
+      ]
+    },
+    {
+      "file": "src/hooks/useOrganizationOnboarding.ts",
+      "exportedSymbols": [
+        "useOrganizationOnboarding"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/lib/onboarding",
+        "@/types/supabase",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/lib/onboarding",
+        "@/types/supabase"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useMutation",
+        "useQuery",
+        "useQueryClient"
+      ],
+      "apiUsage": [
+        "supabase.from",
+        "supabase.rpc"
+      ],
+      "databaseUsage": [
+        "feature_subscriptions",
+        "integrations",
+        "organization_onboarding",
+        "organization_onboarding_steps"
+      ]
+    },
+    {
+      "file": "src/hooks/useRealEstateMetrics.ts",
+      "exportedSymbols": [
+        "RealEstateMetrics",
+        "useRealEstateMetrics"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ],
+      "referencedComponents": [
+        "RealEstateMetrics"
+      ],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [
+        "supabase.schema"
+      ],
+      "databaseUsage": [
+        "appointments",
+        "leads",
+        "listings"
+      ]
+    },
+    {
+      "file": "src/hooks/useRunDetails.ts",
+      "exportedSymbols": [
+        "RunDetails",
+        "RunEntitySummary",
+        "RunStepDetail",
+        "useRunDetails"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ],
+      "referencedComponents": [
+        "RunDetails"
+      ],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [
+        "workflow_run_entities",
+        "workflow_runs",
+        "workflow_steps",
+        "workflows"
       ]
     },
     {
       "file": "src/hooks/useRuns.ts",
       "exportedSymbols": [
+        "DashboardRun",
         "useRuns"
       ],
       "importedSymbols": [
@@ -126,12 +319,37 @@
       ],
       "apiUsage": [],
       "databaseUsage": [
-        "automation_runs"
+        "workflow_runs",
+        "workflows"
+      ]
+    },
+    {
+      "file": "src/hooks/useRunsTimeline.ts",
+      "exportedSymbols": [
+        "DailyRunCount",
+        "useRunsTimeline"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [
+        "workflow_runs"
       ]
     },
     {
       "file": "src/hooks/useWorkflows.ts",
       "exportedSymbols": [
+        "RunSummary",
+        "WorkflowWithLatestRun",
         "useWorkflows"
       ],
       "importedSymbols": [
@@ -147,27 +365,99 @@
       ],
       "apiUsage": [],
       "databaseUsage": [
+        "workflow_runs",
         "workflows"
       ]
     },
     {
-      "file": "supabase/functions/ingest-run/index.ts",
-      "exportedSymbols": [],
-      "importedSymbols": [
-        "https://deno.land/std/http/server.ts",
-        "https://deno.land/x/zod@v3.23.8/mod.ts",
-        "https://esm.sh/@supabase/supabase-js@2"
+      "file": "src/lib/legalConsent.ts",
+      "exportedSymbols": [
+        "CookiePreference",
+        "DOCUMENT_LABELS",
+        "DOCUMENT_ROUTES",
+        "LegalConsent",
+        "LegalDocument",
+        "LegalDocumentKey",
+        "REQUIRED_DOCUMENTS",
+        "checkConsentStatus",
+        "fetchCookiePreferences",
+        "fetchCurrentConsents",
+        "fetchLatestDocument",
+        "hasCompleteRequiredConsent",
+        "submitConsents",
+        "upsertCookiePreferences"
       ],
-      "dependencies": [],
-      "referencedComponents": [],
+      "importedSymbols": [
+        "@/api/supabase/client"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ],
+      "referencedComponents": [
+        "CookiePreference",
+        "LegalDocument"
+      ],
       "referencedHooks": [],
-      "apiUsage": [],
+      "apiUsage": [
+        "supabase.from"
+      ],
       "databaseUsage": [
-        "automation_runs"
+        "cookie_preferences",
+        "legal_consents",
+        "legal_documents"
       ]
     },
     {
-      "file": "supabase/functions/invite-client/index.ts",
+      "file": "src/pages/DemoPage.tsx",
+      "exportedSymbols": [
+        "DemoPage"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient",
+        "@/hooks/useDashboardMetrics",
+        "@/hooks/useRuns",
+        "@/lib/serviceCatalog",
+        "@tanstack/react-query",
+        "react"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient",
+        "@/hooks/useDashboardMetrics",
+        "@/hooks/useRuns",
+        "@/lib/serviceCatalog"
+      ],
+      "referencedComponents": [
+        "DemoEvent",
+        "DemoState",
+        "Footer",
+        "Nav",
+        "SectionHeader"
+      ],
+      "referencedHooks": [
+        "useClient",
+        "useDashboardMetrics",
+        "useQuery",
+        "useQueryClient",
+        "useRuns",
+        "useState"
+      ],
+      "apiUsage": [
+        "supabase.functions.invoke"
+      ],
+      "databaseUsage": [
+        "leads"
+      ]
+    },
+    {
+      "file": "supabase/functions/demo-event/index.ts",
       "exportedSymbols": [],
       "importedSymbols": [
         "https://deno.land/x/zod@v3.23.8/mod.ts",
@@ -177,12 +467,16 @@
       "referencedComponents": [],
       "referencedHooks": [],
       "apiUsage": [
-        "supabase.auth.admin.deleteUser",
-        "supabase.auth.admin.inviteUserByEmail"
+        "supabase.from",
+        "supabase.rpc",
+        "supabase.schema"
       ],
       "databaseUsage": [
-        "client_services",
-        "clients"
+        "appointments",
+        "clients",
+        "leads",
+        "listings",
+        "workflows"
       ]
     },
     {
@@ -235,6 +529,212 @@
         "alter table",
         "create table",
         "select 1 from"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260714000001_real_estate_workflow_operations.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "alter table",
+        "create table",
+        "delete from",
+        "insert into",
+        "select 1 from",
+        "select value from"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260714000002_platform_core_and_vertical_modules.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "alter table",
+        "create table",
+        "delete from",
+        "insert into",
+        "select 1 from",
+        "select c.organization_id into v_org_id from",
+        "select value from",
+        "update public.analytics_snapshots s set",
+        "update public.automation_runs r set",
+        "update public.client_services s set",
+        "update public.workflows w set"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260714000003_fix_generic_ingest_legacy_bridge.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "delete from",
+        "insert into",
+        "select c.organization_id into v_org_id from",
+        "select value from"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260714000004_client_onboarding.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "alter table",
+        "create table",
+        "insert into",
+        "select * into v_row from",
+        "select 1 from",
+        "select id from"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260716000001_canonical_workflow_runs.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "delete from",
+        "insert into",
+        "select value from"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260716000002_atomic_client_provisioning.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "insert into",
+        "select 1 from",
+        "select value from"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260716000003_legal_compliance.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "ALTER TABLE",
+        "CREATE TABLE",
+        "INSERT INTO",
+        "SELECT id FROM",
+        "SELECT organization_id FROM"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260716000004_legal_compliance_rls.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "SELECT id FROM",
+        "SELECT organization_id FROM"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260716000005_fix_legal_consents_rls.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "SELECT id FROM"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260716000006_remove_ai_usage_disclosure.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "DELETE FROM"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260716000008_demo_workspace.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "insert into",
+        "select 1 from",
+        "select id from",
+        "select id into v_workflow_id from"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260717000002_ui_service_taxonomy.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "alter table",
+        "delete from",
+        "insert into"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260717000003_expand_demo_services.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "insert into"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260717000004_expand_demo_workflows.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "insert into",
+        "select id into v_workflow_id from"
       ]
     }
   ]

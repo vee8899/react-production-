@@ -1,0 +1,112 @@
+{"kind":"deck","id":"pr/ycxqgh","name":"Deck"}
+{"kind":"layout","layoutId":"9f35f6a7-2d0c-43ba-a3fe-efd8cbe3a9e8","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"6ea13c27-ffa9-4a9a-a345-8aaee660b571","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/s7tncz","slide":1,"title":"PRIME STATE / FIELD GUIDE","textShapes":14}
+{"kind":"textbox","id":"sh/dszyd47i","slide":1,"text":"PRIME STATE / FIELD GUIDE","textPreview":"PRIME STATE / FIELD GUIDE","textChars":25,"textLines":1,"bbox":[72,36,360,20]}
+{"kind":"textbox","id":"sh/q58fi9or","slide":1,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[1150,36,58,20]}
+{"kind":"textbox","id":"sh/b6hgbepc","slide":1,"text":"A quieter way\nto run real estate\nautomation.","textPreview":"A quieter way | to run real estate | automation.","textChars":44,"textLines":3,"bbox":[72,154,690,230]}
+{"kind":"textbox","id":"sh/0vaxoj6t","slide":1,"text":"Prime State Systems gives ambitious real-estate teams a clear operating layer for the workflows that move their business.","textPreview":"Prime State Systems gives ambitious real-estate teams a clear operating layer for the workflows that move their business.","textChars":121,"textLines":1,"bbox":[76,414,520,76]}
+{"kind":"shape","id":"sh/lwjyho7e","slide":1,"bbox":[790,112,346,420]}
+{"kind":"shape","id":"sh/yt8fm9on","slide":1,"bbox":[824,150,278,52]}
+{"kind":"textbox","id":"sh/zuhgfep8","slide":1,"text":"PRIME STATE","textPreview":"PRIME STATE","textChars":11,"textLines":1,"bbox":[846,166,230,20]}
+{"kind":"textbox","id":"sh/gz6xcf6p","slide":1,"text":"Control room","textPreview":"Control room","textChars":12,"textLines":1,"bbox":[826,238,260,34]}
+{"kind":"textbox","id":"sh/10fe5k7a","slide":1,"text":"LIVE OPERATIONS","textPreview":"LIVE OPERATIONS","textChars":15,"textLines":1,"bbox":[826,288,220,18]}
+{"kind":"shape","id":"sh/583yl0ji","slide":1,"bbox":[72,320,1136,1]}
+{"kind":"textbox","id":"sh/47uhsv2x","slide":1,"text":"Workflow health","textPreview":"Workflow health","textChars":15,"textLines":1,"bbox":[826,332,170,22]}
+{"kind":"textbox","id":"sh/j6lgjq1c","slide":1,"text":"98.4%","textPreview":"98.4%","textChars":5,"textLines":1,"bbox":[1000,330,90,24]}
+{"kind":"shape","id":"sh/ilczqlkr","slide":1,"bbox":[72,372,1136,1]}
+{"kind":"textbox","id":"sh/tcnyp0je","slide":1,"text":"Runs this week","textPreview":"Runs this week","textChars":14,"textLines":1,"bbox":[826,384,170,22]}
+{"kind":"textbox","id":"sh/sbuhwv29","slide":1,"text":"1,284","textPreview":"1,284","textChars":5,"textLines":1,"bbox":[1000,382,90,24]}
+{"kind":"shape","id":"sh/ralgnq1o","slide":1,"bbox":[72,424,1136,1]}
+{"kind":"textbox","id":"sh/69czulk3","slide":1,"text":"Needs attention","textPreview":"Needs attention","textChars":15,"textLines":1,"bbox":[826,436,170,22]}
+{"kind":"textbox","id":"sh/1gnitkjq","slide":1,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1000,434,90,24]}
+{"kind":"textbox","id":"sh/0feh0f25","slide":1,"text":"Client portal / 2026","textPreview":"Client portal / 2026","textChars":20,"textLines":1,"bbox":[76,632,300,20]}
+{"kind":"notes","id":"nt/s7tncz","slide":1,"text":""}
+{"kind":"slide","id":"sl/eor82d","slide":2,"title":"PRIME STATE SYSTEMS","textShapes":8}
+{"kind":"textbox","id":"sh/qlcz6l0n","slide":2,"text":"PRIME STATE SYSTEMS","textPreview":"PRIME STATE SYSTEMS","textChars":19,"textLines":1,"bbox":[72,36,360,20]}
+{"kind":"textbox","id":"sh/donih0ze","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1150,36,58,20]}
+{"kind":"textbox","id":"sh/cneh8vit","slide":2,"text":"THE OPPORTUNITY","textPreview":"THE OPPORTUNITY","textChars":15,"textLines":1,"bbox":[72,104,420,24]}
+{"kind":"textbox","id":"sh/3il0bqhc","slide":2,"text":"Your operations should explain themselves.","textPreview":"Your operations should explain themselves.","textChars":42,"textLines":1,"bbox":[72,142,1050,80]}
+{"kind":"shape","id":"sh/ihcz2l0r","slide":2,"bbox":[72,244,1136,1]}
+{"kind":"textbox","id":"sh/5k3id0z2","slide":2,"text":"Real-estate teams don’t need another place to check. They need one calm layer that makes automation legible: what is running, what changed, and where a human should look next.","textPreview":"Real-estate teams don’t need another place to check. They need one calm layer that makes automation legible: what is running, what change...","textChars":175,"textLines":1,"bbox":[72,286,590,132]}
+{"kind":"shape","id":"sh/4juh4vix","slide":2,"bbox":[770,286,438,254]}
+{"kind":"textbox","id":"sh/vu1076h0","slide":2,"text":"THE SHIFT","textPreview":"THE SHIFT","textChars":9,"textLines":1,"bbox":[808,324,220,18]}
+{"kind":"textbox","id":"sh/utszy10f","slide":2,"text":"From invisible\nworkflows\nto visible momentum.","textPreview":"From invisible | workflows | to visible momentum.","textChars":45,"textLines":3,"bbox":[808,365,340,128]}
+{"kind":"textbox","id":"sh/kzm103m1","slide":2,"text":"A shared view for owners, operators, and the systems that support them.","textPreview":"A shared view for owners, operators, and the systems that support them.","textChars":71,"textLines":1,"bbox":[72,606,600,26]}
+{"kind":"notes","id":"nt/eor82d","slide":2,"text":""}
+{"kind":"slide","id":"sl/ekpc5z","slide":3,"title":"PRIME STATE SYSTEMS","textShapes":14}
+{"kind":"textbox","id":"sh/07e58bu9","slide":3,"text":"PRIME STATE SYSTEMS","textPreview":"PRIME STATE SYSTEMS","textChars":19,"textLines":1,"bbox":[72,36,360,20]}
+{"kind":"textbox","id":"sh/z654z6to","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1150,36,58,20]}
+{"kind":"textbox","id":"sh/e5wn61c3","slide":3,"text":"HOW IT WORKS","textPreview":"HOW IT WORKS","textChars":12,"textLines":1,"bbox":[72,104,420,24]}
+{"kind":"textbox","id":"sh/9w7m5gbq","slide":3,"text":"One operating layer. Three moments of clarity.","textPreview":"One operating layer. Three moments of clarity.","textChars":46,"textLines":1,"bbox":[72,142,1050,80]}
+{"kind":"shape","id":"sh/ovy5cva5","slide":3,"bbox":[72,244,1136,1]}
+{"kind":"textbox","id":"sh/nu543qtk","slide":3,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[72,296,58,24]}
+{"kind":"textbox","id":"sh/m9wnalsf","slide":3,"text":"See","textPreview":"See","textChars":3,"textLines":1,"bbox":[72,344,270,48]}
+{"kind":"shape","id":"sh/x07690b2","slide":3,"bbox":[72,414,1136,1]}
+{"kind":"textbox","id":"sh/wzy5gvah","slide":3,"text":"Subscribed services, current state, and the pulse of the business.","textPreview":"Subscribed services, current state, and the pulse of the business.","textChars":66,"textLines":1,"bbox":[72,448,286,72]}
+{"kind":"textbox","id":"sh/i1wjuh4z","slide":3,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[448,296,58,24]}
+{"kind":"textbox","id":"sh/j2p0nmlk","slide":3,"text":"Understand","textPreview":"Understand","textChars":10,"textLines":1,"bbox":[448,344,270,48]}
+{"kind":"shape","id":"sh/43y1wrm5","slide":3,"bbox":[72,414,1136,1]}
+{"kind":"textbox","id":"sh/547ipw3q","slide":3,"text":"Every workflow run with status, time, records, and duration.","textPreview":"Every workflow run with status, time, records, and duration.","textChars":60,"textLines":1,"bbox":[448,448,286,72]}
+{"kind":"textbox","id":"sh/65gjy14b","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[824,296,58,24]}
+{"kind":"textbox","id":"sh/r6p0rmlg","slide":3,"text":"Act","textPreview":"Act","textChars":3,"textLines":1,"bbox":[824,344,270,48]}
+{"kind":"shape","id":"sh/s7y10rm1","slide":3,"bbox":[72,414,1136,1]}
+{"kind":"textbox","id":"sh/t87itw3m","slide":3,"text":"Quick actions and recoverable states when a system needs attention.","textPreview":"Quick actions and recoverable states when a system needs attention.","textChars":67,"textLines":1,"bbox":[824,448,286,72]}
+{"kind":"shape","id":"sh/m9czmx4r","slide":3,"bbox":[72,590,1136,1]}
+{"kind":"textbox","id":"sh/7al0f2lc","slide":3,"text":"The result is less hunting, fewer surprises, and a better handoff between people and systems.","textPreview":"The result is less hunting, fewer surprises, and a better handoff between people and systems.","textChars":93,"textLines":1,"bbox":[72,618,900,28]}
+{"kind":"notes","id":"nt/ekpc5z","slide":3,"text":""}
+{"kind":"slide","id":"sl/hhpc07","slide":4,"title":"PRIME STATE SYSTEMS","textShapes":19}
+{"kind":"textbox","id":"sh/edkvyhs3","slide":4,"text":"PRIME STATE SYSTEMS","textPreview":"PRIME STATE SYSTEMS","textChars":19,"textLines":1,"bbox":[72,36,360,20]}
+{"kind":"textbox","id":"sh/1gbe9wre","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1150,36,58,20]}
+{"kind":"textbox","id":"sh/0f2d0rat","slide":4,"text":"THE CLIENT VIEW","textPreview":"THE CLIENT VIEW","textChars":15,"textLines":1,"bbox":[72,104,420,24]}
+{"kind":"textbox","id":"sh/ratw3m9c","slide":4,"text":"A dashboard that answers the next question.","textPreview":"A dashboard that answers the next question.","textChars":43,"textLines":1,"bbox":[72,142,1050,80]}
+{"kind":"shape","id":"sh/q9kvuhsr","slide":4,"bbox":[72,244,1136,1]}
+{"kind":"shape","id":"sh/dcbe5cri","slide":4,"bbox":[72,286,1136,290]}
+{"kind":"textbox","id":"sh/cb2dwrax","slide":4,"text":"GOOD MORNING, NORTHSTAR","textPreview":"GOOD MORNING, NORTHSTAR","textChars":23,"textLines":1,"bbox":[108,322,360,18]}
+{"kind":"textbox","id":"sh/3m9wz29g","slide":4,"text":"Your systems are moving.","textPreview":"Your systems are moving.","textChars":24,"textLines":1,"bbox":[108,355,530,42]}
+{"kind":"textbox","id":"sh/il0vqxsv","slide":4,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[108,432,200,40]}
+{"kind":"textbox","id":"sh/0v6xobyx","slide":4,"text":"Active workflows","textPreview":"Active workflows","textChars":16,"textLines":1,"bbox":[108,480,200,22]}
+{"kind":"textbox","id":"sh/1wzyxwz2","slide":4,"text":"1,284","textPreview":"1,284","textChars":5,"textLines":1,"bbox":[348,432,200,40]}
+{"kind":"textbox","id":"sh/e9ofm1gr","slide":4,"text":"Runs this week","textPreview":"Runs this week","textChars":14,"textLines":1,"bbox":[348,480,200,22]}
+{"kind":"textbox","id":"sh/zuxgv6hc","slide":4,"text":"98.4%","textPreview":"98.4%","textChars":5,"textLines":1,"bbox":[588,432,200,40]}
+{"kind":"textbox","id":"sh/c76xkryl","slide":4,"text":"Successful runs","textPreview":"Successful runs","textChars":15,"textLines":1,"bbox":[588,480,200,22]}
+{"kind":"shape","id":"sh/d8fytwz6","slide":4,"bbox":[840,342,318,180]}
+{"kind":"textbox","id":"sh/q5ofihgf","slide":4,"text":"RECENT ACTIVITY","textPreview":"RECENT ACTIVITY","textChars":15,"textLines":1,"bbox":[870,368,220,18]}
+{"kind":"textbox","id":"sh/r6xgrmh0","slide":4,"text":"Listing sync","textPreview":"Listing sync","textChars":12,"textLines":1,"bbox":[870,406,150,18]}
+{"kind":"textbox","id":"sh/w3qhwvyp","slide":4,"text":"Complete","textPreview":"Complete","textChars":8,"textLines":1,"bbox":[1048,406,80,18]}
+{"kind":"textbox","id":"sh/x4jy5gza","slide":4,"text":"Lead routing","textPreview":"Lead routing","textChars":12,"textLines":1,"bbox":[870,440,150,18]}
+{"kind":"textbox","id":"sh/l8v6twni","slide":4,"text":"Complete","textPreview":"Complete","textChars":8,"textLines":1,"bbox":[1048,440,80,18]}
+{"kind":"textbox","id":"sh/k7mp0rmx","slide":4,"text":"Market digest","textPreview":"Market digest","textChars":13,"textLines":1,"bbox":[870,474,150,18]}
+{"kind":"textbox","id":"sh/j6dorm5c","slide":4,"text":"Review","textPreview":"Review","textChars":6,"textLines":1,"bbox":[1048,474,80,18]}
+{"kind":"notes","id":"nt/hhpc07","slide":4,"text":""}
+{"kind":"slide","id":"sl/eoivii","slide":5,"title":"PRIME STATE SYSTEMS","textShapes":15}
+{"kind":"textbox","id":"sh/983e1o3e","slide":5,"text":"PRIME STATE SYSTEMS","textPreview":"PRIME STATE SYSTEMS","textChars":19,"textLines":1,"bbox":[72,36,360,20]}
+{"kind":"textbox","id":"sh/m5svq9k3","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1150,36,58,20]}
+{"kind":"textbox","id":"sh/n6lwzel8","slide":5,"text":"THE FOUNDATION","textPreview":"THE FOUNDATION","textChars":14,"textLines":1,"bbox":[72,104,420,24]}
+{"kind":"textbox","id":"sh/0jadoj2x","slide":5,"text":"Visibility is useful only when trust is built in.","textPreview":"Visibility is useful only when trust is built in.","textChars":49,"textLines":1,"bbox":[72,142,1050,80]}
+{"kind":"shape","id":"sh/1kjex43i","slide":5,"bbox":[72,244,1136,1]}
+{"kind":"textbox","id":"sh/ehsvm9kr","slide":5,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[72,294,52,22]}
+{"kind":"textbox","id":"sh/zi1wvelc","slide":5,"text":"Scoped by organization","textPreview":"Scoped by organization","textChars":22,"textLines":1,"bbox":[146,292,390,24]}
+{"kind":"textbox","id":"sh/kfed0321","slide":5,"text":"Every client sees only their own data.","textPreview":"Every client sees only their own data.","textChars":38,"textLines":1,"bbox":[146,324,500,40]}
+{"kind":"shape","id":"sh/lgne983m","slide":5,"bbox":[72,370,1136,1]}
+{"kind":"textbox","id":"sh/tgj2h0va","slide":5,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[72,386,52,22]}
+{"kind":"textbox","id":"sh/sva18vep","slide":5,"text":"Recoverable by design","textPreview":"Recoverable by design","textChars":21,"textLines":1,"bbox":[146,384,390,24]}
+{"kind":"textbox","id":"sh/ru1kfqd4","slide":5,"text":"Loading, empty, failed, paused, and disconnected states are part of the product.","textPreview":"Loading, empty, failed, paused, and disconnected states are part of the product.","textChars":80,"textLines":1,"bbox":[146,416,500,40]}
+{"kind":"shape","id":"sh/6tsj6lwj","slide":5,"bbox":[72,462,1136,1]}
+{"kind":"textbox","id":"sh/5sjidgve","slide":5,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[72,478,52,22]}
+{"kind":"textbox","id":"sh/4ra14bet","slide":5,"text":"Canonical by default","textPreview":"Canonical by default","textChars":20,"textLines":1,"bbox":[146,476,390,24]}
+{"kind":"textbox","id":"sh/jqh0b6d8","slide":5,"text":"Workflow activity comes from one clear execution source.","textPreview":"Workflow activity comes from one clear execution source.","textChars":56,"textLines":1,"bbox":[146,508,500,40]}
+{"kind":"shape","id":"sh/ip8j21wn","slide":5,"bbox":[72,554,1136,1]}
+{"kind":"shape","id":"sh/po32pkvi","slide":5,"bbox":[790,294,418,286]}
+{"kind":"textbox","id":"sh/onu1gfex","slide":5,"text":"THE PROMISE","textPreview":"THE PROMISE","textChars":11,"textLines":1,"bbox":[828,332,220,18]}
+{"kind":"textbox","id":"sh/83md8n6l","slide":5,"text":"Know what\nis happening.\nKnow what\nto do next.","textPreview":"Know what | is happening. | Know what | to do next.","textChars":45,"textLines":4,"bbox":[828,374,310,164]}
+{"kind":"notes","id":"nt/eoivii","slide":5,"text":""}
+{"kind":"slide","id":"sl/7q77ou","slide":6,"title":"PRIME STATE / NEXT MOVE","textShapes":6}
+{"kind":"textbox","id":"sh/g3u9kv6x","slide":6,"text":"PRIME STATE / NEXT MOVE","textPreview":"PRIME STATE / NEXT MOVE","textChars":23,"textLines":1,"bbox":[72,36,360,20]}
+{"kind":"textbox","id":"sh/f2lsraps","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1150,36,58,20]}
+{"kind":"textbox","id":"sh/e1sri5o7","slide":6,"text":"Make the invisible\nwork visible.","textPreview":"Make the invisible | work visible.","textChars":32,"textLines":2,"bbox":[72,152,760,150]}
+{"kind":"textbox","id":"sh/p83axk7u","slide":6,"text":"Prime State Systems is the operating layer for real-estate automation that teams can actually understand and act on.","textPreview":"Prime State Systems is the operating layer for real-estate automation that teams can actually understand and act on.","textChars":116,"textLines":1,"bbox":[76,350,580,72]}
+{"kind":"shape","id":"sh/o7u9of69","slide":6,"bbox":[76,514,300,54]}
+{"kind":"textbox","id":"sh/36lsvapo","slide":6,"text":"START WITH A CLEARER VIEW","textPreview":"START WITH A CLEARER VIEW","textChars":25,"textLines":1,"bbox":[98,533,255,18]}
+{"kind":"textbox","id":"sh/25crm5o3","slide":6,"text":"primestate.systems","textPreview":"primestate.systems","textChars":18,"textLines":1,"bbox":[76,638,300,20]}
+{"kind":"notes","id":"nt/7q77ou","slide":6,"text":""}

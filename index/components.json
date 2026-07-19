@@ -16,19 +16,133 @@
       "databaseUsage": []
     },
     {
+      "file": "src/components/dashboard/AuditTrail.tsx",
+      "exportedSymbols": [
+        "AuditTrail"
+      ],
+      "importedSymbols": [
+        "@/hooks/useAuditLog",
+        "@/hooks/useClient",
+        "@/utils/time",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "@/hooks/useAuditLog",
+        "@/hooks/useClient",
+        "@/utils/time"
+      ],
+      "referencedComponents": [
+        "Link"
+      ],
+      "referencedHooks": [
+        "useAuditLog",
+        "useClient"
+      ],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
       "file": "src/components/dashboard/ClientServices.tsx",
       "exportedSymbols": [
         "ClientServices"
       ],
       "importedSymbols": [
-        "@/hooks/useClientServices"
+        "@/components/dashboard/RealEstateMetrics",
+        "@/hooks/useClientServices",
+        "@/lib/serviceCatalog"
       ],
       "dependencies": [
-        "@/hooks/useClientServices"
+        "@/components/dashboard/RealEstateMetrics",
+        "@/hooks/useClientServices",
+        "@/lib/serviceCatalog"
+      ],
+      "referencedComponents": [
+        "RealEstateMetrics"
+      ],
+      "referencedHooks": [
+        "useClientServices"
+      ],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/dashboard/IntegrationCard.tsx",
+      "exportedSymbols": [
+        "IntegrationCard"
+      ],
+      "importedSymbols": [
+        "@/utils/time"
+      ],
+      "dependencies": [
+        "@/utils/time"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/dashboard/OperationsMenu.tsx",
+      "exportedSymbols": [
+        "OperationsMenu"
+      ],
+      "importedSymbols": [
+        "react",
+        "react-router-dom"
+      ],
+      "dependencies": [],
+      "referencedComponents": [
+        "HTMLDivElement",
+        "Link"
+      ],
+      "referencedHooks": [
+        "useEffect",
+        "useLocation",
+        "useState"
+      ],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/dashboard/RealEstateMetrics.tsx",
+      "exportedSymbols": [
+        "RealEstateMetrics"
+      ],
+      "importedSymbols": [
+        "@/hooks/useRealEstateMetrics"
+      ],
+      "dependencies": [
+        "@/hooks/useRealEstateMetrics"
       ],
       "referencedComponents": [],
       "referencedHooks": [
-        "useClientServices"
+        "useRealEstateMetrics"
+      ],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/dashboard/RunDetail.tsx",
+      "exportedSymbols": [
+        "RunDetail"
+      ],
+      "importedSymbols": [
+        "@/hooks/useClient",
+        "@/hooks/useRunDetails",
+        "@/lib/serviceCatalog",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "@/hooks/useClient",
+        "@/hooks/useRunDetails",
+        "@/lib/serviceCatalog"
+      ],
+      "referencedComponents": [
+        "Link"
+      ],
+      "referencedHooks": [
+        "useClient",
+        "useRunDetails"
       ],
       "apiUsage": [],
       "databaseUsage": []
@@ -41,14 +155,19 @@
       "importedSymbols": [
         "@/hooks/useClient",
         "@/hooks/useRuns",
-        "@/utils/time"
+        "@/lib/serviceCatalog",
+        "@/utils/time",
+        "react-router-dom"
       ],
       "dependencies": [
         "@/hooks/useClient",
         "@/hooks/useRuns",
+        "@/lib/serviceCatalog",
         "@/utils/time"
       ],
-      "referencedComponents": [],
+      "referencedComponents": [
+        "Link"
+      ],
       "referencedHooks": [
         "useClient",
         "useRuns"
@@ -57,22 +176,45 @@
       "databaseUsage": []
     },
     {
-      "file": "src/components/dashboard/StatsRow.tsx",
+      "file": "src/components/dashboard/Sparkline.tsx",
       "exportedSymbols": [
-        "StatsRow"
+        "Sparkline"
       ],
       "importedSymbols": [
         "@/hooks/useClient",
-        "@/hooks/useRuns"
+        "@/hooks/useRunsTimeline",
+        "react"
       ],
       "dependencies": [
         "@/hooks/useClient",
-        "@/hooks/useRuns"
+        "@/hooks/useRunsTimeline"
       ],
       "referencedComponents": [],
       "referencedHooks": [
         "useClient",
-        "useRuns"
+        "useRunsTimeline"
+      ],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/dashboard/StatsRow.tsx",
+      "exportedSymbols": [
+        "DashboardWindowDays",
+        "StatsRow"
+      ],
+      "importedSymbols": [
+        "@/hooks/useClient",
+        "@/hooks/useDashboardMetrics"
+      ],
+      "dependencies": [
+        "@/hooks/useClient",
+        "@/hooks/useDashboardMetrics"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useClient",
+        "useDashboardMetrics"
       ],
       "apiUsage": [],
       "databaseUsage": []
@@ -83,12 +225,35 @@
         "WorkflowRow"
       ],
       "importedSymbols": [
-        "@/utils/time"
+        "@/lib/serviceCatalog",
+        "@/utils/time",
+        "react"
       ],
       "dependencies": [
+        "@/lib/serviceCatalog",
         "@/utils/time"
       ],
       "referencedComponents": [],
+      "referencedHooks": [
+        "useState"
+      ],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/features/DashboardMock.tsx",
+      "exportedSymbols": [
+        "DashboardMock"
+      ],
+      "importedSymbols": [
+        "@/components/motion/FadeUp"
+      ],
+      "dependencies": [
+        "@/components/motion/FadeUp"
+      ],
+      "referencedComponents": [
+        "FadeUp"
+      ],
       "referencedHooks": [],
       "apiUsage": [],
       "databaseUsage": []
@@ -151,24 +316,146 @@
       "databaseUsage": []
     },
     {
+      "file": "src/components/features/IntegrationsShowcase.tsx",
+      "exportedSymbols": [
+        "IntegrationsShowcase"
+      ],
+      "importedSymbols": [
+        "@/components/ui/SectionHeader",
+        "react",
+        "react-icons/fa",
+        "react-icons/si"
+      ],
+      "dependencies": [
+        "@/components/ui/SectionHeader"
+      ],
+      "referencedComponents": [
+        "FaEnvelope",
+        "FaSlack",
+        "SectionHeader",
+        "SiGmail",
+        "SiGooglecalendar",
+        "SiGoogledocs",
+        "SiGooglesheets",
+        "SiTelegram",
+        "SiWhatsapp"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
       "file": "src/components/features/ROICalculator.tsx",
       "exportedSymbols": [
         "ROICalculator"
       ],
       "importedSymbols": [
         "@/components/ui/SectionHeader",
+        "@/lib/roiCalculator",
+        "@/utils/contact",
         "framer-motion",
         "react"
       ],
       "dependencies": [
-        "@/components/ui/SectionHeader"
+        "@/components/ui/SectionHeader",
+        "@/lib/roiCalculator",
+        "@/utils/contact"
       ],
       "referencedComponents": [
-        "SectionHeader"
+        "CompanySize",
+        "ControlGroup",
+        "Currency",
+        "Output",
+        "SectionHeader",
+        "Slider"
       ],
       "referencedHooks": [
         "useEffect",
         "useState"
+      ],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/legal/ConsentCheckbox.tsx",
+      "exportedSymbols": [
+        "ConsentCheckbox"
+      ],
+      "importedSymbols": [
+        "@/lib/legalConsent",
+        "react-hook-form"
+      ],
+      "dependencies": [
+        "@/lib/legalConsent"
+      ],
+      "referencedComponents": [
+        "TFieldValues"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/legal/CookiePreferenceToggle.tsx",
+      "exportedSymbols": [
+        "CookiePreferenceToggle",
+        "CookiePreferencesForm"
+      ],
+      "importedSymbols": [
+        "@/lib/legalConsent",
+        "react"
+      ],
+      "dependencies": [
+        "@/lib/legalConsent"
+      ],
+      "referencedComponents": [
+        "CookiePreferenceToggle"
+      ],
+      "referencedHooks": [
+        "useState"
+      ],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/legal/LegalDocument.tsx",
+      "exportedSymbols": [
+        "LegalDocument"
+      ],
+      "importedSymbols": [
+        "@/lib/legalConsent"
+      ],
+      "dependencies": [
+        "@/lib/legalConsent"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/legal/LegalGate.tsx",
+      "exportedSymbols": [
+        "LegalGate"
+      ],
+      "importedSymbols": [
+        "@/hooks/useAuth",
+        "@/hooks/useLegalConsent",
+        "@/lib/legalConsent",
+        "react",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "@/hooks/useAuth",
+        "@/hooks/useLegalConsent",
+        "@/lib/legalConsent"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useAuth",
+        "useEffect",
+        "useLegalConsent",
+        "useNavigate"
       ],
       "apiUsage": [],
       "databaseUsage": []
@@ -209,6 +496,24 @@
       "databaseUsage": []
     },
     {
+      "file": "src/components/motion/RouteScrollRestoration.tsx",
+      "exportedSymbols": [
+        "RouteScrollRestoration"
+      ],
+      "importedSymbols": [
+        "react",
+        "react-router-dom"
+      ],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useEffect",
+        "useLocation"
+      ],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
       "file": "src/components/ui/Footer.tsx",
       "exportedSymbols": [
         "Footer"
@@ -233,24 +538,25 @@
         "Nav"
       ],
       "importedSymbols": [
+        "@/components/dashboard/OperationsMenu",
         "@/hooks/useAuth",
         "@/utils/contact",
         "react",
         "react-router-dom"
       ],
       "dependencies": [
+        "@/components/dashboard/OperationsMenu",
         "@/hooks/useAuth",
         "@/utils/contact"
       ],
       "referencedComponents": [
-        "Link"
+        "Link",
+        "OperationsMenu"
       ],
       "referencedHooks": [
         "useAuth",
-        "useCallback",
         "useEffect",
         "useLocation",
-        "useNavigate",
         "useState"
       ],
       "apiUsage": [],

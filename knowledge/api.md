@@ -10,6 +10,7 @@
 
 ## Edge functions
 
+- `supabase/functions/demo-event/index.ts`
 - `supabase/functions/ingest-run/index.ts`
 - `supabase/functions/invite-client/index.ts`
 

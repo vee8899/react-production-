@@ -63,9 +63,39 @@
       ]
     },
     {
+      "file": "src/components/dashboard/AuditTrail.tsx",
+      "exportedSymbols": [
+        "AuditTrail"
+      ]
+    },
+    {
       "file": "src/components/dashboard/ClientServices.tsx",
       "exportedSymbols": [
         "ClientServices"
+      ]
+    },
+    {
+      "file": "src/components/dashboard/IntegrationCard.tsx",
+      "exportedSymbols": [
+        "IntegrationCard"
+      ]
+    },
+    {
+      "file": "src/components/dashboard/OperationsMenu.tsx",
+      "exportedSymbols": [
+        "OperationsMenu"
+      ]
+    },
+    {
+      "file": "src/components/dashboard/RealEstateMetrics.tsx",
+      "exportedSymbols": [
+        "RealEstateMetrics"
+      ]
+    },
+    {
+      "file": "src/components/dashboard/RunDetail.tsx",
+      "exportedSymbols": [
+        "RunDetail"
       ]
     },
     {
@@ -75,8 +105,15 @@
       ]
     },
     {
+      "file": "src/components/dashboard/Sparkline.tsx",
+      "exportedSymbols": [
+        "Sparkline"
+      ]
+    },
+    {
       "file": "src/components/dashboard/StatsRow.tsx",
       "exportedSymbols": [
+        "DashboardWindowDays",
         "StatsRow"
       ]
     },
@@ -84,6 +121,12 @@
       "file": "src/components/dashboard/WorkflowRow.tsx",
       "exportedSymbols": [
         "WorkflowRow"
+      ]
+    },
+    {
+      "file": "src/components/features/DashboardMock.tsx",
+      "exportedSymbols": [
+        "DashboardMock"
       ]
     },
     {
@@ -99,9 +142,40 @@
       ]
     },
     {
+      "file": "src/components/features/IntegrationsShowcase.tsx",
+      "exportedSymbols": [
+        "IntegrationsShowcase"
+      ]
+    },
+    {
       "file": "src/components/features/ROICalculator.tsx",
       "exportedSymbols": [
         "ROICalculator"
+      ]
+    },
+    {
+      "file": "src/components/legal/ConsentCheckbox.tsx",
+      "exportedSymbols": [
+        "ConsentCheckbox"
+      ]
+    },
+    {
+      "file": "src/components/legal/CookiePreferenceToggle.tsx",
+      "exportedSymbols": [
+        "CookiePreferenceToggle",
+        "CookiePreferencesForm"
+      ]
+    },
+    {
+      "file": "src/components/legal/LegalDocument.tsx",
+      "exportedSymbols": [
+        "LegalDocument"
+      ]
+    },
+    {
+      "file": "src/components/legal/LegalGate.tsx",
+      "exportedSymbols": [
+        "LegalGate"
       ]
     },
     {
@@ -114,6 +188,12 @@
       "file": "src/components/motion/PageTransition.tsx",
       "exportedSymbols": [
         "PageTransition"
+      ]
+    },
+    {
+      "file": "src/components/motion/RouteScrollRestoration.tsx",
+      "exportedSymbols": [
+        "RouteScrollRestoration"
       ]
     },
     {
@@ -141,9 +221,28 @@
       ]
     },
     {
+      "file": "src/demo/demoData.ts",
+      "exportedSymbols": [
+        "DEMO_LEADS",
+        "DEMO_RUNS",
+        "DEMO_TENANT",
+        "DemoLead",
+        "DemoRun",
+        "summarizeRuns"
+      ]
+    },
+    {
       "file": "src/hooks/useAnalytics.ts",
       "exportedSymbols": [
         "useAnalytics"
+      ]
+    },
+    {
+      "file": "src/hooks/useAuditLog.ts",
+      "exportedSymbols": [
+        "AuditEvent",
+        "useAuditEvent",
+        "useAuditLog"
       ]
     },
     {
@@ -165,15 +264,165 @@
       ]
     },
     {
+      "file": "src/hooks/useCookiePreferences.ts",
+      "exportedSymbols": [
+        "useCookiePreferences"
+      ]
+    },
+    {
+      "file": "src/hooks/useDashboardMetrics.ts",
+      "exportedSymbols": [
+        "DashboardMetrics",
+        "useDashboardMetrics"
+      ]
+    },
+    {
+      "file": "src/hooks/useIntegrations.ts",
+      "exportedSymbols": [
+        "ConnectedIntegration",
+        "useIntegrations"
+      ]
+    },
+    {
+      "file": "src/hooks/useLegalConsent.ts",
+      "exportedSymbols": [
+        "ConsentStatus",
+        "useLegalConsent"
+      ]
+    },
+    {
+      "file": "src/hooks/useLegalDocument.ts",
+      "exportedSymbols": [
+        "useLegalDocument"
+      ]
+    },
+    {
+      "file": "src/hooks/useOrganization.ts",
+      "exportedSymbols": [
+        "useOrganization"
+      ]
+    },
+    {
+      "file": "src/hooks/useOrganizationOnboarding.ts",
+      "exportedSymbols": [
+        "useOrganizationOnboarding"
+      ]
+    },
+    {
+      "file": "src/hooks/useRealEstateMetrics.ts",
+      "exportedSymbols": [
+        "RealEstateMetrics",
+        "useRealEstateMetrics"
+      ]
+    },
+    {
+      "file": "src/hooks/useRunDetails.ts",
+      "exportedSymbols": [
+        "RunDetails",
+        "RunEntitySummary",
+        "RunStepDetail",
+        "useRunDetails"
+      ]
+    },
+    {
       "file": "src/hooks/useRuns.ts",
       "exportedSymbols": [
+        "DashboardRun",
         "useRuns"
+      ]
+    },
+    {
+      "file": "src/hooks/useRunsTimeline.ts",
+      "exportedSymbols": [
+        "DailyRunCount",
+        "useRunsTimeline"
       ]
     },
     {
       "file": "src/hooks/useWorkflows.ts",
       "exportedSymbols": [
+        "RunSummary",
+        "WorkflowWithLatestRun",
         "useWorkflows"
+      ]
+    },
+    {
+      "file": "src/lib/legalConsent.ts",
+      "exportedSymbols": [
+        "CookiePreference",
+        "DOCUMENT_LABELS",
+        "DOCUMENT_ROUTES",
+        "LegalConsent",
+        "LegalDocument",
+        "LegalDocumentKey",
+        "REQUIRED_DOCUMENTS",
+        "checkConsentStatus",
+        "fetchCookiePreferences",
+        "fetchCurrentConsents",
+        "fetchLatestDocument",
+        "hasCompleteRequiredConsent",
+        "submitConsents",
+        "upsertCookiePreferences"
+      ]
+    },
+    {
+      "file": "src/lib/onboarding.ts",
+      "exportedSymbols": [
+        "NormalizedOnboardingAnswers",
+        "OnboardingStatus",
+        "OnboardingStepDefinition",
+        "OnboardingStepStatus",
+        "getOnboardingStepDefinitions",
+        "getStepDefinition",
+        "platformOnboardingSteps",
+        "verticalOnboardingSteps"
+      ]
+    },
+    {
+      "file": "src/lib/realEstateContract.ts",
+      "exportedSymbols": [
+        "appointmentStatuses",
+        "auditActions",
+        "leadStatuses",
+        "listingStatuses",
+        "moduleFeatureKeys",
+        "serviceFeatureTypes",
+        "workflowEntityTypes"
+      ]
+    },
+    {
+      "file": "src/lib/roiCalculator.ts",
+      "exportedSymbols": [
+        "CompanySize",
+        "Currency",
+        "LaborRateConfig",
+        "MAX_AUTOMATION_COVERAGE",
+        "PRODUCTIVE_HOURS_PER_FTE_MONTH",
+        "TeamLaborRoiInputs",
+        "TeamLaborRoiOutputs",
+        "automationModules",
+        "calculateTeamLaborRoi",
+        "companySizeMultipliers",
+        "currencies",
+        "formatCurrency",
+        "laborRateConfigs"
+      ]
+    },
+    {
+      "file": "src/lib/serviceCatalog.ts",
+      "exportedSymbols": [
+        "ServiceKey",
+        "getServiceLabel",
+        "legacyServiceAliases",
+        "serviceCatalog",
+        "serviceLabels"
+      ]
+    },
+    {
+      "file": "src/lib/serviceSubscriptions.ts",
+      "exportedSymbols": [
+        "NormalizedServiceSubscription",
+        "normalizeServiceSubscription"
       ]
     },
     {
@@ -187,9 +436,27 @@
       ]
     },
     {
+      "file": "src/pages/AuditDetailPage.tsx",
+      "exportedSymbols": [
+        "AuditDetailPage"
+      ]
+    },
+    {
+      "file": "src/pages/AuditPage.tsx",
+      "exportedSymbols": [
+        "AuditPage"
+      ]
+    },
+    {
       "file": "src/pages/DashboardPage.tsx",
       "exportedSymbols": [
         "DashboardPage"
+      ]
+    },
+    {
+      "file": "src/pages/DemoPage.tsx",
+      "exportedSymbols": [
+        "DemoPage"
       ]
     },
     {
@@ -199,9 +466,51 @@
       ]
     },
     {
+      "file": "src/pages/IntegrationsPage.tsx",
+      "exportedSymbols": [
+        "IntegrationsPage"
+      ]
+    },
+    {
+      "file": "src/pages/LegalConsentPage.tsx",
+      "exportedSymbols": [
+        "LegalConsentPage"
+      ]
+    },
+    {
+      "file": "src/pages/LegalDocumentPage.tsx",
+      "exportedSymbols": [
+        "LegalDocumentPage"
+      ]
+    },
+    {
+      "file": "src/pages/LegalSettingsPage.tsx",
+      "exportedSymbols": [
+        "LegalSettingsPage"
+      ]
+    },
+    {
       "file": "src/pages/LoginPage.tsx",
       "exportedSymbols": [
         "LoginPage"
+      ]
+    },
+    {
+      "file": "src/pages/OnboardingPage.tsx",
+      "exportedSymbols": [
+        "OnboardingPage"
+      ]
+    },
+    {
+      "file": "src/pages/RecentActivityPage.tsx",
+      "exportedSymbols": [
+        "RecentActivityPage"
+      ]
+    },
+    {
+      "file": "src/pages/SecurityPage.tsx",
+      "exportedSymbols": [
+        "SecurityPage"
       ]
     },
     {
@@ -227,7 +536,55 @@
       "exportedSymbols": []
     },
     {
+      "file": "src/test/AuditTrail.test.tsx",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/test/HomePage.test.tsx",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/test/IntegrationsShowcase.test.tsx",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/test/OperationsMenu.test.tsx",
+      "exportedSymbols": []
+    },
+    {
       "file": "src/test/ProtectedRoute.test.tsx",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/test/RunsFeed.test.tsx",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/test/SecurityPage.test.tsx",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/test/demoData.test.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/test/legalConsent.test.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/test/onboarding.test.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/test/realEstateSchema.test.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/test/roiCalculator.test.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/test/serviceSubscriptions.test.tsx",
       "exportedSymbols": []
     },
     {
@@ -239,8 +596,20 @@
       "exportedSymbols": []
     },
     {
+      "file": "src/test/useRunDetails.test.tsx",
+      "exportedSymbols": []
+    },
+    {
       "file": "src/test/useRuns.test.tsx",
       "exportedSymbols": []
+    },
+    {
+      "file": "src/types/realEstate.ts",
+      "exportedSymbols": [
+        "RealEstateAppointment",
+        "RealEstateLead",
+        "RealEstateListing"
+      ]
     },
     {
       "file": "src/types/supabase.ts",
@@ -285,6 +654,10 @@
       ]
     },
     {
+      "file": "supabase/functions/demo-event/index.ts",
+      "exportedSymbols": []
+    },
+    {
       "file": "supabase/functions/ingest-run/index.ts",
       "exportedSymbols": []
     },
@@ -306,6 +679,74 @@
     },
     {
       "file": "supabase/migrations/20260711000002_client_services.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260714000001_real_estate_workflow_operations.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260714000002_platform_core_and_vertical_modules.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260714000003_fix_generic_ingest_legacy_bridge.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260714000004_client_onboarding.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260716000001_canonical_workflow_runs.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260716000002_atomic_client_provisioning.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260716000003_legal_compliance.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260716000004_legal_compliance_rls.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260716000005_fix_legal_consents_rls.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260716000006_remove_ai_usage_disclosure.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260716000007_harden_legal_scope.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260716000008_demo_workspace.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260716000010_real_estate_api_grants.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260717000001_ui_service_enum.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260717000002_ui_service_taxonomy.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260717000003_expand_demo_services.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260717000004_expand_demo_workflows.sql",
       "exportedSymbols": []
     },
     {

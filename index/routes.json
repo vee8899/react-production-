@@ -7,8 +7,13 @@
       "protected": false
     },
     {
-      "route": "https://react-production.pages.dev/",
+      "route": "/login",
       "file": "README.md",
+      "protected": false
+    },
+    {
+      "route": "/dashboard",
+      "file": "audit_markdown.md",
       "protected": false
     },
     {
@@ -42,7 +47,57 @@
       "protected": false
     },
     {
+      "route": "/activity",
+      "file": "src/App.tsx",
+      "protected": true
+    },
+    {
+      "route": "/activity/:runId",
+      "file": "src/App.tsx",
+      "protected": true
+    },
+    {
+      "route": "/audit",
+      "file": "src/App.tsx",
+      "protected": true
+    },
+    {
+      "route": "/audit/:eventId",
+      "file": "src/App.tsx",
+      "protected": true
+    },
+    {
       "route": "/dashboard",
+      "file": "src/App.tsx",
+      "protected": true
+    },
+    {
+      "route": "/demo",
+      "file": "src/App.tsx",
+      "protected": true
+    },
+    {
+      "route": "/integrations",
+      "file": "src/App.tsx",
+      "protected": true
+    },
+    {
+      "route": "/legal/consent",
+      "file": "src/App.tsx",
+      "protected": true
+    },
+    {
+      "route": "/legal/privacy",
+      "file": "src/App.tsx",
+      "protected": true
+    },
+    {
+      "route": "/legal/settings",
+      "file": "src/App.tsx",
+      "protected": true
+    },
+    {
+      "route": "/legal/terms",
       "file": "src/App.tsx",
       "protected": true
     },
@@ -52,17 +107,57 @@
       "protected": false
     },
     {
+      "route": "/onboarding",
+      "file": "src/App.tsx",
+      "protected": true
+    },
+    {
+      "route": "/security",
+      "file": "src/App.tsx",
+      "protected": true
+    },
+    {
       "route": "/workflows",
       "file": "src/App.tsx",
       "protected": true
     },
     {
-      "route": "/",
-      "file": "src/components/ui/Nav.tsx",
+      "route": "/audit/${event.id}",
+      "file": "src/components/dashboard/AuditTrail.tsx",
       "protected": false
     },
     {
-      "route": "/#${hash}",
+      "route": "/activity",
+      "file": "src/components/dashboard/RunDetail.tsx",
+      "protected": false
+    },
+    {
+      "route": "/activity/${run.id}",
+      "file": "src/components/dashboard/RunsFeed.tsx",
+      "protected": false
+    },
+    {
+      "route": "/legal/consent",
+      "file": "src/components/legal/LegalGate.tsx",
+      "protected": false
+    },
+    {
+      "route": "/legal/privacy",
+      "file": "src/components/ui/Footer.tsx",
+      "protected": false
+    },
+    {
+      "route": "/legal/terms",
+      "file": "src/components/ui/Footer.tsx",
+      "protected": false
+    },
+    {
+      "route": "/security",
+      "file": "src/components/ui/Footer.tsx",
+      "protected": false
+    },
+    {
+      "route": "/",
       "file": "src/components/ui/Nav.tsx",
       "protected": false
     },
@@ -87,8 +182,63 @@
       "protected": false
     },
     {
+      "route": "/activity/${event.runId}",
+      "file": "src/pages/AuditDetailPage.tsx",
+      "protected": false
+    },
+    {
+      "route": "/audit",
+      "file": "src/pages/AuditDetailPage.tsx",
+      "protected": false
+    },
+    {
+      "route": "/dashboard",
+      "file": "src/pages/AuditPage.tsx",
+      "protected": false
+    },
+    {
+      "route": "/activity",
+      "file": "src/pages/DashboardPage.tsx",
+      "protected": false
+    },
+    {
+      "route": "/audit",
+      "file": "src/pages/DashboardPage.tsx",
+      "protected": false
+    },
+    {
+      "route": "/security",
+      "file": "src/pages/HomePage.tsx",
+      "protected": false
+    },
+    {
+      "route": "/dashboard",
+      "file": "src/pages/LegalConsentPage.tsx",
+      "protected": false
+    },
+    {
+      "route": "/legal/privacy",
+      "file": "src/pages/LegalSettingsPage.tsx",
+      "protected": false
+    },
+    {
+      "route": "/legal/terms",
+      "file": "src/pages/LegalSettingsPage.tsx",
+      "protected": false
+    },
+    {
       "route": "/dashboard",
       "file": "src/pages/LoginPage.tsx",
+      "protected": false
+    },
+    {
+      "route": "/dashboard",
+      "file": "src/pages/OnboardingPage.tsx",
+      "protected": false
+    },
+    {
+      "route": "/",
+      "file": "src/pages/SecurityPage.tsx",
       "protected": false
     },
     {

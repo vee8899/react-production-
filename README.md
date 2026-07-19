@@ -1,106 +1,167 @@
 # Prime State Systems
 
-React and TypeScript client portal for a real-estate automation studio. Public visitors can view the studio site; authenticated clients can view workflow activity and automation metrics.
+Prime State Systems is a React and TypeScript client portal for a real-estate automation studio.
 
-## Run locally
+The repository contains two connected experiences:
 
-1. Create `.env.local` with:
+- A public marketing site for the studio.
+- An authenticated client portal for workflow activity, automation metrics, integrations, onboarding, and legal consent.
 
-   ```env
-   VITE_SUPABASE_URL=https://your-project.supabase.co
-   VITE_SUPABASE_ANON_KEY=your-anon-key
-   ```
+Supabase provides authentication, PostgreSQL data, row-level security, and Edge Functions. n8n is the external automation system that reports workflow outcomes to the portal.
 
-2. Install and start the app:
+## Start here
 
-   ```powershell
-   npm.cmd install
-   npm.cmd run dev
-   ```
+| Need | Read |
+| --- | --- |
+| Run the app locally | [`docs/runbooks/local-development.md`](docs/runbooks/local-development.md) |
+| Understand the repository | [`AGENT.md`](AGENT.md), [`docs/README.md`](docs/README.md) |
+| Understand the system | [`docs/architecture/`](docs/architecture/) |
+| Change a user-facing behavior | [`docs/specs/`](docs/specs/) |
+| Work with the database | [`docs/runbooks/database-migrations.md`](docs/runbooks/database-migrations.md) |
+| Deploy the application | [`docs/runbooks/deployment.md`](docs/runbooks/deployment.md) |
+| Troubleshoot a problem | [`DEBUG.md`](DEBUG.md), [`docs/runbooks/debugging.md`](docs/runbooks/debugging.md) |
 
-The local dev server runs on `http://localhost:52124`.
+## Technology
 
-## Validate
+- React 19 and React Router
+- TypeScript and Vite
+- Supabase Auth, PostgreSQL, Row Level Security, and Edge Functions
+- React Query for server state and caching
+- Zustand for authentication state
+- Tailwind CSS, project CSS, and Framer Motion for the interface
+- Vitest and Testing Library for tests
+- n8n for external workflow automation
+
+## Requirements
+
+- Node.js 24 is used by the GitHub Actions workflow. Use the same major version locally when possible.
+- npm
+- A local or staging Supabase project for data-backed flows
+
+## Local setup
+
+Create `.env.local` in the repository root:
+
+```env
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
+```
+
+These are browser-side Supabase values. The anonymous key is protected by Supabase policies; it is not a replacement for server-side secrets. Never put webhook, admin, service-role, or n8n credentials in a `VITE_` variable.
+
+Install dependencies and start the development server:
 
 ```powershell
-npm.cmd run lint
-npm.cmd run test -- --run
-npm.cmd run build
+npm.cmd install
+npm.cmd run dev
 ```
 
-## Automation ingestion
+The Vite server normally runs at `http://localhost:52124`. Vite may choose another port if that port is already in use.
 
-The `ingest-run` Supabase Edge Function records n8n workflow outcomes. Each payload must include a stable `event_id`, `client_id`, `feature_type`, `workflow_name`, and `status`. Reusing an `event_id` updates the existing run instead of creating a duplicate.
+## Useful commands
 
-Set `WEBHOOK_SECRET` as an Edge Function secret and send it in the `X-Webhook-Secret` header from n8n. Do not expose n8n API keys in browser environment variables.
+| Command | Purpose |
+| --- | --- |
+| `npm.cmd run dev` | Start the Vite development server |
+| `npm.cmd run lint` | Run ESLint |
+| `npm.cmd run test -- --run` | Run the test suite once |
+| `npm.cmd run build` | Type-check and create a production build |
+| `npm.cmd run preview` | Serve the production build locally |
+| `npm.cmd run db:check` | Check the configured Supabase environment |
+| `npm.cmd run db:dry-run` | Preview migrations through the Supabase CLI |
+| `npm.cmd run ingest` | Refresh generated repository knowledge |
+| `npm.cmd run index` | Rebuild repository indexes |
+| `npm.cmd run refresh-ai` | Run both knowledge and index refreshes |
 
-## Client provisioning
+Before opening a pull request, run lint, tests, and build. If a change affects the database or an Edge Function, also run the relevant local or staging verification described in `docs/runbooks/`.
 
-The `invite-client` Edge Function creates the Supabase Auth invite and the matching `clients` row. It is an operator-only endpoint protected by `ADMIN_INVITE_SECRET`, not a browser flow.
+## Application structure
 
-Required request:
+`src/main.tsx` bootstraps the application and Supabase session. `src/App.tsx` defines routes and protected-route behavior. The main boundaries are:
 
-```http
-POST /functions/v1/invite-client
-X-Admin-Invite-Secret: <ADMIN_INVITE_SECRET>
-Content-Type: application/json
-```
+- `src/pages/` — route-level screens
+- `src/components/` — reusable interface pieces
+- `src/hooks/` — data access and feature hooks
+- `src/store/` — client-side state, including the auth store
+- `src/lib/` — domain logic and contracts
+- `src/api/` — browser-facing API clients
+- `src/types/` — shared TypeScript types
+- `src/test/` — unit and component tests
+- `supabase/migrations/` — database schema, policies, functions, and RPC changes
+- `supabase/functions/` — trusted server-side HTTP functions
+- `infra/n8n/` — optional private n8n, Postgres, and Caddy infrastructure
+- `n8n/workflows/` — sanitized, reviewed workflow exports
+- `docs/` — authored architecture notes, specifications, ADRs, and runbooks
+- `knowledge/` — generated implementation maps for navigation and coding-agent context
+
+The implementation is the source of truth. If a note disagrees with the code or migrations, verify the implementation and update the note.
+
+## Authentication and tenancy
+
+Authentication is handled by Supabase. The session is stored in Zustand and exposed through `useAuth`. Unauthenticated users are redirected to `/login`; invited users complete consent and password setup at `/accept-invite` before entering the portal.
+
+Client data is organization-scoped. Row Level Security is part of the security boundary, not just a UI concern. Any change to client, organization, workflow, run, or service access must be checked against the relevant migration and tested with two separate client accounts.
+
+## Workflow ingestion
+
+The `ingest-run` Edge Function is the trusted boundary for n8n workflow results. n8n sends a `POST` request with `X-Webhook-Secret` and a payload containing at least:
 
 ```json
 {
-  "company_name": "Client Company",
-  "email": "client@example.com",
-  "plan": "starter",
-  "services": [
-    { "feature_type": "workflow_automation", "status": "onboarding" },
-    { "feature_type": "system_integrations", "status": "active" }
-  ]
+  "event_id": "stable-event-id",
+  "client_id": "client-uuid",
+  "feature_type": "workflow_automation",
+  "workflow_name": "Lead follow-up",
+  "status": "success"
 }
 ```
 
-`services` is optional. It controls the client-facing service visibility and accepts `onboarding`, `active`, `paused`, or `cancelled`. The response includes the created `client_id` and `user_id`. Store those IDs when configuring a workflow for that client.
+`event_id` makes ingestion idempotent: sending the same event again updates the existing run rather than creating a duplicate. The canonical product table is `workflow_runs`; `automation_runs` is a compatibility projection while older consumers are being migrated. See [`docs/specs/automation-run-ingestion.md`](docs/specs/automation-run-ingestion.md) and [`docs/architecture/canonical-workflow-runs.md`](docs/architecture/canonical-workflow-runs.md).
 
-## Production setup
+## Client invitations
 
-1. Run the Supabase CLI through `npx`, then authenticate and link the project:
+The `invite-client` Edge Function is an operator-only endpoint. It creates the Supabase Auth invite and provisions the matching organization, client record, onboarding data, subscriptions, and visible services in the database transaction.
 
-   ```powershell
-   npx supabase login
-   npx supabase link --project-ref iutycpnqlzxovffctjyz
-   ```
+It requires `X-Admin-Invite-Secret` and is not called from browser code. The endpoint contract and failure behavior are documented in [`docs/specs/client-invitation.md`](docs/specs/client-invitation.md).
 
-2. Review the migration plan before applying it:
+## Database and production deployment
 
-   ```powershell
-   npx supabase db push --dry-run
-   ```
+Use local or staging environments for checks and migration rehearsals. Review the migration plan before applying it to a linked project:
 
-   The repository includes the baseline client tables plus the canonical organization-scoped `workflow_runs` model. Review the backfill and compatibility migrations before applying them to a linked remote project.
+```powershell
+npx supabase login
+npx supabase link --project-ref <project-ref>
+npx supabase db push --dry-run
+```
 
-3. Generate long random values for `WEBHOOK_SECRET` and `ADMIN_INVITE_SECRET`, then deploy the database, function config, and functions:
+Production deployment requires the approved Supabase project, configured secrets, Auth redirect URLs, and a tenant-isolation check. The full sequence and rollback guidance are in [`docs/runbooks/deployment.md`](docs/runbooks/deployment.md).
 
-   ```powershell
-   npx supabase secrets set WEBHOOK_SECRET="replace-with-a-long-random-secret"
-   npx supabase secrets set ADMIN_INVITE_SECRET="replace-with-a-long-random-secret"
-   npx supabase secrets set SITE_URL="https://react-production.pages.dev/"
-   npx supabase secrets set INVITE_REDIRECT_URL="https://react-production.pages.dev/accept-invite"
-   npx supabase config push
-   npx supabase db push
-   npx supabase functions deploy ingest-run
-   npx supabase functions deploy invite-client
-   ```
+Required Edge Function secrets include:
 
-   `ingest-run` is configured to bypass Supabase JWT verification because n8n is an external service. It rejects every request unless the shared secret is present and correct.
-   `invite-client` also bypasses Supabase JWT verification and rejects every request unless the admin invite secret is present and correct.
+- `WEBHOOK_SECRET`
+- `ADMIN_INVITE_SECRET`
+- `SITE_URL`
+- `INVITE_REDIRECT_URL`
 
-4. In Supabase Auth settings, set the production Site URL to `https://react-production.pages.dev/`, allow `https://react-production.pages.dev/accept-invite` as an auth redirect URL, configure the sender email/SMTP, and test a new client invite. Invited users land on `/accept-invite`, consent to portal access, set their password, and then continue to the dashboard.
+Do not commit real environment files or secrets. Use `.env.mcp.example` as the safe starting point for local/staging MCP operations.
 
-5. Verify tenant isolation with two test accounts: each account must see its own client row, runs, workflows, and analytics, but never the other account's data. The `20260711000001_client_data_rls.sql` migration enables this policy enforcement.
+## CI and container publishing
 
-6. GitHub Actions runs lint, tests, and production builds for pushes and pull requests. Configure your deployment provider to deploy only after this workflow is green.
+`.github/workflows/ci.yml` runs lint, tests, and a production build for pull requests and pushes to `main`. `.github/workflows/docker.yml` builds and publishes the container image to GitHub Container Registry when `main` changes.
+
+The container build receives the public Supabase URL and anonymous key as build arguments. Treat all other credentials as runtime secrets and keep them outside the image.
+
+## Documentation rules
+
+Documentation is divided by purpose:
+
+- `README.md` is the short project entry point.
+- `AGENT.md` explains how to work safely in the repository.
+- `docs/` contains authored guidance and is reviewed like code.
+- `knowledge/` is generated and should not be edited by hand.
+
+When implementation behavior changes, update the closest authored document, add or update tests, then run `npm.cmd run refresh-ai`. The refresh command updates generated knowledge and indexes; it must not replace authored specifications, ADRs, or runbooks.
 
 ## n8n infrastructure
 
-Use `infra/n8n/` only if you are delivering the private-infrastructure offer. It contains a Docker Compose stack for n8n, Postgres, and Caddy, plus backup and restore scripts. Copy `infra/n8n/.env.example` to `.env` on the host and keep the real values out of Git.
-
-Use `n8n/workflows/` for exported workflow JSON after a workflow passes acceptance testing. Do not export credentials, webhook secrets, API keys, or client data.
+Use `infra/n8n/` only for the private-infrastructure offering. Copy its environment example to `.env` on the host. Keep credentials, webhook secrets, API keys, and client data out of exported workflow JSON. Export a workflow only after it passes acceptance testing and sanitize the export before committing it.

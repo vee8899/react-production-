@@ -56,24 +56,48 @@
       "file": "src/App.tsx",
       "importedSymbols": [
         "@/components/ErrorBoundary",
+        "@/components/legal/LegalGate",
         "@/components/motion/PageTransition",
+        "@/components/motion/RouteScrollRestoration",
         "@/hooks/useAuth",
         "@/pages/AcceptInvitePage",
+        "@/pages/AuditDetailPage",
+        "@/pages/AuditPage",
         "@/pages/DashboardPage",
+        "@/pages/DemoPage",
         "@/pages/HomePage",
+        "@/pages/IntegrationsPage",
+        "@/pages/LegalConsentPage",
+        "@/pages/LegalDocumentPage",
+        "@/pages/LegalSettingsPage",
         "@/pages/LoginPage",
+        "@/pages/OnboardingPage",
+        "@/pages/RecentActivityPage",
+        "@/pages/SecurityPage",
         "@/pages/WorkflowsPage",
         "framer-motion",
         "react-router-dom"
       ],
       "dependencies": [
         "@/components/ErrorBoundary",
+        "@/components/legal/LegalGate",
         "@/components/motion/PageTransition",
+        "@/components/motion/RouteScrollRestoration",
         "@/hooks/useAuth",
         "@/pages/AcceptInvitePage",
+        "@/pages/AuditDetailPage",
+        "@/pages/AuditPage",
         "@/pages/DashboardPage",
+        "@/pages/DemoPage",
         "@/pages/HomePage",
+        "@/pages/IntegrationsPage",
+        "@/pages/LegalConsentPage",
+        "@/pages/LegalDocumentPage",
+        "@/pages/LegalSettingsPage",
         "@/pages/LoginPage",
+        "@/pages/OnboardingPage",
+        "@/pages/RecentActivityPage",
+        "@/pages/SecurityPage",
         "@/pages/WorkflowsPage"
       ]
     },
@@ -111,12 +135,70 @@
       "dependencies": []
     },
     {
-      "file": "src/components/dashboard/ClientServices.tsx",
+      "file": "src/components/dashboard/AuditTrail.tsx",
       "importedSymbols": [
-        "@/hooks/useClientServices"
+        "@/hooks/useAuditLog",
+        "@/hooks/useClient",
+        "@/utils/time",
+        "react-router-dom"
       ],
       "dependencies": [
-        "@/hooks/useClientServices"
+        "@/hooks/useAuditLog",
+        "@/hooks/useClient",
+        "@/utils/time"
+      ]
+    },
+    {
+      "file": "src/components/dashboard/ClientServices.tsx",
+      "importedSymbols": [
+        "@/components/dashboard/RealEstateMetrics",
+        "@/hooks/useClientServices",
+        "@/lib/serviceCatalog"
+      ],
+      "dependencies": [
+        "@/components/dashboard/RealEstateMetrics",
+        "@/hooks/useClientServices",
+        "@/lib/serviceCatalog"
+      ]
+    },
+    {
+      "file": "src/components/dashboard/IntegrationCard.tsx",
+      "importedSymbols": [
+        "@/utils/time"
+      ],
+      "dependencies": [
+        "@/utils/time"
+      ]
+    },
+    {
+      "file": "src/components/dashboard/OperationsMenu.tsx",
+      "importedSymbols": [
+        "react",
+        "react-router-dom"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": "src/components/dashboard/RealEstateMetrics.tsx",
+      "importedSymbols": [
+        "@/hooks/useRealEstateMetrics"
+      ],
+      "dependencies": [
+        "@/hooks/useRealEstateMetrics"
+      ]
+    },
+    {
+      "file": "src/components/dashboard/RunDetail.tsx",
+      "importedSymbols": [
+        "@/hooks/useClient",
+        "@/hooks/useRunDetails",
+        "@/lib/serviceCatalog",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "@/hooks/useClient",
+        "@/hooks/useRunDetails",
+        "@/lib/serviceCatalog"
       ]
     },
     {
@@ -124,32 +206,59 @@
       "importedSymbols": [
         "@/hooks/useClient",
         "@/hooks/useRuns",
-        "@/utils/time"
+        "@/lib/serviceCatalog",
+        "@/utils/time",
+        "react-router-dom"
       ],
       "dependencies": [
         "@/hooks/useClient",
         "@/hooks/useRuns",
+        "@/lib/serviceCatalog",
         "@/utils/time"
+      ]
+    },
+    {
+      "file": "src/components/dashboard/Sparkline.tsx",
+      "importedSymbols": [
+        "@/hooks/useClient",
+        "@/hooks/useRunsTimeline",
+        "react"
+      ],
+      "dependencies": [
+        "@/hooks/useClient",
+        "@/hooks/useRunsTimeline"
       ]
     },
     {
       "file": "src/components/dashboard/StatsRow.tsx",
       "importedSymbols": [
         "@/hooks/useClient",
-        "@/hooks/useRuns"
+        "@/hooks/useDashboardMetrics"
       ],
       "dependencies": [
         "@/hooks/useClient",
-        "@/hooks/useRuns"
+        "@/hooks/useDashboardMetrics"
       ]
     },
     {
       "file": "src/components/dashboard/WorkflowRow.tsx",
       "importedSymbols": [
-        "@/utils/time"
+        "@/lib/serviceCatalog",
+        "@/utils/time",
+        "react"
       ],
       "dependencies": [
+        "@/lib/serviceCatalog",
         "@/utils/time"
+      ]
+    },
+    {
+      "file": "src/components/features/DashboardMock.tsx",
+      "importedSymbols": [
+        "@/components/motion/FadeUp"
+      ],
+      "dependencies": [
+        "@/components/motion/FadeUp"
       ]
     },
     {
@@ -177,14 +286,74 @@
       ]
     },
     {
+      "file": "src/components/features/IntegrationsShowcase.tsx",
+      "importedSymbols": [
+        "@/components/ui/SectionHeader",
+        "react",
+        "react-icons/fa",
+        "react-icons/si"
+      ],
+      "dependencies": [
+        "@/components/ui/SectionHeader"
+      ]
+    },
+    {
       "file": "src/components/features/ROICalculator.tsx",
       "importedSymbols": [
         "@/components/ui/SectionHeader",
+        "@/lib/roiCalculator",
+        "@/utils/contact",
         "framer-motion",
         "react"
       ],
       "dependencies": [
-        "@/components/ui/SectionHeader"
+        "@/components/ui/SectionHeader",
+        "@/lib/roiCalculator",
+        "@/utils/contact"
+      ]
+    },
+    {
+      "file": "src/components/legal/ConsentCheckbox.tsx",
+      "importedSymbols": [
+        "@/lib/legalConsent",
+        "react-hook-form"
+      ],
+      "dependencies": [
+        "@/lib/legalConsent"
+      ]
+    },
+    {
+      "file": "src/components/legal/CookiePreferenceToggle.tsx",
+      "importedSymbols": [
+        "@/lib/legalConsent",
+        "react"
+      ],
+      "dependencies": [
+        "@/lib/legalConsent"
+      ]
+    },
+    {
+      "file": "src/components/legal/LegalDocument.tsx",
+      "importedSymbols": [
+        "@/lib/legalConsent"
+      ],
+      "dependencies": [
+        "@/lib/legalConsent"
+      ]
+    },
+    {
+      "file": "src/components/legal/LegalGate.tsx",
+      "importedSymbols": [
+        "@/hooks/useAuth",
+        "@/hooks/useLegalConsent",
+        "@/lib/legalConsent",
+        "react",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "@/hooks/useAuth",
+        "@/hooks/useLegalConsent",
+        "@/lib/legalConsent"
       ]
     },
     {
@@ -205,6 +374,14 @@
       "dependencies": []
     },
     {
+      "file": "src/components/motion/RouteScrollRestoration.tsx",
+      "importedSymbols": [
+        "react",
+        "react-router-dom"
+      ],
+      "dependencies": []
+    },
+    {
       "file": "src/components/ui/Footer.tsx",
       "importedSymbols": [
         "@/utils/contact",
@@ -217,12 +394,14 @@
     {
       "file": "src/components/ui/Nav.tsx",
       "importedSymbols": [
+        "@/components/dashboard/OperationsMenu",
         "@/hooks/useAuth",
         "@/utils/contact",
         "react",
         "react-router-dom"
       ],
       "dependencies": [
+        "@/components/dashboard/OperationsMenu",
         "@/hooks/useAuth",
         "@/utils/contact"
       ]
@@ -240,6 +419,11 @@
       "dependencies": []
     },
     {
+      "file": "src/demo/demoData.ts",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
       "file": "src/hooks/useAnalytics.ts",
       "importedSymbols": [
         "@/api/supabase/client",
@@ -247,6 +431,18 @@
       ],
       "dependencies": [
         "@/api/supabase/client"
+      ]
+    },
+    {
+      "file": "src/hooks/useAuditLog.ts",
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/types/supabase",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/types/supabase"
       ]
     },
     {
@@ -277,6 +473,108 @@
       "file": "src/hooks/useClientServices.ts",
       "importedSymbols": [
         "@/api/supabase/client",
+        "@/lib/serviceSubscriptions",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/lib/serviceSubscriptions"
+      ]
+    },
+    {
+      "file": "src/hooks/useCookiePreferences.ts",
+      "importedSymbols": [
+        "@/hooks/useClient",
+        "@/lib/legalConsent",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/hooks/useClient",
+        "@/lib/legalConsent"
+      ]
+    },
+    {
+      "file": "src/hooks/useDashboardMetrics.ts",
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ]
+    },
+    {
+      "file": "src/hooks/useIntegrations.ts",
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/types/supabase",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/types/supabase"
+      ]
+    },
+    {
+      "file": "src/hooks/useLegalConsent.ts",
+      "importedSymbols": [
+        "@/hooks/useClient",
+        "@/lib/legalConsent",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/hooks/useClient",
+        "@/lib/legalConsent"
+      ]
+    },
+    {
+      "file": "src/hooks/useLegalDocument.ts",
+      "importedSymbols": [
+        "@/lib/legalConsent",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/lib/legalConsent"
+      ]
+    },
+    {
+      "file": "src/hooks/useOrganization.ts",
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ]
+    },
+    {
+      "file": "src/hooks/useOrganizationOnboarding.ts",
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/lib/onboarding",
+        "@/types/supabase",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/lib/onboarding",
+        "@/types/supabase"
+      ]
+    },
+    {
+      "file": "src/hooks/useRealEstateMetrics.ts",
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ]
+    },
+    {
+      "file": "src/hooks/useRunDetails.ts",
+      "importedSymbols": [
+        "@/api/supabase/client",
         "@tanstack/react-query"
       ],
       "dependencies": [
@@ -294,6 +592,16 @@
       ]
     },
     {
+      "file": "src/hooks/useRunsTimeline.ts",
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ]
+    },
+    {
       "file": "src/hooks/useWorkflows.ts",
       "importedSymbols": [
         "@/api/supabase/client",
@@ -301,6 +609,48 @@
       ],
       "dependencies": [
         "@/api/supabase/client"
+      ]
+    },
+    {
+      "file": "src/lib/legalConsent.ts",
+      "importedSymbols": [
+        "@/api/supabase/client"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ]
+    },
+    {
+      "file": "src/lib/onboarding.ts",
+      "importedSymbols": [
+        "@/types/supabase"
+      ],
+      "dependencies": [
+        "@/types/supabase"
+      ]
+    },
+    {
+      "file": "src/lib/realEstateContract.ts",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "src/lib/roiCalculator.ts",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "src/lib/serviceCatalog.ts",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "src/lib/serviceSubscriptions.ts",
+      "importedSymbols": [
+        "@/types/supabase"
+      ],
+      "dependencies": [
+        "@/types/supabase"
       ]
     },
     {
@@ -339,19 +689,62 @@
       ]
     },
     {
-      "file": "src/pages/DashboardPage.tsx",
+      "file": "src/pages/AuditDetailPage.tsx",
       "importedSymbols": [
-        "@/components/dashboard/ClientServices",
-        "@/components/dashboard/RunsFeed",
-        "@/components/dashboard/StatsRow",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useAuditLog",
+        "@/hooks/useClient",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useAuditLog",
+        "@/hooks/useClient"
+      ]
+    },
+    {
+      "file": "src/pages/AuditPage.tsx",
+      "importedSymbols": [
+        "@/components/dashboard/AuditTrail",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient",
+        "react",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "@/components/dashboard/AuditTrail",
         "@/components/ui/Footer",
         "@/components/ui/Nav",
         "@/components/ui/SectionHeader",
         "@/hooks/useClient"
-      ],
-      "dependencies": [
+      ]
+    },
+    {
+      "file": "src/pages/DashboardPage.tsx",
+      "importedSymbols": [
+        "@/components/dashboard/AuditTrail",
         "@/components/dashboard/ClientServices",
         "@/components/dashboard/RunsFeed",
+        "@/components/dashboard/Sparkline",
+        "@/components/dashboard/StatsRow",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient",
+        "react",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "@/components/dashboard/AuditTrail",
+        "@/components/dashboard/ClientServices",
+        "@/components/dashboard/RunsFeed",
+        "@/components/dashboard/Sparkline",
         "@/components/dashboard/StatsRow",
         "@/components/ui/Footer",
         "@/components/ui/Nav",
@@ -360,25 +753,150 @@
       ]
     },
     {
+      "file": "src/pages/DemoPage.tsx",
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient",
+        "@/hooks/useDashboardMetrics",
+        "@/hooks/useRuns",
+        "@/lib/serviceCatalog",
+        "@tanstack/react-query",
+        "react"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient",
+        "@/hooks/useDashboardMetrics",
+        "@/hooks/useRuns",
+        "@/lib/serviceCatalog"
+      ]
+    },
+    {
       "file": "src/pages/HomePage.tsx",
       "importedSymbols": [
+        "@/components/features/DashboardMock",
         "@/components/features/FAQ",
-        "@/components/features/IntegrationsOrbit",
+        "@/components/features/IntegrationsShowcase",
         "@/components/features/ROICalculator",
         "@/components/motion/FadeUp",
         "@/components/ui/Footer",
         "@/components/ui/Nav",
         "@/components/ui/SectionHeader",
-        "framer-motion"
+        "@/utils/contact",
+        "framer-motion",
+        "react-router-dom"
       ],
       "dependencies": [
+        "@/components/features/DashboardMock",
         "@/components/features/FAQ",
-        "@/components/features/IntegrationsOrbit",
+        "@/components/features/IntegrationsShowcase",
         "@/components/features/ROICalculator",
         "@/components/motion/FadeUp",
         "@/components/ui/Footer",
         "@/components/ui/Nav",
-        "@/components/ui/SectionHeader"
+        "@/components/ui/SectionHeader",
+        "@/utils/contact"
+      ]
+    },
+    {
+      "file": "src/pages/IntegrationsPage.tsx",
+      "importedSymbols": [
+        "@/components/dashboard/IntegrationCard",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient",
+        "@/hooks/useIntegrations"
+      ],
+      "dependencies": [
+        "@/components/dashboard/IntegrationCard",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient",
+        "@/hooks/useIntegrations"
+      ]
+    },
+    {
+      "file": "src/pages/LegalConsentPage.tsx",
+      "importedSymbols": [
+        "@/components/legal/ConsentCheckbox",
+        "@/components/legal/LegalDocument",
+        "@/components/motion/FadeUp",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient",
+        "@/hooks/useLegalConsent",
+        "@/lib/legalConsent",
+        "@hookform/resolvers/zod",
+        "@tanstack/react-query",
+        "react",
+        "react-hook-form",
+        "react-router-dom",
+        "zod"
+      ],
+      "dependencies": [
+        "@/components/legal/ConsentCheckbox",
+        "@/components/legal/LegalDocument",
+        "@/components/motion/FadeUp",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient",
+        "@/hooks/useLegalConsent",
+        "@/lib/legalConsent"
+      ]
+    },
+    {
+      "file": "src/pages/LegalDocumentPage.tsx",
+      "importedSymbols": [
+        "@/components/legal/LegalDocument",
+        "@/components/motion/FadeUp",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useLegalDocument",
+        "@/lib/legalConsent"
+      ],
+      "dependencies": [
+        "@/components/legal/LegalDocument",
+        "@/components/motion/FadeUp",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useLegalDocument",
+        "@/lib/legalConsent"
+      ]
+    },
+    {
+      "file": "src/pages/LegalSettingsPage.tsx",
+      "importedSymbols": [
+        "@/components/legal/CookiePreferenceToggle",
+        "@/components/motion/FadeUp",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient",
+        "@/hooks/useCookiePreferences",
+        "@/lib/legalConsent",
+        "react"
+      ],
+      "dependencies": [
+        "@/components/legal/CookiePreferenceToggle",
+        "@/components/motion/FadeUp",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient",
+        "@/hooks/useCookiePreferences",
+        "@/lib/legalConsent"
       ]
     },
     {
@@ -393,6 +911,66 @@
       ],
       "dependencies": [
         "@/api/supabase/client"
+      ]
+    },
+    {
+      "file": "src/pages/OnboardingPage.tsx",
+      "importedSymbols": [
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient",
+        "@/hooks/useOrganizationOnboarding",
+        "@/lib/onboarding",
+        "react",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient",
+        "@/hooks/useOrganizationOnboarding",
+        "@/lib/onboarding"
+      ]
+    },
+    {
+      "file": "src/pages/RecentActivityPage.tsx",
+      "importedSymbols": [
+        "@/components/dashboard/RunDetail",
+        "@/components/dashboard/RunsFeed",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient",
+        "react",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "@/components/dashboard/RunDetail",
+        "@/components/dashboard/RunsFeed",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient"
+      ]
+    },
+    {
+      "file": "src/pages/SecurityPage.tsx",
+      "importedSymbols": [
+        "@/components/motion/FadeUp",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/utils/contact",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "@/components/motion/FadeUp",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/utils/contact"
       ]
     },
     {
@@ -445,6 +1023,53 @@
       ]
     },
     {
+      "file": "src/test/AuditTrail.test.tsx",
+      "importedSymbols": [
+        "@/components/dashboard/AuditTrail",
+        "@testing-library/react",
+        "react-router-dom",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/components/dashboard/AuditTrail"
+      ]
+    },
+    {
+      "file": "src/test/HomePage.test.tsx",
+      "importedSymbols": [
+        "@/pages/HomePage",
+        "@testing-library/react",
+        "react-router-dom",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/pages/HomePage"
+      ]
+    },
+    {
+      "file": "src/test/IntegrationsShowcase.test.tsx",
+      "importedSymbols": [
+        "@/components/features/IntegrationsShowcase",
+        "@testing-library/react",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/components/features/IntegrationsShowcase"
+      ]
+    },
+    {
+      "file": "src/test/OperationsMenu.test.tsx",
+      "importedSymbols": [
+        "@/components/dashboard/OperationsMenu",
+        "@testing-library/react",
+        "react-router-dom",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/components/dashboard/OperationsMenu"
+      ]
+    },
+    {
       "file": "src/test/ProtectedRoute.test.tsx",
       "importedSymbols": [
         "@/App",
@@ -456,6 +1081,95 @@
       "dependencies": [
         "@/App",
         "@/hooks/useAuth"
+      ]
+    },
+    {
+      "file": "src/test/RunsFeed.test.tsx",
+      "importedSymbols": [
+        "@/components/dashboard/RunsFeed",
+        "@testing-library/react",
+        "react-router-dom",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/components/dashboard/RunsFeed"
+      ]
+    },
+    {
+      "file": "src/test/SecurityPage.test.tsx",
+      "importedSymbols": [
+        "@/pages/SecurityPage",
+        "@testing-library/react",
+        "react-router-dom",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/pages/SecurityPage"
+      ]
+    },
+    {
+      "file": "src/test/demoData.test.ts",
+      "importedSymbols": [
+        "@/demo/demoData",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/demo/demoData"
+      ]
+    },
+    {
+      "file": "src/test/legalConsent.test.ts",
+      "importedSymbols": [
+        "@/lib/legalConsent",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/lib/legalConsent"
+      ]
+    },
+    {
+      "file": "src/test/onboarding.test.ts",
+      "importedSymbols": [
+        "@/lib/onboarding",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/lib/onboarding"
+      ]
+    },
+    {
+      "file": "src/test/realEstateSchema.test.ts",
+      "importedSymbols": [
+        "@/lib/realEstateContract",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/lib/realEstateContract"
+      ]
+    },
+    {
+      "file": "src/test/roiCalculator.test.ts",
+      "importedSymbols": [
+        "@/lib/roiCalculator",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/lib/roiCalculator"
+      ]
+    },
+    {
+      "file": "src/test/serviceSubscriptions.test.tsx",
+      "importedSymbols": [
+        "@/components/dashboard/ClientServices",
+        "@/hooks/useClientServices",
+        "@/lib/serviceSubscriptions",
+        "@testing-library/react",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/components/dashboard/ClientServices",
+        "@/hooks/useClientServices",
+        "@/lib/serviceSubscriptions"
       ]
     },
     {
@@ -476,6 +1190,19 @@
       ]
     },
     {
+      "file": "src/test/useRunDetails.test.tsx",
+      "importedSymbols": [
+        "@/hooks/useRunDetails",
+        "@tanstack/react-query",
+        "@testing-library/react",
+        "react",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/hooks/useRunDetails"
+      ]
+    },
+    {
       "file": "src/test/useRuns.test.tsx",
       "importedSymbols": [
         "@/hooks/useRuns",
@@ -486,6 +1213,15 @@
       ],
       "dependencies": [
         "@/hooks/useRuns"
+      ]
+    },
+    {
+      "file": "src/types/realEstate.ts",
+      "importedSymbols": [
+        "./supabase"
+      ],
+      "dependencies": [
+        "./supabase"
       ]
     },
     {
@@ -511,6 +1247,14 @@
     {
       "file": "src/utils/time.ts",
       "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/functions/demo-event/index.ts",
+      "importedSymbols": [
+        "https://deno.land/x/zod@v3.23.8/mod.ts",
+        "https://esm.sh/@supabase/supabase-js@2"
+      ],
       "dependencies": []
     },
     {
@@ -547,6 +1291,91 @@
     },
     {
       "file": "supabase/migrations/20260711000002_client_services.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260714000001_real_estate_workflow_operations.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260714000002_platform_core_and_vertical_modules.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260714000003_fix_generic_ingest_legacy_bridge.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260714000004_client_onboarding.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260716000001_canonical_workflow_runs.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260716000002_atomic_client_provisioning.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260716000003_legal_compliance.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260716000004_legal_compliance_rls.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260716000005_fix_legal_consents_rls.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260716000006_remove_ai_usage_disclosure.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260716000007_harden_legal_scope.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260716000008_demo_workspace.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260716000010_real_estate_api_grants.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260717000001_ui_service_enum.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260717000002_ui_service_taxonomy.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260717000003_expand_demo_services.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260717000004_expand_demo_workflows.sql",
       "importedSymbols": [],
       "dependencies": []
     },

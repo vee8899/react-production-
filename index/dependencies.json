@@ -13,6 +13,7 @@
       "version": "^5.4.0",
       "usedBy": [
         "src/pages/AcceptInvitePage.tsx",
+        "src/pages/LegalConsentPage.tsx",
         "src/pages/LoginPage.tsx"
       ]
     },
@@ -36,11 +37,25 @@
       "version": "^5.101.2",
       "usedBy": [
         "src/hooks/useAnalytics.ts",
+        "src/hooks/useAuditLog.ts",
         "src/hooks/useClient.ts",
         "src/hooks/useClientServices.ts",
+        "src/hooks/useCookiePreferences.ts",
+        "src/hooks/useDashboardMetrics.ts",
+        "src/hooks/useIntegrations.ts",
+        "src/hooks/useLegalConsent.ts",
+        "src/hooks/useLegalDocument.ts",
+        "src/hooks/useOrganization.ts",
+        "src/hooks/useOrganizationOnboarding.ts",
+        "src/hooks/useRealEstateMetrics.ts",
+        "src/hooks/useRunDetails.ts",
         "src/hooks/useRuns.ts",
+        "src/hooks/useRunsTimeline.ts",
         "src/hooks/useWorkflows.ts",
         "src/main.tsx",
+        "src/pages/DemoPage.tsx",
+        "src/pages/LegalConsentPage.tsx",
+        "src/test/useRunDetails.test.tsx",
         "src/test/useRuns.test.tsx"
       ]
     },
@@ -56,7 +71,15 @@
       "version": "^16.3.2",
       "usedBy": [
         "src/test/AcceptInvitePage.test.tsx",
+        "src/test/AuditTrail.test.tsx",
+        "src/test/HomePage.test.tsx",
+        "src/test/IntegrationsShowcase.test.tsx",
+        "src/test/OperationsMenu.test.tsx",
         "src/test/ProtectedRoute.test.tsx",
+        "src/test/RunsFeed.test.tsx",
+        "src/test/SecurityPage.test.tsx",
+        "src/test/serviceSubscriptions.test.tsx",
+        "src/test/useRunDetails.test.tsx",
         "src/test/useRuns.test.tsx"
       ]
     },
@@ -141,15 +164,30 @@
       "version": "^19.2.7",
       "usedBy": [
         "src/components/ErrorBoundary.tsx",
+        "src/components/dashboard/OperationsMenu.tsx",
+        "src/components/dashboard/Sparkline.tsx",
+        "src/components/dashboard/WorkflowRow.tsx",
         "src/components/features/FAQ.tsx",
         "src/components/features/IntegrationsOrbit.tsx",
+        "src/components/features/IntegrationsShowcase.tsx",
         "src/components/features/ROICalculator.tsx",
+        "src/components/legal/CookiePreferenceToggle.tsx",
+        "src/components/legal/LegalGate.tsx",
         "src/components/motion/FadeUp.tsx",
         "src/components/motion/PageTransition.tsx",
+        "src/components/motion/RouteScrollRestoration.tsx",
         "src/components/ui/Nav.tsx",
         "src/main.tsx",
         "src/pages/AcceptInvitePage.tsx",
+        "src/pages/AuditPage.tsx",
+        "src/pages/DashboardPage.tsx",
+        "src/pages/DemoPage.tsx",
+        "src/pages/LegalConsentPage.tsx",
+        "src/pages/LegalSettingsPage.tsx",
         "src/pages/LoginPage.tsx",
+        "src/pages/OnboardingPage.tsx",
+        "src/pages/RecentActivityPage.tsx",
+        "src/test/useRunDetails.test.tsx",
         "src/test/useRuns.test.tsx"
       ]
     },
@@ -164,7 +202,9 @@
       "name": "react-hook-form",
       "version": "^7.80.0",
       "usedBy": [
+        "src/components/legal/ConsentCheckbox.tsx",
         "src/pages/AcceptInvitePage.tsx",
+        "src/pages/LegalConsentPage.tsx",
         "src/pages/LoginPage.tsx"
       ]
     },
@@ -172,7 +212,8 @@
       "name": "react-icons",
       "version": "^5.5.0",
       "usedBy": [
-        "src/components/features/IntegrationsOrbit.tsx"
+        "src/components/features/IntegrationsOrbit.tsx",
+        "src/components/features/IntegrationsShowcase.tsx"
       ]
     },
     {
@@ -180,15 +221,34 @@
       "version": "^7.18.0",
       "usedBy": [
         "src/App.tsx",
+        "src/components/dashboard/AuditTrail.tsx",
+        "src/components/dashboard/OperationsMenu.tsx",
+        "src/components/dashboard/RunDetail.tsx",
+        "src/components/dashboard/RunsFeed.tsx",
+        "src/components/legal/LegalGate.tsx",
         "src/components/motion/PageTransition.tsx",
+        "src/components/motion/RouteScrollRestoration.tsx",
         "src/components/ui/Footer.tsx",
         "src/components/ui/Nav.tsx",
         "src/hooks/useAuth.ts",
         "src/main.tsx",
         "src/pages/AcceptInvitePage.tsx",
+        "src/pages/AuditDetailPage.tsx",
+        "src/pages/AuditPage.tsx",
+        "src/pages/DashboardPage.tsx",
+        "src/pages/HomePage.tsx",
+        "src/pages/LegalConsentPage.tsx",
         "src/pages/LoginPage.tsx",
+        "src/pages/OnboardingPage.tsx",
+        "src/pages/RecentActivityPage.tsx",
+        "src/pages/SecurityPage.tsx",
         "src/test/AcceptInvitePage.test.tsx",
-        "src/test/ProtectedRoute.test.tsx"
+        "src/test/AuditTrail.test.tsx",
+        "src/test/HomePage.test.tsx",
+        "src/test/OperationsMenu.test.tsx",
+        "src/test/ProtectedRoute.test.tsx",
+        "src/test/RunsFeed.test.tsx",
+        "src/test/SecurityPage.test.tsx"
       ]
     },
     {
@@ -227,8 +287,21 @@
       "version": "^4.1.9",
       "usedBy": [
         "src/test/AcceptInvitePage.test.tsx",
+        "src/test/AuditTrail.test.tsx",
+        "src/test/HomePage.test.tsx",
+        "src/test/IntegrationsShowcase.test.tsx",
+        "src/test/OperationsMenu.test.tsx",
         "src/test/ProtectedRoute.test.tsx",
+        "src/test/RunsFeed.test.tsx",
+        "src/test/SecurityPage.test.tsx",
+        "src/test/demoData.test.ts",
+        "src/test/legalConsent.test.ts",
+        "src/test/onboarding.test.ts",
+        "src/test/realEstateSchema.test.ts",
+        "src/test/roiCalculator.test.ts",
+        "src/test/serviceSubscriptions.test.tsx",
         "src/test/time.test.ts",
+        "src/test/useRunDetails.test.tsx",
         "src/test/useRuns.test.tsx",
         "vitest.config.ts"
       ]
@@ -238,6 +311,7 @@
       "version": "^4.4.3",
       "usedBy": [
         "src/pages/AcceptInvitePage.tsx",
+        "src/pages/LegalConsentPage.tsx",
         "src/pages/LoginPage.tsx"
       ]
     },

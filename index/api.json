@@ -87,6 +87,105 @@
       "databaseUsage": []
     },
     {
+      "file": "src/hooks/useOrganizationOnboarding.ts",
+      "exportedSymbols": [
+        "useOrganizationOnboarding"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/lib/onboarding",
+        "@/types/supabase",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/lib/onboarding",
+        "@/types/supabase"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useMutation",
+        "useQuery",
+        "useQueryClient"
+      ],
+      "apiUsage": [
+        "supabase.from",
+        "supabase.rpc"
+      ],
+      "databaseUsage": [
+        "feature_subscriptions",
+        "integrations",
+        "organization_onboarding",
+        "organization_onboarding_steps"
+      ]
+    },
+    {
+      "file": "src/hooks/useRealEstateMetrics.ts",
+      "exportedSymbols": [
+        "RealEstateMetrics",
+        "useRealEstateMetrics"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ],
+      "referencedComponents": [
+        "RealEstateMetrics"
+      ],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [
+        "supabase.schema"
+      ],
+      "databaseUsage": [
+        "appointments",
+        "leads",
+        "listings"
+      ]
+    },
+    {
+      "file": "src/lib/legalConsent.ts",
+      "exportedSymbols": [
+        "CookiePreference",
+        "DOCUMENT_LABELS",
+        "DOCUMENT_ROUTES",
+        "LegalConsent",
+        "LegalDocument",
+        "LegalDocumentKey",
+        "REQUIRED_DOCUMENTS",
+        "checkConsentStatus",
+        "fetchCookiePreferences",
+        "fetchCurrentConsents",
+        "fetchLatestDocument",
+        "hasCompleteRequiredConsent",
+        "submitConsents",
+        "upsertCookiePreferences"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ],
+      "referencedComponents": [
+        "CookiePreference",
+        "LegalDocument"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.from"
+      ],
+      "databaseUsage": [
+        "cookie_preferences",
+        "legal_consents",
+        "legal_documents"
+      ]
+    },
+    {
       "file": "src/main.tsx",
       "exportedSymbols": [],
       "importedSymbols": [
@@ -150,6 +249,55 @@
         "supabase.auth.updateUser"
       ],
       "databaseUsage": []
+    },
+    {
+      "file": "src/pages/DemoPage.tsx",
+      "exportedSymbols": [
+        "DemoPage"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient",
+        "@/hooks/useDashboardMetrics",
+        "@/hooks/useRuns",
+        "@/lib/serviceCatalog",
+        "@tanstack/react-query",
+        "react"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/hooks/useClient",
+        "@/hooks/useDashboardMetrics",
+        "@/hooks/useRuns",
+        "@/lib/serviceCatalog"
+      ],
+      "referencedComponents": [
+        "DemoEvent",
+        "DemoState",
+        "Footer",
+        "Nav",
+        "SectionHeader"
+      ],
+      "referencedHooks": [
+        "useClient",
+        "useDashboardMetrics",
+        "useQuery",
+        "useQueryClient",
+        "useRuns",
+        "useState"
+      ],
+      "apiUsage": [
+        "supabase.functions.invoke"
+      ],
+      "databaseUsage": [
+        "leads"
+      ]
     },
     {
       "file": "src/pages/LoginPage.tsx",
@@ -222,6 +370,45 @@
       "databaseUsage": []
     },
     {
+      "file": "supabase/functions/demo-event/index.ts",
+      "exportedSymbols": [],
+      "importedSymbols": [
+        "https://deno.land/x/zod@v3.23.8/mod.ts",
+        "https://esm.sh/@supabase/supabase-js@2"
+      ],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.from",
+        "supabase.rpc",
+        "supabase.schema"
+      ],
+      "databaseUsage": [
+        "appointments",
+        "clients",
+        "leads",
+        "listings",
+        "workflows"
+      ]
+    },
+    {
+      "file": "supabase/functions/ingest-run/index.ts",
+      "exportedSymbols": [],
+      "importedSymbols": [
+        "https://deno.land/std/http/server.ts",
+        "https://deno.land/x/zod@v3.23.8/mod.ts",
+        "https://esm.sh/@supabase/supabase-js@2"
+      ],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.rpc"
+      ],
+      "databaseUsage": []
+    },
+    {
       "file": "supabase/functions/invite-client/index.ts",
       "exportedSymbols": [],
       "importedSymbols": [
@@ -233,12 +420,10 @@
       "referencedHooks": [],
       "apiUsage": [
         "supabase.auth.admin.deleteUser",
-        "supabase.auth.admin.inviteUserByEmail"
+        "supabase.auth.admin.inviteUserByEmail",
+        "supabase.rpc"
       ],
-      "databaseUsage": [
-        "client_services",
-        "clients"
-      ]
+      "databaseUsage": []
     }
   ]
 }

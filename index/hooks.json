@@ -23,6 +23,35 @@
       ]
     },
     {
+      "file": "src/hooks/useAuditLog.ts",
+      "exportedSymbols": [
+        "AuditEvent",
+        "useAuditEvent",
+        "useAuditLog"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/types/supabase",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/types/supabase"
+      ],
+      "referencedComponents": [
+        "AuditEvent"
+      ],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [
+        "audit_log",
+        "workflow_runs",
+        "workflows"
+      ]
+    },
+    {
       "file": "src/hooks/useAuth.ts",
       "exportedSymbols": [
         "useAuth"
@@ -77,6 +106,143 @@
       ],
       "importedSymbols": [
         "@/api/supabase/client",
+        "@/lib/serviceSubscriptions",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/lib/serviceSubscriptions"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [
+        "client_services",
+        "feature_subscriptions"
+      ]
+    },
+    {
+      "file": "src/hooks/useCookiePreferences.ts",
+      "exportedSymbols": [
+        "useCookiePreferences"
+      ],
+      "importedSymbols": [
+        "@/hooks/useClient",
+        "@/lib/legalConsent",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/hooks/useClient",
+        "@/lib/legalConsent"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useClient",
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/hooks/useDashboardMetrics.ts",
+      "exportedSymbols": [
+        "DashboardMetrics",
+        "useDashboardMetrics"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ],
+      "referencedComponents": [
+        "DashboardMetrics"
+      ],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [
+        "analytics_snapshots",
+        "workflow_runs"
+      ]
+    },
+    {
+      "file": "src/hooks/useIntegrations.ts",
+      "exportedSymbols": [
+        "ConnectedIntegration",
+        "useIntegrations"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/types/supabase",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/types/supabase"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [
+        "integrations"
+      ]
+    },
+    {
+      "file": "src/hooks/useLegalConsent.ts",
+      "exportedSymbols": [
+        "ConsentStatus",
+        "useLegalConsent"
+      ],
+      "importedSymbols": [
+        "@/hooks/useClient",
+        "@/lib/legalConsent",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/hooks/useClient",
+        "@/lib/legalConsent"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useClient",
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/hooks/useLegalDocument.ts",
+      "exportedSymbols": [
+        "useLegalDocument"
+      ],
+      "importedSymbols": [
+        "@/lib/legalConsent",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/lib/legalConsent"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/hooks/useOrganization.ts",
+      "exportedSymbols": [
+        "useOrganization"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
         "@tanstack/react-query"
       ],
       "dependencies": [
@@ -88,12 +254,103 @@
       ],
       "apiUsage": [],
       "databaseUsage": [
-        "client_services"
+        "organizations"
+      ]
+    },
+    {
+      "file": "src/hooks/useOrganizationOnboarding.ts",
+      "exportedSymbols": [
+        "useOrganizationOnboarding"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/lib/onboarding",
+        "@/types/supabase",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/lib/onboarding",
+        "@/types/supabase"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useMutation",
+        "useQuery",
+        "useQueryClient"
+      ],
+      "apiUsage": [
+        "supabase.from",
+        "supabase.rpc"
+      ],
+      "databaseUsage": [
+        "feature_subscriptions",
+        "integrations",
+        "organization_onboarding",
+        "organization_onboarding_steps"
+      ]
+    },
+    {
+      "file": "src/hooks/useRealEstateMetrics.ts",
+      "exportedSymbols": [
+        "RealEstateMetrics",
+        "useRealEstateMetrics"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ],
+      "referencedComponents": [
+        "RealEstateMetrics"
+      ],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [
+        "supabase.schema"
+      ],
+      "databaseUsage": [
+        "appointments",
+        "leads",
+        "listings"
+      ]
+    },
+    {
+      "file": "src/hooks/useRunDetails.ts",
+      "exportedSymbols": [
+        "RunDetails",
+        "RunEntitySummary",
+        "RunStepDetail",
+        "useRunDetails"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ],
+      "referencedComponents": [
+        "RunDetails"
+      ],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [
+        "workflow_run_entities",
+        "workflow_runs",
+        "workflow_steps",
+        "workflows"
       ]
     },
     {
       "file": "src/hooks/useRuns.ts",
       "exportedSymbols": [
+        "DashboardRun",
         "useRuns"
       ],
       "importedSymbols": [
@@ -109,12 +366,37 @@
       ],
       "apiUsage": [],
       "databaseUsage": [
-        "automation_runs"
+        "workflow_runs",
+        "workflows"
+      ]
+    },
+    {
+      "file": "src/hooks/useRunsTimeline.ts",
+      "exportedSymbols": [
+        "DailyRunCount",
+        "useRunsTimeline"
+      ],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@tanstack/react-query"
+      ],
+      "dependencies": [
+        "@/api/supabase/client"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useQuery"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [
+        "workflow_runs"
       ]
     },
     {
       "file": "src/hooks/useWorkflows.ts",
       "exportedSymbols": [
+        "RunSummary",
+        "WorkflowWithLatestRun",
         "useWorkflows"
       ],
       "importedSymbols": [
@@ -130,6 +412,7 @@
       ],
       "apiUsage": [],
       "databaseUsage": [
+        "workflow_runs",
         "workflows"
       ]
     }

@@ -4,7 +4,17 @@
 
 - `src/App.tsx` — exports `App`, `ProtectedRoute`
 - `src/pages/AcceptInvitePage.tsx` — exports `AcceptInvitePage`
+- `src/pages/AuditDetailPage.tsx` — exports `AuditDetailPage`
+- `src/pages/AuditPage.tsx` — exports `AuditPage`
 - `src/pages/DashboardPage.tsx` — exports `DashboardPage`
+- `src/pages/DemoPage.tsx` — exports `DemoPage`
 - `src/pages/HomePage.tsx` — exports `HomePage`
+- `src/pages/IntegrationsPage.tsx` — exports `IntegrationsPage`
+- `src/pages/LegalConsentPage.tsx` — exports `LegalConsentPage`
+- `src/pages/LegalDocumentPage.tsx` — exports `LegalDocumentPage`
+- `src/pages/LegalSettingsPage.tsx` — exports `LegalSettingsPage`
 - `src/pages/LoginPage.tsx` — exports `LoginPage`
+- `src/pages/OnboardingPage.tsx` — exports `OnboardingPage`
+- `src/pages/RecentActivityPage.tsx` — exports `RecentActivityPage`
+- `src/pages/SecurityPage.tsx` — exports `SecurityPage`
 - `src/pages/WorkflowsPage.tsx` — exports `WorkflowsPage`
