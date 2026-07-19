@@ -19,6 +19,8 @@ export type WorkflowWithLatestRun = {
   recentRuns: RunSummary[];
 };
 
+const MAX_WORKFLOW_RUNS = 200;
+
 export const useWorkflows = (clientId: string | undefined, organizationId?: string) =>
   useQuery({
     queryKey: ['workflows', clientId, organizationId],
@@ -39,7 +41,10 @@ export const useWorkflows = (clientId: string | undefined, organizationId?: stri
         .select('id, workflow_id, status, started_at, records_processed, duration_ms')
         .eq('organization_id', organizationId!)
         .in('workflow_id', workflows.map((workflow) => workflow.id))
-        .order('started_at', { ascending: false });
+        .order('started_at', { ascending: false })
+        // Keep the browser payload bounded. The UI only retains five runs per
+        // workflow; a server-side aggregate can replace this cap later.
+        .limit(Math.min(Math.max(workflows.length * 5, 20), MAX_WORKFLOW_RUNS));
 
       if (runError) throw runError;
       const latest = new Map<string, (typeof runs)[number]>();

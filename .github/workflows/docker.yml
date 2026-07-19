@@ -8,6 +8,7 @@ jobs:
   build:
     name: Build and publish container
     runs-on: ubuntu-latest
+    environment: production
     timeout-minutes: 15
 
     permissions:

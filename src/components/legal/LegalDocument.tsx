@@ -24,7 +24,7 @@ export default function LegalDocument({ document }: LegalDocumentProps) {
 }
 
 function renderMarkdown(md: string): string {
-  return md
+  return escapeHtml(md)
     .replace(/^### (.+)$/gm, '<h3 class="font-display text-primary mt-8 mb-3 text-[clamp(1.25rem,2vw,1.5rem)]">$1</h3>')
     .replace(/^## (.+)$/gm, '<h2 class="font-display text-primary mt-10 mb-4 text-[clamp(1.5rem,3vw,2rem)]">$1</h2>')
     .replace(/^# (.+)$/gm, '<h1 class="font-display text-primary mt-0 mb-4 text-[clamp(2rem,4vw,3rem)]">$1</h1>')
@@ -38,4 +38,13 @@ function renderMarkdown(md: string): string {
       if (line.startsWith('<')) return line;
       return `<p>${line}</p>`;
     });
+}
+
+function escapeHtml(value: string): string {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
 }
