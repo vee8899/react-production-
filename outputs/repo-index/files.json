@@ -17,11 +17,28 @@
       "routes": []
     },
     {
+      "path": ".env.example",
+      "kind": "other",
+      "extension": ".example",
+      "hash": "ba837ccd36643c1b5fea8b2fcfcb13d0c5dd53f24ded85853a0eb7c69dcf1960",
+      "lines": 16,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.co"
+      ],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": ".env.local",
       "kind": "other",
       "extension": ".local",
-      "hash": "ea74511dbde6244f8191a91da37fa07a58e25177f233f4e5f61b10fb7703ba2d",
-      "lines": 5,
+      "hash": "52e7369d2d54e08136f56a363c9a76695fa337dd7b84dd69b94898d32de76381",
+      "lines": 9,
       "imports": [],
       "exports": [],
       "symbols": [],
@@ -52,8 +69,8 @@
       "path": ".gitignore",
       "kind": "other",
       "extension": ".gitignore",
-      "hash": "03c17ba91f8e79ad532b1d7c52ef7d00a59152cd8681cdd7d2b18de5023bc47e",
-      "lines": 34,
+      "hash": "3b50b614fea503eec2232ba5e464c47e212bde50db1a43099147108f1a288aaf",
+      "lines": 35,
       "imports": [],
       "exports": [],
       "symbols": [],
@@ -135,6 +152,29 @@
       "routes": []
     },
     {
+      "path": ".npm-cache/_cacache/content-v2/sha512/0d/69/d8e68dd86cb58ae06a2fb80570a6a2fed55c0635d506ad1afefbc8fc3ed410cef01565420c8ca43dd1f63af3db042592416d9570d6b5da38a4938ad9333d",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/0d/69/d8e68dd86cb58ae06a2fb80570a6a2fed55c0635d506ad1afefbc8fc3ed410cef01565420c8ca43dd1f63af3db042592416d9570d6b5da38a4938ad9333d",
+      "hash": "38471cba8e9b6a2b10d0984704ee37cea781ef390fd7282a3286cd27970fb698",
+      "lines": 3187,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [
+        "B",
+        "H",
+        "L",
+        "ME",
+        "Q",
+        "W",
+        "ZxG"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": ".npm-cache/_cacache/content-v2/sha512/0d/95/01ad161a6e735cd7449c7cd522f3b8ed84688010cf69aac9ede5439b0de3d6691bfb38f47f34914eaf23b22bee5249942b153f281bf1decd79d1c2bcdadc",
       "kind": "other",
       "extension": ".npm-cache/_cacache/content-v2/sha512/0d/95/01ad161a6e735cd7449c7cd522f3b8ed84688010cf69aac9ede5439b0de3d6691bfb38f47f34914eaf23b22bee5249942b153f281bf1decd79d1c2bcdadc",
@@ -144,6 +184,30 @@
       "exports": [],
       "symbols": [],
       "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/0e/36/f817141af5b17ccf73e808ed34370d6efba8666b662e23c26432813e175e0a5917c264a436f2c49cb2f93e3a891b5e08edb88b310c4663fea146634c34d7",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/0e/36/f817141af5b17ccf73e808ed34370d6efba8666b662e23c26432813e175e0a5917c264a436f2c49cb2f93e3a891b5e08edb88b310c4663fea146634c34d7",
+      "hash": "be70f492da416d7c895d7848bb0aa0cc915842f6db8583faaa79fe28acfd19fb",
+      "lines": 2089,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [
+        "A",
+        "E",
+        "H",
+        "I",
+        "Ik",
+        "M2",
+        "P",
+        "Y"
+      ],
       "referencedHooks": [],
       "apiUsage": [],
       "databaseUsage": [],
@@ -197,6 +261,21 @@
       "routes": []
     },
     {
+      "path": ".npm-cache/_cacache/content-v2/sha512/15/7c/9a9842ac13b9b714f506eb4fb1eaebc136b9172e5d4de057aeb7c78b95f7c20efbcd07397ca1ae6954c1fd07cc9138955753e3acea53e335da9ae8405131",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/15/7c/9a9842ac13b9b714f506eb4fb1eaebc136b9172e5d4de057aeb7c78b95f7c20efbcd07397ca1ae6954c1fd07cc9138955753e3acea53e335da9ae8405131",
+      "hash": "1bc571f7f3d7ec76f304a391688ad354d39a11996742f9cdcf0e44f5b87ba1ce",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": ".npm-cache/_cacache/content-v2/sha512/19/01/e79087f1cb1d70602392ff0a278a4e4c551654f618b54c4666cc6652089075cbd620a19f07ea2b4d13fbb8b2e13ec8b98ecee1381394b84d9fd95f6c1c59",
       "kind": "other",
       "extension": ".npm-cache/_cacache/content-v2/sha512/19/01/e79087f1cb1d70602392ff0a278a4e4c551654f618b54c4666cc6652089075cbd620a19f07ea2b4d13fbb8b2e13ec8b98ecee1381394b84d9fd95f6c1c59",
@@ -211,6 +290,21 @@
         "N",
         "OC"
       ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/19/f2/867a9be5ae05364817d4a508d812bb82a3c78eaf22fc976e0cbae2ac6c80e2d71758a80e947184731015a30215f5348d68044d0664fd3f620acdd7043278",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/19/f2/867a9be5ae05364817d4a508d812bb82a3c78eaf22fc976e0cbae2ac6c80e2d71758a80e947184731015a30215f5348d68044d0664fd3f620acdd7043278",
+      "hash": "d46e5ff82424ac19de134e05320d00c46578fd69232218f1be051a1b50ace75a",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
       "referencedHooks": [],
       "apiUsage": [],
       "databaseUsage": [],
@@ -378,6 +472,29 @@
       "routes": []
     },
     {
+      "path": ".npm-cache/_cacache/content-v2/sha512/2a/57/f85314bac72de87fce8a7d783b0de546e217b04f88330a395879a32a5e1a7f6d9ace82e4560deb351691aff8e84781195bda481890b61051b2095050ef90",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/2a/57/f85314bac72de87fce8a7d783b0de546e217b04f88330a395879a32a5e1a7f6d9ace82e4560deb351691aff8e84781195bda481890b61051b2095050ef90",
+      "hash": "d9b0c2fb585a7d0057ea758444d9b219fad5bf24a8326031b1cca0c6ef509d97",
+      "lines": 1,
+      "imports": [
+        "fsevents"
+      ],
+      "exports": [],
+      "symbols": [
+        "fsevents",
+        "info",
+        "stop",
+        "takes",
+        "watcher"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": ".npm-cache/_cacache/content-v2/sha512/2b/f0/3d3f2c312866889efd430e544197e05229fdc81c37c4cd75d25d372734ffa66c864e3370510f06555ac7b6c701f5ebeccc1f2ab711fece090129dd53b00b",
       "kind": "other",
       "extension": ".npm-cache/_cacache/content-v2/sha512/2b/f0/3d3f2c312866889efd430e544197e05229fdc81c37c4cd75d25d372734ffa66c864e3370510f06555ac7b6c701f5ebeccc1f2ab711fece090129dd53b00b",
@@ -414,6 +531,24 @@
       "hash": "cbf81b31e050bfcae8f709fd74767046c24542b01b725d732713dcb67dc4b1a9",
       "lines": 1,
       "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/2e/a0/f532bf914fdc38036dcfede5eb4164499e181a0cb4e4a2d39edd6c5efa91997e66662ec2d68133667dda54894358aa8302606ffc404103c47e6e1c03fc79",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/2e/a0/f532bf914fdc38036dcfede5eb4164499e181a0cb4e4a2d39edd6c5efa91997e66662ec2d68133667dda54894358aa8302606ffc404103c47e6e1c03fc79",
+      "hash": "4bc8c7e4803340ecac1e1c60d149da994627531f2670aa4a7dccf78e049eb263",
+      "lines": 1,
+      "imports": [
+        "@sentry/browser",
+        "@sentry/react"
+      ],
       "exports": [],
       "symbols": [],
       "referencedComponents": [],
@@ -710,6 +845,39 @@
       "routes": []
     },
     {
+      "path": ".npm-cache/_cacache/content-v2/sha512/31/a3/e806a2af23b3b75217b1489fca3bfa3a4f84ebdc0faf4162d9613a2cd26c5de7d8d528c29b6c9e8bc4cff4b964392403b65d80bf902311be4e95a90e5067",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/31/a3/e806a2af23b3b75217b1489fca3bfa3a4f84ebdc0faf4162d9613a2cd26c5de7d8d528c29b6c9e8bc4cff4b964392403b65d80bf902311be4e95a90e5067",
+      "hash": "ff6957e7051c0480759eb64112d3550d845e727f070768cda9dd3a83457cc1ac",
+      "lines": 1218,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [
+        "Isg",
+        "W"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/36/ec/6603b4036c9164a7d073232a6efdca884824c99402e535800f6985cadae680c6dfd33cc3164ff9d2c068127eebafc9c5a30835c5c1049e939f97ddd7ca2a",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/36/ec/6603b4036c9164a7d073232a6efdca884824c99402e535800f6985cadae680c6dfd33cc3164ff9d2c068127eebafc9c5a30835c5c1049e939f97ddd7ca2a",
+      "hash": "e31dd5c4ac1aa5268a018ae6ec8b27229f2ef9b30ab091c5f8e03da488af5cbc",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": ".npm-cache/_cacache/content-v2/sha512/37/6c/8fd8c1d3c4ec5705685f9f7a68b9da499f8a643e8b00528ec9ff8e854e8bbf97bc0ec058bdb68c7c35237a1e58d691f334ce1c0f46298d3460bd5c1328c5",
       "kind": "other",
       "extension": ".npm-cache/_cacache/content-v2/sha512/37/6c/8fd8c1d3c4ec5705685f9f7a68b9da499f8a643e8b00528ec9ff8e854e8bbf97bc0ec058bdb68c7c35237a1e58d691f334ce1c0f46298d3460bd5c1328c5",
@@ -721,6 +889,23 @@
       "referencedComponents": [],
       "referencedHooks": [],
       "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/38/65/3c01f46535ecb02abbdd513250c1e3944f880094d222cf5a9e78f0cf61b59db9505ca5e65d2d71de0ef725cd8fec32906ee1f4bf868a9cc7ec4bd1a26508",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/38/65/3c01f46535ecb02abbdd513250c1e3944f880094d222cf5a9e78f0cf61b59db9505ca5e65d2d71de0ef725cd8fec32906ee1f4bf868a9cc7ec4bd1a26508",
+      "hash": "167ad0cb2e85e55bb27281e944d7e2b236dcc441ca7ee3a7de4f3d47ae64a962",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.js"
+      ],
       "databaseUsage": [],
       "routes": []
     },
@@ -814,6 +999,23 @@
       "routes": []
     },
     {
+      "path": ".npm-cache/_cacache/content-v2/sha512/5a/b9/9a59068774e6db019a62047be9a8506eda76426de85f7de02e8c674be6530d47743f1187a5b45713c77b03603675223f6128aceb6293a5b2cd645159fab1",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/5a/b9/9a59068774e6db019a62047be9a8506eda76426de85f7de02e8c674be6530d47743f1187a5b45713c77b03603675223f6128aceb6293a5b2cd645159fab1",
+      "hash": "cede16de643cfa34933bec937762967eefe58c19bc0f1d4dc4a385a42ae859c3",
+      "lines": 1,
+      "imports": [
+        "@sentry/browser"
+      ],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": ".npm-cache/_cacache/content-v2/sha512/61/85/4322740a1497d1ff16b7a2351397c7362a84f088bd51e5683d602c9dc07d31d01f60adbce58391c2ee63230ad5098db43f627184648848e6d0a07d36f81f",
       "kind": "other",
       "extension": ".npm-cache/_cacache/content-v2/sha512/61/85/4322740a1497d1ff16b7a2351397c7362a84f088bd51e5683d602c9dc07d31d01f60adbce58391c2ee63230ad5098db43f627184648848e6d0a07d36f81f",
@@ -868,6 +1070,23 @@
       "exports": [],
       "symbols": [],
       "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/6a/87/55f42d8d9da641a89bda05c78821a572315122b0edfc116b47e712fb20c6c3e904a6058b2e354ef263345c74e8fffbdf45c496113daab0cc69c85a73531f",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/6a/87/55f42d8d9da641a89bda05c78821a572315122b0edfc116b47e712fb20c6c3e904a6058b2e354ef263345c74e8fffbdf45c496113daab0cc69c85a73531f",
+      "hash": "669b567f3a3e9a0d6ed5c0e600a6c7cfe716578f71ef9f197a5a6ce6f989f1b5",
+      "lines": 483,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [
+        "P"
+      ],
       "referencedHooks": [],
       "apiUsage": [],
       "databaseUsage": [],
@@ -950,6 +1169,107 @@
       "routes": []
     },
     {
+      "path": ".npm-cache/_cacache/content-v2/sha512/72/9b/c5fd04518af01d5b3d56664206cc46e2886a6fa4397a653c755422a34fded6b89c85be1c8d425722b55ee5b83708af697e708c20c9bb03fa141be4633758",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/72/9b/c5fd04518af01d5b3d56664206cc46e2886a6fa4397a653c755422a34fded6b89c85be1c8d425722b55ee5b83708af697e708c20c9bb03fa141be4633758",
+      "hash": "99efa4b918c0323c116e91c3a8ddeea65514baff1fe056feb261a68f13ca448a",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [
+        "definitions"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/7c/ef/4f2e61dd55445c48f52958222d580b602a233019d2476e8be8484c8ba655f9b31b36ba0bc8e0204f4eb92482a84e6e764e0f40a7581283cd2550601284c9",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/7c/ef/4f2e61dd55445c48f52958222d580b602a233019d2476e8be8484c8ba655f9b31b36ba0bc8e0204f4eb92482a84e6e764e0f40a7581283cd2550601284c9",
+      "hash": "21a952bb10a48e4342d96ae5bb6d1fdddb73491810f6829799ca86b691afbe8d",
+      "lines": 2432,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [
+        "A",
+        "C",
+        "Cs",
+        "H",
+        "L",
+        "Nz",
+        "Q",
+        "U",
+        "Y",
+        "Z"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/7d/63/fc23023f7ce4b8be2742119af3c6fa45273c155c8109ee2386e511fe92228e9fb03bc4aa9a82862a2a5b3a978030b7e2dd5a64ce8e3ebb1da078e00d618a",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/7d/63/fc23023f7ce4b8be2742119af3c6fa45273c155c8109ee2386e511fe92228e9fb03bc4aa9a82862a2a5b3a978030b7e2dd5a64ce8e3ebb1da078e00d618a",
+      "hash": "9d6b1907ed3b6de58acb9e314fbee1be38f654219d3e608fc2a6f2d709d327b1",
+      "lines": 1,
+      "imports": [
+        "@sentry/browser",
+        "@sentry/react"
+      ],
+      "exports": [],
+      "symbols": [
+        "client",
+        "name",
+        "of",
+        "replay"
+      ],
+      "referencedComponents": [
+        "BrowserClient"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/7e/be/bd2bbe86cfb451c9f31eac285d36358879074587e936d4625c98f0aa938dddb1c50284eb0b7377182d2e5c2bb899fd7894987f655737fb1182f691fdaab0",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/7e/be/bd2bbe86cfb451c9f31eac285d36358879074587e936d4625c98f0aa938dddb1c50284eb0b7377182d2e5c2bb899fd7894987f655737fb1182f691fdaab0",
+      "hash": "f175991232f1f537d2429df81186091f95994017658f239e90efe38bc1ebbb1f",
+      "lines": 545,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [
+        "F",
+        "L"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/81/4f/16a44768f60b812de5045b0f26239411730701549bfa528d3593c498b8f29358b8623bf2f1312e3991c853cda371e63c53832f2ed7e6d00bac5371f5ae3e",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/81/4f/16a44768f60b812de5045b0f26239411730701549bfa528d3593c498b8f29358b8623bf2f1312e3991c853cda371e63c53832f2ed7e6d00bac5371f5ae3e",
+      "hash": "db5cb4f8432fa6429c618f97e1ce57623bcf3fb090f94d7cdc76132875b582ee",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": ".npm-cache/_cacache/content-v2/sha512/81/b2/86711518223037ff308235a5837224cc148d1d0a4be8bb74cbf199b2e4d73bb09e3b6b48ed39e6684da33192ea91a3d71186339d6495de831604e4537fc7",
       "kind": "other",
       "extension": ".npm-cache/_cacache/content-v2/sha512/81/b2/86711518223037ff308235a5837224cc148d1d0a4be8bb74cbf199b2e4d73bb09e3b6b48ed39e6684da33192ea91a3d71186339d6495de831604e4537fc7",
@@ -1017,6 +1337,59 @@
         "to"
       ],
       "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/86/b1/c8a1da68fa3a2d4ffe1e2c797ae4f40a96f6b0817423f5379a2795c44020f84cd22f14e23ce3e3aa9dfbd0e5e99ba38a238bfcb815bce831ce4fb8cae0d8",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/86/b1/c8a1da68fa3a2d4ffe1e2c797ae4f40a96f6b0817423f5379a2795c44020f84cd22f14e23ce3e3aa9dfbd0e5e99ba38a238bfcb815bce831ce4fb8cae0d8",
+      "hash": "7e297167ac6017bc9bbf371e83e1cc95d097a284f0589819c987ce038497717d",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/87/b4/25b7a9b8444a76e6abc876f6c3b55983e0ba955dfa51c61391bfd2f48f3113334e69e1fb8f27774acae4974310d26d79e64bbf470208bde7cf65192a4b92",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/87/b4/25b7a9b8444a76e6abc876f6c3b55983e0ba955dfa51c61391bfd2f48f3113334e69e1fb8f27774acae4974310d26d79e64bbf470208bde7cf65192a4b92",
+      "hash": "e6b9dfd6c4106ca48d6e34faa78dbde78d2182639ef9db4c065305e098545e47",
+      "lines": 10892,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [
+        "A",
+        "C",
+        "E",
+        "F",
+        "Fm",
+        "H",
+        "I",
+        "Ih",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "P",
+        "Pg",
+        "Q",
+        "Qj",
+        "S",
+        "V",
+        "X",
+        "Y",
+        "Z"
+      ],
       "referencedHooks": [],
       "apiUsage": [],
       "databaseUsage": [],
@@ -1122,6 +1495,21 @@
         "supabase.com",
         "supabase.io"
       ],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/a4/7c/2e001bb3e71e660028f843fc5d8449a193aab85b4247ad9a70467a2cb60a7795cb51288cda79f338d33b9f09b7bb2e8276c3d93f1bd2ad4252d1ff34d9c4",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/a4/7c/2e001bb3e71e660028f843fc5d8449a193aab85b4247ad9a70467a2cb60a7795cb51288cda79f338d33b9f09b7bb2e8276c3d93f1bd2ad4252d1ff34d9c4",
+      "hash": "d5d44ab87075b2e4cbd67ef4366360d74ce427a922bad54192eb5fa903801708",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
       "databaseUsage": [],
       "routes": []
     },
@@ -1269,6 +1657,21 @@
       "routes": []
     },
     {
+      "path": ".npm-cache/_cacache/content-v2/sha512/a8/69/10c7085b16e704ebe0a1b501b9fc258e5ba47325bebfda7ff945483782e71c5339cd91b96b5364b1ab52d1e1f1ffad76956211b5b1598024e5166a960338",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/a8/69/10c7085b16e704ebe0a1b501b9fc258e5ba47325bebfda7ff945483782e71c5339cd91b96b5364b1ab52d1e1f1ffad76956211b5b1598024e5166a960338",
+      "hash": "8c1acfa9703e2dcc02712e9e2b0b43a78269f5e1e164931054e568719ed42f8f",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": ".npm-cache/_cacache/content-v2/sha512/aa/ee/fa4c9c6013fff8d46fce46f2b009b1323ed9c20fc3a782550870f45b4edccf731145ad572913d830b471077d040418bbbfbe786e9ffb796593474ea80f72",
       "kind": "other",
       "extension": ".npm-cache/_cacache/content-v2/sha512/aa/ee/fa4c9c6013fff8d46fce46f2b009b1323ed9c20fc3a782550870f45b4edccf731145ad572913d830b471077d040418bbbfbe786e9ffb796593474ea80f72",
@@ -1296,6 +1699,40 @@
       "exports": [],
       "symbols": [],
       "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/ae/c1/cdf18fa94d66a91b60bf2d6005c996604483dc413ff42394e11ed90354ae8fdfbbd056b9f25f56122df4a79f3c065e73de7a9671381e60176e51b0c97f47",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/ae/c1/cdf18fa94d66a91b60bf2d6005c996604483dc413ff42394e11ed90354ae8fdfbbd056b9f25f56122df4a79f3c065e73de7a9671381e60176e51b0c97f47",
+      "hash": "0a305cb9f7d5e2006454445df03208d0814742f0c0ab13a1ca179c9c92f74a0b",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/b0/7b/802ef24c3048a5533f3817564e42e0e86773218f050758791770495c54cac32259d33bb45ad04e8a8747bc27225a2c1324e12cbdb2b292a87f738a64154d",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/b0/7b/802ef24c3048a5533f3817564e42e0e86773218f050758791770495c54cac32259d33bb45ad04e8a8747bc27225a2c1324e12cbdb2b292a87f738a64154d",
+      "hash": "ec878a4f16d857bf5215ea0d61058dfb07523282682d4ab8dfd13ee9ef1cf8e1",
+      "lines": 554,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [
+        "V",
+        "W",
+        "WP"
+      ],
       "referencedHooks": [],
       "apiUsage": [],
       "databaseUsage": [],
@@ -1385,6 +1822,43 @@
       "imports": [],
       "exports": [],
       "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/cf/b7/cf58421f009309c92297148a970331699078e9d77586300981f7e8651e18bdfa08c03bca300fd4785d377cea506cc2f786c0c1cabc8c7994528d56a0dca3",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/cf/b7/cf58421f009309c92297148a970331699078e9d77586300981f7e8651e18bdfa08c03bca300fd4785d377cea506cc2f786c0c1cabc8c7994528d56a0dca3",
+      "hash": "7844c9619d5c3ae02e32fc45377bc579081057f82d65365f906adc792494ce37",
+      "lines": 639,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [
+        "Ahvs",
+        "H",
+        "Im",
+        "K"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/d3/ea/290557543c750081ae99c82fe354066001e804500ab1421bb7915bd6c42790bdde1f72dc938306e3a3028c3c6060aebeb1a89c872ad4b658fe4d458df2ab",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/d3/ea/290557543c750081ae99c82fe354066001e804500ab1421bb7915bd6c42790bdde1f72dc938306e3a3028c3c6060aebeb1a89c872ad4b658fe4d458df2ab",
+      "hash": "382a30dc989cd66abef0c7fefcf4525006e43dac32c4650c028cf0e3e3591974",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [
+        "definitions"
+      ],
       "referencedComponents": [],
       "referencedHooks": [],
       "apiUsage": [],
@@ -1521,6 +1995,100 @@
       "routes": []
     },
     {
+      "path": ".npm-cache/_cacache/content-v2/sha512/f2/72/afebed112522fd144e2360e1065e73de33f1e0d76a99a66ab3663461dea33463b737cf59ab3937c52e276cef6443418561f56a4b11f47959da4d5f87e48a",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/f2/72/afebed112522fd144e2360e1065e73de33f1e0d76a99a66ab3663461dea33463b737cf59ab3937c52e276cef6443418561f56a4b11f47959da4d5f87e48a",
+      "hash": "2ba0bfda3b426ae238fe2ef1b23c5b14c1317ef5cd463c87350553742d464ab8",
+      "lines": 40,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/f4/f6/9a3607d148d524e4c9eeced2a55b83fd295609affb78fe42a6b2e7c9c2d168c8544bff545633f47ca6faac43a02570d4f9db6eaca3d16450952f7b00063f",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/f4/f6/9a3607d148d524e4c9eeced2a55b83fd295609affb78fe42a6b2e7c9c2d168c8544bff545633f47ca6faac43a02570d4f9db6eaca3d16450952f7b00063f",
+      "hash": "82372e1258921a087aaa43b11ec42d55c9f4c3f5416b032036bfe76e94cb8b9b",
+      "lines": 1,
+      "imports": [
+        "@sentry/react",
+        "react",
+        "react-dom/client"
+      ],
+      "exports": [],
+      "symbols": [
+        "App",
+        "FallbackComponent",
+        "container",
+        "domNode",
+        "root",
+        "to"
+      ],
+      "referencedComponents": [
+        "AnotherComponent",
+        "App",
+        "FancyComponent",
+        "InsideComponent",
+        "OtherComponents"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/f5/0a/b5567d8f3c86a37b18f38a299acfa2921ed4887264f57905ef0bf719e62f3323dfb43463914a2522a96f7f7efd44a97148deead7351836f3d1d631b74411",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/f5/0a/b5567d8f3c86a37b18f38a299acfa2921ed4887264f57905ef0bf719e62f3323dfb43463914a2522a96f7f7efd44a97148deead7351836f3d1d631b74411",
+      "hash": "e82df171688b5881fe3093dd69e8e7c5912d3d8facd111f032be0da2c5016bb9",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/content-v2/sha512/f5/46/e04af76cedb309b0fe7ad5e5a67b230b71f3a69f0c6d9f1d90b96df22e86f33f639bec2c8908eccfe2d1b39530060ebcd28641446618b2b8150a8842b6a1",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/content-v2/sha512/f5/46/e04af76cedb309b0fe7ad5e5a67b230b71f3a69f0c6d9f1d90b96df22e86f33f639bec2c8908eccfe2d1b39530060ebcd28641446618b2b8150a8842b6a1",
+      "hash": "172ff69718111cf80e671c0616a3512b3ca39e9c1ca0331fd13caeb578a540a7",
+      "lines": 4585,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [
+        "CcA",
+        "F",
+        "H",
+        "J",
+        "J3",
+        "K",
+        "L",
+        "M",
+        "N",
+        "Q",
+        "R",
+        "Rg",
+        "T",
+        "VRWj",
+        "W",
+        "Y"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": ".npm-cache/_cacache/index-v5/01/ae/36cce0ce2be7ab1a34f7dbccc6db7d283ab8da22a6354a25a88607a17a7c",
       "kind": "other",
       "extension": ".npm-cache/_cacache/index-v5/01/ae/36cce0ce2be7ab1a34f7dbccc6db7d283ab8da22a6354a25a88607a17a7c",
@@ -1611,6 +2179,36 @@
       "routes": []
     },
     {
+      "path": ".npm-cache/_cacache/index-v5/0f/ba/99c404698aba52acc913a79a0ee538dbc21101d19c0f3719b7ff17f3dd09",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/0f/ba/99c404698aba52acc913a79a0ee538dbc21101d19c0f3719b7ff17f3dd09",
+      "hash": "620bd515a8fff06df306f2ee2cbb8e8034f65ab4bb780a6cd1702b92d78de54f",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/14/69/f55f414232029c850a9540c6e7b2b460bf5235a87590ab9e6614f9d6604b",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/14/69/f55f414232029c850a9540c6e7b2b460bf5235a87590ab9e6614f9d6604b",
+      "hash": "a09caca0e7fe0765a4f4f020ed2c5f484ed0d4e6585bc3f89cebcbf3ed8eb4fa",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": ".npm-cache/_cacache/index-v5/16/f8/afc88d2ed6b122863f94ceee7dcf2c558d4c7ae8f63cee2c33d3dd30b1ed",
       "kind": "other",
       "extension": ".npm-cache/_cacache/index-v5/16/f8/afc88d2ed6b122863f94ceee7dcf2c558d4c7ae8f63cee2c33d3dd30b1ed",
@@ -1671,6 +2269,51 @@
       "routes": []
     },
     {
+      "path": ".npm-cache/_cacache/index-v5/24/a1/46a60850ad208fc0caf66a47c5be9e25c628fc99a0504395b9e374197daf",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/24/a1/46a60850ad208fc0caf66a47c5be9e25c628fc99a0504395b9e374197daf",
+      "hash": "e665a23436026148294a8a6c558fa22bfd1eb48047ec373c9b26b40ad805f230",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/27/13/eae561c67b130aaaad61fc8574d4026f5d6a3e12c7143023743f885a16cb",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/27/13/eae561c67b130aaaad61fc8574d4026f5d6a3e12c7143023743f885a16cb",
+      "hash": "952419dd121507bb85c404f063d5e3911a0a4c5e679c170ac138d70770526df5",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/2b/c8/b4130448d52511c0cc969cd844d8ddb322a349d2533d0bca0df68ae8bbbd",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/2b/c8/b4130448d52511c0cc969cd844d8ddb322a349d2533d0bca0df68ae8bbbd",
+      "hash": "945043853afa214cad78f0b21a8300e683fa4254abe488234523b2809ebbc219",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": ".npm-cache/_cacache/index-v5/2c/e7/6ebf7d8800a5b86530fd09b2f6e26da674d138a7f0e94f42b9be2ecc547a",
       "kind": "other",
       "extension": ".npm-cache/_cacache/index-v5/2c/e7/6ebf7d8800a5b86530fd09b2f6e26da674d138a7f0e94f42b9be2ecc547a",
@@ -1701,6 +2344,36 @@
       "routes": []
     },
     {
+      "path": ".npm-cache/_cacache/index-v5/37/dd/832e56550e5bc1975bf2bb2c301d8cba56a75c23e65f0f14f1bbe03d6d47",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/37/dd/832e56550e5bc1975bf2bb2c301d8cba56a75c23e65f0f14f1bbe03d6d47",
+      "hash": "daf346acc5d382bdb549a46314ca8120a0e8dee5854015eb9c3b9792614f725c",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/3b/b5/2b2dd0781f156bd6d40e0ddce33888493b519abfa3d3be64c302a95ff049",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/3b/b5/2b2dd0781f156bd6d40e0ddce33888493b519abfa3d3be64c302a95ff049",
+      "hash": "e57654c2485adefbd03df1a370a80b57ebcb7029ebea00aacc009ea1fd2d71ab",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": ".npm-cache/_cacache/index-v5/3c/a3/a4bb9281e5e4a2be3a38bfc40bce8b301bbc4d3e29e737ef36cd6b57063e",
       "kind": "other",
       "extension": ".npm-cache/_cacache/index-v5/3c/a3/a4bb9281e5e4a2be3a38bfc40bce8b301bbc4d3e29e737ef36cd6b57063e",
@@ -1720,6 +2393,21 @@
       "kind": "other",
       "extension": ".npm-cache/_cacache/index-v5/3d/d7/35eedef8cd321b5b101d61c00e824ad7a40348cd7e85b54de91e92091f4e",
       "hash": "08a283fab3bef710fe3071f16cd76c479ba9f37bdd541369236bd2ce44a98892",
+      "lines": 3,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/40/1e/89f0b89d2ca92cd54ff481086fdd599c67170ea69eb9b22d37e34638d25e",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/40/1e/89f0b89d2ca92cd54ff481086fdd599c67170ea69eb9b22d37e34638d25e",
+      "hash": "d8349d28ba78982529cf944519555ed707d0cc1aafc8f6668b7be9892e158bf7",
       "lines": 3,
       "imports": [],
       "exports": [],
@@ -1776,11 +2464,71 @@
       "routes": []
     },
     {
+      "path": ".npm-cache/_cacache/index-v5/4d/12/8becc66eaecc54f79161f519fe8d4277ad37b502d84a8a17147758ec03a8",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/4d/12/8becc66eaecc54f79161f519fe8d4277ad37b502d84a8a17147758ec03a8",
+      "hash": "d4e1acd2dfd674a396e4e6bd86ea0f0cd1e8e6260541fc321b78e6ec3a95de2a",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/57/c7/8ec749d301aa19acada86ae1f3d4ed8074eb6acc812c8628cd279716f7b7",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/57/c7/8ec749d301aa19acada86ae1f3d4ed8074eb6acc812c8628cd279716f7b7",
+      "hash": "f04908e26cca7628e1ea76d3860546158d1a97ee0599d3e671fdfda44aa83b71",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": ".npm-cache/_cacache/index-v5/58/75/04d2a69203899184348f28d0ca8e46d9559faaed5f3e5dba4cd57a71db53",
       "kind": "other",
       "extension": ".npm-cache/_cacache/index-v5/58/75/04d2a69203899184348f28d0ca8e46d9559faaed5f3e5dba4cd57a71db53",
       "hash": "535daacc38fdceeea84a22bb418706a7b303d00c03fd482f185448daa4711dca",
       "lines": 3,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/5a/7d/72404d5093b2950e2dceedb97b6a209f4c5d9b7c503d8ba54158c25e2bcf",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/5a/7d/72404d5093b2950e2dceedb97b6a209f4c5d9b7c503d8ba54158c25e2bcf",
+      "hash": "bdfef2ccd6f104776955b8ad3865c477c5c23e60f68d483ad1e9babd90ffc812",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/5c/82/12f12e9f75e8a03f98e1c1c97a33953f2776e5e5faf05f95e7faad71a859",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/5c/82/12f12e9f75e8a03f98e1c1c97a33953f2776e5e5faf05f95e7faad71a859",
+      "hash": "630cf836105362a7b8b95244e81124dde0490e5ea8f851aab5114abf8781f3f8",
+      "lines": 2,
       "imports": [],
       "exports": [],
       "symbols": [],
@@ -1806,10 +2554,25 @@
       "routes": []
     },
     {
+      "path": ".npm-cache/_cacache/index-v5/65/d1/b459c3d515908e2b8676a2bc9019f2817072327945c35c31bb93903b0bc4",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/65/d1/b459c3d515908e2b8676a2bc9019f2817072327945c35c31bb93903b0bc4",
+      "hash": "dde219059e7e45221ebbe15d409aa21558297a5f621b363086611657c68dd9eb",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": ".npm-cache/_cacache/index-v5/66/70/d072ac14d1df08757d7461c2eca060d7f68010685ca1aaa86c5b04c29146",
       "kind": "other",
       "extension": ".npm-cache/_cacache/index-v5/66/70/d072ac14d1df08757d7461c2eca060d7f68010685ca1aaa86c5b04c29146",
-      "hash": "767fc7625699122169a88fe9a2580efdce46b9aa85b46e3afecd5ec583cabee8",
+      "hash": "18aff23d3bbcfd7ec991756e962f722de3b813907da6ee9a309f2c55bae1f1ec",
       "lines": 4,
       "imports": [],
       "exports": [],
@@ -1836,6 +2599,21 @@
       "routes": []
     },
     {
+      "path": ".npm-cache/_cacache/index-v5/69/60/c25aebdf2a236706f5ff314a6e7712716880c52b06538c2291c459750d1d",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/69/60/c25aebdf2a236706f5ff314a6e7712716880c52b06538c2291c459750d1d",
+      "hash": "d47ff5b74577732d22ef3dedfb4347626f1a9f2d2d989b6b3e5fab4654aa9c23",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": ".npm-cache/_cacache/index-v5/69/bf/80809f1dc7cd900d7f5deebaed4aab7a2f788123f16fcfa841e03dcd420a",
       "kind": "other",
       "extension": ".npm-cache/_cacache/index-v5/69/bf/80809f1dc7cd900d7f5deebaed4aab7a2f788123f16fcfa841e03dcd420a",
@@ -1851,10 +2629,70 @@
       "routes": []
     },
     {
+      "path": ".npm-cache/_cacache/index-v5/6a/03/0d2d3ef25a431ceab1492348850307b8fbdf7b7ecef297c0c3e85325227e",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/6a/03/0d2d3ef25a431ceab1492348850307b8fbdf7b7ecef297c0c3e85325227e",
+      "hash": "0df0318b758d5452fe34310af4d9c2828a2fd1173849971538943007a13121ee",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/6c/ad/cf732a408e80cc3637e7a174d5c7d9e77c98bbecd7a2572e7a168524f11e",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/6c/ad/cf732a408e80cc3637e7a174d5c7d9e77c98bbecd7a2572e7a168524f11e",
+      "hash": "6296f7df9b4154ce4d88fc7623d7a0dfd14132c0f385d01fc8e662c97532fdb6",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/6e/08/0a84dd62b4598449c207776abe790759c0c4c952bd0ab824b9044ccee34e",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/6e/08/0a84dd62b4598449c207776abe790759c0c4c952bd0ab824b9044ccee34e",
+      "hash": "f9016a6277a846ec30e06726e71167d2eee823c2146d8e488813106e05ddb7b0",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": ".npm-cache/_cacache/index-v5/73/21/1d875da2f746d474580cb0f196b311adcc3ff2bf1ee627b53bb0a433be96",
       "kind": "other",
       "extension": ".npm-cache/_cacache/index-v5/73/21/1d875da2f746d474580cb0f196b311adcc3ff2bf1ee627b53bb0a433be96",
       "hash": "fea88f189231129771743f014fb5b114ad165a75be60367ffbf470203365f44a",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/74/27/e2fae6b441a27e69dda94f1ff74c37eb160bd2852dd9a4532f5f1870dbc4",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/74/27/e2fae6b441a27e69dda94f1ff74c37eb160bd2852dd9a4532f5f1870dbc4",
+      "hash": "f0b33bc83a369e18baa8ed39e0cc6efc2d29e089b54146df85c28f1603c2a393",
       "lines": 2,
       "imports": [],
       "exports": [],
@@ -1945,6 +2783,51 @@
       "kind": "other",
       "extension": ".npm-cache/_cacache/index-v5/87/7a/6bff65d2ea046d0cbcb8b9c7a56dfc499fce22f35dcf898d6732fd0f99d4",
       "hash": "0b4075f3e931d1454fd9e2a67f7d89eb0bda009e9748af4aecc55cd61f3a3e96",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/89/92/8224df992036faee7349619b0ee020419d009eda8d569136fdbe027cb589",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/89/92/8224df992036faee7349619b0ee020419d009eda8d569136fdbe027cb589",
+      "hash": "ee8eb3500eb24a927c16745b186c2dba974f816bfeba083e82fe390665408c1a",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/8a/b7/b7679ff1eb44c2bea09ffc5effb00b0f2f4b22f3328ebe4d5def88acf9de",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/8a/b7/b7679ff1eb44c2bea09ffc5effb00b0f2f4b22f3328ebe4d5def88acf9de",
+      "hash": "986fb01942aa25128fa4de21829817b6ce953a048a3a317532a14de564e31f74",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/90/2c/735fcc5a94c8f119c74cdc5e18224e2e786d474a61371871dc1acf498b3f",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/90/2c/735fcc5a94c8f119c74cdc5e18224e2e786d474a61371871dc1acf498b3f",
+      "hash": "d746496476c4cdda02dd8b69c70290460041ad1cd24c8e5bdde0986c655b1295",
       "lines": 2,
       "imports": [],
       "exports": [],
@@ -2106,10 +2989,55 @@
       "routes": []
     },
     {
+      "path": ".npm-cache/_cacache/index-v5/aa/95/56c3176d3d73a81d64c8e7821931fc3fb2adde7f43680290854376fc8c7f",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/aa/95/56c3176d3d73a81d64c8e7821931fc3fb2adde7f43680290854376fc8c7f",
+      "hash": "e388a96ba9d7b360096c4bd10cea9921cd6990fd0e473db82d4bc7363dd322e2",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": ".npm-cache/_cacache/index-v5/ac/a2/000ffc97bf781c99ae4ff7de1312321635d86d8d3d5f0f17bb2e31a81400",
       "kind": "other",
       "extension": ".npm-cache/_cacache/index-v5/ac/a2/000ffc97bf781c99ae4ff7de1312321635d86d8d3d5f0f17bb2e31a81400",
       "hash": "471880e067504816477fc76ec5f7d5e87b4b46fb657be2f577213e77fb86bec0",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/af/c0/48e603beaab46b5e68a4c597fb1b5c937e8d613fa3758d619a76d0c69f77",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/af/c0/48e603beaab46b5e68a4c597fb1b5c937e8d613fa3758d619a76d0c69f77",
+      "hash": "01ca7c7204053200a63d228f79930d728b3636f047afd35d4d63d3d6b8034053",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/b5/1b/b63b78f863c4e61cf36774dfc5efc3c77e9026342221b01a97c56d99ddf9",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/b5/1b/b63b78f863c4e61cf36774dfc5efc3c77e9026342221b01a97c56d99ddf9",
+      "hash": "f9df387f1f331ea8120d57ae560957d32cfc76dc3d17ed5d30a9d30113c33bd6",
       "lines": 2,
       "imports": [],
       "exports": [],
@@ -2151,6 +3079,21 @@
       "routes": []
     },
     {
+      "path": ".npm-cache/_cacache/index-v5/c1/3e/4c4d082623156529b4fa73601a4ac92e33a6b20f963f1096cee31b6d9010",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/c1/3e/4c4d082623156529b4fa73601a4ac92e33a6b20f963f1096cee31b6d9010",
+      "hash": "5bb9aa07b5df85ffa3a2575988cfa15cef8d34e7398caeb4cdfa05bebc1c0466",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": ".npm-cache/_cacache/index-v5/c1/5d/8138582ea75b55033e95f5e0901fe6be01501eb4718848a12048047a89de",
       "kind": "other",
       "extension": ".npm-cache/_cacache/index-v5/c1/5d/8138582ea75b55033e95f5e0901fe6be01501eb4718848a12048047a89de",
@@ -2170,6 +3113,21 @@
       "kind": "other",
       "extension": ".npm-cache/_cacache/index-v5/c7/12/102bb07d3c5cf86819fc13e6524871176ba5f8fc8238351433c746c98db4",
       "hash": "7e6c9f0b28a47a9e457f85a31cb4fe53133ad9391e10aca26539e95c6437126c",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_cacache/index-v5/cf/4b/00d89bfd0ac984d06a82cd31f98d8509bc0bf7eb452d723a00985ef6c590",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/cf/4b/00d89bfd0ac984d06a82cd31f98d8509bc0bf7eb452d723a00985ef6c590",
+      "hash": "97a87c86dbaa39b6729816654e357db5acf39b2888aceb0ca0fb9b0894c9b3ee",
       "lines": 2,
       "imports": [],
       "exports": [],
@@ -2301,6 +3259,21 @@
       "routes": []
     },
     {
+      "path": ".npm-cache/_cacache/index-v5/f6/d6/50bcb3247295942acc9b64e9f7b46fc5e094a60992fe8a41a9f8df3da8d9",
+      "kind": "other",
+      "extension": ".npm-cache/_cacache/index-v5/f6/d6/50bcb3247295942acc9b64e9f7b46fc5e094a60992fe8a41a9f8df3da8d9",
+      "hash": "1f8c66bc30ad5c70137ef74c6402779e75f96610d2f840e9f86e9041c03b99ae",
+      "lines": 2,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": ".npm-cache/_cacache/index-v5/f7/53/0b0cdb1490c3d5fb51e1939201c88e1611296d3c19790599d35af7d70bd8",
       "kind": "other",
       "extension": ".npm-cache/_cacache/index-v5/f7/53/0b0cdb1490c3d5fb51e1939201c88e1611296d3c19790599d35af7d70bd8",
@@ -2321,51 +3294,6 @@
       "extension": ".npm-cache/_cacache/index-v5/f9/73/284cd84647a1407f33a0ea9f4c79bfb131f17660482980291a1abf7c2e9b",
       "hash": "d1bf4f567eb7f112053a8b23dad049b8730c2701cc7920db7c7d95e8785f651f",
       "lines": 3,
-      "imports": [],
-      "exports": [],
-      "symbols": [],
-      "referencedComponents": [],
-      "referencedHooks": [],
-      "apiUsage": [],
-      "databaseUsage": [],
-      "routes": []
-    },
-    {
-      "path": ".npm-cache/_logs/2026-07-13T23_00_19_212Z-debug-0.log",
-      "kind": "other",
-      "extension": ".log",
-      "hash": "3087f4292bada8855fe77add431ba5f10963c18c0b18308504fdd0b0492c60e7",
-      "lines": 518,
-      "imports": [],
-      "exports": [],
-      "symbols": [],
-      "referencedComponents": [],
-      "referencedHooks": [],
-      "apiUsage": [],
-      "databaseUsage": [],
-      "routes": []
-    },
-    {
-      "path": ".npm-cache/_logs/2026-07-14T00_43_01_745Z-debug-0.log",
-      "kind": "other",
-      "extension": ".log",
-      "hash": "0b607c8a0d5e195a48386ee4a0ce09105923f6316996c5d8bd56a61c40f0d633",
-      "lines": 120,
-      "imports": [],
-      "exports": [],
-      "symbols": [],
-      "referencedComponents": [],
-      "referencedHooks": [],
-      "apiUsage": [],
-      "databaseUsage": [],
-      "routes": []
-    },
-    {
-      "path": ".npm-cache/_logs/2026-07-14T07_32_34_661Z-debug-0.log",
-      "kind": "other",
-      "extension": ".log",
-      "hash": "a2f2a82e86d3ce68e51c0ad36477a9841772638722e6c182129ce033085fadf2",
-      "lines": 19,
       "imports": [],
       "exports": [],
       "symbols": [],
@@ -2455,6 +3383,81 @@
       "kind": "other",
       "extension": ".log",
       "hash": "19c24e39094d6699c4d27b4dbc75581fcd74750dc4490078a052ac5366fa4739",
+      "lines": 24,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_logs/2026-07-19T08_33_50_687Z-debug-0.log",
+      "kind": "other",
+      "extension": ".log",
+      "hash": "30be895ca256a123c7fe226e7ebf8640019c94ce5591769517b7d7cc7f4797aa",
+      "lines": 387,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_logs/2026-07-19T09_01_46_943Z-debug-0.log",
+      "kind": "other",
+      "extension": ".log",
+      "hash": "b49c8ab0feafc7b057114ec785b798a7cbc0a850f68aaff175e0f8cb7462f682",
+      "lines": 453,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_logs/2026-07-20T02_31_55_737Z-debug-0.log",
+      "kind": "other",
+      "extension": ".log",
+      "hash": "0202047bfaf6ec01fb45807c72dd02c112bde86eeffdc86b864f4141c467067c",
+      "lines": 413,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_logs/2026-07-20T02_39_11_730Z-debug-0.log",
+      "kind": "other",
+      "extension": ".log",
+      "hash": "1cdf96f135ccfd1509f8db8cff95f21ed7c1db0f1e645c35c1ed83754e24c31b",
+      "lines": 24,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": ".npm-cache/_logs/2026-07-20T02_40_09_242Z-debug-0.log",
+      "kind": "other",
+      "extension": ".log",
+      "hash": "cb9a36268b5a71474cda36f65664be11e617d2d4d21a7e3c27c94246697efe6b",
       "lines": 24,
       "imports": [],
       "exports": [],
@@ -2754,73 +3757,11 @@
       "routes": []
     },
     {
-      "path": "CHANGELOG.md",
-      "kind": "documentation",
-      "extension": ".md",
-      "hash": "837adab7eebd1cac26ac11a2cd37e18101a0082e26ec3ccf3c1b03002f116756",
-      "lines": 13,
-      "imports": [],
-      "exports": [],
-      "symbols": [],
-      "referencedComponents": [],
-      "referencedHooks": [],
-      "apiUsage": [],
-      "databaseUsage": [],
-      "routes": []
-    },
-    {
-      "path": "DASHBOARD.md",
-      "kind": "documentation",
-      "extension": ".md",
-      "hash": "9cc9a1f726c319027e026789447f2f513fda8d680da594d420a924defe9df916",
-      "lines": 38,
-      "imports": [],
-      "exports": [],
-      "symbols": [],
-      "referencedComponents": [],
-      "referencedHooks": [],
-      "apiUsage": [],
-      "databaseUsage": [],
-      "routes": []
-    },
-    {
-      "path": "DEBUG.md",
-      "kind": "documentation",
-      "extension": ".md",
-      "hash": "7c2fec9b1910d9a7bb9784c974cd6052a7f77aee843e1bfea9fe9e81c9c07235",
-      "lines": 32,
-      "imports": [],
-      "exports": [],
-      "symbols": [],
-      "referencedComponents": [],
-      "referencedHooks": [],
-      "apiUsage": [],
-      "databaseUsage": [],
-      "routes": [
-        "/"
-      ]
-    },
-    {
       "path": "Dockerfile",
       "kind": "other",
       "extension": "",
-      "hash": "beb313af3f89cfd268207d1116e4e82884bf65325e2c6994fcb56e005a6eb063",
-      "lines": 25,
-      "imports": [],
-      "exports": [],
-      "symbols": [],
-      "referencedComponents": [],
-      "referencedHooks": [],
-      "apiUsage": [],
-      "databaseUsage": [],
-      "routes": []
-    },
-    {
-      "path": "Legal & Compliance Module Specification.md",
-      "kind": "documentation",
-      "extension": ".md",
-      "hash": "a3b579f0ac974b4d0003ea31cd1ba357cb0a423741a91f13bb09e7a06049f0ad",
-      "lines": 604,
+      "hash": "3c0e7b4e937fa8442dca871c162f60ba8f0f901b9d44cc013105460ab8bbc67a",
+      "lines": 26,
       "imports": [],
       "exports": [],
       "symbols": [],
@@ -2834,8 +3775,8 @@
       "path": "README.md",
       "kind": "documentation",
       "extension": ".md",
-      "hash": "c45fc503eaf69c6eee17956c89d4ecda5cfed51ad1ede30a5a4b469840834556",
-      "lines": 168,
+      "hash": "746f575f5d20feb3d5c1c989027b294afaa6f37b11ea16d4e962549ef600b067",
+      "lines": 200,
       "imports": [],
       "exports": [],
       "symbols": [
@@ -2852,43 +3793,11 @@
       ]
     },
     {
-      "path": "UI.md",
-      "kind": "documentation",
-      "extension": ".md",
-      "hash": "9d1ba18358b925b978065141a7b4fd2a452712711e4d72338354dee0acc80209",
-      "lines": 43,
-      "imports": [],
-      "exports": [],
-      "symbols": [],
-      "referencedComponents": [],
-      "referencedHooks": [],
-      "apiUsage": [],
-      "databaseUsage": [],
-      "routes": []
-    },
-    {
-      "path": "audit_markdown.md",
-      "kind": "documentation",
-      "extension": ".md",
-      "hash": "9d578bd5ffc59e6b6d57f30afc167666992089a608d701cadf5e1c2b643324a2",
-      "lines": 41,
-      "imports": [],
-      "exports": [],
-      "symbols": [],
-      "referencedComponents": [],
-      "referencedHooks": [],
-      "apiUsage": [],
-      "databaseUsage": [],
-      "routes": [
-        "/dashboard"
-      ]
-    },
-    {
       "path": "docs/README.md",
       "kind": "documentation",
       "extension": ".md",
-      "hash": "cf8e7879543f31fff505f8ec37b98be0a3315aff754bcbc65cabe3133214a81b",
-      "lines": 51,
+      "hash": "cd9028fc719584efd65d24cb94ca15ed0b0f99069b3de699f204df21a6b043f4",
+      "lines": 53,
       "imports": [],
       "exports": [],
       "symbols": [],
@@ -2931,6 +3840,23 @@
       "routes": []
     },
     {
+      "path": "docs/environments.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "a680bcc051d7b83ecdaef8fe9076707c71fe19f01a5ceb92829e458b6f305e38",
+      "lines": 71,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.co"
+      ],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": "docs/future-product-roadmap.md",
       "kind": "documentation",
       "extension": ".md",
@@ -2949,7 +3875,7 @@
       "path": "docs/mcp-operations.md",
       "kind": "documentation",
       "extension": ".md",
-      "hash": "bb4c52a05c5d0312573cb42ac785dec7d6abeffde7d6514ab9e50cfd4bca76a4",
+      "hash": "84bb703f1e4902d3cbaee750bc13feb5f6045d23909ec6552c3d22b009c84bee",
       "lines": 43,
       "imports": [],
       "exports": [],
@@ -2959,6 +3885,127 @@
       "apiUsage": [],
       "databaseUsage": [],
       "routes": []
+    },
+    {
+      "path": "docs/reference/CHANGELOG.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "837adab7eebd1cac26ac11a2cd37e18101a0082e26ec3ccf3c1b03002f116756",
+      "lines": 13,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "docs/reference/DASHBOARD.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "9cc9a1f726c319027e026789447f2f513fda8d680da594d420a924defe9df916",
+      "lines": 38,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "docs/reference/DEBUG.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "7c2fec9b1910d9a7bb9784c974cd6052a7f77aee843e1bfea9fe9e81c9c07235",
+      "lines": 32,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": [
+        "/"
+      ]
+    },
+    {
+      "path": "docs/reference/Legal & Compliance Module Specification.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "a3b579f0ac974b4d0003ea31cd1ba357cb0a423741a91f13bb09e7a06049f0ad",
+      "lines": 604,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "docs/reference/UI.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "9d1ba18358b925b978065141a7b4fd2a452712711e4d72338354dee0acc80209",
+      "lines": 43,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "docs/reference/audit_markdown.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "9d578bd5ffc59e6b6d57f30afc167666992089a608d701cadf5e1c2b643324a2",
+      "lines": 41,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": [
+        "/dashboard"
+      ]
+    },
+    {
+      "path": "e2e/staging-smoke.spec.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "570ced44cd37be3aaba1c9426250fd75a2a5327e88496633e4f8dc53456cb583",
+      "lines": 44,
+      "imports": [
+        "@playwright/test"
+      ],
+      "exports": [],
+      "symbols": [
+        "chunkResponses",
+        "email",
+        "password",
+        "url"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": [
+        "/",
+        "/accept-invite?error=access_denied&error_description=Invite%20expired",
+        "/dashboard",
+        "/login"
+      ]
     },
     {
       "path": "eslint.config.js",
@@ -3116,8 +4163,8 @@
       "path": "nginx.conf",
       "kind": "other",
       "extension": ".conf",
-      "hash": "1bcc88f29e727da09fca918626fd9eb8819e43d93935124fe8c0ea573aa2214d",
-      "lines": 11,
+      "hash": "656f6119738243502c291874503af68a3d5cc0f2fd5e0962343065306368a64a",
+      "lines": 17,
       "imports": [],
       "exports": [],
       "symbols": [],
@@ -3254,8 +4301,8 @@
       "path": "package.json",
       "kind": "config",
       "extension": ".json",
-      "hash": "52aecb19dda27ff4b717c3ccacf680b617dd13ff6e7b835b0298d6bdad0109f0",
-      "lines": 54,
+      "hash": "029f7e41c12b57012ed5eee635d945861e92926ceaba437aa6c43fbaa0e944af",
+      "lines": 62,
       "imports": [],
       "exports": [],
       "symbols": [],
@@ -3264,6 +4311,25 @@
       "apiUsage": [
         "supabase.ts"
       ],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "playwright.config.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "2dedd80a7ed48693080b8eed205222e10f620936e3e7ecc585d722c0dbda7284",
+      "lines": 26,
+      "imports": [
+        "@playwright/test"
+      ],
+      "exports": [],
+      "symbols": [
+        "baseURL"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
       "databaseUsage": [],
       "routes": []
     },
@@ -3389,7 +4455,7 @@
       "path": "scripts/index.ts",
       "kind": "source",
       "extension": ".ts",
-      "hash": "b7dabb4a1297864a10c46a8903c2f33ec5d22f8bd7d8668be5ebc8c85742f7f3",
+      "hash": "39597f4086cd418eefc403a0b03d8a13502ee32e93e357fc86d333d69310ea94",
       "lines": 33,
       "imports": [
         "./repo-map.ts",
@@ -3415,8 +4481,8 @@
       "path": "scripts/ingest.ts",
       "kind": "source",
       "extension": ".ts",
-      "hash": "0290e31882f54891d58ad7baef86aaf8a50b514da1fb9fe055758dc0de868746",
-      "lines": 57,
+      "hash": "a7338b19f0e46131aa29852d0b9d15d116c50c088003f98a6bbf5bda43f7d987",
+      "lines": 48,
       "imports": [
         "./repo-map.ts",
         "node:fs",
@@ -3425,7 +4491,6 @@
       "exports": [],
       "symbols": [
         "RepositoryMap",
-        "adrs",
         "api",
         "apiContent",
         "bullets",
@@ -3436,18 +4501,15 @@
         "db",
         "deleted",
         "document",
-        "featureNames",
         "hooks",
         "links",
         "map",
         "pages",
         "previous",
-        "runbooks",
         "section",
         "source",
         "statePath",
         "used",
-        "writeDocumentation",
         "writeKnowledge"
       ],
       "referencedComponents": [],
@@ -3462,8 +4524,8 @@
       "path": "scripts/repo-map.ts",
       "kind": "source",
       "extension": ".ts",
-      "hash": "8fdf9757ceaab994880274f9daa99cf69997388878747ac4a7a4011d02688652",
-      "lines": 120,
+      "hash": "52b56e74a9f4fccad51a8ac6a7b122f8651f27169eee9048da8a235d8602ade6",
+      "lines": 121,
       "imports": [
         "node:crypto",
         "node:fs",
@@ -3489,6 +4551,7 @@
         "directoryPath",
         "exports",
         "files",
+        "generatedArtifacts",
         "generatedDocs",
         "ignoredDirectories",
         "ignoredFiles",
@@ -3520,6 +4583,77 @@
         "insert into",
         "select .* from|update .* set|delete from"
       ],
+      "routes": []
+    },
+    {
+      "path": "scripts/staging-ingest-acceptance.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "4ddbb2fb93688509770b29c28d9ba4b184b26d184ad5776dfcddf5f4995a6d06",
+      "lines": 89,
+      "imports": [],
+      "exports": [],
+      "symbols": [
+        "Json",
+        "assertStatus",
+        "basePayload",
+        "clientId",
+        "data",
+        "duplicate",
+        "endpoint",
+        "eventId",
+        "first",
+        "functionsUrl",
+        "missingOrganization",
+        "organizationId",
+        "postIngest",
+        "releaseSha",
+        "required",
+        "response",
+        "text",
+        "unauthorized",
+        "value",
+        "webhookSecret"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "fetch("
+      ],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "scripts/staging-invite-acceptance.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "c8f6a8862725e4346c936e58ccd95754c0ae4c9d3e3208711ef6636e26975f99",
+      "lines": 69,
+      "imports": [],
+      "exports": [],
+      "symbols": [
+        "Json",
+        "adminInviteSecret",
+        "companyName",
+        "data",
+        "email",
+        "endpoint",
+        "functionsUrl",
+        "invite",
+        "payload",
+        "postInvite",
+        "required",
+        "response",
+        "text",
+        "unauthorized",
+        "value"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "fetch("
+      ],
+      "databaseUsage": [],
       "routes": []
     },
     {
@@ -3562,10 +4696,12 @@
       "path": "src/App.tsx",
       "kind": "source",
       "extension": ".tsx",
-      "hash": "29dfd415eeb9457c9951bee407841baa1dda579cbefa6ed1d2f81b694db768d5",
-      "lines": 164,
+      "hash": "bfce3e21b9d94dc478df4f7593711b7161d6bea6c7ba7e9e7d3c3025687d484d",
+      "lines": 172,
       "imports": [
         "@/components/ErrorBoundary",
+        "@/components/analytics/PostHogConsentSync",
+        "@/components/analytics/PostHogRouteTracker",
         "@/components/legal/LegalGate",
         "@/components/motion/PageTransition",
         "@/components/motion/RouteScrollRestoration",
@@ -3586,6 +4722,7 @@
         "@/pages/SecurityPage",
         "@/pages/WorkflowsPage",
         "framer-motion",
+        "react",
         "react-router-dom"
       ],
       "exports": [
@@ -3593,9 +4730,24 @@
         "ProtectedRoute"
       ],
       "symbols": [
+        "AcceptInvitePage",
         "App",
+        "AuditDetailPage",
+        "AuditPage",
+        "DashboardPage",
+        "DemoPage",
+        "HomePage",
+        "IntegrationsPage",
+        "LegalConsentPage",
+        "LegalDocumentPage",
+        "LegalSettingsPage",
         "LoadingScreen",
-        "ProtectedRoute"
+        "LoginPage",
+        "OnboardingPage",
+        "ProtectedRoute",
+        "RecentActivityPage",
+        "SecurityPage",
+        "WorkflowsPage"
       ],
       "referencedComponents": [
         "AcceptInvitePage",
@@ -3616,12 +4768,15 @@
         "Navigate",
         "OnboardingPage",
         "PageTransition",
+        "PostHogConsentSync",
+        "PostHogRouteTracker",
         "ProtectedRoute",
         "RecentActivityPage",
         "Route",
         "RouteScrollRestoration",
         "Routes",
         "SecurityPage",
+        "Suspense",
         "WorkflowsPage"
       ],
       "referencedHooks": [
@@ -3734,9 +4889,10 @@
       "path": "src/components/ErrorBoundary.tsx",
       "kind": "source",
       "extension": ".tsx",
-      "hash": "cdcfc0bfc4a62c867590abc75d3a5c72cf3f13e4ab7913d003239c5319b9928a",
-      "lines": 59,
+      "hash": "74b43798034f4cfb5ecfe28a14991f5f1c993a7cf62a50ec00d958a22c22616d",
+      "lines": 62,
       "imports": [
+        "@/lib/sentry",
         "react"
       ],
       "exports": [
@@ -3751,6 +4907,62 @@
       ],
       "referencedComponents": [],
       "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/components/analytics/PostHogConsentSync.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "f088c19e1f0fe4031f62f0a5bfa0c53495c90e013490b8df8553cabf6541297a",
+      "lines": 20,
+      "imports": [
+        "@/hooks/useAuth",
+        "@/hooks/useCookiePreferences",
+        "@/lib/posthog",
+        "react"
+      ],
+      "exports": [
+        "PostHogConsentSync"
+      ],
+      "symbols": [
+        "PostHogConsentSync",
+        "hasAnalyticsConsent"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useAuth",
+        "useCookiePreferences",
+        "useEffect"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/components/analytics/PostHogRouteTracker.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "19caaad8311f6395cf729fa644d43e472c0565e63ae8d157e37a989f34efac86",
+      "lines": 14,
+      "imports": [
+        "@/lib/posthog",
+        "react",
+        "react-router-dom"
+      ],
+      "exports": [
+        "PostHogRouteTracker"
+      ],
+      "symbols": [
+        "PostHogRouteTracker",
+        "location"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useEffect",
+        "useLocation"
+      ],
       "apiUsage": [],
       "databaseUsage": [],
       "routes": []
@@ -4332,8 +5544,8 @@
       "path": "src/components/legal/CookiePreferenceToggle.tsx",
       "kind": "source",
       "extension": ".tsx",
-      "hash": "fb09670e2ad2c36a9a91f64e0cdaf78f06321dfee6d4fda0e5efc0832f6d459e",
-      "lines": 95,
+      "hash": "a0af0f28d1aef2707963cc9d817acb6cab9ad0e1ceacd5de19ad4676bd475735",
+      "lines": 97,
       "imports": [
         "@/lib/legalConsent",
         "react"
@@ -4362,8 +5574,8 @@
       "path": "src/components/legal/LegalDocument.tsx",
       "kind": "source",
       "extension": ".tsx",
-      "hash": "ff6b4823ba892088027bf6a3a8292d22a431ccd4db98645d35afc62bc9f140cf",
-      "lines": 42,
+      "hash": "a05ce1db57e5195803eec8a546ff4c739706150ba1ad3066e140beab844e4cf1",
+      "lines": 51,
       "imports": [
         "@/lib/legalConsent"
       ],
@@ -4373,6 +5585,7 @@
       "symbols": [
         "LegalDocument",
         "LegalDocumentProps",
+        "escapeHtml",
         "renderMarkdown"
       ],
       "referencedComponents": [],
@@ -4715,10 +5928,12 @@
       "path": "src/hooks/useAuth.ts",
       "kind": "source",
       "extension": ".ts",
-      "hash": "fe51efe5188c0a1cbe1b0d724fca50270944182fa3b28ff6f5abe7091c7edc17",
-      "lines": 24,
+      "hash": "5723095db45fba65fcbd0a97feff738dd50b48adc29a8539cf4c150f182de764",
+      "lines": 28,
       "imports": [
         "@/api/supabase/client",
+        "@/lib/posthog",
+        "@/lib/sentry",
         "@/store/authStore",
         "react-router-dom"
       ],
@@ -5176,8 +6391,8 @@
       "path": "src/hooks/useWorkflows.ts",
       "kind": "source",
       "extension": ".ts",
-      "hash": "a351e22e7d3cd59878f331248aa2d2205e0f078ee4c529ee0bf2c603f5fdedb3",
-      "lines": 74,
+      "hash": "9fd7604d9deb8f940c775d4af2a28a04a4f89f04fec4c7882917992a4a6bfd77",
+      "lines": 79,
       "imports": [
         "@/api/supabase/client",
         "@tanstack/react-query"
@@ -5188,6 +6403,7 @@
         "useWorkflows"
       ],
       "symbols": [
+        "MAX_WORKFLOW_RUNS",
         "RunSummary",
         "WorkflowWithLatestRun",
         "latest",
@@ -5323,6 +6539,46 @@
       "routes": []
     },
     {
+      "path": "src/lib/posthog.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "139e7921a62711c73bd559cff1b5126d59a59f8528ea1692b194435b6a5f05a0",
+      "lines": 74,
+      "imports": [
+        "@/utils/env",
+        "@supabase/supabase-js",
+        "posthog-js"
+      ],
+      "exports": [
+        "capturePageview",
+        "initPostHog",
+        "isPostHogConfigured",
+        "posthogClient",
+        "setPostHogAnalyticsConsent",
+        "syncPostHogIdentity"
+      ],
+      "symbols": [
+        "analyticsConsentGranted",
+        "capturePageview",
+        "config",
+        "identifiedUserId",
+        "initPostHog",
+        "initialized",
+        "isPostHogConfigured",
+        "posthogClient",
+        "setPostHogAnalyticsConsent",
+        "syncPostHogIdentity",
+        "user"
+      ],
+      "referencedComponents": [
+        "PostHogConfig"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": "src/lib/realEstateContract.ts",
       "kind": "source",
       "extension": ".ts",
@@ -5410,6 +6666,36 @@
       "routes": []
     },
     {
+      "path": "src/lib/sentry.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "dd7d0e71586dbfae54f3ff364898f1245f8879c6f0e0ff803c5fa3a0f7ed4061",
+      "lines": 48,
+      "imports": [
+        "@/utils/env",
+        "@sentry/react",
+        "@supabase/supabase-js"
+      ],
+      "exports": [
+        "captureError",
+        "initSentry",
+        "isSentryConfigured",
+        "syncSentryIdentity"
+      ],
+      "symbols": [
+        "captureError",
+        "initSentry",
+        "initialized",
+        "isSentryConfigured",
+        "syncSentryIdentity"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": "src/lib/serviceCatalog.ts",
       "kind": "source",
       "extension": ".ts",
@@ -5464,13 +6750,16 @@
       "path": "src/main.tsx",
       "kind": "source",
       "extension": ".tsx",
-      "hash": "2c456e246045e7fe751ee9b07085cb5482ef7e9f877c33ffdbe14a13154c7710",
-      "lines": 38,
+      "hash": "b5810f67ca4dae17e9910b1fd6588985e5ec5f478f26247961913196992b9215",
+      "lines": 49,
       "imports": [
         "./index.css",
         "@/App",
         "@/api/supabase/client",
+        "@/lib/posthog",
+        "@/lib/sentry",
         "@/store/authStore",
+        "@posthog/react",
         "@tanstack/react-query",
         "react",
         "react-dom/client",
@@ -5483,6 +6772,7 @@
       "referencedComponents": [
         "App",
         "BrowserRouter",
+        "PostHogProvider",
         "QueryClientProvider",
         "StrictMode"
       ],
@@ -5624,8 +6914,8 @@
       "path": "src/pages/DashboardPage.tsx",
       "kind": "source",
       "extension": ".tsx",
-      "hash": "a3f7291fe23ee5caf56114ca94de6a2e1bd8f8b7d07358d1ce369c08ac9b866d",
-      "lines": 104,
+      "hash": "b020b316d9d62992ab67421b90b86d729781a0932ca9ddeb402abba567d8b4d6",
+      "lines": 108,
       "imports": [
         "@/components/dashboard/AuditTrail",
         "@/components/dashboard/ClientServices",
@@ -5912,17 +7202,20 @@
       "path": "src/pages/LegalSettingsPage.tsx",
       "kind": "source",
       "extension": ".tsx",
-      "hash": "3b401c0a5171f94ad18f198891616758f2b067f654175d24b865ae0e5aa3b409",
-      "lines": 117,
+      "hash": "01f5efaa18c870ef5454f63be9769dc4013bffd5896a098c002b363428ecc5e6",
+      "lines": 128,
       "imports": [
         "@/components/legal/CookiePreferenceToggle",
         "@/components/motion/FadeUp",
         "@/components/ui/Footer",
         "@/components/ui/Nav",
         "@/components/ui/SectionHeader",
+        "@/hooks/useAuth",
         "@/hooks/useClient",
         "@/hooks/useCookiePreferences",
         "@/lib/legalConsent",
+        "@/lib/posthog",
+        "@tanstack/react-query",
         "react"
       ],
       "exports": [
@@ -5930,7 +7223,10 @@
       ],
       "symbols": [
         "LegalSettingsPage",
-        "handleSave"
+        "handleSave",
+        "isLoading",
+        "loadError",
+        "queryClient"
       ],
       "referencedComponents": [
         "CookiePreferencesForm",
@@ -5940,8 +7236,10 @@
         "SectionHeader"
       ],
       "referencedHooks": [
+        "useAuth",
         "useClient",
         "useCookiePreferences",
+        "useQueryClient",
         "useState"
       ],
       "apiUsage": [],
@@ -6206,8 +7504,8 @@
       "path": "src/test/AcceptInvitePage.test.tsx",
       "kind": "source",
       "extension": ".tsx",
-      "hash": "eb70178bd1b1b53be2f3ae546524fdee763106d3fe9346751b300b039e52f83d",
-      "lines": 82,
+      "hash": "733261ab8f06f84dde4c77fa7c404da910327bd6173f635a3cb962e6b1559e0f",
+      "lines": 95,
       "imports": [
         "@/api/supabase/client",
         "@/hooks/useAuth",
@@ -6265,6 +7563,30 @@
       "routes": []
     },
     {
+      "path": "src/test/DashboardPage.test.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "bfcb5b1551d7acded88c59424f1c65b2741d58052f90b4cd27eb8950de13e862",
+      "lines": 60,
+      "imports": [
+        "@/hooks/useClient",
+        "@/pages/DashboardPage",
+        "@testing-library/react",
+        "react-router-dom",
+        "vitest"
+      ],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [
+        "DashboardPage",
+        "MemoryRouter"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": "src/test/HomePage.test.tsx",
       "kind": "source",
       "extension": ".tsx",
@@ -6307,6 +7629,41 @@
       "apiUsage": [],
       "databaseUsage": [],
       "routes": []
+    },
+    {
+      "path": "src/test/LoginPage.test.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "12388d242cef705ddb09956714bfa7020392386243a07b0bd313a9a63066ab85",
+      "lines": 59,
+      "imports": [
+        "@/api/supabase/client",
+        "@/pages/LoginPage",
+        "@testing-library/react",
+        "@testing-library/user-event",
+        "react-router-dom",
+        "vitest"
+      ],
+      "exports": [],
+      "symbols": [
+        "renderPage",
+        "user"
+      ],
+      "referencedComponents": [
+        "LoginPage",
+        "MemoryRouter",
+        "Route",
+        "Routes"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.auth.signInWithPassword"
+      ],
+      "databaseUsage": [],
+      "routes": [
+        "/dashboard",
+        "/login"
+      ]
     },
     {
       "path": "src/test/OperationsMenu.test.tsx",
@@ -6364,16 +7721,19 @@
       "path": "src/test/RunsFeed.test.tsx",
       "kind": "source",
       "extension": ".tsx",
-      "hash": "4bf46bbee1e8349e81778c291f30ff561bb0a1a837085a988bd9d60bb0c6b7f9",
-      "lines": 34,
+      "hash": "dbe856dbc278f9fe139cd70bf8efc75b60b3975655245c8c7c4c36b437b9fbaf",
+      "lines": 43,
       "imports": [
         "@/components/dashboard/RunsFeed",
+        "@/hooks/useRuns",
         "@testing-library/react",
         "react-router-dom",
         "vitest"
       ],
       "exports": [],
-      "symbols": [],
+      "symbols": [
+        "useRuns"
+      ],
       "referencedComponents": [
         "MemoryRouter",
         "RunsFeed"
@@ -6463,6 +7823,30 @@
       "routes": []
     },
     {
+      "path": "src/test/posthog.test.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "3695174d27d9d28ce8cff3b8371a9e23f4b0f24f6cab90ff5db12b31d7b1a257",
+      "lines": 88,
+      "imports": [
+        "@/lib/posthog",
+        "vitest"
+      ],
+      "exports": [],
+      "symbols": [
+        "loadPostHog",
+        "posthogMock",
+        "session"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.co"
+      ],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": "src/test/realEstateSchema.test.ts",
       "kind": "source",
       "extension": ".ts",
@@ -6509,6 +7893,61 @@
       "referencedComponents": [],
       "referencedHooks": [],
       "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/test/securityContracts.test.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "0189241414a4a8d0759604acf6fb20f4879bbefc31ac805f913eb264b8f16d16",
+      "lines": 35,
+      "imports": [
+        "node:fs",
+        "vitest"
+      ],
+      "exports": [],
+      "symbols": [
+        "ingest",
+        "invite",
+        "public",
+        "rls",
+        "security",
+        "sql"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.auth.admin.deleteUser"
+      ],
+      "databaseUsage": [
+        "alter table"
+      ],
+      "routes": []
+    },
+    {
+      "path": "src/test/sentry.test.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "9339528bca2074203acb22f186181d37d0b155f58decd4da1aa104923edd4545",
+      "lines": 89,
+      "imports": [
+        "@/lib/sentry",
+        "vitest"
+      ],
+      "exports": [],
+      "symbols": [
+        "error",
+        "event",
+        "initConfig",
+        "loadSentry",
+        "sentryMock"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.co"
+      ],
       "databaseUsage": [],
       "routes": []
     },
@@ -6568,6 +8007,37 @@
       "referencedHooks": [
         "useFakeTimers",
         "useRealTimers"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/test/useDashboardMetrics.test.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "37977a9f0f3d67f5092dc2e2c3755ca8c83bca1e7523be7e0dd273f87234c177",
+      "lines": 49,
+      "imports": [
+        "@/hooks/useDashboardMetrics",
+        "@tanstack/react-query",
+        "@testing-library/react",
+        "react",
+        "vitest"
+      ],
+      "exports": [],
+      "symbols": [
+        "chain",
+        "client",
+        "query",
+        "result",
+        "wrapper"
+      ],
+      "referencedComponents": [
+        "QueryClientProvider"
+      ],
+      "referencedHooks": [
+        "useDashboardMetrics"
       ],
       "apiUsage": [],
       "databaseUsage": [],
@@ -6727,8 +8197,8 @@
       "path": "src/utils/env.ts",
       "kind": "source",
       "extension": ".ts",
-      "hash": "e96044c92f8d889270af888463afc552edcbec30948b9c9e885d4770a188784f",
-      "lines": 12,
+      "hash": "bcef305387bf8c320bdd3281a1617f259e6a7133842b73f528dcfa7e2d319edc",
+      "lines": 38,
       "imports": [],
       "exports": [
         "env"
@@ -6736,13 +8206,14 @@
       "symbols": [
         "env",
         "optional",
+        "optionalNumber",
+        "parsed",
+        "required",
         "val"
       ],
       "referencedComponents": [],
       "referencedHooks": [],
-      "apiUsage": [
-        "supabase.co"
-      ],
+      "apiUsage": [],
       "databaseUsage": [],
       "routes": []
     },
@@ -6790,6 +8261,21 @@
         "hours",
         "mins"
       ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "supabase/.branches/_current_branch",
+      "kind": "other",
+      "extension": ".branches/_current_branch",
+      "hash": "0d6e4079e36703ebd37c00722f5891d28b0e2811dc114b129215123adcce3605",
+      "lines": 1,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
       "referencedComponents": [],
       "referencedHooks": [],
       "apiUsage": [],
@@ -6949,6 +8435,21 @@
       "routes": []
     },
     {
+      "path": "supabase/function-secrets.example",
+      "kind": "other",
+      "extension": ".example",
+      "hash": "f0a24d2f9316cbc22f942938e2775e3305c0f3ad9bae2ddb2bd9085fa6b33fdc",
+      "lines": 11,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": "supabase/functions/demo-event/index.ts",
       "kind": "function",
       "extension": ".ts",
@@ -7002,8 +8503,8 @@
       "path": "supabase/functions/ingest-run/index.ts",
       "kind": "function",
       "extension": ".ts",
-      "hash": "6e7f6b9576085957a931f666334e68ae5017c7efb276221d0d25082835aea44d",
-      "lines": 149,
+      "hash": "719ec91c7ae49903caf863851e77b8c05be1bd14f5213f306a51814741071181",
+      "lines": 157,
       "imports": [
         "https://deno.land/std/http/server.ts",
         "https://deno.land/x/zod@v3.23.8/mod.ts",
@@ -7018,6 +8519,7 @@
         "json",
         "parsed",
         "raw",
+        "rpcResult",
         "runStatuses",
         "serviceRoleKey",
         "supabase",
@@ -7518,6 +9020,43 @@
       "routes": []
     },
     {
+      "path": "supabase/migrations/20260720000001_api_table_grants.sql",
+      "kind": "migration",
+      "extension": ".sql",
+      "hash": "fa185369ab586e419f7774ac1d153124ee265e29f3c85759b8563d1f705defa8",
+      "lines": 29,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "supabase/tests/database/rls_isolation.sql",
+      "kind": "other",
+      "extension": ".sql",
+      "hash": "4851f6b50941bb17f802d6f33e2e05454c76cebfdfaf3a354a784606226c405b",
+      "lines": 85,
+      "imports": [],
+      "exports": [],
+      "symbols": [
+        "only"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "insert into",
+        "select * from",
+        "select is((select count(*)::int from",
+        "select is((select name from"
+      ],
+      "routes": []
+    },
+    {
       "path": "tsconfig.app.json",
       "kind": "config",
       "extension": ".json",
@@ -7566,8 +9105,8 @@
       "path": "vite.config.ts",
       "kind": "source",
       "extension": ".ts",
-      "hash": "c2e67ef1c729a0917dafab550fbcbdd206b109f7bd3963ca12381591993d7d93",
-      "lines": 22,
+      "hash": "0090e7be3e693a9bdb26ccc366bae113b39988ed537b0e3a357c813f2fea6dd7",
+      "lines": 24,
       "imports": [
         "@tailwindcss/vite",
         "@vitejs/plugin-react",
@@ -7589,8 +9128,8 @@
       "path": "vitest.config.ts",
       "kind": "source",
       "extension": ".ts",
-      "hash": "b6917251a1bd19d3ee9648a58eb5e5c39617702caf83ad6c47b4e53ed7d27ce9",
-      "lines": 15,
+      "hash": "d6800d271e673dde0e29649f832758dcba5010cd2ce6a927e2a4df1ee4191329",
+      "lines": 17,
       "imports": [
         "path",
         "vitest/config"

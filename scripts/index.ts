@@ -3,7 +3,7 @@ import { join } from "node:path";
 import { scanRepository, stableJson } from "./repo-map.ts";
 
 const map = scanRepository();
-const output = join(map.root, "index");
+const output = join(map.root, "outputs", "repo-index");
 mkdirSync(output, { recursive: true });
 const sourceFiles = map.files.filter((file) => file.kind === "source" || file.kind === "function" || file.kind === "migration");
 const records = sourceFiles.map((file) => ({

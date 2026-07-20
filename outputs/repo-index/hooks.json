@@ -58,11 +58,15 @@
       ],
       "importedSymbols": [
         "@/api/supabase/client",
+        "@/lib/posthog",
+        "@/lib/sentry",
         "@/store/authStore",
         "react-router-dom"
       ],
       "dependencies": [
         "@/api/supabase/client",
+        "@/lib/posthog",
+        "@/lib/sentry",
         "@/store/authStore"
       ],
       "referencedComponents": [],

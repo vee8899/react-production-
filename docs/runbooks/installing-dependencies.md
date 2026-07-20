@@ -65,4 +65,4 @@ git diff -- package.json package-lock.json
 
 ## Related
 See `AGENT.md`, `README.md`, `docs/runbooks/testing.md`, and
-`knowledge/architecture.md`.
+`knowledge-base/architecture.md`.

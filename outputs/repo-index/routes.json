@@ -2,18 +2,38 @@
   "generatedAt": "deterministic",
   "records": [
     {
-      "route": "/",
-      "file": "DEBUG.md",
-      "protected": false
-    },
-    {
       "route": "/login",
       "file": "README.md",
       "protected": false
     },
     {
+      "route": "/",
+      "file": "docs/reference/DEBUG.md",
+      "protected": false
+    },
+    {
       "route": "/dashboard",
-      "file": "audit_markdown.md",
+      "file": "docs/reference/audit_markdown.md",
+      "protected": false
+    },
+    {
+      "route": "/",
+      "file": "e2e/staging-smoke.spec.ts",
+      "protected": false
+    },
+    {
+      "route": "/accept-invite?error=access_denied&error_description=Invite%20expired",
+      "file": "e2e/staging-smoke.spec.ts",
+      "protected": false
+    },
+    {
+      "route": "/dashboard",
+      "file": "e2e/staging-smoke.spec.ts",
+      "protected": false
+    },
+    {
+      "route": "/login",
+      "file": "e2e/staging-smoke.spec.ts",
       "protected": false
     },
     {
@@ -254,6 +274,16 @@
     {
       "route": "/login",
       "file": "src/test/AcceptInvitePage.test.tsx",
+      "protected": false
+    },
+    {
+      "route": "/dashboard",
+      "file": "src/test/LoginPage.test.tsx",
+      "protected": false
+    },
+    {
+      "route": "/login",
+      "file": "src/test/LoginPage.test.tsx",
       "protected": false
     },
     {

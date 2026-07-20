@@ -7,11 +7,60 @@
         "ErrorBoundary"
       ],
       "importedSymbols": [
+        "@/lib/sentry",
         "react"
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@/lib/sentry"
+      ],
       "referencedComponents": [],
       "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/analytics/PostHogConsentSync.tsx",
+      "exportedSymbols": [
+        "PostHogConsentSync"
+      ],
+      "importedSymbols": [
+        "@/hooks/useAuth",
+        "@/hooks/useCookiePreferences",
+        "@/lib/posthog",
+        "react"
+      ],
+      "dependencies": [
+        "@/hooks/useAuth",
+        "@/hooks/useCookiePreferences",
+        "@/lib/posthog"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useAuth",
+        "useCookiePreferences",
+        "useEffect"
+      ],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/components/analytics/PostHogRouteTracker.tsx",
+      "exportedSymbols": [
+        "PostHogRouteTracker"
+      ],
+      "importedSymbols": [
+        "@/lib/posthog",
+        "react",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "@/lib/posthog"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useEffect",
+        "useLocation"
+      ],
       "apiUsage": [],
       "databaseUsage": []
     },

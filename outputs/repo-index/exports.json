@@ -2,7 +2,15 @@
   "generatedAt": "deterministic",
   "records": [
     {
+      "file": "e2e/staging-smoke.spec.ts",
+      "exportedSymbols": []
+    },
+    {
       "file": "eslint.config.js",
+      "exportedSymbols": []
+    },
+    {
+      "file": "playwright.config.ts",
       "exportedSymbols": []
     },
     {
@@ -23,6 +31,14 @@
         "stableJson",
         "writeIfChanged"
       ]
+    },
+    {
+      "file": "scripts/staging-ingest-acceptance.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "scripts/staging-invite-acceptance.ts",
+      "exportedSymbols": []
     },
     {
       "file": "scripts/verify-supabase.ts",
@@ -60,6 +76,18 @@
       "file": "src/components/ErrorBoundary.tsx",
       "exportedSymbols": [
         "ErrorBoundary"
+      ]
+    },
+    {
+      "file": "src/components/analytics/PostHogConsentSync.tsx",
+      "exportedSymbols": [
+        "PostHogConsentSync"
+      ]
+    },
+    {
+      "file": "src/components/analytics/PostHogRouteTracker.tsx",
+      "exportedSymbols": [
+        "PostHogRouteTracker"
       ]
     },
     {
@@ -379,6 +407,17 @@
       ]
     },
     {
+      "file": "src/lib/posthog.ts",
+      "exportedSymbols": [
+        "capturePageview",
+        "initPostHog",
+        "isPostHogConfigured",
+        "posthogClient",
+        "setPostHogAnalyticsConsent",
+        "syncPostHogIdentity"
+      ]
+    },
+    {
       "file": "src/lib/realEstateContract.ts",
       "exportedSymbols": [
         "appointmentStatuses",
@@ -406,6 +445,15 @@
         "currencies",
         "formatCurrency",
         "laborRateConfigs"
+      ]
+    },
+    {
+      "file": "src/lib/sentry.ts",
+      "exportedSymbols": [
+        "captureError",
+        "initSentry",
+        "isSentryConfigured",
+        "syncSentryIdentity"
       ]
     },
     {
@@ -540,11 +588,19 @@
       "exportedSymbols": []
     },
     {
+      "file": "src/test/DashboardPage.test.tsx",
+      "exportedSymbols": []
+    },
+    {
       "file": "src/test/HomePage.test.tsx",
       "exportedSymbols": []
     },
     {
       "file": "src/test/IntegrationsShowcase.test.tsx",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/test/LoginPage.test.tsx",
       "exportedSymbols": []
     },
     {
@@ -576,11 +632,23 @@
       "exportedSymbols": []
     },
     {
+      "file": "src/test/posthog.test.ts",
+      "exportedSymbols": []
+    },
+    {
       "file": "src/test/realEstateSchema.test.ts",
       "exportedSymbols": []
     },
     {
       "file": "src/test/roiCalculator.test.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/test/securityContracts.test.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/test/sentry.test.ts",
       "exportedSymbols": []
     },
     {
@@ -593,6 +661,10 @@
     },
     {
       "file": "src/test/time.test.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/test/useDashboardMetrics.test.tsx",
       "exportedSymbols": []
     },
     {
@@ -747,6 +819,10 @@
     },
     {
       "file": "supabase/migrations/20260717000004_expand_demo_workflows.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260720000001_api_table_grants.sql",
       "exportedSymbols": []
     },
     {

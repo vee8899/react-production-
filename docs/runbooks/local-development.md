@@ -48,7 +48,7 @@ If the change affects implementation structure, refresh generated knowledge and 
 npm.cmd run refresh-ai
 ```
 
-The refresh command may update `knowledge/` and `index/`. It must not replace authored files under `docs/`.
+The refresh command may update `docs/knowledge-base/` and `outputs/repo-index/`. It must not replace authored files under `docs/`.
 
 ## Common problems
 

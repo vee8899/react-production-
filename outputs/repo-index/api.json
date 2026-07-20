@@ -2,6 +2,30 @@
   "generatedAt": "deterministic",
   "records": [
     {
+      "file": "scripts/staging-ingest-acceptance.ts",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "fetch("
+      ],
+      "databaseUsage": []
+    },
+    {
+      "file": "scripts/staging-invite-acceptance.ts",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "fetch("
+      ],
+      "databaseUsage": []
+    },
+    {
       "file": "src/api/supabase/auth.ts",
       "exportedSymbols": [
         "getSession",
@@ -69,11 +93,15 @@
       ],
       "importedSymbols": [
         "@/api/supabase/client",
+        "@/lib/posthog",
+        "@/lib/sentry",
         "@/store/authStore",
         "react-router-dom"
       ],
       "dependencies": [
         "@/api/supabase/client",
+        "@/lib/posthog",
+        "@/lib/sentry",
         "@/store/authStore"
       ],
       "referencedComponents": [],
@@ -192,7 +220,10 @@
         "./index.css",
         "@/App",
         "@/api/supabase/client",
+        "@/lib/posthog",
+        "@/lib/sentry",
         "@/store/authStore",
+        "@posthog/react",
         "@tanstack/react-query",
         "react",
         "react-dom/client",
@@ -202,11 +233,14 @@
         "./index.css",
         "@/App",
         "@/api/supabase/client",
+        "@/lib/posthog",
+        "@/lib/sentry",
         "@/store/authStore"
       ],
       "referencedComponents": [
         "App",
         "BrowserRouter",
+        "PostHogProvider",
         "QueryClientProvider",
         "StrictMode"
       ],
@@ -356,12 +390,76 @@
       "databaseUsage": []
     },
     {
-      "file": "src/utils/env.ts",
-      "exportedSymbols": [
-        "env"
+      "file": "src/test/LoginPage.test.tsx",
+      "exportedSymbols": [],
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/pages/LoginPage",
+        "@testing-library/react",
+        "@testing-library/user-event",
+        "react-router-dom",
+        "vitest"
       ],
-      "importedSymbols": [],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/pages/LoginPage"
+      ],
+      "referencedComponents": [
+        "LoginPage",
+        "MemoryRouter",
+        "Route",
+        "Routes"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.auth.signInWithPassword"
+      ],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/test/posthog.test.ts",
+      "exportedSymbols": [],
+      "importedSymbols": [
+        "@/lib/posthog",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/lib/posthog"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.co"
+      ],
+      "databaseUsage": []
+    },
+    {
+      "file": "src/test/securityContracts.test.ts",
+      "exportedSymbols": [],
+      "importedSymbols": [
+        "node:fs",
+        "vitest"
+      ],
       "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.auth.admin.deleteUser"
+      ],
+      "databaseUsage": [
+        "alter table"
+      ]
+    },
+    {
+      "file": "src/test/sentry.test.ts",
+      "exportedSymbols": [],
+      "importedSymbols": [
+        "@/lib/sentry",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/lib/sentry"
+      ],
       "referencedComponents": [],
       "referencedHooks": [],
       "apiUsage": [

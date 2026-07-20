@@ -22,7 +22,7 @@ Supabase provides authentication, PostgreSQL data, row-level security, and Edge 
 | Prepare or perform a release | [`docs/runbooks/release-checklist.md`](docs/runbooks/release-checklist.md) |
 | Launch production | [`docs/runbooks/production-launch-checklist.md`](docs/runbooks/production-launch-checklist.md) |
 | Understand environments and secrets | [`docs/environments.md`](docs/environments.md) |
-| Troubleshoot a problem | [`DEBUG.md`](DEBUG.md), [`docs/runbooks/debugging.md`](docs/runbooks/debugging.md) |
+| Troubleshoot a problem | [`docs/reference/DEBUG.md`](docs/reference/DEBUG.md), [`docs/runbooks/debugging.md`](docs/runbooks/debugging.md) |
 
 ## Technology
 
@@ -124,7 +124,7 @@ Before opening a pull request, run lint, tests, and build. If a change affects t
 - `infra/n8n/` — optional private n8n, Postgres, and Caddy infrastructure
 - `n8n/workflows/` — sanitized, reviewed workflow exports
 - `docs/` — authored architecture notes, specifications, ADRs, and runbooks
-- `knowledge/` — generated implementation maps for navigation and coding-agent context
+- `docs/knowledge-base/` — generated implementation maps for navigation and coding-agent context
 
 The implementation is the source of truth. If a note disagrees with the code or migrations, verify the implementation and update the note.
 
@@ -190,7 +190,7 @@ Documentation is divided by purpose:
 - `README.md` is the short project entry point.
 - `AGENT.md` explains how to work safely in the repository.
 - `docs/` contains authored guidance and is reviewed like code.
-- `knowledge/` is generated and should not be edited by hand.
+- `docs/knowledge-base/` is generated and should not be edited by hand.
 
 When implementation behavior changes, update the closest authored document, add or update tests, then run `npm.cmd run refresh-ai`. The refresh command updates generated knowledge and indexes; it must not replace authored specifications, ADRs, or runbooks.
 

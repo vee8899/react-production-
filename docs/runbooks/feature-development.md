@@ -7,4 +7,4 @@ Update implementation, tests, docs/specs if behavior changes, then run npm run r
 Confirm the command exits successfully and inspect generated artifacts for unexpected changes.
 
 ## Related
-See `AGENT.md`, `README.md`, and `knowledge/architecture.md`.
+See `AGENT.md`, `README.md`, and `knowledge-base/architecture.md`.

@@ -4,6 +4,9 @@
 
 - `@eslint/js` ^10.0.1
 - `@hookform/resolvers` ^5.4.0
+- `@playwright/test` ^1.61.1
+- `@posthog/react` ^1.10.3
+- `@sentry/react` ^10.66.0
 - `@supabase/supabase-js` ^2.108.2
 - `@tailwindcss/vite` ^4.3.1
 - `@tanstack/react-query` ^5.101.2
@@ -20,6 +23,7 @@
 - `framer-motion` ^12.42.0
 - `globals` ^17.6.0
 - `jsdom` ^29.1.1
+- `posthog-js` ^1.404.1
 - `react` ^19.2.7
 - `react-dom` ^19.2.7
 - `react-hook-form` ^7.80.0

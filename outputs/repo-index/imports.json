@@ -2,6 +2,13 @@
   "generatedAt": "deterministic",
   "records": [
     {
+      "file": "e2e/staging-smoke.spec.ts",
+      "importedSymbols": [
+        "@playwright/test"
+      ],
+      "dependencies": []
+    },
+    {
       "file": "eslint.config.js",
       "importedSymbols": [
         "@eslint/js",
@@ -10,6 +17,13 @@
         "eslint/config",
         "globals",
         "typescript-eslint"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": "playwright.config.ts",
+      "importedSymbols": [
+        "@playwright/test"
       ],
       "dependencies": []
     },
@@ -45,6 +59,16 @@
       "dependencies": []
     },
     {
+      "file": "scripts/staging-ingest-acceptance.ts",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "scripts/staging-invite-acceptance.ts",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
       "file": "scripts/verify-supabase.ts",
       "importedSymbols": [
         "node:fs",
@@ -56,6 +80,8 @@
       "file": "src/App.tsx",
       "importedSymbols": [
         "@/components/ErrorBoundary",
+        "@/components/analytics/PostHogConsentSync",
+        "@/components/analytics/PostHogRouteTracker",
         "@/components/legal/LegalGate",
         "@/components/motion/PageTransition",
         "@/components/motion/RouteScrollRestoration",
@@ -76,10 +102,13 @@
         "@/pages/SecurityPage",
         "@/pages/WorkflowsPage",
         "framer-motion",
+        "react",
         "react-router-dom"
       ],
       "dependencies": [
         "@/components/ErrorBoundary",
+        "@/components/analytics/PostHogConsentSync",
+        "@/components/analytics/PostHogRouteTracker",
         "@/components/legal/LegalGate",
         "@/components/motion/PageTransition",
         "@/components/motion/RouteScrollRestoration",
@@ -130,9 +159,37 @@
     {
       "file": "src/components/ErrorBoundary.tsx",
       "importedSymbols": [
+        "@/lib/sentry",
         "react"
       ],
-      "dependencies": []
+      "dependencies": [
+        "@/lib/sentry"
+      ]
+    },
+    {
+      "file": "src/components/analytics/PostHogConsentSync.tsx",
+      "importedSymbols": [
+        "@/hooks/useAuth",
+        "@/hooks/useCookiePreferences",
+        "@/lib/posthog",
+        "react"
+      ],
+      "dependencies": [
+        "@/hooks/useAuth",
+        "@/hooks/useCookiePreferences",
+        "@/lib/posthog"
+      ]
+    },
+    {
+      "file": "src/components/analytics/PostHogRouteTracker.tsx",
+      "importedSymbols": [
+        "@/lib/posthog",
+        "react",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "@/lib/posthog"
+      ]
     },
     {
       "file": "src/components/dashboard/AuditTrail.tsx",
@@ -449,11 +506,15 @@
       "file": "src/hooks/useAuth.ts",
       "importedSymbols": [
         "@/api/supabase/client",
+        "@/lib/posthog",
+        "@/lib/sentry",
         "@/store/authStore",
         "react-router-dom"
       ],
       "dependencies": [
         "@/api/supabase/client",
+        "@/lib/posthog",
+        "@/lib/sentry",
         "@/store/authStore"
       ]
     },
@@ -630,6 +691,17 @@
       ]
     },
     {
+      "file": "src/lib/posthog.ts",
+      "importedSymbols": [
+        "@/utils/env",
+        "@supabase/supabase-js",
+        "posthog-js"
+      ],
+      "dependencies": [
+        "@/utils/env"
+      ]
+    },
+    {
       "file": "src/lib/realEstateContract.ts",
       "importedSymbols": [],
       "dependencies": []
@@ -638,6 +710,17 @@
       "file": "src/lib/roiCalculator.ts",
       "importedSymbols": [],
       "dependencies": []
+    },
+    {
+      "file": "src/lib/sentry.ts",
+      "importedSymbols": [
+        "@/utils/env",
+        "@sentry/react",
+        "@supabase/supabase-js"
+      ],
+      "dependencies": [
+        "@/utils/env"
+      ]
     },
     {
       "file": "src/lib/serviceCatalog.ts",
@@ -659,7 +742,10 @@
         "./index.css",
         "@/App",
         "@/api/supabase/client",
+        "@/lib/posthog",
+        "@/lib/sentry",
         "@/store/authStore",
+        "@posthog/react",
         "@tanstack/react-query",
         "react",
         "react-dom/client",
@@ -669,6 +755,8 @@
         "./index.css",
         "@/App",
         "@/api/supabase/client",
+        "@/lib/posthog",
+        "@/lib/sentry",
         "@/store/authStore"
       ]
     },
@@ -883,9 +971,12 @@
         "@/components/ui/Footer",
         "@/components/ui/Nav",
         "@/components/ui/SectionHeader",
+        "@/hooks/useAuth",
         "@/hooks/useClient",
         "@/hooks/useCookiePreferences",
         "@/lib/legalConsent",
+        "@/lib/posthog",
+        "@tanstack/react-query",
         "react"
       ],
       "dependencies": [
@@ -894,9 +985,11 @@
         "@/components/ui/Footer",
         "@/components/ui/Nav",
         "@/components/ui/SectionHeader",
+        "@/hooks/useAuth",
         "@/hooks/useClient",
         "@/hooks/useCookiePreferences",
-        "@/lib/legalConsent"
+        "@/lib/legalConsent",
+        "@/lib/posthog"
       ]
     },
     {
@@ -1035,6 +1128,20 @@
       ]
     },
     {
+      "file": "src/test/DashboardPage.test.tsx",
+      "importedSymbols": [
+        "@/hooks/useClient",
+        "@/pages/DashboardPage",
+        "@testing-library/react",
+        "react-router-dom",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/hooks/useClient",
+        "@/pages/DashboardPage"
+      ]
+    },
+    {
       "file": "src/test/HomePage.test.tsx",
       "importedSymbols": [
         "@/pages/HomePage",
@@ -1055,6 +1162,21 @@
       ],
       "dependencies": [
         "@/components/features/IntegrationsShowcase"
+      ]
+    },
+    {
+      "file": "src/test/LoginPage.test.tsx",
+      "importedSymbols": [
+        "@/api/supabase/client",
+        "@/pages/LoginPage",
+        "@testing-library/react",
+        "@testing-library/user-event",
+        "react-router-dom",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/api/supabase/client",
+        "@/pages/LoginPage"
       ]
     },
     {
@@ -1087,12 +1209,14 @@
       "file": "src/test/RunsFeed.test.tsx",
       "importedSymbols": [
         "@/components/dashboard/RunsFeed",
+        "@/hooks/useRuns",
         "@testing-library/react",
         "react-router-dom",
         "vitest"
       ],
       "dependencies": [
-        "@/components/dashboard/RunsFeed"
+        "@/components/dashboard/RunsFeed",
+        "@/hooks/useRuns"
       ]
     },
     {
@@ -1138,6 +1262,16 @@
       ]
     },
     {
+      "file": "src/test/posthog.test.ts",
+      "importedSymbols": [
+        "@/lib/posthog",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/lib/posthog"
+      ]
+    },
+    {
       "file": "src/test/realEstateSchema.test.ts",
       "importedSymbols": [
         "@/lib/realEstateContract",
@@ -1155,6 +1289,24 @@
       ],
       "dependencies": [
         "@/lib/roiCalculator"
+      ]
+    },
+    {
+      "file": "src/test/securityContracts.test.ts",
+      "importedSymbols": [
+        "node:fs",
+        "vitest"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": "src/test/sentry.test.ts",
+      "importedSymbols": [
+        "@/lib/sentry",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/lib/sentry"
       ]
     },
     {
@@ -1187,6 +1339,19 @@
       ],
       "dependencies": [
         "@/utils/time"
+      ]
+    },
+    {
+      "file": "src/test/useDashboardMetrics.test.tsx",
+      "importedSymbols": [
+        "@/hooks/useDashboardMetrics",
+        "@tanstack/react-query",
+        "@testing-library/react",
+        "react",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/hooks/useDashboardMetrics"
       ]
     },
     {
@@ -1376,6 +1541,11 @@
     },
     {
       "file": "supabase/migrations/20260717000004_expand_demo_workflows.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260720000001_api_table_grants.sql",
       "importedSymbols": [],
       "dependencies": []
     },

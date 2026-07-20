@@ -18,10 +18,37 @@
       ]
     },
     {
+      "name": "@playwright/test",
+      "version": "^1.61.1",
+      "usedBy": [
+        "e2e/staging-smoke.spec.ts",
+        "playwright.config.ts"
+      ]
+    },
+    {
+      "name": "@posthog/react",
+      "version": "^1.10.3",
+      "usedBy": [
+        "src/main.tsx"
+      ]
+    },
+    {
+      "name": "@sentry/react",
+      "version": "^10.66.0",
+      "usedBy": [
+        ".npm-cache/_cacache/content-v2/sha512/2e/a0/f532bf914fdc38036dcfede5eb4164499e181a0cb4e4a2d39edd6c5efa91997e66662ec2d68133667dda54894358aa8302606ffc404103c47e6e1c03fc79",
+        ".npm-cache/_cacache/content-v2/sha512/7d/63/fc23023f7ce4b8be2742119af3c6fa45273c155c8109ee2386e511fe92228e9fb03bc4aa9a82862a2a5b3a978030b7e2dd5a64ce8e3ebb1da078e00d618a",
+        ".npm-cache/_cacache/content-v2/sha512/f4/f6/9a3607d148d524e4c9eeced2a55b83fd295609affb78fe42a6b2e7c9c2d168c8544bff545633f47ca6faac43a02570d4f9db6eaca3d16450952f7b00063f",
+        "src/lib/sentry.ts"
+      ]
+    },
+    {
       "name": "@supabase/supabase-js",
       "version": "^2.108.2",
       "usedBy": [
         "src/api/supabase/client.ts",
+        "src/lib/posthog.ts",
+        "src/lib/sentry.ts",
         "src/store/authStore.ts"
       ]
     },
@@ -55,6 +82,8 @@
         "src/main.tsx",
         "src/pages/DemoPage.tsx",
         "src/pages/LegalConsentPage.tsx",
+        "src/pages/LegalSettingsPage.tsx",
+        "src/test/useDashboardMetrics.test.tsx",
         "src/test/useRunDetails.test.tsx",
         "src/test/useRuns.test.tsx"
       ]
@@ -72,13 +101,16 @@
       "usedBy": [
         "src/test/AcceptInvitePage.test.tsx",
         "src/test/AuditTrail.test.tsx",
+        "src/test/DashboardPage.test.tsx",
         "src/test/HomePage.test.tsx",
         "src/test/IntegrationsShowcase.test.tsx",
+        "src/test/LoginPage.test.tsx",
         "src/test/OperationsMenu.test.tsx",
         "src/test/ProtectedRoute.test.tsx",
         "src/test/RunsFeed.test.tsx",
         "src/test/SecurityPage.test.tsx",
         "src/test/serviceSubscriptions.test.tsx",
+        "src/test/useDashboardMetrics.test.tsx",
         "src/test/useRunDetails.test.tsx",
         "src/test/useRuns.test.tsx"
       ]
@@ -87,7 +119,8 @@
       "name": "@testing-library/user-event",
       "version": "^14.6.1",
       "usedBy": [
-        "src/test/AcceptInvitePage.test.tsx"
+        "src/test/AcceptInvitePage.test.tsx",
+        "src/test/LoginPage.test.tsx"
       ]
     },
     {
@@ -160,10 +193,21 @@
       "usedBy": []
     },
     {
+      "name": "posthog-js",
+      "version": "^1.404.1",
+      "usedBy": [
+        "src/lib/posthog.ts"
+      ]
+    },
+    {
       "name": "react",
       "version": "^19.2.7",
       "usedBy": [
+        ".npm-cache/_cacache/content-v2/sha512/f4/f6/9a3607d148d524e4c9eeced2a55b83fd295609affb78fe42a6b2e7c9c2d168c8544bff545633f47ca6faac43a02570d4f9db6eaca3d16450952f7b00063f",
+        "src/App.tsx",
         "src/components/ErrorBoundary.tsx",
+        "src/components/analytics/PostHogConsentSync.tsx",
+        "src/components/analytics/PostHogRouteTracker.tsx",
         "src/components/dashboard/OperationsMenu.tsx",
         "src/components/dashboard/Sparkline.tsx",
         "src/components/dashboard/WorkflowRow.tsx",
@@ -187,6 +231,7 @@
         "src/pages/LoginPage.tsx",
         "src/pages/OnboardingPage.tsx",
         "src/pages/RecentActivityPage.tsx",
+        "src/test/useDashboardMetrics.test.tsx",
         "src/test/useRunDetails.test.tsx",
         "src/test/useRuns.test.tsx"
       ]
@@ -195,6 +240,7 @@
       "name": "react-dom",
       "version": "^19.2.7",
       "usedBy": [
+        ".npm-cache/_cacache/content-v2/sha512/f4/f6/9a3607d148d524e4c9eeced2a55b83fd295609affb78fe42a6b2e7c9c2d168c8544bff545633f47ca6faac43a02570d4f9db6eaca3d16450952f7b00063f",
         "src/main.tsx"
       ]
     },
@@ -221,6 +267,7 @@
       "version": "^7.18.0",
       "usedBy": [
         "src/App.tsx",
+        "src/components/analytics/PostHogRouteTracker.tsx",
         "src/components/dashboard/AuditTrail.tsx",
         "src/components/dashboard/OperationsMenu.tsx",
         "src/components/dashboard/RunDetail.tsx",
@@ -244,7 +291,9 @@
         "src/pages/SecurityPage.tsx",
         "src/test/AcceptInvitePage.test.tsx",
         "src/test/AuditTrail.test.tsx",
+        "src/test/DashboardPage.test.tsx",
         "src/test/HomePage.test.tsx",
+        "src/test/LoginPage.test.tsx",
         "src/test/OperationsMenu.test.tsx",
         "src/test/ProtectedRoute.test.tsx",
         "src/test/RunsFeed.test.tsx",
@@ -288,8 +337,10 @@
       "usedBy": [
         "src/test/AcceptInvitePage.test.tsx",
         "src/test/AuditTrail.test.tsx",
+        "src/test/DashboardPage.test.tsx",
         "src/test/HomePage.test.tsx",
         "src/test/IntegrationsShowcase.test.tsx",
+        "src/test/LoginPage.test.tsx",
         "src/test/OperationsMenu.test.tsx",
         "src/test/ProtectedRoute.test.tsx",
         "src/test/RunsFeed.test.tsx",
@@ -297,10 +348,14 @@
         "src/test/demoData.test.ts",
         "src/test/legalConsent.test.ts",
         "src/test/onboarding.test.ts",
+        "src/test/posthog.test.ts",
         "src/test/realEstateSchema.test.ts",
         "src/test/roiCalculator.test.ts",
+        "src/test/securityContracts.test.ts",
+        "src/test/sentry.test.ts",
         "src/test/serviceSubscriptions.test.tsx",
         "src/test/time.test.ts",
+        "src/test/useDashboardMetrics.test.tsx",
         "src/test/useRunDetails.test.tsx",
         "src/test/useRuns.test.tsx",
         "vitest.config.ts"

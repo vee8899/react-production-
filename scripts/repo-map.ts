@@ -27,7 +27,7 @@ export type RepositoryMap = {
 
 const ignoredDirectories = new Set([
   ".git", ".github", ".vscode", "node_modules", "dist", "build", "coverage", ".next", ".cache",
-  "knowledge", "index", ".ai-state", "tmp", "temp",
+  "docs/knowledge-base", "docs/generated", "outputs/repo-index", ".ai-state", "tmp", "temp",
 ]);
 const ignoredFiles = new Set(["package-lock.json", "pnpm-lock.yaml", "yarn.lock"]);
 const sourceExtensions = new Set([".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs"]);
@@ -37,7 +37,8 @@ function walk(root: string, current = root): string[] {
     if (entry.isDirectory()) {
       const directoryPath = relative(root, join(current, entry.name)).replaceAll("\\", "/");
       const generatedDocs = directoryPath === "docs/specs" || directoryPath === "docs/adrs" || directoryPath === "docs/runbooks" || directoryPath.startsWith("docs/specs/") || directoryPath.startsWith("docs/adrs/") || directoryPath.startsWith("docs/runbooks/");
-      return ignoredDirectories.has(entry.name) || generatedDocs ? [] : walk(root, join(current, entry.name));
+      const generatedArtifacts = directoryPath === "docs/knowledge-base" || directoryPath.startsWith("docs/knowledge-base/") || directoryPath === "docs/generated" || directoryPath.startsWith("docs/generated/") || directoryPath === "outputs/repo-index" || directoryPath.startsWith("outputs/repo-index/");
+      return ignoredDirectories.has(entry.name) || generatedDocs || generatedArtifacts ? [] : walk(root, join(current, entry.name));
     }
     if (ignoredFiles.has(entry.name) || entry.name.endsWith(".generated.ts") || entry.name.endsWith(".map")) return [];
     return [relative(root, join(current, entry.name)).replaceAll("\\", "/")];

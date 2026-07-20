@@ -47,6 +47,6 @@ The ADRs in [`adrs/`](adrs/) record the current approach to React, TypeScript, r
 
 ## Generated knowledge
 
-The sibling [`knowledge/`](../knowledge/) directory is generated from the implementation by `npm.cmd run ingest` and `npm.cmd run index`. It is useful for navigation and coding-agent context, but it is not the authoritative documentation and should not be edited by hand.
+The [`knowledge-base/`](knowledge-base/) directory is generated from the implementation by `npm.cmd run ingest`; [`../outputs/repo-index/`](../outputs/repo-index/) contains the generated JSON index from `npm.cmd run index`. These artifacts are useful for navigation and coding-agent context, but they are not authoritative documentation and should not be edited by hand.
 
 When implementation changes, update authored docs in this directory if behavior or operational guidance changed, then refresh generated knowledge and review the diff.

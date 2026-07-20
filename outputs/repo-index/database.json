@@ -457,6 +457,23 @@
       ]
     },
     {
+      "file": "src/test/securityContracts.test.ts",
+      "exportedSymbols": [],
+      "importedSymbols": [
+        "node:fs",
+        "vitest"
+      ],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.auth.admin.deleteUser"
+      ],
+      "databaseUsage": [
+        "alter table"
+      ]
+    },
+    {
       "file": "supabase/functions/demo-event/index.ts",
       "exportedSymbols": [],
       "importedSymbols": [
