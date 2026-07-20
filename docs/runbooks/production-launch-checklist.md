@@ -21,6 +21,17 @@ Verified locally on 2026-07-20:
 - [x] `npm.cmd audit` reported 0 vulnerabilities.
 - [x] Static secret-pattern scan found no obvious committed secrets in source,
       config, or docs excluding `node_modules`, `dist`, `.git`, and the lockfile.
+- [x] `npm.cmd run db:check` passed for the default local preflight:
+      22 migrations found, required core/real-estate tables and enums present,
+      no Supabase target configured, and production access blocked.
+- [x] Targeted secret-boundary check found no service-role, webhook, or admin
+      invite secret values in `.env.local` or Docker build args; matches were
+      limited to expected code, migration grants, tests, examples, and docs.
+
+Attempted but not checkable on this machine yet:
+
+- [ ] `npm.cmd run db:test` / `npx.cmd --cache .npm-cache supabase test db`
+      did not run because the local Supabase Postgres database is not running.
 
 Open launch blockers:
 
@@ -81,7 +92,7 @@ Write-Host "Launching $ReleaseSha to $ProductionUrl"
 - [ ] Record the project ref and database region in the release record.
 - [ ] Enable database backups and confirm the retention policy.
 - [ ] Confirm the production project is separate from local and staging.
-- [ ] Do not copy production service-role keys into `.env.local`, Docker build args, or GitHub repository files.
+- [x] Do not copy production service-role keys into `.env.local`, Docker build args, or GitHub repository files.
 
 ```powershell
 npx supabase login
@@ -129,7 +140,7 @@ npx supabase secrets list --project-ref $ProjectRef
 - [ ] `WEBHOOK_SECRET` is unique to production and shared only with n8n.
 - [ ] `ADMIN_INVITE_SECRET` is unique to production and shared only with operator tooling.
 - [ ] `SITE_URL` and `INVITE_REDIRECT_URL` match production exactly.
-- [ ] Service-role credentials are not present in browser environment variables.
+- [x] Service-role credentials are not present in browser environment variables.
 
 ## 4. Apply and verify database migrations
 
