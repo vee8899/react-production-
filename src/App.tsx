@@ -20,6 +20,8 @@ import PageTransition from "@/components/motion/PageTransition";
 import RouteScrollRestoration from "@/components/motion/RouteScrollRestoration";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import LegalGate from "@/components/legal/LegalGate";
+import PostHogConsentSync from "@/components/analytics/PostHogConsentSync";
+import PostHogRouteTracker from "@/components/analytics/PostHogRouteTracker";
 
 export const ProtectedRoute = ({
   children,
@@ -57,6 +59,8 @@ export default function App() {
   return (
     <MotionConfig reducedMotion="user">
       <RouteScrollRestoration />
+      <PostHogConsentSync />
+      <PostHogRouteTracker />
       <PageTransition>
         <ErrorBoundary>
           <Routes>

@@ -3,17 +3,24 @@ import Nav from "@/components/ui/Nav";
 import Footer from "@/components/ui/Footer";
 import SectionHeader from "@/components/ui/SectionHeader";
 import FadeUp from "@/components/motion/FadeUp";
+import { useQueryClient } from "@tanstack/react-query";
 import { CookiePreferencesForm } from "@/components/legal/CookiePreferenceToggle";
+import { useAuth } from "@/hooks/useAuth";
 import { useCookiePreferences } from "@/hooks/useCookiePreferences";
 import { useClient } from "@/hooks/useClient";
 import { upsertCookiePreferences } from "@/lib/legalConsent";
+import { setPostHogAnalyticsConsent, syncPostHogIdentity } from "@/lib/posthog";
 
 export default function LegalSettingsPage() {
-  const { data: client } = useClient();
-  const { data: preferences, error: preferencesError, isLoading } = useCookiePreferences();
+  const queryClient = useQueryClient();
+  const { session } = useAuth();
+  const { data: client, error: clientError, isLoading: clientLoading } = useClient();
+  const { data: preferences, error: preferencesError, isLoading: preferencesLoading } = useCookiePreferences();
   const [isSaving, setIsSaving] = useState(false);
   const [saved, setSaved] = useState(false);
   const [saveError, setSaveError] = useState(false);
+  const isLoading = clientLoading || preferencesLoading;
+  const loadError = clientError || preferencesError;
 
   const handleSave = async (prefs: {
     functional: boolean;
@@ -27,6 +34,9 @@ export default function LegalSettingsPage() {
 
     try {
       await upsertCookiePreferences(client.id, client.organization_id, prefs);
+      setPostHogAnalyticsConsent(prefs.analytics);
+      syncPostHogIdentity(prefs.analytics ? session : null);
+      await queryClient.invalidateQueries({ queryKey: ["cookie-preferences", client.id] });
       setSaved(true);
     } catch {
       setSaveError(true);
@@ -57,7 +67,7 @@ export default function LegalSettingsPage() {
                 <p className="text-label font-sans uppercase tracking-[0.08em] text-muted">
                   Loading...
                 </p>
-              ) : preferencesError ? (
+              ) : loadError ? (
                 <p className="text-label font-sans uppercase tracking-[0.08em] text-red-600">
                   Cookie preferences could not be loaded. Please refresh and try again.
                 </p>
@@ -72,6 +82,7 @@ export default function LegalSettingsPage() {
                       preferences={preferences ?? null}
                       onSave={handleSave}
                       isSaving={isSaving}
+                      isDisabled={!client}
                     />
                     {saved && (
                       <p className="mt-4 text-label font-sans uppercase tracking-[0.08em] text-muted">

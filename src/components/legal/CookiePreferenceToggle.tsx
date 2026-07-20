@@ -42,12 +42,14 @@ type CookiePreferencesFormProps = {
   preferences: CookiePreference | null;
   onSave: (prefs: { functional: boolean; analytics: boolean; marketing: boolean }) => void;
   isSaving: boolean;
+  isDisabled?: boolean;
 };
 
 export function CookiePreferencesForm({
   preferences,
   onSave,
   isSaving,
+  isDisabled = false,
 }: CookiePreferencesFormProps) {
   const [functional, setFunctional] = useState(preferences?.functional ?? false);
   const [analytics, setAnalytics] = useState(preferences?.analytics ?? false);
@@ -70,7 +72,7 @@ export function CookiePreferencesForm({
       />
       <CookiePreferenceToggle
         label="Analytics"
-        description="Enables usage analytics if analytics tooling is added."
+        description="Enables privacy-conscious product analytics."
         checked={analytics}
         onChange={setAnalytics}
       />
@@ -82,7 +84,7 @@ export function CookiePreferencesForm({
       />
       <button
         type="button"
-        disabled={isSaving}
+        disabled={isSaving || isDisabled}
         onClick={() => onSave({ functional, analytics, marketing })}
         className="w-full bg-[#0F0E0D] text-[#FEFDFC] text-label font-sans uppercase tracking-[0.08em] py-3 hover:opacity-90 transition-opacity duration-200 disabled:opacity-50"
         style={{ borderRadius: 0 }}

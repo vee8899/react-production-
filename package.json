@@ -17,9 +17,12 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",
+    "@posthog/react": "^1.10.3",
+    "@sentry/react": "^10.66.0",
     "@supabase/supabase-js": "^2.108.2",
     "@tanstack/react-query": "^5.101.2",
     "framer-motion": "^12.42.0",
+    "posthog-js": "^1.404.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-hook-form": "^7.80.0",

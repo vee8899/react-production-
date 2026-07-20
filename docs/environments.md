@@ -14,14 +14,23 @@ Use the local or staging Supabase project for MCP, database, and browser smoke-t
 
 ## Browser environment variables
 
-These variables are safe to expose to the browser because they identify the public Supabase client:
+These variables are safe to expose to the browser because they identify public browser clients or ingestion endpoints:
 
 ```env
 VITE_SUPABASE_URL=https://your-project.supabase.co
 VITE_SUPABASE_ANON_KEY=your-anon-key
+VITE_POSTHOG_PROJECT_TOKEN=phc_your-project-token
+VITE_POSTHOG_HOST=https://us.i.posthog.com
+VITE_SENTRY_DSN=https://public-key@o000000.ingest.sentry.io/000000
+VITE_SENTRY_ENVIRONMENT=local
+VITE_SENTRY_TRACES_SAMPLE_RATE=0
 ```
 
-Access them through `src/utils/env.ts`. A browser-visible key does not bypass Row Level Security.
+Access them through `src/utils/env.ts`. A browser-visible key does not bypass Row Level Security. The PostHog project token and Sentry DSN are also browser-visible by design; they only enable event ingestion for the configured projects.
+
+PostHog analytics is optional. If `VITE_POSTHOG_PROJECT_TOKEN` is missing, the application runs without analytics. If it is present, pageview capture and user identification stay disabled until the authenticated user's saved cookie preferences allow analytics.
+
+Sentry error reporting is optional. If `VITE_SENTRY_DSN` is missing, the application runs without Sentry. If it is present, browser exceptions and React error-boundary failures are reported. Sentry user context uses the Supabase user ID only; email and IP address are stripped before events leave the browser. Set `VITE_SENTRY_TRACES_SAMPLE_RATE` between `0` and `1` only when browser performance tracing is intentionally enabled for that environment.
 
 ## Server and platform secrets
 

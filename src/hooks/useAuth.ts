@@ -2,6 +2,8 @@
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '@/store/authStore';
 import { supabase } from '@/api/supabase/client';
+import { syncSentryIdentity } from '@/lib/sentry';
+import { syncPostHogIdentity } from '@/lib/posthog';
 
 export const useAuth = () => {
   const { session, isLoading, setSession } = useAuthStore();
@@ -10,6 +12,8 @@ export const useAuth = () => {
   const signOut = async () => {
     await supabase.auth.signOut();
     setSession(null);
+    syncSentryIdentity(null);
+    syncPostHogIdentity(null);
     navigate('/');
   };
 

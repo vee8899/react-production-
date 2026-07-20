@@ -47,9 +47,14 @@ Create `.env.local` in the repository root:
 ```env
 VITE_SUPABASE_URL=https://your-project.supabase.co
 VITE_SUPABASE_ANON_KEY=your-anon-key
+VITE_POSTHOG_PROJECT_TOKEN=phc_your-project-token
+VITE_POSTHOG_HOST=https://us.i.posthog.com
+VITE_SENTRY_DSN=https://public-key@o000000.ingest.sentry.io/000000
+VITE_SENTRY_ENVIRONMENT=local
+VITE_SENTRY_TRACES_SAMPLE_RATE=0
 ```
 
-These are browser-side Supabase values. The anonymous key is protected by Supabase policies; it is not a replacement for server-side secrets. Never put webhook, admin, service-role, or n8n credentials in a `VITE_` variable.
+These are browser-side values. The Supabase anonymous key is protected by Supabase policies, and the PostHog project token and Sentry DSN are public by design. None of them is a replacement for server-side secrets. Never put webhook, admin, service-role, or n8n credentials in a `VITE_` variable.
 
 Install dependencies and start the development server:
 
