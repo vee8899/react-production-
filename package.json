@@ -9,6 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest",
+    "test:e2e:staging": "playwright test",
+    "acceptance:invite:staging": "tsx scripts/staging-invite-acceptance.ts",
+    "acceptance:ingest:staging": "tsx scripts/staging-ingest-acceptance.ts",
     "ingest": "tsx scripts/ingest.ts",
     "index": "tsx scripts/index.ts",
     "refresh-ai": "npm run ingest && npm run index",
@@ -34,6 +37,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.61.1",
     "@tailwindcss/vite": "^4.3.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",

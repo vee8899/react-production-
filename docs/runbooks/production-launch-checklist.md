@@ -7,6 +7,54 @@ portal behavior.
 Do not check a box without recording the evidence: command output, screenshot,
 URL, commit SHA, migration version, or log/request ID.
 
+## Current readiness snapshot - 2026-07-20
+
+Status: no-go for production launch until the staging and production evidence
+below is complete.
+
+Verified locally on 2026-07-20:
+
+- [x] `npm.cmd run lint` passed.
+- [x] `npm.cmd run test -- --run` passed: 23 test files and 67 tests.
+- [x] `npm.cmd run build` passed.
+- [x] `npm.cmd audit --omit=dev` reported 0 vulnerabilities.
+- [x] `npm.cmd audit` reported 0 vulnerabilities.
+- [x] Static secret-pattern scan found no obvious committed secrets in source,
+      config, or docs excluding `node_modules`, `dist`, `.git`, and the lockfile.
+
+Open launch blockers:
+
+- [ ] Complete browser E2E test against staging with
+      `npm.cmd run test:e2e:staging`.
+- [ ] Verify invite flow against real Supabase email delivery with
+      `npm.cmd run acceptance:invite:staging` plus inbox confirmation.
+- [ ] Exercise Edge Functions end-to-end in staging with
+      `npm.cmd run acceptance:invite:staging` and
+      `npm.cmd run acceptance:ingest:staging`.
+- [ ] Run n8n ingestion staging acceptance test with
+      `npm.cmd run acceptance:ingest:staging` from an approved n8n/operator
+      environment.
+- [ ] Complete production migration dry-run using the procedure in
+      `docs/runbooks/production-migration-dry-run.md`.
+- [ ] Complete rollback rehearsal using the procedure in
+      `docs/runbooks/rollback-rehearsal.md`.
+
+Required blocker evidence:
+
+- Browser E2E: staging URL, browser/test report, screenshots or trace, account
+  used, commit SHA, and timestamp.
+- Invite flow: Supabase email provider, test recipient, invite request/log ID,
+  received email timestamp, redirect URL, acceptance result, and timestamp.
+- Edge Functions: deployment version, request IDs, positive and negative
+  responses for `ingest-run` and `invite-client`, and function log links.
+- n8n ingestion: workflow name/version, staging endpoint, event ID, response
+  payload, duplicate replay result, invalid-secret result, dashboard/audit
+  confirmation, and timestamp.
+- Production migration dry-run: project ref, dry-run output, migration versions,
+  reviewer, and explicit no-destructive-change decision.
+- Rollback rehearsal: previous app image SHA, previous Edge Function version,
+  corrective-migration plan, staging rehearsal result, duration, and owner.
+
 ## 0. Set the release variables
 
 Run these commands from the repository root. Replace placeholders; never put

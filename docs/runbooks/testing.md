@@ -30,6 +30,70 @@ npm.cmd run build
 
 Run the build even when tests pass. It catches TypeScript and production-bundling errors that a test environment may not expose.
 
+## Staging browser E2E
+
+Browser E2E tests are intentionally separate from Vitest. Vitest excludes
+`e2e/`, and Playwright owns that directory.
+
+Required environment variables:
+
+```powershell
+$env:STAGING_APP_URL = "https://staging.example.com"
+$env:STAGING_TEST_EMAIL = "test-user@example.com"
+$env:STAGING_TEST_PASSWORD = "test-user-password"
+```
+
+Run:
+
+```powershell
+npm.cmd run test:e2e:staging
+```
+
+For a new machine or CI runner, install the Chromium runtime first:
+
+```powershell
+npx playwright install chromium
+```
+
+The HTML report is written to `outputs/playwright-report`.
+
+## Staging acceptance scripts
+
+Use these scripts to exercise the staging Edge Functions and ingestion
+contract.
+
+Invite flow:
+
+```powershell
+$env:STAGING_SUPABASE_URL = "https://your-staging-project.supabase.co"
+$env:STAGING_ADMIN_INVITE_SECRET = "secret-from-staging-secret-store"
+$env:STAGING_INVITE_EMAIL = "test-recipient@example.com"
+npm.cmd run acceptance:invite:staging
+```
+
+Ingestion flow:
+
+```powershell
+$env:STAGING_SUPABASE_URL = "https://your-staging-project.supabase.co"
+$env:STAGING_WEBHOOK_SECRET = "secret-from-staging-secret-store"
+$env:STAGING_CLIENT_ID = "staging-client-uuid"
+$env:STAGING_ORGANIZATION_ID = "staging-organization-uuid"
+$env:RELEASE_SHA = (git rev-parse HEAD).Trim()
+npm.cmd run acceptance:ingest:staging
+```
+
+Optional overrides:
+
+```powershell
+$env:STAGING_SUPABASE_FUNCTIONS_URL = "https://your-functions-host"
+$env:STAGING_INGEST_EVENT_ID = "stable-event-id-for-retry"
+$env:STAGING_INVITE_COMPANY = "Staging Acceptance Company"
+```
+
+The scripts fail before making requests if required staging variables are
+missing. They print JSON evidence on success; save that output with the release
+record.
+
 ## When a test fails
 
 1. Read the first meaningful assertion failure, not only the final summary.

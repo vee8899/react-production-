@@ -70,17 +70,40 @@ The Vite server normally runs at `http://localhost:52124`. Vite may choose anoth
 
 | Command | Purpose |
 | --- | --- |
+| `npm.cmd ci` | Install exact locked dependencies for CI/release verification |
+| `npm.cmd install` | Install or update dependencies during development |
 | `npm.cmd run dev` | Start the Vite development server |
 | `npm.cmd run lint` | Run ESLint |
 | `npm.cmd run test -- --run` | Run the test suite once |
 | `npm.cmd run build` | Type-check and create a production build |
 | `npm.cmd run preview` | Serve the production build locally |
+| `npm.cmd audit --omit=dev` | Check production dependencies for known vulnerabilities |
+| `npm.cmd audit` | Check all dependencies for known vulnerabilities |
+| `npx playwright install chromium` | Install the browser runtime for Playwright checks |
+| `npm.cmd run test:e2e:staging` | Run staging browser E2E checks |
+| `npm.cmd run acceptance:invite:staging` | Exercise the staging invite Edge Function |
+| `npm.cmd run acceptance:ingest:staging` | Exercise staging workflow ingestion and idempotency |
 | `npm.cmd run db:check` | Check the configured Supabase environment |
 | `npm.cmd run db:dry-run` | Preview migrations through the Supabase CLI |
 | `npm.cmd run db:test` | Run executable local Postgres RLS isolation tests |
 | `npm.cmd run ingest` | Refresh generated repository knowledge |
 | `npm.cmd run index` | Rebuild repository indexes |
 | `npm.cmd run refresh-ai` | Run both knowledge and index refreshes |
+
+## Acceptance abstractions
+
+Staging launch evidence is captured by three executable checks:
+
+- Browser E2E lives in `e2e/` and is run with `npm.cmd run test:e2e:staging`.
+- Invite acceptance lives in `scripts/staging-invite-acceptance.ts` and is run
+  with `npm.cmd run acceptance:invite:staging`.
+- Ingestion acceptance lives in `scripts/staging-ingest-acceptance.ts` and is
+  run with `npm.cmd run acceptance:ingest:staging`.
+
+Set the required `STAGING_*` variables from the staging secret store before
+running these commands. See
+[`docs/runbooks/staging-acceptance.md`](docs/runbooks/staging-acceptance.md)
+for the exact variables and evidence to record.
 
 Before opening a pull request, run lint, tests, and build. If a change affects the database or an Edge Function, also run the relevant local or staging verification described in `docs/runbooks/`.
 
