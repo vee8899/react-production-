@@ -95,7 +95,7 @@ export default function SecurityPage() {
                 href={contactHref}
                 className="mt-7 inline-flex border border-primary bg-primary px-5 py-3 text-label font-sans uppercase tracking-[0.08em] text-background transition-colors duration-200 hover:bg-transparent hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
               >
-                Talk to an expert &rarr;
+                Talk to the team &rarr;
               </a>
               <Link
                 to="/"

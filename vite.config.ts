@@ -7,6 +7,7 @@ import path from 'path';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // https://vitejs.dev/config/
+
 export default defineConfig({
     plugins: [plugin(), tailwindcss()],
     resolve: {
@@ -19,3 +20,4 @@ export default defineConfig({
         port: 52124,
     }
 })
+
