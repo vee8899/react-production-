@@ -50,6 +50,19 @@ describe("AcceptInvitePage", () => {
     );
   });
 
+  it("shows the provider's expired-token message instead of the password form", () => {
+    (useAuth as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+      isAuthenticated: true,
+      isLoading: false,
+      user: { email: "client@example.com" },
+    });
+
+    renderPage("/accept-invite?error=access_denied&error_description=Invite%20expired");
+
+    expect(screen.getByText("Invite expired")).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /accept invite/i })).not.toBeInTheDocument();
+  });
+
   it("sets the invited user's password and redirects to the dashboard", async () => {
     const user = userEvent.setup();
     const updateUser = vi.mocked(supabase.auth.updateUser);

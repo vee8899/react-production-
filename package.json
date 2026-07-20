@@ -13,7 +13,8 @@
     "index": "tsx scripts/index.ts",
     "refresh-ai": "npm run ingest && npm run index",
     "db:check": "tsx scripts/verify-supabase.ts",
-    "db:dry-run": "npx supabase db push --dry-run"
+    "db:dry-run": "npx supabase db push --dry-run",
+    "db:test": "npx supabase test db"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",

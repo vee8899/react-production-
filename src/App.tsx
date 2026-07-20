@@ -1,27 +1,29 @@
+import { lazy, Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { MotionConfig } from "framer-motion";
 import { useAuth } from "@/hooks/useAuth";
-import HomePage from "@/pages/HomePage";
-import LoginPage from "@/pages/LoginPage";
-import AcceptInvitePage from "@/pages/AcceptInvitePage";
-import DashboardPage from "@/pages/DashboardPage";
-import WorkflowsPage from "@/pages/WorkflowsPage";
-import RecentActivityPage from "@/pages/RecentActivityPage";
-import AuditPage from "@/pages/AuditPage";
-import AuditDetailPage from "@/pages/AuditDetailPage";
-import OnboardingPage from "@/pages/OnboardingPage";
-import LegalDocumentPage from "@/pages/LegalDocumentPage";
-import LegalConsentPage from "@/pages/LegalConsentPage";
-import LegalSettingsPage from "@/pages/LegalSettingsPage";
-import DemoPage from "@/pages/DemoPage";
-import IntegrationsPage from "@/pages/IntegrationsPage";
-import SecurityPage from "@/pages/SecurityPage";
 import PageTransition from "@/components/motion/PageTransition";
 import RouteScrollRestoration from "@/components/motion/RouteScrollRestoration";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import LegalGate from "@/components/legal/LegalGate";
 import PostHogConsentSync from "@/components/analytics/PostHogConsentSync";
 import PostHogRouteTracker from "@/components/analytics/PostHogRouteTracker";
+
+const HomePage = lazy(() => import("@/pages/HomePage"));
+const LoginPage = lazy(() => import("@/pages/LoginPage"));
+const AcceptInvitePage = lazy(() => import("@/pages/AcceptInvitePage"));
+const DashboardPage = lazy(() => import("@/pages/DashboardPage"));
+const WorkflowsPage = lazy(() => import("@/pages/WorkflowsPage"));
+const RecentActivityPage = lazy(() => import("@/pages/RecentActivityPage"));
+const AuditPage = lazy(() => import("@/pages/AuditPage"));
+const AuditDetailPage = lazy(() => import("@/pages/AuditDetailPage"));
+const OnboardingPage = lazy(() => import("@/pages/OnboardingPage"));
+const LegalDocumentPage = lazy(() => import("@/pages/LegalDocumentPage"));
+const LegalConsentPage = lazy(() => import("@/pages/LegalConsentPage"));
+const LegalSettingsPage = lazy(() => import("@/pages/LegalSettingsPage"));
+const DemoPage = lazy(() => import("@/pages/DemoPage"));
+const IntegrationsPage = lazy(() => import("@/pages/IntegrationsPage"));
+const SecurityPage = lazy(() => import("@/pages/SecurityPage"));
 
 export const ProtectedRoute = ({
   children,
@@ -63,7 +65,8 @@ export default function App() {
       <PostHogRouteTracker />
       <PageTransition>
         <ErrorBoundary>
-          <Routes>
+          <Suspense fallback={<LoadingScreen />}>
+            <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/security" element={<SecurityPage />} />
             <Route path="/login" element={<LoginPage />} />
@@ -159,7 +162,8 @@ export default function App() {
               }
             />
             <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
+            </Routes>
+          </Suspense>
         </ErrorBoundary>
       </PageTransition>
     </MotionConfig>

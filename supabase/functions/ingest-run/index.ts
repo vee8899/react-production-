@@ -117,31 +117,39 @@ serve(async (req) => {
 
   const supabase = createClient(supabaseUrl, serviceRoleKey);
 
-  const { data, error } = await supabase.rpc("ingest_workflow_run", {
-    p_event_id: parsed.data.event_id,
-    p_client_id: parsed.data.client_id,
-    p_organization_id: parsed.data.organization_id ?? null,
-    p_feature_key: parsed.data.feature_type,
-    p_workflow_name: parsed.data.workflow_name,
-    p_n8n_workflow_id: parsed.data.n8n_workflow_id ?? parsed.data.workflow_name,
-    p_status: parsed.data.status,
-    p_workflow_id: parsed.data.workflow_id ?? null,
-    p_started_at: parsed.data.ran_at ?? new Date().toISOString(),
-    p_finished_at: new Date().toISOString(),
-    p_duration_ms: parsed.data.duration_ms ?? null,
-    p_retries: 0,
-    p_records_processed: parsed.data.records_processed,
-    p_records_failed: parsed.data.records_failed,
-    p_error_message: parsed.data.error_message ?? null,
-    p_outputs: {},
-    p_steps: parsed.data.workflow_steps,
-    p_entity_refs: parsed.data.entity_refs,
-    p_metadata: parsed.data.metadata ?? {},
-  });
+  const rpcResult = await Promise.race([
+    supabase.rpc("ingest_workflow_run", {
+      p_event_id: parsed.data.event_id,
+      p_client_id: parsed.data.client_id,
+      p_organization_id: parsed.data.organization_id ?? null,
+      p_feature_key: parsed.data.feature_type,
+      p_workflow_name: parsed.data.workflow_name,
+      p_n8n_workflow_id: parsed.data.n8n_workflow_id ?? parsed.data.workflow_name,
+      p_status: parsed.data.status,
+      p_workflow_id: parsed.data.workflow_id ?? null,
+      p_started_at: parsed.data.ran_at ?? new Date().toISOString(),
+      p_finished_at: new Date().toISOString(),
+      p_duration_ms: parsed.data.duration_ms ?? null,
+      p_retries: 0,
+      p_records_processed: parsed.data.records_processed,
+      p_records_failed: parsed.data.records_failed,
+      p_error_message: parsed.data.error_message ?? null,
+      p_outputs: {},
+      p_steps: parsed.data.workflow_steps,
+      p_entity_refs: parsed.data.entity_refs,
+      p_metadata: parsed.data.metadata ?? {},
+    }),
+    new Promise<never>((_, reject) => setTimeout(() => reject(new Error("Ingestion timed out")), 10_000)),
+  ]).catch((error: unknown) => ({ data: null, error }));
+
+  const { data, error } = rpcResult;
 
   if (error) {
     console.error("Failed to ingest automation run", error);
-    return json({ error: "Failed to ingest automation run" }, 500);
+    return json(
+      { error: error instanceof Error && error.message === "Ingestion timed out" ? "Ingestion timed out" : "Failed to ingest automation run" },
+      error instanceof Error && error.message === "Ingestion timed out" ? 504 : 500,
+    );
   }
 
   return json({ ok: true, run_id: data }, 200);

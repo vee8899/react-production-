@@ -26,6 +26,10 @@ export default function DashboardPage() {
     return <DashboardState label="No data yet. Automations will appear here once workflows run." />;
   }
 
+  if (!client.organization_id) {
+    return <DashboardState label="Your organization setup is incomplete. Please contact the team to finish provisioning." />;
+  }
+
   return (
     <>
       <Nav />

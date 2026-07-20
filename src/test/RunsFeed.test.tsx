@@ -30,4 +30,13 @@ describe("RunsFeed", () => {
 
     expect(screen.getByRole("link", { name: /lead enrichment/i })).toHaveAttribute("href", "/activity/run-1");
   });
+
+  it("renders a recoverable message when Supabase cannot load runs", async () => {
+    const useRuns = await import("@/hooks/useRuns");
+    vi.spyOn(useRuns, "useRuns").mockReturnValue({ data: undefined, isLoading: false, error: new Error("offline") } as ReturnType<typeof useRuns.useRuns>);
+
+    render(<MemoryRouter><RunsFeed /></MemoryRouter>);
+
+    expect(screen.getByText("Failed to load data. Please refresh.")).toBeInTheDocument();
+  });
 });
