@@ -42,6 +42,12 @@ values
   ('40000000-0000-0000-0000-000000000002', '10000000-0000-0000-0000-000000000002', '30000000-0000-0000-0000-000000000002', 'rls-bob-event', 'custom_workflow', 'success')
 on conflict (id) do nothing;
 
+-- Give the test role enough table privilege for the following write checks to
+-- reach RLS. Production ingestion still uses the service-role function only.
+grant insert on table public.organization_members, public.workflow_runs to authenticated;
+grant select on table public.organizations, public.workflow_runs to anon;
+grant insert on table public.workflow_runs to anon;
+
 set local role authenticated;
 set local "request.jwt.claims" = '{"role":"authenticated","sub":"00000000-0000-0000-0000-000000000001"}';
 
