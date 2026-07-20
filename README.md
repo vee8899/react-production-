@@ -20,6 +20,7 @@ Supabase provides authentication, PostgreSQL data, row-level security, and Edge 
 | Work with the database | [`docs/runbooks/database-migrations.md`](docs/runbooks/database-migrations.md) |
 | Deploy the application | [`docs/runbooks/deployment.md`](docs/runbooks/deployment.md) |
 | Prepare or perform a release | [`docs/runbooks/release-checklist.md`](docs/runbooks/release-checklist.md) |
+| Launch production | [`docs/runbooks/production-launch-checklist.md`](docs/runbooks/production-launch-checklist.md) |
 | Understand environments and secrets | [`docs/environments.md`](docs/environments.md) |
 | Troubleshoot a problem | [`DEBUG.md`](DEBUG.md), [`docs/runbooks/debugging.md`](docs/runbooks/debugging.md) |
 
@@ -76,6 +77,7 @@ The Vite server normally runs at `http://localhost:52124`. Vite may choose anoth
 | `npm.cmd run preview` | Serve the production build locally |
 | `npm.cmd run db:check` | Check the configured Supabase environment |
 | `npm.cmd run db:dry-run` | Preview migrations through the Supabase CLI |
+| `npm.cmd run db:test` | Run executable local Postgres RLS isolation tests |
 | `npm.cmd run ingest` | Refresh generated repository knowledge |
 | `npm.cmd run index` | Rebuild repository indexes |
 | `npm.cmd run refresh-ai` | Run both knowledge and index refreshes |

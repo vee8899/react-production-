@@ -2,6 +2,9 @@
 
 Use this checklist for every staging or production release. Copy it into the release record or issue and keep the completed version with the release notes.
 
+For the first production launch or a customer-facing go-live, use the more
+executable [production launch checklist](production-launch-checklist.md).
+
 ## Release information
 
 - Release date:
