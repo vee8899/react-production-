@@ -24,6 +24,7 @@ const LegalSettingsPage = lazy(() => import("@/pages/LegalSettingsPage"));
 const DemoPage = lazy(() => import("@/pages/DemoPage"));
 const IntegrationsPage = lazy(() => import("@/pages/IntegrationsPage"));
 const SecurityPage = lazy(() => import("@/pages/SecurityPage"));
+const DataSynchronizationPage = lazy(() => import("@/pages/DataSynchronizationPage"));
 
 export const ProtectedRoute = ({
   children,
@@ -132,6 +133,14 @@ export default function App() {
               element={
                 <ProtectedRoute>
                   <IntegrationsPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/data-synchronization"
+              element={
+                <ProtectedRoute>
+                  <DataSynchronizationPage />
                 </ProtectedRoute>
               }
             />
