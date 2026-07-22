@@ -6,6 +6,7 @@ type IntegrationCardProps = {
   status: string;
   connectionHealth: string;
   lastSyncAt: string | null;
+  configuration: unknown;
 };
 
 const statusColors: Record<string, string> = {
@@ -59,7 +60,10 @@ export const IntegrationCard = ({
   status,
   connectionHealth,
   lastSyncAt,
+  configuration,
 }: IntegrationCardProps) => {
+  const config = typeof configuration === "object" && configuration !== null ? configuration as Record<string, unknown> : {};
+  const alertRoute = config.alert_route as { enabled?: boolean; verification_status?: string; last_verified_at?: string | null } | undefined;
   return (
     <div className="border border-border bg-[#F7F5F1] p-6">
       <div className="flex items-start justify-between">
@@ -100,6 +104,10 @@ export const IntegrationCard = ({
         {!lastSyncAt && status === "pending" && (
           <span>Awaiting setup</span>
         )}
+      </div>
+      <div className="mt-4 border-t border-border pt-4 text-label font-mono uppercase tracking-[0.05em]" style={{ color: "#6B6762" }}>
+        <span>Alerts: {alertRoute?.enabled ? "Configured" : "Not configured"}</span>
+        {alertRoute?.verification_status && <span className="ml-3">{alertRoute.verification_status}</span>}
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ type IntegrationRow = Database["public"]["Tables"]["integrations"]["Row"];
 
 export type ConnectedIntegration = Pick<
   IntegrationRow,
-  "id" | "provider" | "name" | "status" | "connection_health" | "last_sync_at"
+  "id" | "provider" | "name" | "status" | "connection_health" | "last_sync_at" | "configuration"
 >;
 
 export const useIntegrations = (organizationId: string | undefined) =>
@@ -17,7 +17,7 @@ export const useIntegrations = (organizationId: string | undefined) =>
     queryFn: async (): Promise<ConnectedIntegration[]> => {
       const { data, error } = await supabase
         .from("integrations")
-        .select("id, provider, name, status, connection_health, last_sync_at")
+        .select("id, provider, name, status, connection_health, last_sync_at, configuration")
         .eq("organization_id", organizationId!)
         .order("name");
 

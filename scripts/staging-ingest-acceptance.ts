@@ -13,6 +13,7 @@ const organizationId = process.env.STAGING_ORGANIZATION_ID;
 const releaseSha = process.env.RELEASE_SHA || "local";
 const eventId = process.env.STAGING_INGEST_EVENT_ID || `staging-acceptance-${releaseSha}-${Date.now()}`;
 const endpoint = `${functionsUrl}/functions/v1/ingest-run`;
+const alertRouteEndpoint = `${functionsUrl}/functions/v1/configure-alert-route`;
 
 const postIngest = async (body: Json, secret = webhookSecret) => {
   const response = await fetch(endpoint, {
@@ -57,6 +58,15 @@ const assertStatus = (label: string, actual: number, expected: number) => {
   }
 };
 
+const configureAlertRoute = async () => {
+  const integrationId = process.env.STAGING_ALERT_INTEGRATION_ID;
+  if (!integrationId || !organizationId) return { skipped: true, reason: "STAGING_ALERT_INTEGRATION_ID or STAGING_ORGANIZATION_ID not configured" };
+  const response = await fetch(alertRouteEndpoint, { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${required("STAGING_USER_ACCESS_TOKEN")}` }, body: JSON.stringify({ organization_id: organizationId, integration_id: integrationId, event_type: "workflow_failure", enabled: true, n8n_credential_reference: process.env.STAGING_N8N_CREDENTIAL_REFERENCE }) });
+  const data = await response.json();
+  assertStatus("configure alert route", response.status, 200);
+  return { skipped: false, data };
+};
+
 const first = await postIngest(basePayload);
 assertStatus("valid event", first.status, 200);
 
@@ -76,6 +86,8 @@ if (![400, 500].includes(missingOrganization.status)) {
   throw new Error(`missing organization expected bounded failure, got HTTP ${missingOrganization.status}.`);
 }
 
+const alertRoute = await configureAlertRoute();
+
 console.log(JSON.stringify({
   ok: true,
   endpoint,
@@ -84,5 +96,6 @@ console.log(JSON.stringify({
   duplicate,
   invalid_secret: unauthorized,
   missing_organization: missingOrganization,
+  alert_route: alertRoute,
   timestamp: new Date().toISOString(),
 }, null, 2));

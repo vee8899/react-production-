@@ -71,6 +71,7 @@ export default function IntegrationsPage() {
                 status={integration.status}
                 connectionHealth={integration.connection_health}
                 lastSyncAt={integration.last_sync_at}
+                configuration={integration.configuration}
               />
             ))}
           </div>
