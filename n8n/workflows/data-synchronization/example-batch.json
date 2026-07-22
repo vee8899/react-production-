@@ -1,0 +1,10 @@
+{
+  "client_id": "{{CLIENT_UUID}}",
+  "source_event_id": "portal-batch-001",
+  "workflow_name": "Portal to CRM lead synchronization",
+  "source_system": "portal",
+  "field_map": { "full_name": "name", "email_address": "email", "phone_number": "phone" },
+  "records": [
+    { "external_id": "portal-lead-001", "entity_type": "lead", "fields": { "full_name": "Example Lead", "email_address": "person@example.test", "phone_number": "+91-0000000000" } }
+  ]
+}

@@ -10,7 +10,7 @@ const forbidden = [
 ];
 const requiredIngestFields = ["event_id", "client_id", "feature_type", "workflow_name", "status"];
 const files = fs.readdirSync(root, { recursive: true })
-  .filter((file) => file.endsWith(".json") && !file.startsWith(`examples${path.sep}`));
+  .filter((file) => file.endsWith(".json") && !file.startsWith(`examples${path.sep}`) && !file.endsWith(`${path.sep}example-request.json`) && !file.endsWith(`${path.sep}example-batch.json`));
 const errors: string[] = [];
 type WorkflowExport = {
   name?: unknown;

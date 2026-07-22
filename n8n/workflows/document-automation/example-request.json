@@ -1,0 +1,17 @@
+{
+  "client_id": "{{CLIENT_UUID}}",
+  "source_event_id": "listing-report-001",
+  "workflow_name": "Generate listing report",
+  "template_key": "real_estate_listing_report",
+  "template_version": "1.0",
+  "field_values": {
+    "listing_address": "Example address",
+    "listing_status": "active",
+    "agent_name": "Example Agent"
+  },
+  "required_fields": ["listing_address", "listing_status", "agent_name"],
+  "conditions": [{ "field": "listing_status", "operator": "equals", "value": "active" }],
+  "approval": { "mode": "single", "approver_reference": "{{APPROVER_REFERENCE}}" },
+  "output_format": "pdf",
+  "entity_refs": [{ "entity_type": "listing", "entity_id": "{{LISTING_UUID}}", "action": "updated", "source_system": "document-automation" }]
+}
