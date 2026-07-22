@@ -6,7 +6,6 @@ const operations = [
   { label: "Recent Activity", to: "/activity" },
   { label: "Audit Trail", to: "/audit" },
   { label: "Connected Tools", to: "/integrations" },
-  { label: "Data Synchronization", to: "/data-synchronization" },
 ];
 
 export const OperationsMenu = ({ mobile = false }: { mobile?: boolean }) => {
