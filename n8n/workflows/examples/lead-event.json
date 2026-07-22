@@ -1,0 +1,10 @@
+{
+  "source_event_id": "source-event-001",
+  "external_id": "lead-001",
+  "client_id": "{{CLIENT_UUID}}",
+  "workflow_name": "Real-estate lead follow-up",
+  "feature_type": "workflow_automation",
+  "email": "person@example.test",
+  "first_name": "Example",
+  "last_name": "Lead"
+}

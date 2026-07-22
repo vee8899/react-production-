@@ -1,0 +1,62 @@
+{
+  "name": "Real Estate - Lead Event Webhook",
+  "nodes": [
+    {
+      "parameters": { "httpMethod": "POST", "path": "real-estate/lead-event", "responseMode": "responseNode", "options": {} },
+      "id": "lead-event-webhook",
+      "name": "Receive lead event",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [ -760, 0 ],
+      "webhookId": "real-estate-lead-event"
+    },
+    {
+      "parameters": {
+        "jsCode": "const input = $json.body ?? $json;\nconst required = ['client_id', 'workflow_name', 'feature_type'];\nfor (const field of required) {\n  if (typeof input[field] !== 'string' || input[field].trim() === '') {\n    throw new Error(`Missing required field: ${field}`);\n  }\n}\nif (input.feature_type !== 'workflow_automation') {\n  throw new Error('feature_type must be workflow_automation');\n}\nconst sourceId = String(input.source_event_id ?? input.external_id ?? '');\nif (!sourceId) throw new Error('Missing source_event_id or external_id');\nconst eventId = `${input.client_id}:lead:${sourceId}`;\nreturn [{ json: { ...input, event_id: eventId, status: 'success', normalized_at: new Date().toISOString() } }];"
+      },
+      "id": "normalize-lead-event",
+      "name": "Validate and normalize",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [ -520, 0 ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{$env.SUPABASE_INGEST_URL}}",
+        "sendHeaders": true,
+        "headerParameters": { "parameters": [ { "name": "X-Webhook-Secret", "value": "={{$env.WEBHOOK_SECRET}}" }, { "name": "Content-Type", "value": "application/json" } ] },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { event_id: $json.event_id, client_id: $json.client_id, feature_type: $json.feature_type, workflow_name: $json.workflow_name, status: 'success', n8n_workflow_id: $workflow.id, metadata: { source: 'provider-neutral-webhook', external_id: $json.external_id ?? null } } }}",
+        "options": { "timeout": 10000, "response": { "response": { "neverError": true } } }
+      },
+      "id": "ingest-success",
+      "name": "Record accepted event",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [ -240, 0 ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 1000
+    },
+    {
+      "parameters": { "respondWith": "json", "responseBody": "={{ { ok: true, event_id: $json.event_id } }}", "options": { "responseCode": 202 } },
+      "id": "respond-accepted",
+      "name": "Respond accepted",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [ 20, 0 ]
+    }
+  ],
+  "connections": {
+    "Receive lead event": { "main": [ [ { "node": "Validate and normalize", "type": "main", "index": 0 } ] ] },
+    "Validate and normalize": { "main": [ [ { "node": "Record accepted event", "type": "main", "index": 0 } ] ] },
+    "Record accepted event": { "main": [ [ { "node": "Respond accepted", "type": "main", "index": 0 } ] ] }
+  },
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "versionId": "real-estate-lead-event-v1",
+  "meta": { "templateCredsSetupCompleted": true },
+  "tags": []
+}

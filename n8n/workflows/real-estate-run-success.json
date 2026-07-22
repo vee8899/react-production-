@@ -1,0 +1,13 @@
+{
+  "name": "Real Estate - Record Successful Run",
+  "nodes": [
+    { "parameters": {}, "id": "success-trigger", "name": "When called by another workflow", "type": "n8n-nodes-base.executeWorkflowTrigger", "typeVersion": 1, "position": [ -420, 0 ] },
+    { "parameters": { "method": "POST", "url": "={{$env.SUPABASE_INGEST_URL}}", "sendHeaders": true, "headerParameters": { "parameters": [ { "name": "X-Webhook-Secret", "value": "={{$env.WEBHOOK_SECRET}}" }, { "name": "Content-Type", "value": "application/json" } ] }, "sendBody": true, "specifyBody": "json", "jsonBody": "={{ { event_id: $json.event_id, client_id: $json.client_id, feature_type: $json.feature_type ?? 'workflow_automation', workflow_name: $json.workflow_name, status: 'success', n8n_workflow_id: $workflow.id, records_processed: $json.records_processed ?? 0, records_failed: 0, workflow_steps: $json.workflow_steps ?? [] } }}", "options": { "timeout": 10000 } }, "id": "success-ingest", "name": "Ingest success", "type": "n8n-nodes-base.httpRequest", "typeVersion": 4.2, "position": [ -120, 0 ], "retryOnFail": true, "maxTries": 3, "waitBetweenTries": 1000 }
+  ],
+  "connections": { "When called by another workflow": { "main": [ [ { "node": "Ingest success", "type": "main", "index": 0 } ] ] } },
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "versionId": "real-estate-run-success-v1",
+  "meta": { "templateCredsSetupCompleted": true },
+  "tags": []
+}

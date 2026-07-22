@@ -17,7 +17,9 @@
     "refresh-ai": "npm run ingest && npm run index",
     "db:check": "tsx scripts/verify-supabase.ts",
     "db:dry-run": "npx supabase db push --dry-run",
-    "db:test": "npx supabase test db"
+    "db:test": "npx supabase test db",
+    "n8n:check": "tsx scripts/verify-n8n-workflows.ts",
+    "n8n:contracts": "tsx scripts/verify-n8n-contracts.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",
