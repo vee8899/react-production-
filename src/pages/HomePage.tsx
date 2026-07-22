@@ -3,6 +3,7 @@ import Nav from "@/components/ui/Nav";
 import Footer from "@/components/ui/Footer";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { contactHref } from "@/utils/contact";
+import ROICalculator from "@/components/features/ROICalculator";
 
 const capabilities = [
   ["Workflow Automation", "Turn repeatable work into dependable processes."],
@@ -27,7 +28,7 @@ export default function HomePage() {
     <>
       <Nav />
       <main>
-        <section className="flex min-h-[78svh] flex-col justify-end px-[clamp(24px,5vw,80px)] pb-[clamp(64px,10vw,128px)]">
+        <section className="flex min-h-[78svh] flex-col justify-end px-[clamp(24px,5vw,80px)] pb-[clamp(64px,10vw,128px)] pt-28">
           <div className="mx-auto w-full max-w-[1280px]">
             <SectionHeader label="MANAGED OPERATIONS LAYER" />
             <h1 className="mt-10 max-w-[900px] font-display text-[clamp(3rem,8vw,8rem)] font-normal leading-[0.92] tracking-[-0.04em] text-primary">Encode how your enterprise works.</h1>
@@ -56,7 +57,9 @@ export default function HomePage() {
 
         <section className="px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,144px)]"><div className="mx-auto max-w-[1280px]"><SectionHeader label="HOW WE ENGAGE" /><div className="mt-10 grid gap-px bg-border md:grid-cols-3">{[["Platform", "The connected, observable workflow layer."], ["Implementation", "Process design, integrations, rules, approvals, and launch testing."], ["Operations", "Monitoring, exception handling, maintenance, and continuous improvement."]].map(([title, body]) => <div key={title} className="bg-background p-6 sm:p-8"><h3 className="font-display text-2xl font-normal text-primary">{title}</h3><p className="mt-4 text-sm font-light leading-relaxed text-muted">{body}</p></div>)}</div><p className="mt-5 max-w-2xl text-xs leading-relaxed text-muted">Engagements are scoped around workflows, connected systems, record volume, exception complexity, and support requirements. Pricing is discussed directly rather than presented as a self-service checkout.</p></div></section>
 
-        <section className="bg-primary px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,128px)] text-background"><div className="mx-auto flex max-w-[1280px] flex-col gap-8 md:flex-row md:items-end md:justify-between"><div><SectionHeader label="CONTROL AND VISIBILITY" /><h2 className="mt-10 max-w-2xl font-display text-[clamp(2rem,5vw,4.5rem)] font-normal leading-[1]">Automation you can review, govern, and trust.</h2><p className="mt-6 max-w-xl text-sm font-light leading-relaxed text-background/70">Organization-scoped access, secret-isolated connections, retries, audit trails, workflow steps, and visible exception paths keep your operation understandable.</p></div><Link to="/security" className="shrink-0 border border-background px-5 py-3 text-label uppercase tracking-[0.08em] text-background transition-colors hover:bg-background hover:text-primary">Security controls →</Link></div></section>
+        <ROICalculator />
+
+        <section className="bg-[#F2F0ED] px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,128px)]"><div className="mx-auto flex max-w-[1280px] flex-col gap-8 md:flex-row md:items-end md:justify-between"><div><SectionHeader label="CONTROL AND VISIBILITY" /><h2 className="mt-10 max-w-2xl font-display text-[clamp(2rem,5vw,4.5rem)] font-normal leading-[1] text-primary">Automation you can review, govern, and trust.</h2><p className="mt-6 max-w-xl text-sm font-light leading-relaxed text-muted">Organization-scoped access, secret-isolated connections, retries, audit trails, workflow steps, and visible exception paths keep your operation understandable.</p></div><Link to="/security" className="shrink-0 border border-primary px-5 py-3 text-label uppercase tracking-[0.08em] text-primary transition-colors hover:bg-primary hover:text-background">Security controls →</Link></div></section>
 
         <section className="px-[clamp(24px,5vw,80px)] py-[clamp(80px,12vw,180px)]"><div className="mx-auto max-w-[900px] text-center"><SectionHeader label="START WITH THE OPERATION" /><h2 className="mt-10 font-display text-[clamp(2rem,5vw,4.5rem)] font-normal leading-[1] text-primary">Bring us the process your team has outgrown.</h2><p className="mx-auto mt-6 max-w-xl text-base font-light leading-relaxed text-muted">We will identify the repeatable work, systems, approvals, and exceptions that should become your next resilient workflow.</p><a href={contactHref} className="mt-8 inline-flex border border-primary bg-primary px-5 py-3 text-label uppercase tracking-[0.08em] text-background transition-colors hover:bg-transparent hover:text-primary">Request a scoped conversation →</a></div></section>
       </main>

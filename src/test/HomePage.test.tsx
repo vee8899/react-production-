@@ -7,6 +7,10 @@ vi.mock("@/hooks/useAuth", () => ({
   useAuth: () => ({ isAuthenticated: false, isLoading: false, session: null, user: null, signOut: vi.fn() }),
 }));
 
+vi.mock("@/components/features/ROICalculator", () => ({
+  default: () => <section>05 - BUSINESS VALUE</section>,
+}));
+
 describe("HomePage", () => {
   it("communicates the managed operations value proposition", () => {
     const { container } = render(<MemoryRouter><HomePage /></MemoryRouter>);
