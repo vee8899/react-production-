@@ -19,7 +19,8 @@
     "db:dry-run": "npx supabase db push --dry-run",
     "db:test": "npx supabase test db",
     "n8n:check": "tsx scripts/verify-n8n-workflows.ts",
-    "n8n:contracts": "tsx scripts/verify-n8n-contracts.ts"
+    "n8n:contracts": "tsx scripts/verify-n8n-contracts.ts",
+    "n8n:adapters": "tsx scripts/verify-n8n-adapters.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",
