@@ -23,7 +23,7 @@ const services = [
     number: "02",
     name: "System Integrations",
     description:
-      "Connect the systems your team already uses and move approved data between them safely.",
+      "Connect the systems your team already uses and move approved data between CRMs, spreadsheets, portals, and databases safely.",
   },
   {
     number: "03",
@@ -53,7 +53,7 @@ const services = [
     number: "07",
     name: "System Data Synchronization",
     description:
-      "Move approved data between tools, portals, spreadsheets, and databases on a schedule or trigger.",
+      "Synchronize approved records with field mapping, deduplication, retries, and audit visibility on a schedule or trigger.",
   },
   {
     number: "08",

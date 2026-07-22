@@ -62,7 +62,7 @@ export default function IntegrationsShowcase() {
               Connect the systems inside the workflow.
             </h2>
             <p className="mt-5 max-w-[560px] text-sm font-light leading-relaxed text-muted">
-              Integrations are the connective layer—not the product itself. Route approved data, triggers, documents, and notifications through workflows shaped for your operation.
+              Integrations are the connective layer—not the product itself. Route approved data, triggers, documents, and notifications through workflows shaped for your operation. Synchronize CRM, spreadsheet, and portal records with field mapping, deduplication, retries, and audit visibility.
             </p>
             <div className="mt-8 border border-border bg-surface px-5 py-5 sm:px-6">
               <p className="font-mono text-xs uppercase tracking-[0.08em] text-muted">
