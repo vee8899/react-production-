@@ -103,6 +103,21 @@ const rolloutSteps = [
   },
 ];
 
+const operatingOutcomes = [
+  "Faster response to new leads and requests",
+  "Fewer duplicate records and manual handoffs",
+  "Clearer ownership of approvals and exceptions",
+  "Less repeated data entry across connected systems",
+  "A visible audit trail for every important change",
+];
+
+const workflowExamples = [
+  ["01", "Lead follow-up", "Capture a new lead, deduplicate it, route ownership, send the approved follow-up, and record the outcome."],
+  ["02", "Record synchronization", "Map approved fields between a CRM, spreadsheet, or portal while tracking processed and failed records."],
+  ["03", "Document generation", "Populate a versioned template, apply conditions and approvals, then store and deliver the output."],
+  ["04", "Listing operations", "Coordinate listing changes, appointment updates, notifications, and exception handling in one visible workflow."],
+];
+
 export default function HomePage() {
   return (
     <>
@@ -287,11 +302,49 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="bg-[#F2F0ED] px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,160px)]">
+        <div className="mx-auto max-w-[1280px]">
+          <SectionHeader label="03 - OPERATIONAL OUTCOMES" />
+          <div className="mt-12 grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-[clamp(48px,8vw,128px)]">
+            <div>
+              <h2 className="font-display text-[clamp(1.5rem,3vw,2.5rem)] font-normal leading-[1.15] text-primary">Turn process knowledge into measurable operating capacity.</h2>
+              <p className="mt-5 max-w-xl text-sm font-light leading-relaxed text-muted">The value is not automation for its own sake. It is fewer dropped handoffs, faster movement through repeatable work, and clearer control when an exception needs a person.</p>
+            </div>
+            <div className="grid gap-px bg-border sm:grid-cols-2">
+              {operatingOutcomes.map((outcome) => <div key={outcome} className="bg-background p-5 text-sm font-light leading-relaxed text-primary sm:p-6">{outcome}</div>)}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,160px)]">
+        <div className="mx-auto max-w-[1280px]">
+          <SectionHeader label="04 - WORKFLOW EXAMPLES" />
+          <p className="mt-5 max-w-2xl text-sm font-light leading-relaxed text-muted">Start with one painful, repeatable process. Configure the systems, rules, approvals, and exception paths around it, then expand the operating layer as the value is proven.</p>
+          <div className="mt-10 grid gap-px bg-border md:grid-cols-2">
+            {workflowExamples.map(([number, title, body]) => <div key={title} className="bg-background p-6 sm:p-8"><span className="font-mono text-xs text-muted">{number}</span><h3 className="mt-6 font-display text-2xl font-normal text-primary">{title}</h3><p className="mt-4 text-sm font-light leading-relaxed text-muted">{body}</p></div>)}
+          </div>
+        </div>
+      </section>
+
       <DashboardMock />
       <IntegrationsShowcase />
       <ROICalculator />
+      <section className="px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,144px)]">
+        <div className="mx-auto max-w-[1280px]">
+          <SectionHeader label="06 - ENGAGEMENT MODEL" />
+          <div className="mt-12 grid gap-px bg-border md:grid-cols-3">
+            {[
+              ["Platform", "The recurring operational layer: connected workflows, visibility, tenant isolation, audit history, and resilience controls."],
+              ["Implementation", "A scoped setup for your systems, field mappings, business rules, approvals, provider adapters, and launch testing."],
+              ["Support & operations", "Ongoing monitoring, workflow changes, exception review, and support matched to the operating model you need."],
+            ].map(([title, body]) => <div key={title} className="bg-background p-6 sm:p-8"><h3 className="font-display text-2xl font-normal text-primary">{title}</h3><p className="mt-4 text-sm font-light leading-relaxed text-muted">{body}</p></div>)}
+          </div>
+          <p className="mt-5 max-w-2xl text-xs leading-relaxed text-muted">The calculator is an illustrative value estimate. Final pricing is scoped around the workflows, connected systems, record volume, exception complexity, implementation effort, and support model required for the operation.</p>
+        </div>
+      </section>
       <section id="security" className="px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,144px)]">
-        <SectionHeader label="06 - SECURITY & GOVERNANCE" />
+        <SectionHeader label="07 - SECURITY & GOVERNANCE" />
         <div className="mt-12 grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-[clamp(48px,8vw,128px)]">
           <FadeUp>
             <div>

@@ -57,7 +57,7 @@ describe("HomePage", () => {
     expect(screen.getByText("A managed rollout around your operation.")).toBeInTheDocument();
     expect(screen.getByText("Discover")).toBeInTheDocument();
     expect(screen.getByText("Validate & operate")).toBeInTheDocument();
-    expect(screen.getByText("06 - SECURITY & GOVERNANCE")).toBeInTheDocument();
+    expect(screen.getByText("07 - SECURITY & GOVERNANCE")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /review security controls/i })).toHaveAttribute("href", "/security");
     expect(screen.queryByRole("button", { name: "Platform" })).not.toBeInTheDocument();
     expect(screen.queryByRole("link", { name: "Modules" })).not.toBeInTheDocument();
