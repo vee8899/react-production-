@@ -29,7 +29,7 @@ export default function AuditPage() {
             <p className="max-w-2xl text-sm font-light leading-relaxed text-muted">
               Audit Trail records business-object and workflow changes by organization. Use Recent Activity for the execution details of a workflow run.
             </p>
-            <div className="flex flex-wrap items-center gap-5 border-b border-border pb-4">
+            <div className="mt-8 flex w-full flex-wrap items-center gap-x-5 gap-y-3 border-b border-border pb-4">
               <span className="text-label font-mono uppercase tracking-[0.08em] text-muted">Showing events from</span>
               {auditWindows.map((option) => (
                 <button
@@ -41,7 +41,7 @@ export default function AuditPage() {
                   {option.label}
                 </button>
               ))}
-              <Link to="/dashboard" className="ml-auto text-label font-mono uppercase tracking-[0.08em] text-muted hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
+              <Link to="/dashboard" className="lg:ml-auto text-label font-mono uppercase tracking-[0.08em] text-muted hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
                 Back to dashboard
               </Link>
             </div>
