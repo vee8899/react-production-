@@ -28,7 +28,14 @@ export const initSentry = () => {
 };
 
 export const captureError = (error: unknown, context?: Record<string, unknown>) => {
-  if (!initialized) return;
+  if (!initialized) {
+    if (env.sentry.dsn) {
+      initSentry();
+    } else {
+      console.warn("[Sentry] captureError called but Sentry DSN is missing.", error);
+      return;
+    }
+  }
 
   Sentry.captureException(error, {
     extra: context,
@@ -36,7 +43,13 @@ export const captureError = (error: unknown, context?: Record<string, unknown>) 
 };
 
 export const syncSentryIdentity = (session: Session | null) => {
-  if (!initialized) return;
+  if (!initialized) {
+    if (env.sentry.dsn) {
+      initSentry();
+    } else {
+      return;
+    }
+  }
 
   if (!session?.user) {
     Sentry.setUser(null);
