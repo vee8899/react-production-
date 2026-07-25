@@ -24,6 +24,7 @@ const LegalSettingsPage = lazy(() => import("@/pages/LegalSettingsPage"));
 const DemoPage = lazy(() => import("@/pages/DemoPage"));
 const IntegrationsPage = lazy(() => import("@/pages/IntegrationsPage"));
 const SecurityPage = lazy(() => import("@/pages/SecurityPage"));
+const SentryExamplePage = lazy(() => import("@/pages/SentryExamplePage"));
 
 export const ProtectedRoute = ({
   children,
@@ -145,6 +146,7 @@ export default function App() {
             />
             <Route path="/legal/terms" element={<LegalDocumentPage documentKey="terms_of_service" />} />
             <Route path="/legal/privacy" element={<LegalDocumentPage documentKey="privacy_policy" />} />
+            <Route path="/sentry-example-page" element={<SentryExamplePage />} />
             <Route
               path="/legal/consent"
               element={
