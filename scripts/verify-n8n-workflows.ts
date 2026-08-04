@@ -9,7 +9,7 @@ const forbidden = [
   /supabase_service_role_key/i,
 ];
 const requiredIngestFields = ["event_id", "client_id", "feature_type", "workflow_name", "status"];
-const files = fs.readdirSync(root, { recursive: true })
+const files = fs.readdirSync(root, { encoding: "utf8", recursive: true })
   .filter((file) => file.endsWith(".json") && !file.startsWith(`examples${path.sep}`) && !file.endsWith(`${path.sep}example-request.json`) && !file.endsWith(`${path.sep}example-batch.json`));
 const errors: string[] = [];
 type WorkflowExport = {

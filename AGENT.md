@@ -28,7 +28,7 @@ The code and SQL migrations are the source of truth. If generated knowledge or a
 - `supabase/migrations/` — schema, RLS policies, RPCs, and database behavior
 - `supabase/functions/` — server-side functions with trusted secrets
 - `docs/` — authored documentation
-- `knowledge/` — generated repository knowledge; do not edit manually
+- `docs/knowledge-base/` — generated repository knowledge; do not edit manually
 
 ## Security and tenancy
 

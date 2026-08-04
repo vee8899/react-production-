@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "anthropic/claude-opus-4-8",
+  "small_model": "opencode/deepseek-v4-flash-free",
+  "agent": {
+    "worker": {
+      "description": "Bulk and routine coding subtasks (boilerplate, refactors, tests, debugging). Delegated by the orchestrator to save cost.",
+      "mode": "subagent",
+      "model": "opencode/deepseek-v4-flash-free",
+      "prompt": "You are a fast, low-cost worker subagent. You handle routine, well-specified coding tasks: generating boilerplate, mechanical refactors, writing tests, small bug fixes, and file edits with clear specs. Work autonomously and return a concise summary of what you changed and any follow-ups. If a task requires deep architectural reasoning or long-horizon agentic work, say so instead of guessing."
+    }
+  }
+}

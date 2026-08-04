@@ -62,7 +62,7 @@ describe("ProtectedRoute", () => {
     expect(screen.getByText("Login Page")).toBeInTheDocument();
   });
 
-  it("renders nothing while loading", () => {
+  it("renders a loading screen while auth resolves", () => {
     (useAuth as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
       session: null,
       isLoading: true,
@@ -80,6 +80,7 @@ describe("ProtectedRoute", () => {
       </MemoryRouter>
     );
 
-    expect(container.innerHTML).toBe("");
+    expect(screen.getByText("Loading...")).toBeInTheDocument();
+    expect(container.textContent).not.toContain("Dashboard Content");
   });
 });

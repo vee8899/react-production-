@@ -119,6 +119,7 @@ Before opening a pull request, run lint, tests, and build. If a change affects t
 - `src/api/` — browser-facing API clients
 - `src/types/` — shared TypeScript types
 - `src/test/` — unit and component tests
+- `agents/` — LangGraph multi-agent coding library (orchestrator/coder/reviewer), see `agents/README.md`
 - `supabase/migrations/` — database schema, policies, functions, and RPC changes
 - `supabase/functions/` — trusted server-side HTTP functions
 - `infra/n8n/` — optional private n8n, Postgres, and Caddy infrastructure

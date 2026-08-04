@@ -57,6 +57,26 @@ Use `.env.mcp.example` as the template for local/staging MCP configuration. Neve
 - Prefer short-lived or scoped credentials when the platform supports them.
 - Record where a secret is configured, not the secret itself.
 
+## Multi-agent environment variables
+
+The LangGraph multi-agent library in `agents/` reads its configuration from
+environment variables. These are server-side values; never expose them to the
+browser and never commit real values.
+
+| Variable | Purpose | Default |
+| --- | --- | --- |
+| `ORCHESTRATOR_MODEL` | Claude planner that decomposes the task | `anthropic/claude-opus-4-8` |
+| `CODING_MODEL` | DeepSeek worker that produces the implementation | `deepseek/deepseek-v4-flash` |
+| `REVIEWER_MODEL` | Claude reviewer that approves or requests changes | `anthropic/claude-opus-4-8` |
+| `ANTHROPIC_API_KEY` | Anthropic API key (required when a role uses `anthropic`) | — |
+| `ANTHROPIC_BASE_URL` | Optional custom Anthropic-compatible endpoint | provider default |
+| `DEEPSEEK_API_KEY` | DeepSeek API key (required when a role uses `deepseek`) | — |
+| `DEEPSEEK_BASE_URL` | Optional OpenAI-compatible base URL for DeepSeek | `https://api.deepseek.com` |
+| `AGENTS_MAX_ATTEMPTS` | Maximum review/revise cycles before the graph stops | `2` |
+
+A model spec is `provider/model-id`. See `agents/README.md` for usage and the
+`agents:demo` npm script for a runnable example.
+
 ## Environment readiness
 
 Before promoting a release, verify:
