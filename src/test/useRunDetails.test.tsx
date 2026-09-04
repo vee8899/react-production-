@@ -31,13 +31,13 @@ describe("useRunDetails", () => {
     from.mockReset();
   });
 
-  it("loads a tenant-scoped run and summarizes related diagnostics", async () => {
+  it("summarizes diagnostics for Northstar's tenant-scoped failed run", async () => {
     const runBuilder = builder({
       data: {
-        id: "run-1",
-        organization_id: "org-1",
-        workflow_id: "workflow-1",
-        event_id: "event-1",
+        id: "northstar-run-1",
+        organization_id: "northstar-org",
+        workflow_id: "northstar-workflow-1",
+        event_id: "northstar-event-1",
         feature_key: "workflow_automation",
         status: "error",
         started_at: "2026-07-18T08:00:00.000Z",
@@ -51,7 +51,7 @@ describe("useRunDetails", () => {
       },
       error: null,
     });
-    const workflowBuilder = builder({ data: { id: "workflow-1", name: "Lead enrichment" }, error: null });
+    const workflowBuilder = builder({ data: { id: "northstar-workflow-1", name: "Lead enrichment" }, error: null });
     const stepsBuilder = builder({
       data: [{
         id: "step-1",
@@ -82,7 +82,7 @@ describe("useRunDetails", () => {
     const wrapper = ({ children }: PropsWithChildren) => (
       <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
     );
-    const result = renderHook(() => useRunDetails("run-1", "org-1"), { wrapper });
+    const result = renderHook(() => useRunDetails("northstar-run-1", "northstar-org"), { wrapper });
 
     await waitFor(() => expect(result.result.current.isSuccess).toBe(true));
     expect(result.result.current.data?.workflowName).toBe("Lead enrichment");
@@ -91,12 +91,12 @@ describe("useRunDetails", () => {
     expect(result.result.current.data?.entitySummaries).toEqual([
       { entityType: "lead", action: "updated", sourceSystem: "crm", count: 1 },
     ]);
-    expect(runBuilder.eq).toHaveBeenCalledWith("organization_id", "org-1");
-    expect(stepsBuilder.eq).toHaveBeenCalledWith("organization_id", "org-1");
-    expect(entitiesBuilder.eq).toHaveBeenCalledWith("organization_id", "org-1");
+    expect(runBuilder.eq).toHaveBeenCalledWith("organization_id", "northstar-org");
+    expect(stepsBuilder.eq).toHaveBeenCalledWith("organization_id", "northstar-org");
+    expect(entitiesBuilder.eq).toHaveBeenCalledWith("organization_id", "northstar-org");
   });
 
-  it("returns null for a run outside the tenant scope", async () => {
+  it("returns null when a requested run is outside Northstar's tenant scope", async () => {
     const runBuilder = builder({ data: null, error: null });
     from.mockReturnValue(runBuilder);
 
@@ -104,11 +104,11 @@ describe("useRunDetails", () => {
     const wrapper = ({ children }: PropsWithChildren) => (
       <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
     );
-    const result = renderHook(() => useRunDetails("other-run", "org-1"), { wrapper });
+    const result = renderHook(() => useRunDetails("other-tenant-run", "northstar-org"), { wrapper });
 
     await waitFor(() => expect(result.result.current.isSuccess).toBe(true));
     expect(result.result.current.data).toBeNull();
-    expect(runBuilder.eq).toHaveBeenCalledWith("id", "other-run");
-    expect(runBuilder.eq).toHaveBeenCalledWith("organization_id", "org-1");
+    expect(runBuilder.eq).toHaveBeenCalledWith("id", "other-tenant-run");
+    expect(runBuilder.eq).toHaveBeenCalledWith("organization_id", "northstar-org");
   });
 });

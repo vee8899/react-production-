@@ -3,18 +3,20 @@ import { describe, expect, it } from "vitest";
 import IntegrationsShowcase from "@/components/features/IntegrationsShowcase";
 
 describe("IntegrationsShowcase", () => {
-  it("renders grouped integration examples", () => {
+  it("groups communication integrations under the Communication heading", () => {
     render(<IntegrationsShowcase />);
 
     expect(screen.getByText("Communication")).toBeInTheDocument();
-    expect(screen.getByText("Workspace")).toBeInTheDocument();
+    ["Gmail", "Outlook", "WhatsApp", "Telegram", "Slack"].forEach((name) => {
+      expect(screen.getByText(name)).toBeInTheDocument();
+    });
+  });
 
+  it("groups workspace integrations under the Workspace heading", () => {
+    render(<IntegrationsShowcase />);
+
+    expect(screen.getByText("Workspace")).toBeInTheDocument();
     [
-      "Gmail",
-      "Outlook",
-      "WhatsApp",
-      "Telegram",
-      "Slack",
       "Google Calendar",
       "Google Sheets",
       "Google Docs",

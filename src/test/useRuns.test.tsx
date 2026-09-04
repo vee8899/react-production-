@@ -26,19 +26,19 @@ describe("useRuns", () => {
     from.mockReturnValue({ select });
   });
 
-  it("caches each requested limit separately", async () => {
+  it("keeps Northstar's 10-run and 50-run requests in separate cache entries", async () => {
     const wrapper = ({ children }: PropsWithChildren) => (
       <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
     );
 
-    const first = renderHook(() => useRuns("client-id", 10, "organization-id"), { wrapper });
+    const first = renderHook(() => useRuns("northstar-client", 10, "northstar-org"), { wrapper });
     await waitFor(() => expect(first.result.current.isSuccess).toBe(true));
 
-    const second = renderHook(() => useRuns("client-id", 50, "organization-id"), { wrapper });
+    const second = renderHook(() => useRuns("northstar-client", 50, "northstar-org"), { wrapper });
     await waitFor(() => expect(second.result.current.isSuccess).toBe(true));
 
-    expect(queryClient.getQueryData(["runs", "client-id", "organization-id", 10])).toEqual([]);
-    expect(queryClient.getQueryData(["runs", "client-id", "organization-id", 50])).toEqual([]);
+    expect(queryClient.getQueryData(["runs", "northstar-client", "northstar-org", 10])).toEqual([]);
+    expect(queryClient.getQueryData(["runs", "northstar-client", "northstar-org", 50])).toEqual([]);
     expect(from).toHaveBeenCalledTimes(2);
   });
 });

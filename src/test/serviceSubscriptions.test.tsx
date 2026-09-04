@@ -18,7 +18,7 @@ vi.mock("@/hooks/useRealEstateMetrics", () => ({
 import { useClientServices } from "@/hooks/useClientServices";
 
 describe("service subscriptions", () => {
-  it("classifies namespaced module keys without using organization context", () => {
+  it("classifies a namespaced real-estate key as a module", () => {
     expect(normalizeServiceSubscription({
       featureKey: "module.real_estate",
       status: "active",
@@ -27,7 +27,9 @@ describe("service subscriptions", () => {
       isModule: true,
       moduleKey: "real_estate",
     });
+  });
 
+  it("keeps a platform integration separate from module subscriptions", () => {
     expect(normalizeServiceSubscription({
       featureKey: "system_integrations",
       status: "active",
@@ -49,7 +51,7 @@ describe("service subscriptions", () => {
     expect(screen.queryByText("Real Estate Operations")).not.toBeInTheDocument();
   });
 
-  it("renders subscribed real-estate metrics nested under Services", () => {
+  it("labels the real-estate subscription as a module", () => {
     vi.mocked(useClientServices).mockReturnValue({
       data: [normalizeServiceSubscription({ featureKey: "module.real_estate", status: "active", source: "feature_subscriptions" })],
       isLoading: false,
@@ -58,6 +60,17 @@ describe("service subscriptions", () => {
 
     render(<ClientServices clientId="client-1" organizationId="org-1" />);
     expect(screen.getByText("Subscribed module")).toBeInTheDocument();
+  });
+
+  it("shows real-estate metrics after the module subscription resolves", () => {
+    vi.mocked(useClientServices).mockReturnValue({
+      data: [normalizeServiceSubscription({ featureKey: "module.real_estate", status: "active", source: "feature_subscriptions" })],
+      isLoading: false,
+      error: null,
+    } as ReturnType<typeof useClientServices>);
+
+    render(<ClientServices clientId="northstar-client" organizationId="northstar-org" />);
+
     expect(screen.getByText("Real Estate Operations")).toBeInTheDocument();
     expect(screen.getByText("Active Leads")).toBeInTheDocument();
   });

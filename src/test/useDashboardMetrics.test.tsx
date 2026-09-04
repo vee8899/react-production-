@@ -19,7 +19,7 @@ const query = (data: unknown[], error: unknown = null) => {
 describe("useDashboardMetrics", () => {
   beforeEach(() => from.mockReset());
 
-  it("aggregates realistic workflow runs, including retries and failed records", async () => {
+  it("aggregates Northstar workflow runs, retries, and failed records", async () => {
     from.mockReturnValue(query([
       { status: "success", duration_ms: 1000, retries: 0, records_processed: 12, records_failed: 0 },
       { status: "error", duration_ms: 3000, retries: 2, records_processed: 4, records_failed: 3 },
@@ -27,19 +27,19 @@ describe("useDashboardMetrics", () => {
     ]));
     const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
     const wrapper = ({ children }: PropsWithChildren) => <QueryClientProvider client={client}>{children}</QueryClientProvider>;
-    const result = renderHook(() => useDashboardMetrics("org-1", "client-1"), { wrapper });
+    const result = renderHook(() => useDashboardMetrics("northstar-org", "northstar-client"), { wrapper });
 
     await waitFor(() => expect(result.result.current.isSuccess).toBe(true));
     expect(result.result.current.data).toEqual({ totalRuns: 3, successfulRuns: 1, failedRuns: 2, totalRecords: 24, avgDurationMs: 2000, retries: 3, source: "workflow_runs" });
   });
 
-  it("falls back to daily snapshots when the run table has no rows", async () => {
+  it("uses Northstar's daily snapshot when its run table has no rows", async () => {
     from.mockImplementation((table: string) => table === "workflow_runs"
       ? query([])
       : query([{ total_runs: 10, successful_runs: 9, failed_runs: 1, total_records: 100, avg_duration_ms: 800 }]));
     const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
     const wrapper = ({ children }: PropsWithChildren) => <QueryClientProvider client={client}>{children}</QueryClientProvider>;
-    const result = renderHook(() => useDashboardMetrics("org-1", "client-1"), { wrapper });
+    const result = renderHook(() => useDashboardMetrics("northstar-org", "northstar-client"), { wrapper });
 
     await waitFor(() => expect(result.result.current.isSuccess).toBe(true));
     expect(result.result.current.data?.source).toBe("analytics_snapshots");

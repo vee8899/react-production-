@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import { OperationsMenu } from "@/components/dashboard/OperationsMenu";
 
 describe("OperationsMenu", () => {
-  it("opens route links and closes with Escape", () => {
+  it("reveals workflow, activity, and audit navigation after opening", () => {
     render(
       <MemoryRouter initialEntries={["/dashboard"]}>
         <OperationsMenu />
@@ -19,7 +19,18 @@ describe("OperationsMenu", () => {
     expect(screen.getByRole("menuitem", { name: "Recent Activity" })).toHaveAttribute("href", "/activity");
     expect(screen.getByRole("menuitem", { name: "Audit Trail" })).toHaveAttribute("href", "/audit");
 
+  });
+
+  it("closes the open menu when the user presses Escape", () => {
+    render(
+      <MemoryRouter initialEntries={["/dashboard"]}>
+        <OperationsMenu />
+      </MemoryRouter>,
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: /operations/i }));
     fireEvent.keyDown(document, { key: "Escape" });
+
     expect(screen.queryByRole("menu")).not.toBeInTheDocument();
   });
 

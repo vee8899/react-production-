@@ -44,7 +44,7 @@ vi.mock("@/utils/env", () => ({
 }));
 
 describe("SentryExamplePage", () => {
-  it("renders Sentry configuration details and verification buttons", () => {
+  it("identifies the page as an active Sentry verification screen", () => {
     render(
       <MemoryRouter>
         <SentryExamplePage />
@@ -53,11 +53,20 @@ describe("SentryExamplePage", () => {
 
     expect(screen.getByText("Sentry Verification Page")).toBeInTheDocument();
     expect(screen.getByText("Configured & Active")).toBeInTheDocument();
+  });
+
+  it("offers both uncaught and manual exception verification actions", () => {
+    render(
+      <MemoryRouter>
+        <SentryExamplePage />
+      </MemoryRouter>
+    );
+
     expect(screen.getByRole("button", { name: /trigger uncaught exception/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /capture exception manually/i })).toBeInTheDocument();
   });
 
-  it("handles manual exception capture button click", async () => {
+  it("sends a manual exception when the operator selects that action", async () => {
     const user = userEvent.setup();
     const { captureError } = await import("@/lib/sentry");
 
@@ -70,6 +79,6 @@ describe("SentryExamplePage", () => {
     const manualBtn = screen.getByRole("button", { name: /capture exception manually/i });
     await user.click(manualBtn);
 
-    expect(captureError).toHaveBeenCalled();
+    expect(captureError).toHaveBeenCalledTimes(1);
   });
 });

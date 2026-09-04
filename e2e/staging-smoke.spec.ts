@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test";
 const email = process.env.STAGING_TEST_EMAIL;
 const password = process.env.STAGING_TEST_PASSWORD;
 
-test("public pages and protected-route redirect work in staging", async ({ page }) => {
+test("staging public home page loads only successful application assets", async ({ page }) => {
   const chunkResponses: string[] = [];
   page.on("response", (response) => {
     const url = response.url();
@@ -15,21 +15,23 @@ test("public pages and protected-route redirect work in staging", async ({ page 
   await page.goto("/");
   await expect(page).toHaveTitle(/Prime State Systems|React|Vite/i);
 
-  await page.goto("/dashboard");
-  await expect(page).toHaveURL(/\/login$/);
-  await expect(page.getByRole("heading", { name: /sign in/i })).toBeVisible();
-
   expect(chunkResponses.every((entry) => entry.startsWith("200 "))).toBe(true);
 });
 
-test("invalid invite link shows a safe error state", async ({ page }) => {
+test("staging dashboard redirects unauthenticated visitors to sign in", async ({ page }) => {
+  await page.goto("/dashboard");
+  await expect(page).toHaveURL(/\/login$/);
+  await expect(page.getByRole("heading", { name: /sign in/i })).toBeVisible();
+});
+
+test("staging invalid invite links do not offer password acceptance", async ({ page }) => {
   await page.goto("/accept-invite?error=access_denied&error_description=Invite%20expired");
 
   await expect(page.getByRole("heading", { name: /invite could not be verified/i })).toBeVisible();
   await expect(page.getByRole("button", { name: /accept invite/i })).toHaveCount(0);
 });
 
-test("staging test user can sign in and load dashboard", async ({ page }) => {
+test("staging test user reaches the dashboard after valid sign-in", async ({ page }) => {
   test.skip(!email || !password, "Set STAGING_TEST_EMAIL and STAGING_TEST_PASSWORD to run login smoke.");
 
   await page.goto("/login");

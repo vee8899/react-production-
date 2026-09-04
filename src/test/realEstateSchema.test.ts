@@ -8,20 +8,21 @@ import {
 } from "@/lib/realEstateContract";
 
 describe("real-estate workflow operations schema contract", () => {
-  it("defines the canonical operational tables and lifecycle enums", () => {
+  it("exports the three supported workflow entity types", () => {
     expect(workflowEntityTypes).toEqual(["lead", "listing", "appointment"]);
+  });
+
+  it("includes the supported lifecycle state for each real-estate entity", () => {
     expect(leadStatuses).toContain("qualified");
     expect(listingStatuses).toContain("under_contract");
     expect(appointmentStatuses).toContain("no_show");
   });
 
-  it("enforces tenant isolation and transactional workflow ingestion", () => {
-    expect(workflowEntityTypes).toHaveLength(3);
+  it("exports the complete audit-action contract", () => {
     expect(auditActions).toEqual(["created", "updated", "synced", "status_changed", "deleted"]);
   });
 
-  it("preserves deterministic external identity constraints", () => {
-    expect(auditActions).toContain("synced");
+  it("does not treat properties as workflow entities", () => {
     expect(workflowEntityTypes).not.toContain("property");
   });
 });

@@ -12,12 +12,17 @@ vi.mock("@/components/features/ROICalculator", () => ({
 }));
 
 describe("HomePage", () => {
-  it("communicates the managed operations value proposition", () => {
-    const { container } = render(<MemoryRouter><HomePage /></MemoryRouter>);
+  it("introduces the managed operations layer and workflow examples", () => {
+    render(<MemoryRouter><HomePage /></MemoryRouter>);
     expect(screen.getByText("MANAGED OPERATIONS LAYER")).toBeInTheDocument();
     expect(screen.getByText("Encode how your enterprise works.")).toBeInTheDocument();
     expect(screen.getByText("WORKFLOW EXAMPLES")).toBeInTheDocument();
     expect(screen.getByText("Lead follow-up")).toBeInTheDocument();
+  });
+
+  it("introduces modular capabilities, engagement, and control sections", () => {
+    const { container } = render(<MemoryRouter><HomePage /></MemoryRouter>);
+
     expect(screen.getByText("MODULAR CAPABILITIES")).toBeInTheDocument();
     expect(screen.getByText("HOW WE ENGAGE")).toBeInTheDocument();
     expect(screen.getByText("CONTROL AND VISIBILITY")).toBeInTheDocument();

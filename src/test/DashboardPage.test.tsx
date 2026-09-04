@@ -17,7 +17,7 @@ vi.mock("@/components/dashboard/AuditTrail", () => ({ AuditTrail: () => <div>Ten
 describe("DashboardPage", () => {
   beforeEach(() => vi.clearAllMocks());
 
-  it("renders the complete dashboard shell for a realistic tenant", () => {
+  it("shows the dashboard heading for a provisioned Northstar Realty tenant", () => {
     vi.mocked(useClient).mockReturnValue({
       data: { id: "client-1", organization_id: "org-1", company_name: "Northstar Realty" },
       isLoading: false,
@@ -27,26 +27,80 @@ describe("DashboardPage", () => {
     render(<MemoryRouter><DashboardPage /></MemoryRouter>);
 
     expect(screen.getByText("01 - Dashboard")).toBeInTheDocument();
+  });
+
+  it("shows run metrics for a provisioned Northstar Realty tenant", () => {
+    vi.mocked(useClient).mockReturnValue({
+      data: { id: "northstar-client", organization_id: "northstar-org", company_name: "Northstar Realty" },
+      isLoading: false,
+      error: null,
+    } as unknown as ReturnType<typeof useClient>);
+
+    render(<MemoryRouter><DashboardPage /></MemoryRouter>);
+
     expect(screen.getByText("42 runs · 39 successful · 3 failed")).toBeInTheDocument();
-    expect(screen.getByText("Services for client-1")).toBeInTheDocument();
+  });
+
+  it("passes the provisioned client to the services panel", () => {
+    vi.mocked(useClient).mockReturnValue({
+      data: { id: "northstar-client", organization_id: "northstar-org", company_name: "Northstar Realty" },
+      isLoading: false,
+      error: null,
+    } as unknown as ReturnType<typeof useClient>);
+
+    render(<MemoryRouter><DashboardPage /></MemoryRouter>);
+
+    expect(screen.getByText("Services for northstar-client")).toBeInTheDocument();
+  });
+
+  it("shows workflow history for a provisioned tenant", () => {
+    vi.mocked(useClient).mockReturnValue({
+      data: { id: "northstar-client", organization_id: "northstar-org", company_name: "Northstar Realty" },
+      isLoading: false,
+      error: null,
+    } as unknown as ReturnType<typeof useClient>);
+
+    render(<MemoryRouter><DashboardPage /></MemoryRouter>);
+
     expect(screen.getByText("Workflow run history")).toBeInTheDocument();
+  });
+
+  it("shows the tenant audit trail for a provisioned tenant", () => {
+    vi.mocked(useClient).mockReturnValue({
+      data: { id: "northstar-client", organization_id: "northstar-org", company_name: "Northstar Realty" },
+      isLoading: false,
+      error: null,
+    } as unknown as ReturnType<typeof useClient>);
+
+    render(<MemoryRouter><DashboardPage /></MemoryRouter>);
+
     expect(screen.getByText("Tenant audit trail")).toBeInTheDocument();
   });
 
-  it.each([
-    ["loading", { data: undefined, isLoading: true, error: null }, "LOADING..."],
-    ["error", { data: undefined, isLoading: false, error: new Error("network") }, "Failed to load data. Please refresh."],
-    ["empty", { data: undefined, isLoading: false, error: null }, "No data yet. Automations will appear here once workflows run."],
-  ])("renders a safe %s state", (_name, result, message) => {
-    vi.mocked(useClient).mockReturnValue(result as ReturnType<typeof useClient>);
+  it("shows a loading state before the tenant record resolves", () => {
+    vi.mocked(useClient).mockReturnValue({ data: undefined, isLoading: true, error: null } as ReturnType<typeof useClient>);
     render(<MemoryRouter><DashboardPage /></MemoryRouter>);
-    expect(screen.getByText(message)).toBeInTheDocument();
+    expect(screen.getByText("LOADING...")).toBeInTheDocument();
+    expect(screen.queryByText("42 runs · 39 successful · 3 failed")).not.toBeInTheDocument();
+  });
+
+  it("shows a refresh message when the tenant record fails to load", () => {
+    vi.mocked(useClient).mockReturnValue({ data: undefined, isLoading: false, error: new Error("network") } as ReturnType<typeof useClient>);
+    render(<MemoryRouter><DashboardPage /></MemoryRouter>);
+    expect(screen.getByText("Failed to load data. Please refresh.")).toBeInTheDocument();
+    expect(screen.queryByText("42 runs · 39 successful · 3 failed")).not.toBeInTheDocument();
+  });
+
+  it("explains that workflows appear after the tenant has runs", () => {
+    vi.mocked(useClient).mockReturnValue({ data: undefined, isLoading: false, error: null } as ReturnType<typeof useClient>);
+    render(<MemoryRouter><DashboardPage /></MemoryRouter>);
+    expect(screen.getByText("No data yet. Automations will appear here once workflows run.")).toBeInTheDocument();
     expect(screen.queryByText("42 runs · 39 successful · 3 failed")).not.toBeInTheDocument();
   });
 
   it("stops before rendering data queries when organization provisioning is incomplete", () => {
     vi.mocked(useClient).mockReturnValue({
-      data: { id: "client-1", organization_id: null, company_name: "Northstar Realty" },
+      data: { id: "northstar-client", organization_id: null, company_name: "Northstar Realty" },
       isLoading: false,
       error: null,
     } as unknown as ReturnType<typeof useClient>);

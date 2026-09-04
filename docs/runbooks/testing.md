@@ -101,6 +101,13 @@ record.
 3. Check whether the failure is caused by stale test data, a missing environment variable, timing, or an actual behavior change.
 4. Do not weaken an assertion simply to make the suite green. Update the test when the product behavior intentionally changed and document the reason.
 
+## Write failures that explain themselves
+
+- Give each test one observable rule and name that rule in business or user-facing terms.
+- Prefer accessible UI queries, exact returned values, and exact route or request payload assertions. These produce native expected-versus-received diffs.
+- Keep scenario data inline and recognizable, especially tenant, client, and workflow identities.
+- Use `expect(actual, "why this contract matters")` only when a static or opaque value would otherwise leave the failure unclear. Do not add custom matchers, reporters, snapshots, or shared test factories just to format failures.
+
 ## Related
 
 See [`local-development.md`](local-development.md), [`docs/mcp-operations.md`](../mcp-operations.md), and [`AGENT.md`](../../AGENT.md).

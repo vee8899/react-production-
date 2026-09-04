@@ -18,7 +18,7 @@ vi.mock("@/hooks/useAuth", () => ({
 }));
 
 describe("SecurityPage", () => {
-  it("shows current controls, deployment qualifiers, and a diligence CTA", () => {
+  it("identifies organization-scoped access as a current product control", () => {
     render(
       <MemoryRouter>
         <SecurityPage />
@@ -28,8 +28,26 @@ describe("SecurityPage", () => {
     expect(screen.getByRole("heading", { name: "Govern every workflow." })).toBeInTheDocument();
     expect(screen.getByText("Implemented in the current product")).toBeInTheDocument();
     expect(screen.getByText("Organization-scoped access and tenant data boundaries")).toBeInTheDocument();
+  });
+
+  it("marks hosting and retention commitments as deployment-dependent", () => {
+    render(
+      <MemoryRouter>
+        <SecurityPage />
+      </MemoryRouter>,
+    );
+
     expect(screen.getByText("Deployment-dependent")).toBeInTheDocument();
     expect(screen.getByText(/Hosting, retention, access review, and recovery commitments/)).toBeInTheDocument();
+  });
+
+  it("offers a mailto link for security diligence", () => {
+    render(
+      <MemoryRouter>
+        <SecurityPage />
+      </MemoryRouter>,
+    );
+
     expect(screen.getByRole("link", { name: /talk to an expert/i })).toHaveAttribute("href", expect.stringContaining("mailto:"));
   });
 });
