@@ -66,6 +66,9 @@ const plan = {
   goal: "Add an ROI test",
   steps: ["Write the test", "Run it"],
   codingSpec: "Add src/lib/roi.test.ts covering the ROI calculator.",
+  verification: ["Run the ROI test."],
+  exceptions: [],
+  documentationStatus: "aligned",
 };
 
 const testFile = `import { describe, expect, it } from 'vitest';
@@ -196,6 +199,27 @@ describe("runCodingAgents", () => {
     expect(result.attempts).toBe(2);
     expect(result.summary).toContain("negative-return");
   });
+
+  it("stops before coding when the plan requires a documentation decision", async () => {
+    const config = configFor([
+      {
+        kind: "object",
+        value: {
+          ...plan,
+          codingSpec: "Do not implement until the conflict is resolved.",
+          exceptions: ["The authored specification and implementation disagree."],
+          documentationStatus: "decision_required",
+        },
+      },
+    ]);
+
+    const result = await runCodingAgents({ task: "Resolve a documented behavior conflict" }, config);
+
+    expect(result.verdict).toBe("changes");
+    expect(result.attempts).toBe(0);
+    expect(result.files).toEqual([]);
+    expect(result.plan).toContain("Documentation status: decision_required");
+  });
 });
 
 describe("parseModelSpec", () => {
@@ -232,19 +256,29 @@ describe("loadEnvFiles", () => {
 });
 
 describe("loadRepoContext", () => {
-  it("includes the repository alignment contract before generated navigation context", () => {
+  it("includes task-relevant authored documentation and source after the alignment contract", () => {
     const root = mkdtempSync(join(tmpdir(), "agents-context-"));
     try {
       writeFileSync(join(root, "AGENT.md"), "# Repository alignment\n\nFollow the change contract.\n");
       const knowledgeDirectory = join(root, "docs", "knowledge-base");
       mkdirSync(knowledgeDirectory, { recursive: true });
       writeFileSync(join(knowledgeDirectory, "architecture.md"), "# Architecture\n\nGenerated navigation.\n");
+      const specDirectory = join(root, "docs", "specs");
+      mkdirSync(specDirectory, { recursive: true });
+      writeFileSync(join(specDirectory, "automation-run-ingestion.md"), "# Ingestion contract\n\nStable event IDs are required.\n");
+      const sourceDirectory = join(root, "supabase", "functions", "ingest-run");
+      mkdirSync(sourceDirectory, { recursive: true });
+      writeFileSync(join(sourceDirectory, "index.ts"), "export function ingestWorkflowRun() {}\n");
+      const indexDirectory = join(root, "outputs", "repo-index");
+      mkdirSync(indexDirectory, { recursive: true });
+      writeFileSync(join(indexDirectory, "files.json"), JSON.stringify({ records: [{ path: "supabase/functions/ingest-run/index.ts", kind: "function", exports: ["ingestWorkflowRun"] }] }));
 
-      const context = loadRepoContext(root);
+      const context = loadRepoContext(root, "Refactor workflow run ingestion");
 
       expect(context).toContain("## AGENT.md\n# Repository alignment");
-      expect(context).toContain("## docs/knowledge-base/architecture.md\n# Architecture");
-      expect(context.indexOf("## AGENT.md")).toBeLessThan(context.indexOf("## docs/knowledge-base/architecture.md"));
+      expect(context).toContain("## docs/specs/automation-run-ingestion.md\n# Ingestion contract");
+      expect(context).toContain("## supabase/functions/ingest-run/index.ts\nexport function ingestWorkflowRun");
+      expect(context.indexOf("## AGENT.md")).toBeLessThan(context.indexOf("## docs/specs/automation-run-ingestion.md"));
     } finally {
       rmSync(root, { recursive: true, force: true });
     }

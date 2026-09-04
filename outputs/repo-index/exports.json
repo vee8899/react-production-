@@ -3,7 +3,9 @@
   "records": [
     {
       "file": "agents/codingAgents.test.ts",
-      "exportedSymbols": []
+      "exportedSymbols": [
+        "ingestWorkflowRun"
+      ]
     },
     {
       "file": "agents/config.ts",

@@ -5,6 +5,7 @@ import { StateAnnotation, type AgentState } from "./state.ts";
 import { toAgentModel } from "./types.ts";
 
 type ReviewRoute = "approve" | "changes" | "stop";
+type PlanningRoute = "implement" | "blocked";
 
 export function buildCodingAgents(config: CodingAgentsConfig) {
   const orchestrator = makeOrchestratorNode(toAgentModel(config.orchestrator.model), config.orchestrator.cacheControl);
@@ -17,12 +18,17 @@ export function buildCodingAgents(config: CodingAgentsConfig) {
     return "changes";
   };
 
+  const afterPlanning = (state: AgentState): PlanningRoute => state.blocked ? "blocked" : "implement";
+
   return new StateGraph(StateAnnotation)
     .addNode("orchestrator", orchestrator)
     .addNode("coder", coder)
     .addNode("reviewer", reviewer)
     .addEdge(START, "orchestrator")
-    .addEdge("orchestrator", "coder")
+    .addConditionalEdges("orchestrator", afterPlanning, {
+      implement: "coder",
+      blocked: END,
+    })
     .addEdge("coder", "reviewer")
     .addConditionalEdges("reviewer", route, {
       approve: END,

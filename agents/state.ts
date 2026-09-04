@@ -5,6 +5,9 @@ export const PlanSchema = z.object({
   goal: z.string().describe("One-sentence restatement of the goal."),
   steps: z.array(z.string()).describe("Ordered implementation steps."),
   codingSpec: z.string().describe("Precise, self-contained spec the coding worker should implement."),
+  verification: z.array(z.string()).describe("Commands or acceptance checks required before approval."),
+  exceptions: z.array(z.string()).describe("Skipped checks, assumptions, limitations, or follow-up ownership. Use an empty array when none apply."),
+  documentationStatus: z.enum(["aligned", "decision_required"]).describe("Use decision_required when authored documentation and implementation conflict or the task lacks an explicit product decision."),
 });
 
 export type Plan = z.infer<typeof PlanSchema>;
@@ -21,6 +24,7 @@ export const StateAnnotation = Annotation.Root({
   task: Annotation<string>,
   context: Annotation<string>({ reducer: (_current, update) => update, default: () => "" }),
   plan: Annotation<string>({ reducer: (_current, update) => update, default: () => "" }),
+  blocked: Annotation<boolean>({ reducer: (_current, update) => update, default: () => false }),
   fileContents: Annotation<Record<string, string>>({
     reducer: (current, update) => ({ ...current, ...update }),
     default: () => ({}),

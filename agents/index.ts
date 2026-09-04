@@ -38,7 +38,7 @@ export async function runCodingAgentsWithRepoContext(
   return runCodingAgents(
     {
       task: input.task,
-      context: input.context ?? loadRepoContext(root),
+      context: input.context ?? loadRepoContext(root, input.task),
     },
     config,
   );

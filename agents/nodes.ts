@@ -100,6 +100,14 @@ export function formatPlan(plan: Plan): string {
     "",
     "Coding spec:",
     plan.codingSpec,
+    "",
+    "Verification:",
+    ...(plan.verification.length ? plan.verification.map((check) => `- ${check}`) : ["- None specified"]),
+    "",
+    "Exceptions:",
+    ...(plan.exceptions.length ? plan.exceptions.map((exception) => `- ${exception}`) : ["- None declared"]),
+    "",
+    `Documentation status: ${plan.documentationStatus}`,
   ].join("\n");
 }
 
@@ -109,8 +117,10 @@ const ORCHESTRATOR_SYSTEM_PROMPT = [
   "with an unambiguous coding spec that a single coding worker will implement.",
   "Treat AGENT.md in the repository context as the change-control contract.",
   "Scope the work precisely, include relevant verification, and identify assumptions",
-  "or skipped checks. If authored documentation conflicts with implementation, stop",
-  "and state the explicit decision required; do not silently choose a source of truth.",
+  "or skipped checks. Return verification and exceptions as explicit structured fields.",
+  "If authored documentation conflicts with implementation, set documentationStatus",
+  "to decision_required and state the explicit decision required; do not silently",
+  "choose a source of truth.",
   "Do not write the implementation yourself.",
 ].join("\n");
 
@@ -164,6 +174,10 @@ export function makeOrchestratorNode(model: AgentModel, cacheControl = false) {
     const plan = (await structured.invoke(messages)) as Plan;
     return {
       plan: formatPlan(plan),
+      blocked: plan.documentationStatus === "decision_required",
+      summary: plan.documentationStatus === "decision_required"
+        ? "Documentation decision required before implementation."
+        : "",
       logs: [`orchestrator: planned ${plan.steps.length} step(s)`],
     };
   };
@@ -181,7 +195,16 @@ export function makeCoderNode(model: AgentModel, cacheControl = false) {
         : "";
     const messages = [
       systemMessage(CODER_SYSTEM_PROMPT, cacheControl),
-      new HumanMessage([`Plan:\n${state.plan}`, "", "## Current implementation", current, feedback].join("\n")),
+      new HumanMessage([
+        `Plan:\n${state.plan}`,
+        "",
+        "## Task-relevant repository context",
+        state.context || "No repository context was provided.",
+        "",
+        "## Current implementation",
+        current,
+        feedback,
+      ].join("\n")),
     ];
     const raw = await model.invoke(messages);
     const content = typeof raw.content === "string" ? raw.content : JSON.stringify(raw.content);

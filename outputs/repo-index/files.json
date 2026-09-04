@@ -4328,8 +4328,8 @@
       "path": "agents/README.md",
       "kind": "documentation",
       "extension": ".md",
-      "hash": "75121bdf665022f32a2f1f6f8a7272a05e0212ae250847535f38fb984d0b0b64",
-      "lines": 95,
+      "hash": "914957de8b2d101bc66b840731675f34963a7883f6eff7298ac44be292ceea85",
+      "lines": 108,
       "imports": [
         "./agents/index.ts"
       ],
@@ -4348,8 +4348,8 @@
       "path": "agents/codingAgents.test.ts",
       "kind": "source",
       "extension": ".ts",
-      "hash": "de026432138db6d0b2ff7e27e23a6286115949438237b8b8f0bcb832faffccd7",
-      "lines": 275,
+      "hash": "2342dc162eeb3a4bcbb81c4ef53a16c7034e4831a7b02ef0f7021f1ae2bf71d8",
+      "lines": 309,
       "imports": [
         "./config.ts",
         "./env.ts",
@@ -4364,7 +4364,9 @@
         "node:path",
         "vitest"
       ],
-      "exports": [],
+      "exports": [
+        "ingestWorkflowRun"
+      ],
       "symbols": [
         "FakeModel",
         "FakeResponse",
@@ -4379,6 +4381,8 @@
         "dir",
         "env",
         "fake",
+        "indexDirectory",
+        "ingestWorkflowRun",
         "key",
         "knowledgeDirectory",
         "next",
@@ -4389,6 +4393,8 @@
         "result",
         "revisionPatch",
         "root",
+        "sourceDirectory",
+        "specDirectory",
         "testFile",
         "withAnthropicKey"
       ],
@@ -4504,8 +4510,8 @@
       "path": "agents/graph.ts",
       "kind": "source",
       "extension": ".ts",
-      "hash": "64458b36e17e818b4c4cbb692bd94c4a58df74d370b98b36996199fd57fdc8f1",
-      "lines": 34,
+      "hash": "33b3e3d29128843729da3d51eb07c1a12fe3a744762770515b91be70db487f18",
+      "lines": 40,
       "imports": [
         "./config.ts",
         "./nodes.ts",
@@ -4518,7 +4524,9 @@
       ],
       "symbols": [
         "AgentState",
+        "PlanningRoute",
         "ReviewRoute",
+        "afterPlanning",
         "buildCodingAgents",
         "coder",
         "orchestrator",
@@ -4535,7 +4543,7 @@
       "path": "agents/index.ts",
       "kind": "source",
       "extension": ".ts",
-      "hash": "90d49815b8a41ef084b1cc228d8ca29d50a9b455c2061901149d575b8b835ea5",
+      "hash": "f0ac29e5f335ffcdaa437643a767700cce60f24e7c730625986376026c5c7934",
       "lines": 46,
       "imports": [
         "./config.ts",
@@ -4596,8 +4604,8 @@
       "path": "agents/nodes.ts",
       "kind": "source",
       "extension": ".ts",
-      "hash": "023f0b50749fac3805ef1da830309e16bc495272621836051b1e1d734b675b98",
-      "lines": 229,
+      "hash": "b0eff1e1c9099f1bfe21f74d233cb8e2f4e591d45ae9567093131018a2837f1f",
+      "lines": 252,
       "imports": [
         "./state.ts",
         "./types.ts",
@@ -4667,8 +4675,8 @@
       "path": "agents/repoContext.ts",
       "kind": "source",
       "extension": ".ts",
-      "hash": "3208c074b55721d647ce800e987390a6cf57d5de836e5c53f4fd2aafbd7d0cb1",
-      "lines": 21,
+      "hash": "a5349e970939b432e0a92c23ec99147c04fbe91ab8a305ff09cbb13dca58e7c4",
+      "lines": 77,
       "imports": [
         "node:fs",
         "node:path"
@@ -4677,11 +4685,28 @@
         "loadRepoContext"
       ],
       "symbols": [
-        "CONTEXT_SOURCES",
-        "content",
+        "BASE_CONTEXT_SOURCES",
+        "IndexRecord",
+        "MAX_DOCUMENT_CHARS",
+        "MAX_RELEVANT_SOURCES",
+        "MAX_SOURCE_CHARS",
+        "STOP_WORDS",
+        "TASK_DOCUMENTS",
+        "absolute",
+        "documents",
+        "indexPath",
         "loadRepoContext",
+        "parsed",
         "parts",
-        "path"
+        "path",
+        "readContextFile",
+        "score",
+        "searchable",
+        "source",
+        "taskDocuments",
+        "taskSourcePaths",
+        "taskTerms",
+        "terms"
       ],
       "referencedComponents": [],
       "referencedHooks": [],
@@ -4693,8 +4718,8 @@
       "path": "agents/state.ts",
       "kind": "source",
       "extension": ".ts",
-      "hash": "d2dac4fbcfc2aec776d426adc858fd76dafc47c8be2cffe9e5a7fbe2c3f77eb9",
-      "lines": 69,
+      "hash": "7da7e93d440c23c91b39cb896b2cf56adfe1aaa8b6ba294e19d4ec3d80bbbf5c",
+      "lines": 73,
       "imports": [
         "@langchain/langgraph",
         "zod"

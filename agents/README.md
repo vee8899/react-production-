@@ -19,6 +19,17 @@ task → orchestrator (Claude) → coder (DeepSeek V4) → reviewer (Claude) →
 
 The reviewer routes back to the coder while its verdict is `changes` and the
 attempt counter is below `AGENTS_MAX_ATTEMPTS`. The graph always terminates.
+If planning finds a conflict between authored documentation and implementation,
+it returns `decision_required` and stops before the coder runs.
+
+## Alignment and context
+
+`runCodingAgentsWithRepoContext` loads the repository-wide change contract from
+`AGENT.md`, then adds authored documentation and source files that match the
+task. The orchestrator must declare verification, exceptions, and whether
+documentation is aligned before implementation can begin. A documentation
+conflict requires an explicit human decision; the pipeline must not choose a
+source of truth or generate a patch on its own.
 
 ### Cost controls
 
@@ -48,12 +59,14 @@ Exports:
 
 - `runCodingAgents(input, config?)` — run the graph; `config` falls back to env.
 - `runCodingAgentsWithRepoContext(input, config?, root?)` — augments context
-  with the generated repository knowledge (`docs/knowledge-base/`,
-  `outputs/repo-index/`) when present.
+  with `AGENT.md`, task-relevant authored documentation, and ranked source
+  files from `outputs/repo-index/files.json` when present.
 - `buildCodingAgents(config)` / `createCodingAgents(config)` — compile the graph
   for streaming or checkpointed use.
 - `loadConfig(env?)`, `parseModelSpec(spec)`, `createModel(spec, env)` — provider
   configuration helpers.
+- `loadRepoContext(root?, task?)` — loads the alignment contract plus
+  task-relevant documentation and source context.
 - `parseCodeBlocks(content)` — parses ` ```lang file:path ` fences.
 - `parsePatches(content)` / `patchTargetFile(patch)` / `applyImplementation(content, current)`
   — parse and apply ` ```diff ` revision patches.
