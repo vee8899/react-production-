@@ -26,7 +26,7 @@ export type RepositoryMap = {
 };
 
 const ignoredDirectories = new Set([
-  ".git", ".github", ".vscode", "node_modules", "dist", "build", "coverage", ".next", ".cache",
+  ".git", ".github", ".vscode", ".npm-cache", "node_modules", "dist", "build", "coverage", ".next", ".cache",
   "docs/knowledge-base", "docs/generated", "outputs/repo-index", ".ai-state", "tmp", "temp",
 ]);
 const ignoredFiles = new Set(["package-lock.json", "pnpm-lock.yaml", "yarn.lock"]);

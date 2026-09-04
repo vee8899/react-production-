@@ -10,7 +10,7 @@
     },
     {
       "name": "@hookform/resolvers",
-      "version": "^5.4.0",
+      "version": "^5.9.1",
       "usedBy": [
         "src/pages/AcceptInvitePage.tsx",
         "src/pages/LegalConsentPage.tsx",
@@ -19,14 +19,14 @@
     },
     {
       "name": "@langchain/anthropic",
-      "version": "^1.5.2",
+      "version": "^1.5.9",
       "usedBy": [
         "agents/config.ts"
       ]
     },
     {
       "name": "@langchain/core",
-      "version": "^1.2.4",
+      "version": "^1.2.9",
       "usedBy": [
         "agents/codingAgents.test.ts",
         "agents/config.ts",
@@ -36,7 +36,7 @@
     },
     {
       "name": "@langchain/langgraph",
-      "version": "^1.4.9",
+      "version": "^1.4.13",
       "usedBy": [
         "agents/graph.ts",
         "agents/state.ts"
@@ -44,14 +44,14 @@
     },
     {
       "name": "@langchain/openai",
-      "version": "^1.5.5",
+      "version": "^1.5.11",
       "usedBy": [
         "agents/config.ts"
       ]
     },
     {
       "name": "@playwright/test",
-      "version": "^1.61.1",
+      "version": "^1.62.1",
       "usedBy": [
         "e2e/staging-smoke.spec.ts",
         "playwright.config.ts"
@@ -59,24 +59,21 @@
     },
     {
       "name": "@posthog/react",
-      "version": "^1.10.3",
+      "version": "^1.10.5",
       "usedBy": [
         "src/main.tsx"
       ]
     },
     {
       "name": "@sentry/react",
-      "version": "^10.66.0",
+      "version": "^10.73.0",
       "usedBy": [
-        ".npm-cache/_cacache/content-v2/sha512/2e/a0/f532bf914fdc38036dcfede5eb4164499e181a0cb4e4a2d39edd6c5efa91997e66662ec2d68133667dda54894358aa8302606ffc404103c47e6e1c03fc79",
-        ".npm-cache/_cacache/content-v2/sha512/7d/63/fc23023f7ce4b8be2742119af3c6fa45273c155c8109ee2386e511fe92228e9fb03bc4aa9a82862a2a5b3a978030b7e2dd5a64ce8e3ebb1da078e00d618a",
-        ".npm-cache/_cacache/content-v2/sha512/f4/f6/9a3607d148d524e4c9eeced2a55b83fd295609affb78fe42a6b2e7c9c2d168c8544bff545633f47ca6faac43a02570d4f9db6eaca3d16450952f7b00063f",
         "src/lib/sentry.ts"
       ]
     },
     {
       "name": "@supabase/supabase-js",
-      "version": "^2.108.2",
+      "version": "^2.115.0",
       "usedBy": [
         "src/api/supabase/client.ts",
         "src/lib/posthog.ts",
@@ -86,14 +83,14 @@
     },
     {
       "name": "@tailwindcss/vite",
-      "version": "^4.3.1",
+      "version": "^4.3.3",
       "usedBy": [
         "vite.config.ts"
       ]
     },
     {
       "name": "@tanstack/react-query",
-      "version": "^5.101.2",
+      "version": "^5.102.8",
       "usedBy": [
         "src/hooks/useAnalytics.ts",
         "src/hooks/useAuditLog.ts",
@@ -129,7 +126,7 @@
     },
     {
       "name": "@testing-library/react",
-      "version": "^16.3.2",
+      "version": "^16.3.3",
       "usedBy": [
         "src/test/AcceptInvitePage.test.tsx",
         "src/test/AuditTrail.test.tsx",
@@ -150,7 +147,7 @@
     },
     {
       "name": "@testing-library/user-event",
-      "version": "^14.6.1",
+      "version": "^14.6.7",
       "usedBy": [
         "src/test/AcceptInvitePage.test.tsx",
         "src/test/LoginPage.test.tsx",
@@ -164,22 +161,22 @@
     },
     {
       "name": "@types/node",
-      "version": "^24.13.2",
+      "version": "^24.13.3",
       "usedBy": []
     },
     {
       "name": "@types/react",
-      "version": "^19.2.17",
+      "version": "^19.2.18",
       "usedBy": []
     },
     {
       "name": "@types/react-dom",
-      "version": "^19.2.3",
+      "version": "^19.2.7",
       "usedBy": []
     },
     {
       "name": "@vitejs/plugin-react",
-      "version": "^6.0.2",
+      "version": "^6.1.1",
       "usedBy": [
         "vite.config.ts"
       ]
@@ -200,7 +197,7 @@
     },
     {
       "name": "eslint",
-      "version": "^10.5.0",
+      "version": "^10.9.1",
       "usedBy": [
         "eslint.config.js"
       ]
@@ -214,14 +211,14 @@
     },
     {
       "name": "eslint-plugin-react-refresh",
-      "version": "^0.5.3",
+      "version": "^0.5.6",
       "usedBy": [
         "eslint.config.js"
       ]
     },
     {
       "name": "framer-motion",
-      "version": "^12.42.0",
+      "version": "^12.43.0",
       "usedBy": [
         "src/App.tsx",
         "src/components/features/FAQ.tsx",
@@ -234,7 +231,7 @@
     },
     {
       "name": "globals",
-      "version": "^17.6.0",
+      "version": "^17.12.0",
       "usedBy": [
         "eslint.config.js"
       ]
@@ -246,16 +243,15 @@
     },
     {
       "name": "posthog-js",
-      "version": "^1.404.1",
+      "version": "^1.426.2",
       "usedBy": [
         "src/lib/posthog.ts"
       ]
     },
     {
       "name": "react",
-      "version": "^19.2.7",
+      "version": "^19.2.8",
       "usedBy": [
-        ".npm-cache/_cacache/content-v2/sha512/f4/f6/9a3607d148d524e4c9eeced2a55b83fd295609affb78fe42a6b2e7c9c2d168c8544bff545633f47ca6faac43a02570d4f9db6eaca3d16450952f7b00063f",
         "src/App.tsx",
         "src/components/ErrorBoundary.tsx",
         "src/components/analytics/PostHogConsentSync.tsx",
@@ -291,15 +287,14 @@
     },
     {
       "name": "react-dom",
-      "version": "^19.2.7",
+      "version": "^19.2.8",
       "usedBy": [
-        ".npm-cache/_cacache/content-v2/sha512/f4/f6/9a3607d148d524e4c9eeced2a55b83fd295609affb78fe42a6b2e7c9c2d168c8544bff545633f47ca6faac43a02570d4f9db6eaca3d16450952f7b00063f",
         "src/main.tsx"
       ]
     },
     {
       "name": "react-hook-form",
-      "version": "^7.80.0",
+      "version": "^7.87.0",
       "usedBy": [
         "src/components/legal/ConsentCheckbox.tsx",
         "src/pages/AcceptInvitePage.tsx",
@@ -309,7 +304,7 @@
     },
     {
       "name": "react-icons",
-      "version": "^5.5.0",
+      "version": "^5.7.0",
       "usedBy": [
         "src/components/features/IntegrationsOrbit.tsx",
         "src/components/features/IntegrationsShowcase.tsx"
@@ -317,7 +312,7 @@
     },
     {
       "name": "react-router-dom",
-      "version": "^7.18.0",
+      "version": "^7.18.3",
       "usedBy": [
         "src/App.tsx",
         "src/components/analytics/PostHogRouteTracker.tsx",
@@ -364,7 +359,7 @@
     },
     {
       "name": "tsx",
-      "version": "^4.23.1",
+      "version": "^4.23.13",
       "usedBy": []
     },
     {
@@ -374,21 +369,21 @@
     },
     {
       "name": "typescript-eslint",
-      "version": "^8.61.0",
+      "version": "^8.69.0",
       "usedBy": [
         "eslint.config.js"
       ]
     },
     {
       "name": "vite",
-      "version": "^8.1.0",
+      "version": "^8.2.2",
       "usedBy": [
         "vite.config.ts"
       ]
     },
     {
       "name": "vitest",
-      "version": "^4.1.9",
+      "version": "^4.1.11",
       "usedBy": [
         "agents/codingAgents.test.ts",
         "src/test/AcceptInvitePage.test.tsx",
@@ -420,7 +415,7 @@
     },
     {
       "name": "zod",
-      "version": "^4.4.3",
+      "version": "^4.5.4",
       "usedBy": [
         "agents/state.ts",
         "agents/types.ts",
@@ -431,7 +426,7 @@
     },
     {
       "name": "zustand",
-      "version": "^5.0.14",
+      "version": "^5.0.15",
       "usedBy": [
         "src/store/authStore.ts"
       ]
