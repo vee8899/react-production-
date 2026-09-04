@@ -4,6 +4,10 @@
 
 - `@eslint/js` ^10.0.1
 - `@hookform/resolvers` ^5.4.0
+- `@langchain/anthropic` ^1.5.2
+- `@langchain/core` ^1.2.4
+- `@langchain/langgraph` ^1.4.9
+- `@langchain/openai` ^1.5.5
 - `@playwright/test` ^1.61.1
 - `@posthog/react` ^1.10.3
 - `@sentry/react` ^10.66.0
@@ -13,10 +17,13 @@
 - `@testing-library/jest-dom` ^6.9.1
 - `@testing-library/react` ^16.3.2
 - `@testing-library/user-event` ^14.6.1
+- `@types/diff` ^7.0.2
 - `@types/node` ^24.13.2
 - `@types/react` ^19.2.17
 - `@types/react-dom` ^19.2.3
 - `@vitejs/plugin-react` ^6.0.2
+- `diff` ^9.0.0
+- `dotenv` ^17.4.2
 - `eslint` ^10.5.0
 - `eslint-plugin-react-hooks` ^7.1.1
 - `eslint-plugin-react-refresh` ^0.5.3

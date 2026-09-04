@@ -11,7 +11,20 @@ This file is for people and coding agents working on the codebase. It describes 
 3. Identify whether the change affects the public site, authenticated portal, tenancy, database schema, Edge Functions, n8n, or deployment.
 4. Prefer the smallest change that fits the existing patterns.
 
-The code and SQL migrations are the source of truth. If generated knowledge or an older document disagrees with the implementation, trust the implementation, then repair the document.
+## Repository-wide alignment
+
+`AGENT.md` is the cross-cutting change contract for people and coding agents.
+Apply it to every change, not only test work.
+
+1. State the intended behavior and scope before implementation, then keep the diff limited to that purpose.
+2. Record the verification performed and every skipped relevant check, including why it was skipped.
+3. Do not silently resolve a conflict between authored documentation and the current implementation. Stop, flag the conflict, and obtain or record an explicit decision before changing either source.
+4. Update authored documentation whenever an approved behavior, operational procedure, or interface changes its claims. Do not edit generated knowledge by hand.
+5. Report assumptions, known limitations, and follow-up ownership as explicit exceptions; do not hide them in general review notes.
+
+Generated knowledge is navigation aid only. Authored specifications, ADRs, runbooks,
+and implementation are all required inputs to a change; an unresolved disagreement
+between them is a blocker, not an invitation to guess.
 
 ## Repository boundaries
 
@@ -62,6 +75,10 @@ npm.cmd run build
 For database changes, review the migration, run `npm.cmd run db:check`, preview with `npm.cmd run db:dry-run`, and test against local or staging only. For auth, ingestion, onboarding, or tenant changes, include the relevant acceptance flow and two-client isolation check.
 
 For documentation-only changes, still check links, commands, file paths, and claims against the current repository. Do not invent behavior that is only planned.
+
+Pull requests must include the intended change, proof from relevant verification,
+and every exception or documentation-drift decision. Use the repository PR template
+to record that evidence.
 
 ## Documentation workflow
 

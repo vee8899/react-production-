@@ -103,6 +103,10 @@ record.
 
 ## Write failures that explain themselves
 
+The test convention is one application of the repository-wide change-control
+contract in [`AGENT.md`](../../AGENT.md). Use that contract for every change,
+including documentation and operational work.
+
 - Give each test one observable rule and name that rule in business or user-facing terms.
 - Prefer accessible UI queries, exact returned values, and exact route or request payload assertions. These produce native expected-versus-received diffs.
 - Keep scenario data inline and recognizable, especially tenant, client, and workflow identities.

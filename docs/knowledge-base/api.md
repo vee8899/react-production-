@@ -10,6 +10,7 @@
 
 ## Edge functions
 
+- `supabase/functions/configure-alert-route/index.ts`
 - `supabase/functions/demo-event/index.ts`
 - `supabase/functions/ingest-run/index.ts`
 - `supabase/functions/invite-client/index.ts`

@@ -417,6 +417,31 @@
       "databaseUsage": []
     },
     {
+      "file": "src/test/SentryExamplePage.test.tsx",
+      "exportedSymbols": [],
+      "importedSymbols": [
+        "@/lib/sentry",
+        "@/pages/SentryExamplePage",
+        "@testing-library/react",
+        "@testing-library/user-event",
+        "react-router-dom",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/lib/sentry",
+        "@/pages/SentryExamplePage"
+      ],
+      "referencedComponents": [
+        "MemoryRouter",
+        "SentryExamplePage"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.co"
+      ],
+      "databaseUsage": []
+    },
+    {
       "file": "src/test/posthog.test.ts",
       "exportedSymbols": [],
       "importedSymbols": [

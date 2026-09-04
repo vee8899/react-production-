@@ -107,7 +107,11 @@ const ORCHESTRATOR_SYSTEM_PROMPT = [
   "You are the orchestrator of a small coding multi-agent system.",
   "You receive a task and repository context. Produce a clear, decomposed plan",
   "with an unambiguous coding spec that a single coding worker will implement.",
-  "Do not write the implementation yourself; scope the work precisely.",
+  "Treat AGENT.md in the repository context as the change-control contract.",
+  "Scope the work precisely, include relevant verification, and identify assumptions",
+  "or skipped checks. If authored documentation conflicts with implementation, stop",
+  "and state the explicit decision required; do not silently choose a source of truth.",
+  "Do not write the implementation yourself.",
 ].join("\n");
 
 const CODER_SYSTEM_PROMPT = [
@@ -133,16 +137,21 @@ const CODER_SYSTEM_PROMPT = [
   "```",
   "",
   "or rewrite the full file if that is cleaner. Keep the diff minimal and",
-  "consistent with the spec. If the spec is impossible or underspecified,",
-  "state the blocker instead of guessing.",
+  "consistent with the spec and the AGENT.md change-control contract. Do not",
+  "broaden scope or resolve an authored-documentation conflict by guessing. If",
+  "the spec is impossible, underspecified, or has unresolved drift, state the",
+  "blocker instead of writing an implementation.",
 ].join("\n");
 
 const REVIEWER_SYSTEM_PROMPT = [
   "You are a strict code reviewer. Review the coding worker's implementation",
-  "against the orchestrator's plan and spec.",
+  "against the orchestrator's plan, spec, and AGENT.md change-control contract.",
   "Return \"approve\" only when the implementation is correct, complete, and",
-  "matches the spec. Otherwise return \"changes\" with specific, actionable",
-  "comments, including the requested changes summary.",
+  "matches the spec with relevant verification and exceptions accounted for.",
+  "Return \"changes\" for an unresolved documentation conflict, unexplained",
+  "scope expansion, or missing required verification evidence. Comments must",
+  "identify the concern, affected file or evidence, and the action needed; do",
+  "not give generic compliance feedback.",
 ].join("\n");
 
 export function makeOrchestratorNode(model: AgentModel, cacheControl = false) {

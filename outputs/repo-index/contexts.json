@@ -1,4 +1,59 @@
 {
   "generatedAt": "deterministic",
-  "records": []
+  "records": [
+    {
+      "file": "agents/index.ts",
+      "exportedSymbols": [
+        "DEFAULT_MODELS",
+        "applyImplementation",
+        "buildCodingAgents",
+        "createCodingAgents",
+        "createModel",
+        "formatPlan",
+        "loadConfig",
+        "loadEnv",
+        "loadEnvFiles",
+        "loadRepoContext",
+        "parseCodeBlocks",
+        "parseModelSpec",
+        "parsePatches",
+        "patchTargetFile",
+        "runCodingAgents",
+        "runCodingAgentsWithRepoContext"
+      ],
+      "importedSymbols": [
+        "./config.ts",
+        "./graph.ts",
+        "./repoContext.ts",
+        "./state.ts"
+      ],
+      "dependencies": [
+        "./config.ts",
+        "./graph.ts",
+        "./repoContext.ts",
+        "./state.ts"
+      ],
+      "referencedComponents": [
+        "CodingAgentsResult"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
+      "file": "agents/repoContext.ts",
+      "exportedSymbols": [
+        "loadRepoContext"
+      ],
+      "importedSymbols": [
+        "node:fs",
+        "node:path"
+      ],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": []
+    }
+  ]
 }

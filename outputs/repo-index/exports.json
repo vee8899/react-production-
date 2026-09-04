@@ -2,6 +2,105 @@
   "generatedAt": "deterministic",
   "records": [
     {
+      "file": "agents/codingAgents.test.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "agents/config.ts",
+      "exportedSymbols": [
+        "AgentEnv",
+        "AgentRole",
+        "CodingAgentsConfig",
+        "ConfiguredModel",
+        "DEFAULT_DEEPSEEK_BASE_URL",
+        "DEFAULT_MODELS",
+        "ModelSpec",
+        "ProviderName",
+        "createModel",
+        "loadConfig",
+        "parseModelSpec"
+      ]
+    },
+    {
+      "file": "agents/demo.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "agents/env.ts",
+      "exportedSymbols": [
+        "loadEnv",
+        "loadEnvFiles"
+      ]
+    },
+    {
+      "file": "agents/graph.ts",
+      "exportedSymbols": [
+        "buildCodingAgents"
+      ]
+    },
+    {
+      "file": "agents/index.ts",
+      "exportedSymbols": [
+        "DEFAULT_MODELS",
+        "applyImplementation",
+        "buildCodingAgents",
+        "createCodingAgents",
+        "createModel",
+        "formatPlan",
+        "loadConfig",
+        "loadEnv",
+        "loadEnvFiles",
+        "loadRepoContext",
+        "parseCodeBlocks",
+        "parseModelSpec",
+        "parsePatches",
+        "patchTargetFile",
+        "runCodingAgents",
+        "runCodingAgentsWithRepoContext"
+      ]
+    },
+    {
+      "file": "agents/nodes.ts",
+      "exportedSymbols": [
+        "CodeBlock",
+        "applyImplementation",
+        "formatPlan",
+        "makeCoderNode",
+        "makeOrchestratorNode",
+        "makeReviewerNode",
+        "parseCodeBlocks",
+        "parsePatches",
+        "patchTargetFile"
+      ]
+    },
+    {
+      "file": "agents/repoContext.ts",
+      "exportedSymbols": [
+        "loadRepoContext"
+      ]
+    },
+    {
+      "file": "agents/state.ts",
+      "exportedSymbols": [
+        "AgentState",
+        "CodingAgentsInput",
+        "CodingAgentsResult",
+        "Plan",
+        "PlanSchema",
+        "Review",
+        "ReviewSchema",
+        "StateAnnotation",
+        "toResult"
+      ]
+    },
+    {
+      "file": "agents/types.ts",
+      "exportedSymbols": [
+        "AgentModel",
+        "toAgentModel"
+      ]
+    },
+    {
       "file": "e2e/staging-smoke.spec.ts",
       "exportedSymbols": []
     },
@@ -38,6 +137,26 @@
     },
     {
       "file": "scripts/staging-invite-acceptance.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "scripts/verify-data-sync-workflow.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "scripts/verify-document-workflow.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "scripts/verify-n8n-adapters.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "scripts/verify-n8n-contracts.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "scripts/verify-n8n-workflows.ts",
       "exportedSymbols": []
     },
     {
@@ -562,6 +681,12 @@
       ]
     },
     {
+      "file": "src/pages/SentryExamplePage.tsx",
+      "exportedSymbols": [
+        "SentryExamplePage"
+      ]
+    },
+    {
       "file": "src/pages/WorkflowsPage.tsx",
       "exportedSymbols": [
         "WorkflowsPage"
@@ -617,6 +742,10 @@
     },
     {
       "file": "src/test/SecurityPage.test.tsx",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/test/SentryExamplePage.test.tsx",
       "exportedSymbols": []
     },
     {
@@ -726,6 +855,10 @@
       ]
     },
     {
+      "file": "supabase/functions/configure-alert-route/index.ts",
+      "exportedSymbols": []
+    },
+    {
       "file": "supabase/functions/demo-event/index.ts",
       "exportedSymbols": []
     },
@@ -823,6 +956,14 @@
     },
     {
       "file": "supabase/migrations/20260720000001_api_table_grants.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260901000001_refresh_northstar_demo_examples.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260901000002_seed_northstar_30_day_workload.sql",
       "exportedSymbols": []
     },
     {

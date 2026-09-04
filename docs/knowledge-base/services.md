@@ -17,9 +17,11 @@
 - `src/pages/LoginPage.tsx` — API usage: `supabase.auth.signInWithPassword`
 - `src/test/AcceptInvitePage.test.tsx` — API usage: `supabase.auth.updateUser`
 - `src/test/LoginPage.test.tsx` — API usage: `supabase.auth.signInWithPassword`
+- `src/test/SentryExamplePage.test.tsx` — API usage: `supabase.co`
 - `src/test/posthog.test.ts` — API usage: `supabase.co`
 - `src/test/securityContracts.test.ts` — API usage: `supabase.auth.admin.deleteUser`
 - `src/test/sentry.test.ts` — API usage: `supabase.co`
+- `supabase/functions/configure-alert-route/index.ts` — API usage: None
 - `supabase/functions/demo-event/index.ts` — API usage: `supabase.from`, `supabase.rpc`, `supabase.schema`
 - `supabase/functions/ingest-run/index.ts` — API usage: `supabase.rpc`
 - `supabase/functions/invite-client/index.ts` — API usage: `supabase.auth.admin.deleteUser`, `supabase.auth.admin.inviteUserByEmail`, `supabase.rpc`

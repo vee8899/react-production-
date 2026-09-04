@@ -2,6 +2,136 @@
   "generatedAt": "deterministic",
   "records": [
     {
+      "file": "agents/codingAgents.test.ts",
+      "importedSymbols": [
+        "./config.ts",
+        "./env.ts",
+        "./index.ts",
+        "./repoContext.ts",
+        "./roi.ts",
+        "./types.ts",
+        "@langchain/core/messages",
+        "@langchain/core/runnables",
+        "node:fs",
+        "node:os",
+        "node:path",
+        "vitest"
+      ],
+      "dependencies": [
+        "./config.ts",
+        "./env.ts",
+        "./index.ts",
+        "./repoContext.ts",
+        "./roi.ts",
+        "./types.ts"
+      ]
+    },
+    {
+      "file": "agents/config.ts",
+      "importedSymbols": [
+        "./env.ts",
+        "@langchain/anthropic",
+        "@langchain/core/language_models/chat_models",
+        "@langchain/openai"
+      ],
+      "dependencies": [
+        "./env.ts"
+      ]
+    },
+    {
+      "file": "agents/demo.ts",
+      "importedSymbols": [
+        "./config.ts",
+        "./index.ts"
+      ],
+      "dependencies": [
+        "./config.ts",
+        "./index.ts"
+      ]
+    },
+    {
+      "file": "agents/env.ts",
+      "importedSymbols": [
+        "./config.ts",
+        "dotenv",
+        "node:fs",
+        "node:path"
+      ],
+      "dependencies": [
+        "./config.ts"
+      ]
+    },
+    {
+      "file": "agents/graph.ts",
+      "importedSymbols": [
+        "./config.ts",
+        "./nodes.ts",
+        "./state.ts",
+        "./types.ts",
+        "@langchain/langgraph"
+      ],
+      "dependencies": [
+        "./config.ts",
+        "./nodes.ts",
+        "./state.ts",
+        "./types.ts"
+      ]
+    },
+    {
+      "file": "agents/index.ts",
+      "importedSymbols": [
+        "./config.ts",
+        "./graph.ts",
+        "./repoContext.ts",
+        "./state.ts"
+      ],
+      "dependencies": [
+        "./config.ts",
+        "./graph.ts",
+        "./repoContext.ts",
+        "./state.ts"
+      ]
+    },
+    {
+      "file": "agents/nodes.ts",
+      "importedSymbols": [
+        "./state.ts",
+        "./types.ts",
+        "@langchain/core/messages",
+        "diff"
+      ],
+      "dependencies": [
+        "./state.ts",
+        "./types.ts"
+      ]
+    },
+    {
+      "file": "agents/repoContext.ts",
+      "importedSymbols": [
+        "node:fs",
+        "node:path"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": "agents/state.ts",
+      "importedSymbols": [
+        "@langchain/langgraph",
+        "zod"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": "agents/types.ts",
+      "importedSymbols": [
+        "@langchain/core/language_models/chat_models",
+        "@langchain/core/messages",
+        "@langchain/core/runnables",
+        "zod"
+      ],
+      "dependencies": []
+    },
+    {
       "file": "e2e/staging-smoke.spec.ts",
       "importedSymbols": [
         "@playwright/test"
@@ -69,6 +199,46 @@
       "dependencies": []
     },
     {
+      "file": "scripts/verify-data-sync-workflow.ts",
+      "importedSymbols": [
+        "node:fs",
+        "node:path"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": "scripts/verify-document-workflow.ts",
+      "importedSymbols": [
+        "node:fs",
+        "node:path"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": "scripts/verify-n8n-adapters.ts",
+      "importedSymbols": [
+        "node:fs",
+        "node:path"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": "scripts/verify-n8n-contracts.ts",
+      "importedSymbols": [
+        "node:fs",
+        "node:path"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": "scripts/verify-n8n-workflows.ts",
+      "importedSymbols": [
+        "node:fs",
+        "node:path"
+      ],
+      "dependencies": []
+    },
+    {
       "file": "scripts/verify-supabase.ts",
       "importedSymbols": [
         "node:fs",
@@ -100,6 +270,7 @@
         "@/pages/OnboardingPage",
         "@/pages/RecentActivityPage",
         "@/pages/SecurityPage",
+        "@/pages/SentryExamplePage",
         "@/pages/WorkflowsPage",
         "framer-motion",
         "react",
@@ -127,6 +298,7 @@
         "@/pages/OnboardingPage",
         "@/pages/RecentActivityPage",
         "@/pages/SecurityPage",
+        "@/pages/SentryExamplePage",
         "@/pages/WorkflowsPage"
       ]
     },
@@ -868,24 +1040,15 @@
     {
       "file": "src/pages/HomePage.tsx",
       "importedSymbols": [
-        "@/components/features/DashboardMock",
-        "@/components/features/FAQ",
-        "@/components/features/IntegrationsShowcase",
         "@/components/features/ROICalculator",
-        "@/components/motion/FadeUp",
         "@/components/ui/Footer",
         "@/components/ui/Nav",
         "@/components/ui/SectionHeader",
         "@/utils/contact",
-        "framer-motion",
         "react-router-dom"
       ],
       "dependencies": [
-        "@/components/features/DashboardMock",
-        "@/components/features/FAQ",
-        "@/components/features/IntegrationsShowcase",
         "@/components/features/ROICalculator",
-        "@/components/motion/FadeUp",
         "@/components/ui/Footer",
         "@/components/ui/Nav",
         "@/components/ui/SectionHeader",
@@ -1067,6 +1230,27 @@
       ]
     },
     {
+      "file": "src/pages/SentryExamplePage.tsx",
+      "importedSymbols": [
+        "@/components/motion/FadeUp",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/lib/sentry",
+        "@/utils/env",
+        "react",
+        "react-router-dom"
+      ],
+      "dependencies": [
+        "@/components/motion/FadeUp",
+        "@/components/ui/Footer",
+        "@/components/ui/Nav",
+        "@/components/ui/SectionHeader",
+        "@/lib/sentry",
+        "@/utils/env"
+      ]
+    },
+    {
       "file": "src/pages/WorkflowsPage.tsx",
       "importedSymbols": [
         "@/components/dashboard/WorkflowRow",
@@ -1229,6 +1413,21 @@
       ],
       "dependencies": [
         "@/pages/SecurityPage"
+      ]
+    },
+    {
+      "file": "src/test/SentryExamplePage.test.tsx",
+      "importedSymbols": [
+        "@/lib/sentry",
+        "@/pages/SentryExamplePage",
+        "@testing-library/react",
+        "@testing-library/user-event",
+        "react-router-dom",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/lib/sentry",
+        "@/pages/SentryExamplePage"
       ]
     },
     {
@@ -1415,6 +1614,14 @@
       "dependencies": []
     },
     {
+      "file": "supabase/functions/configure-alert-route/index.ts",
+      "importedSymbols": [
+        "https://deno.land/x/zod@v3.23.8/mod.ts",
+        "https://esm.sh/@supabase/supabase-js@2"
+      ],
+      "dependencies": []
+    },
+    {
       "file": "supabase/functions/demo-event/index.ts",
       "importedSymbols": [
         "https://deno.land/x/zod@v3.23.8/mod.ts",
@@ -1546,6 +1753,16 @@
     },
     {
       "file": "supabase/migrations/20260720000001_api_table_grants.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260901000001_refresh_northstar_demo_examples.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260901000002_seed_northstar_30_day_workload.sql",
       "importedSymbols": [],
       "dependencies": []
     },

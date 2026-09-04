@@ -1,12 +1,13 @@
 import { describe, expect, it } from "vitest";
 import { AIMessageChunk } from "@langchain/core/messages";
 import { RunnableLambda } from "@langchain/core/runnables";
-import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import type { CodingAgentsConfig } from "./config.ts";
 import { loadConfig, parseModelSpec } from "./config.ts";
 import { loadEnvFiles } from "./env.ts";
+import { loadRepoContext } from "./repoContext.ts";
 import { applyImplementation, parseCodeBlocks, parsePatches, patchTargetFile } from "./index.ts";
 import { runCodingAgents } from "./index.ts";
 import type { AgentModel } from "./types.ts";
@@ -226,6 +227,26 @@ describe("loadEnvFiles", () => {
       }
     } finally {
       rmSync(dir, { recursive: true, force: true });
+    }
+  });
+});
+
+describe("loadRepoContext", () => {
+  it("includes the repository alignment contract before generated navigation context", () => {
+    const root = mkdtempSync(join(tmpdir(), "agents-context-"));
+    try {
+      writeFileSync(join(root, "AGENT.md"), "# Repository alignment\n\nFollow the change contract.\n");
+      const knowledgeDirectory = join(root, "docs", "knowledge-base");
+      mkdirSync(knowledgeDirectory, { recursive: true });
+      writeFileSync(join(knowledgeDirectory, "architecture.md"), "# Architecture\n\nGenerated navigation.\n");
+
+      const context = loadRepoContext(root);
+
+      expect(context).toContain("## AGENT.md\n# Repository alignment");
+      expect(context).toContain("## docs/knowledge-base/architecture.md\n# Architecture");
+      expect(context.indexOf("## AGENT.md")).toBeLessThan(context.indexOf("## docs/knowledge-base/architecture.md"));
+    } finally {
+      rmSync(root, { recursive: true, force: true });
     }
   });
 });

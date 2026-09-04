@@ -20,6 +20,7 @@
 - `src/lib/legalConsent.ts` — `cookie_preferences`, `legal_consents`, `legal_documents`
 - `src/pages/DemoPage.tsx` — `leads`
 - `src/test/securityContracts.test.ts` — `alter table`
+- `supabase/functions/configure-alert-route/index.ts` — `integrations`, `organization_members`
 - `supabase/functions/demo-event/index.ts` — `appointments`, `clients`, `leads`, `listings`, `workflows`
 - `supabase/migrations/20260701000000_base_schema.sql` — `create table`, `select 1 from`
 - `supabase/migrations/20260703000001_automation_runs_contract.sql` — `alter table`, `select 1 from`
@@ -43,5 +44,7 @@
 - `supabase/migrations/20260717000003_expand_demo_services.sql` — `insert into`
 - `supabase/migrations/20260717000004_expand_demo_workflows.sql` — `insert into`, `select id into v_workflow_id from`
 - `supabase/migrations/20260720000001_api_table_grants.sql` — None
+- `supabase/migrations/20260901000001_refresh_northstar_demo_examples.sql` — `insert into`, `select id from`
+- `supabase/migrations/20260901000002_seed_northstar_30_day_workload.sql` — `insert into`
 
 The generated database index contains file-level usage. Verify schema semantics in the SQL migrations before changing client isolation or automation ingestion. Use the Supabase/database MCP or `npm run db:dry-run` only against local or staging; production is outside the default MCP boundary.

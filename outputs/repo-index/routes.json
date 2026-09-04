@@ -137,6 +137,11 @@
       "protected": true
     },
     {
+      "route": "/sentry-example-page",
+      "file": "src/App.tsx",
+      "protected": true
+    },
+    {
       "route": "/workflows",
       "file": "src/App.tsx",
       "protected": true
@@ -259,6 +264,11 @@
     {
       "route": "/",
       "file": "src/pages/SecurityPage.tsx",
+      "protected": false
+    },
+    {
+      "route": "/",
+      "file": "src/pages/SentryExamplePage.tsx",
       "protected": false
     },
     {

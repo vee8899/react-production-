@@ -2,6 +2,10 @@
 
 This directory contains the documentation that should be read and maintained by the team. Start with the root [`README.md`](../README.md) for setup and the short project overview.
 
+For every codebase change, follow [`AGENT.md`](../AGENT.md) as the repository-wide
+change-control contract. It requires a scoped intended behavior, verification evidence,
+and an explicit decision for any conflict between authored documentation and implementation.
+
 ## Choose a document by the question you have
 
 | Question | Location |
@@ -39,7 +43,7 @@ The most commonly used runbooks are:
 - [`deployment.md`](runbooks/deployment.md)
 - [`debugging.md`](runbooks/debugging.md)
 
-If a runbook is missing a decision, prerequisite, verification step, or rollback path, update it when you discover the gap.
+If a runbook is missing a decision, prerequisite, verification step, or rollback path, update it when you discover the gap. If the gap conflicts with the implementation, stop and record an explicit decision under the repository-wide change-control contract before changing either source.
 
 ## ADRs
 

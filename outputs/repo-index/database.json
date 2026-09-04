@@ -474,6 +474,22 @@
       ]
     },
     {
+      "file": "supabase/functions/configure-alert-route/index.ts",
+      "exportedSymbols": [],
+      "importedSymbols": [
+        "https://deno.land/x/zod@v3.23.8/mod.ts",
+        "https://esm.sh/@supabase/supabase-js@2"
+      ],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "integrations",
+        "organization_members"
+      ]
+    },
+    {
       "file": "supabase/functions/demo-event/index.ts",
       "exportedSymbols": [],
       "importedSymbols": [
@@ -752,6 +768,31 @@
       "databaseUsage": [
         "insert into",
         "select id into v_workflow_id from"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260901000001_refresh_northstar_demo_examples.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "insert into",
+        "select id from"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260901000002_seed_northstar_30_day_workload.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "insert into"
       ]
     }
   ]

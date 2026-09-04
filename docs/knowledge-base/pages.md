@@ -17,4 +17,5 @@
 - `src/pages/OnboardingPage.tsx` — exports `OnboardingPage`
 - `src/pages/RecentActivityPage.tsx` — exports `RecentActivityPage`
 - `src/pages/SecurityPage.tsx` — exports `SecurityPage`
+- `src/pages/SentryExamplePage.tsx` — exports `SentryExamplePage`
 - `src/pages/WorkflowsPage.tsx` — exports `WorkflowsPage`

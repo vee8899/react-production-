@@ -18,6 +18,38 @@
       ]
     },
     {
+      "name": "@langchain/anthropic",
+      "version": "^1.5.2",
+      "usedBy": [
+        "agents/config.ts"
+      ]
+    },
+    {
+      "name": "@langchain/core",
+      "version": "^1.2.4",
+      "usedBy": [
+        "agents/codingAgents.test.ts",
+        "agents/config.ts",
+        "agents/nodes.ts",
+        "agents/types.ts"
+      ]
+    },
+    {
+      "name": "@langchain/langgraph",
+      "version": "^1.4.9",
+      "usedBy": [
+        "agents/graph.ts",
+        "agents/state.ts"
+      ]
+    },
+    {
+      "name": "@langchain/openai",
+      "version": "^1.5.5",
+      "usedBy": [
+        "agents/config.ts"
+      ]
+    },
+    {
       "name": "@playwright/test",
       "version": "^1.61.1",
       "usedBy": [
@@ -109,6 +141,7 @@
         "src/test/ProtectedRoute.test.tsx",
         "src/test/RunsFeed.test.tsx",
         "src/test/SecurityPage.test.tsx",
+        "src/test/SentryExamplePage.test.tsx",
         "src/test/serviceSubscriptions.test.tsx",
         "src/test/useDashboardMetrics.test.tsx",
         "src/test/useRunDetails.test.tsx",
@@ -120,8 +153,14 @@
       "version": "^14.6.1",
       "usedBy": [
         "src/test/AcceptInvitePage.test.tsx",
-        "src/test/LoginPage.test.tsx"
+        "src/test/LoginPage.test.tsx",
+        "src/test/SentryExamplePage.test.tsx"
       ]
+    },
+    {
+      "name": "@types/diff",
+      "version": "^7.0.2",
+      "usedBy": []
     },
     {
       "name": "@types/node",
@@ -143,6 +182,20 @@
       "version": "^6.0.2",
       "usedBy": [
         "vite.config.ts"
+      ]
+    },
+    {
+      "name": "diff",
+      "version": "^9.0.0",
+      "usedBy": [
+        "agents/nodes.ts"
+      ]
+    },
+    {
+      "name": "dotenv",
+      "version": "^17.4.2",
+      "usedBy": [
+        "agents/env.ts"
       ]
     },
     {
@@ -176,8 +229,7 @@
         "src/components/features/ROICalculator.tsx",
         "src/components/motion/FadeUp.tsx",
         "src/components/motion/PageTransition.tsx",
-        "src/components/ui/ProjectCard.tsx",
-        "src/pages/HomePage.tsx"
+        "src/components/ui/ProjectCard.tsx"
       ]
     },
     {
@@ -231,6 +283,7 @@
         "src/pages/LoginPage.tsx",
         "src/pages/OnboardingPage.tsx",
         "src/pages/RecentActivityPage.tsx",
+        "src/pages/SentryExamplePage.tsx",
         "src/test/useDashboardMetrics.test.tsx",
         "src/test/useRunDetails.test.tsx",
         "src/test/useRuns.test.tsx"
@@ -289,6 +342,7 @@
         "src/pages/OnboardingPage.tsx",
         "src/pages/RecentActivityPage.tsx",
         "src/pages/SecurityPage.tsx",
+        "src/pages/SentryExamplePage.tsx",
         "src/test/AcceptInvitePage.test.tsx",
         "src/test/AuditTrail.test.tsx",
         "src/test/DashboardPage.test.tsx",
@@ -297,7 +351,8 @@
         "src/test/OperationsMenu.test.tsx",
         "src/test/ProtectedRoute.test.tsx",
         "src/test/RunsFeed.test.tsx",
-        "src/test/SecurityPage.test.tsx"
+        "src/test/SecurityPage.test.tsx",
+        "src/test/SentryExamplePage.test.tsx"
       ]
     },
     {
@@ -335,6 +390,7 @@
       "name": "vitest",
       "version": "^4.1.9",
       "usedBy": [
+        "agents/codingAgents.test.ts",
         "src/test/AcceptInvitePage.test.tsx",
         "src/test/AuditTrail.test.tsx",
         "src/test/DashboardPage.test.tsx",
@@ -345,6 +401,7 @@
         "src/test/ProtectedRoute.test.tsx",
         "src/test/RunsFeed.test.tsx",
         "src/test/SecurityPage.test.tsx",
+        "src/test/SentryExamplePage.test.tsx",
         "src/test/demoData.test.ts",
         "src/test/legalConsent.test.ts",
         "src/test/onboarding.test.ts",
@@ -365,6 +422,8 @@
       "name": "zod",
       "version": "^4.4.3",
       "usedBy": [
+        "agents/state.ts",
+        "agents/types.ts",
         "src/pages/AcceptInvitePage.tsx",
         "src/pages/LegalConsentPage.tsx",
         "src/pages/LoginPage.tsx"
