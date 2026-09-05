@@ -1,5 +1,7 @@
 # Site Audit: react-production.pages.dev
 
+> Historical site audit. Original observation date and tested revision were not recorded. The observations below may be superseded; see the [reference index](README.md) and current specifications before acting on them.
+
 ## Brand
 - Nav: "STUDIO"
 - Footer: "PRIMESTATE SYSTEMS"
@@ -20,7 +22,7 @@
 4. No end-of-page conversion point. After calculator shows "$1,669 estimated annual savings", no CTA. Add "Book a discovery call" form/email/scheduling link
 5. Polish: "System Data synchronization" inconsistent caps vs "Business Insights"; hero dead space above headline (striking but could carry subtle visual); FAQ only 4 questions, add pricing/engagement-model question
 
-## Dashboard (demo@northstar.example / stackoverflow)
+## Dashboard (historical demo workspace; credentials removed)
 - 4 stats: 8 runs/30d, 75% success, 75 records, 4s avg
 - Grid: 8 service modules all "Active"
 - Subscribed: "Real Estate Operations" module card

@@ -16,7 +16,8 @@ const by = (predicate: (path: string) => boolean) => records.filter((record) => 
 
 const indexes: Record<string, unknown> = {
   components: by((path) => path.includes("/components/")),
-  routes: map.files.flatMap((file) => file.routes.map((route) => ({ route, file: file.path, protected: file.path === "src/App.tsx" && route !== "/" && route !== "/login" && route !== "/accept-invite" }))),
+  // Text matches cannot determine wrapper execution or authorization.
+  routes: sourceFiles.flatMap((file) => file.routes.map((route) => ({ route, file: file.path, protected: null }))),
   hooks: by((path) => path.includes("/hooks/")),
   contexts: records.filter((record) => record.exportedSymbols.some((symbol) => /Context|Provider$/.test(symbol))),
   services: by((path) => path.includes("/api/") || path.includes("/services/")),
@@ -28,5 +29,5 @@ const indexes: Record<string, unknown> = {
   files: map.files,
 };
 
-for (const [name, value] of Object.entries(indexes)) writeFileSync(join(output, `${name}.json`), stableJson({ generatedAt: map.generatedAt, ...({ records: value } as object) }), "utf8");
+for (const [name, value] of Object.entries(indexes)) writeFileSync(join(output, `${name}.json`), stableJson({ generatedAt: map.generatedAt, scanMethod: "approximate source-text matches; not runtime or authorization evidence", ...({ records: value } as object) }), "utf8");
 console.log(`Indexed ${map.files.length} files into ${output}`);

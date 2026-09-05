@@ -1,5 +1,7 @@
 This file explains how Visual Studio created the project.
 
+> Historical project-scaffolding record. This is not an ongoing product changelog or release-verification record. Original scaffolding date and revision were not recorded.
+
 The following tools were used to generate this project:
 - create-vite
 

@@ -18,13 +18,11 @@ Apply it to every change, not only test work.
 
 1. State the intended behavior and scope before implementation, then keep the diff limited to that purpose.
 2. Record the verification performed and every skipped relevant check, including why it was skipped.
-3. Do not silently resolve a conflict between authored documentation and the current implementation. Stop, flag the conflict, and obtain or record an explicit decision before changing either source.
+3. Correct factual documentation drift (such as stale paths, commands, or descriptions) against the implementation and record the correction. When a behavior change is already authorized, update its specification and implementation together and cite that decision; do not request the same approval again. Pause only the dependent work when an unresolved product, security, compatibility, or operational decision would change the intended contract. Continue unrelated authorized work while that decision is pending.
 4. Update authored documentation whenever an approved behavior, operational procedure, or interface changes its claims. Do not edit generated knowledge by hand.
 5. Report assumptions, known limitations, and follow-up ownership as explicit exceptions; do not hide them in general review notes.
 
-Generated knowledge is navigation aid only. Authored specifications, ADRs, runbooks,
-and implementation are all required inputs to a change; an unresolved disagreement
-between them is a blocker, not an invitation to guess.
+Use each source for its own purpose: code and migrations describe implemented behavior; specifications define required behavior; ADRs record accepted decisions and their reasons; runbooks describe operations and verification; plans describe remaining work; dated evidence records what was actually tested. A mismatch between code and an accepted specification may be a bug, not a reason to redefine the specification to match it. Generated knowledge is an approximate navigation aid and cannot establish correctness or release readiness.
 
 ## Repository boundaries
 
@@ -45,16 +43,18 @@ between them is a blocker, not an invitation to guess.
 
 ## Security and tenancy
 
-The browser may use only `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`. Webhook secrets, admin invite secrets, service-role credentials, and n8n credentials must remain in server-side or host configuration.
+The browser's Supabase client may use `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`. Other deliberately public browser settings, including telemetry project tokens and DSNs, are documented in `docs/environments.md`. Webhook secrets, admin invite secrets, service-role credentials, and n8n credentials must remain in server-side or host configuration.
 
 Supabase Row Level Security protects organization-scoped data. Do not rely on route guards or hidden UI to enforce tenant isolation. When changing queries, mutations, migrations, or Edge Functions, verify that a client cannot read or write another organization’s data.
 
-The two trusted HTTP boundaries are:
+The two operator/integration-only HTTP boundaries are:
 
 - `supabase/functions/ingest-run/` for authenticated n8n event ingestion via `X-Webhook-Secret`.
 - `supabase/functions/invite-client/` for operator-controlled client provisioning via `X-Admin-Invite-Secret`.
 
 Neither function should be treated as a browser API.
+
+`demo-event` and `configure-alert-route` are separate authenticated endpoints. Verify their bearer-token and organization checks when changing them; a browser route guard does not authorize their server-side writes.
 
 ## Data and workflow rules
 
@@ -84,7 +84,7 @@ to record that evidence.
 
 Use `docs/README.md` to find the right document. Specs describe expected behavior, architecture notes describe system boundaries, ADRs record decisions, and runbooks describe repeatable operational tasks.
 
-`knowledge/` is produced by `npm.cmd run ingest` and `npm.cmd run index`. Run `npm.cmd run refresh-ai` after implementation changes, review the generated diff, and keep authored docs separate from generated output. The ingestion script must not overwrite hand-written specs, ADRs, or runbooks.
+`npm.cmd run ingest` produces `docs/knowledge-base/` and maintains redirect notices for legacy files in `docs/generated/`; `npm.cmd run index` produces `outputs/repo-index/`. Run `npm.cmd run refresh-ai` after implementation changes and review the generated diff. Change the generator to correct generated output; do not edit that output by hand. Authored specifications, ADRs, runbooks, plans, and evidence must not be overwritten by generation. See `docs/README.md` for document authority and status conventions.
 
 ## Style of collaboration
 

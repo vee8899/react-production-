@@ -8,12 +8,17 @@
 
 ## Local checks
 
+Prerequisites: Node.js 24 and installed npm dependencies for the inventory check; Docker, Supabase CLI, and a running disposable local database with migrations applied for executable database tests. Run commands from the repository root.
+
 ```powershell
 npm.cmd run db:check
 npm.cmd run lint
 npm.cmd run test -- --run
 npm.cmd run build
+npm.cmd run db:test
 ```
+
+`db:check` reads local migration files and validates environment inputs. Success means the expected inventory was found; it does not connect to Postgres, verify applied migrations, enforce RLS, or validate the CLI's linked target. `db:test` executes the local pgTAP suite and must report passing assertions. If the database is unavailable, record the test as blocked, not passed. See [RLS testing](rls-testing.md).
 
 ## Staging procedure
 
@@ -25,6 +30,8 @@ npm.cmd run build
 6. Verify table inventory, RLS, indexes, RPC signatures, and canonical `workflow_runs` data.
 7. Test tenant isolation with at least two accounts.
 8. Deploy affected Edge Functions after the database migration succeeds.
+
+`db:dry-run` invokes `supabase db push --dry-run` for the CLI's linked project. Confirm the link separately before invoking it; setting `SUPABASE_ENV` for `db:check` does not change the CLI target. Stop on an unexpected project, failed assertion, or unexplained destructive operation. Record the revision, environment, migration versions, dry-run output, and executable test results. A successful preview does not apply migrations or prove application behavior.
 
 ## Production procedure
 

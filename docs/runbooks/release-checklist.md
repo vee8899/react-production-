@@ -30,7 +30,7 @@ executable [production launch checklist](production-launch-checklist.md).
 
 ## Database and functions
 
-- [ ] `npm.cmd run db:check` was run against the intended target.
+- [ ] `npm.cmd run db:check` passed as a local migration-inventory check; the actual CLI/database target was independently confirmed.
 - [ ] `npm.cmd run db:dry-run` was reviewed.
 - [ ] Migrations were applied in order.
 - [ ] RLS and tenant ownership changes were reviewed.

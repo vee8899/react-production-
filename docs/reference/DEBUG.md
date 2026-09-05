@@ -1,5 +1,7 @@
 # DEBUG.md
 
+> Historical debug notes, superseded by the [debugging runbook](../runbooks/debugging.md). Original date and revision were not recorded. In particular, auth bootstrap starts before rendering but resolves asynchronously.
+
 Use this file when auth or navigation behavior breaks.
 
 ## Known debug areas

@@ -83,7 +83,7 @@ The Vite server normally runs at `http://localhost:52124`. Vite may choose anoth
 | `npm.cmd run test:e2e:staging` | Run staging browser E2E checks |
 | `npm.cmd run acceptance:invite:staging` | Exercise the staging invite Edge Function |
 | `npm.cmd run acceptance:ingest:staging` | Exercise staging workflow ingestion and idempotency |
-| `npm.cmd run db:check` | Check the configured Supabase environment |
+| `npm.cmd run db:check` | Check local migration inventory and local/staging environment inputs; no database connection |
 | `npm.cmd run db:dry-run` | Preview migrations through the Supabase CLI |
 | `npm.cmd run db:test` | Run executable local Postgres RLS isolation tests |
 | `npm.cmd run ingest` | Refresh generated repository knowledge |
@@ -127,7 +127,7 @@ Before opening a pull request, run lint, tests, and build. If a change affects t
 - `docs/` — authored architecture notes, specifications, ADRs, and runbooks
 - `docs/knowledge-base/` — generated implementation maps for navigation and coding-agent context
 
-The implementation is the source of truth. If a note disagrees with the code or migrations, verify the implementation and update the note.
+Code and migrations establish what is implemented; specifications establish what is required. Verify disagreements before deciding whether the documentation is stale or the implementation has a bug. Correct factual drift and record authorized behavior changes using the [documentation authority rules](docs/README.md#authority-and-status).
 
 ## Authentication and tenancy
 

@@ -1,5 +1,7 @@
 # Feature spec: Authenticated client dashboard
 
+Status: required behavior. The criteria below define expectations, not a claim that all paths have passed runtime verification.
+
 ## Purpose
 
 Give an authenticated client a clear view of subscribed services, workflow activity, run outcomes, and business metrics.
@@ -36,3 +38,11 @@ Give an authenticated client a clear view of subscribed services, workflow activ
 - Service visibility matches the client’s provisioned services.
 - A failed query produces a recoverable UI state.
 - The dashboard uses canonical `workflow_runs` data.
+
+## Known implementation gaps and evidence
+
+As inspected on 2026-09-05, the metrics hook can return zero metrics after query failures, and the statistics/demo consumers do not distinguish all loading and refresh-error states. The recoverable-error requirement above remains valid; do not rewrite it to justify the bug. [Reliability phase 2](../plans/reliability-hardening/phase-2-application-reliability.md) owns the approved correction, including snapshot fallback only after a successful empty canonical query.
+
+The current main dashboard composes statistics, an activity chart, subscribed services, execution history, and audit trail. The real-estate schema is available elsewhere in the portal; this specification does not establish that a dedicated real-estate metrics panel is mounted on the main dashboard.
+
+Record the tested revision, environment, scenarios, and command outcomes when verifying these criteria. Mocked component labels and a passing build alone do not establish database isolation or complete error handling.

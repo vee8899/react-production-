@@ -1,16 +1,22 @@
-# ADR: Routing
+# ADR: Browser routes and access gates
+
+Status: current implementation documented retrospectively on 2026-09-05. The original decision date and deliberations are not recorded. The tradeoffs below are a present maintenance assessment, not invented historical evidence.
 
 ## Context
-The repository is a React + TypeScript client portal with Supabase integration.
 
-## Decision
-Use the patterns currently implemented in the repository and keep this decision aligned with the generated knowledge files.
+The same application serves public URLs, authenticated operations, and invite/consent transitions.
 
-## Rationale
-This keeps the codebase navigable for humans and coding agents while preserving clear boundaries.
+## Current decision
 
-## Alternatives
-A wholesale framework or state-layer replacement was not selected because it would expand scope without solving a current product need.
+- BrowserRouter owns navigation; App declares routes and lazy-loaded pages.
+- ProtectedRoute waits for authentication and redirects anonymous access to /login. Most protected routes also require the consent gate.
+- Recent activity has list and detail URLs; legal documents are public, while consent/settings have their own protected transitions.
+- Unknown paths redirect to the home route. The container's nginx configuration falls back to index.html for client-side navigation.
 
-## Consequences
-Future changes should update the implementation first, then run `npm run refresh-ai` and review the generated indexes.
+## Rationale and alternatives
+
+Explicit routes make access wrappers and deep links reviewable. Server routing alone would require separate browser navigation wiring; file-based routing is not used. SPA fallback must be configured at any hosting provider, and a route wrapper does not replace endpoint/database authorization. Generated route matches do not determine which wrappers execute.
+
+## Verification and references
+
+Inspect [App](../../src/App.tsx), [bootstrap](../../src/main.tsx), [nginx fallback](../../nginx.conf), and [activity specification](../specs/workflow-activity.md).

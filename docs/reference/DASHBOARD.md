@@ -1,5 +1,7 @@
 # DASHBOARD.md
 
+> Historical dashboard notes. Original date and revision were not recorded. Current requirements are in the [dashboard specification](../specs/authenticated-client-dashboard.md); the old inventory below is not a current feature list.
+
 This repo already contains the data plumbing for the authenticated experience.
 
 ## Current behavior

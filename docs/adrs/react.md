@@ -1,16 +1,21 @@
-# ADR: React architecture
+# ADR: React application composition
+
+Status: current implementation documented retrospectively on 2026-09-05. The original decision date and deliberations are not recorded. The tradeoffs below are a present maintenance assessment, not invented historical evidence.
 
 ## Context
-The repository is a React + TypeScript client portal with Supabase integration.
 
-## Decision
-Use the patterns currently implemented in the repository and keep this decision aligned with the generated knowledge files.
+The public landing pages and client operations screens share navigation, styles, and browser dependencies.
 
-## Rationale
-This keeps the codebase navigable for humans and coding agents while preserving clear boundaries.
+## Current decision
 
-## Alternatives
-A wholesale framework or state-layer replacement was not selected because it would expand scope without solving a current product need.
+- Use a React client application mounted from main.tsx, with providers composed at bootstrap.
+- Define route-level screens in pages and reusable UI in components. Data hooks and domain helpers sit outside route JSX.
+- Lazy-load route modules through App and provide Suspense loading and error-boundary handling. React StrictMode wraps the application during development.
 
-## Consequences
-Future changes should update the implementation first, then run `npm run refresh-ai` and review the generated indexes.
+## Rationale and alternatives
+
+This composition permits shared UI and route-level bundling without a server-rendering runtime. The tradeoff is browser startup work and JavaScript-dependent page content. Server rendering or a full-stack framework could change those tradeoffs but is not part of the current implementation. Adding a new abstraction should solve a repeated boundary problem rather than reproduce the folder tree.
+
+## Verification and references
+
+Inspect [bootstrap](../../src/main.tsx), [route composition](../../src/App.tsx), [error boundary](../../src/components/ErrorBoundary.tsx), and [folder ADR](folders.md).

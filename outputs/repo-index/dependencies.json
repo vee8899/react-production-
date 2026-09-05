@@ -1,5 +1,6 @@
 {
   "generatedAt": "deterministic",
+  "scanMethod": "approximate source-text matches; not runtime or authorization evidence",
   "records": [
     {
       "name": "@eslint/js",
@@ -386,6 +387,7 @@
       "version": "^4.1.11",
       "usedBy": [
         "agents/codingAgents.test.ts",
+        "scripts/knowledge.test.ts",
         "src/test/AcceptInvitePage.test.tsx",
         "src/test/AuditTrail.test.tsx",
         "src/test/DashboardPage.test.tsx",

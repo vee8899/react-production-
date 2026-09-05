@@ -1,16 +1,22 @@
-# ADR: State management
+# ADR: Client state and server cache
+
+Status: current implementation documented retrospectively on 2026-09-05. The original decision date and deliberations are not recorded. The tradeoffs below are a present maintenance assessment, not invented historical evidence.
 
 ## Context
-The repository is a React + TypeScript client portal with Supabase integration.
 
-## Decision
-Use the patterns currently implemented in the repository and keep this decision aligned with the generated knowledge files.
+Session identity, cached database data, and temporary UI choices have different lifetimes.
 
-## Rationale
-This keeps the codebase navigable for humans and coding agents while preserving clear boundaries.
+## Current decision
 
-## Alternatives
-A wholesale framework or state-layer replacement was not selected because it would expand scope without solving a current product need.
+- Zustand holds auth session and loading state.
+- React Query owns server requests and cache state. Hooks include relevant client or organization identifiers in query keys and filter database reads where implemented.
+- Component state owns transient inputs such as selected date windows, menu visibility, and active demo actions.
+- Bootstrap configures a 60-second query stale time, one retry, and no refetch on window focus; individual hooks can override query behavior.
 
-## Consequences
-Future changes should update the implementation first, then run `npm run refresh-ai` and review the generated indexes.
+## Rationale and alternatives
+
+This keeps database response lifecycles out of the auth store while avoiding a global store for every input. Putting all responses in Zustand would require custom invalidation and loading/error management. Separate layers require deliberate cache keys and mutation invalidation; keys themselves do not enforce tenancy. The current sign-out hook does not explicitly clear the QueryClient cache.
+
+## Verification and references
+
+Inspect [bootstrap](../../src/main.tsx), [auth store](../../src/store/authStore.ts), [client hook](../../src/hooks/useClient.ts), and [demo mutations](../../src/pages/DemoPage.tsx). Visible query failure handling is planned in [phase 2](../plans/reliability-hardening/phase-2-application-reliability.md).

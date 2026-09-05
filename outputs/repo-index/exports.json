@@ -1,5 +1,6 @@
 {
   "generatedAt": "deterministic",
+  "scanMethod": "approximate source-text matches; not runtime or authorization evidence",
   "records": [
     {
       "file": "agents/codingAgents.test.ts",
@@ -121,6 +122,18 @@
     {
       "file": "scripts/ingest.ts",
       "exportedSymbols": []
+    },
+    {
+      "file": "scripts/knowledge.test.ts",
+      "exportedSymbols": [
+        "App"
+      ]
+    },
+    {
+      "file": "scripts/knowledge.ts",
+      "exportedSymbols": [
+        "writeKnowledge"
+      ]
     },
     {
       "file": "scripts/repo-map.ts",

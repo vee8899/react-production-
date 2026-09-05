@@ -1,5 +1,6 @@
 {
   "generatedAt": "deterministic",
+  "scanMethod": "approximate source-text matches; not runtime or authorization evidence",
   "records": [
     {
       "file": "agents/codingAgents.test.ts",
@@ -171,8 +172,35 @@
     {
       "file": "scripts/ingest.ts",
       "importedSymbols": [
+        "./knowledge.ts",
         "./repo-map.ts",
         "node:fs",
+        "node:path"
+      ],
+      "dependencies": [
+        "./knowledge.ts",
+        "./repo-map.ts"
+      ]
+    },
+    {
+      "file": "scripts/knowledge.test.ts",
+      "importedSymbols": [
+        "./knowledge.ts",
+        "./repo-map.ts",
+        "node:fs",
+        "node:os",
+        "node:path",
+        "vitest"
+      ],
+      "dependencies": [
+        "./knowledge.ts",
+        "./repo-map.ts"
+      ]
+    },
+    {
+      "file": "scripts/knowledge.ts",
+      "importedSymbols": [
+        "./repo-map.ts",
         "node:path"
       ],
       "dependencies": [

@@ -1,5 +1,7 @@
 # Workflow Health Dashboard
 
+Status: proposed feature direction. This document defines intended health scoring and future UI; it is not a claim that those calculations or screens are implemented. Use the [current dashboard contract](authenticated-client-dashboard.md) for existing required behavior and [product roadmap](../future-product-roadmap.md) for planning. Delivery and verification evidence are not recorded here.
+
 ## Purpose
 
 Workflow health should give clients a fast answer to three questions:

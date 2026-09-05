@@ -1,5 +1,7 @@
 # UI.md
 
+> Historical UI notes. Original date and revision were not recorded. Use the [styling ADR](../adrs/styling.md), [landing specification](../specs/public-landing-experience.md), and current source for present behavior.
+
 This repo uses a restrained studio aesthetic with warm off-white backgrounds, near-black type, and sparse navigation.
 
 ## Current design system

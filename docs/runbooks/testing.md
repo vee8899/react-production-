@@ -8,7 +8,7 @@ Run the suite once from the repository root:
 npm.cmd run test -- --run
 ```
 
-Vitest and Testing Library tests live under `src/test/`. The test setup is in `src/test/setup.ts`.
+Application Vitest/Testing Library tests live under `src/test/`; the agents library also has tests under `agents/`, and repository-tooling tests live under `scripts/`. The shared setup is `src/test/setup.ts`. Browser E2E lives separately under `e2e/`. A passing unit suite does not execute the local Postgres or staging checks unless those are separately invoked.
 
 ## Choose the right test coverage
 

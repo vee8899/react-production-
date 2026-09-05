@@ -22,7 +22,7 @@ Copy `.env.mcp.example` to `.env.mcp` for local setup. The file is ignored by Gi
 3. Run `npm.cmd run db:dry-run` against local or staging.
 4. Apply the migration through the database MCP or Supabase CLI.
 5. Re-run `npm.cmd run refresh-ai`.
-6. Confirm `knowledge-base/database.md` and `../outputs/repo-index/database.json` reflect the schema.
+6. Review [generated database matches](knowledge-base/database.md) and the [repository database index](../outputs/repo-index/database.json) as navigation aids. Inspect the migrations and execute database tests for schema and RLS semantics; generated matches do not verify them.
 
 Direct undocumented schema writes are not allowed. Production migrations, resets, destructive SQL, and rollback operations require explicit approval.
 

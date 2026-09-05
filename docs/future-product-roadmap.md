@@ -1,5 +1,7 @@
 # Prime State Systems — Future Product Roadmap
 
+Status: planning document, not a current implementation or release-status report. Week ranges below are relative planning estimates with no recorded start date or delivery commitment. Features may already be partly implemented; verify source and dated evidence before changing completion marks. The roadmap phases are separate from the three [reliability implementation phases](plans/reliability-hardening/README.md), whose overview owns their current status.
+
 ## Product direction
 
 Build a reliable, observable automation platform that gives real-estate clients clear visibility into what their workflows are doing and gives operators safe control over failures, integrations, and onboarding.

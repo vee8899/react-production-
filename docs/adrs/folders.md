@@ -1,16 +1,21 @@
-# ADR: Folder organization
+# ADR: Repository boundaries
+
+Status: current implementation documented retrospectively on 2026-09-05. The original decision date and deliberations are not recorded. The tradeoffs below are a present maintenance assessment, not invented historical evidence.
 
 ## Context
-The repository is a React + TypeScript client portal with Supabase integration.
 
-## Decision
-Use the patterns currently implemented in the repository and keep this decision aligned with the generated knowledge files.
+The repository contains browser UI, database migrations and HTTP handlers, automation exports, coding-agent tooling, and authored documentation.
 
-## Rationale
-This keeps the codebase navigable for humans and coding agents while preserving clear boundaries.
+## Current decision
 
-## Alternatives
-A wholesale framework or state-layer replacement was not selected because it would expand scope without solving a current product need.
+- Keep route screens in src/pages, shared UI in src/components, data access in src/hooks and src/api, and domain behavior in src/lib.
+- Keep trusted database/function behavior under supabase and external workflow exports under n8n. The agents library is a separate Node compiler project.
+- Keep authored specs, decisions, runbooks, plans, and evidence in docs. Generated navigation belongs in docs/knowledge-base and outputs/repo-index.
 
-## Consequences
-Future changes should update the implementation first, then run `npm run refresh-ai` and review the generated indexes.
+## Rationale and alternatives
+
+The separation makes privileged code and operational artifacts easier to locate during review. A single feature-directory layout could colocate more files but would change established navigation and import boundaries. Avoid a repository-wide move without a concrete maintenance need; folders do not enforce security by themselves.
+
+## Verification and references
+
+Inspect [documentation authority](../README.md#authority-and-status), [repository change contract](../../AGENT.md), and [package commands](../../package.json).

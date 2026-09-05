@@ -1,5 +1,6 @@
 {
   "generatedAt": "deterministic",
+  "scanMethod": "approximate source-text matches; not runtime or authorization evidence",
   "records": [
     {
       "file": "scripts/repo-map.ts",

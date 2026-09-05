@@ -2,7 +2,7 @@
 
 This runbook describes the current controlled deployment process. It is intentionally provider-neutral: the repository can build a container, but the hosting provider and production deployment credentials are not defined here.
 
-Do not treat a green GitHub Actions run as proof that production is healthy. CI proves that the repository builds and tests; the release checklist proves that the deployed system works.
+Do not treat a green GitHub Actions run as proof that production is healthy. CI records the checks it executed for one revision. The release checklist defines required verification; dated results from the deployed environment supply the evidence.
 
 ## Before deployment
 
@@ -10,7 +10,7 @@ Do not treat a green GitHub Actions run as proof that production is healthy. CI 
 2. Confirm the release commit and review the changes since the previous release.
 3. Confirm the required secrets are configured without copying their values into the repository.
 4. Confirm CI is green for the exact commit being released.
-5. Complete [`release-checklist.md`](release-checklist.md).
+5. Complete the before-release items in [`release-checklist.md`](release-checklist.md); record post-deployment results after deployment.
 
 Never deploy directly from an uncommitted working tree.
 
@@ -29,8 +29,8 @@ Do not promote the release if any check fails.
 ## Supabase deployment order
 
 1. Confirm the target is local, staging, or the approved production project.
-2. Run `npm.cmd run db:check` against the intended non-production or approved target.
-3. Review `npm.cmd run db:dry-run` output.
+2. Run `npm.cmd run db:check` as a local migration-inventory preflight. It accepts only local/staging environment inputs, makes no database connection, and must not be presented as production verification.
+3. Confirm the CLI's linked project independently and review `npm.cmd run db:dry-run` output for the approved target. This script invokes the linked-project CLI operation; `db:check` does not select or validate that link. Use the [database migration procedure](database-migrations.md).
 4. Check whether the migration changes RLS, tenant ownership, canonical `workflow_runs`, or compatibility data.
 5. Apply the reviewed migration through the approved Supabase process.
 6. Deploy `ingest-run`.
@@ -45,6 +45,8 @@ The Docker workflow publishes these image tags for a commit on `main`:
 
 - `ghcr.io/vee8899/automation-platform:latest`
 - `ghcr.io/vee8899/automation-platform:<commit-sha>`
+
+Currently the container workflow runs independently of application CI and also supports manual dispatch. A published tag therefore does not establish that lint or tests passed. Verification-gated automatic publishing is planned in [reliability phase 3](../plans/reliability-hardening/phase-3-release-safeguards.md); it is not implemented by this documentation update.
 
 Prefer the SHA tag when selecting or rolling back a release. Configure the hosting provider to deploy only an image that passed CI and to inject runtime secrets through its secret store.
 

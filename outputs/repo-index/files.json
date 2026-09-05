@@ -1,5 +1,6 @@
 {
   "generatedAt": "deterministic",
+  "scanMethod": "approximate source-text matches; not runtime or authorization evidence",
   "records": [
     {
       "path": ".dockerignore",
@@ -325,7 +326,7 @@
       "path": "AGENT.md",
       "kind": "documentation",
       "extension": ".md",
-      "hash": "ca54c5e5f1b0a17ce737b3a0685161107d037c61bbc1c0d6a8a897084cf96e9b",
+      "hash": "7a1b3c6cfbfda48de0a4cf18765f12c2af7f1e406febcf7bbdd33d855a38dee5",
       "lines": 92,
       "imports": [],
       "exports": [],
@@ -358,7 +359,7 @@
       "path": "README.md",
       "kind": "documentation",
       "extension": ".md",
-      "hash": "cccc2a66a8cc5189742515b93fb13a3785e8a8851975ace73d907d92c2cb43c0",
+      "hash": "835aef5bebe13fcd92f838735f63b3aa3198d52409d940784afaf3e75a2c02cc",
       "lines": 201,
       "imports": [],
       "exports": [],
@@ -836,8 +837,8 @@
       "path": "docs/README.md",
       "kind": "documentation",
       "extension": ".md",
-      "hash": "04507d8d7f9df913b0bc4977e62754c4065d8427886027141bd8b86dac635782",
-      "lines": 57,
+      "hash": "762c5455715e76bb63e0264ce358a2ba58fdccc6044b456ff2ca89e8320f0ec2",
+      "lines": 78,
       "imports": [],
       "exports": [],
       "symbols": [],
@@ -858,6 +859,21 @@
       "symbols": [
         "continues"
       ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "docs/architecture/glossary.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "f3515497d74ccfaade5fb0fb931497e75dbaee16e1fe22f4a7b1b92f703c684b",
+      "lines": 14,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
       "referencedComponents": [],
       "referencedHooks": [],
       "apiUsage": [],
@@ -900,8 +916,8 @@
       "path": "docs/future-product-roadmap.md",
       "kind": "documentation",
       "extension": ".md",
-      "hash": "ae40b21da2c16dcb6a3dac23f50acb7b9aff50a37cb850687cbb72f95a3d1226",
-      "lines": 268,
+      "hash": "8651f38130680ad24eff4441a150af731368444b4f4754183e122df0231b1586",
+      "lines": 270,
       "imports": [],
       "exports": [],
       "symbols": [],
@@ -915,7 +931,7 @@
       "path": "docs/mcp-operations.md",
       "kind": "documentation",
       "extension": ".md",
-      "hash": "84bb703f1e4902d3cbaee750bc13feb5f6045d23909ec6552c3d22b009c84bee",
+      "hash": "ae98efc7c572a22db1f79e3880c5750c213ff1e09fd52e6ad786eee1bd5cfe8e",
       "lines": 43,
       "imports": [],
       "exports": [],
@@ -927,11 +943,78 @@
       "routes": []
     },
     {
+      "path": "docs/plans/reliability-hardening/README.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "4fb408a57b6b9864947839844d77a5ffd9c4ae87f034557d54d72f9f29d28daa",
+      "lines": 114,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "docs/plans/reliability-hardening/phase-1-ingestion-safety.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "f326be0c87ae65081eaefa4321b5a0d2bd37252fe8920b6012245dd43cf71bba",
+      "lines": 90,
+      "imports": [],
+      "exports": [],
+      "symbols": [
+        "must",
+        "order"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "docs/plans/reliability-hardening/phase-2-application-reliability.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "72712430f90502c9b30a37441481e0404afaf391237ec80563337699e4d9742b",
+      "lines": 108,
+      "imports": [],
+      "exports": [],
+      "symbols": [
+        "checking"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "docs/plans/reliability-hardening/phase-3-release-safeguards.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "40ccd9784bab9a02c9c0887a37753f3c750edc5531ff9e1086ad463c74ff778e",
+      "lines": 103,
+      "imports": [],
+      "exports": [],
+      "symbols": [
+        "revisions"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": "docs/reference/CHANGELOG.md",
       "kind": "documentation",
       "extension": ".md",
-      "hash": "837adab7eebd1cac26ac11a2cd37e18101a0082e26ec3ccf3c1b03002f116756",
-      "lines": 13,
+      "hash": "54a45eeeeb5fc82edd7c1c3af9c3082844cb2d7385eaacbc37eae334d10607f9",
+      "lines": 15,
       "imports": [],
       "exports": [],
       "symbols": [],
@@ -945,8 +1028,8 @@
       "path": "docs/reference/DASHBOARD.md",
       "kind": "documentation",
       "extension": ".md",
-      "hash": "9cc9a1f726c319027e026789447f2f513fda8d680da594d420a924defe9df916",
-      "lines": 38,
+      "hash": "bb5a44f1da4ac72caa03ab68c8c8427f2f1e2a310aece0fd8110d7d4b9186df4",
+      "lines": 40,
       "imports": [],
       "exports": [],
       "symbols": [],
@@ -960,8 +1043,8 @@
       "path": "docs/reference/DEBUG.md",
       "kind": "documentation",
       "extension": ".md",
-      "hash": "7c2fec9b1910d9a7bb9784c974cd6052a7f77aee843e1bfea9fe9e81c9c07235",
-      "lines": 32,
+      "hash": "b4e6189e8c355dc616122d278ea2ce1e4b0367364fd699a30d9aa123d6ef652b",
+      "lines": 34,
       "imports": [],
       "exports": [],
       "symbols": [],
@@ -989,11 +1072,28 @@
       "routes": []
     },
     {
+      "path": "docs/reference/README.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "b32983bf7db671c319eced4197c8f7e7d1882db2f1e9e3ca59d4a2687efd6ac5",
+      "lines": 15,
+      "imports": [],
+      "exports": [],
+      "symbols": [
+        "notes"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": "docs/reference/UI.md",
       "kind": "documentation",
       "extension": ".md",
-      "hash": "9d1ba18358b925b978065141a7b4fd2a452712711e4d72338354dee0acc80209",
-      "lines": 43,
+      "hash": "2c6ef3bf74a7a993a86eb09c2c7c010fffb4ff752f556776786a0fc97a5931d9",
+      "lines": 45,
       "imports": [],
       "exports": [],
       "symbols": [],
@@ -1007,8 +1107,8 @@
       "path": "docs/reference/audit_markdown.md",
       "kind": "documentation",
       "extension": ".md",
-      "hash": "9d578bd5ffc59e6b6d57f30afc167666992089a608d701cadf5e1c2b643324a2",
-      "lines": 41,
+      "hash": "e4047c831b6ad123e0469faa65a2f2d36441ccb5c19c1a54fb740d4f07bdbd91",
+      "lines": 43,
       "imports": [],
       "exports": [],
       "symbols": [],
@@ -1019,6 +1119,21 @@
       "routes": [
         "/dashboard"
       ]
+    },
+    {
+      "path": "docs/reference/documentation-maintenance-2026-09-05.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "596ef89b2cf916200708daab528253602b6569596f4b4655d85595de0754ffd7",
+      "lines": 38,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
     },
     {
       "path": "e2e/staging-smoke.spec.ts",
@@ -2088,8 +2203,8 @@
       "path": "scripts/index.ts",
       "kind": "source",
       "extension": ".ts",
-      "hash": "39597f4086cd418eefc403a0b03d8a13502ee32e93e357fc86d333d69310ea94",
-      "lines": 33,
+      "hash": "7268a45d605dbb40613fe59ea35731859765fe7ad849a96a24088de5d6e75b32",
+      "lines": 34,
       "imports": [
         "./repo-map.ts",
         "node:fs",
@@ -2114,44 +2229,97 @@
       "path": "scripts/ingest.ts",
       "kind": "source",
       "extension": ".ts",
-      "hash": "a7338b19f0e46131aa29852d0b9d15d116c50c088003f98a6bbf5bda43f7d987",
-      "lines": 48,
+      "hash": "c557a87a6ee49dcdcb324e2f29e6b137f6e8b0fd654b7fa3e504188699a4c036",
+      "lines": 17,
       "imports": [
+        "./knowledge.ts",
         "./repo-map.ts",
         "node:fs",
         "node:path"
       ],
       "exports": [],
       "symbols": [
-        "RepositoryMap",
-        "api",
-        "apiContent",
-        "bullets",
         "changed",
-        "components",
-        "constraints",
         "current",
-        "db",
         "deleted",
-        "document",
-        "hooks",
-        "links",
         "map",
-        "pages",
         "previous",
+        "statePath"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "scripts/knowledge.test.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "130082c53e39324fe06fd531ebcd5679f2dd59e0191815f84f2d27e8b5fefe1c",
+      "lines": 47,
+      "imports": [
+        "./knowledge.ts",
+        "./repo-map.ts",
+        "node:fs",
+        "node:os",
+        "node:path",
+        "vitest"
+      ],
+      "exports": [
+        "App"
+      ],
+      "symbols": [
+        "App",
+        "authoredDecision",
+        "authoredPath",
+        "contexts",
+        "contextsPath",
+        "refreshed",
+        "root",
+        "temporaryRoots"
+      ],
+      "referencedComponents": [
+        "PostHogProvider",
+        "QueryClientProvider"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "scripts/knowledge.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "b2481b9c5c608fae550036da89f668642563bae9c9be99e48fbe79ac78ddc6bd",
+      "lines": 73,
+      "imports": [
+        "./repo-map.ts",
+        "node:path"
+      ],
+      "exports": [
+        "writeKnowledge"
+      ],
+      "symbols": [
+        "FileRecord",
+        "RepositoryMap",
+        "bullets",
+        "contextCandidates",
+        "document",
+        "inPath",
+        "inventory",
+        "names",
         "section",
         "source",
-        "statePath",
-        "used",
+        "sourceLink",
         "writeKnowledge"
       ],
       "referencedComponents": [],
       "referencedHooks": [],
       "apiUsage": [],
       "databaseUsage": [],
-      "routes": [
-        "/login"
-      ]
+      "routes": []
     },
     {
       "path": "scripts/repo-map.ts",

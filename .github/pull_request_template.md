@@ -26,8 +26,10 @@ Skipped checks and reason:
 
 ## Exception or documentation drift
 
-- [ ] No conflict between authored documentation and implementation was found.
-- [ ] A conflict was found and an explicit decision is recorded below before either source was changed.
+- [ ] No documentation drift or contract conflict was found.
+- [ ] Factual documentation drift was corrected and the source evidence is recorded below.
+- [ ] An authorized behavior change updated its specification and implementation together; the decision is recorded below.
+- [ ] An unresolved contract decision remains; dependent work and its owner are identified below.
 
 Decision, assumption, known limitation, or follow-up owner:
 

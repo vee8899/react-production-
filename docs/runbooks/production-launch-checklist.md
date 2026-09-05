@@ -7,10 +7,9 @@ portal behavior.
 Do not check a box without recording the evidence: command output, screenshot,
 URL, commit SHA, migration version, or log/request ID.
 
-## Current readiness snapshot - 2026-07-20
+## Historical readiness snapshot - 2026-07-20
 
-Status: no-go for production launch until the staging and production evidence
-below is complete.
+Recorded status on 2026-07-20: no-go for production launch pending the evidence below. This section preserves the assessment from that date; it is not today's readiness verdict. The tested commit was not recorded here. Use a new dated release record with the current revision and environment for any new decision. The checklist sections after this snapshot remain the reusable launch procedure.
 
 Verified locally on 2026-07-20:
 

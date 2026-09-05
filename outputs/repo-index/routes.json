@@ -1,310 +1,281 @@
 {
   "generatedAt": "deterministic",
+  "scanMethod": "approximate source-text matches; not runtime or authorization evidence",
   "records": [
-    {
-      "route": "/login",
-      "file": "README.md",
-      "protected": false
-    },
-    {
-      "route": "/",
-      "file": "docs/reference/DEBUG.md",
-      "protected": false
-    },
-    {
-      "route": "/dashboard",
-      "file": "docs/reference/audit_markdown.md",
-      "protected": false
-    },
     {
       "route": "/",
       "file": "e2e/staging-smoke.spec.ts",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/accept-invite?error=access_denied&error_description=Invite%20expired",
       "file": "e2e/staging-smoke.spec.ts",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/dashboard",
       "file": "e2e/staging-smoke.spec.ts",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/login",
       "file": "e2e/staging-smoke.spec.ts",
-      "protected": false
-    },
-    {
-      "route": "/favicon.svg",
-      "file": "index.html",
-      "protected": false
-    },
-    {
-      "route": "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap",
-      "file": "index.html",
-      "protected": false
-    },
-    {
-      "route": "/login",
-      "file": "scripts/ingest.ts",
-      "protected": false
+      "protected": null
     },
     {
       "route": "*",
       "file": "src/App.tsx",
-      "protected": true
+      "protected": null
     },
     {
       "route": "/",
       "file": "src/App.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/accept-invite",
       "file": "src/App.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/activity",
       "file": "src/App.tsx",
-      "protected": true
+      "protected": null
     },
     {
       "route": "/activity/:runId",
       "file": "src/App.tsx",
-      "protected": true
+      "protected": null
     },
     {
       "route": "/audit",
       "file": "src/App.tsx",
-      "protected": true
+      "protected": null
     },
     {
       "route": "/audit/:eventId",
       "file": "src/App.tsx",
-      "protected": true
+      "protected": null
     },
     {
       "route": "/dashboard",
       "file": "src/App.tsx",
-      "protected": true
+      "protected": null
     },
     {
       "route": "/demo",
       "file": "src/App.tsx",
-      "protected": true
+      "protected": null
     },
     {
       "route": "/integrations",
       "file": "src/App.tsx",
-      "protected": true
+      "protected": null
     },
     {
       "route": "/legal/consent",
       "file": "src/App.tsx",
-      "protected": true
+      "protected": null
     },
     {
       "route": "/legal/privacy",
       "file": "src/App.tsx",
-      "protected": true
+      "protected": null
     },
     {
       "route": "/legal/settings",
       "file": "src/App.tsx",
-      "protected": true
+      "protected": null
     },
     {
       "route": "/legal/terms",
       "file": "src/App.tsx",
-      "protected": true
+      "protected": null
     },
     {
       "route": "/login",
       "file": "src/App.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/onboarding",
       "file": "src/App.tsx",
-      "protected": true
+      "protected": null
     },
     {
       "route": "/security",
       "file": "src/App.tsx",
-      "protected": true
+      "protected": null
     },
     {
       "route": "/sentry-example-page",
       "file": "src/App.tsx",
-      "protected": true
+      "protected": null
     },
     {
       "route": "/workflows",
       "file": "src/App.tsx",
-      "protected": true
+      "protected": null
     },
     {
       "route": "/audit/${event.id}",
       "file": "src/components/dashboard/AuditTrail.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/activity",
       "file": "src/components/dashboard/RunDetail.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/activity/${run.id}",
       "file": "src/components/dashboard/RunsFeed.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/legal/consent",
       "file": "src/components/legal/LegalGate.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/legal/privacy",
       "file": "src/components/ui/Footer.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/legal/terms",
       "file": "src/components/ui/Footer.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/security",
       "file": "src/components/ui/Footer.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/",
       "file": "src/components/ui/Nav.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/login",
       "file": "src/components/ui/Nav.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/",
       "file": "src/hooks/useAuth.ts",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/dashboard",
       "file": "src/pages/AcceptInvitePage.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/login",
       "file": "src/pages/AcceptInvitePage.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/activity/${event.runId}",
       "file": "src/pages/AuditDetailPage.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/audit",
       "file": "src/pages/AuditDetailPage.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/dashboard",
       "file": "src/pages/AuditPage.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/activity",
       "file": "src/pages/DashboardPage.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/audit",
       "file": "src/pages/DashboardPage.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/security",
       "file": "src/pages/HomePage.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/dashboard",
       "file": "src/pages/LegalConsentPage.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/legal/privacy",
       "file": "src/pages/LegalSettingsPage.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/legal/terms",
       "file": "src/pages/LegalSettingsPage.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/dashboard",
       "file": "src/pages/LoginPage.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/dashboard",
       "file": "src/pages/OnboardingPage.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/",
       "file": "src/pages/SecurityPage.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/",
       "file": "src/pages/SentryExamplePage.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/accept-invite",
       "file": "src/test/AcceptInvitePage.test.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/dashboard",
       "file": "src/test/AcceptInvitePage.test.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/login",
       "file": "src/test/AcceptInvitePage.test.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/dashboard",
       "file": "src/test/LoginPage.test.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/login",
       "file": "src/test/LoginPage.test.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/dashboard",
       "file": "src/test/ProtectedRoute.test.tsx",
-      "protected": false
+      "protected": null
     },
     {
       "route": "/login",
       "file": "src/test/ProtectedRoute.test.tsx",
-      "protected": false
+      "protected": null
     }
   ]
 }
