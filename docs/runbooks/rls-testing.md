@@ -41,4 +41,6 @@ The suite checks valid creation, same-owner replay, cross-tenant collisions with
 
 Concurrency checks hold the first transaction open and require `pg_blocking_pids` to prove that the second session is waiting on it before committing. Both tenant winner orderings, concurrent same-owner replay, and a concurrent legacy insert are covered. Statements have a 15-second timeout; absence of observed overlap fails the test. Successful calls retain audit history; rejected calls must add no audit records.
 
+Ingestion calls execute as `service_role`. The concurrent legacy-insert fixture uses `SET LOCAL ROLE postgres` only inside its setup transaction to simulate a privileged historical write; direct table writes are not granted to the service role. Commit restores that session's service role. Do not broaden production grants to make a fixture pass.
+
 Record command exit codes, check output, environment, migration version, and tested revision or uncommitted state. A connection failure or unexecuted concurrency suite blocks verification. See the [Phase 1 handoff](../plans/reliability-hardening/phase-1-ingestion-safety.md#session-handoff) for current evidence.

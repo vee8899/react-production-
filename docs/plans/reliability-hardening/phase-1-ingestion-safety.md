@@ -21,10 +21,10 @@ Required tools are Node.js 24, installed npm dependencies, Docker, the Supabase 
 - [x] Reject before replacing child details; ensure exceptions roll back canonical changes, compatibility changes, steps, entity references, and audit writes together.
 - [x] Preserve same-owner replay, the existing run ID, and transactional replacement of child details.
 - [x] Map the database ownership-conflict signal to HTTP `409` and stable response code `event_id_conflict` in the Edge Function.
-- [x] Add executable database regression tests and HTTP handler/error-mapping tests, including a reproducible concurrency command (`npm.cmd run db:test:ingestion`). Real database execution remains blocked; see the handoff.
+- [x] Add executable database regression tests and HTTP handler/error-mapping tests, including a reproducible concurrency command (`npm.cmd run db:test:ingestion`). Real Postgres and concurrency execution passed; see the verification handoff.
 - [x] Update authored documents, then refresh and review generated knowledge after implementation.
 
-Entry points: [latest canonical ingestion migration](../../../supabase/migrations/20260716000001_canonical_workflow_runs.sql), [ingest-run handler](../../../supabase/functions/ingest-run/index.ts), [database tests](../../../supabase/tests/database/rls_isolation.sql), [current source-contract tests](../../../src/test/securityContracts.test.ts), and [staging ingestion acceptance](../../../scripts/staging-ingest-acceptance.ts). Source-contract tests may remain supplementary, but must not substitute for executing the new behavior.
+Entry points: [ownership-guard migration](../../../supabase/migrations/20260907000001_ingestion_ownership_guard.sql), [ingest-run handler](../../../supabase/functions/ingest-run/index.ts), [database tests](../../../supabase/tests/database/rls_isolation.sql), [current source-contract tests](../../../src/test/securityContracts.test.ts), and [staging ingestion acceptance](../../../scripts/staging-ingest-acceptance.ts). Source-contract tests may remain supplementary, but must not substitute for executing the new behavior.
 
 ## Contracts and decisions
 
@@ -36,16 +36,16 @@ During a later authorized rollout, apply the ownership-guard migration before de
 
 ## Acceptance checklist
 
-- [ ] A valid event creates one canonical run and the matching compatibility record and children.
-- [ ] Same-owner replay returns the same run ID, creates no duplicate run, and replaces the expected child details.
-- [ ] Reusing an event ID for a different tenant is rejected even when the incoming client and workflow otherwise form a valid pair.
-- [ ] A compatibility record with a mismatched client or organization causes rejection and full rollback.
-- [ ] Two independent concurrent database connections submit the same event ID for different tenants: exactly one owner wins, the other receives the conflict, and the stored run and all associated data remain consistent with the winner.
-- [ ] Concurrent same-owner replay retains one run without partial or duplicated child replacement.
-- [ ] Compare canonical, compatibility, step, entity, and audit records before and after rejected requests to prove they remain unchanged.
+- [x] A valid event creates one canonical run and the matching compatibility record and children.
+- [x] Same-owner replay returns the same run ID, creates no duplicate run, and replaces the expected child details.
+- [x] Reusing an event ID for a different tenant is rejected even when the incoming client and workflow otherwise form a valid pair.
+- [x] A compatibility record with a mismatched client or organization causes rejection and full rollback.
+- [x] Two independent concurrent database connections submit the same event ID for different tenants: exactly one owner wins, the other receives the conflict, and the stored run and all associated data remain consistent with the winner.
+- [x] Concurrent same-owner replay retains one run without partial or duplicated child replacement.
+- [x] Compare canonical, compatibility, step, entity, and audit records before and after rejected requests to prove they remain unchanged.
 - [x] HTTP tests execute the handler and verify the conflict response, existing success response, invalid secret handling, and generic non-conflict failures.
-- [ ] Existing two-user and anonymous RLS checks pass, and browser roles cannot execute the ingestion RPC.
-- [ ] Local lint, unit/handler tests, build, and actual database tests pass for the recorded revision.
+- [x] Existing two-user and anonymous RLS checks pass, and browser roles cannot execute the ingestion RPC.
+- [x] Local lint, unit/handler tests, build, and actual database tests pass for the recorded revision.
 
 Run from the repository root after local database setup:
 
@@ -105,3 +105,20 @@ Initial handoff, 2026-09-05:
 - Staging verification / live GitHub evidence: Not run / Not applicable.
 - Follow-up owner: next Phase 1 implementer, with host operator assistance for Docker repair.
 - Exact next action: restore a healthy Docker engine without resetting existing data, then on a confirmed disposable local instance run `npx.cmd --yes supabase start`, `npx.cmd --yes supabase migration up --local`, and `npm.cmd run db:test`. Record applied versions, all assertions, and observed concurrent outcomes before updating the tracker.
+
+
+### Verification handoff 2026-09-07
+
+- Date / owner: 2026-09-07 / Codex.
+- Phase / local status: Phase 1; Verified locally. Docker/Postgres blocker is resolved.
+- Starting commit SHA: `4ecf25b4cedde52a231f73b4c7b951b9be98d486`; clean working tree, including the previously committed Phase 1 implementation.
+- Result / working-tree state: uncommitted four-line fixture correction in `scripts/test-ingestion-database.ts`, updated RLS runbook and Phase 1 tracker/guide/evidence, plus generated repository-index changes. No application or migration changes.
+- Completed work: verified the regression fails before the guard, previewed/applied the three pending migrations locally, passed 17 pgTAP assertions and all 9 ingestion groups on Postgres 17.6, and confirmed complete fixture cleanup. Both tenant winner orderings, concurrent same-owner replay, and privileged legacy insertion were exercised with observed connection blocking.
+- Commands/results: local dry-run and migration application exit 0; final `db:test` exit 0; lint, 125 unit/handler tests, build, and `db:check` exit 0. Lint/build were rechecked after the fixture correction. See [resumed evidence](phase-1-evidence-2026-09-07.md#resumed-verification-2026-09-07) for commands, environments, before/after results, and timestamp.
+- Failure corrected: the legacy-write fixture initially used service_role for a direct INSERT without a grant. It now uses transaction-local postgres privileges for the historical fixture only; all ingestion calls remain service-role calls. No production grants were broadened.
+- Remaining work: none for local Phase 1 acceptance. Staging verification remains separate; Phase 2 has not started.
+- Skipped checks: linked staging dry-run, staging/n8n acceptance, deployed Edge Function integration, and live GitHub operations; no staging target/credentials were identified and no hosted rollout was requested.
+- Documentation decisions: retain the earlier blocked session as history; update the tracker and local acceptance evidence. Clarify the privileged fixture setup in the RLS runbook.
+- Staging verification / live GitHub evidence: Not run / Not applicable.
+- Follow-up owner: next phase implementer; staging operator for a separately authorized rollout.
+- Exact next action: Phase 2 may begin when requested, using its phase document. For a later authorized staging rollout, confirm the target, apply the ownership migration before deploying the handler, and run staging acceptance.

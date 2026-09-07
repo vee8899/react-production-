@@ -183,6 +183,10 @@ try {
 
   const legacyRace = event("legacy-race");
   await first.query("begin");
+  // Simulate an operator's historical write, not an RPC caller. Direct table
+  // writes are not granted to service_role; keep that production boundary.
+  // SET LOCAL restores the session's service_role when this transaction ends.
+  await first.query("set local role postgres");
   await legacy(first, legacyRace, bob);
   const originalLegacy = (await first.query("select to_jsonb(r) as row from public.automation_runs r where event_id = $1", [legacyRace])).rows[0].row;
   const pendingLegacy = ingest(second, legacyRace, alice).then(
