@@ -28,12 +28,14 @@ n8n
 
 ## Invariants
 
-1. `event_id` is the idempotency key across both run tables.
+1. `event_id` is globally unique across each run table and is the shared idempotency key. A canonical event cannot move to a different organization through ingestion.
 2. The database derives `organization_id` from `client_id` and rejects mismatches.
 3. A supplied `workflow_id` must belong to the supplied client and organization.
 4. n8n never writes directly to either table.
 5. Frontend reads use `workflow_runs`; compatibility reads are not part of the normal product path.
-6. Reprocessing an event replaces its step and entity details transactionally.
+6. Same-owner replay retains the run ID and replaces step and entity details transactionally; successful calls continue to append audit history.
+7. Existing compatibility ownership must match both the incoming client and its derived organization. Historical mismatches are rejected rather than repaired.
+8. Conditional upserts lock both ownership decisions in canonical-then-compatibility order, before replacing children. A losing concurrent owner receives SQLSTATE `P4091` (HTTP `409`, `event_id_conflict`). Any rejection rolls back all run, compatibility, step, entity, and audit changes.
 
 ## Migration and retirement
 

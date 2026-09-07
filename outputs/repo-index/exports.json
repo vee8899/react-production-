@@ -155,6 +155,10 @@
       "exportedSymbols": []
     },
     {
+      "file": "scripts/test-ingestion-database.ts",
+      "exportedSymbols": []
+    },
+    {
       "file": "scripts/verify-data-sync-workflow.ts",
       "exportedSymbols": []
     },
@@ -768,6 +772,10 @@
       "exportedSymbols": []
     },
     {
+      "file": "src/test/ingestRunHandler.test.ts",
+      "exportedSymbols": []
+    },
+    {
       "file": "src/test/legalConsent.test.ts",
       "exportedSymbols": []
     },
@@ -878,6 +886,13 @@
       "exportedSymbols": []
     },
     {
+      "file": "supabase/functions/ingest-run/handler.ts",
+      "exportedSymbols": [
+        "IngestDependencies",
+        "createIngestHandler"
+      ]
+    },
+    {
       "file": "supabase/functions/ingest-run/index.ts",
       "exportedSymbols": []
     },
@@ -979,6 +994,10 @@
     },
     {
       "file": "supabase/migrations/20260901000002_seed_northstar_30_day_workload.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260907000001_ingestion_ownership_guard.sql",
       "exportedSymbols": []
     },
     {

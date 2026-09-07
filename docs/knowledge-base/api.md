@@ -12,6 +12,7 @@
 
 - [supabase/functions/configure-alert-route/index.ts](../../supabase/functions/configure-alert-route/index.ts) — export-name matches: none
 - [supabase/functions/demo-event/index.ts](../../supabase/functions/demo-event/index.ts) — export-name matches: none
+- [supabase/functions/ingest-run/handler.ts](../../supabase/functions/ingest-run/handler.ts) — export-name matches: `IngestDependencies`, `createIngestHandler`
 - [supabase/functions/ingest-run/index.ts](../../supabase/functions/ingest-run/index.ts) — export-name matches: none
 - [supabase/functions/invite-client/index.ts](../../supabase/functions/invite-client/index.ts) — export-name matches: none
 

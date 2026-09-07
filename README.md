@@ -85,7 +85,8 @@ The Vite server normally runs at `http://localhost:52124`. Vite may choose anoth
 | `npm.cmd run acceptance:ingest:staging` | Exercise staging workflow ingestion and idempotency |
 | `npm.cmd run db:check` | Check local migration inventory and local/staging environment inputs; no database connection |
 | `npm.cmd run db:dry-run` | Preview migrations through the Supabase CLI |
-| `npm.cmd run db:test` | Run executable local Postgres RLS isolation tests |
+| `npm.cmd run db:test` | Run local Postgres RLS, ingestion rollback, and concurrency tests |
+| `npm.cmd run db:test:ingestion` | Run only the local ingestion and concurrency suite |
 | `npm.cmd run ingest` | Refresh generated repository knowledge |
 | `npm.cmd run index` | Rebuild repository indexes |
 | `npm.cmd run refresh-ai` | Run both knowledge and index refreshes |
@@ -149,7 +150,7 @@ The `ingest-run` Edge Function is the trusted boundary for n8n workflow results.
 }
 ```
 
-`event_id` makes ingestion idempotent: sending the same event again updates the existing run rather than creating a duplicate. The canonical product table is `workflow_runs`; `automation_runs` is a compatibility projection while older consumers are being migrated. See [`docs/specs/automation-run-ingestion.md`](docs/specs/automation-run-ingestion.md) and [`docs/architecture/canonical-workflow-runs.md`](docs/architecture/canonical-workflow-runs.md).
+`event_id` makes ingestion idempotent: same-owner replay retains the run ID and replaces its child details. Reusing an event for another organization or an incompatible client projection returns `409` / `event_id_conflict` and rolls back the transaction. The canonical product table is `workflow_runs`; `automation_runs` is a compatibility projection while older consumers are being migrated. See [`docs/specs/automation-run-ingestion.md`](docs/specs/automation-run-ingestion.md) and [`docs/architecture/canonical-workflow-runs.md`](docs/architecture/canonical-workflow-runs.md).
 
 ## Client invitations
 

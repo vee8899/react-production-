@@ -19,6 +19,7 @@
 - `@testing-library/user-event` ^14.6.7
 - `@types/diff` ^7.0.2
 - `@types/node` ^24.13.3
+- `@types/pg` ^8.23.1
 - `@types/react` ^19.2.18
 - `@types/react-dom` ^19.2.7
 - `@vitejs/plugin-react` ^6.1.1
@@ -30,6 +31,7 @@
 - `framer-motion` ^12.43.0
 - `globals` ^17.12.0
 - `jsdom` ^29.1.1
+- `pg` ^8.23.0
 - `posthog-js` ^1.426.2
 - `react` ^19.2.8
 - `react-dom` ^19.2.8
@@ -43,6 +45,7 @@
 - `vite` ^8.2.2
 - `vitest` ^4.1.11
 - `zod` ^4.5.4
+- `zod-ingest` npm:zod@3.23.8
 - `zustand` ^5.0.15
 
 Ranges come from package.json, not the installed dependency tree or an advisory audit.

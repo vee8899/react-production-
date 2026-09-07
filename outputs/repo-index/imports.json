@@ -227,6 +227,16 @@
       "dependencies": []
     },
     {
+      "file": "scripts/test-ingestion-database.ts",
+      "importedSymbols": [
+        "node:assert/strict",
+        "node:crypto",
+        "node:timers/promises",
+        "pg"
+      ],
+      "dependencies": []
+    },
+    {
       "file": "scripts/verify-data-sync-workflow.ts",
       "importedSymbols": [
         "node:fs",
@@ -1469,6 +1479,16 @@
       ]
     },
     {
+      "file": "src/test/ingestRunHandler.test.ts",
+      "importedSymbols": [
+        "../../supabase/functions/ingest-run/handler",
+        "vitest"
+      ],
+      "dependencies": [
+        "../../supabase/functions/ingest-run/handler"
+      ]
+    },
+    {
       "file": "src/test/legalConsent.test.ts",
       "importedSymbols": [
         "@/lib/legalConsent",
@@ -1658,13 +1678,22 @@
       "dependencies": []
     },
     {
-      "file": "supabase/functions/ingest-run/index.ts",
+      "file": "supabase/functions/ingest-run/handler.ts",
       "importedSymbols": [
-        "https://deno.land/std/http/server.ts",
-        "https://deno.land/x/zod@v3.23.8/mod.ts",
-        "https://esm.sh/@supabase/supabase-js@2"
+        "https://deno.land/x/zod@v3.23.8/mod.ts"
       ],
       "dependencies": []
+    },
+    {
+      "file": "supabase/functions/ingest-run/index.ts",
+      "importedSymbols": [
+        "./handler.ts",
+        "https://deno.land/std/http/server.ts",
+        "https://esm.sh/@supabase/supabase-js@2"
+      ],
+      "dependencies": [
+        "./handler.ts"
+      ]
     },
     {
       "file": "supabase/functions/invite-client/index.ts",
@@ -1791,6 +1820,11 @@
     },
     {
       "file": "supabase/migrations/20260901000002_seed_northstar_30_day_workload.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260907000001_ingestion_ownership_guard.sql",
       "importedSymbols": [],
       "dependencies": []
     },

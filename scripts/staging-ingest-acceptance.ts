@@ -9,7 +9,12 @@ const required = (key: string) => {
 const functionsUrl = (process.env.STAGING_SUPABASE_FUNCTIONS_URL || required("STAGING_SUPABASE_URL")).replace(/\/$/, "");
 const webhookSecret = required("STAGING_WEBHOOK_SECRET");
 const clientId = required("STAGING_CLIENT_ID");
-const organizationId = process.env.STAGING_ORGANIZATION_ID;
+const otherClientId = required("STAGING_OTHER_CLIENT_ID");
+const otherOrganizationId = required("STAGING_OTHER_ORGANIZATION_ID");
+const organizationId = required("STAGING_ORGANIZATION_ID");
+if (otherClientId === clientId || otherOrganizationId === organizationId) {
+  throw new Error("Collision acceptance requires a second client in a different organization.");
+}
 const releaseSha = process.env.RELEASE_SHA || "local";
 const eventId = process.env.STAGING_INGEST_EVENT_ID || `staging-acceptance-${releaseSha}-${Date.now()}`;
 const endpoint = `${functionsUrl}/functions/v1/ingest-run`;
@@ -72,6 +77,21 @@ assertStatus("valid event", first.status, 200);
 
 const duplicate = await postIngest(basePayload);
 assertStatus("duplicate event", duplicate.status, 200);
+const firstRunId = (first.data as Json)?.run_id;
+if (typeof firstRunId !== "string" || (duplicate.data as Json)?.run_id !== firstRunId) {
+  throw new Error("Duplicate ingestion must return the original run ID.");
+}
+
+// Establish that the second tenant is a valid ingest target before colliding.
+const otherPayload = { ...basePayload, client_id: otherClientId, organization_id: otherOrganizationId };
+const otherValid = await postIngest({ ...otherPayload, event_id: `${eventId}-other-valid` });
+assertStatus("second tenant valid event", otherValid.status, 200);
+const collision = await postIngest(otherPayload);
+assertStatus("cross-tenant event collision", collision.status, 409);
+const collisionBody = collision.data as Json;
+if (collisionBody?.code !== "event_id_conflict" || collisionBody.error !== "Event ID conflict" || Object.keys(collisionBody).length !== 2) {
+  throw new Error("Collision response must contain only the generic error and stable event_id_conflict code.");
+}
 
 const unauthorized = await postIngest({ ...basePayload, event_id: `${eventId}-unauthorized` }, "invalid-secret");
 assertStatus("invalid secret", unauthorized.status, 401);
@@ -94,6 +114,8 @@ console.log(JSON.stringify({
   event_id: eventId,
   valid: first,
   duplicate,
+  other_valid: otherValid,
+  collision,
   invalid_secret: unauthorized,
   missing_organization: missingOrganization,
   alert_route: alertRoute,

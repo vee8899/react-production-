@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 
 const sql = readFileSync("supabase/migrations/20260714000002_platform_core_and_vertical_modules.sql", "utf8");
 const rls = readFileSync("supabase/migrations/20260711000001_client_data_rls.sql", "utf8");
-const ingest = readFileSync("supabase/functions/ingest-run/index.ts", "utf8");
+const ingest = readFileSync("supabase/functions/ingest-run/handler.ts", "utf8");
 const invite = readFileSync("supabase/functions/invite-client/index.ts", "utf8");
 
 describe("database and edge-function security contracts", () => {

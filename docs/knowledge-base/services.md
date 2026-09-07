@@ -22,5 +22,4 @@
 - [src/test/securityContracts.test.ts](../../src/test/securityContracts.test.ts) — API text matches: `supabase.auth.admin.deleteUser`
 - [src/test/sentry.test.ts](../../src/test/sentry.test.ts) — API text matches: `supabase.co`
 - [supabase/functions/demo-event/index.ts](../../supabase/functions/demo-event/index.ts) — API text matches: `supabase.from`, `supabase.rpc`, `supabase.schema`
-- [supabase/functions/ingest-run/index.ts](../../supabase/functions/ingest-run/index.ts) — API text matches: `supabase.rpc`
 - [supabase/functions/invite-client/index.ts](../../supabase/functions/invite-client/index.ts) — API text matches: `supabase.auth.admin.deleteUser`, `supabase.auth.admin.inviteUserByEmail`, `supabase.rpc`

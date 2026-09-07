@@ -517,22 +517,6 @@
       ]
     },
     {
-      "file": "supabase/functions/ingest-run/index.ts",
-      "exportedSymbols": [],
-      "importedSymbols": [
-        "https://deno.land/std/http/server.ts",
-        "https://deno.land/x/zod@v3.23.8/mod.ts",
-        "https://esm.sh/@supabase/supabase-js@2"
-      ],
-      "dependencies": [],
-      "referencedComponents": [],
-      "referencedHooks": [],
-      "apiUsage": [
-        "supabase.rpc"
-      ],
-      "databaseUsage": []
-    },
-    {
       "file": "supabase/functions/invite-client/index.ts",
       "exportedSymbols": [],
       "importedSymbols": [

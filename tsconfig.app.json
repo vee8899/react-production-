@@ -21,6 +21,7 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
+      "https://deno.land/x/zod@v3.23.8/mod.ts": ["./node_modules/zod-ingest/index.d.ts"],
       "@/*": ["./src/*"]
     }
   },

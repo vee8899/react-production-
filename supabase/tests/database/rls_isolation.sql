@@ -1,6 +1,6 @@
 begin;
 
-select plan(11);
+select plan(17);
 
 -- Test fixtures are created before switching roles, just as a service-role
 -- provisioning flow would create them in production.
@@ -67,6 +67,11 @@ select throws_ok(
   'Alice cannot insert a membership into Bob organization'
 );
 
+set local "request.jwt.claims" = '{"role":"authenticated","sub":"00000000-0000-0000-0000-000000000002"}';
+select is((select count(*)::int from public.clients), 1, 'Bob sees only his client row');
+select is((select name from public.organizations), 'Bob Realty', 'Bob cannot see Alice organization data');
+select is((select event_id from public.workflow_runs), 'rls-bob-event', 'Bob cannot see Alice workflow run');
+
 set local role anon;
 set local "request.jwt.claims" = '{"role":"anon"}';
 
@@ -79,6 +84,17 @@ select throws_ok(
   'new row violates row-level security policy for table "workflow_runs"',
   'Anonymous users cannot insert workflow runs'
 );
+
+set local role postgres;
+select ok(not has_function_privilege('anon',
+  'public.ingest_workflow_run(text,uuid,uuid,text,text,text,public.run_status,uuid,timestamptz,timestamptz,integer,integer,integer,integer,text,jsonb,jsonb,jsonb,jsonb)', 'execute'),
+  'Anonymous users cannot execute ingestion RPC');
+select ok(not has_function_privilege('authenticated',
+  'public.ingest_workflow_run(text,uuid,uuid,text,text,text,public.run_status,uuid,timestamptz,timestamptz,integer,integer,integer,integer,text,jsonb,jsonb,jsonb,jsonb)', 'execute'),
+  'Authenticated browser users cannot execute ingestion RPC');
+select ok(has_function_privilege('service_role',
+  'public.ingest_workflow_run(text,uuid,uuid,text,text,text,public.run_status,uuid,timestamptz,timestamptz,integer,integer,integer,integer,text,jsonb,jsonb,jsonb,jsonb)', 'execute'),
+  'Service role can execute ingestion RPC');
 
 select * from finish();
 rollback;

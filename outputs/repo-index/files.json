@@ -359,8 +359,8 @@
       "path": "README.md",
       "kind": "documentation",
       "extension": ".md",
-      "hash": "835aef5bebe13fcd92f838735f63b3aa3198d52409d940784afaf3e75a2c02cc",
-      "lines": 201,
+      "hash": "07533e9a5cc3902fe6feda6da31443ac5c55d392e491cba4713767b18a065e33",
+      "lines": 202,
       "imports": [],
       "exports": [],
       "symbols": [
@@ -852,8 +852,8 @@
       "path": "docs/architecture/canonical-workflow-runs.md",
       "kind": "documentation",
       "extension": ".md",
-      "hash": "141d31673041386363ef042c276f1af694491f9b796ba242177ec23d6e907f59",
-      "lines": 53,
+      "hash": "f7867d53d027095700129b950a3d531981a4b6d3212627f7611e1c3a5aa939d8",
+      "lines": 55,
       "imports": [],
       "exports": [],
       "symbols": [
@@ -946,8 +946,23 @@
       "path": "docs/plans/reliability-hardening/README.md",
       "kind": "documentation",
       "extension": ".md",
-      "hash": "4fb408a57b6b9864947839844d77a5ffd9c4ae87f034557d54d72f9f29d28daa",
+      "hash": "651365dad6a14d6f120328c7530cda9d7d09fd71c4a60f0ba8a425f10683ea23",
       "lines": 114,
+      "imports": [],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "docs/plans/reliability-hardening/phase-1-evidence-2026-09-07.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "3cf2a1b2fa6cb7699e8830cc4823c963eaa142676aae058d27f325ae07f08baf",
+      "lines": 53,
       "imports": [],
       "exports": [],
       "symbols": [],
@@ -961,8 +976,8 @@
       "path": "docs/plans/reliability-hardening/phase-1-ingestion-safety.md",
       "kind": "documentation",
       "extension": ".md",
-      "hash": "f326be0c87ae65081eaefa4321b5a0d2bd37252fe8920b6012245dd43cf71bba",
-      "lines": 90,
+      "hash": "4eb6f07bfcbe9ee12452582f9e83f15a939ddb682a1e748484ab046bf669afa1",
+      "lines": 108,
       "imports": [],
       "exports": [],
       "symbols": [
@@ -971,7 +986,9 @@
       ],
       "referencedComponents": [],
       "referencedHooks": [],
-      "apiUsage": [],
+      "apiUsage": [
+        "supabase.rpc"
+      ],
       "databaseUsage": [],
       "routes": []
     },
@@ -2049,8 +2066,8 @@
       "path": "package.json",
       "kind": "config",
       "extension": ".json",
-      "hash": "bfb8d09ba644e7d65cc42a18d03654bc9ae74b01cbaf84a9651b42d01ccc383d",
-      "lines": 76,
+      "hash": "5edc50e6f9d383121016ef99ea20125deea9a768eaa26487b99628b89da2c0be",
+      "lines": 80,
       "imports": [],
       "exports": [],
       "symbols": [],
@@ -2390,8 +2407,8 @@
       "path": "scripts/staging-ingest-acceptance.ts",
       "kind": "source",
       "extension": ".ts",
-      "hash": "dc7c9a1cbbbeb68733694144420473c4ec0586817fb0c22c9ce401cf682202de",
-      "lines": 102,
+      "hash": "55c9353004852cd558492aac8d334e9cf45e307dbb986936cbfc94fbf876305a",
+      "lines": 124,
       "imports": [],
       "exports": [],
       "symbols": [
@@ -2401,16 +2418,23 @@
         "assertStatus",
         "basePayload",
         "clientId",
+        "collision",
+        "collisionBody",
         "configureAlertRoute",
         "data",
         "duplicate",
         "endpoint",
         "eventId",
         "first",
+        "firstRunId",
         "functionsUrl",
         "integrationId",
         "missingOrganization",
         "organizationId",
+        "otherClientId",
+        "otherOrganizationId",
+        "otherPayload",
+        "otherValid",
         "postIngest",
         "releaseSha",
         "required",
@@ -2459,6 +2483,77 @@
         "fetch("
       ],
       "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "scripts/test-ingestion-database.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "6a8e03da57d3fd37b17c2894ece17d089140e96173f76891f5d93a12668c6de2",
+      "lines": 213,
+      "imports": [
+        "node:assert/strict",
+        "node:crypto",
+        "node:timers/promises",
+        "pg"
+      ],
+      "exports": [],
+      "symbols": [
+        "Tenant",
+        "before",
+        "checks",
+        "client",
+        "concurrentId",
+        "connect",
+        "connectionString",
+        "consistent",
+        "control",
+        "db",
+        "deadline",
+        "entity",
+        "event",
+        "eventIds",
+        "firstPid",
+        "id",
+        "index",
+        "ingest",
+        "legacy",
+        "legacyOnly",
+        "legacyRace",
+        "legacyState",
+        "loser",
+        "originalLegacy",
+        "pass",
+        "pending",
+        "pendingLegacy",
+        "pendingReplay",
+        "prefix",
+        "rejectsUnchanged",
+        "replay",
+        "replayResult",
+        "result",
+        "runId",
+        "same",
+        "secondPid",
+        "sessions",
+        "snapshot",
+        "state",
+        "target",
+        "tenants",
+        "waitUntilBlocked"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "delete from",
+        "insert into",
+        "select coalesce(jsonb_agg(to_jsonb(r) order by r.id), '[]') from",
+        "select coalesce(jsonb_agg(to_jsonb(r) order by r.id), '[]') from public.workflow_run_entities r where workflow_run_id in (select id from",
+        "select coalesce(jsonb_agg(to_jsonb(r) order by r.id), '[]') from public.workflow_steps r where workflow_run_id in (select id from",
+        "select to_jsonb(r) as row from",
+        "update public.automation_runs set"
+      ],
       "routes": []
     },
     {
@@ -5781,6 +5876,36 @@
       "routes": []
     },
     {
+      "path": "src/test/ingestRunHandler.test.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "06cbf75497f984c9c03cee73992b3805dff2ef84c14ba5df47ce2f50866cb168",
+      "lines": 103,
+      "imports": [
+        "../../supabase/functions/ingest-run/handler",
+        "vitest"
+      ],
+      "exports": [],
+      "symbols": [
+        "env",
+        "payload",
+        "pending",
+        "request",
+        "response",
+        "rpc",
+        "setup",
+        "warning"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [
+        "useFakeTimers",
+        "useRealTimers"
+      ],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": "src/test/legalConsent.test.ts",
       "kind": "source",
       "extension": ".ts",
@@ -5896,7 +6021,7 @@
       "path": "src/test/securityContracts.test.ts",
       "kind": "source",
       "extension": ".ts",
-      "hash": "50834da464ff40c548b69436e085e565ee7d136d6e5bad97f5ae5fb43a04ae97",
+      "hash": "d879fd4f187f6cf7ac4df0ae084479e219cadb2625fef6df8120c22ab4bdc399",
       "lines": 50,
       "imports": [
         "node:fs",
@@ -6530,19 +6655,23 @@
       "routes": []
     },
     {
-      "path": "supabase/functions/ingest-run/index.ts",
+      "path": "supabase/functions/ingest-run/handler.ts",
       "kind": "function",
       "extension": ".ts",
-      "hash": "719ec91c7ae49903caf863851e77b8c05be1bd14f5213f306a51814741071181",
-      "lines": 157,
+      "hash": "535d056ded3c57a4033c451c25830b8c94361b191d9f95b9f34909ba6d57cb26",
+      "lines": 167,
       "imports": [
-        "https://deno.land/std/http/server.ts",
-        "https://deno.land/x/zod@v3.23.8/mod.ts",
-        "https://esm.sh/@supabase/supabase-js@2"
+        "https://deno.land/x/zod@v3.23.8/mod.ts"
       ],
-      "exports": [],
+      "exports": [
+        "IngestDependencies",
+        "createIngestHandler"
+      ],
       "symbols": [
+        "IngestDependencies",
+        "RpcResult",
         "auditActions",
+        "createIngestHandler",
         "featureTypes",
         "headerSecret",
         "ingestRunSchema",
@@ -6552,15 +6681,34 @@
         "rpcResult",
         "runStatuses",
         "serviceRoleKey",
-        "supabase",
         "supabaseUrl",
+        "timeout",
         "webhookSecret"
       ],
+      "referencedComponents": [
+        "RpcResult"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "supabase/functions/ingest-run/index.ts",
+      "kind": "function",
+      "extension": ".ts",
+      "hash": "1f72b3d8be7da7884aac91ccfe96c9b0b1b6bc8c4f6acf56f5d0428931869bb2",
+      "lines": 9,
+      "imports": [
+        "./handler.ts",
+        "https://deno.land/std/http/server.ts",
+        "https://esm.sh/@supabase/supabase-js@2"
+      ],
+      "exports": [],
+      "symbols": [],
       "referencedComponents": [],
       "referencedHooks": [],
-      "apiUsage": [
-        "supabase.rpc"
-      ],
+      "apiUsage": [],
       "databaseUsage": [],
       "routes": []
     },
@@ -7100,11 +7248,33 @@
       "routes": []
     },
     {
+      "path": "supabase/migrations/20260907000001_ingestion_ownership_guard.sql",
+      "kind": "migration",
+      "extension": ".sql",
+      "hash": "b969206435fd31fba282c17ec258ee5c1557394b0f64adae5389dbe5d283d242",
+      "lines": 201,
+      "imports": [],
+      "exports": [],
+      "symbols": [
+        "and",
+        "public"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "delete from",
+        "insert into",
+        "select value from"
+      ],
+      "routes": []
+    },
+    {
       "path": "supabase/tests/database/rls_isolation.sql",
       "kind": "other",
       "extension": ".sql",
-      "hash": "4851f6b50941bb17f802d6f33e2e05454c76cebfdfaf3a354a784606226c405b",
-      "lines": 85,
+      "hash": "a29801b432b0661d71b0abea60c75ef20bfba891ad85693e287a3e85baef4141",
+      "lines": 101,
       "imports": [],
       "exports": [],
       "symbols": [
@@ -7117,6 +7287,7 @@
         "insert into",
         "select * from",
         "select is((select count(*)::int from",
+        "select is((select event_id from",
         "select is((select name from"
       ],
       "routes": []
@@ -7140,8 +7311,8 @@
       "path": "tsconfig.app.json",
       "kind": "config",
       "extension": ".json",
-      "hash": "3197f30db441e0efd69da2a7aaa875d906a09965de1194a44e6a916977ab1395",
-      "lines": 29,
+      "hash": "dea6e93d35bbb855b80029b723f8de7a125adbd60ca5155f66bec46529be0c38",
+      "lines": 30,
       "imports": [],
       "exports": [],
       "symbols": [],
@@ -7208,8 +7379,8 @@
       "path": "vitest.config.ts",
       "kind": "source",
       "extension": ".ts",
-      "hash": "856df1915d1e25a2f17b2a0fed9a0d692fd2f5edd5397cf112a0c2d1002885d2",
-      "lines": 17,
+      "hash": "019857d34e12852b75c625419497951d29f152ce3d497481aab491872d766a8c",
+      "lines": 18,
       "imports": [
         "path",
         "vitest/config"

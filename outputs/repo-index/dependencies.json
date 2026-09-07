@@ -166,6 +166,11 @@
       "usedBy": []
     },
     {
+      "name": "@types/pg",
+      "version": "^8.23.1",
+      "usedBy": []
+    },
+    {
       "name": "@types/react",
       "version": "^19.2.18",
       "usedBy": []
@@ -241,6 +246,13 @@
       "name": "jsdom",
       "version": "^29.1.1",
       "usedBy": []
+    },
+    {
+      "name": "pg",
+      "version": "^8.23.0",
+      "usedBy": [
+        "scripts/test-ingestion-database.ts"
+      ]
     },
     {
       "name": "posthog-js",
@@ -400,6 +412,7 @@
         "src/test/SecurityPage.test.tsx",
         "src/test/SentryExamplePage.test.tsx",
         "src/test/demoData.test.ts",
+        "src/test/ingestRunHandler.test.ts",
         "src/test/legalConsent.test.ts",
         "src/test/onboarding.test.ts",
         "src/test/posthog.test.ts",
@@ -425,6 +438,11 @@
         "src/pages/LegalConsentPage.tsx",
         "src/pages/LoginPage.tsx"
       ]
+    },
+    {
+      "name": "zod-ingest",
+      "version": "npm:zod@3.23.8",
+      "usedBy": []
     },
     {
       "name": "zustand",

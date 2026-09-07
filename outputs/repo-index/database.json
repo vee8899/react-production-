@@ -29,6 +29,29 @@
       ]
     },
     {
+      "file": "scripts/test-ingestion-database.ts",
+      "exportedSymbols": [],
+      "importedSymbols": [
+        "node:assert/strict",
+        "node:crypto",
+        "node:timers/promises",
+        "pg"
+      ],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "delete from",
+        "insert into",
+        "select coalesce(jsonb_agg(to_jsonb(r) order by r.id), '[]') from",
+        "select coalesce(jsonb_agg(to_jsonb(r) order by r.id), '[]') from public.workflow_run_entities r where workflow_run_id in (select id from",
+        "select coalesce(jsonb_agg(to_jsonb(r) order by r.id), '[]') from public.workflow_steps r where workflow_run_id in (select id from",
+        "select to_jsonb(r) as row from",
+        "update public.automation_runs set"
+      ]
+    },
+    {
       "file": "scripts/verify-supabase.ts",
       "exportedSymbols": [],
       "importedSymbols": [
@@ -794,6 +817,20 @@
       "apiUsage": [],
       "databaseUsage": [
         "insert into"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260907000001_ingestion_ownership_guard.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "delete from",
+        "insert into",
+        "select value from"
       ]
     }
   ]

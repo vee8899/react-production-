@@ -17,14 +17,15 @@
     "refresh-ai": "npm run ingest && npm run index",
     "db:check": "tsx scripts/verify-supabase.ts",
     "db:dry-run": "npx supabase db push --dry-run",
-    "db:test": "npx supabase test db",
+    "db:test": "npx supabase test db && npm run db:test:ingestion",
     "n8n:check": "tsx scripts/verify-n8n-workflows.ts",
     "n8n:contracts": "tsx scripts/verify-n8n-contracts.ts",
     "n8n:adapters": "tsx scripts/verify-n8n-adapters.ts",
     "n8n:documents": "tsx scripts/verify-document-workflow.ts",
     "n8n:data-sync": "tsx scripts/verify-data-sync-workflow.ts",
     "agents:demo": "tsx agents/demo.ts",
-    "agents:typecheck": "tsc -p tsconfig.agents.json"
+    "agents:typecheck": "tsc -p tsconfig.agents.json",
+    "db:test:ingestion": "tsx scripts/test-ingestion-database.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",
@@ -57,6 +58,7 @@
     "@testing-library/user-event": "^14.6.7",
     "@types/diff": "^7.0.2",
     "@types/node": "^24.13.3",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "^6.1.1",
@@ -65,11 +67,13 @@
     "eslint-plugin-react-refresh": "^0.5.6",
     "globals": "^17.12.0",
     "jsdom": "^29.1.1",
+    "pg": "^8.23.0",
     "tailwindcss": "^4.3.1",
     "tsx": "^4.23.13",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.69.0",
     "vite": "^8.2.2",
-    "vitest": "^4.1.11"
+    "vitest": "^4.1.11",
+    "zod-ingest": "npm:zod@3.23.8"
   }
 }

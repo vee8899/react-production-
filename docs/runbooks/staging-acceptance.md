@@ -64,6 +64,8 @@ $env:STAGING_SUPABASE_URL = "https://your-staging-project.supabase.co"
 $env:STAGING_WEBHOOK_SECRET = "secret-from-staging-secret-store"
 $env:STAGING_CLIENT_ID = "staging-client-uuid"
 $env:STAGING_ORGANIZATION_ID = "staging-organization-uuid"
+$env:STAGING_OTHER_CLIENT_ID = "second-staging-client-uuid"
+$env:STAGING_OTHER_ORGANIZATION_ID = "second-staging-organization-uuid"
 $env:RELEASE_SHA = (git rev-parse HEAD).Trim()
 ```
 
@@ -73,9 +75,15 @@ Run this from the approved n8n or operator environment:
 npm.cmd run acceptance:ingest:staging
 ```
 
-Record the event ID, `run_id`, duplicate replay result, invalid-secret result,
+Use two valid clients from different organizations. Apply migration `20260907000001` before deploying the updated `ingest-run` function. The script first proves that each client can ingest, then reuses the first client's event ID for the second client and requires the generic `409` / `event_id_conflict` response. Duplicate replay must return the original `run_id`.
+
+The HTTP script does not by itself prove database row invariance. With approved staging database access, compare canonical, compatibility, step, entity, and audit rows before and after the rejected collision. Also review any historical compatibility ownership conflicts separately; do not repair them through replay. Local multi-connection execution is covered by `npm.cmd run db:test` and must be recorded independently.
+
+Record the event ID, `run_id`, duplicate replay result, second-client valid event, collision response, row-invariance evidence, invalid-secret result,
 Edge Function request IDs, dashboard metrics confirmation, audit/activity
 confirmation, and timestamp.
+
+These are acceptance instructions, not a claim that staging has passed. Current status is maintained in the [phase tracker](../plans/reliability-hardening/README.md#phase-tracker).
 
 ## Related
 

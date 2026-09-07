@@ -4,6 +4,7 @@ import path from 'path';
 export default defineConfig({
   resolve: {
     alias: {
+      'https://deno.land/x/zod@v3.23.8/mod.ts': 'zod-ingest',
       '@': path.resolve(import.meta.dirname, './src'),
     },
   },
