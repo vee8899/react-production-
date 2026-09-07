@@ -1,0 +1,115 @@
+{
+  "id": "2s7jhe3GaIiJdQG7",
+  "name": "Platform - Daily Data Pipeline Snapshot",
+  "versionId": "08e7fc57-4382-4a82-86f0-6280ba2cf93c",
+  "active": false,
+  "activeVersionId": null,
+  "nodes": [
+    {
+      "id": "c76ddd5a-b2a3-4614-a55c-ae1e246c23c8",
+      "name": "Daily at 02:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1,
+              "triggerAtHour": 2,
+              "triggerAtMinute": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "839bc6c2-886c-48de-95c6-c2cbf0582ea5",
+      "name": "Build Operations Snapshot",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        224,
+        0
+      ],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "select organization_id, count(*) filter (where entity = 'lead') as lead_count, count(*) filter (where entity = 'listing') as listing_count, count(*) filter (where entity = 'appointment') as appointment_count from (select organization_id, 'lead' as entity from real_estate.leads union all select organization_id, 'listing' as entity from real_estate.listings union all select organization_id, 'appointment' as entity from real_estate.appointments) entities group by organization_id order by organization_id"
+      },
+      "credentials": {
+        "postgres": {
+          "id": "9NYei4dh7z08Xyf4",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "id": "6e539b07-17b7-40bd-9ec6-1a48506e6549",
+      "name": "Annotate Data Snapshot",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        448,
+        0
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": true,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "feature_type",
+              "name": "feature_type",
+              "value": "data_pipeline",
+              "type": "string"
+            },
+            {
+              "id": "snapshot_type",
+              "name": "snapshot_type",
+              "value": "real_estate_operations",
+              "type": "string"
+            },
+            {
+              "id": "snapshot_at",
+              "name": "snapshot_at",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Daily at 02:00": {
+      "main": [
+        [
+          {
+            "node": "Build Operations Snapshot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Operations Snapshot": {
+      "main": [
+        [
+          {
+            "node": "Annotate Data Snapshot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true
+  }
+}

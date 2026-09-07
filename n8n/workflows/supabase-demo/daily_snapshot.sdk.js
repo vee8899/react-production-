@@ -1,0 +1,6 @@
+const n0=trigger({"type":"n8n-nodes-base.scheduleTrigger","version":1.3,"config":{"name":"Daily at 02:00","parameters":{"rule":{"interval":[{"field":"days","triggerAtHour":2,"triggerAtMinute":0}]}}}});
+const n1=trigger({"type":"n8n-nodes-base.manualTrigger","version":1,"config":{"name":"Manual acceptance","parameters":{}}});
+const n2=node({"type":"n8n-nodes-base.postgres","version":2.6,"config":{"name":"Build Operations Snapshot","parameters":{"operation":"executeQuery","query":"select automation.snapshot($1) as result","options":{"queryReplacement":expr("{{ ['n8n:'+$workflow.id+':'+$execution.id] }}")}},"credentials":{"postgres":{"id":"9NYei4dh7z08Xyf4","name":"Postgres account"}}}});
+const n3=node({"type":"n8n-nodes-base.set","version":3.4,"config":{"name":"Annotate Data Snapshot","parameters":{"mode":"raw","jsonOutput":expr("{{ {result:$json.result} }}"),"options":{}}}});
+const n4=node({"type":"n8n-nodes-base.executeWorkflow","version":1.3,"config":{"name":"Report committed result","parameters":{"mode":"once","source":"database","workflowId":{"__rl":true,"mode":"id","value":"9zbbX0mzILkkXG1e"},"options":{"waitForSubWorkflow":true}}}});
+export default workflow("2s7jhe3GaIiJdQG7","Platform - Daily Data Pipeline Snapshot").add(n0).to(n2).add(n1).to(n2).add(n2).to(n3).add(n3).to(n4);

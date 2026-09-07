@@ -1,0 +1,201 @@
+{
+  "id": "9zbbX0mzILkkXG1e",
+  "name": "Platform - Event Intake & Run Logging",
+  "versionId": "bbbb8917-9bc6-4e3a-8949-4601f4e9dd4d",
+  "active": false,
+  "activeVersionId": null,
+  "nodes": [
+    {
+      "id": "e6a4ca0f-ecb1-48d6-a62e-505718522030",
+      "name": "Receive Event",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "platform/event-intake",
+        "authentication": "none",
+        "responseMode": "responseNode"
+      },
+      "webhookId": "267fa9ed-6112-4cd6-9ca5-c1fe19d8bc61"
+    },
+    {
+      "id": "aee77a55-79a1-4685-8794-bb8ac8bac297",
+      "name": "Normalize Event",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        224,
+        0
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "event_id",
+              "name": "event_id",
+              "value": "={{ $json.body.event_id }}",
+              "type": "string"
+            },
+            {
+              "id": "client_id",
+              "name": "client_id",
+              "value": "={{ $json.body.client_id }}",
+              "type": "string"
+            },
+            {
+              "id": "feature_type",
+              "name": "feature_type",
+              "value": "={{ $json.body.feature_type || 'custom_workflow' }}",
+              "type": "string"
+            },
+            {
+              "id": "workflow_name",
+              "name": "workflow_name",
+              "value": "={{ $json.body.workflow_name || 'Platform Event Intake' }}",
+              "type": "string"
+            },
+            {
+              "id": "n8n_workflow_id",
+              "name": "n8n_workflow_id",
+              "value": "={{ $json.body.n8n_workflow_id || '' }}",
+              "type": "string"
+            },
+            {
+              "id": "status",
+              "name": "status",
+              "value": "={{ $json.body.status || 'started' }}",
+              "type": "string"
+            },
+            {
+              "id": "duration_ms",
+              "name": "duration_ms",
+              "value": "={{ $json.body.duration_ms || 0 }}",
+              "type": "number"
+            },
+            {
+              "id": "records_processed",
+              "name": "records_processed",
+              "value": "={{ $json.body.records_processed || 0 }}",
+              "type": "number"
+            },
+            {
+              "id": "records_failed",
+              "name": "records_failed",
+              "value": "={{ $json.body.records_failed || 0 }}",
+              "type": "number"
+            },
+            {
+              "id": "error_message",
+              "name": "error_message",
+              "value": "={{ $json.body.error_message || null }}",
+              "type": "string"
+            },
+            {
+              "id": "workflow_id",
+              "name": "workflow_id",
+              "value": "={{ $json.body.workflow_id || null }}",
+              "type": "string"
+            },
+            {
+              "id": "metadata",
+              "name": "metadata",
+              "value": "={{ $json.body.metadata || {} }}",
+              "type": "object"
+            },
+            {
+              "id": "entity_refs",
+              "name": "entity_refs",
+              "value": "={{ $json.body.entity_refs || [] }}",
+              "type": "array"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "268ccff7-a629-4f26-b5c4-e19c5690e78c",
+      "name": "Log Automation Run",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        448,
+        0
+      ],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "select public.ingest_automation_run($1::text,$2::uuid,$3::public.feature_type,$4::text,$5::text,$6::public.run_status,now(),$7::integer,$8::integer,$9::integer,$10::text,$11::uuid,$12::jsonb,$13::jsonb) as run_id",
+        "options": {
+          "queryReplacement": "={{ $json.event_id }},={{ $json.client_id }},={{ $json.feature_type }},={{ $json.workflow_name }},={{ $json.n8n_workflow_id }},={{ $json.status }},={{ $json.duration_ms }},={{ $json.records_processed }},={{ $json.records_failed }},={{ $json.error_message }},={{ $json.workflow_id }},={{ JSON.stringify($json.metadata) }},={{ JSON.stringify($json.entity_refs) }}"
+        }
+      },
+      "credentials": {
+        "postgres": {
+          "id": "9NYei4dh7z08Xyf4",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "id": "86cc5e12-159d-4562-86c6-7cd1985cc9c2",
+      "name": "Respond Accepted",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        672,
+        0
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { accepted: true, event_id: $('Normalize Event').item.json.event_id } }}",
+        "options": {
+          "responseCode": 202
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Receive Event": {
+      "main": [
+        [
+          {
+            "node": "Normalize Event",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize Event": {
+      "main": [
+        [
+          {
+            "node": "Log Automation Run",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Automation Run": {
+      "main": [
+        [
+          {
+            "node": "Respond Accepted",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true
+  }
+}

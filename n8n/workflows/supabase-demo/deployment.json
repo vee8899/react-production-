@@ -1,0 +1,68 @@
+{
+  "project_ref": "iutycpnqlzxovffctjyz",
+  "organization_id": "72fca9a0-6b41-4f8b-a385-ddb678456ed5",
+  "client_id": "031512ab-3bd0-4b6e-b4af-2cb467b95d7c",
+  "status": "draft_not_accepted",
+  "workflows": [
+    {
+      "operation": "lead_intake",
+      "n8n_workflow_id": "ehuyolTR9wCTt4th",
+      "workflow_name": "Real Estate - Lead Intake",
+      "feature_type": "modular_industry_workflows"
+    },
+    {
+      "operation": "listing_intake",
+      "n8n_workflow_id": "8OiSVHA5ur4ck4er",
+      "workflow_name": "Real Estate - Listing Intake",
+      "feature_type": "modular_industry_workflows"
+    },
+    {
+      "operation": "appointment_intake",
+      "n8n_workflow_id": "tBMUKfX53tDbaw4c",
+      "workflow_name": "Real Estate - Appointment Intake",
+      "feature_type": "modular_industry_workflows"
+    },
+    {
+      "operation": "lead_queue",
+      "n8n_workflow_id": "ankwO330MgME56EA",
+      "workflow_name": "Platform - Lead Follow-up Queue",
+      "feature_type": "workflow_automation"
+    },
+    {
+      "operation": "appointment_queue",
+      "n8n_workflow_id": "wFbOZvL0JpZmxYOp",
+      "workflow_name": "Platform - Appointment Reminder Queue",
+      "feature_type": "workflow_automation"
+    },
+    {
+      "operation": "listing_queue",
+      "n8n_workflow_id": "vQO59QJZ2RqWb0oS",
+      "workflow_name": "Platform - Listing Notification Queue",
+      "feature_type": "workflow_automation"
+    },
+    {
+      "operation": "daily_snapshot",
+      "n8n_workflow_id": "2s7jhe3GaIiJdQG7",
+      "workflow_name": "Platform - Daily Data Pipeline Snapshot",
+      "feature_type": "business_insights"
+    },
+    {
+      "operation": "event_intake",
+      "n8n_workflow_id": "9zbbX0mzILkkXG1e",
+      "workflow_name": "Platform - Event Intake & Run Logging",
+      "feature_type": "workflow_automation"
+    },
+    {
+      "operation": "recovery",
+      "n8n_workflow_id": "iinJGEl68Xp2t5Re",
+      "workflow_name": "Platform - Run Reporting Recovery",
+      "feature_type": "workflow_automation"
+    },
+    {
+      "operation": "failure",
+      "n8n_workflow_id": "2hJ2yGfSiGK2s84u",
+      "workflow_name": "Platform - Supabase Shared Failure Handler",
+      "feature_type": "workflow_automation"
+    }
+  ]
+}

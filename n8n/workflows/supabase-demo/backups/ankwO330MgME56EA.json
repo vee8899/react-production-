@@ -1,0 +1,113 @@
+{
+  "id": "ankwO330MgME56EA",
+  "name": "Platform - Lead Follow-up Queue",
+  "versionId": "adf5a9a1-f0e8-493e-9ca2-d4aab2fa7ba2",
+  "active": false,
+  "activeVersionId": null,
+  "nodes": [
+    {
+      "id": "9b916179-6129-4430-8f59-056d2d7b0fd5",
+      "name": "Every 15 Minutes",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 15
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c1af2717-4924-45e5-b4a4-adecc3e69954",
+      "name": "Find Follow-up Candidates",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        224,
+        0
+      ],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "select id, organization_id, first_name, last_name, email, phone, status, source_system, external_id, metadata, updated_at from real_estate.leads where status in ('new','contacted','nurture') and updated_at <= now() - interval '1 day' order by updated_at asc limit 100"
+      },
+      "credentials": {
+        "postgres": {
+          "id": "9NYei4dh7z08Xyf4",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "id": "ba3bae20-513c-445f-a9c8-dd5af290828d",
+      "name": "Annotate Follow-up Queue",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        448,
+        0
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": true,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "feature_type",
+              "name": "feature_type",
+              "value": "lead_follow_up",
+              "type": "string"
+            },
+            {
+              "id": "queue_action",
+              "name": "queue_action",
+              "value": "follow_up_required",
+              "type": "string"
+            },
+            {
+              "id": "queued_at",
+              "name": "queued_at",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Every 15 Minutes": {
+      "main": [
+        [
+          {
+            "node": "Find Follow-up Candidates",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find Follow-up Candidates": {
+      "main": [
+        [
+          {
+            "node": "Annotate Follow-up Queue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true
+  }
+}

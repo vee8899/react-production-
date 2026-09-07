@@ -1,0 +1,195 @@
+{
+  "id": "ehuyolTR9wCTt4th",
+  "name": "Real Estate - Lead Intake",
+  "versionId": "402462c0-b50d-4e5f-a529-ec26254c987c",
+  "active": false,
+  "activeVersionId": null,
+  "nodes": [
+    {
+      "id": "2de2e50f-e674-44a9-b230-79945122a7fc",
+      "name": "Receive Lead",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "real-estate/leads",
+        "authentication": "none",
+        "responseMode": "responseNode"
+      },
+      "webhookId": "3967e7a1-cde7-49b6-a6ce-1d0a8883a657"
+    },
+    {
+      "id": "f6ab976b-1b41-4824-95cb-42cbb0d142d9",
+      "name": "Normalize Lead",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        224,
+        0
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "organization_id",
+              "name": "organization_id",
+              "value": "={{ $json.body.organization_id }}",
+              "type": "string"
+            },
+            {
+              "id": "client_id",
+              "name": "client_id",
+              "value": "={{ $json.body.client_id || null }}",
+              "type": "string"
+            },
+            {
+              "id": "lead_type",
+              "name": "lead_type",
+              "value": "={{ $json.body.lead_type || 'inquiry' }}",
+              "type": "string"
+            },
+            {
+              "id": "status",
+              "name": "status",
+              "value": "={{ $json.body.status || 'new' }}",
+              "type": "string"
+            },
+            {
+              "id": "first_name",
+              "name": "first_name",
+              "value": "={{ $json.body.first_name || null }}",
+              "type": "string"
+            },
+            {
+              "id": "last_name",
+              "name": "last_name",
+              "value": "={{ $json.body.last_name || null }}",
+              "type": "string"
+            },
+            {
+              "id": "email",
+              "name": "email",
+              "value": "={{ $json.body.email || null }}",
+              "type": "string"
+            },
+            {
+              "id": "phone",
+              "name": "phone",
+              "value": "={{ $json.body.phone || null }}",
+              "type": "string"
+            },
+            {
+              "id": "assigned_agent_external_id",
+              "name": "assigned_agent_external_id",
+              "value": "={{ $json.body.assigned_agent_external_id || null }}",
+              "type": "string"
+            },
+            {
+              "id": "source_system",
+              "name": "source_system",
+              "value": "={{ $json.body.source_system || 'n8n' }}",
+              "type": "string"
+            },
+            {
+              "id": "external_id",
+              "name": "external_id",
+              "value": "={{ $json.body.external_id || null }}",
+              "type": "string"
+            },
+            {
+              "id": "metadata",
+              "name": "metadata",
+              "value": "={{ $json.body.metadata || {} }}",
+              "type": "object"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "2e332ea7-e7ce-40ea-a446-9968ca062288",
+      "name": "Upsert Lead",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        448,
+        0
+      ],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "insert into real_estate.leads (organization_id, lead_type, status, first_name, last_name, email, phone, assigned_agent_external_id, source_system, external_id, metadata) values ($1::uuid,$2::text,$3::text,$4::text,$5::text,$6::text,$7::text,$8::text,$9::text,$10::text,$11::jsonb) on conflict (organization_id, source_system, external_id) do update set lead_type=excluded.lead_type,status=excluded.status,first_name=excluded.first_name,last_name=excluded.last_name,email=excluded.email,phone=excluded.phone,assigned_agent_external_id=excluded.assigned_agent_external_id,metadata=excluded.metadata returning id, status",
+        "options": {
+          "queryReplacement": "={{ $json.organization_id }},={{ $json.lead_type }},={{ $json.status }},={{ $json.first_name }},={{ $json.last_name }},={{ $json.email }},={{ $json.phone }},={{ $json.assigned_agent_external_id }},={{ $json.source_system }},={{ $json.external_id }},={{ JSON.stringify($json.metadata) }}"
+        }
+      },
+      "credentials": {
+        "postgres": {
+          "id": "9NYei4dh7z08Xyf4",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "id": "5c2ce434-10db-4824-a060-a45db124de7f",
+      "name": "Respond Lead Accepted",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        672,
+        0
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { accepted: true, lead_id: $json.id, status: $json.status } }}",
+        "options": {
+          "responseCode": 202
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Receive Lead": {
+      "main": [
+        [
+          {
+            "node": "Normalize Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize Lead": {
+      "main": [
+        [
+          {
+            "node": "Upsert Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upsert Lead": {
+      "main": [
+        [
+          {
+            "node": "Respond Lead Accepted",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true
+  }
+}

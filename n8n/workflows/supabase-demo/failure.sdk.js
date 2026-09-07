@@ -1,0 +1,4 @@
+const n0=trigger({"type":"n8n-nodes-base.errorTrigger","version":1,"config":{"name":"Production failure","parameters":{}}});
+const n1=node({"type":"n8n-nodes-base.postgres","version":2.6,"config":{"name":"Record sanitized failure","parameters":{"operation":"executeQuery","query":"select automation.record_failure($1,$2) as result","options":{"queryReplacement":expr("{{ [$json.workflow.id, String($json.execution.id)] }}")}},"credentials":{"postgres":{"id":"9NYei4dh7z08Xyf4","name":"Postgres account"}}}});
+const n2=node({"type":"n8n-nodes-base.executeWorkflow","version":1.3,"config":{"name":"Report originating failure","parameters":{"mode":"once","source":"database","workflowId":{"__rl":true,"mode":"id","value":"9zbbX0mzILkkXG1e"},"options":{"waitForSubWorkflow":true}}}});
+export default workflow('demo-failure','Platform - Supabase Shared Failure Handler').add(n0).to(n1).to(n2);
