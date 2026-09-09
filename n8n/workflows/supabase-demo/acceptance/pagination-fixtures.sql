@@ -1,0 +1,2 @@
+-- Run through the restricted n8n Postgres credential with parameters [1,100], then [101,101].
+select count(*) filter (where result->>'http_status'='200')::int as accepted, count(*)::int as attempted from (select automation.intake('listing_intake','acceptance:pagination:20260909:'||n,jsonb_build_object('source_system','n8n_acceptance_pagination','external_id',n::text,'address_line1','Synthetic pagination fixture '||n,'status','active','price',0,'bedrooms',0,'bathrooms',0)) as result from generate_series($1::int,$2::int) n) t;

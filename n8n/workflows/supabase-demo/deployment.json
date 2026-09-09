@@ -2,7 +2,8 @@
   "project_ref": "iutycpnqlzxovffctjyz",
   "organization_id": "72fca9a0-6b41-4f8b-a385-ddb678456ed5",
   "client_id": "031512ab-3bd0-4b6e-b4af-2cb467b95d7c",
-  "status": "draft_not_accepted",
+  "status": "hosted_manual_tested_unpublished",
+  "evidence": "docs/evidence/2026-09-10-supabase-n8n-tests.md",
   "workflows": [
     {
       "operation": "lead_intake",

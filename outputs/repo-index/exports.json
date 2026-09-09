@@ -3,6 +3,30 @@
   "scanMethod": "approximate source-text matches; not runtime or authorization evidence",
   "records": [
     {
+      "file": ".presentation-build/build.mjs",
+      "exportedSymbols": []
+    },
+    {
+      "file": ".presentation-build/dense.mjs",
+      "exportedSymbols": []
+    },
+    {
+      "file": ".presentation-build/editorial.mjs",
+      "exportedSymbols": []
+    },
+    {
+      "file": ".presentation-build/inspect.mjs",
+      "exportedSymbols": []
+    },
+    {
+      "file": ".presentation-build/journey.mjs",
+      "exportedSymbols": []
+    },
+    {
+      "file": ".presentation-build/reviewed.mjs",
+      "exportedSymbols": []
+    },
+    {
       "file": "agents/codingAgents.test.ts",
       "exportedSymbols": [
         "ingestWorkflowRun"
@@ -112,6 +136,46 @@
       "exportedSymbols": []
     },
     {
+      "file": "n8n/workflows/supabase-demo/appointment_intake.sdk.js",
+      "exportedSymbols": []
+    },
+    {
+      "file": "n8n/workflows/supabase-demo/appointment_queue.sdk.js",
+      "exportedSymbols": []
+    },
+    {
+      "file": "n8n/workflows/supabase-demo/daily_snapshot.sdk.js",
+      "exportedSymbols": []
+    },
+    {
+      "file": "n8n/workflows/supabase-demo/failure.sdk.js",
+      "exportedSymbols": []
+    },
+    {
+      "file": "n8n/workflows/supabase-demo/lead_intake.sdk.js",
+      "exportedSymbols": []
+    },
+    {
+      "file": "n8n/workflows/supabase-demo/lead_queue.sdk.js",
+      "exportedSymbols": []
+    },
+    {
+      "file": "n8n/workflows/supabase-demo/listing_intake.sdk.js",
+      "exportedSymbols": []
+    },
+    {
+      "file": "n8n/workflows/supabase-demo/listing_queue.sdk.js",
+      "exportedSymbols": []
+    },
+    {
+      "file": "n8n/workflows/supabase-demo/recovery.sdk.js",
+      "exportedSymbols": []
+    },
+    {
+      "file": "n8n/workflows/supabase-demo/reporter.sdk.js",
+      "exportedSymbols": []
+    },
+    {
       "file": "playwright.config.ts",
       "exportedSymbols": []
     },
@@ -156,6 +220,10 @@
     },
     {
       "file": "scripts/test-ingestion-database.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "scripts/test-operational-automation.ts",
       "exportedSymbols": []
     },
     {
@@ -998,6 +1066,14 @@
     },
     {
       "file": "supabase/migrations/20260907000001_ingestion_ownership_guard.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260907000002_operational_automation.sql",
+      "exportedSymbols": []
+    },
+    {
+      "file": "supabase/migrations/20260909000001_automation_event_reference_validation.sql",
       "exportedSymbols": []
     },
     {

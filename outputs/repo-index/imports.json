@@ -3,6 +3,59 @@
   "scanMethod": "approximate source-text matches; not runtime or authorization evidence",
   "records": [
     {
+      "file": ".presentation-build/build.mjs",
+      "importedSymbols": [
+        "@oai/artifact-tool",
+        "file:///C:/Users/vee/.codex/plugins/cache/openai-primary-runtime/presentations/26.905.11957/skills/presentations/container_tools/artifact_tool_utils.mjs",
+        "node:fs/promises"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": ".presentation-build/dense.mjs",
+      "importedSymbols": [
+        "@oai/artifact-tool",
+        "file:///C:/Users/vee/.codex/plugins/cache/openai-primary-runtime/presentations/26.905.11957/skills/presentations/container_tools/artifact_tool_utils.mjs",
+        "node:fs/promises"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": ".presentation-build/editorial.mjs",
+      "importedSymbols": [
+        "@oai/artifact-tool",
+        "file:///C:/Users/vee/.codex/plugins/cache/openai-primary-runtime/presentations/26.905.11957/skills/presentations/container_tools/artifact_tool_utils.mjs",
+        "node:fs/promises"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": ".presentation-build/inspect.mjs",
+      "importedSymbols": [
+        "@oai/artifact-tool",
+        "node:fs/promises"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": ".presentation-build/journey.mjs",
+      "importedSymbols": [
+        "@oai/artifact-tool",
+        "file:///C:/Users/vee/.codex/plugins/cache/openai-primary-runtime/presentations/26.905.11957/skills/presentations/container_tools/artifact_tool_utils.mjs",
+        "node:fs/promises"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": ".presentation-build/reviewed.mjs",
+      "importedSymbols": [
+        "@oai/artifact-tool",
+        "file:///C:/Users/vee/.codex/plugins/cache/openai-primary-runtime/presentations/26.905.11957/skills/presentations/container_tools/artifact_tool_utils.mjs",
+        "node:fs/promises"
+      ],
+      "dependencies": []
+    },
+    {
       "file": "agents/codingAgents.test.ts",
       "importedSymbols": [
         "./config.ts",
@@ -152,6 +205,56 @@
       "dependencies": []
     },
     {
+      "file": "n8n/workflows/supabase-demo/appointment_intake.sdk.js",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "n8n/workflows/supabase-demo/appointment_queue.sdk.js",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "n8n/workflows/supabase-demo/daily_snapshot.sdk.js",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "n8n/workflows/supabase-demo/failure.sdk.js",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "n8n/workflows/supabase-demo/lead_intake.sdk.js",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "n8n/workflows/supabase-demo/lead_queue.sdk.js",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "n8n/workflows/supabase-demo/listing_intake.sdk.js",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "n8n/workflows/supabase-demo/listing_queue.sdk.js",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "n8n/workflows/supabase-demo/recovery.sdk.js",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "n8n/workflows/supabase-demo/reporter.sdk.js",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
       "file": "playwright.config.ts",
       "importedSymbols": [
         "@playwright/test"
@@ -232,6 +335,15 @@
         "node:assert/strict",
         "node:crypto",
         "node:timers/promises",
+        "pg"
+      ],
+      "dependencies": []
+    },
+    {
+      "file": "scripts/test-operational-automation.ts",
+      "importedSymbols": [
+        "node:assert/strict",
+        "node:crypto",
         "pg"
       ],
       "dependencies": []
@@ -1825,6 +1937,16 @@
     },
     {
       "file": "supabase/migrations/20260907000001_ingestion_ownership_guard.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260907000002_operational_automation.sql",
+      "importedSymbols": [],
+      "dependencies": []
+    },
+    {
+      "file": "supabase/migrations/20260909000001_automation_event_reference_validation.sql",
       "importedSymbols": [],
       "dependencies": []
     },

@@ -61,6 +61,7 @@ The most commonly used runbooks are:
 - [`database-migrations.md`](runbooks/database-migrations.md)
 - [`deployment.md`](runbooks/deployment.md)
 - [`debugging.md`](runbooks/debugging.md)
+- [`supabase-n8n-demo.md`](runbooks/supabase-n8n-demo.md)
 
 Each runbook should identify prerequisites, target environment, commands or actions, expected results, failure handling, and the limits of its verification. Correct factual gaps when discovered. Record already-authorized changes, and raise unresolved contract decisions under the change-control contract. Link to a canonical procedure rather than copying it into another runbook.
 

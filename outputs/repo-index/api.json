@@ -3,6 +3,21 @@
   "scanMethod": "approximate source-text matches; not runtime or authorization evidence",
   "records": [
     {
+      "file": "n8n/workflows/supabase-demo/reporter.sdk.js",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "/functions/v1/ingest-run",
+        "supabase.co"
+      ],
+      "databaseUsage": [
+        "select (select r from"
+      ]
+    },
+    {
       "file": "scripts/staging-ingest-acceptance.ts",
       "exportedSymbols": [],
       "importedSymbols": [],

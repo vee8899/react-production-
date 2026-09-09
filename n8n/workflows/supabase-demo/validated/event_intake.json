@@ -1,0 +1,897 @@
+{
+  "id": "9zbbX0mzILkkXG1e",
+  "name": "Platform - Event Intake & Run Logging",
+  "active": false,
+  "versionId": "7ece44c7-f295-4c5b-8c80-f943893b6043",
+  "nodes": [
+    {
+      "id": "e6a4ca0f-ecb1-48d6-a62e-505718522030",
+      "name": "Receive Event",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "platform/event-intake",
+        "authentication": "headerAuth",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "webhookId": "267fa9ed-6112-4cd6-9ca5-c1fe19d8bc61",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "SUUi2jOkXqG9qRTu",
+          "name": "Header Auth account 2"
+        }
+      }
+    },
+    {
+      "id": "aee77a55-79a1-4685-8794-bb8ac8bac297",
+      "name": "Normalize Event",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        224,
+        0
+      ],
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ {body: $json.body, event_id: $json.body?.event_id ?? null} }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "268ccff7-a629-4f26-b5c4-e19c5690e78c",
+      "name": "Log Automation Run",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        448,
+        0
+      ],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "select automation.accept_event($1,$2::jsonb) as result",
+        "options": {
+          "queryReplacement": "={{ [$json.event_id, JSON.stringify($json.body ?? null)] }}"
+        }
+      },
+      "credentials": {
+        "postgres": {
+          "id": "9NYei4dh7z08Xyf4",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "id": "86cc5e12-159d-4562-86c6-7cd1985cc9c2",
+      "name": "Respond Accepted",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        672,
+        0
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json.result }}",
+        "options": {
+          "responseCode": "={{ $json.result.http_status }}"
+        }
+      }
+    },
+    {
+      "id": "194dda67-0245-4611-81f2-72411b95116f",
+      "name": "Report a committed event",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        1040,
+        0
+      ],
+      "parameters": {
+        "inputSource": "passthrough"
+      }
+    },
+    {
+      "id": "eb6f585e-7d58-4a48-8c04-83b7c8af3518",
+      "name": "Claim report",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        1300,
+        0
+      ],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "select (select r from automation.claim_reports($1) r where $1 is not null limit 1) as claim, $2::jsonb as originating_result",
+        "options": {
+          "queryReplacement": "={{ [$json.result?.event_id ?? $json.event_id ?? '__missing_event__', JSON.stringify($json.result ?? $json)] }}"
+        }
+      },
+      "credentials": {
+        "postgres": {
+          "id": "9NYei4dh7z08Xyf4",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "id": "355eb27c-bf27-49e1-b2d7-597ebae85c2a",
+      "name": "Report claimed",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        0,
+        260
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.claim !== null }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "c533fe73-72a9-4735-82c2-5a31ce1d37cf",
+      "name": "Report context",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        260,
+        260
+      ],
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ {...$json.claim, originating_result: $json.originating_result} }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "5408fe29-043f-4363-9487-1266ea178474",
+      "name": "Send report 1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        520,
+        260
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://iutycpnqlzxovffctjyz.supabase.co/functions/v1/ingest-run",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $('Report context').item.json.payload }}",
+        "options": {
+          "timeout": 15000,
+          "redirect": {
+            "redirect": {
+              "followRedirects": false
+            }
+          },
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true,
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "onError": "continueRegularOutput",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "yr2XiIpIyIbneUy0",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "id": "3be59929-1260-49d2-9935-e56097907ca5",
+      "name": "Result 1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        780,
+        260
+      ],
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ {http_status: Number($json.statusCode ?? 0), ok: $json.statusCode === 200 && $json.body?.ok === true && typeof $json.body?.run_id === 'string', attempts: 1} }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "f2ddc515-4874-44d1-8c47-06a2effb712b",
+      "name": "Retry 1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1040,
+        260
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.http_status === 0 || $json.http_status === 429 || $json.http_status >= 500 }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "e7b7fed8-3e5f-4cdd-a5e1-dcd2bd5f4fd0",
+      "name": "Backoff 1",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1300,
+        260
+      ],
+      "parameters": {
+        "resume": "timeInterval",
+        "amount": 1,
+        "unit": "seconds"
+      },
+      "webhookId": "572d6600-5cc3-4b0c-96c8-a24d85731934"
+    },
+    {
+      "id": "b7dbbc1c-daab-4a76-bde3-224d12d612dd",
+      "name": "Send report 2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        0,
+        520
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://iutycpnqlzxovffctjyz.supabase.co/functions/v1/ingest-run",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $('Report context').item.json.payload }}",
+        "options": {
+          "timeout": 15000,
+          "redirect": {
+            "redirect": {
+              "followRedirects": false
+            }
+          },
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true,
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "onError": "continueRegularOutput",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "yr2XiIpIyIbneUy0",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "id": "b909bd6c-f391-4d16-b088-1b2a38aa727c",
+      "name": "Result 2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        260,
+        520
+      ],
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ {http_status: Number($json.statusCode ?? 0), ok: $json.statusCode === 200 && $json.body?.ok === true && typeof $json.body?.run_id === 'string', attempts: 2} }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "c1b3acc9-b0c1-46e5-b8d1-7c56b4d29c47",
+      "name": "Retry 2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        520,
+        520
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.http_status === 0 || $json.http_status === 429 || $json.http_status >= 500 }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "b1293736-eda9-4d1e-8bf3-1de36f385625",
+      "name": "Backoff 2",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        780,
+        520
+      ],
+      "parameters": {
+        "resume": "timeInterval",
+        "amount": 2,
+        "unit": "seconds"
+      },
+      "webhookId": "963ba994-5dbc-4638-acaa-dc763b28fe22"
+    },
+    {
+      "id": "8328fe6f-2ee1-4152-bdf3-ff8d6d096603",
+      "name": "Send report 3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        1040,
+        520
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://iutycpnqlzxovffctjyz.supabase.co/functions/v1/ingest-run",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $('Report context').item.json.payload }}",
+        "options": {
+          "timeout": 15000,
+          "redirect": {
+            "redirect": {
+              "followRedirects": false
+            }
+          },
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true,
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "onError": "continueRegularOutput",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "yr2XiIpIyIbneUy0",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "id": "11aa8066-d8da-4c15-8be5-f5eb3a2c1ddc",
+      "name": "Result 3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1300,
+        520
+      ],
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ {http_status: Number($json.statusCode ?? 0), ok: $json.statusCode === 200 && $json.body?.ok === true && typeof $json.body?.run_id === 'string', attempts: 3} }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "cdb06ae5-7980-4ce6-803b-30a29e48fc08",
+      "name": "Acknowledge report",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        0,
+        780
+      ],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "select automation.finish_report($1,$2::uuid,$3::int,$4::boolean,$5::int) as result",
+        "options": {
+          "queryReplacement": "={{ [$('Report context').item.json.event_id, $('Report context').item.json.lease_token, $json.http_status, $json.ok, $json.attempts] }}"
+        }
+      },
+      "credentials": {
+        "postgres": {
+          "id": "9NYei4dh7z08Xyf4",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "id": "d20f9d5a-3f11-46ae-bb9a-208adcff5dc6",
+      "name": "Reporting accepted",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        260,
+        780
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.result.report_status === 'delivered' }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "7a2829f1-67b5-4e4b-934a-3d1b5f4b6e5c",
+      "name": "Return business result",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        520,
+        780
+      ],
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ {result: $('Claim report').item.json.originating_result} }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "299881fd-b8ed-46a2-b057-4916ad318788",
+      "name": "Retain reporting failure",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        780,
+        780
+      ],
+      "parameters": {
+        "errorMessage": "Run reporting was deferred or quarantined; inspect Supabase run_report_outbox. Business changes remain committed."
+      }
+    },
+    {
+      "id": "22c319f8-2b4f-4725-a124-988c4aaed622",
+      "name": "Already delivered",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        780,
+        1040
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.originating_result?.report_status === 'delivered' }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "a6da6ff9-6816-41c2-99d6-37cea2d7a861",
+      "name": "Manual acceptance",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        1300
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "adb11ad9-bd71-4ed6-88f0-fcc44b85a3e4",
+      "name": "Demo event input",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        260,
+        1300
+      ],
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ {event_id:'manual:event:'+$execution.id,body:{status:'success',records_processed:1,entity_refs:[{entity_type:'lead',entity_id:'dd89376e-754a-442c-a5fd-c2c40bfc6a47'}]} } }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "09c37219-4c3b-4786-8318-27261366d9b1",
+      "name": "Accept demo event",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        520,
+        1300
+      ],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "select automation.accept_event($1,$2::jsonb) as result",
+        "options": {
+          "queryReplacement": "={{ [$json.event_id, JSON.stringify($json.body ?? null)] }}"
+        }
+      },
+      "credentials": {
+        "postgres": {
+          "id": "9NYei4dh7z08Xyf4",
+          "name": "Postgres account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Receive Event": {
+      "main": [
+        [
+          {
+            "node": "Normalize Event",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize Event": {
+      "main": [
+        [
+          {
+            "node": "Log Automation Run",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Automation Run": {
+      "main": [
+        [
+          {
+            "node": "Respond Accepted",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respond Accepted": {
+      "main": [
+        [
+          {
+            "node": "Claim report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Report a committed event": {
+      "main": [
+        [
+          {
+            "node": "Claim report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claim report": {
+      "main": [
+        [
+          {
+            "node": "Report claimed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Report context": {
+      "main": [
+        [
+          {
+            "node": "Send report 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send report 1": {
+      "main": [
+        [
+          {
+            "node": "Result 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Result 1": {
+      "main": [
+        [
+          {
+            "node": "Retry 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Backoff 1": {
+      "main": [
+        [
+          {
+            "node": "Send report 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send report 2": {
+      "main": [
+        [
+          {
+            "node": "Result 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Result 2": {
+      "main": [
+        [
+          {
+            "node": "Retry 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Backoff 2": {
+      "main": [
+        [
+          {
+            "node": "Send report 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send report 3": {
+      "main": [
+        [
+          {
+            "node": "Result 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Result 3": {
+      "main": [
+        [
+          {
+            "node": "Acknowledge report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Acknowledge report": {
+      "main": [
+        [
+          {
+            "node": "Reporting accepted",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Report claimed": {
+      "main": [
+        [
+          {
+            "node": "Report context",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Already delivered",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Retry 1": {
+      "main": [
+        [
+          {
+            "node": "Backoff 1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Acknowledge report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Retry 2": {
+      "main": [
+        [
+          {
+            "node": "Backoff 2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Acknowledge report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Reporting accepted": {
+      "main": [
+        [
+          {
+            "node": "Return business result",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Retain reporting failure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Already delivered": {
+      "main": [
+        [
+          {
+            "node": "Return business result",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Retain reporting failure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Manual acceptance": {
+      "main": [
+        [
+          {
+            "node": "Demo event input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Demo event input": {
+      "main": [
+        [
+          {
+            "node": "Accept demo event",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Accept demo event": {
+      "main": [
+        [
+          {
+            "node": "Claim report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true,
+    "timezone": "UTC",
+    "saveManualExecutions": true,
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all"
+  }
+}

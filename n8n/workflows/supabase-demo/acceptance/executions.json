@@ -1,0 +1,809 @@
+{
+  "project_ref": "iutycpnqlzxovffctjyz",
+  "organization_id": "72fca9a0-6b41-4f8b-a385-ddb678456ed5",
+  "base_revision": "cf52e73",
+  "status": "hosted_manual_tested_unpublished",
+  "executions": [
+    {
+      "op": "lead_intake",
+      "id": "19",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "event_id": "manual:ehuyolTR9wCTt4th:19",
+        "entity_id": "dd89376e-754a-442c-a5fd-c2c40bfc6a47",
+        "http_status": 200,
+        "report_status": "pending"
+      }
+    },
+    {
+      "op": "listing_intake",
+      "id": "21",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "event_id": "manual:8OiSVHA5ur4ck4er:21",
+        "entity_id": "a145529c-9471-4188-b53d-62d402d42dcb",
+        "http_status": 200,
+        "report_status": "pending"
+      }
+    },
+    {
+      "op": "appointment_intake",
+      "id": "23",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "event_id": "manual:tBMUKfX53tDbaw4c:23",
+        "entity_id": "b05b33af-d22a-4d48-812d-720623b0e411",
+        "http_status": 200,
+        "report_status": "pending"
+      }
+    },
+    {
+      "op": "lead_queue",
+      "id": "25",
+      "status": "success",
+      "nodes": {
+        "Find Follow-up Candidates": [
+          [
+            [
+              {
+                "result": {
+                  "ok": true,
+                  "event_id": "n8n:ankwO330MgME56EA:25:start",
+                  "has_more": false,
+                  "checkpoint": 0,
+                  "http_status": 200,
+                  "next_cursor": "c75e1bc0-4bc2-4d7b-bda4-84cf49d68c6c",
+                  "report_status": "pending",
+                  "records_scanned": 2,
+                  "records_processed": 2
+                }
+              }
+            ]
+          ]
+        ],
+        "Report committed result": [
+          [
+            [
+              {
+                "result": {
+                  "ok": true,
+                  "event_id": "n8n:ankwO330MgME56EA:25:start",
+                  "has_more": false,
+                  "checkpoint": 0,
+                  "http_status": 200,
+                  "next_cursor": "c75e1bc0-4bc2-4d7b-bda4-84cf49d68c6c",
+                  "report_status": "pending",
+                  "records_scanned": 2,
+                  "records_processed": 2
+                }
+              }
+            ]
+          ]
+        ],
+        "Return queue outcome": [
+          [
+            [
+              {
+                "result": {
+                  "ok": true,
+                  "event_id": "n8n:ankwO330MgME56EA:25:start",
+                  "has_more": false,
+                  "checkpoint": 0,
+                  "http_status": 200,
+                  "next_cursor": "c75e1bc0-4bc2-4d7b-bda4-84cf49d68c6c",
+                  "report_status": "pending",
+                  "records_scanned": 2,
+                  "records_processed": 2
+                }
+              }
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "op": "appointment_queue",
+      "id": "27",
+      "status": "success",
+      "nodes": {
+        "Find Upcoming Appointments": [
+          [
+            [
+              {
+                "result": {
+                  "ok": true,
+                  "event_id": "n8n:wFbOZvL0JpZmxYOp:27:start",
+                  "has_more": false,
+                  "checkpoint": 0,
+                  "http_status": 200,
+                  "next_cursor": "b05b33af-d22a-4d48-812d-720623b0e411",
+                  "report_status": "pending",
+                  "records_scanned": 1,
+                  "records_processed": 1
+                }
+              }
+            ]
+          ]
+        ],
+        "Report committed result": [
+          [
+            [
+              {
+                "result": {
+                  "ok": true,
+                  "event_id": "n8n:wFbOZvL0JpZmxYOp:27:start",
+                  "has_more": false,
+                  "checkpoint": 0,
+                  "http_status": 200,
+                  "next_cursor": "b05b33af-d22a-4d48-812d-720623b0e411",
+                  "report_status": "pending",
+                  "records_scanned": 1,
+                  "records_processed": 1
+                }
+              }
+            ]
+          ]
+        ],
+        "Return queue outcome": [
+          [
+            [
+              {
+                "result": {
+                  "ok": true,
+                  "event_id": "n8n:wFbOZvL0JpZmxYOp:27:start",
+                  "has_more": false,
+                  "checkpoint": 0,
+                  "http_status": 200,
+                  "next_cursor": "b05b33af-d22a-4d48-812d-720623b0e411",
+                  "report_status": "pending",
+                  "records_scanned": 1,
+                  "records_processed": 1
+                }
+              }
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "op": "listing_queue",
+      "id": "29",
+      "status": "success",
+      "nodes": {
+        "Find Listing Notification Candidates": [
+          [
+            [
+              {
+                "result": {
+                  "ok": true,
+                  "event_id": "n8n:vQO59QJZ2RqWb0oS:29:start",
+                  "has_more": false,
+                  "checkpoint": 13,
+                  "http_status": 200,
+                  "next_cursor": "a145529c-9471-4188-b53d-62d402d42dcb",
+                  "report_status": "pending",
+                  "records_scanned": 3,
+                  "records_processed": 1
+                }
+              }
+            ]
+          ]
+        ],
+        "Report committed result": [
+          [
+            [
+              {
+                "result": {
+                  "ok": true,
+                  "event_id": "n8n:vQO59QJZ2RqWb0oS:29:start",
+                  "has_more": false,
+                  "checkpoint": 13,
+                  "http_status": 200,
+                  "next_cursor": "a145529c-9471-4188-b53d-62d402d42dcb",
+                  "report_status": "pending",
+                  "records_scanned": 3,
+                  "records_processed": 1
+                }
+              }
+            ]
+          ]
+        ],
+        "Return queue outcome": [
+          [
+            [
+              {
+                "result": {
+                  "ok": true,
+                  "event_id": "n8n:vQO59QJZ2RqWb0oS:29:start",
+                  "has_more": false,
+                  "checkpoint": 13,
+                  "http_status": 200,
+                  "next_cursor": "a145529c-9471-4188-b53d-62d402d42dcb",
+                  "report_status": "pending",
+                  "records_scanned": 3,
+                  "records_processed": 1
+                }
+              }
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "op": "daily_snapshot",
+      "id": "31",
+      "status": "success",
+      "nodes": {
+        "Build Operations Snapshot": [
+          [
+            [
+              {
+                "result": {
+                  "ok": true,
+                  "counts": {
+                    "leads": 9,
+                    "listings": 3,
+                    "appointments": 2,
+                    "pending_tasks": 4,
+                    "pending_lead_follow_up": 2,
+                    "pending_listing_review": 1,
+                    "pending_appointment_reminder": 1
+                  },
+                  "event_id": "n8n:2s7jhe3GaIiJdQG7:31",
+                  "report_id": "295e1ce3-7e3c-40cc-9795-8a9ed066586e",
+                  "http_status": 200,
+                  "report_status": "pending"
+                }
+              }
+            ]
+          ]
+        ],
+        "Report committed result": [
+          [
+            [
+              {
+                "result": {
+                  "ok": true,
+                  "counts": {
+                    "leads": 9,
+                    "listings": 3,
+                    "appointments": 2,
+                    "pending_tasks": 4,
+                    "pending_lead_follow_up": 2,
+                    "pending_listing_review": 1,
+                    "pending_appointment_reminder": 1
+                  },
+                  "event_id": "n8n:2s7jhe3GaIiJdQG7:31",
+                  "report_id": "295e1ce3-7e3c-40cc-9795-8a9ed066586e",
+                  "http_status": 200,
+                  "report_status": "pending"
+                }
+              }
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "op": "recovery",
+      "id": "33",
+      "status": "success",
+      "nodes": {
+        "Find pending reports": [
+          [
+            [
+              {
+                "event_id": "manual:ehuyolTR9wCTt4th:9"
+              }
+            ]
+          ]
+        ],
+        "Recover report": [
+          [
+            [
+              {
+                "result": {
+                  "event_id": "manual:ehuyolTR9wCTt4th:9"
+                }
+              }
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "op": "lead_queue",
+      "id": "35",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "event_id": "n8n:ankwO330MgME56EA:35:start",
+        "has_more": false,
+        "checkpoint": 0,
+        "http_status": 200,
+        "next_cursor": "c75e1bc0-4bc2-4d7b-bda4-84cf49d68c6c",
+        "report_status": "pending",
+        "records_scanned": 2,
+        "records_processed": 0
+      }
+    },
+    {
+      "op": "appointment_queue",
+      "id": "37",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "event_id": "n8n:wFbOZvL0JpZmxYOp:37:start",
+        "has_more": false,
+        "checkpoint": 0,
+        "http_status": 200,
+        "next_cursor": "b05b33af-d22a-4d48-812d-720623b0e411",
+        "report_status": "pending",
+        "records_scanned": 1,
+        "records_processed": 0
+      }
+    },
+    {
+      "op": "listing_queue",
+      "id": "39",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "event_id": "n8n:vQO59QJZ2RqWb0oS:39:start",
+        "has_more": false,
+        "checkpoint": 13,
+        "http_status": 200,
+        "next_cursor": null,
+        "report_status": "pending",
+        "records_scanned": 0,
+        "records_processed": 0
+      }
+    },
+    {
+      "op": "daily_snapshot",
+      "id": "41",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "counts": {
+          "leads": 9,
+          "listings": 3,
+          "appointments": 2,
+          "pending_tasks": 4,
+          "pending_lead_follow_up": 2,
+          "pending_listing_review": 1,
+          "pending_appointment_reminder": 1
+        },
+        "event_id": "n8n:2s7jhe3GaIiJdQG7:41",
+        "report_id": "295e1ce3-7e3c-40cc-9795-8a9ed066586e",
+        "http_status": 200,
+        "report_status": "pending"
+      }
+    },
+    {
+      "op": "listing_webhook_mcp",
+      "id": "43",
+      "status": "success",
+      "note": "MCP invocation is not evidence of HTTP authentication enforcement."
+    },
+    {
+      "op": "failure",
+      "id": "45",
+      "status": "error",
+      "error": "invalid syntax"
+    },
+    {
+      "op": "event_intake",
+      "id": "46",
+      "status": "error",
+      "error": "invalid syntax"
+    },
+    {
+      "op": "failure",
+      "id": "48",
+      "status": "success",
+      "result": {
+        "result": {
+          "ok": false,
+          "event_id": "n8n-failure:ehuyolTR9wCTt4th:acceptance-48",
+          "report_status": "pending"
+        }
+      }
+    },
+    {
+      "op": "event_intake",
+      "id": "49",
+      "status": "success",
+      "result": {
+        "result": {
+          "event_id": "manual:event:49",
+          "report_status": "delivered"
+        }
+      }
+    },
+    {
+      "op": "lead_intake",
+      "id": "52",
+      "status": "error",
+      "error": "Intake request rejected. See the sanitized validation result; no business mutation was committed.",
+      "result": [
+        {
+          "result": {
+            "error": "Invalid request or linked entity",
+            "event_id": "acceptance:20260909:malformed",
+            "http_status": 400,
+            "report_status": "pending"
+          },
+          "is_webhook": false
+        }
+      ]
+    },
+    {
+      "op": "listing_intake",
+      "id": "54",
+      "status": "error",
+      "error": "Intake request rejected. See the sanitized validation result; no business mutation was committed.",
+      "result": [
+        {
+          "result": {
+            "error": "Invalid request or linked entity",
+            "event_id": "acceptance:20260909:negative-price",
+            "http_status": 400,
+            "report_status": "pending"
+          },
+          "is_webhook": false
+        }
+      ]
+    },
+    {
+      "op": "appointment_intake",
+      "id": "56",
+      "status": "error",
+      "error": "Intake request rejected. See the sanitized validation result; no business mutation was committed.",
+      "result": [
+        {
+          "result": {
+            "error": "Invalid request or linked entity",
+            "event_id": "acceptance:20260909:invalid-time",
+            "http_status": 400,
+            "report_status": "pending"
+          },
+          "is_webhook": false
+        }
+      ]
+    },
+    {
+      "op": "recovery",
+      "id": "50",
+      "status": "success",
+      "result": [
+        {
+          "result": {
+            "event_id": "n8n-failure:ehuyolTR9wCTt4th:acceptance-48"
+          }
+        }
+      ]
+    },
+    {
+      "op": "lead_intake",
+      "id": "58",
+      "status": "error",
+      "error": "Intake request rejected. See the sanitized validation result; no business mutation was committed.",
+      "result": {
+        "result": {
+          "error": "Invalid request or linked entity",
+          "event_id": "acceptance:20260909:tenant-conflict",
+          "http_status": 400,
+          "report_status": "pending"
+        },
+        "is_webhook": false
+      }
+    },
+    {
+      "op": "appointment_intake",
+      "id": "60",
+      "status": "error",
+      "error": "Intake request rejected. See the sanitized validation result; no business mutation was committed.",
+      "result": {
+        "result": {
+          "error": "Invalid request or linked entity",
+          "event_id": "acceptance:20260909:unowned-reference",
+          "http_status": 400,
+          "report_status": "pending"
+        },
+        "is_webhook": false
+      }
+    },
+    {
+      "op": "event_missing_type",
+      "id": "66",
+      "status": "error",
+      "error": "Run reporting was deferred or quarantined; inspect Supabase run_report_outbox. Business changes remain committed.",
+      "nodes": {
+        "Accept demo event": [
+          [
+            {
+              "result": {
+                "accepted": true,
+                "event_id": "acceptance:20260909:missing-entity-type",
+                "http_status": 202,
+                "report_status": "pending"
+              }
+            }
+          ]
+        ],
+        "Result 1": [
+          [
+            {
+              "http_status": 400,
+              "ok": false,
+              "attempts": 1
+            }
+          ]
+        ],
+        "Acknowledge report": [
+          [
+            {
+              "result": {
+                "event_id": "acceptance:20260909:missing-entity-type",
+                "report_status": "quarantined"
+              }
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "op": "listing_pagination",
+      "id": "70",
+      "status": "success",
+      "nodes": {
+        "Find Listing Notification Candidates": [
+          [
+            {
+              "result": {
+                "ok": true,
+                "event_id": "n8n:vQO59QJZ2RqWb0oS:70:start",
+                "has_more": true,
+                "checkpoint": 114,
+                "http_status": 200,
+                "next_cursor": "e4668843-23b3-4d1a-9e03-1299d9fffb0e",
+                "report_status": "pending",
+                "records_scanned": 100,
+                "records_processed": 99
+              }
+            }
+          ],
+          [
+            {
+              "result": {
+                "ok": true,
+                "event_id": "n8n:vQO59QJZ2RqWb0oS:70:e4668843-23b3-4d1a-9e03-1299d9fffb0e",
+                "has_more": false,
+                "checkpoint": 116,
+                "http_status": 200,
+                "next_cursor": "cde68cf8-deb6-4378-a5e6-98ad95d068a9",
+                "report_status": "pending",
+                "records_scanned": 2,
+                "records_processed": 2
+              }
+            }
+          ]
+        ],
+        "Return queue outcome": [
+          [
+            {
+              "result": {
+                "ok": true,
+                "event_id": "n8n:vQO59QJZ2RqWb0oS:70:e4668843-23b3-4d1a-9e03-1299d9fffb0e",
+                "has_more": false,
+                "checkpoint": 116,
+                "http_status": 200,
+                "next_cursor": "cde68cf8-deb6-4378-a5e6-98ad95d068a9",
+                "report_status": "pending",
+                "records_scanned": 2,
+                "records_processed": 2
+              }
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "op": "concurrent_lead_poll",
+      "id": "62",
+      "status": "success",
+      "result": {
+        "result": {
+          "ok": true,
+          "event_id": "n8n:ankwO330MgME56EA:62:start",
+          "has_more": false,
+          "checkpoint": 0,
+          "http_status": 200,
+          "next_cursor": "c75e1bc0-4bc2-4d7b-bda4-84cf49d68c6c",
+          "report_status": "pending",
+          "records_scanned": 2,
+          "records_processed": 0
+        }
+      }
+    },
+    {
+      "op": "concurrent_lead_poll",
+      "id": "64",
+      "status": "success",
+      "result": {
+        "result": {
+          "ok": true,
+          "event_id": "n8n:ankwO330MgME56EA:64:start",
+          "has_more": false,
+          "checkpoint": 0,
+          "http_status": 200,
+          "next_cursor": "c75e1bc0-4bc2-4d7b-bda4-84cf49d68c6c",
+          "report_status": "pending",
+          "records_scanned": 2,
+          "records_processed": 0
+        }
+      }
+    },
+    {
+      "op": "recovery_batch",
+      "id": "73",
+      "status": "success",
+      "recovered": 100
+    },
+    {
+      "op": "recovery_remaining",
+      "id": "174",
+      "status": "success",
+      "recovered": 1
+    },
+    {
+      "id": "176",
+      "op": "event_intake",
+      "status": "error",
+      "error": "Run reporting was deferred or quarantined; inspect Supabase run_report_outbox. Business changes remain committed.",
+      "result": {
+        "result": {
+          "error": "Invalid event or linked entity",
+          "http_status": 400
+        }
+      }
+    },
+    {
+      "id": "177",
+      "op": "appointment_intake",
+      "status": "success",
+      "result": {
+        "result": {
+          "ok": true,
+          "event_id": "manual:tBMUKfX53tDbaw4c:177",
+          "entity_id": "b9cefa62-a06d-41bf-93c6-c13310393728",
+          "http_status": 200,
+          "report_status": "pending"
+        },
+        "is_webhook": false
+      }
+    },
+    {
+      "op": "task_audit",
+      "status": "pass",
+      "entity_id": "b9cefa62-a06d-41bf-93c6-c13310393728",
+      "task_id": "98c0a9be-bebb-4bda-963b-1c1098218af0",
+      "review_status": "completed",
+      "audit_transitions": 1
+    },
+    {
+      "op": "appointment_queue",
+      "id": "181",
+      "status": "success",
+      "result": {
+        "result": {
+          "ok": true,
+          "event_id": "n8n:wFbOZvL0JpZmxYOp:181:start",
+          "has_more": false,
+          "checkpoint": 0,
+          "http_status": 200,
+          "next_cursor": "b9cefa62-a06d-41bf-93c6-c13310393728",
+          "report_status": "pending",
+          "records_scanned": 1,
+          "records_processed": 0
+        }
+      }
+    },
+    {
+      "op": "appointment_intake",
+      "id": "183",
+      "status": "success",
+      "result": {
+        "result": {
+          "ok": true,
+          "event_id": "acceptance:20260910:reschedule-1",
+          "entity_id": "b9cefa62-a06d-41bf-93c6-c13310393728",
+          "http_status": 200,
+          "report_status": "pending"
+        },
+        "is_webhook": false
+      }
+    },
+    {
+      "op": "reschedule_reminder",
+      "id": "185",
+      "status": "success",
+      "result": {
+        "result": {
+          "ok": true,
+          "event_id": "n8n:wFbOZvL0JpZmxYOp:185:start",
+          "has_more": false,
+          "checkpoint": 0,
+          "http_status": 200,
+          "next_cursor": "b9cefa62-a06d-41bf-93c6-c13310393728",
+          "report_status": "pending",
+          "records_scanned": 1,
+          "records_processed": 1
+        }
+      }
+    },
+    {
+      "op": "appointment_intake",
+      "id": "187",
+      "status": "success",
+      "result": {
+        "result": {
+          "ok": true,
+          "event_id": "acceptance:20260910:reschedule-2",
+          "entity_id": "b9cefa62-a06d-41bf-93c6-c13310393728",
+          "http_status": 200,
+          "report_status": "pending"
+        },
+        "is_webhook": false
+      }
+    },
+    {
+      "op": "appointment_queue",
+      "id": "189",
+      "status": "success",
+      "result": {
+        "result": {
+          "ok": true,
+          "event_id": "n8n:wFbOZvL0JpZmxYOp:189:start",
+          "has_more": false,
+          "checkpoint": 0,
+          "http_status": 200,
+          "next_cursor": "b9cefa62-a06d-41bf-93c6-c13310393728",
+          "report_status": "pending",
+          "records_scanned": 1,
+          "records_processed": 1
+        }
+      }
+    },
+    {
+      "op": "lead_webhook_mcp",
+      "id": "191",
+      "status": "success",
+      "result": {
+        "result": {
+          "ok": true,
+          "event_id": "acceptance:20260910:lead-webhook",
+          "entity_id": "dc376d7b-0f74-4dbf-8d16-37a69d6ad232",
+          "http_status": 200,
+          "report_status": "pending"
+        }
+      }
+    }
+  ],
+  "sql_checks": {
+    "completed_reminder": 1,
+    "cancelled_reminder": 1,
+    "pending_reminder": 1,
+    "task_audit_transitions": 2,
+    "delivered_reports": 133,
+    "pending_or_leased_reports": 0,
+    "delivered_missing_canonical_run": 0,
+    "origin_workflow_mismatch": 0,
+    "quarantined_success_runs": 0,
+    "zero_value_listings": 101
+  }
+}

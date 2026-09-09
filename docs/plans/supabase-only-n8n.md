@@ -1,6 +1,19 @@
 # Supabase-only demo automation
 
-Status: implementation in progress; not accepted or published.
+Status: all ten workflows manually exercised against hosted Supabase; unpublished and not fully release-accepted.
+
+## Current status, 2026-09-10
+
+The database login and outbound reporting secret now work. All ten hosted drafts
+were updated and tested, and the forward event-reference validation migration was
+applied. Pagination, recovery, rescheduling, task audit transitions, canonical run
+identity, and negative validation checks passed. See the [dated test evidence](../evidence/2026-09-10-supabase-n8n-tests.md)
+for execution IDs, local checks, fixtures, and coverage limits.
+
+Before release: verify external HTTP webhook authentication, perform an authenticated
+portal walkthrough, publish/link shared error handling, then publish the suite and
+observe a scheduled cycle. Manual Error Trigger simulation does not verify automatic
+production dispatch. Follow the [operator runbook](../runbooks/supabase-n8n-demo.md).
 
 The approved delivery uses hosted development project `iutycpnqlzxovffctjyz`
 and one explicitly configured Northstar Realty Demo organization. Supabase is
@@ -28,7 +41,7 @@ The existing portal remains a run and audit viewer.
 Email, external CRM/calendar providers, AI, document generation, and a new
 approval screen are deferred. Their packages remain incomplete and inactive.
 
-## Preflight, 2026-09-07
+## Historical preflight, 2026-09-07
 
 - CLI project inventory confirms the linked target is `ACTIVE_HEALTHY`.
 - Hosted SQL Editor lookup found one Northstar client matching

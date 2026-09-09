@@ -1,0 +1,346 @@
+{
+  "id": "8OiSVHA5ur4ck4er",
+  "name": "Real Estate - Listing Intake",
+  "active": false,
+  "versionId": "3afd451b-b285-4d4a-b937-dbb94046baed",
+  "nodes": [
+    {
+      "id": "34a9d926-5318-486b-bde9-700fd18848d5",
+      "name": "Receive Listing",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "real-estate/listings",
+        "authentication": "headerAuth",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "webhookId": "c097f14e-215e-465b-8c04-64f0af1f8f29",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "SUUi2jOkXqG9qRTu",
+          "name": "Header Auth account 2"
+        }
+      }
+    },
+    {
+      "id": "fd14b221-929f-43c4-b479-8ab0f00bb418",
+      "name": "Normalize Listing",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        224,
+        0
+      ],
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ {body:$json.body,event_id:$json.body?.event_id ?? null,is_webhook:true} }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "5899da22-0681-4509-8558-1b6002fcbb90",
+      "name": "Upsert Listing",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        448,
+        0
+      ],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "select automation.intake('listing_intake',$1,$2::jsonb) as result, $3::boolean as is_webhook",
+        "options": {
+          "queryReplacement": "={{ [$json.event_id, JSON.stringify($json.body ?? null), $json.is_webhook] }}"
+        }
+      },
+      "credentials": {
+        "postgres": {
+          "id": "9NYei4dh7z08Xyf4",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "id": "a6de275f-b949-48a1-9a62-b7cb07589fb4",
+      "name": "Respond Listing Accepted",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        672,
+        0
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json.result }}",
+        "options": {
+          "responseCode": "={{ $json.result.http_status }}"
+        }
+      }
+    },
+    {
+      "id": "0c730a0a-77bb-4942-a532-194ee8b5a406",
+      "name": "Manual acceptance",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        520,
+        0
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "2f8fe528-8d96-460c-954d-84d3dd6072e0",
+      "name": "Demo acceptance input",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        780,
+        0
+      ],
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ {body:{source_system:'n8n_acceptance',external_id:'manual-'+$execution.id,address_line1:'Automation acceptance listing',status:'draft',price:0,bedrooms:0,bathrooms:0},event_id:'manual:'+$workflow.id+':'+$execution.id,is_webhook:false} }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "f2e694ef-cd0c-44e7-b36f-e98482c56ee8",
+      "name": "Webhook response required",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1300,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.is_webhook === true }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "2e462b31-4065-4797-8c0b-3d34973174f7",
+      "name": "Report committed result",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        260,
+        260
+      ],
+      "parameters": {
+        "mode": "once",
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "9zbbX0mzILkkXG1e"
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      }
+    },
+    {
+      "id": "e299fcd0-4575-4377-8947-a91e63f5168a",
+      "name": "Request accepted",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        520,
+        260
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.result.http_status < 400 }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "152ea6e4-0d91-46ee-a761-469cd11b462c",
+      "name": "Return intake outcome",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        780,
+        260
+      ],
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ $json }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "668503f2-a7d9-4617-b2c6-be76e66823ca",
+      "name": "Retain rejected request",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        260
+      ],
+      "parameters": {
+        "errorMessage": "Intake request rejected. See the sanitized validation result; no business mutation was committed."
+      }
+    }
+  ],
+  "connections": {
+    "Receive Listing": {
+      "main": [
+        [
+          {
+            "node": "Normalize Listing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize Listing": {
+      "main": [
+        [
+          {
+            "node": "Upsert Listing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Manual acceptance": {
+      "main": [
+        [
+          {
+            "node": "Demo acceptance input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Demo acceptance input": {
+      "main": [
+        [
+          {
+            "node": "Upsert Listing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upsert Listing": {
+      "main": [
+        [
+          {
+            "node": "Webhook response required",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respond Listing Accepted": {
+      "main": [
+        [
+          {
+            "node": "Report committed result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Report committed result": {
+      "main": [
+        [
+          {
+            "node": "Request accepted",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook response required": {
+      "main": [
+        [
+          {
+            "node": "Respond Listing Accepted",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Report committed result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Request accepted": {
+      "main": [
+        [
+          {
+            "node": "Return intake outcome",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Retain rejected request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true,
+    "timezone": "UTC",
+    "saveManualExecutions": true,
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all"
+  }
+}

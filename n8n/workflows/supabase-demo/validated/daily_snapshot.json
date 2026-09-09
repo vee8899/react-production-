@@ -1,0 +1,154 @@
+{
+  "id": "2s7jhe3GaIiJdQG7",
+  "name": "Platform - Daily Data Pipeline Snapshot",
+  "active": false,
+  "versionId": "88639f49-258d-4db3-9b86-22b986f30bb5",
+  "nodes": [
+    {
+      "id": "c76ddd5a-b2a3-4614-a55c-ae1e246c23c8",
+      "name": "Daily at 02:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "triggerAtHour": 2,
+              "triggerAtMinute": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "839bc6c2-886c-48de-95c6-c2cbf0582ea5",
+      "name": "Build Operations Snapshot",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        224,
+        0
+      ],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "select automation.snapshot($1) as result",
+        "options": {
+          "queryReplacement": "={{ ['n8n:'+$workflow.id+':'+$execution.id] }}"
+        }
+      },
+      "credentials": {
+        "postgres": {
+          "id": "9NYei4dh7z08Xyf4",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "id": "6e539b07-17b7-40bd-9ec6-1a48506e6549",
+      "name": "Annotate Data Snapshot",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        448,
+        0
+      ],
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ {result:$json.result} }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "20a68744-d9b8-4b4b-8cdd-d585cc687ff3",
+      "name": "Manual acceptance",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        260,
+        0
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "3bc408d0-ce1e-4730-a279-f35e766e2746",
+      "name": "Report committed result",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1040,
+        0
+      ],
+      "parameters": {
+        "mode": "once",
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "9zbbX0mzILkkXG1e"
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Daily at 02:00": {
+      "main": [
+        [
+          {
+            "node": "Build Operations Snapshot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Manual acceptance": {
+      "main": [
+        [
+          {
+            "node": "Build Operations Snapshot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Operations Snapshot": {
+      "main": [
+        [
+          {
+            "node": "Annotate Data Snapshot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Annotate Data Snapshot": {
+      "main": [
+        [
+          {
+            "node": "Report committed result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true,
+    "timezone": "UTC",
+    "saveManualExecutions": true,
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all"
+  }
+}

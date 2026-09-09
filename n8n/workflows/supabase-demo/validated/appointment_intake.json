@@ -1,0 +1,346 @@
+{
+  "id": "tBMUKfX53tDbaw4c",
+  "name": "Real Estate - Appointment Intake",
+  "active": false,
+  "versionId": "aa4c951a-c568-40e0-b71e-5164448c646c",
+  "nodes": [
+    {
+      "id": "752539d4-4bd3-4f0d-beae-99610e07b2b3",
+      "name": "Receive Appointment",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "real-estate/appointments",
+        "authentication": "headerAuth",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "webhookId": "096366cd-881c-4738-b1a1-83707bed2d0b",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "SUUi2jOkXqG9qRTu",
+          "name": "Header Auth account 2"
+        }
+      }
+    },
+    {
+      "id": "bb660e57-31ce-4797-baec-462dd238448c",
+      "name": "Normalize Appointment",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        224,
+        0
+      ],
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ {body:$json.body,event_id:$json.body?.event_id ?? null,is_webhook:true} }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "e28a8291-4e24-4cff-b724-0da2cb659e9d",
+      "name": "Upsert Appointment",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        448,
+        0
+      ],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "select automation.intake('appointment_intake',$1,$2::jsonb) as result, $3::boolean as is_webhook",
+        "options": {
+          "queryReplacement": "={{ [$json.event_id, JSON.stringify($json.body ?? null), $json.is_webhook] }}"
+        }
+      },
+      "credentials": {
+        "postgres": {
+          "id": "9NYei4dh7z08Xyf4",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "id": "338d40a4-6324-4501-8d0d-3dec15482ca4",
+      "name": "Respond Appointment Accepted",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        672,
+        0
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json.result }}",
+        "options": {
+          "responseCode": "={{ $json.result.http_status }}"
+        }
+      }
+    },
+    {
+      "id": "fc1ef0ec-3e1d-454f-907e-634ab1434491",
+      "name": "Manual acceptance",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        520,
+        0
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "29cd138f-9026-4ea6-9d55-ad1f98006a31",
+      "name": "Demo acceptance input",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        780,
+        0
+      ],
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ {body:{source_system:'n8n_acceptance',external_id:'manual-'+$execution.id,title:'Automation acceptance appointment',starts_at:$now.plus({hours:2}).toUTC().toISO(),ends_at:$now.plus({hours:3}).toUTC().toISO()},event_id:'manual:'+$workflow.id+':'+$execution.id,is_webhook:false} }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "1a4e59a1-dd4b-4954-b108-1c7589fc182c",
+      "name": "Webhook response required",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1300,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.is_webhook === true }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "9a45d89e-88d4-4609-9304-87075357fcdb",
+      "name": "Report committed result",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        260,
+        260
+      ],
+      "parameters": {
+        "mode": "once",
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "9zbbX0mzILkkXG1e"
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      }
+    },
+    {
+      "id": "0e689972-58ef-45c0-8cd6-70a7e8a2b207",
+      "name": "Request accepted",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        520,
+        260
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.result.http_status < 400 }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "600bf85f-1d1c-491e-87e8-2e50b0fa476d",
+      "name": "Return intake outcome",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        780,
+        260
+      ],
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ $json }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "8944a0b0-e390-4656-bcf8-89ac0a3681b9",
+      "name": "Retain rejected request",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        260
+      ],
+      "parameters": {
+        "errorMessage": "Intake request rejected. See the sanitized validation result; no business mutation was committed."
+      }
+    }
+  ],
+  "connections": {
+    "Receive Appointment": {
+      "main": [
+        [
+          {
+            "node": "Normalize Appointment",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize Appointment": {
+      "main": [
+        [
+          {
+            "node": "Upsert Appointment",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Manual acceptance": {
+      "main": [
+        [
+          {
+            "node": "Demo acceptance input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Demo acceptance input": {
+      "main": [
+        [
+          {
+            "node": "Upsert Appointment",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upsert Appointment": {
+      "main": [
+        [
+          {
+            "node": "Webhook response required",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respond Appointment Accepted": {
+      "main": [
+        [
+          {
+            "node": "Report committed result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Report committed result": {
+      "main": [
+        [
+          {
+            "node": "Request accepted",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook response required": {
+      "main": [
+        [
+          {
+            "node": "Respond Appointment Accepted",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Report committed result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Request accepted": {
+      "main": [
+        [
+          {
+            "node": "Return intake outcome",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Retain rejected request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true,
+    "timezone": "UTC",
+    "saveManualExecutions": true,
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all"
+  }
+}

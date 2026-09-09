@@ -40,6 +40,7 @@ function walk(root: string, current = root): string[] {
       const generatedArtifacts = directoryPath === "docs/knowledge-base" || directoryPath.startsWith("docs/knowledge-base/") || directoryPath === "docs/generated" || directoryPath.startsWith("docs/generated/") || directoryPath === "outputs/repo-index" || directoryPath.startsWith("outputs/repo-index/");
       return ignoredDirectories.has(entry.name) || generatedDocs || generatedArtifacts ? [] : walk(root, join(current, entry.name));
     }
+    if (!entry.isFile()) return [];
     if (ignoredFiles.has(entry.name) || entry.name.endsWith(".generated.ts") || entry.name.endsWith(".map")) return [];
     return [relative(root, join(current, entry.name)).replaceAll("\\", "/")];
   });

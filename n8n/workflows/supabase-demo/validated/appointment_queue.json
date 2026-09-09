@@ -1,0 +1,253 @@
+{
+  "id": "wFbOZvL0JpZmxYOp",
+  "name": "Platform - Appointment Reminder Queue",
+  "active": false,
+  "versionId": "bb6584f8-225c-4cbe-a6da-55dd5924eac1",
+  "nodes": [
+    {
+      "id": "0485b7e6-351a-48fb-9979-5da936669455",
+      "name": "Every 15 Minutes",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 15
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "79e68461-bd41-4f74-9f8e-5cd97d5b730d",
+      "name": "Find Upcoming Appointments",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        224,
+        0
+      ],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "select automation.poll('appointment_queue',$1,$2::uuid) as result",
+        "options": {
+          "queryReplacement": "={{ ['n8n:'+$workflow.id+':'+$execution.id+':'+($json.cursor ?? 'start'), $json.cursor ?? null] }}"
+        }
+      },
+      "credentials": {
+        "postgres": {
+          "id": "9NYei4dh7z08Xyf4",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "id": "49169078-05c6-4997-8ff9-366e476ed263",
+      "name": "Annotate Reminder Queue",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        448,
+        0
+      ],
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ {cursor:null} }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "83a4faab-579d-4d57-a3d5-0b5c878110e1",
+      "name": "Manual acceptance",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        260,
+        0
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "c022130f-8755-4952-8b17-c012f09389d0",
+      "name": "Report committed result",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1040,
+        0
+      ],
+      "parameters": {
+        "mode": "once",
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "9zbbX0mzILkkXG1e"
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      }
+    },
+    {
+      "id": "2d5b0f23-6d62-4d54-9181-5fb49b1d23ba",
+      "name": "More records",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1300,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.result.has_more === true }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "877b1bc4-8713-48e8-9571-69e94be886fd",
+      "name": "Next page",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        260
+      ],
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ {cursor:$json.result.next_cursor} }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "1483b88f-b940-4849-84d2-99c611cbef37",
+      "name": "Return queue outcome",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        260,
+        260
+      ],
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ $json }}",
+        "options": {}
+      }
+    }
+  ],
+  "connections": {
+    "Every 15 Minutes": {
+      "main": [
+        [
+          {
+            "node": "Annotate Reminder Queue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Manual acceptance": {
+      "main": [
+        [
+          {
+            "node": "Annotate Reminder Queue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Annotate Reminder Queue": {
+      "main": [
+        [
+          {
+            "node": "Find Upcoming Appointments",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find Upcoming Appointments": {
+      "main": [
+        [
+          {
+            "node": "Report committed result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Report committed result": {
+      "main": [
+        [
+          {
+            "node": "More records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Next page": {
+      "main": [
+        [
+          {
+            "node": "Find Upcoming Appointments",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "More records": {
+      "main": [
+        [
+          {
+            "node": "Next page",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Return queue outcome",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true,
+    "timezone": "UTC",
+    "saveManualExecutions": true,
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all"
+  }
+}

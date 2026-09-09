@@ -3,6 +3,33 @@
   "scanMethod": "approximate source-text matches; not runtime or authorization evidence",
   "records": [
     {
+      "file": "n8n/workflows/supabase-demo/recovery.sdk.js",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "select * from"
+      ]
+    },
+    {
+      "file": "n8n/workflows/supabase-demo/reporter.sdk.js",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "/functions/v1/ingest-run",
+        "supabase.co"
+      ],
+      "databaseUsage": [
+        "select (select r from"
+      ]
+    },
+    {
       "file": "scripts/repo-map.ts",
       "exportedSymbols": [
         "FileRecord",
@@ -49,6 +76,33 @@
         "select coalesce(jsonb_agg(to_jsonb(r) order by r.id), '[]') from public.workflow_steps r where workflow_run_id in (select id from",
         "select to_jsonb(r) as row from",
         "update public.automation_runs set"
+      ]
+    },
+    {
+      "file": "scripts/test-operational-automation.ts",
+      "exportedSymbols": [],
+      "importedSymbols": [
+        "node:assert/strict",
+        "node:crypto",
+        "pg"
+      ],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "alter table",
+        "delete from",
+        "insert into",
+        "select $1,'active','batch',g::text from",
+        "select * from",
+        "select automation_revision,updated_at from",
+        "select count(*)::int n from",
+        "select price,bedrooms,bathrooms from",
+        "select rolcanlogin from",
+        "update public.operational_tasks set",
+        "update public.run_report_outbox set",
+        "update real_estate.leads set"
       ]
     },
     {
@@ -831,6 +885,57 @@
         "delete from",
         "insert into",
         "select value from"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260907000002_operational_automation.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "alter table",
+        "create table",
+        "insert into",
+        "select * from",
+        "select * into c from",
+        "select * into prior from",
+        "select * into w from",
+        "select 1 from",
+        "select count(*) from",
+        "select event_id from",
+        "select id,organization_id,%2$s from",
+        "select jsonb_build_object('event_id',event_id,'lease_token',lease_token,'payload',payload) from",
+        "select o.event_id from",
+        "select operation into v_operation from",
+        "select source_revision into v_checkpoint from",
+        "select to_jsonb(t) from",
+        "select value from",
+        "update public.operational_tasks set",
+        "update public.operational_tasks t set",
+        "update public.run_report_outbox o set",
+        "update public.run_report_outbox set",
+        "update public.workflow_checkpoints set",
+        "update real_estate.appointments set",
+        "update real_estate.leads set",
+        "update real_estate.listings set"
+      ]
+    },
+    {
+      "file": "supabase/migrations/20260909000001_automation_event_reference_validation.sql",
+      "exportedSymbols": [],
+      "importedSymbols": [],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [
+        "select * into prior from",
+        "select 1 from",
+        "select value from",
+        "update public.run_report_outbox set"
       ]
     }
   ]

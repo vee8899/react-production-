@@ -1,0 +1,110 @@
+{
+  "id": "2hJ2yGfSiGK2s84u",
+  "name": "Platform - Supabase Shared Failure Handler",
+  "active": false,
+  "versionId": "70cd9a14-f5ed-46c3-8846-a1c1d5831b29",
+  "nodes": [
+    {
+      "id": "689a375d-a7ee-4f2b-98d6-01851d65e926",
+      "name": "Production failure",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "dfa0bd3e-fc38-47dc-a983-0b2c59fc439c",
+      "name": "Record sanitized failure",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        224,
+        0
+      ],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "select automation.record_failure($1,$2) as result",
+        "options": {
+          "queryReplacement": "={{ [$json.workflow.id, String($json.execution.id)] }}"
+        }
+      },
+      "credentials": {
+        "postgres": {
+          "id": "9NYei4dh7z08Xyf4",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "id": "65e886a3-5f48-49c4-a676-52f6b43b06c5",
+      "name": "Manual acceptance",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        1300
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "2ba75fe2-8900-4fc7-872c-59e52e440d0c",
+      "name": "Demo failure input",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        260,
+        1300
+      ],
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ {workflow:{id:'ehuyolTR9wCTt4th'},execution:{id:'acceptance-'+$execution.id},error:{message:'Synthetic failure; must not be copied to run metadata'} } }}",
+        "options": {}
+      }
+    }
+  ],
+  "connections": {
+    "Production failure": {
+      "main": [
+        [
+          {
+            "node": "Record sanitized failure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Manual acceptance": {
+      "main": [
+        [
+          {
+            "node": "Demo failure input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Demo failure input": {
+      "main": [
+        [
+          {
+            "node": "Record sanitized failure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true,
+    "timezone": "UTC",
+    "saveManualExecutions": true,
+    "saveDataErrorExecution": "all"
+  }
+}
