@@ -1,0 +1,230 @@
+{
+  "id": "8OiSVHA5ur4ck4er",
+  "name": "Real Estate - Listing Intake",
+  "versionId": "e507c233-8575-42bc-b6ef-bb704281bda7",
+  "active": false,
+  "nodes": [
+    {
+      "id": "34a9d926-5318-486b-bde9-700fd18848d5",
+      "name": "Receive Listing",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "real-estate/listings",
+        "authentication": "none",
+        "responseMode": "responseNode"
+      },
+      "webhookId": "c097f14e-215e-465b-8c04-64f0af1f8f29"
+    },
+    {
+      "id": "fd14b221-929f-43c4-b479-8ab0f00bb418",
+      "name": "Normalize Listing",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        224,
+        0
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "organization_id",
+              "name": "organization_id",
+              "value": "={{ $json.body.organization_id }}",
+              "type": "string"
+            },
+            {
+              "id": "client_id",
+              "name": "client_id",
+              "value": "={{ $json.body.client_id || null }}",
+              "type": "string"
+            },
+            {
+              "id": "listing_type",
+              "name": "listing_type",
+              "value": "={{ $json.body.listing_type || 'sale' }}",
+              "type": "string"
+            },
+            {
+              "id": "status",
+              "name": "status",
+              "value": "={{ $json.body.status || 'draft' }}",
+              "type": "string"
+            },
+            {
+              "id": "address_line1",
+              "name": "address_line1",
+              "value": "={{ $json.body.address_line1 || null }}",
+              "type": "string"
+            },
+            {
+              "id": "address_line2",
+              "name": "address_line2",
+              "value": "={{ $json.body.address_line2 || null }}",
+              "type": "string"
+            },
+            {
+              "id": "city",
+              "name": "city",
+              "value": "={{ $json.body.city || null }}",
+              "type": "string"
+            },
+            {
+              "id": "state_region",
+              "name": "state_region",
+              "value": "={{ $json.body.state_region || null }}",
+              "type": "string"
+            },
+            {
+              "id": "postal_code",
+              "name": "postal_code",
+              "value": "={{ $json.body.postal_code || null }}",
+              "type": "string"
+            },
+            {
+              "id": "country_code",
+              "name": "country_code",
+              "value": "={{ $json.body.country_code || null }}",
+              "type": "string"
+            },
+            {
+              "id": "property_type",
+              "name": "property_type",
+              "value": "={{ $json.body.property_type || null }}",
+              "type": "string"
+            },
+            {
+              "id": "price",
+              "name": "price",
+              "value": "={{ $json.body.price || null }}",
+              "type": "number"
+            },
+            {
+              "id": "bedrooms",
+              "name": "bedrooms",
+              "value": "={{ $json.body.bedrooms || null }}",
+              "type": "number"
+            },
+            {
+              "id": "bathrooms",
+              "name": "bathrooms",
+              "value": "={{ $json.body.bathrooms || null }}",
+              "type": "number"
+            },
+            {
+              "id": "listing_url",
+              "name": "listing_url",
+              "value": "={{ $json.body.listing_url || null }}",
+              "type": "string"
+            },
+            {
+              "id": "source_system",
+              "name": "source_system",
+              "value": "={{ $json.body.source_system || 'n8n' }}",
+              "type": "string"
+            },
+            {
+              "id": "external_id",
+              "name": "external_id",
+              "value": "={{ $json.body.external_id || null }}",
+              "type": "string"
+            },
+            {
+              "id": "metadata",
+              "name": "metadata",
+              "value": "={{ $json.body.metadata || {} }}",
+              "type": "object"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "5899da22-0681-4509-8558-1b6002fcbb90",
+      "name": "Upsert Listing",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        448,
+        0
+      ],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "insert into real_estate.listings (organization_id, listing_type, status, address_line1, address_line2, city, state_region, postal_code, country_code, property_type, price, bedrooms, bathrooms, listing_url, source_system, external_id, metadata) values ($1::uuid,$2::text,$3::text,$4::text,$5::text,$6::text,$7::text,$8::text,$9::text,$10::text,$11::numeric,$12::integer,$13::numeric,$14::text,$15::text,$16::text,$17::jsonb) on conflict (organization_id, source_system, external_id) do update set listing_type=excluded.listing_type,status=excluded.status,address_line1=excluded.address_line1,address_line2=excluded.address_line2,city=excluded.city,state_region=excluded.state_region,postal_code=excluded.postal_code,country_code=excluded.country_code,property_type=excluded.property_type,price=excluded.price,bedrooms=excluded.bedrooms,bathrooms=excluded.bathrooms,listing_url=excluded.listing_url,metadata=excluded.metadata returning id, status",
+        "options": {
+          "queryReplacement": "={{ $json.organization_id }},={{ $json.listing_type }},={{ $json.status }},={{ $json.address_line1 }},={{ $json.address_line2 }},={{ $json.city }},={{ $json.state_region }},={{ $json.postal_code }},={{ $json.country_code }},={{ $json.property_type }},={{ $json.price }},={{ $json.bedrooms }},={{ $json.bathrooms }},={{ $json.listing_url }},={{ $json.source_system }},={{ $json.external_id }},={{ JSON.stringify($json.metadata) }}"
+        }
+      },
+      "credentials": {
+        "postgres": {
+          "id": "9NYei4dh7z08Xyf4",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "id": "a6de275f-b949-48a1-9a62-b7cb07589fb4",
+      "name": "Respond Listing Accepted",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        672,
+        0
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { accepted: true, listing_id: $json.id, status: $json.status } }}",
+        "options": {
+          "responseCode": 202
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Receive Listing": {
+      "main": [
+        [
+          {
+            "node": "Normalize Listing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize Listing": {
+      "main": [
+        [
+          {
+            "node": "Upsert Listing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upsert Listing": {
+      "main": [
+        [
+          {
+            "node": "Respond Listing Accepted",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "id": "wFbOZvL0JpZmxYOp",
+  "name": "Platform - Appointment Reminder Queue",
+  "versionId": "927868b5-f437-41af-9b1b-20a97f14426f",
+  "active": false,
+  "nodes": [
+    {
+      "id": "0485b7e6-351a-48fb-9979-5da936669455",
+      "name": "Every 15 Minutes",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 15
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "79e68461-bd41-4f74-9f8e-5cd97d5b730d",
+      "name": "Find Upcoming Appointments",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        224,
+        0
+      ],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "select id, organization_id, lead_id, listing_id, appointment_type, status, title, starts_at, ends_at, timezone, notes, source_system, external_id, metadata from real_estate.appointments where status in ('scheduled','confirmed') and starts_at > now() and starts_at <= now() + interval '24 hours' order by starts_at asc limit 100"
+      },
+      "credentials": {
+        "postgres": {
+          "id": "9NYei4dh7z08Xyf4",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "id": "49169078-05c6-4997-8ff9-366e476ed263",
+      "name": "Annotate Reminder Queue",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        448,
+        0
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": true,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "feature_type",
+              "name": "feature_type",
+              "value": "appointment_scheduling",
+              "type": "string"
+            },
+            {
+              "id": "queue_action",
+              "name": "queue_action",
+              "value": "appointment_reminder_required",
+              "type": "string"
+            },
+            {
+              "id": "queued_at",
+              "name": "queued_at",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Every 15 Minutes": {
+      "main": [
+        [
+          {
+            "node": "Find Upcoming Appointments",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find Upcoming Appointments": {
+      "main": [
+        [
+          {
+            "node": "Annotate Reminder Queue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true
+  }
+}

@@ -20,6 +20,7 @@ const intake = (op: string, key: string, body: unknown) => invoke('select automa
 const poll = (op: string, key: string, cursor: string | null = null, session = db) => invoke('select automation.poll($1,$2,$3) result', [op, event(key), cursor], session);
 const checks: string[] = [];
 const pass = (name: string) => { checks.push(name); console.log(`PASS ${name}`); };
+let loginChanged = false;
 try {
   assert.equal((await control.query('select count(*)::int n from automation.configuration')).rows[0].n, 0, 'Refuse to overwrite existing suite configuration');
   await control.query('begin');
@@ -37,6 +38,7 @@ try {
   // This random UUID is generated locally, contains no SQL metacharacters, and
   // never leaves the process. Test the actual login boundary, not SET ROLE.
   await control.query(`alter role n8n_demo_executor login password '${executionTarget.password}'`);
+  loginChanged = true;
   await db.connect();
   await other.connect();
   await assert.rejects(db.query('select * from public.clients'), /permission denied/);
@@ -60,6 +62,16 @@ try {
   const stored = (await control.query('select price,bedrooms,bathrooms from real_estate.listings where id=$1', [listing.entity_id])).rows[0];
   assert.equal(Number(stored.price), 0); assert.equal(stored.bedrooms, 0); assert.equal(Number(stored.bathrooms), 0);
   pass('intake validates payloads, preserves zeros, rejects tenant overrides, and deduplicates events');
+
+  const acceptEvent = (key: string, body: unknown) => invoke('select automation.accept_event($1,$2::jsonb) result', [event(key), JSON.stringify(body)]);
+  for (const [index, refs] of [null, [{ entity_id: lead.entity_id }], [{ entity_type: null, entity_id: lead.entity_id }], [{ entity_type: 'lead', entity_id: randomUUID() }]].entries()) {
+    assert.equal((await acceptEvent(`invalid-refs-${index}`, { status: 'success', entity_refs: refs })).http_status, 400);
+  }
+  const eventBody = { status: 'success', records_processed: 1, entity_refs: [{ entity_type: 'lead', entity_id: lead.entity_id }] };
+  assert.equal((await acceptEvent('valid-event', eventBody)).http_status, 202);
+  assert.equal((await acceptEvent('valid-event', eventBody)).http_status, 202);
+  assert.equal((await acceptEvent('valid-event', { ...eventBody, records_processed: 2 })).http_status, 409);
+  pass('event ingestion rejects null/missing/foreign references and preserves replay identity');
 
   const foreignLead = randomUUID();
   await control.query('insert into real_estate.leads(id,organization_id) values($1,$2)', [foreignLead, foreignOrg]);
@@ -123,7 +135,7 @@ try {
   pass('outbox leases prevent overlapping sends, preserve origin and stable payload across recovery, reject stale acknowledgments and quarantine permanent errors');
   console.log(`${checks.length} operational automation test groups passed (local database only).`);
 } finally {
-  await control.query('alter role n8n_demo_executor nologin password null');
+  if (loginChanged) await control.query('alter role n8n_demo_executor nologin password null');
   await control.query('rollback');
   await control.query('delete from public.run_report_outbox where organization_id=$1', [org]);
   await control.query('delete from automation.workflow_bindings where n8n_workflow_id like $1', [`${prefix}%`]);

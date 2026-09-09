@@ -76,7 +76,10 @@ export const fetchCurrentConsents = async (clientId: string): Promise<LegalConse
     .eq("client_id", clientId);
 
   if (error) throw error;
-  return data ?? [];
+  return (data ?? []).map((consent) => ({
+    ...consent,
+    ip_address: typeof consent.ip_address === "string" ? consent.ip_address : null,
+  }));
 };
 
 export const checkConsentStatus = async (

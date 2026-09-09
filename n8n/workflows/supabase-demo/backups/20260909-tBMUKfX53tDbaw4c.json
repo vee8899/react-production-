@@ -1,0 +1,206 @@
+{
+  "id": "tBMUKfX53tDbaw4c",
+  "name": "Real Estate - Appointment Intake",
+  "versionId": "60aa37e4-7796-49aa-9cca-38f0b6494491",
+  "active": false,
+  "nodes": [
+    {
+      "id": "752539d4-4bd3-4f0d-beae-99610e07b2b3",
+      "name": "Receive Appointment",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "real-estate/appointments",
+        "authentication": "none",
+        "responseMode": "responseNode"
+      },
+      "webhookId": "096366cd-881c-4738-b1a1-83707bed2d0b"
+    },
+    {
+      "id": "bb660e57-31ce-4797-baec-462dd238448c",
+      "name": "Normalize Appointment",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        224,
+        0
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "organization_id",
+              "name": "organization_id",
+              "value": "={{ $json.body.organization_id }}",
+              "type": "string"
+            },
+            {
+              "id": "client_id",
+              "name": "client_id",
+              "value": "={{ $json.body.client_id || null }}",
+              "type": "string"
+            },
+            {
+              "id": "lead_id",
+              "name": "lead_id",
+              "value": "={{ $json.body.lead_id || null }}",
+              "type": "string"
+            },
+            {
+              "id": "listing_id",
+              "name": "listing_id",
+              "value": "={{ $json.body.listing_id || null }}",
+              "type": "string"
+            },
+            {
+              "id": "appointment_type",
+              "name": "appointment_type",
+              "value": "={{ $json.body.appointment_type || 'general' }}",
+              "type": "string"
+            },
+            {
+              "id": "status",
+              "name": "status",
+              "value": "={{ $json.body.status || 'scheduled' }}",
+              "type": "string"
+            },
+            {
+              "id": "title",
+              "name": "title",
+              "value": "={{ $json.body.title }}",
+              "type": "string"
+            },
+            {
+              "id": "starts_at",
+              "name": "starts_at",
+              "value": "={{ $json.body.starts_at }}",
+              "type": "string"
+            },
+            {
+              "id": "ends_at",
+              "name": "ends_at",
+              "value": "={{ $json.body.ends_at }}",
+              "type": "string"
+            },
+            {
+              "id": "timezone",
+              "name": "timezone",
+              "value": "={{ $json.body.timezone || 'UTC' }}",
+              "type": "string"
+            },
+            {
+              "id": "notes",
+              "name": "notes",
+              "value": "={{ $json.body.notes || null }}",
+              "type": "string"
+            },
+            {
+              "id": "source_system",
+              "name": "source_system",
+              "value": "={{ $json.body.source_system || 'n8n' }}",
+              "type": "string"
+            },
+            {
+              "id": "external_id",
+              "name": "external_id",
+              "value": "={{ $json.body.external_id || null }}",
+              "type": "string"
+            },
+            {
+              "id": "metadata",
+              "name": "metadata",
+              "value": "={{ $json.body.metadata || {} }}",
+              "type": "object"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "e28a8291-4e24-4cff-b724-0da2cb659e9d",
+      "name": "Upsert Appointment",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        448,
+        0
+      ],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "insert into real_estate.appointments (organization_id, lead_id, listing_id, appointment_type, status, title, starts_at, ends_at, timezone, notes, source_system, external_id, metadata) values ($1::uuid,$2::uuid,$3::uuid,$4::text,$5::text,$6::text,$7::timestamptz,$8::timestamptz,$9::text,$10::text,$11::text,$12::text,$13::jsonb) on conflict (organization_id, source_system, external_id) do update set lead_id=excluded.lead_id,listing_id=excluded.listing_id,appointment_type=excluded.appointment_type,status=excluded.status,title=excluded.title,starts_at=excluded.starts_at,ends_at=excluded.ends_at,timezone=excluded.timezone,notes=excluded.notes,metadata=excluded.metadata returning id, status",
+        "options": {
+          "queryReplacement": "={{ $json.organization_id }},={{ $json.lead_id }},={{ $json.listing_id }},={{ $json.appointment_type }},={{ $json.status }},={{ $json.title }},={{ $json.starts_at }},={{ $json.ends_at }},={{ $json.timezone }},={{ $json.notes }},={{ $json.source_system }},={{ $json.external_id }},={{ JSON.stringify($json.metadata) }}"
+        }
+      },
+      "credentials": {
+        "postgres": {
+          "id": "9NYei4dh7z08Xyf4",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "id": "338d40a4-6324-4501-8d0d-3dec15482ca4",
+      "name": "Respond Appointment Accepted",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        672,
+        0
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { accepted: true, appointment_id: $json.id, status: $json.status } }}",
+        "options": {
+          "responseCode": 202
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Receive Appointment": {
+      "main": [
+        [
+          {
+            "node": "Normalize Appointment",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize Appointment": {
+      "main": [
+        [
+          {
+            "node": "Upsert Appointment",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upsert Appointment": {
+      "main": [
+        [
+          {
+            "node": "Respond Appointment Accepted",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true
+  }
+}

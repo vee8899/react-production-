@@ -1,4 +1,5 @@
 const n0=trigger({"type":"n8n-nodes-base.errorTrigger","version":1,"config":{"name":"Production failure","parameters":{}}});
 const n1=node({"type":"n8n-nodes-base.postgres","version":2.6,"config":{"name":"Record sanitized failure","parameters":{"operation":"executeQuery","query":"select automation.record_failure($1,$2) as result","options":{"queryReplacement":expr("{{ [$json.workflow.id, String($json.execution.id)] }}")}},"credentials":{"postgres":{"id":"9NYei4dh7z08Xyf4","name":"Postgres account"}}}});
-const n2=node({"type":"n8n-nodes-base.executeWorkflow","version":1.3,"config":{"name":"Report originating failure","parameters":{"mode":"once","source":"database","workflowId":{"__rl":true,"mode":"id","value":"9zbbX0mzILkkXG1e"},"options":{"waitForSubWorkflow":true}}}});
-export default workflow('demo-failure','Platform - Supabase Shared Failure Handler').add(n0).to(n1).to(n2);
+const n2=trigger({"type":"n8n-nodes-base.manualTrigger","version":1,"config":{"name":"Manual acceptance","parameters":{}}});
+const n3=node({"type":"n8n-nodes-base.set","version":3.4,"config":{"name":"Demo failure input","parameters":{"mode":"raw","jsonOutput":expr("{{ {workflow:{id:'ehuyolTR9wCTt4th'},execution:{id:'acceptance-'+$execution.id},error:{message:'Synthetic failure; must not be copied to run metadata'}} }}"),"options":{}}}});
+export default workflow('2hJ2yGfSiGK2s84u','Platform - Supabase Shared Failure Handler').add(n0).to(n1).add(n2).to(n3).to(n1);
