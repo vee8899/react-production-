@@ -1,0 +1,58 @@
+{"kind":"deck","id":"pr/sh0983","name":"Deck"}
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"PRIME STATE SYSTEMS","textShapes":14}
+{"kind":"textbox","id":"sh/1cvuxc7e","slide":1,"text":"PRIME STATE SYSTEMS","textPreview":"PRIME STATE SYSTEMS","textChars":19,"textLines":1,"bbox":[72,36,550,28]}
+{"kind":"textbox","id":"sh/547294r6","slide":1,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[1150,36,58,20]}
+{"kind":"textbox","id":"sh/k3yl0zql","slide":1,"text":"A consistent way\nto run repeatable\nbusiness operations","textPreview":"A consistent way | to run repeatable | business operations","textChars":54,"textLines":3,"bbox":[72,152,700,205]}
+{"kind":"textbox","id":"sh/7qp4be9c","slide":1,"text":"Research-informed processes, configured around your business and delivered through managed workflows—with visibility into execution and exceptions.","textPreview":"Research-informed processes, configured around your business and delivered through managed workflows—with visibility into execution and e...","textChars":147,"textLines":1,"bbox":[76,399,610,150]}
+{"kind":"shape","id":"sh/65g3298r","slide":1,"bbox":[790,112,346,420]}
+{"kind":"shape","id":"sh/ts7md4r2","slide":1,"bbox":[824,150,278,52]}
+{"kind":"textbox","id":"sh/sryl4zqx","slide":1,"text":"PRIME STATE","textPreview":"PRIME STATE","textChars":11,"textLines":1,"bbox":[846,166,230,20]}
+{"kind":"textbox","id":"sh/fu94fe98","slide":1,"text":"Workflow visibility","textPreview":"Workflow visibility","textChars":19,"textLines":1,"bbox":[826,235,280,40]}
+{"kind":"textbox","id":"sh/utg3698n","slide":1,"text":"ILLUSTRATIVE VIEW","textPreview":"ILLUSTRATIVE VIEW","textChars":17,"textLines":1,"bbox":[826,288,260,22]}
+{"kind":"shape","id":"sh/wn6dc7eh","slide":1,"bbox":[824,320,278,1]}
+{"kind":"textbox","id":"sh/hofulsf2","slide":1,"text":"Lead capture","textPreview":"Lead capture","textChars":12,"textLines":1,"bbox":[826,330,170,30]}
+{"kind":"textbox","id":"sh/ul4vaxgb","slide":1,"text":"Recorded","textPreview":"Recorded","textChars":8,"textLines":1,"bbox":[995,330,115,30]}
+{"kind":"shape","id":"sh/vmdcj2xw","slide":1,"bbox":[824,372,278,1]}
+{"kind":"textbox","id":"sh/4r6dg7et","slide":1,"text":"Qualification","textPreview":"Qualification","textChars":13,"textLines":1,"bbox":[826,382,170,30]}
+{"kind":"textbox","id":"sh/5sfepcfe","slide":1,"text":"Assigned","textPreview":"Assigned","textChars":8,"textLines":1,"bbox":[995,382,115,30]}
+{"kind":"shape","id":"sh/ipovexwn","slide":1,"bbox":[824,424,278,1]}
+{"kind":"textbox","id":"sh/3qxwn2x8","slide":1,"text":"Follow-up","textPreview":"Follow-up","textChars":9,"textLines":1,"bbox":[826,434,160,30]}
+{"kind":"textbox","id":"sh/sfqdkrep","slide":1,"text":"Review","textPreview":"Review","textChars":6,"textLines":1,"bbox":[995,434,115,30]}
+{"kind":"textbox","id":"sh/dgzetcfa","slide":1,"text":"PREPRODUCTION PREVIEW  /  SEPTEMBER 2026","textPreview":"PREPRODUCTION PREVIEW  /  SEPTEMBER 2026","textChars":40,"textLines":1,"bbox":[76,632,650,25]}
+{"kind":"notes","id":"nt/y90nupkv","slide":1,"text":"Sources: user product description, September 2026; repository README.md; src/pages/HomePage.tsx; src/pages/DashboardPage.tsx. Preproduction concept. Illustrative workflow view is editable presentation artwork, not a live screenshot or evidence of performance. Research-informed describes the intended process design approach; no specific study or validated outcome is claimed."}
+{"kind":"slide","id":"sl/ofy9wn61","slide":2,"title":"PRIME STATE SYSTEMS","textShapes":14}
+{"kind":"textbox","id":"sh/e10f2twf","slide":2,"text":"PRIME STATE SYSTEMS","textPreview":"PRIME STATE SYSTEMS","textChars":19,"textLines":1,"bbox":[72,36,360,20]}
+{"kind":"textbox","id":"sh/cza94vmx","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1150,36,58,20]}
+{"kind":"textbox","id":"sh/d0jax03i","slide":2,"text":"ILLUSTRATIVE WORKFLOW","textPreview":"ILLUSTRATIVE WORKFLOW","textChars":21,"textLines":1,"bbox":[72,104,420,24]}
+{"kind":"textbox","id":"sh/298ryl4v","slide":2,"text":"A defined process for every new lead","textPreview":"A defined process for every new lead","textChars":36,"textLines":1,"bbox":[72,142,1120,85]}
+{"kind":"shape","id":"sh/3ah8rqlg","slide":2,"bbox":[72,244,1136,1]}
+{"kind":"textbox","id":"sh/obq90bml","slide":2,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[72,296,58,24]}
+{"kind":"textbox","id":"sh/pcjqtg36","slide":2,"text":"Capture","textPreview":"Capture","textChars":7,"textLines":1,"bbox":[72,344,290,48]}
+{"kind":"shape","id":"sh/m5cra54z","slide":2,"bbox":[72,414,1136,1]}
+{"kind":"textbox","id":"sh/n6ls3alk","slide":2,"text":"Record the enquiry and remove duplicates before the handoff.","textPreview":"Record the enquiry and remove duplicates before the handoff.","textChars":60,"textLines":1,"bbox":[72,448,310,110]}
+{"kind":"textbox","id":"sh/n2l4fq98","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[448,296,58,24]}
+{"kind":"textbox","id":"sh/m1c3mlsn","slide":2,"text":"Qualify & assign","textPreview":"Qualify & assign","textChars":16,"textLines":1,"bbox":[448,344,340,48]}
+{"kind":"shape","id":"sh/943mhgre","slide":2,"bbox":[72,414,1136,1]}
+{"kind":"textbox","id":"sh/83ulovat","slide":2,"text":"Apply agreed criteria and route the lead to a named owner.","textPreview":"Apply agreed criteria and route the lead to a named owner.","textChars":58,"textLines":1,"bbox":[448,448,310,110]}
+{"kind":"textbox","id":"sh/v6l4jq94","slide":2,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[824,296,58,24]}
+{"kind":"textbox","id":"sh/a5c3ql8z","slide":2,"text":"Track follow-up","textPreview":"Track follow-up","textChars":15,"textLines":1,"bbox":[824,344,340,48]}
+{"kind":"shape","id":"sh/x8nml0ra","slide":2,"bbox":[72,414,1136,1]}
+{"kind":"textbox","id":"sh/w7ulsvqp","slide":2,"text":"Record the outcome and make exceptions visible for review.","textPreview":"Record the outcome and make exceptions visible for review.","textChars":58,"textLines":1,"bbox":[824,448,310,110]}
+{"kind":"shape","id":"sh/ja54na9g","slide":2,"bbox":[72,590,1136,1]}
+{"kind":"textbox","id":"sh/i9w3u58v","slide":2,"text":"The operating view: what ran, what changed, and what needs attention.","textPreview":"The operating view: what ran, what changed, and what needs attention.","textChars":69,"textLines":1,"bbox":[72,613,1120,45]}
+{"kind":"notes","id":"nt/ofy9wn61","slide":2,"text":"Source: src/pages/HomePage.tsx workflow example: capture, deduplicate, route, follow up, and record the outcome. This is an illustrative configured workflow, not a claim that this client deployment is live. Qualification criteria, owners, timing and exception handling would be agreed during scoping."}
+{"kind":"slide","id":"sl/x8f69ofe","slide":3,"title":"PRIME STATE SYSTEMS  /  PROPOSED PILOT","textShapes":10}
+{"kind":"textbox","id":"sh/oryp8fah","slide":3,"text":"PRIME STATE SYSTEMS  /  PROPOSED PILOT","textPreview":"PRIME STATE SYSTEMS  /  PROPOSED PILOT","textChars":38,"textLines":1,"bbox":[72,36,700,28]}
+{"kind":"textbox","id":"sh/yhg7epsj","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1150,36,58,20]}
+{"kind":"textbox","id":"sh/zi98nu94","slide":3,"text":"Begin with one\nimportant workflow","textPreview":"Begin with one | important workflow","textChars":33,"textLines":2,"bbox":[72,152,760,155]}
+{"kind":"textbox","id":"sh/87ipkzal","slide":3,"text":"Define the process, connect the required systems, and evaluate execution before expanding the scope.","textPreview":"Define the process, connect the required systems, and evaluate execution before expanding the scope.","textChars":100,"textLines":1,"bbox":[76,350,590,115]}
+{"kind":"shape","id":"sh/98rqt4r6","slide":3,"bbox":[76,520,480,56]}
+{"kind":"textbox","id":"sh/ml07i9sv","slide":3,"text":"AGREE THE FIRST WORKFLOW","textPreview":"AGREE THE FIRST WORKFLOW","textChars":24,"textLines":1,"bbox":[96,532,440,32]}
+{"kind":"textbox","id":"sh/7m98ru9g","slide":3,"text":"PREPRODUCTION  /  SCOPE AND SUCCESS CRITERIA TO BE AGREED","textPreview":"PREPRODUCTION  /  SCOPE AND SUCCESS CRITERIA TO BE AGREED","textChars":57,"textLines":1,"bbox":[76,638,1000,25]}
+{"kind":"textbox","id":"sh/pc76hkr2","slide":3,"text":"PILOT EVALUATION","textPreview":"PILOT EVALUATION","textChars":16,"textLines":1,"bbox":[850,170,330,100]}
+{"kind":"textbox","id":"sh/h4bupgn6","slide":3,"text":"Process agreed\nRules, ownership, exceptions","textPreview":"Process agreed | Rules, ownership, exceptions","textChars":43,"textLines":2,"bbox":[850,221,330,100]}
+{"kind":"textbox","id":"sh/w32twb6l","slide":3,"text":"Execution observed\nActivity and audit history","textPreview":"Execution observed | Activity and audit history","textChars":45,"textLines":2,"bbox":[850,336,330,100]}
+{"kind":"textbox","id":"sh/v2tcn650","slide":3,"text":"Results reviewed\nBaseline and pilot comparison","textPreview":"Results reviewed | Baseline and pilot comparison","textChars":46,"textLines":2,"bbox":[850,451,330,100]}
+{"kind":"notes","id":"nt/x8f69ofe","slide":3,"text":"Proposed next step, not an agreed commercial commitment. Product is in preproduction per user. Pilot scope, integration access, process rules, baseline, success criteria, and launch validation remain to be agreed."}

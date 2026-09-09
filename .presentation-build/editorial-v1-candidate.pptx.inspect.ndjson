@@ -1,0 +1,234 @@
+{"kind":"deck","id":"pr/zpigwi","name":"Deck"}
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"PRIME STATE SYSTEMS","textShapes":11}
+{"kind":"textbox","id":"sh/547294r6","slide":1,"name":"PRIME STATE SYSTEMS","text":"PRIME STATE SYSTEMS","textPreview":"PRIME STATE SYSTEMS","textChars":19,"textLines":1,"bbox":[56,30,700,25]}
+{"kind":"textbox","id":"sh/k3yl0zql","slide":1,"name":"01 / PRODUCT BRIEF","text":"01 / PRODUCT BRIEF","textPreview":"01 / PRODUCT BRIEF","textChars":18,"textLines":1,"bbox":[56,76,600,25]}
+{"kind":"textbox","id":"sh/7qp4be9c","slide":1,"name":"thesis","text":"A consistent way\nto run the business","textPreview":"A consistent way | to run the business","textChars":36,"textLines":2,"bbox":[56,135,745,142]}
+{"kind":"textbox","id":"sh/65g3298r","slide":1,"name":"thesis-detail","text":"A platform for managed workflows that standardize repeatable operations and put research-informed processes into practice.","textPreview":"A platform for managed workflows that standardize repeatable operations and put research-informed processes into practice.","textChars":122,"textLines":1,"bbox":[56,302,695,83]}
+{"kind":"shape","id":"sh/ts7md4r2","slide":1,"name":"rule","bbox":[56,420,705,1]}
+{"kind":"textbox","id":"sh/sryl4zqx","slide":1,"name":"DESIGN","text":"DESIGN","textPreview":"DESIGN","textChars":6,"textLines":1,"bbox":[56,436,140,25]}
+{"kind":"textbox","id":"sh/fu94fe98","slide":1,"name":"fact0","text":"Agree the process, rules and exceptions.","textPreview":"Agree the process, rules and exceptions.","textChars":40,"textLines":1,"bbox":[209,432,550,51]}
+{"kind":"shape","id":"sh/utg3698n","slide":1,"name":"rule","bbox":[56,486,705,1]}
+{"kind":"textbox","id":"sh/wn6dc7eh","slide":1,"name":"AUTOMATE","text":"AUTOMATE","textPreview":"AUTOMATE","textChars":8,"textLines":1,"bbox":[56,502,140,25]}
+{"kind":"textbox","id":"sh/hofulsf2","slide":1,"name":"fact1","text":"Connect the systems and execute the workflow.","textPreview":"Connect the systems and execute the workflow.","textChars":45,"textLines":1,"bbox":[209,498,550,51]}
+{"kind":"shape","id":"sh/ul4vaxgb","slide":1,"name":"rule","bbox":[56,552,705,1]}
+{"kind":"textbox","id":"sh/vmdcj2xw","slide":1,"name":"REVIEW","text":"REVIEW","textPreview":"REVIEW","textChars":6,"textLines":1,"bbox":[56,568,140,25]}
+{"kind":"textbox","id":"sh/4r6dg7et","slide":1,"name":"fact2","text":"See what ran, what changed and what needs attention.","textPreview":"See what ran, what changed and what needs attention.","textChars":52,"textLines":1,"bbox":[209,564,550,51]}
+{"kind":"textbox","id":"sh/5sfepcfe","slide":1,"name":"PREPRODUCTION  /  CLIENT DISCUSSION","text":"PREPRODUCTION  /  CLIENT DISCUSSION","textPreview":"PREPRODUCTION  /  CLIENT DISCUSSION","textChars":35,"textLines":1,"bbox":[56,681,745,25]}
+{"kind":"image","id":"im/3e9kr2xw","slide":1,"name":"","alt":"Abstract paper and limestone channels converging into an ordered route; generated editorial artwork","bbox":[820,0,460,720]}
+{"kind":"notes","id":"nt/y90nupkv","slide":1,"text":"Sources: user product description; src/pages/HomePage.tsx. The opening artwork is AI-generated using the built-in image tool, an abstract process metaphor, not product evidence. Prompt: ivory paper and pale limestone architectural channels converging into one route, forest-green strip, museum still-life photography, no text or logos. Asset: .presentation-build/editorial-art.png.\nProduct is in preproduction. Proposed service and pilot requirements need client agreement. No measured commercial result or production readiness is asserted."}
+{"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"PRIME STATE SYSTEMS","textShapes":24}
+{"kind":"textbox","id":"sh/mxgjm5s7","slide":2,"name":"PRIME STATE SYSTEMS","text":"PRIME STATE SYSTEMS","textPreview":"PRIME STATE SYSTEMS","textChars":19,"textLines":1,"bbox":[56,27,560,25]}
+{"kind":"textbox","id":"sh/9072xkry","slide":2,"name":"02 / OPERATING PROBLEM","text":"02 / OPERATING PROBLEM","textPreview":"02 / OPERATING PROBLEM","textChars":22,"textLines":1,"bbox":[930,27,310,25]}
+{"kind":"textbox","id":"sh/ozy1ofad","slide":2,"name":"headline","text":"Where repeatable work loses consistency","textPreview":"Where repeatable work loses consistency","textChars":39,"textLines":1,"bbox":[56,80,1168,63]}
+{"kind":"textbox","id":"sh/b29kza94","slide":2,"name":"subhead","text":"Illustrative business pipeline: the weak point is often the handoff between people, records and systems.","textPreview":"Illustrative business pipeline: the weak point is often the handoff between people, records and systems.","textChars":104,"textLines":1,"bbox":[56,155,1150,57]}
+{"kind":"shape","id":"sh/a10jqpsj","slide":2,"name":"rule","bbox":[56,226,1168,1]}
+{"kind":"textbox","id":"sh/x4r21kru","slide":2,"name":"PREPRODUCTION  /  SEPTEMBER 2026","text":"PREPRODUCTION  /  SEPTEMBER 2026","textPreview":"PREPRODUCTION  /  SEPTEMBER 2026","textChars":32,"textLines":1,"bbox":[56,681,750,25]}
+{"kind":"textbox","id":"sh/w3i1sfa9","slide":2,"name":"pipe0","text":"Enquiry received","textPreview":"Enquiry received","textChars":16,"textLines":1,"bbox":[56,255,255,42]}
+{"kind":"shape","id":"sh/r65knqtk","slide":2,"name":"sequence","bbox":[314,268,31,15]}
+{"kind":"textbox","id":"sh/q5wjelsz","slide":2,"name":"pipe1","text":"Work assigned","textPreview":"Work assigned","textChars":13,"textLines":1,"bbox":[359,255,255,42]}
+{"kind":"shape","id":"sh/ove9o7yd","slide":2,"name":"sequence","bbox":[617,268,31,15]}
+{"kind":"textbox","id":"sh/9wnqhczy","slide":2,"name":"pipe2","text":"Service delivered","textPreview":"Service delivered","textChars":17,"textLines":1,"bbox":[662,255,255,42]}
+{"kind":"shape","id":"sh/mtwrmxg7","slide":2,"name":"sequence","bbox":[920,268,31,15]}
+{"kind":"textbox","id":"sh/nu58f2hs","slide":2,"name":"pipe3","text":"Outcome recorded","textPreview":"Outcome recorded","textChars":16,"textLines":1,"bbox":[965,255,255,42]}
+{"kind":"shape","id":"sh/wjy9sry9","slide":2,"name":"rule","bbox":[56,325,1168,1]}
+{"kind":"textbox","id":"sh/xk7qlczu","slide":2,"name":"n0","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[56,348,75,70]}
+{"kind":"textbox","id":"sh/ahwrqhgj","slide":2,"name":"friction0","text":"Inconsistent handoffs","textPreview":"Inconsistent handoffs","textChars":21,"textLines":1,"bbox":[133,354,302,65]}
+{"kind":"textbox","id":"sh/bip8jmho","slide":2,"name":"cause0","text":"Ownership, timing and approval rules depend on memory.","textPreview":"Ownership, timing and approval rules depend on memory.","textChars":54,"textLines":1,"bbox":[56,429,353,77]}
+{"kind":"shape","id":"sh/cnupgny5","slide":2,"name":"rule","bbox":[56,529,353,1]}
+{"kind":"textbox","id":"sh/do3q9szq","slide":2,"name":"OPERATIONAL RESPONSE","text":"OPERATIONAL RESPONSE","textPreview":"OPERATIONAL RESPONSE","textChars":20,"textLines":1,"bbox":[56,545,355,25]}
+{"kind":"textbox","id":"sh/t8byxkn2","slide":2,"name":"response0","text":"Define the owner, due action and approval path.","textPreview":"Define the owner, due action and approval path.","textChars":47,"textLines":1,"bbox":[56,578,353,70]}
+{"kind":"textbox","id":"sh/s72xofmh","slide":2,"name":"n1","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[455,348,75,70]}
+{"kind":"textbox","id":"sh/76twva5c","slide":2,"name":"friction1","text":"Disconnected records","textPreview":"Disconnected records","textChars":20,"textLines":1,"bbox":[532,354,302,65]}
+{"kind":"textbox","id":"sh/65kfmpor","slide":2,"name":"cause1","text":"The same information is copied across tools and loses context.","textPreview":"The same information is copied across tools and loses context.","textChars":62,"textLines":1,"bbox":[455,429,353,77]}
+{"kind":"shape","id":"sh/hcvy14ne","slide":2,"name":"rule","bbox":[455,529,353,1]}
+{"kind":"textbox","id":"sh/gbmxszmt","slide":2,"name":"OPERATIONAL RESPONSE","text":"OPERATIONAL RESPONSE","textPreview":"OPERATIONAL RESPONSE","textChars":20,"textLines":1,"bbox":[455,545,355,25]}
+{"kind":"textbox","id":"sh/fadgzu58","slide":2,"name":"response1","text":"Map fields, identify duplicates and preserve references.","textPreview":"Map fields, identify duplicates and preserve references.","textChars":56,"textLines":1,"bbox":[455,578,353,70]}
+{"kind":"textbox","id":"sh/u94fqp4n","slide":2,"name":"n2","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[854,348,75,70]}
+{"kind":"textbox","id":"sh/p0vy54na","slide":2,"name":"friction2","text":"Unowned exceptions","textPreview":"Unowned exceptions","textChars":18,"textLines":1,"bbox":[931,354,302,65]}
+{"kind":"textbox","id":"sh/4zmxwzmp","slide":2,"name":"cause2","text":"A failed step is visible too late or reaches nobody responsible.","textPreview":"A failed step is visible too late or reaches nobody responsible.","textChars":64,"textLines":1,"bbox":[854,429,353,77]}
+{"kind":"shape","id":"sh/mlgvq147","slide":2,"name":"rule","bbox":[854,529,353,1]}
+{"kind":"textbox","id":"sh/nmpcj6ls","slide":2,"name":"OPERATIONAL RESPONSE","text":"OPERATIONAL RESPONSE","textPreview":"OPERATIONAL RESPONSE","textChars":20,"textLines":1,"bbox":[854,545,355,25]}
+{"kind":"textbox","id":"sh/onydsbmd","slide":2,"name":"response2","text":"Record failures and assign a review path.","textPreview":"Record failures and assign a review path.","textChars":41,"textLines":1,"bbox":[854,578,353,70]}
+{"kind":"notes","id":"nt/hwbqtkby","slide":2,"text":"Source: src/pages/HomePage.tsx problem list and workflow examples. Pipeline and friction points are illustrative, not a diagnosis of this client.\nProduct is in preproduction. Proposed service and pilot requirements need client agreement. No measured commercial result or production readiness is asserted."}
+{"kind":"slide","id":"sl/ofy9wn61","slide":3,"title":"PRIME STATE SYSTEMS","textShapes":19}
+{"kind":"textbox","id":"sh/by1svqlc","slide":3,"name":"PRIME STATE SYSTEMS","text":"PRIME STATE SYSTEMS","textPreview":"PRIME STATE SYSTEMS","textChars":19,"textLines":1,"bbox":[56,27,560,25]}
+{"kind":"textbox","id":"sh/cza94vmx","slide":3,"name":"03 / PRODUCT MODEL","text":"03 / PRODUCT MODEL","textPreview":"03 / PRODUCT MODEL","textChars":18,"textLines":1,"bbox":[930,27,310,25]}
+{"kind":"textbox","id":"sh/d0jax03i","slide":3,"name":"headline","text":"One layer for execution and oversight","textPreview":"One layer for execution and oversight","textChars":37,"textLines":1,"bbox":[56,80,1168,63]}
+{"kind":"textbox","id":"sh/298ryl4v","slide":3,"name":"subhead","text":"Client systems supply the inputs. Configured workflows perform the work. The portal makes execution inspectable.","textPreview":"Client systems supply the inputs. Configured workflows perform the work. The portal makes execution inspectable.","textChars":112,"textLines":1,"bbox":[56,155,1150,57]}
+{"kind":"shape","id":"sh/3ah8rqlg","slide":3,"name":"rule","bbox":[56,226,1168,1]}
+{"kind":"textbox","id":"sh/obq90bml","slide":3,"name":"PREPRODUCTION  /  SEPTEMBER 2026","text":"PREPRODUCTION  /  SEPTEMBER 2026","textPreview":"PREPRODUCTION  /  SEPTEMBER 2026","textChars":32,"textLines":1,"bbox":[56,681,750,25]}
+{"kind":"shape","id":"sh/pcjqtg36","slide":3,"name":"OPERATING VIEW","bbox":[56,258,764,102]}
+{"kind":"textbox","id":"sh/m5cra54z","slide":3,"name":"OPERATING VIEW","text":"OPERATING VIEW","textPreview":"OPERATING VIEW","textChars":14,"textLines":1,"bbox":[79,274,700,25]}
+{"kind":"textbox","id":"sh/n6ls3alk","slide":3,"name":"layer-OPERATING VIEW","text":"Workflow history · status · records · steps · investigation notes","textPreview":"Workflow history · status · records · steps · investigation notes","textChars":65,"textLines":1,"bbox":[79,306,707,44]}
+{"kind":"shape","id":"sh/n2l4fq98","slide":3,"name":"CONFIGURED WORKFLOWS","bbox":[56,398,764,102]}
+{"kind":"textbox","id":"sh/m1c3mlsn","slide":3,"name":"CONFIGURED WORKFLOWS","text":"CONFIGURED WORKFLOWS","textPreview":"CONFIGURED WORKFLOWS","textChars":20,"textLines":1,"bbox":[79,414,700,25]}
+{"kind":"textbox","id":"sh/943mhgre","slide":3,"name":"layer-CONFIGURED WORKFLOWS","text":"Rules · routing · approvals · failure paths · reported outcomes","textPreview":"Rules · routing · approvals · failure paths · reported outcomes","textChars":63,"textLines":1,"bbox":[79,446,707,44]}
+{"kind":"shape","id":"sh/83ulovat","slide":3,"name":"CLIENT SYSTEMS","bbox":[56,538,764,102]}
+{"kind":"textbox","id":"sh/v6l4jq94","slide":3,"name":"CLIENT SYSTEMS","text":"CLIENT SYSTEMS","textPreview":"CLIENT SYSTEMS","textChars":14,"textLines":1,"bbox":[79,554,700,25]}
+{"kind":"textbox","id":"sh/a5c3ql8z","slide":3,"name":"layer-CLIENT SYSTEMS","text":"Existing CRM, forms, spreadsheets and document providers","textPreview":"Existing CRM, forms, spreadsheets and document providers","textChars":56,"textLines":1,"bbox":[79,586,707,44]}
+{"kind":"shape","id":"sh/x8nml0ra","slide":3,"name":"sequence","bbox":[425,369,21,22]}
+{"kind":"shape","id":"sh/w7ulsvqp","slide":3,"name":"sequence","bbox":[425,509,21,22]}
+{"kind":"textbox","id":"sh/ja54na9g","slide":3,"name":"THE MANAGED SERVICE","text":"THE MANAGED SERVICE","textPreview":"THE MANAGED SERVICE","textChars":19,"textLines":1,"bbox":[867,257,355,25]}
+{"kind":"textbox","id":"sh/i9w3u58v","slide":3,"name":"service-head","text":"The platform has\nan operating owner","textPreview":"The platform has | an operating owner","textChars":35,"textLines":2,"bbox":[867,295,340,79]}
+{"kind":"textbox","id":"sh/e10f2twf","slide":3,"name":"service-0","text":"Before the pilot","textPreview":"Before the pilot","textChars":16,"textLines":1,"bbox":[867,398,335,27]}
+{"kind":"textbox","id":"sh/f29gbyx0","slide":3,"name":"serviced-0","text":"Map the process; configure and test integrations.","textPreview":"Map the process; configure and test integrations.","textChars":49,"textLines":1,"bbox":[867,427,335,53]}
+{"kind":"textbox","id":"sh/03ix43e5","slide":3,"name":"service-1","text":"During operation","textPreview":"During operation","textChars":16,"textLines":1,"bbox":[867,481,335,27]}
+{"kind":"textbox","id":"sh/14ryd8fq","slide":3,"name":"serviced-1","text":"Monitor execution and investigate exceptions.","textPreview":"Monitor execution and investigate exceptions.","textChars":45,"textLines":1,"bbox":[867,510,335,53]}
+{"kind":"textbox","id":"sh/6d0fytg3","slide":3,"name":"service-2","text":"At review","textPreview":"At review","textChars":9,"textLines":1,"bbox":[867,564,335,27]}
+{"kind":"textbox","id":"sh/re9g7yxo","slide":3,"name":"serviced-2","text":"Assess outcomes and agree refinements.","textPreview":"Assess outcomes and agree refinements.","textChars":38,"textLines":1,"bbox":[867,593,335,53]}
+{"kind":"notes","id":"nt/ofy9wn61","slide":3,"text":"Sources: README.md architecture; src/pages/HomePage.tsx service model; src/pages/WorkflowsPage.tsx; src/components/dashboard/RunDetail.tsx. Native editable conceptual model. Client systems and provider connections are subject to scope; the diagram is not a deployment guarantee.\nProduct is in preproduction. Proposed service and pilot requirements need client agreement. No measured commercial result or production readiness is asserted."}
+{"kind":"slide","id":"sl/j72aaq","slide":4,"title":"PRIME STATE SYSTEMS","textShapes":29}
+{"kind":"textbox","id":"sh/2x83m1wb","slide":4,"name":"PRIME STATE SYSTEMS","text":"PRIME STATE SYSTEMS","textPreview":"PRIME STATE SYSTEMS","textChars":19,"textLines":1,"bbox":[56,27,560,25]}
+{"kind":"textbox","id":"sh/p0jmxgfm","slide":4,"name":"04 / CLIENT JOURNEY","text":"04 / CLIENT JOURNEY","textPreview":"04 / CLIENT JOURNEY","textChars":19,"textLines":1,"bbox":[930,27,310,25]}
+{"kind":"textbox","id":"sh/oza5obe1","slide":4,"name":"headline","text":"A defined process for every new client","textPreview":"A defined process for every new client","textChars":38,"textLines":1,"bbox":[56,80,1168,63]}
+{"kind":"textbox","id":"sh/fuh4r6xk","slide":4,"name":"subhead","text":"The proposed engagement establishes scope, access and accountability before the client approves a pilot launch.","textPreview":"The proposed engagement establishes scope, access and accountability before the client approves a pilot launch.","textChars":111,"textLines":1,"bbox":[56,155,1150,57]}
+{"kind":"shape","id":"sh/et83i1wz","slide":4,"name":"rule","bbox":[56,226,1168,1]}
+{"kind":"textbox","id":"sh/1wzmtwfq","slide":4,"name":"PREPRODUCTION  /  SEPTEMBER 2026","text":"PREPRODUCTION  /  SEPTEMBER 2026","textPreview":"PREPRODUCTION  /  SEPTEMBER 2026","textChars":32,"textLines":1,"bbox":[56,681,750,25]}
+{"kind":"shape","id":"sh/gvqlkbe5","slide":4,"name":"stage0","bbox":[56,246,368,195]}
+{"kind":"textbox","id":"sh/r6x4nmxo","slide":4,"name":"stitle0","text":"01  Conversation","textPreview":"01  Conversation","textChars":16,"textLines":1,"bbox":[72,257,340,38]}
+{"kind":"textbox","id":"sh/65o3ehw3","slide":4,"name":"action0","text":"Identify the operational priority.","textPreview":"Identify the operational priority.","textChars":34,"textLines":1,"bbox":[72,304,335,48]}
+{"kind":"textbox","id":"sh/wzuxkfa5","slide":4,"name":"out0","text":"OUTPUT  Priority + named owner","textPreview":"OUTPUT  Priority + named owner","textChars":30,"textLines":1,"bbox":[72,364,335,36]}
+{"kind":"textbox","id":"sh/h03edkbq","slide":4,"name":"owner0","text":"Client + Prime State","textPreview":"Client + Prime State","textChars":20,"textLines":1,"bbox":[72,408,335,25]}
+{"kind":"shape","id":"sh/uxcfipsz","slide":4,"name":"stage1","bbox":[456,246,368,195]}
+{"kind":"textbox","id":"sh/vylwbutk","slide":4,"name":"stitle1","text":"02  Process & scope","textPreview":"02  Process & scope","textChars":19,"textLines":1,"bbox":[472,257,340,38]}
+{"kind":"textbox","id":"sh/8buxgfut","slide":4,"name":"action1","text":"Map rules, handoffs and measures.","textPreview":"Map rules, handoffs and measures.","textChars":33,"textLines":1,"bbox":[472,304,335,48]}
+{"kind":"textbox","id":"sh/9w3e9kbe","slide":4,"name":"out1","text":"OUTPUT  Scope + acceptance criteria","textPreview":"OUTPUT  Scope + acceptance criteria","textChars":35,"textLines":1,"bbox":[472,364,335,36]}
+{"kind":"textbox","id":"sh/m9cfe5c3","slide":4,"name":"owner1","text":"Joint agreement","textPreview":"Joint agreement","textChars":15,"textLines":1,"bbox":[472,408,335,25]}
+{"kind":"shape","id":"sh/7alw7at8","slide":4,"name":"stage2","bbox":[856,246,368,195]}
+{"kind":"textbox","id":"sh/s7exszad","slide":4,"name":"stitle2","text":"03  Onboarding","textPreview":"03  Onboarding","textChars":14,"textLines":1,"bbox":[872,257,340,38]}
+{"kind":"textbox","id":"sh/ds7yl4by","slide":4,"name":"action2","text":"Confirm access, data and contacts.","textPreview":"Confirm access, data and contacts.","textChars":34,"textLines":1,"bbox":[872,304,335,48]}
+{"kind":"textbox","id":"sh/1cj6pkzq","slide":4,"name":"out2","text":"OUTPUT  Access + data checklist","textPreview":"OUTPUT  Access + data checklist","textChars":31,"textLines":1,"bbox":[872,364,335,36]}
+{"kind":"textbox","id":"sh/gba5gfy5","slide":4,"name":"owner2","text":"Client; Prime State supports","textPreview":"Client; Prime State supports","textChars":28,"textLines":1,"bbox":[872,408,335,25]}
+{"kind":"shape","id":"sh/fa1onahk","slide":4,"name":"stage3","bbox":[856,461,368,195]}
+{"kind":"textbox","id":"sh/e98ne5gz","slide":4,"name":"stitle3","text":"04  Automation setup","textPreview":"04  Automation setup","textChars":20,"textLines":1,"bbox":[872,472,340,38]}
+{"kind":"textbox","id":"sh/t8z6l0ze","slide":4,"name":"action3","text":"Configure rules and integrations.","textPreview":"Configure rules and integrations.","textChars":33,"textLines":1,"bbox":[872,519,335,48]}
+{"kind":"textbox","id":"sh/s7q5cvy9","slide":4,"name":"out3","text":"OUTPUT  Workflow ready for testing","textPreview":"OUTPUT  Workflow ready for testing","textChars":34,"textLines":1,"bbox":[872,579,335,36]}
+{"kind":"textbox","id":"sh/r6hojqho","slide":4,"name":"owner3","text":"Prime State","textPreview":"Prime State","textChars":11,"textLines":1,"bbox":[872,623,335,25]}
+{"kind":"shape","id":"sh/658nalg3","slide":4,"name":"stage4","bbox":[456,461,368,195]}
+{"kind":"textbox","id":"sh/5kz6h0zi","slide":4,"name":"stitle4","text":"05  Test & approve","textPreview":"05  Test & approve","textChars":18,"textLines":1,"bbox":[472,472,340,38]}
+{"kind":"textbox","id":"sh/4jq58vyx","slide":4,"name":"action4","text":"Test cases; client approves launch.","textPreview":"Test cases; client approves launch.","textChars":35,"textLines":1,"bbox":[472,519,335,48]}
+{"kind":"textbox","id":"sh/up43ihwv","slide":4,"name":"out4","text":"OUTPUT  Client launch approval","textPreview":"OUTPUT  Client launch approval","textChars":30,"textLines":1,"bbox":[472,579,335,36]}
+{"kind":"textbox","id":"sh/vqdkbmxg","slide":4,"name":"owner4","text":"Prime State tests; client approves","textPreview":"Prime State tests; client approves","textChars":34,"textLines":1,"bbox":[472,623,335,25]}
+{"kind":"shape","id":"sh/wb6lkre1","slide":4,"name":"stage5","bbox":[56,461,368,195]}
+{"kind":"textbox","id":"sh/hcfmdwf6","slide":4,"name":"stitle5","text":"06  Operate & improve","textPreview":"06  Operate & improve","textChars":21,"textLines":1,"bbox":[72,472,340,38]}
+{"kind":"textbox","id":"sh/ml43ehwj","slide":4,"name":"action5","text":"Monitor runs and review issues.","textPreview":"Monitor runs and review issues.","textChars":31,"textLines":1,"bbox":[72,519,335,48]}
+{"kind":"textbox","id":"sh/7mdk7mx4","slide":4,"name":"out5","text":"OUTPUT  Review cadence + refinements","textPreview":"OUTPUT  Review cadence + refinements","textChars":36,"textLines":1,"bbox":[72,579,335,36]}
+{"kind":"textbox","id":"sh/8nmlgrep","slide":4,"name":"owner5","text":"Prime State; joint review","textPreview":"Prime State; joint review","textChars":25,"textLines":1,"bbox":[72,623,335,25]}
+{"kind":"shape","id":"sh/9ov29wfa","slide":4,"name":"sequence","bbox":[427,330,25,18]}
+{"kind":"shape","id":"sh/yhk3axwn","slide":4,"name":"sequence","bbox":[427,545,25,18]}
+{"kind":"shape","id":"sh/zitk32x8","slide":4,"name":"sequence","bbox":[827,330,25,18]}
+{"kind":"shape","id":"sh/bad0fi1o","slide":4,"name":"sequence","bbox":[827,545,25,18]}
+{"kind":"shape","id":"sh/q94zmd0j","slide":4,"name":"sequence","bbox":[1030,444,19,14]}
+{"kind":"notes","id":"nt/j72aaq","slide":4,"text":"Proposed engagement flow based on the user request and HomePage.tsx. Outputs and responsibilities are proposed. Native editable flowchart. The dark node is the client approval gate, not a claim that a launch has occurred.\nProduct is in preproduction. Proposed service and pilot requirements need client agreement. No measured commercial result or production readiness is asserted."}
+{"kind":"slide","id":"sl/pt844c","slide":5,"title":"PRIME STATE SYSTEMS","textShapes":30}
+{"kind":"textbox","id":"sh/1knyhk7u","slide":5,"name":"PRIME STATE SYSTEMS","text":"PRIME STATE SYSTEMS","textPreview":"PRIME STATE SYSTEMS","textChars":19,"textLines":1,"bbox":[56,27,560,25]}
+{"kind":"textbox","id":"sh/ehcz65oj","slide":5,"name":"05 / WORKFLOW EXAMPLE","text":"05 / WORKFLOW EXAMPLE","textPreview":"05 / WORKFLOW EXAMPLE","textChars":21,"textLines":1,"bbox":[930,27,310,25]}
+{"kind":"textbox","id":"sh/filgfap4","slide":5,"name":"headline","text":"Document automation, including the exceptions","textPreview":"Document automation, including the exceptions","textChars":45,"textLines":1,"bbox":[56,80,1168,63]}
+{"kind":"textbox","id":"sh/o7ehcz6l","slide":5,"name":"subhead","text":"Illustrative configuration based on the repository’s standard document-workflow contract.","textPreview":"Illustrative configuration based on the repository’s standard document-workflow contract.","textChars":89,"textLines":1,"bbox":[56,155,1150,57]}
+{"kind":"shape","id":"sh/p8ny5476","slide":5,"name":"rule","bbox":[56,226,1168,1]}
+{"kind":"textbox","id":"sh/2lwzapof","slide":5,"name":"PREPRODUCTION  /  SEPTEMBER 2026","text":"PREPRODUCTION  /  SEPTEMBER 2026","textPreview":"PREPRODUCTION  /  SEPTEMBER 2026","textChars":32,"textLines":1,"bbox":[56,681,750,25]}
+{"kind":"shape","id":"sh/365gjup0","slide":5,"name":"document-step0","bbox":[56,258,173,136]}
+{"kind":"textbox","id":"sh/4bux0v6h","slide":5,"name":"01","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[68,266,60,25]}
+{"kind":"textbox","id":"sh/5c3y907m","slide":5,"name":"doc-head0","text":"Select template","textPreview":"Select template","textChars":15,"textLines":1,"bbox":[68,297,158,34]}
+{"kind":"textbox","id":"sh/hk3itwj6","slide":5,"name":"doc-detail0","text":"Choose the version\nand document type.","textPreview":"Choose the version | and document type.","textChars":37,"textLines":2,"bbox":[68,344,152,48]}
+{"kind":"shape","id":"sh/gjuh0ril","slide":5,"name":"sequence","bbox":[233,315,18,13]}
+{"kind":"shape","id":"sh/vil0rm10","slide":5,"name":"document-step1","bbox":[255,258,173,136]}
+{"kind":"textbox","id":"sh/uhszyh0f","slide":5,"name":"02","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[267,266,60,25]}
+{"kind":"textbox","id":"sh/po3ixwj2","slide":5,"name":"doc-head1","text":"Map source","textPreview":"Map source","textChars":10,"textLines":1,"bbox":[267,297,158,34]}
+{"kind":"textbox","id":"sh/4nuh4bih","slide":5,"name":"doc-detail1","text":"Use approved fields\nand source records.","textPreview":"Use approved fields | and source records.","textChars":39,"textLines":2,"bbox":[267,344,152,48]}
+{"kind":"shape","id":"sh/3ml0v61w","slide":5,"name":"sequence","bbox":[432,315,18,13]}
+{"kind":"shape","id":"sh/ilcz210r","slide":5,"name":"document-step2","bbox":[454,258,173,136]}
+{"kind":"textbox","id":"sh/dcni1gje","slide":5,"name":"03","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[466,266,60,25]}
+{"kind":"textbox","id":"sh/cbe18bit","slide":5,"name":"doc-head2","text":"Validate","textPreview":"Validate","textChars":8,"textLines":1,"bbox":[466,297,158,34]}
+{"kind":"textbox","id":"sh/cvm14fqp","slide":5,"name":"doc-detail2","text":"Check conditions\nand required fields.","textPreview":"Check conditions | and required fields.","textChars":37,"textLines":2,"bbox":[466,344,152,48]}
+{"kind":"shape","id":"sh/xwv2dkra","slide":5,"name":"sequence","bbox":[631,315,18,13]}
+{"kind":"shape","id":"sh/atkj2p8z","slide":5,"name":"document-step3","bbox":[653,258,173,136]}
+{"kind":"textbox","id":"sh/budkba9k","slide":5,"name":"04","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[665,266,60,25]}
+{"kind":"textbox","id":"sh/kjml8zq1","slide":5,"name":"doc-head3","text":"Approve","textPreview":"Approve","textChars":7,"textLines":1,"bbox":[665,297,158,34]}
+{"kind":"textbox","id":"sh/lkv2h47m","slide":5,"name":"doc-detail3","text":"Route to the agreed\napproval mode.","textPreview":"Route to the agreed | approval mode.","textChars":34,"textLines":2,"bbox":[665,344,152,48]}
+{"kind":"shape","id":"sh/yh4j6p8v","slide":5,"name":"sequence","bbox":[830,315,18,13]}
+{"kind":"shape","id":"sh/zidkfu9g","slide":5,"name":"document-step4","bbox":[852,258,173,136]}
+{"kind":"textbox","id":"sh/0n21wvqx","slide":5,"name":"05","text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[864,266,60,25]}
+{"kind":"textbox","id":"sh/1ob250r2","slide":5,"name":"doc-head4","text":"Generate","textPreview":"Generate","textChars":8,"textLines":1,"bbox":[864,297,158,34]}
+{"kind":"textbox","id":"sh/jih4by9k","slide":5,"name":"doc-detail4","text":"Use the configured\nprovider adapter.","textPreview":"Use the configured | provider adapter.","textChars":36,"textLines":2,"bbox":[864,344,152,48]}
+{"kind":"shape","id":"sh/ih8n2dsf","slide":5,"name":"sequence","bbox":[1029,315,18,13]}
+{"kind":"shape","id":"sh/5kzmd8rq","slide":5,"name":"document-step5","bbox":[1051,258,173,136]}
+{"kind":"textbox","id":"sh/4jq543a5","slide":5,"name":"06","text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1063,266,60,25]}
+{"kind":"textbox","id":"sh/veh47yto","slide":5,"name":"doc-head5","text":"Record result","textPreview":"Record result","textChars":13,"textLines":1,"bbox":[1063,297,158,34]}
+{"kind":"textbox","id":"sh/ud8nyts3","slide":5,"name":"doc-detail5","text":"Store the output\nreference and status.","textPreview":"Store the output | reference and status.","textChars":38,"textLines":2,"bbox":[1063,344,152,48]}
+{"kind":"shape","id":"sh/hgzm98bu","slide":5,"name":"sequence","bbox":[529,400,18,32]}
+{"kind":"shape","id":"sh/wfq503a9","slide":5,"name":"sequence","bbox":[728,400,18,32]}
+{"kind":"shape","id":"sh/7qx43ets","slide":5,"name":"missing-branch","bbox":[454,438,365,106]}
+{"kind":"textbox","id":"sh/mponu9s7","slide":5,"name":"MISSING REQUIRED DATA","text":"MISSING REQUIRED DATA","textPreview":"MISSING REQUIRED DATA","textChars":21,"textLines":1,"bbox":[469,447,334,25]}
+{"kind":"textbox","id":"sh/mx8ryhor","slide":5,"name":"missing-action","text":"Fail safely; correct the source data\nbefore trying again.","textPreview":"Fail safely; correct the source data | before trying again.","textChars":57,"textLines":2,"bbox":[469,480,333,55]}
+{"kind":"shape","id":"sh/nyh87mpc","slide":5,"name":"approval-branch","bbox":[854,438,368,106]}
+{"kind":"textbox","id":"sh/oza90r6x","slide":5,"name":"APPROVAL NOT GRANTED","text":"APPROVAL NOT GRANTED","textPreview":"APPROVAL NOT GRANTED","textChars":20,"textLines":1,"bbox":[869,447,336,25]}
+{"kind":"textbox","id":"sh/9kjq9w72","slide":5,"name":"approval-action","text":"Proposed handling: return for revision;\nkeep generation blocked.","textPreview":"Proposed handling: return for revision; | keep generation blocked.","textChars":64,"textLines":2,"bbox":[869,480,339,55]}
+{"kind":"shape","id":"sh/et8ruhof","slide":5,"name":"approval-route","bbox":[737,420,300,1]}
+{"kind":"shape","id":"sh/fuh832p0","slide":5,"name":"approval-route-down","bbox":[1036,420,1,15]}
+{"kind":"shape","id":"sh/0vq9w76l","slide":5,"name":"sequence","bbox":[1028,427,18,10]}
+{"kind":"textbox","id":"sh/1wzq5c76","slide":5,"name":"CONFIGURATION DECISIONS","text":"CONFIGURATION DECISIONS","textPreview":"CONFIGURATION DECISIONS","textChars":23,"textLines":1,"bbox":[56,447,367,25]}
+{"kind":"textbox","id":"sh/qpo7qxoj","slide":5,"name":"decisions","text":"Template and version\nField mapping and conditions\nApproval mode and provider","textPreview":"Template and version | Field mapping and conditions | Approval mode and provider","textChars":76,"textLines":3,"bbox":[56,483,367,89]}
+{"kind":"shape","id":"sh/rqx8z2p4","slide":5,"name":"rule","bbox":[56,584,1168,1]}
+{"kind":"textbox","id":"sh/tw72l4vy","slide":5,"name":"recording","text":"Execution evidence: workflow steps, entity references and status are reported to the operating layer.","textPreview":"Execution evidence: workflow steps, entity references and status are reported to the operating layer.","textChars":101,"textLines":1,"bbox":[56,606,1140,53]}
+{"kind":"notes","id":"nt/pt844c","slide":5,"text":"Source: n8n/workflows/document-automation/README.md. Contract sequence: select versioned template; map approved fields; evaluate conditions (missing fields fail safely); route approval; generate via provider adapter; store output reference/format; report workflow steps/entity refs/status. Return-for-revision on rejected approval is a proposed configuration decision, not verified runtime behavior. No actual document or client record shown.\nProduct is in preproduction. Proposed service and pilot requirements need client agreement. No measured commercial result or production readiness is asserted."}
+{"kind":"slide","id":"sl/bu9tjy","slide":6,"title":"PRIME STATE SYSTEMS","textShapes":22}
+{"kind":"textbox","id":"sh/t8nqxkr2","slide":6,"name":"PRIME STATE SYSTEMS","text":"PRIME STATE SYSTEMS","textPreview":"PRIME STATE SYSTEMS","textChars":19,"textLines":1,"bbox":[56,27,560,25]}
+{"kind":"textbox","id":"sh/6lwrm5sr","slide":6,"name":"06 / OPERATING VIEW","text":"06 / OPERATING VIEW","textPreview":"06 / OPERATING VIEW","textChars":19,"textLines":1,"bbox":[930,27,310,25]}
+{"kind":"textbox","id":"sh/7m58va9c","slide":6,"name":"headline","text":"Inspect the run, then decide what needs attention","textPreview":"Inspect the run, then decide what needs attention","textChars":49,"textLines":1,"bbox":[56,80,1168,63]}
+{"kind":"textbox","id":"sh/kje9kval","slide":6,"name":"subhead","text":"Editable schematic using fields in the current interface. All values below are illustrative; this is not a live screenshot.","textPreview":"Editable schematic using fields in the current interface. All values below are illustrative; this is not a live screenshot.","textChars":123,"textLines":1,"bbox":[56,155,1150,57]}
+{"kind":"shape","id":"sh/lknqt0r6","slide":6,"name":"rule","bbox":[56,226,1168,1]}
+{"kind":"textbox","id":"sh/yhcrilsf","slide":6,"name":"PREPRODUCTION  /  SEPTEMBER 2026","text":"PREPRODUCTION  /  SEPTEMBER 2026","textPreview":"PREPRODUCTION  /  SEPTEMBER 2026","textChars":32,"textLines":1,"bbox":[56,681,750,25]}
+{"kind":"shape","id":"sh/ji58rq90","slide":6,"name":"record-shell","bbox":[56,249,769,390]}
+{"kind":"textbox","id":"sh/4fy9wzap","slide":6,"name":"ILLUSTRATIVE EXECUTION RECORD","text":"ILLUSTRATIVE EXECUTION RECORD","textPreview":"ILLUSTRATIVE EXECUTION RECORD","textChars":29,"textLines":1,"bbox":[76,263,700,25]}
+{"kind":"textbox","id":"sh/5g7a54ra","slide":6,"name":"record-name","text":"Document generation","textPreview":"Document generation","textChars":19,"textLines":1,"bbox":[76,299,570,43]}
+{"kind":"textbox","id":"sh/hkni50na","slide":6,"name":"status","text":"FAILED","textPreview":"FAILED","textChars":6,"textLines":1,"bbox":[658,307,150,33]}
+{"kind":"textbox","id":"sh/wjehwv6p","slide":6,"name":"PROCESSED","text":"PROCESSED","textPreview":"PROCESSED","textChars":9,"textLines":1,"bbox":[76,361,175,25]}
+{"kind":"textbox","id":"sh/vi503a54","slide":6,"name":"metric0","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[76,393,173,43]}
+{"kind":"textbox","id":"sh/uhczu5oj","slide":6,"name":"FAILED RECORDS","text":"FAILED RECORDS","textPreview":"FAILED RECORDS","textChars":14,"textLines":1,"bbox":[260,361,175,25]}
+{"kind":"textbox","id":"sh/9g3i10ny","slide":6,"name":"metric1","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[260,393,173,43]}
+{"kind":"textbox","id":"sh/8fuhsv6d","slide":6,"name":"RETRIES","text":"RETRIES","textPreview":"RETRIES","textChars":7,"textLines":1,"bbox":[444,361,175,25]}
+{"kind":"textbox","id":"sh/7ul0zqps","slide":6,"name":"metric2","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[444,393,173,43]}
+{"kind":"textbox","id":"sh/mtczqlon","slide":6,"name":"DURATION","text":"DURATION","textPreview":"DURATION","textChars":8,"textLines":1,"bbox":[628,361,175,25]}
+{"kind":"textbox","id":"sh/tc7idkn2","slide":6,"name":"metric3","text":"0.8 s","textPreview":"0.8 s","textChars":5,"textLines":1,"bbox":[628,393,173,43]}
+{"kind":"textbox","id":"sh/c7qtwni5","slide":6,"name":"01  Locate the issue","text":"01  Locate the issue","textPreview":"01  Locate the issue","textChars":20,"textLines":1,"bbox":[869,262,340,25]}
+{"kind":"textbox","id":"sh/x8zupszq","slide":6,"name":"annotation0","text":"Status and execution steps identify where the run stopped.","textPreview":"Status and execution steps identify where the run stopped.","textChars":58,"textLines":1,"bbox":[869,299,335,80]}
+{"kind":"textbox","id":"sh/a5obud0z","slide":6,"name":"02  Assess the extent","text":"02  Assess the extent","textPreview":"02  Assess the extent","textChars":21,"textLines":1,"bbox":[869,393,340,25]}
+{"kind":"textbox","id":"sh/b6xsnihk","slide":6,"name":"annotation1","text":"Record counts, duration and retries give context for investigation.","textPreview":"Record counts, duration and retries give context for investigation.","textChars":67,"textLines":1,"bbox":[869,430,335,80]}
+{"kind":"textbox","id":"sh/o36tsni9","slide":6,"name":"03  Choose the response","text":"03  Choose the response","textPreview":"03  Choose the response","textChars":23,"textLines":1,"bbox":[869,524,340,25]}
+{"kind":"textbox","id":"sh/p4falsze","slide":6,"name":"annotation2","text":"Use the investigation note to resolve the issue through the agreed process.","textPreview":"Use the investigation note to resolve the issue through the agreed process.","textChars":75,"textLines":1,"bbox":[869,561,335,80]}
+{"kind":"table","id":"tb/jixgzidw","slide":6,"name":"","rows":3,"cols":3,"preview":"EXECUTION STEP | STATUS | INVESTIGATION NOTE","bbox":[76,463,730,141]}
+{"kind":"notes","id":"nt/bu9tjy","slide":6,"text":"Fields grounded in src/components/dashboard/RunDetail.tsx: status, start/finish, duration, retries, processed/failed records, event reference, execution steps and investigation note. All shown values are invented illustrative examples, not performance claims or live records. The simplified schematic is native editable content, not an exact interface reproduction. Not reached is an explanatory schematic label.\nProduct is in preproduction. Proposed service and pilot requirements need client agreement. No measured commercial result or production readiness is asserted."}
+{"kind":"slide","id":"sl/c9bs0w","slide":7,"title":"PRIME STATE SYSTEMS","textShapes":7}
+{"kind":"textbox","id":"sh/4vyh8jat","slide":7,"name":"PRIME STATE SYSTEMS","text":"PRIME STATE SYSTEMS","textPreview":"PRIME STATE SYSTEMS","textChars":19,"textLines":1,"bbox":[56,27,560,25]}
+{"kind":"textbox","id":"sh/jup0zyt8","slide":7,"name":"07 / PILOT EVIDENCE","text":"07 / PILOT EVIDENCE","textPreview":"07 / PILOT EVIDENCE","textChars":19,"textLines":1,"bbox":[930,27,310,25]}
+{"kind":"textbox","id":"sh/itwz6tsn","slide":7,"name":"headline","text":"Judge the pilot against agreed evidence","textPreview":"Judge the pilot against agreed evidence","textChars":39,"textLines":1,"bbox":[56,80,1168,63]}
+{"kind":"textbox","id":"sh/tk7i58ba","slide":7,"name":"subhead","text":"Start with the current baseline. Set acceptance thresholds before testing, then review the same measures at the pilot decision.","textPreview":"Start with the current baseline. Set acceptance thresholds before testing, then review the same measures at the pilot decision.","textChars":127,"textLines":1,"bbox":[56,155,1150,57]}
+{"kind":"shape","id":"sh/szyhc3ap","slide":7,"name":"rule","bbox":[56,226,1168,1]}
+{"kind":"textbox","id":"sh/ryp03yt4","slide":7,"name":"PREPRODUCTION  /  SEPTEMBER 2026","text":"PREPRODUCTION  /  SEPTEMBER 2026","textPreview":"PREPRODUCTION  /  SEPTEMBER 2026","textChars":32,"textLines":1,"bbox":[56,681,750,25]}
+{"kind":"textbox","id":"sh/94nyt4b6","slide":7,"name":"SUCCESS THRESHOLDS ARE AGREED, NOT ASSUMED","text":"SUCCESS THRESHOLDS ARE AGREED, NOT ASSUMED","textPreview":"SUCCESS THRESHOLDS ARE AGREED, NOT ASSUMED","textChars":42,"textLines":1,"bbox":[56,611,1168,25]}
+{"kind":"textbox","id":"sh/83eh0zal","slide":7,"name":"criteria","text":"Record the measurement method, observation period and approval owner in the pilot specification.","textPreview":"Record the measurement method, observation period and approval owner in the pilot specification.","textChars":96,"textLines":1,"bbox":[56,643,1150,30]}
+{"kind":"table","id":"tb/vm5wv2p0","slide":7,"name":"","rows":5,"cols":4,"preview":"REQUIREMENT | EVIDENCE TO REVIEW | PROPOSED OWNER | DECISION","bbox":[56,258,1168,332]}
+{"kind":"notes","id":"nt/c9bs0w","slide":7,"text":"Proposed pilot evidence matrix. No numerical target or business benefit is asserted. Metrics are suggestions to scope with the client, and may require measurement outside the portal. Native editable table.\nProduct is in preproduction. Proposed service and pilot requirements need client agreement. No measured commercial result or production readiness is asserted."}
+{"kind":"slide","id":"sl/q4exal","slide":8,"title":"PRIME STATE SYSTEMS","textShapes":14}
+{"kind":"textbox","id":"sh/dgzidcri","slide":8,"name":"PRIME STATE SYSTEMS","text":"PRIME STATE SYSTEMS","textPreview":"PRIME STATE SYSTEMS","textChars":19,"textLines":1,"bbox":[56,27,560,25]}
+{"kind":"textbox","id":"sh/qd8jihsr","slide":8,"name":"08 / ENGAGEMENT BRIEF","text":"08 / ENGAGEMENT BRIEF","textPreview":"08 / ENGAGEMENT BRIEF","textChars":21,"textLines":1,"bbox":[930,27,310,25]}
+{"kind":"textbox","id":"sh/beh0bm9c","slide":8,"name":"headline","text":"Choose one workflow worth standardizing","textPreview":"Choose one workflow worth standardizing","textChars":39,"textLines":1,"bbox":[56,80,1168,63]}
+{"kind":"textbox","id":"sh/03a1orat","slide":8,"name":"subhead","text":"A proposed first engagement with explicit responsibilities and a defined decision before wider rollout.","textPreview":"A proposed first engagement with explicit responsibilities and a defined decision before wider rollout.","textChars":103,"textLines":1,"bbox":[56,155,1150,57]}
+{"kind":"shape","id":"sh/l4jihwre","slide":8,"name":"rule","bbox":[56,226,1168,1]}
+{"kind":"textbox","id":"sh/yh8jmhs3","slide":8,"name":"PREPRODUCTION  /  SEPTEMBER 2026","text":"PREPRODUCTION  /  SEPTEMBER 2026","textPreview":"PREPRODUCTION  /  SEPTEMBER 2026","textChars":32,"textLines":1,"bbox":[56,681,750,25]}
+{"kind":"shape","id":"sh/z210fm98","slide":8,"name":"scope-field","bbox":[56,252,373,400]}
+{"kind":"textbox","id":"sh/g76hcnap","slide":8,"name":"PROPOSED STARTING SCOPE","text":"PROPOSED STARTING SCOPE","textPreview":"PROPOSED STARTING SCOPE","textChars":23,"textLines":1,"bbox":[78,273,327,25]}
+{"kind":"textbox","id":"sh/18fi5sra","slide":8,"name":"scope-statement","text":"One workflow.\nA named owner.\nAn agreed test.","textPreview":"One workflow. | A named owner. | An agreed test.","textChars":44,"textLines":3,"bbox":[78,324,328,147]}
+{"kind":"textbox","id":"sh/5076x4va","slide":8,"name":"scope-description","text":"Confirm the connected systems, required records, exclusions and approval conditions before implementation begins.","textPreview":"Confirm the connected systems, required records, exclusions and approval conditions before implementation begins.","textChars":113,"textLines":1,"bbox":[78,493,321,118]}
+{"kind":"textbox","id":"sh/kzypozep","slide":8,"name":"CLIENT INPUTS","text":"CLIENT INPUTS","textPreview":"CLIENT INPUTS","textChars":13,"textLines":1,"bbox":[477,256,732,25]}
+{"kind":"textbox","id":"sh/jy5ovud4","slide":8,"name":"brief0","text":"Nominate an operational owner; identify the workflow; provide approved access and sample data.","textPreview":"Nominate an operational owner; identify the workflow; provide approved access and sample data.","textChars":94,"textLines":1,"bbox":[477,290,713,76]}
+{"kind":"shape","id":"sh/yxw7mpwj","slide":8,"name":"rule","bbox":[477,367,747,1]}
+{"kind":"textbox","id":"sh/to7614v6","slide":8,"name":"PRIME STATE RESPONSIBILITIES","text":"PRIME STATE RESPONSIBILITIES","textPreview":"PRIME STATE RESPONSIBILITIES","textChars":28,"textLines":1,"bbox":[477,380,732,25]}
+{"kind":"textbox","id":"sh/snypszel","slide":8,"name":"brief1","text":"Map the process, configure the workflow, test execution and propose the operating review cadence.","textPreview":"Map the process, configure the workflow, test execution and propose the operating review cadence.","textChars":97,"textLines":1,"bbox":[477,414,713,76]}
+{"kind":"shape","id":"sh/7mpozudg","slide":8,"name":"rule","bbox":[477,491,747,1]}
+{"kind":"textbox","id":"sh/61g7qpwv","slide":8,"name":"DECISIONS TO AGREE","text":"DECISIONS TO AGREE","textPreview":"DECISIONS TO AGREE","textChars":18,"textLines":1,"bbox":[477,504,732,25]}
+{"kind":"textbox","id":"sh/hsr65ovi","slide":8,"name":"brief2","text":"Scope, success measures, approval rights, timeline, support responsibilities and commercial terms.","textPreview":"Scope, success measures, approval rights, timeline, support responsibilities and commercial terms.","textChars":98,"textLines":1,"bbox":[477,538,713,76]}
+{"kind":"notes","id":"nt/q4exal","slide":8,"text":"Proposed engagement brief based on user description and src/pages/HomePage.tsx service model. No signed scope, schedule, price or service level exists in the supplied facts. All such decisions remain to be agreed.\nProduct is in preproduction. Proposed service and pilot requirements need client agreement. No measured commercial result or production readiness is asserted."}

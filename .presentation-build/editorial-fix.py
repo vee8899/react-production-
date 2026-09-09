@@ -1,0 +1,13 @@
+from pathlib import Path
+p=Path('.presentation-build/editorial.mjs');s=p.read_text(encoding='utf-8')
+s=s.replace("x,348,75,70,48","x,348,92,70,42").replace("x+77,354,302,65","x+96,354,278,65")
+s=s.replace('Illustrative configuration based on the repository’s standard document-workflow contract.','Define the template, source fields and approval conditions before generation begins.')
+s=s.replace("['01','Select template','Choose the version\\nand document type.']","['01','Template','Version and\\ndocument type.']").replace("['02','Map source','Use approved fields\\nand source records.']","['02','Source','Approved fields\\nand records.']").replace("'Check conditions\\nand required fields.'","'Conditions and\\nrequired fields.'").replace("'Route to the agreed\\napproval mode.'","'Agreed approval\\nmode.'").replace("'Use the configured\\nprovider adapter.'","'Configured\\nprovider adapter.'").replace("'Store the output\\nreference and status.'","'Output reference\\nand run status.'")
+s=s.replace("x,258,173,136","x,258,173,154").replace("158,34,23","158,37,21").replace("x+12,344,152,48","x+12,346,152,65")
+s=s.replace("arrow(s,529,400,18,32,'downArrow');arrow(s,728,400,18,32,'downArrow');","arrow(s,529,416,18,36,'downArrow');box(s,'approval-stem',737,412,1,28,C.green);")
+s=s.replace("454,438,365,106","454,462,365,109").replace("469,447","469,471").replace("469,480","469,504")
+s=s.replace("854,438,368,106","854,462,368,109").replace("869,447","869,471").replace("869,480","869,504").replace("return for revision;\\nkeep generation blocked.","revise;\\nkeep generation blocked.")
+s=s.replace("737,420,300,1","737,440,300,1").replace("1036,420,1,15","1036,440,1,15").replace("1028,427,18,10","1028,451,18,9")
+s=s.replace("'CONFIGURATION DECISIONS',56,447","'CONFIGURATION DECISIONS',56,463").replace("56,483,367,89","56,498,367,86")
+s=s.replace("Editable schematic using fields in the current interface. All values below are illustrative; this is not a live screenshot.","An illustrative run shows how an operator can identify a failure and choose a response. All values are sample data.")
+p.write_text(s,encoding='utf-8')
