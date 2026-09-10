@@ -40,7 +40,8 @@ export const useDashboardMetrics = (organizationId: string | undefined, _clientI
           .eq("organization_id", organizationId)
           .gte("started_at", startOfWindow(windowDays));
 
-        if (!error && data && data.length > 0) {
+        if (error) throw error;
+        if (data && data.length > 0) {
           const completed = data.filter((run) => run.duration_ms !== null);
           return {
             totalRuns: data.length,
@@ -61,7 +62,8 @@ export const useDashboardMetrics = (organizationId: string | undefined, _clientI
           .eq("organization_id", organizationId)
           .gte("snapshot_date", startOfWindow(windowDays).slice(0, 10));
 
-        if (!snapshotError && snapshots && snapshots.length > 0) {
+        if (snapshotError) throw snapshotError;
+        if (snapshots && snapshots.length > 0) {
           return {
             totalRuns: snapshots.reduce((sum, item) => sum + item.total_runs, 0),
             successfulRuns: snapshots.reduce((sum, item) => sum + item.successful_runs, 0),

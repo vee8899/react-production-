@@ -307,6 +307,7 @@
       ],
       "importedSymbols": [
         "@/api/supabase/client",
+        "@/components/dashboard/QueryState",
         "@/components/ui/Footer",
         "@/components/ui/Nav",
         "@/components/ui/SectionHeader",
@@ -319,6 +320,7 @@
       ],
       "dependencies": [
         "@/api/supabase/client",
+        "@/components/dashboard/QueryState",
         "@/components/ui/Footer",
         "@/components/ui/Nav",
         "@/components/ui/SectionHeader",
@@ -332,6 +334,7 @@
         "DemoState",
         "Footer",
         "Nav",
+        "QueryState",
         "SectionHeader"
       ],
       "referencedHooks": [
@@ -458,6 +461,30 @@
       "databaseUsage": []
     },
     {
+      "file": "src/test/browserEndpointHandlers.test.ts",
+      "exportedSymbols": [],
+      "importedSymbols": [
+        "../../supabase/functions/configure-alert-route/handler",
+        "../../supabase/functions/demo-event/handler",
+        "@/types/supabase",
+        "@supabase/supabase-js",
+        "vitest"
+      ],
+      "dependencies": [
+        "../../supabase/functions/configure-alert-route/handler",
+        "../../supabase/functions/demo-event/handler",
+        "@/types/supabase"
+      ],
+      "referencedComponents": [
+        "Database"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.test"
+      ],
+      "databaseUsage": []
+    },
+    {
       "file": "src/test/posthog.test.ts",
       "exportedSymbols": [],
       "importedSymbols": [
@@ -509,14 +536,64 @@
       "databaseUsage": []
     },
     {
-      "file": "supabase/functions/demo-event/index.ts",
-      "exportedSymbols": [],
+      "file": "supabase/functions/_shared/browser-handler.ts",
+      "exportedSymbols": [
+        "BrowserHandlerDependencies"
+      ],
       "importedSymbols": [
-        "https://deno.land/x/zod@v3.23.8/mod.ts",
+        "../../../src/types/supabase.ts",
         "https://esm.sh/@supabase/supabase-js@2"
       ],
-      "dependencies": [],
-      "referencedComponents": [],
+      "dependencies": [
+        "../../../src/types/supabase.ts"
+      ],
+      "referencedComponents": [
+        "Database"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.ts"
+      ],
+      "databaseUsage": []
+    },
+    {
+      "file": "supabase/functions/configure-alert-route/index.ts",
+      "exportedSymbols": [],
+      "importedSymbols": [
+        "../../../src/types/supabase.ts",
+        "./handler.ts",
+        "https://esm.sh/@supabase/supabase-js@2"
+      ],
+      "dependencies": [
+        "../../../src/types/supabase.ts",
+        "./handler.ts"
+      ],
+      "referencedComponents": [
+        "Database"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.ts"
+      ],
+      "databaseUsage": []
+    },
+    {
+      "file": "supabase/functions/demo-event/handler.ts",
+      "exportedSymbols": [
+        "createDemoEventHandler"
+      ],
+      "importedSymbols": [
+        "../_shared/browser-handler.ts",
+        "../_shared/cors.ts",
+        "https://deno.land/x/zod@v3.23.8/mod.ts"
+      ],
+      "dependencies": [
+        "../_shared/browser-handler.ts",
+        "../_shared/cors.ts"
+      ],
+      "referencedComponents": [
+        "Response"
+      ],
       "referencedHooks": [],
       "apiUsage": [
         "supabase.from",
@@ -530,6 +607,27 @@
         "listings",
         "workflows"
       ]
+    },
+    {
+      "file": "supabase/functions/demo-event/index.ts",
+      "exportedSymbols": [],
+      "importedSymbols": [
+        "../../../src/types/supabase.ts",
+        "./handler.ts",
+        "https://esm.sh/@supabase/supabase-js@2"
+      ],
+      "dependencies": [
+        "../../../src/types/supabase.ts",
+        "./handler.ts"
+      ],
+      "referencedComponents": [
+        "Database"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.ts"
+      ],
+      "databaseUsage": []
     },
     {
       "file": "supabase/functions/invite-client/index.ts",

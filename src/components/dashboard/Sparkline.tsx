@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useClient } from "@/hooks/useClient";
 import { useRunsTimeline, type DailyRunCount } from "@/hooks/useRunsTimeline";
+import { QueryState } from "./QueryState";
 
 const VIEWBOX_W = 1000;
 const PLOT_H = 108;
@@ -64,11 +65,18 @@ const analyticalTicks = (ceiling: number) =>
 
 export const Sparkline = ({ windowDays }: { windowDays: number }) => {
   const { data: client } = useClient();
-  const { data: raw } = useRunsTimeline(client?.organization_id, windowDays);
+  const query = useRunsTimeline(client?.organization_id, windowDays);
+  const raw = query.data;
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const data = raw ? trimLeadingZeros(raw) : undefined;
-  if (!data || data.length < 2) return null;
+  if (!data || !data.some((day) => day.total > 0)) return (
+    <div className="mt-6 border border-border bg-background p-3">
+      <QueryState label="run activity" hasData={!!raw} {...query}>
+        <p className="text-sm text-muted">No workflow activity in the last {windowDays} days.</p>
+      </QueryState>
+    </div>
+  );
 
   const cumulativeData = toCumulative(data);
   const totalRuns = cumulativeData[cumulativeData.length - 1].total;
@@ -85,6 +93,7 @@ export const Sparkline = ({ windowDays }: { windowDays: number }) => {
 
   return (
     <div className="mt-6 border border-border bg-background p-3">
+      <QueryState label="run activity" hasData={true} {...query}>
       <div className="mb-2 flex items-center justify-between">
         <span className="text-label font-mono uppercase tracking-[0.08em] text-muted">
           Run Activity
@@ -162,6 +171,7 @@ export const Sparkline = ({ windowDays }: { windowDays: number }) => {
           </div>
         )}
       </div>
+      </QueryState>
     </div>
   );
 };

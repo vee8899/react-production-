@@ -10,6 +10,19 @@ npm.cmd run test -- --run
 
 Application Vitest/Testing Library tests live under `src/test/`; the agents library also has tests under `agents/`, and repository-tooling tests live under `scripts/`. The shared setup is `src/test/setup.ts`. Browser E2E lives separately under `e2e/`. A passing unit suite does not execute the local Postgres or staging checks unless those are separately invoked.
 
+## Executable endpoint and reliability checks
+
+The Phase 1 endpoint harness runs production handler factories in Vitest's Node environment. Zod's Deno import resolves to the installed `zod-ingest` alias at the same 3.23.8 version. Browser-endpoint tests use the real installed Supabase SDK with a controlled HTTP transport; no live authentication or database is contacted.
+
+```powershell
+npm.cmd run test -- --run src/test/ingestRunHandler.test.ts src/test/browserEndpointHandlers.test.ts
+npm.cmd run test -- --run src/test/useDashboardMetrics.test.tsx src/test/dashboardReliability.test.tsx
+```
+
+Endpoint checks cover unauthenticated preflight before dependencies, every response category's CORS headers, bearer authentication, validation, tenant filters, foreign integrations, and privileged-write errors. Reliability tests render real metrics/timeline hooks and their consumers: initial loading/error/retry, successful empty, failed background refresh with retained data, recovery, changed windows, and demo-control restoration after returned errors, thrown requests, and failed invalidations. Dashboard composition stubs are not metrics correctness evidence.
+
+These commands are included in the full suite. They do not boot a Deno gateway, run database RLS, or prove browser CORS enforcement against a deployed function.
+
 ## Choose the right test coverage
 
 - Update or add a unit test for domain logic in `src/lib/` or `src/utils/`.
@@ -56,6 +69,8 @@ npx playwright install chromium
 ```
 
 The HTML report is written to `outputs/playwright-report`.
+
+The additional demo browser test requires `STAGING_DEMO_EMAIL` and `STAGING_DEMO_PASSWORD` for a seeded `Northstar Realty Demo` user with legal consent completed. It creates one synthetic demo event and exercises the actual browser-to-function call. Missing demo credentials skip it. See [demo workspace](demo-workspace.md) for preparation and limitations.
 
 ## Staging acceptance scripts
 

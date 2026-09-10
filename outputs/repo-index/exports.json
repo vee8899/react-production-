@@ -128,6 +128,10 @@
       ]
     },
     {
+      "file": "e2e/staging-demo.spec.ts",
+      "exportedSymbols": []
+    },
+    {
       "file": "e2e/staging-smoke.spec.ts",
       "exportedSymbols": []
     },
@@ -318,6 +322,12 @@
       "file": "src/components/dashboard/OperationsMenu.tsx",
       "exportedSymbols": [
         "OperationsMenu"
+      ]
+    },
+    {
+      "file": "src/components/dashboard/QueryState.tsx",
+      "exportedSymbols": [
+        "QueryState"
       ]
     },
     {
@@ -836,6 +846,14 @@
       "exportedSymbols": []
     },
     {
+      "file": "src/test/browserEndpointHandlers.test.ts",
+      "exportedSymbols": []
+    },
+    {
+      "file": "src/test/dashboardReliability.test.tsx",
+      "exportedSymbols": []
+    },
+    {
       "file": "src/test/demoData.test.ts",
       "exportedSymbols": []
     },
@@ -946,8 +964,33 @@
       ]
     },
     {
+      "file": "supabase/functions/_shared/browser-handler.ts",
+      "exportedSymbols": [
+        "BrowserHandlerDependencies"
+      ]
+    },
+    {
+      "file": "supabase/functions/_shared/cors.ts",
+      "exportedSymbols": [
+        "browserJson",
+        "browserPreflight"
+      ]
+    },
+    {
+      "file": "supabase/functions/configure-alert-route/handler.ts",
+      "exportedSymbols": [
+        "createAlertRouteHandler"
+      ]
+    },
+    {
       "file": "supabase/functions/configure-alert-route/index.ts",
       "exportedSymbols": []
+    },
+    {
+      "file": "supabase/functions/demo-event/handler.ts",
+      "exportedSymbols": [
+        "createDemoEventHandler"
+      ]
     },
     {
       "file": "supabase/functions/demo-event/index.ts",

@@ -31,6 +31,7 @@ describe("useDashboardMetrics", () => {
 
     await waitFor(() => expect(result.result.current.isSuccess).toBe(true));
     expect(result.result.current.data).toEqual({ totalRuns: 3, successfulRuns: 1, failedRuns: 2, totalRecords: 24, avgDurationMs: 2000, retries: 3, source: "workflow_runs" });
+    expect(from).toHaveBeenCalledExactlyOnceWith("workflow_runs");
   });
 
   it("uses Northstar's daily snapshot when its run table has no rows", async () => {
@@ -44,5 +45,29 @@ describe("useDashboardMetrics", () => {
     await waitFor(() => expect(result.result.current.isSuccess).toBe(true));
     expect(result.result.current.data?.source).toBe("analytics_snapshots");
     expect(result.result.current.data?.totalRuns).toBe(10);
+  });
+
+  it.each(["workflow_runs", "analytics_snapshots"])("surfaces a failed %s query instead of zero metrics", async (failedTable) => {
+    const failure = new Error("Database unavailable");
+    from.mockImplementation((table: string) => query([], table === failedTable ? failure : null));
+    const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+    const wrapper = ({ children }: PropsWithChildren) => <QueryClientProvider client={client}>{children}</QueryClientProvider>;
+    const { result } = renderHook(() => useDashboardMetrics("northstar-org", "northstar-client"), { wrapper });
+
+    await waitFor(() => expect(result.current.isError).toBe(true));
+    expect(result.current.error).toBe(failure);
+    expect(result.current.data).toBeUndefined();
+    if (failedTable === "workflow_runs") expect(from).toHaveBeenCalledExactlyOnceWith("workflow_runs");
+  });
+
+  it("returns genuine zero metrics after both queries succeed without rows", async () => {
+    from.mockReturnValue(query([]));
+    const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+    const wrapper = ({ children }: PropsWithChildren) => <QueryClientProvider client={client}>{children}</QueryClientProvider>;
+    const { result } = renderHook(() => useDashboardMetrics("northstar-org", "northstar-client"), { wrapper });
+
+    await waitFor(() => expect(result.current.isSuccess).toBe(true));
+    expect(result.current.data).toEqual({ totalRuns: 0, successfulRuns: 0, failedRuns: 0, totalRecords: 0, avgDurationMs: 0, retries: 0, source: "workflow_runs" });
+    expect(from.mock.calls).toEqual([["workflow_runs"], ["analytics_snapshots"]]);
   });
 });

@@ -24,8 +24,8 @@
 - [src/lib/legalConsent.ts](../../src/lib/legalConsent.ts) — database text matches: `cookie_preferences`, `legal_consents`, `legal_documents`
 - [src/pages/DemoPage.tsx](../../src/pages/DemoPage.tsx) — database text matches: `leads`
 - [src/test/securityContracts.test.ts](../../src/test/securityContracts.test.ts) — database text matches: `alter table`
-- [supabase/functions/configure-alert-route/index.ts](../../supabase/functions/configure-alert-route/index.ts) — database text matches: `integrations`, `organization_members`
-- [supabase/functions/demo-event/index.ts](../../supabase/functions/demo-event/index.ts) — database text matches: `appointments`, `clients`, `leads`, `listings`, `workflows`
+- [supabase/functions/configure-alert-route/handler.ts](../../supabase/functions/configure-alert-route/handler.ts) — database text matches: `integrations`, `organization_members`
+- [supabase/functions/demo-event/handler.ts](../../supabase/functions/demo-event/handler.ts) — database text matches: `appointments`, `clients`, `leads`, `listings`, `workflows`
 - [supabase/migrations/20260701000000_base_schema.sql](../../supabase/migrations/20260701000000_base_schema.sql) — database text matches: `create table`, `select 1 from`
 - [supabase/migrations/20260703000001_automation_runs_contract.sql](../../supabase/migrations/20260703000001_automation_runs_contract.sql) — database text matches: `alter table`, `select 1 from`
 - [supabase/migrations/20260711000001_client_data_rls.sql](../../supabase/migrations/20260711000001_client_data_rls.sql) — database text matches: `alter table`

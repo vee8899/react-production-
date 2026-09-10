@@ -2110,7 +2110,7 @@
       "path": "docs/plans/reliability-hardening/README.md",
       "kind": "documentation",
       "extension": ".md",
-      "hash": "a75f9ea7adfe514a48e9148511567b35201dda945d496be1c5fcc05c62d60528",
+      "hash": "b76e66e47bc69d5946439dcfc2c3b187f8209af0bd4c39c917a5b56f19542b14",
       "lines": 114,
       "imports": [],
       "exports": [],
@@ -2162,16 +2162,37 @@
       "path": "docs/plans/reliability-hardening/phase-2-application-reliability.md",
       "kind": "documentation",
       "extension": ".md",
-      "hash": "72712430f90502c9b30a37441481e0404afaf391237ec80563337699e4d9742b",
-      "lines": 108,
+      "hash": "120413fb06374894b62b555037c80cb74a85983ea716fa914dc803421aa19ce5",
+      "lines": 125,
       "imports": [],
       "exports": [],
       "symbols": [
-        "checking"
+        "checking",
+        "to"
       ],
       "referencedComponents": [],
       "referencedHooks": [],
       "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "docs/plans/reliability-hardening/phase-2-evidence-2026-09-10.md",
+      "kind": "documentation",
+      "extension": ".md",
+      "hash": "cb55c17bc5ecf0fa893ab758ee8c93733d0be8e5b9c2c2d59c257900a7824953",
+      "lines": 58,
+      "imports": [],
+      "exports": [],
+      "symbols": [
+        "mismatch",
+        "now"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.ts"
+      ],
       "databaseUsage": [],
       "routes": []
     },
@@ -2332,6 +2353,31 @@
       "apiUsage": [],
       "databaseUsage": [],
       "routes": []
+    },
+    {
+      "path": "e2e/staging-demo.spec.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "7841c17b878db7e9b18127a3051f002e358bb8a0b3d937744b2fcb1e22206d03",
+      "lines": 27,
+      "imports": [
+        "@playwright/test"
+      ],
+      "exports": [],
+      "symbols": [
+        "email",
+        "password",
+        "processed",
+        "response"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": [
+        "/demo",
+        "/login"
+      ]
     },
     {
       "path": "e2e/staging-smoke.spec.ts",
@@ -5337,6 +5383,27 @@
       "routes": []
     },
     {
+      "path": "src/components/dashboard/QueryState.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "a68d1d742cdfcee4ece073af370f9f28fbb76d13db38dbeb8dc9d0ff5c949dff",
+      "lines": 27,
+      "imports": [
+        "react"
+      ],
+      "exports": [
+        "QueryState"
+      ],
+      "symbols": [
+        "QueryState"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
       "path": "src/components/dashboard/RealEstateMetrics.tsx",
       "kind": "source",
       "extension": ".tsx",
@@ -5437,9 +5504,10 @@
       "path": "src/components/dashboard/Sparkline.tsx",
       "kind": "source",
       "extension": ".tsx",
-      "hash": "5434c3523710a533d4f2389b73d8e9959b6d487f5c823d9cc7e7c41c4b50cccb",
-      "lines": 168,
+      "hash": "9bafd7cda4f5857ce7d5135b669f21051101df7611db86f06e473ae3fac69314",
+      "lines": 178,
       "imports": [
+        "./QueryState",
         "@/hooks/useClient",
         "@/hooks/useRunsTimeline",
         "react"
@@ -5472,6 +5540,8 @@
         "middleIndex",
         "months",
         "niceCeiling",
+        "query",
+        "raw",
         "scaleX",
         "scaleY",
         "successLine",
@@ -5488,7 +5558,9 @@
         "x",
         "y"
       ],
-      "referencedComponents": [],
+      "referencedComponents": [
+        "QueryState"
+      ],
       "referencedHooks": [
         "useClient",
         "useRunsTimeline"
@@ -5501,9 +5573,10 @@
       "path": "src/components/dashboard/StatsRow.tsx",
       "kind": "source",
       "extension": ".tsx",
-      "hash": "5bb7132c39ada5e2367ea5d707b52f3445b066111b863260616e792ad7be243f",
-      "lines": 62,
+      "hash": "05ffe9cbbe12106bdf3501dade660cc60119494e9a8e911ab6fbe6ad42ee6356",
+      "lines": 67,
       "imports": [
+        "./QueryState",
         "@/hooks/useClient",
         "@/hooks/useDashboardMetrics"
       ],
@@ -5514,12 +5587,16 @@
       "symbols": [
         "DashboardWindowDays",
         "StatsRow",
+        "metrics",
+        "query",
         "rangeOptions",
         "stats",
         "successRate",
         "totalRuns"
       ],
-      "referencedComponents": [],
+      "referencedComponents": [
+        "QueryState"
+      ],
       "referencedHooks": [
         "useClient",
         "useDashboardMetrics"
@@ -6291,8 +6368,8 @@
       "path": "src/hooks/useDashboardMetrics.ts",
       "kind": "source",
       "extension": ".ts",
-      "hash": "fb3267c40539703065d3ee23efdff5b5fdd399f334841f02af1e1cdf39bc75ed",
-      "lines": 81,
+      "hash": "c108a596375e1e6e9fe6f3e343f5659518498cb0c0716a487b663b9ee4613b4a",
+      "lines": 83,
       "imports": [
         "@/api/supabase/client",
         "@tanstack/react-query"
@@ -7207,10 +7284,11 @@
       "path": "src/pages/DemoPage.tsx",
       "kind": "source",
       "extension": ".tsx",
-      "hash": "3212296c702512f0d0b234ca96aaa41d324a4a88f644c7a6d369ff76584606cf",
-      "lines": 196,
+      "hash": "58a2c52456eeed3164776538cefd806ee999fdc020bd1417b5b880321222091d",
+      "lines": 206,
       "imports": [
         "@/api/supabase/client",
+        "@/components/dashboard/QueryState",
         "@/components/ui/Footer",
         "@/components/ui/Nav",
         "@/components/ui/SectionHeader",
@@ -7229,6 +7307,9 @@
         "DemoPage",
         "DemoState",
         "eventLabels",
+        "metrics",
+        "metricsQuery",
+        "processed",
         "queryClient",
         "simulateEvent",
         "successRate",
@@ -7239,6 +7320,7 @@
         "DemoState",
         "Footer",
         "Nav",
+        "QueryState",
         "SectionHeader"
       ],
       "referencedHooks": [
@@ -7838,8 +7920,8 @@
       "path": "src/test/DashboardPage.test.tsx",
       "kind": "source",
       "extension": ".tsx",
-      "hash": "e6922d481b2ec8f2da715cabe82472f1171465eb19c67c3d2c3af866515351f0",
-      "lines": 114,
+      "hash": "e8c4faeb8f9b2799abb1bb8a5c3b9c625ff0b0b2ea58509eeeaee34ed8788791",
+      "lines": 102,
       "imports": [
         "@/hooks/useClient",
         "@/pages/DashboardPage",
@@ -8065,6 +8147,99 @@
       "apiUsage": [
         "supabase.co"
       ],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/test/browserEndpointHandlers.test.ts",
+      "kind": "source",
+      "extension": ".ts",
+      "hash": "99c27a2728435727f76a570d941512aba9d3903a39cec7b172574d75c4fe3c12",
+      "lines": 204,
+      "imports": [
+        "../../supabase/functions/configure-alert-route/handler",
+        "../../supabase/functions/demo-event/handler",
+        "@/types/supabase",
+        "@supabase/supabase-js",
+        "vitest"
+      ],
+      "exports": [],
+      "symbols": [
+        "body",
+        "clientFactory",
+        "clientQuery",
+        "endpoints",
+        "env",
+        "expectCors",
+        "failure",
+        "handler",
+        "integrationId",
+        "json",
+        "missing",
+        "organizationId",
+        "otherIntegrationId",
+        "otherOrganizationId",
+        "request",
+        "requests",
+        "response",
+        "setup",
+        "state",
+        "table",
+        "thrown",
+        "transport",
+        "url",
+        "writes"
+      ],
+      "referencedComponents": [
+        "Database"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.test"
+      ],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "src/test/dashboardReliability.test.tsx",
+      "kind": "source",
+      "extension": ".tsx",
+      "hash": "84de585972ebcf42bc33595c6e64939a7fe8387d4a85c2f6bf479388228ee28f",
+      "lines": 136,
+      "imports": [
+        "@/components/dashboard/Sparkline",
+        "@/components/dashboard/StatsRow",
+        "@/pages/DemoPage",
+        "@tanstack/react-query",
+        "@testing-library/react",
+        "react",
+        "vitest"
+      ],
+      "exports": [],
+      "symbols": [
+        "DashboardWindowDays",
+        "Response",
+        "WindowedDashboard",
+        "chain",
+        "client",
+        "finish",
+        "mode",
+        "resolveRequest",
+        "response",
+        "run",
+        "surfaces"
+      ],
+      "referencedComponents": [
+        "DashboardWindowDays",
+        "DemoPage",
+        "QueryClientProvider",
+        "Response",
+        "Sparkline",
+        "StatsRow",
+        "WindowedDashboard"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [],
       "databaseUsage": [],
       "routes": []
     },
@@ -8348,8 +8523,8 @@
       "path": "src/test/useDashboardMetrics.test.tsx",
       "kind": "source",
       "extension": ".tsx",
-      "hash": "a52f7d66900c2c865b5aa683ba73d95b1ede66af1cb5312e87109629ca5e7be8",
-      "lines": 49,
+      "hash": "074abe9246b24b44722b50a3b10d72395ce9def3bf551525007ab61a3d2c0a4d",
+      "lines": 74,
       "imports": [
         "@/hooks/useDashboardMetrics",
         "@tanstack/react-query",
@@ -8361,6 +8536,7 @@
       "symbols": [
         "chain",
         "client",
+        "failure",
         "query",
         "result",
         "wrapper"
@@ -8473,8 +8649,8 @@
       "path": "src/types/supabase.ts",
       "kind": "source",
       "extension": ".ts",
-      "hash": "640c35e6da5544401d3d81ccdf6eed59dee86d3db45ae06c6cf6fe5f0c681ef9",
-      "lines": 1844,
+      "hash": "7297027fafc6af391bdcb6824bc9b382f69bdfb3ce1569edc93a3cd06854486b",
+      "lines": 1843,
       "imports": [],
       "exports": [
         "CompositeTypes",
@@ -8782,31 +8958,85 @@
       "routes": []
     },
     {
-      "path": "supabase/functions/configure-alert-route/index.ts",
+      "path": "supabase/functions/_shared/browser-handler.ts",
       "kind": "function",
       "extension": ".ts",
-      "hash": "6a69fdc9043739a46e109a5ac71db0d8581109f42d60f346c6dcc1b1952218e8",
-      "lines": 44,
+      "hash": "dd0074c5bfab130ec8f84dd58ed33a763d953d782a849aa6f6d84bc1895266a1",
+      "lines": 8,
       "imports": [
-        "https://deno.land/x/zod@v3.23.8/mod.ts",
+        "../../../src/types/supabase.ts",
         "https://esm.sh/@supabase/supabase-js@2"
       ],
-      "exports": [],
+      "exports": [
+        "BrowserHandlerDependencies"
+      ],
+      "symbols": [
+        "BrowserHandlerDependencies"
+      ],
+      "referencedComponents": [
+        "Database"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.ts"
+      ],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "supabase/functions/_shared/cors.ts",
+      "kind": "function",
+      "extension": ".ts",
+      "hash": "e582854ff249611d33f36ae8f2be26a035ee60145f5952c98d43d67e0c7c5d6e",
+      "lines": 19,
+      "imports": [],
+      "exports": [
+        "browserJson",
+        "browserPreflight"
+      ],
+      "symbols": [
+        "browserJson",
+        "browserPreflight",
+        "corsHeaders"
+      ],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "supabase/functions/configure-alert-route/handler.ts",
+      "kind": "function",
+      "extension": ".ts",
+      "hash": "21651419cd2972b92377341da8323d6348de77f0bf184565420b7660851f445a",
+      "lines": 50,
+      "imports": [
+        "../_shared/browser-handler.ts",
+        "../_shared/cors.ts",
+        "https://deno.land/x/zod@v3.23.8/mod.ts"
+      ],
+      "exports": [
+        "createAlertRouteHandler"
+      ],
       "symbols": [
         "admin",
         "auth",
         "configuration",
+        "createAlertRouteHandler",
         "input",
-        "json",
         "nextConfiguration",
         "parsed",
+        "preflight",
         "raw",
         "schema",
         "serviceKey",
         "token",
         "url"
       ],
-      "referencedComponents": [],
+      "referencedComponents": [
+        "Response"
+      ],
       "referencedHooks": [],
       "apiUsage": [],
       "databaseUsage": [
@@ -8816,28 +9046,55 @@
       "routes": []
     },
     {
-      "path": "supabase/functions/demo-event/index.ts",
+      "path": "supabase/functions/configure-alert-route/index.ts",
       "kind": "function",
       "extension": ".ts",
-      "hash": "b53a432bd81971f98fdb0d919e12a3da8090b69b5bf77abc2f5181d4be449907",
-      "lines": 164,
+      "hash": "92c17171da5b30cdc84e51d45991fff3b5018373e26114717253249e420f8130",
+      "lines": 9,
       "imports": [
-        "https://deno.land/x/zod@v3.23.8/mod.ts",
+        "../../../src/types/supabase.ts",
+        "./handler.ts",
         "https://esm.sh/@supabase/supabase-js@2"
       ],
       "exports": [],
+      "symbols": [],
+      "referencedComponents": [
+        "Database"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.ts"
+      ],
+      "databaseUsage": [],
+      "routes": []
+    },
+    {
+      "path": "supabase/functions/demo-event/handler.ts",
+      "kind": "function",
+      "extension": ".ts",
+      "hash": "7faebca251a06de11c4f25e7d498ecc66fcf78d79cfb45db5d7182fc8c1753ef",
+      "lines": 165,
+      "imports": [
+        "../_shared/browser-handler.ts",
+        "../_shared/cors.ts",
+        "https://deno.land/x/zod@v3.23.8/mod.ts"
+      ],
+      "exports": [
+        "createDemoEventHandler"
+      ],
       "symbols": [
         "anonKey",
         "authClient",
+        "createDemoEventHandler",
         "entityId",
         "entityType",
         "errorMessage",
         "event",
         "eventSchema",
         "featureKey",
-        "json",
         "now",
         "parsed",
+        "preflight",
         "raw",
         "recordsFailed",
         "recordsProcessed",
@@ -8849,7 +9106,9 @@
         "workflowKey",
         "workflowName"
       ],
-      "referencedComponents": [],
+      "referencedComponents": [
+        "Response"
+      ],
       "referencedHooks": [],
       "apiUsage": [
         "supabase.from",
@@ -8863,6 +9122,29 @@
         "listings",
         "workflows"
       ],
+      "routes": []
+    },
+    {
+      "path": "supabase/functions/demo-event/index.ts",
+      "kind": "function",
+      "extension": ".ts",
+      "hash": "6da0b05941e92f291f272b48519d063af1d091176bec9906068648b5dcddf228",
+      "lines": 9,
+      "imports": [
+        "../../../src/types/supabase.ts",
+        "./handler.ts",
+        "https://esm.sh/@supabase/supabase-js@2"
+      ],
+      "exports": [],
+      "symbols": [],
+      "referencedComponents": [
+        "Database"
+      ],
+      "referencedHooks": [],
+      "apiUsage": [
+        "supabase.ts"
+      ],
+      "databaseUsage": [],
       "routes": []
     },
     {
@@ -9574,8 +9856,8 @@
       "path": "tsconfig.agents.json",
       "kind": "config",
       "extension": ".json",
-      "hash": "78867585089d317dbba2f13d281f98570f74815776afad62cb9d22ba9d91799a",
-      "lines": 25,
+      "hash": "6f49359bf6da977a3587593f3feeff4630608b000a523b50952455ab538d829d",
+      "lines": 26,
       "imports": [],
       "exports": [],
       "symbols": [],
@@ -9589,8 +9871,8 @@
       "path": "tsconfig.app.json",
       "kind": "config",
       "extension": ".json",
-      "hash": "dea6e93d35bbb855b80029b723f8de7a125adbd60ca5155f66bec46529be0c38",
-      "lines": 30,
+      "hash": "99088557c58a9e7b24729747d1c89a7dc7255d844cf42208766de9aa8aeb89d5",
+      "lines": 32,
       "imports": [],
       "exports": [],
       "symbols": [],
@@ -9619,8 +9901,8 @@
       "path": "tsconfig.node.json",
       "kind": "config",
       "extension": ".json",
-      "hash": "e906c778328f2822bae658811753ab7dee1fdd624dd475095c37b5290104a37c",
-      "lines": 24,
+      "hash": "a225c39c48466d183e8a524b345d7f87e0f6b5ace4fdffeb390aba42abf4b689",
+      "lines": 25,
       "imports": [],
       "exports": [],
       "symbols": [],

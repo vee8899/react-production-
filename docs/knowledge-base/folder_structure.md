@@ -55,6 +55,7 @@
 - `supabase/`
 - `supabase/.branches/`
 - `supabase/.temp/`
+- `supabase/functions/_shared/`
 - `supabase/functions/configure-alert-route/`
 - `supabase/functions/demo-event/`
 - `supabase/functions/ingest-run/`

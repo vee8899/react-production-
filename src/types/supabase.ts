@@ -1346,7 +1346,7 @@ export type Database = {
           p_client_id: string
           p_duration_ms: number
           p_entity_refs: Json
-          p_error_message: string
+          p_error_message: string | null
           p_event_id: string
           p_feature_key: string
           p_finished_at: string
@@ -1840,4 +1840,3 @@ export const Constants = {
     Enums: {},
   },
 } as const
-

@@ -19,8 +19,12 @@
 - [src/test/AcceptInvitePage.test.tsx](../../src/test/AcceptInvitePage.test.tsx) — API text matches: `supabase.auth.updateUser`
 - [src/test/LoginPage.test.tsx](../../src/test/LoginPage.test.tsx) — API text matches: `supabase.auth.signInWithPassword`
 - [src/test/SentryExamplePage.test.tsx](../../src/test/SentryExamplePage.test.tsx) — API text matches: `supabase.co`
+- [src/test/browserEndpointHandlers.test.ts](../../src/test/browserEndpointHandlers.test.ts) — API text matches: `supabase.test`
 - [src/test/posthog.test.ts](../../src/test/posthog.test.ts) — API text matches: `supabase.co`
 - [src/test/securityContracts.test.ts](../../src/test/securityContracts.test.ts) — API text matches: `supabase.auth.admin.deleteUser`
 - [src/test/sentry.test.ts](../../src/test/sentry.test.ts) — API text matches: `supabase.co`
-- [supabase/functions/demo-event/index.ts](../../supabase/functions/demo-event/index.ts) — API text matches: `supabase.from`, `supabase.rpc`, `supabase.schema`
+- [supabase/functions/_shared/browser-handler.ts](../../supabase/functions/_shared/browser-handler.ts) — API text matches: `supabase.ts`
+- [supabase/functions/configure-alert-route/index.ts](../../supabase/functions/configure-alert-route/index.ts) — API text matches: `supabase.ts`
+- [supabase/functions/demo-event/handler.ts](../../supabase/functions/demo-event/handler.ts) — API text matches: `supabase.from`, `supabase.rpc`, `supabase.schema`
+- [supabase/functions/demo-event/index.ts](../../supabase/functions/demo-event/index.ts) — API text matches: `supabase.ts`
 - [supabase/functions/invite-client/index.ts](../../supabase/functions/invite-client/index.ts) — API text matches: `supabase.auth.admin.deleteUser`, `supabase.auth.admin.inviteUserByEmail`, `supabase.rpc`

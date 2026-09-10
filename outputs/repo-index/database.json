@@ -492,6 +492,7 @@
       ],
       "importedSymbols": [
         "@/api/supabase/client",
+        "@/components/dashboard/QueryState",
         "@/components/ui/Footer",
         "@/components/ui/Nav",
         "@/components/ui/SectionHeader",
@@ -504,6 +505,7 @@
       ],
       "dependencies": [
         "@/api/supabase/client",
+        "@/components/dashboard/QueryState",
         "@/components/ui/Footer",
         "@/components/ui/Nav",
         "@/components/ui/SectionHeader",
@@ -517,6 +519,7 @@
         "DemoState",
         "Footer",
         "Nav",
+        "QueryState",
         "SectionHeader"
       ],
       "referencedHooks": [
@@ -552,14 +555,22 @@
       ]
     },
     {
-      "file": "supabase/functions/configure-alert-route/index.ts",
-      "exportedSymbols": [],
-      "importedSymbols": [
-        "https://deno.land/x/zod@v3.23.8/mod.ts",
-        "https://esm.sh/@supabase/supabase-js@2"
+      "file": "supabase/functions/configure-alert-route/handler.ts",
+      "exportedSymbols": [
+        "createAlertRouteHandler"
       ],
-      "dependencies": [],
-      "referencedComponents": [],
+      "importedSymbols": [
+        "../_shared/browser-handler.ts",
+        "../_shared/cors.ts",
+        "https://deno.land/x/zod@v3.23.8/mod.ts"
+      ],
+      "dependencies": [
+        "../_shared/browser-handler.ts",
+        "../_shared/cors.ts"
+      ],
+      "referencedComponents": [
+        "Response"
+      ],
       "referencedHooks": [],
       "apiUsage": [],
       "databaseUsage": [
@@ -568,14 +579,22 @@
       ]
     },
     {
-      "file": "supabase/functions/demo-event/index.ts",
-      "exportedSymbols": [],
-      "importedSymbols": [
-        "https://deno.land/x/zod@v3.23.8/mod.ts",
-        "https://esm.sh/@supabase/supabase-js@2"
+      "file": "supabase/functions/demo-event/handler.ts",
+      "exportedSymbols": [
+        "createDemoEventHandler"
       ],
-      "dependencies": [],
-      "referencedComponents": [],
+      "importedSymbols": [
+        "../_shared/browser-handler.ts",
+        "../_shared/cors.ts",
+        "https://deno.land/x/zod@v3.23.8/mod.ts"
+      ],
+      "dependencies": [
+        "../_shared/browser-handler.ts",
+        "../_shared/cors.ts"
+      ],
+      "referencedComponents": [
+        "Response"
+      ],
       "referencedHooks": [],
       "apiUsage": [
         "supabase.from",

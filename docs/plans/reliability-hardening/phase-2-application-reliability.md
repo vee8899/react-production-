@@ -14,16 +14,16 @@ Read the [dashboard specification](../../specs/authenticated-client-dashboard.md
 
 ## Implementation checklist
 
-- [ ] Make the canonical metrics query throw on failure. Attempt snapshot fallback only after a successful response containing no canonical rows.
-- [ ] Throw snapshot-query failures; return zero metrics only when both queries successfully return no rows.
-- [ ] Expose loading, empty, failed, retry, and stale-data states in dashboard statistics, the demo summary, and the activity chart.
-- [ ] Retain existing data after a failed background refresh and show a visible "Couldn't refresh" notice and retry action. Clear the notice after successful recovery.
-- [ ] Add a shared CORS helper to the two browser endpoints, handling preflight before authentication and adding headers to every response path.
-- [ ] Keep endpoint authentication and tenant checks intact; keep webhook/operator-only endpoints outside this CORS change.
-- [ ] Use `finally` to restore demo controls after success, expected errors, and unexpected request or invalidation failures; display a useful error message.
-- [ ] Enable `strict: true` in the app, node/scripts, and agents compiler projects without weakening types or suppressing errors.
-- [ ] Add behavior tests and executable endpoint tests; replace reliance on mocked child-component text where it does not prove the changed behavior.
-- [ ] Update authored documents and refresh generated knowledge after implementation.
+- [x] Make the canonical metrics query throw on failure. Attempt snapshot fallback only after a successful response containing no canonical rows.
+- [x] Throw snapshot-query failures; return zero metrics only when both queries successfully return no rows.
+- [x] Expose loading, empty, failed, retry, and stale-data states in dashboard statistics, the demo summary, and the activity chart.
+- [x] Retain existing data after a failed background refresh and show a visible "Couldn't refresh" notice and retry action. Clear the notice after successful recovery.
+- [x] Add a shared CORS helper to the two browser endpoints, handling preflight before authentication and adding headers to every response path.
+- [x] Keep endpoint authentication and tenant checks intact; keep webhook/operator-only endpoints outside this CORS change.
+- [x] Use `finally` to restore demo controls after success, expected errors, and unexpected request or invalidation failures; display a useful error message.
+- [x] Enable `strict: true` in the app, node/scripts, and agents compiler projects without weakening types or suppressing errors.
+- [x] Add behavior tests and executable endpoint tests; replace reliance on mocked child-component text where it does not prove the changed behavior.
+- [x] Update authored documents and refresh generated knowledge after implementation.
 
 Entry points: [metrics hook](../../../src/hooks/useDashboardMetrics.ts), [timeline hook](../../../src/hooks/useRunsTimeline.ts), [statistics](../../../src/components/dashboard/StatsRow.tsx), [activity chart](../../../src/components/dashboard/Sparkline.tsx), [demo page](../../../src/pages/DemoPage.tsx), [demo endpoint](../../../supabase/functions/demo-event/index.ts), and [alert-route endpoint](../../../supabase/functions/configure-alert-route/index.ts).
 
@@ -46,18 +46,18 @@ For `demo-event` and `configure-alert-route`, return HTTP `204` for `OPTIONS` be
 
 ## Acceptance checklist
 
-- [ ] Canonical metrics data is displayed without requesting snapshots.
-- [ ] A canonical-query failure becomes an error and does not request snapshots or show zero activity.
-- [ ] Successful empty canonical data uses successful snapshot data; two empty successful responses produce genuine zero metrics.
-- [ ] A failed snapshot query becomes an error instead of empty metrics.
-- [ ] Statistics, demo summary, and chart correctly show initial loading, failure, and retry recovery.
-- [ ] Cached data survives a failed refresh with a visible stale-data notice; recovery removes the notice.
-- [ ] Changing the time window does not present data from another window as the current result.
-- [ ] Both endpoints answer unauthenticated preflight without invoking auth or mutation dependencies.
-- [ ] Executable handler tests verify CORS headers on success, invalid authentication, validation errors, forbidden tenant access, unsupported methods, and server failures.
-- [ ] Authentication and tenant checks still reject unauthorized operations despite permissive origins.
-- [ ] Demo controls become usable again after handler errors, thrown requests, and failed query invalidations.
-- [ ] All three saved compiler configurations enforce strict mode; full lint, behavior/endpoint tests, and build pass.
+- [x] Canonical metrics data is displayed without requesting snapshots.
+- [x] A canonical-query failure becomes an error and does not request snapshots or show zero activity.
+- [x] Successful empty canonical data uses successful snapshot data; two empty successful responses produce genuine zero metrics.
+- [x] A failed snapshot query becomes an error instead of empty metrics.
+- [x] Statistics, demo summary, and chart correctly show initial loading, failure, and retry recovery.
+- [x] Cached data survives a failed refresh with a visible stale-data notice; recovery removes the notice.
+- [x] Changing the time window does not present data from another window as the current result.
+- [x] Both endpoints answer unauthenticated preflight without invoking auth or mutation dependencies.
+- [x] Executable handler tests verify CORS headers on success, invalid authentication, validation errors, forbidden tenant access, unsupported methods, and server failures.
+- [x] Authentication and tenant checks still reject unauthorized operations despite permissive origins.
+- [x] Demo controls become usable again after handler errors, thrown requests, and failed query invalidations.
+- [x] All three saved compiler configurations enforce strict mode; full lint, behavior/endpoint tests, and build pass.
 
 Run from the repository root:
 
@@ -84,11 +84,11 @@ Evidence must identify the tested revision, test report and scenario results, co
 
 ## Documentation updates
 
-- [ ] Update the dashboard specification with the loading, fallback, error, retry, and stale-data behavior.
-- [ ] Update the demo runbook and [API ADR](../../adrs/api.md) with browser CORS and retained authorization boundaries.
-- [ ] Update the [TypeScript ADR](../../adrs/typescript.md) from its documented non-strict baseline to the newly implemented strict configuration and record its verification.
-- [ ] Review the rewritten [authentication ADR](../../adrs/authentication.md) and [state ADR](../../adrs/state.md) against the phase changes; update any changed claims and record the review. Their current maintenance rationale was documented in the separate documentation-semantics pass.
-- [ ] Update testing guidance with executable handler-test commands, then run `npm.cmd run refresh-ai` and review the generated diff.
+- [x] Update the dashboard specification with the loading, fallback, error, retry, and stale-data behavior.
+- [x] Update the demo runbook and [API ADR](../../adrs/api.md) with browser CORS and retained authorization boundaries.
+- [x] Update the [TypeScript ADR](../../adrs/typescript.md) from its documented non-strict baseline to the newly implemented strict configuration and record its verification.
+- [x] Review the rewritten [authentication ADR](../../adrs/authentication.md) and [state ADR](../../adrs/state.md) against the phase changes; update any changed claims and record the review. Their current maintenance rationale was documented in the separate documentation-semantics pass.
+- [x] Update testing guidance with executable handler-test commands, then run `npm.cmd run refresh-ai` and review the generated diff.
 
 ## Session handoff
 
@@ -105,3 +105,20 @@ Initial handoff, 2026-09-05:
 - Decisions: preserve metric semantics and time windows; keep snapshot fallback only after successful empty canonical queries; preserve bearer authorization.
 - Staging verification: Not run. Follow-up owner: next phase implementer.
 - Exact next action: read the verified phase-1 handoff, capture the current revision and working tree, and add metrics failure/fallback regression tests before changing the hook and its consumers.
+
+### Verification handoff 2026-09-10
+
+- Date / owner: 2026-09-10 / Codex.
+- Phase / local status: Phase 2; Verified locally. Current status is maintained in the overview tracker.
+- Starting commit SHA: `9ff58b60e559a14a892635aa8d414a91b40e6492`; clean working tree.
+- Result / working-tree state: uncommitted Phase 2 implementation, tests, configuration, authored documentation, and generated knowledge/index updates. The [evidence report](phase-2-evidence-2026-09-10.md) lists changed implementation and test files; no commit or deployment was performed.
+- Completed work: query failure/fallback correction; initial, empty, retry, and cached-refresh states in all three consumers; finally-protected demo controls; shared CORS and executable browser handlers; strict mode in all three projects; regression/endpoint tests; staging demo browser test; authored documentation and generated refresh.
+- Remaining work: none for local Phase 2 acceptance. Live browser and staging verification are separate and have not run.
+- Commands/results/environment: Node 24.16.0 on Windows; lint, 181 tests across 29 files, build, agents:typecheck, and three independent strict compiler checks all exit 0. Both new metrics failure regressions failed before the hook fix and passed afterward. Full commands/scenarios are recorded in the evidence report.
+- Evidence / timestamp: [sanitized report dated 2026-09-10](phase-2-evidence-2026-09-10.md), recorded at 06:15 UTC following compiler verification, with subsequent documentation-generation results recorded there.
+- Skipped checks: live browser/staging (no configured staging variables or authenticated local browser session), Deno gateway/deployment (Node handler execution only), database/RLS/n8n acceptance (no changes to those boundaries), and live GitHub/publishing/production operations (outside local phase scope).
+- Failures/blockers: none remain for local acceptance. Strict diagnostics during implementation were corrected before verification.
+- Documentation decisions: implement the approved Phase 2 contract; correct the nullable ingestion argument type to match SQL; retain metric semantics and server authorization. API, TypeScript, authentication, and state ADRs were reviewed and updated without changing session or route behavior.
+- Staging verification / live GitHub evidence: Not run / Not applicable.
+- Follow-up owner: next Phase 3 implementer; staging operator for later hosted acceptance.
+- Exact next action: Phase 3 may begin when requested. For separate staging acceptance, deploy the browser handlers to the confirmed staging target, prepare the dedicated demo account and integrations, and execute the staging browser checks.

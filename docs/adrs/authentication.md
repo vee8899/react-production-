@@ -12,6 +12,7 @@ The public site and authenticated portal share one browser application. Portal a
 - Rendering starts while the session request is pending. App and route loading gates wait for resolution; bootstrap is not an awaited prerequisite to calling createRoot.
 - ProtectedRoute redirects anonymous users to /login and normally applies LegalGate. Consent routes bypass the consent gate so users can complete it.
 - Database RLS and endpoint authorization enforce data access independently of route visibility.
+- Phase 2 review (2026-09-10): browser-endpoint preflight is intentionally unauthenticated. Actual demo-event and configure-alert-route operations still validate bearer tokens and their existing demo/organization checks before privileged writes. The demo handler explicitly requires the Bearer scheme. Bootstrap, session storage, route gates, and consent behavior are unchanged.
 
 ## Rationale and alternatives
 

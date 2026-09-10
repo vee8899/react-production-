@@ -4,8 +4,8 @@
 
 ## Scanned implementation files
 
-- Source files: 156
-- Edge Function files: 5
+- Source files: 160
+- Edge Function files: 9
 - Migration files: 27
 
 ## Authored interpretation

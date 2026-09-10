@@ -54,6 +54,7 @@
       "name": "@playwright/test",
       "version": "^1.62.1",
       "usedBy": [
+        "e2e/staging-demo.spec.ts",
         "e2e/staging-smoke.spec.ts",
         "playwright.config.ts"
       ]
@@ -79,7 +80,8 @@
         "src/api/supabase/client.ts",
         "src/lib/posthog.ts",
         "src/lib/sentry.ts",
-        "src/store/authStore.ts"
+        "src/store/authStore.ts",
+        "src/test/browserEndpointHandlers.test.ts"
       ]
     },
     {
@@ -113,6 +115,7 @@
         "src/pages/DemoPage.tsx",
         "src/pages/LegalConsentPage.tsx",
         "src/pages/LegalSettingsPage.tsx",
+        "src/test/dashboardReliability.test.tsx",
         "src/test/useDashboardMetrics.test.tsx",
         "src/test/useRunDetails.test.tsx",
         "src/test/useRuns.test.tsx"
@@ -140,6 +143,7 @@
         "src/test/RunsFeed.test.tsx",
         "src/test/SecurityPage.test.tsx",
         "src/test/SentryExamplePage.test.tsx",
+        "src/test/dashboardReliability.test.tsx",
         "src/test/serviceSubscriptions.test.tsx",
         "src/test/useDashboardMetrics.test.tsx",
         "src/test/useRunDetails.test.tsx",
@@ -271,6 +275,7 @@
         "src/components/analytics/PostHogConsentSync.tsx",
         "src/components/analytics/PostHogRouteTracker.tsx",
         "src/components/dashboard/OperationsMenu.tsx",
+        "src/components/dashboard/QueryState.tsx",
         "src/components/dashboard/Sparkline.tsx",
         "src/components/dashboard/WorkflowRow.tsx",
         "src/components/features/FAQ.tsx",
@@ -294,6 +299,7 @@
         "src/pages/OnboardingPage.tsx",
         "src/pages/RecentActivityPage.tsx",
         "src/pages/SentryExamplePage.tsx",
+        "src/test/dashboardReliability.test.tsx",
         "src/test/useDashboardMetrics.test.tsx",
         "src/test/useRunDetails.test.tsx",
         "src/test/useRuns.test.tsx"
@@ -412,6 +418,8 @@
         "src/test/RunsFeed.test.tsx",
         "src/test/SecurityPage.test.tsx",
         "src/test/SentryExamplePage.test.tsx",
+        "src/test/browserEndpointHandlers.test.ts",
+        "src/test/dashboardReliability.test.tsx",
         "src/test/demoData.test.ts",
         "src/test/ingestRunHandler.test.ts",
         "src/test/legalConsent.test.ts",

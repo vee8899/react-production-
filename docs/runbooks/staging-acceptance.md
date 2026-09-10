@@ -35,6 +35,8 @@ npm.cmd run test:e2e:staging
 Record the staging URL, commit SHA, Playwright report path, screenshot or trace
 for any failure, account used, and timestamp.
 
+The demo event test additionally needs `STAGING_DEMO_EMAIL` and `STAGING_DEMO_PASSWORD` for the seeded `Northstar Realty Demo` tenant with legal consent already completed. Deploy the updated `demo-event` handler before running it. It creates one synthetic lead/run, checks the browser POST and CORS response, and verifies the processed message and restored controls. Without those credentials it is skipped, not passed. See [demo workspace setup](demo-workspace.md). Also verify configure-alert-route from an authenticated browser against dedicated integrations when accepting that endpoint's hosted deployment; local handler tests do not establish gateway behavior.
+
 ## Invite and email delivery
 
 Required environment variables:

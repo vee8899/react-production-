@@ -16,11 +16,13 @@
     "jsx": "react-jsx",
 
     /* Linting */
+    "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
+      "https://esm.sh/@supabase/supabase-js@2": ["./node_modules/@supabase/supabase-js/dist/index.d.mts"],
       "https://deno.land/x/zod@v3.23.8/mod.ts": ["./node_modules/zod-ingest/index.d.ts"],
       "@/*": ["./src/*"]
     }

@@ -6,6 +6,7 @@
 - [agents/repoContext.ts](../../agents/repoContext.ts) — provider-name JSX matches: none; context-name symbol matches: `loadRepoContext`, `readContextFile`
 - [scripts/knowledge.test.ts](../../scripts/knowledge.test.ts) — provider-name JSX matches: `PostHogProvider`, `QueryClientProvider`; context-name symbol matches: none
 - [src/main.tsx](../../src/main.tsx) — provider-name JSX matches: `PostHogProvider`, `QueryClientProvider`; context-name symbol matches: none
+- [src/test/dashboardReliability.test.tsx](../../src/test/dashboardReliability.test.tsx) — provider-name JSX matches: `QueryClientProvider`; context-name symbol matches: none
 - [src/test/useDashboardMetrics.test.tsx](../../src/test/useDashboardMetrics.test.tsx) — provider-name JSX matches: `QueryClientProvider`; context-name symbol matches: none
 - [src/test/useRunDetails.test.tsx](../../src/test/useRunDetails.test.tsx) — provider-name JSX matches: `QueryClientProvider`; context-name symbol matches: none
 - [src/test/useRuns.test.tsx](../../src/test/useRuns.test.tsx) — provider-name JSX matches: `QueryClientProvider`; context-name symbol matches: none

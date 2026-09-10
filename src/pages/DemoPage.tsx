@@ -8,6 +8,7 @@ import { useClient } from "@/hooks/useClient";
 import { useDashboardMetrics } from "@/hooks/useDashboardMetrics";
 import { useRuns } from "@/hooks/useRuns";
 import { getServiceLabel } from "@/lib/serviceCatalog";
+import { QueryState } from "@/components/dashboard/QueryState";
 
 const eventLabels = {
   new_lead: "New lead received",
@@ -24,7 +25,8 @@ export default function DemoPage() {
   const [activeEvent, setActiveEvent] = useState<DemoEvent | null>(null);
   const [message, setMessage] = useState("Choose an external event to simulate.");
 
-  const { data: metrics } = useDashboardMetrics(client?.organization_id, client?.id);
+  const metricsQuery = useDashboardMetrics(client?.organization_id, client?.id);
+  const metrics = metricsQuery.data;
   const { data: runs } = useRuns(client?.id, 10, client?.organization_id);
   const { data: leads } = useQuery({
     queryKey: ["demo-leads", client?.organization_id],
@@ -46,27 +48,32 @@ export default function DemoPage() {
     setActiveEvent(event);
     setMessage(`${eventLabels[event]}...`);
 
-    const { error } = await supabase.functions.invoke("demo-event", {
-      body: { event },
-    });
+    let processed = false;
+    try {
+      const { error } = await supabase.functions.invoke("demo-event", {
+        body: { event },
+      });
+      if (error) throw error;
+      processed = true;
 
-    if (error) {
+      await Promise.all([
+        queryClient.invalidateQueries({ queryKey: ["runs", client?.id] }, { throwOnError: true }),
+        queryClient.invalidateQueries({ queryKey: ["dashboard-metrics", client?.organization_id] }, { throwOnError: true }),
+        queryClient.invalidateQueries({ queryKey: ["demo-leads", client?.organization_id] }, { throwOnError: true }),
+      ]);
+      setMessage(`${eventLabels[event]} was processed through the demo workspace.`);
+    } catch {
+      setMessage(processed
+        ? "The event was processed, but the workspace couldn't refresh. Refresh the page to see the latest results."
+        : "The demo event could not be confirmed. Check recent activity before trying again.");
+    } finally {
       setActiveEvent(null);
-      setMessage(error.message || "The demo event could not be processed.");
-      return;
     }
-
-    await Promise.all([
-      queryClient.invalidateQueries({ queryKey: ["runs", client?.id] }),
-      queryClient.invalidateQueries({ queryKey: ["dashboard-metrics", client?.organization_id] }),
-      queryClient.invalidateQueries({ queryKey: ["demo-leads", client?.organization_id] }),
-    ]);
-    setActiveEvent(null);
-    setMessage(`${eventLabels[event]} was processed through the demo workspace.`);
   };
 
   if (clientLoading) return <DemoState label="LOADING DEMO WORKSPACE..." />;
   if (clientError || !client) return <DemoState label="DEMO WORKSPACE NOT AVAILABLE. SIGN IN WITH THE DEMO USER." />;
+  if (!client.organization_id) return <DemoState label="YOUR ORGANIZATION SETUP IS INCOMPLETE. PLEASE CONTACT THE TEAM." />;
 
   const totalRuns = metrics?.totalRuns ?? 0;
   const successRate = totalRuns ? Math.round(((metrics?.successfulRuns ?? 0) / totalRuns) * 100) : 0;
@@ -93,6 +100,8 @@ export default function DemoPage() {
 
         <section className="mt-20">
           <SectionHeader label="01 - WORKFLOW SUMMARY" />
+          <QueryState label="workflow summary" hasData={!!metrics} {...metricsQuery}>
+          {totalRuns === 0 && <p className="mb-4 text-sm text-muted">No workflow runs in the last 30 days.</p>}
           <div className="grid grid-cols-2 gap-x-10 gap-y-10 xl:grid-cols-4">
             {[
               ["Runs · 30 days", totalRuns],
@@ -106,6 +115,7 @@ export default function DemoPage() {
               </div>
             ))}
           </div>
+          </QueryState>
         </section>
 
         <section className="mt-20">

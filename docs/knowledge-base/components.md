@@ -9,11 +9,12 @@
 - [src/components/dashboard/ClientServices.tsx](../../src/components/dashboard/ClientServices.tsx) — export-name matches: `ClientServices`; JSX component matches: `RealEstateMetrics`
 - [src/components/dashboard/IntegrationCard.tsx](../../src/components/dashboard/IntegrationCard.tsx) — export-name matches: `IntegrationCard`; JSX component matches: none
 - [src/components/dashboard/OperationsMenu.tsx](../../src/components/dashboard/OperationsMenu.tsx) — export-name matches: `OperationsMenu`; JSX component matches: `HTMLDivElement`, `Link`
+- [src/components/dashboard/QueryState.tsx](../../src/components/dashboard/QueryState.tsx) — export-name matches: `QueryState`; JSX component matches: none
 - [src/components/dashboard/RealEstateMetrics.tsx](../../src/components/dashboard/RealEstateMetrics.tsx) — export-name matches: `RealEstateMetrics`; JSX component matches: none
 - [src/components/dashboard/RunDetail.tsx](../../src/components/dashboard/RunDetail.tsx) — export-name matches: `RunDetail`; JSX component matches: `Link`
 - [src/components/dashboard/RunsFeed.tsx](../../src/components/dashboard/RunsFeed.tsx) — export-name matches: `RunsFeed`; JSX component matches: `Link`
-- [src/components/dashboard/Sparkline.tsx](../../src/components/dashboard/Sparkline.tsx) — export-name matches: `Sparkline`; JSX component matches: none
-- [src/components/dashboard/StatsRow.tsx](../../src/components/dashboard/StatsRow.tsx) — export-name matches: `DashboardWindowDays`, `StatsRow`; JSX component matches: none
+- [src/components/dashboard/Sparkline.tsx](../../src/components/dashboard/Sparkline.tsx) — export-name matches: `Sparkline`; JSX component matches: `QueryState`
+- [src/components/dashboard/StatsRow.tsx](../../src/components/dashboard/StatsRow.tsx) — export-name matches: `DashboardWindowDays`, `StatsRow`; JSX component matches: `QueryState`
 - [src/components/dashboard/WorkflowRow.tsx](../../src/components/dashboard/WorkflowRow.tsx) — export-name matches: `WorkflowRow`; JSX component matches: none
 - [src/components/features/DashboardMock.tsx](../../src/components/features/DashboardMock.tsx) — export-name matches: `DashboardMock`; JSX component matches: `FadeUp`
 - [src/components/features/FAQ.tsx](../../src/components/features/FAQ.tsx) — export-name matches: `FAQ`; JSX component matches: `AnimatePresence`, `SectionHeader`

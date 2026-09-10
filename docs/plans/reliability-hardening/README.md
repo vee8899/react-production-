@@ -20,7 +20,7 @@ These are intended changes, not claims about current behavior. Existing specific
 | Phase | Dependency | Local status | Staging verification | Live GitHub evidence | Owner / latest handoff |
 | --- | --- | --- | --- | --- | --- |
 | [1. Ingestion safety](phase-1-ingestion-safety.md) | Review baseline | Verified locally | Not run | Not applicable | Codex / [verification handoff](phase-1-ingestion-safety.md#verification-handoff-2026-09-07), [Postgres evidence](phase-1-evidence-2026-09-07.md#resumed-verification-2026-09-07) |
-| [2. Application reliability](phase-2-application-reliability.md) | Phase 1 verified locally | Not started | Not run | Not applicable | Unassigned / initial handoff in phase document |
+| [2. Application reliability](phase-2-application-reliability.md) | Phase 1 verified locally | Verified locally | Not run | Not applicable | Codex / [verification handoff](phase-2-application-reliability.md#verification-handoff-2026-09-10), [local evidence](phase-2-evidence-2026-09-10.md) |
 | [3. Release safeguards](phase-3-release-safeguards.md) | Phases 1 and 2 verified locally | Not started | Not run | Not run | Unassigned / initial handoff in phase document |
 
 Local status must be one of:

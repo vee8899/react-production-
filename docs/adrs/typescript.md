@@ -10,7 +10,7 @@ Browser code, repository scripts, and the coding-agent library have different ru
 
 - Keep three compiler projects: the application uses DOM/Vite types and bundler resolution; node/scripts and agents use Node types and Node module resolution.
 - The root build references all three projects and performs type checking before Vite creates browser assets. Compiler output is disabled; build-info caches live under node_modules.
-- Saved configurations currently do not enable strict mode. Enabling it is approved future work in [reliability phase 2](../plans/reliability-hardening/phase-2-application-reliability.md), not a completed decision in this revision.
+- All three saved configurations enable `strict: true`, implementing the approved [reliability Phase 2 decision](../plans/reliability-hardening/phase-2-application-reliability.md). Diagnostics must be resolved without disabling checks or adding suppressions.
 
 ## Rationale and alternatives
 
@@ -18,4 +18,6 @@ Separate projects avoid giving browser modules accidental Node globals. The cost
 
 ## Verification and references
 
-Inspect [root compiler configuration](../../tsconfig.json), [app](../../tsconfig.app.json), [node/scripts](../../tsconfig.node.json), [agents](../../tsconfig.agents.json), and [type-checking runbook](../runbooks/type-checking.md). These projects do not cover Deno Edge Function execution.
+Inspect [root compiler configuration](../../tsconfig.json), [app](../../tsconfig.app.json), [node/scripts](../../tsconfig.node.json), [agents](../../tsconfig.agents.json), and [type-checking runbook](../runbooks/type-checking.md). The app compiler also follows handler imports from tests, resolving remote Zod and Supabase type imports to installed dependencies. This does not type-check Deno entrypoints or prove Deno execution.
+
+Strict build and explicit compiler evidence are recorded in the [Phase 2 report](../plans/reliability-hardening/phase-2-evidence-2026-09-10.md). Typing the demo handler exposed a schema-type mismatch: successful ingestion passes SQL NULL for `p_error_message`, which migration `20260907000001` permits. That argument is now typed `string | null`; the handler's run status is a success/error union. No runtime schema change or compiler suppression was needed.

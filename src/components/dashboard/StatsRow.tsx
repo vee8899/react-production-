@@ -1,5 +1,6 @@
 import { useClient } from '@/hooks/useClient';
 import { useDashboardMetrics } from '@/hooks/useDashboardMetrics';
+import { QueryState } from './QueryState';
 
 export type DashboardWindowDays = 7 | 30 | 90;
 
@@ -17,7 +18,8 @@ export const StatsRow = ({
   onWindowDaysChange: (days: DashboardWindowDays) => void;
 }) => {
   const { data: client } = useClient();
-  const { data: metrics } = useDashboardMetrics(client?.organization_id, client?.id, windowDays);
+  const query = useDashboardMetrics(client?.organization_id, client?.id, windowDays);
+  const metrics = query.data;
   const totalRuns = metrics?.totalRuns ?? 0;
   const successRate = totalRuns > 0 ? Math.round(((metrics?.successfulRuns ?? 0) / totalRuns) * 100) : 0;
 
@@ -44,6 +46,8 @@ export const StatsRow = ({
           </button>
         ))}
       </div>
+      <QueryState label="statistics" hasData={!!metrics} {...query}>
+      {totalRuns === 0 && <p className="mb-4 text-sm text-muted">No workflow runs in the last {windowDays} days.</p>}
       <div className="grid grid-cols-2 xl:grid-cols-4 gap-x-10 gap-y-12">
         {stats.map((stat) => (
           <div key={stat.label} className="min-w-0">
@@ -56,6 +60,7 @@ export const StatsRow = ({
           </div>
         ))}
       </div>
+      </QueryState>
     </div>
   );
 };

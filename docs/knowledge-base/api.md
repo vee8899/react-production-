@@ -10,7 +10,11 @@
 
 ## Edge Function files
 
+- [supabase/functions/_shared/browser-handler.ts](../../supabase/functions/_shared/browser-handler.ts) — export-name matches: `BrowserHandlerDependencies`
+- [supabase/functions/_shared/cors.ts](../../supabase/functions/_shared/cors.ts) — export-name matches: `browserJson`, `browserPreflight`
+- [supabase/functions/configure-alert-route/handler.ts](../../supabase/functions/configure-alert-route/handler.ts) — export-name matches: `createAlertRouteHandler`
 - [supabase/functions/configure-alert-route/index.ts](../../supabase/functions/configure-alert-route/index.ts) — export-name matches: none
+- [supabase/functions/demo-event/handler.ts](../../supabase/functions/demo-event/handler.ts) — export-name matches: `createDemoEventHandler`
 - [supabase/functions/demo-event/index.ts](../../supabase/functions/demo-event/index.ts) — export-name matches: none
 - [supabase/functions/ingest-run/handler.ts](../../supabase/functions/ingest-run/handler.ts) — export-name matches: `IngestDependencies`, `createIngestHandler`
 - [supabase/functions/ingest-run/index.ts](../../supabase/functions/ingest-run/index.ts) — export-name matches: none

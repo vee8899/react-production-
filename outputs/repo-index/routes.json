@@ -3,6 +3,16 @@
   "scanMethod": "approximate source-text matches; not runtime or authorization evidence",
   "records": [
     {
+      "route": "/demo",
+      "file": "e2e/staging-demo.spec.ts",
+      "protected": null
+    },
+    {
+      "route": "/login",
+      "file": "e2e/staging-demo.spec.ts",
+      "protected": null
+    },
+    {
       "route": "/",
       "file": "e2e/staging-smoke.spec.ts",
       "protected": null

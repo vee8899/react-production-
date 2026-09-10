@@ -154,6 +154,20 @@
       "databaseUsage": []
     },
     {
+      "file": "src/components/dashboard/QueryState.tsx",
+      "exportedSymbols": [
+        "QueryState"
+      ],
+      "importedSymbols": [
+        "react"
+      ],
+      "dependencies": [],
+      "referencedComponents": [],
+      "referencedHooks": [],
+      "apiUsage": [],
+      "databaseUsage": []
+    },
+    {
       "file": "src/components/dashboard/RealEstateMetrics.tsx",
       "exportedSymbols": [
         "RealEstateMetrics"
@@ -231,15 +245,19 @@
         "Sparkline"
       ],
       "importedSymbols": [
+        "./QueryState",
         "@/hooks/useClient",
         "@/hooks/useRunsTimeline",
         "react"
       ],
       "dependencies": [
+        "./QueryState",
         "@/hooks/useClient",
         "@/hooks/useRunsTimeline"
       ],
-      "referencedComponents": [],
+      "referencedComponents": [
+        "QueryState"
+      ],
       "referencedHooks": [
         "useClient",
         "useRunsTimeline"
@@ -254,14 +272,18 @@
         "StatsRow"
       ],
       "importedSymbols": [
+        "./QueryState",
         "@/hooks/useClient",
         "@/hooks/useDashboardMetrics"
       ],
       "dependencies": [
+        "./QueryState",
         "@/hooks/useClient",
         "@/hooks/useDashboardMetrics"
       ],
-      "referencedComponents": [],
+      "referencedComponents": [
+        "QueryState"
+      ],
       "referencedHooks": [
         "useClient",
         "useDashboardMetrics"

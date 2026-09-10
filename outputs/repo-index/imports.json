@@ -186,6 +186,13 @@
       "dependencies": []
     },
     {
+      "file": "e2e/staging-demo.spec.ts",
+      "importedSymbols": [
+        "@playwright/test"
+      ],
+      "dependencies": []
+    },
+    {
       "file": "e2e/staging-smoke.spec.ts",
       "importedSymbols": [
         "@playwright/test"
@@ -558,6 +565,13 @@
       "dependencies": []
     },
     {
+      "file": "src/components/dashboard/QueryState.tsx",
+      "importedSymbols": [
+        "react"
+      ],
+      "dependencies": []
+    },
+    {
       "file": "src/components/dashboard/RealEstateMetrics.tsx",
       "importedSymbols": [
         "@/hooks/useRealEstateMetrics"
@@ -599,11 +613,13 @@
     {
       "file": "src/components/dashboard/Sparkline.tsx",
       "importedSymbols": [
+        "./QueryState",
         "@/hooks/useClient",
         "@/hooks/useRunsTimeline",
         "react"
       ],
       "dependencies": [
+        "./QueryState",
         "@/hooks/useClient",
         "@/hooks/useRunsTimeline"
       ]
@@ -611,10 +627,12 @@
     {
       "file": "src/components/dashboard/StatsRow.tsx",
       "importedSymbols": [
+        "./QueryState",
         "@/hooks/useClient",
         "@/hooks/useDashboardMetrics"
       ],
       "dependencies": [
+        "./QueryState",
         "@/hooks/useClient",
         "@/hooks/useDashboardMetrics"
       ]
@@ -1166,6 +1184,7 @@
       "file": "src/pages/DemoPage.tsx",
       "importedSymbols": [
         "@/api/supabase/client",
+        "@/components/dashboard/QueryState",
         "@/components/ui/Footer",
         "@/components/ui/Nav",
         "@/components/ui/SectionHeader",
@@ -1178,6 +1197,7 @@
       ],
       "dependencies": [
         "@/api/supabase/client",
+        "@/components/dashboard/QueryState",
         "@/components/ui/Footer",
         "@/components/ui/Nav",
         "@/components/ui/SectionHeader",
@@ -1581,6 +1601,38 @@
       ]
     },
     {
+      "file": "src/test/browserEndpointHandlers.test.ts",
+      "importedSymbols": [
+        "../../supabase/functions/configure-alert-route/handler",
+        "../../supabase/functions/demo-event/handler",
+        "@/types/supabase",
+        "@supabase/supabase-js",
+        "vitest"
+      ],
+      "dependencies": [
+        "../../supabase/functions/configure-alert-route/handler",
+        "../../supabase/functions/demo-event/handler",
+        "@/types/supabase"
+      ]
+    },
+    {
+      "file": "src/test/dashboardReliability.test.tsx",
+      "importedSymbols": [
+        "@/components/dashboard/Sparkline",
+        "@/components/dashboard/StatsRow",
+        "@/pages/DemoPage",
+        "@tanstack/react-query",
+        "@testing-library/react",
+        "react",
+        "vitest"
+      ],
+      "dependencies": [
+        "@/components/dashboard/Sparkline",
+        "@/components/dashboard/StatsRow",
+        "@/pages/DemoPage"
+      ]
+    },
+    {
       "file": "src/test/demoData.test.ts",
       "importedSymbols": [
         "@/demo/demoData",
@@ -1774,20 +1826,67 @@
       "dependencies": []
     },
     {
-      "file": "supabase/functions/configure-alert-route/index.ts",
+      "file": "supabase/functions/_shared/browser-handler.ts",
       "importedSymbols": [
-        "https://deno.land/x/zod@v3.23.8/mod.ts",
+        "../../../src/types/supabase.ts",
         "https://esm.sh/@supabase/supabase-js@2"
       ],
+      "dependencies": [
+        "../../../src/types/supabase.ts"
+      ]
+    },
+    {
+      "file": "supabase/functions/_shared/cors.ts",
+      "importedSymbols": [],
       "dependencies": []
+    },
+    {
+      "file": "supabase/functions/configure-alert-route/handler.ts",
+      "importedSymbols": [
+        "../_shared/browser-handler.ts",
+        "../_shared/cors.ts",
+        "https://deno.land/x/zod@v3.23.8/mod.ts"
+      ],
+      "dependencies": [
+        "../_shared/browser-handler.ts",
+        "../_shared/cors.ts"
+      ]
+    },
+    {
+      "file": "supabase/functions/configure-alert-route/index.ts",
+      "importedSymbols": [
+        "../../../src/types/supabase.ts",
+        "./handler.ts",
+        "https://esm.sh/@supabase/supabase-js@2"
+      ],
+      "dependencies": [
+        "../../../src/types/supabase.ts",
+        "./handler.ts"
+      ]
+    },
+    {
+      "file": "supabase/functions/demo-event/handler.ts",
+      "importedSymbols": [
+        "../_shared/browser-handler.ts",
+        "../_shared/cors.ts",
+        "https://deno.land/x/zod@v3.23.8/mod.ts"
+      ],
+      "dependencies": [
+        "../_shared/browser-handler.ts",
+        "../_shared/cors.ts"
+      ]
     },
     {
       "file": "supabase/functions/demo-event/index.ts",
       "importedSymbols": [
-        "https://deno.land/x/zod@v3.23.8/mod.ts",
+        "../../../src/types/supabase.ts",
+        "./handler.ts",
         "https://esm.sh/@supabase/supabase-js@2"
       ],
-      "dependencies": []
+      "dependencies": [
+        "../../../src/types/supabase.ts",
+        "./handler.ts"
+      ]
     },
     {
       "file": "supabase/functions/ingest-run/handler.ts",
