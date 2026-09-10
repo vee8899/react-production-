@@ -21,6 +21,8 @@ my-app/
 .playwright/
 playwright-report/
 test-results/
+.ci-database/
+outputs/release-evidence/
 
 # Editor directories and files
 .vscode/*

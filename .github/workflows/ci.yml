@@ -14,16 +14,58 @@ jobs:
     name: Verify application
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    outputs:
+      sha: ${{ steps.revision.outputs.sha }}
     env:
       VITE_SUPABASE_URL: https://ci-placeholder.supabase.co
       VITE_SUPABASE_ANON_KEY: ci-placeholder
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - id: revision
+        name: Record tested commit
+        shell: bash
+        run: |
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          echo "sha=$GITHUB_SHA" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: npm
       - run: npm ci
+      - run: npm run workflow:check
       - run: npm run lint
       - run: npm run test -- --run
       - run: npm run build
+
+  database:
+    name: Verify database and concurrency
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run db:check
+      - run: npm run db:ci
+      - name: Stop isolated database even after failure
+        if: ${{ always() }}
+        run: npm run db:ci:stop
+
+  publish:
+    name: Publish verified commit
+    needs: [verify, database]
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && needs.verify.result == 'success' && needs.database.result == 'success' }}
+    permissions:
+      contents: read
+      packages: write
+    uses: ./.github/workflows/docker.yml
+    with:
+      verified_sha: ${{ needs.verify.outputs.sha }}
+    secrets: inherit

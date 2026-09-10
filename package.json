@@ -17,7 +17,10 @@
     "refresh-ai": "npm run ingest && npm run index",
     "db:check": "tsx scripts/verify-supabase.ts",
     "db:dry-run": "npx supabase db push --dry-run",
-    "db:test": "npx supabase test db && npm run db:test:ingestion && npm run db:test:automation",
+    "db:test": "tsx scripts/test-database.ts",
+    "db:ci": "tsx scripts/ci-database.ts",
+    "db:ci:stop": "tsx scripts/ci-database.ts --stop",
+    "workflow:check": "tsx scripts/check-workflows.ts",
     "n8n:check": "tsx scripts/verify-n8n-workflows.ts",
     "n8n:contracts": "tsx scripts/verify-n8n-contracts.ts",
     "n8n:adapters": "tsx scripts/verify-n8n-adapters.ts",
@@ -69,12 +72,14 @@
     "globals": "^17.12.0",
     "jsdom": "^29.1.1",
     "pg": "^8.23.0",
+    "supabase": "2.116.0",
     "tailwindcss": "^4.3.1",
     "tsx": "^4.23.13",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.69.0",
     "vite": "^8.2.2",
     "vitest": "^4.1.11",
+    "yaml": "2.9.0",
     "zod-ingest": "npm:zod@3.23.8"
   }
 }
